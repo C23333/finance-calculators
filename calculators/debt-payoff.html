@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>Debt Payoff Calculator - Snowball vs Avalanche Method</title>
     <meta name="description" content="Free debt payoff calculator. Compare snowball and avalanche methods to pay off debt faster. Create your personalized debt-free plan.">
     <meta name="keywords" content="debt payoff calculator, debt snowball, debt avalanche, pay off debt, debt free calculator">
@@ -109,15 +124,25 @@
     <header>
         <nav class="container">
             <a href="../" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../#calculators">Calculators</a></li>
-                    <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="../#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="calc-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
                 <a href="../">Home</a> <span>/ Debt Payoff Calculator</span>
@@ -243,12 +268,23 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 FinCalc. All rights reserved.</p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payoff times may vary based on interest rate changes and payment timing.</p>
         </div>
     </footer>
 
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
     <script src="../js/debt-payoff.js"></script>
     <script src="../js/monetization.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

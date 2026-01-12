@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>Compound Interest Calculator - See Your Money Grow</title>
     <meta name="description" content="Free compound interest calculator. See how your investments grow over time with daily, monthly, or yearly compounding. Visualize your wealth building.">
     <meta name="keywords" content="compound interest calculator, investment calculator, savings calculator, interest rate calculator, money growth">
@@ -34,15 +49,25 @@
     <header>
         <nav class="container">
             <a href="../" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../#calculators">Calculators</a></li>
-                    <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="../#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="calc-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
                 <a href="../">Home</a> <span>/ Compound Interest Calculator</span>
@@ -149,15 +174,15 @@
                 </h3>
                 <p>Learn more about investing and growing your wealth:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=best+index+funds+for+beginners+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=best+index+funds+for+beginners+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         Best Index Funds
                     </a>
-                    <a href="https://www.google.com/search?q=IRA+contribution+limits+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=IRA+contribution+limits+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         IRA Contribution Limits
                     </a>
-                    <a href="https://www.google.com/search?q=capital+gains+tax+rates+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=capital+gains+tax+rates+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         Capital Gains Tax Rates
                     </a>
@@ -199,12 +224,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates based on constant interest rates. Actual investment returns will vary.</p>
         </div>
     </footer>
 
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
     <script src="../js/compound-interest.js"></script>
     <script src="../js/monetization.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

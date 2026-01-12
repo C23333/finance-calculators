@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>Roth vs Traditional IRA/401k Calculator - Compare Retirement Accounts</title>
     <meta name="description" content="Compare Roth vs Traditional IRA and 401k accounts. Calculate which retirement account type is better for your tax situation and financial goals.">
     <meta name="keywords" content="roth vs traditional, IRA calculator, 401k comparison, retirement account, tax-advantaged savings">
@@ -40,19 +55,28 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">FinanceCalc</a>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="#calculator">Calculator</a></li>
-                <li><a href="#guide">Guide</a></li>
+                <li><a href="../#about">About</a></li>
             </ul>
-        </div>
-    </nav>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
 
-    <main class="calculator-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="calculator-page">
         <div class="container">
             <div class="calculator-header">
                 <h1>Roth vs Traditional Calculator</h1>
@@ -243,11 +267,22 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 FinanceCalc. For educational purposes only. Consult a tax professional for personalized advice.</p>
+            <p>&copy; 2026 FinCalc. For educational purposes only. Consult a tax professional for personalized advice.</p>
         </div>
     </footer>
 
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
     <script src="../js/roth-vs-traditional.js"></script>
     <script src="../js/monetization.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

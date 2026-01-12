@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>How Much Car Can I Afford on a $60,000 Salary? | FinCalc</title>
+    <meta name="description" content="Calculate how much car you can afford on a $60,000 salary. Learn the 20/4/10 rule, see payment examples, and avoid common car buying mistakes.">
+    <meta name="keywords" content="how much car can I afford 60k salary, car affordability calculator, car payment calculator, auto loan budget">
+    <link rel="canonical" href="https://financecalc.cc/blog/how-much-car-can-i-afford-60k-salary.html">
+
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="How Much Car Can I Afford on a $60,000 Salary?">
+    <meta property="og:description" content="Calculate how much car you can afford on a $60k salary with the 20/4/10 rule.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/how-much-car-can-i-afford-60k-salary.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How Much Car Can I Afford on a $60,000 Salary?",
+        "description": "Calculate how much car you can afford on a $60,000 salary using the 20/4/10 rule.",
+        "image": "https://financecalc.cc/images/car-affordability.jpg",
+        "author": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc"},
+        "publisher": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc", "logo": {"@type": "ImageObject", "url": "https://financecalc.cc/favicon.svg"}},
+        "datePublished": "2025-01-12",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://financecalc.cc/blog/how-much-car-can-i-afford-60k-salary.html"}
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How much car can I afford on a $60,000 salary?", "acceptedAnswer": {"@type": "Answer", "text": "On a $60,000 salary, you can afford a car priced between $15,000 and $25,000 using conservative guidelines. Using the 20/4/10 rule, your maximum monthly payment should be around $500 (10% of gross monthly income)."}},
+            {"@type": "Question", "name": "What is the 20/4/10 rule for buying a car?", "acceptedAnswer": {"@type": "Answer", "text": "The 20/4/10 rule states: put at least 20% down, finance for no more than 4 years, and keep total transportation costs (payment + insurance + gas) under 10% of gross income."}},
+            {"@type": "Question", "name": "Should I buy new or used on a $60K salary?", "acceptedAnswer": {"@type": "Answer", "text": "A used car (2-3 years old) is typically the best value. New cars depreciate 20-30% in the first year. A certified pre-owned vehicle offers reliability with significant savings."}},
+            {"@type": "Question", "name": "How much should my car payment be?", "acceptedAnswer": {"@type": "Answer", "text": "Financial experts recommend keeping your car payment under 10-15% of your take-home pay. On a $60K salary (about $4,000/month take-home), that's $400-600/month maximum."}}
+        ]
+    }
+    </script>
+
+    <script src="/js/seo.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculators</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
+                <li><a href="/#about">About</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Car Affordability on $60K</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Auto Loans</span>
+                        <span>January 12, 2026</span>
+                        <span>8 min read</span>
+                    </div>
+                    <h1>How Much Car Can I Afford on a $60,000 Salary?</h1>
+                    <p class="article-intro">Buying a car is one of the biggest financial decisions you'll make. Here's exactly how much car you can afford on a $60K salary without stretching your budget.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>The Quick Answer</h2>
+                    <p>On a $60,000 salary, you can comfortably afford a car priced between <strong>$15,000 and $25,000</strong>. This keeps your total transportation costs manageable and leaves room for other financial goals.</p>
+
+                    <div class="highlight-box">
+                        <h4>The 20/4/10 Rule</h4>
+                        <ul>
+                            <li><strong>20%</strong> minimum down payment</li>
+                            <li><strong>4</strong> years maximum loan term</li>
+                            <li><strong>10%</strong> of gross income for total car costs</li>
+                        </ul>
+                    </div>
+
+                    <h2>Breaking Down the Numbers</h2>
+                    <p>Let's apply the 20/4/10 rule to a $60,000 salary:</p>
+
+                    <table>
+                        <tr>
+                            <th>Calculation</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>Annual Salary</td>
+                            <td>$60,000</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Gross Income</td>
+                            <td>$5,000</td>
+                        </tr>
+                        <tr>
+                            <td>Max Total Car Costs (10%)</td>
+                            <td>$500/month</td>
+                        </tr>
+                        <tr>
+                            <td>Estimated Insurance</td>
+                            <td>-$125/month</td>
+                        </tr>
+                        <tr>
+                            <td>Estimated Gas</td>
+                            <td>-$100/month</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Max Car Payment</strong></td>
+                            <td><strong>$275/month</strong></td>
+                        </tr>
+                    </table>
+
+                    <h3>What Can $275/Month Buy?</h3>
+                    <p>With a $275 monthly payment, 20% down, and 4-year loan at 7% interest:</p>
+                    <ul>
+                        <li><strong>Maximum car price:</strong> ~$15,000</li>
+                        <li><strong>Down payment (20%):</strong> $3,000</li>
+                        <li><strong>Loan amount:</strong> $12,000</li>
+                    </ul>
+
+                    <h2>More Realistic Scenarios</h2>
+                    <p>The 20/4/10 rule is conservative. Here are other approaches:</p>
+
+                    <table>
+                        <tr>
+                            <th>Approach</th>
+                            <th>Max Payment</th>
+                            <th>Max Car Price</th>
+                        </tr>
+                        <tr>
+                            <td>Conservative (10%)</td>
+                            <td>$275</td>
+                            <td>$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15%)</td>
+                            <td>$450</td>
+                            <td>$22,000</td>
+                        </tr>
+                        <tr>
+                            <td>Aggressive (20%)</td>
+                            <td>$600</td>
+                            <td>$28,000</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Calculate Your Car Budget</h3>
+                        <p>See exactly what you can afford with our auto loan calculator.</p>
+                        <a href="/calculators/auto-loan.html" class="cta-btn">Auto Loan Calculator →</a>
+                    </div>
+
+                    <h2>New vs. Used: What's Best for $60K Salary?</h2>
+
+                    <h3>The Case for Used Cars</h3>
+                    <ul>
+                        <li>New cars lose 20-30% value in year one</li>
+                        <li>A 2-3 year old car is often 30-40% cheaper</li>
+                        <li>Modern cars easily last 150,000+ miles</li>
+                        <li>Lower insurance costs</li>
+                    </ul>
+
+                    <h3>Best Value: Certified Pre-Owned (CPO)</h3>
+                    <ul>
+                        <li>Manufacturer inspection and warranty</li>
+                        <li>Typically 2-4 years old with low miles</li>
+                        <li>Significant savings vs. new</li>
+                        <li>Peace of mind with warranty coverage</li>
+                    </ul>
+
+                    <h2>Total Cost of Ownership</h2>
+                    <p>Your car payment is just part of the cost. Budget for:</p>
+
+                    <table>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Monthly Estimate</th>
+                        </tr>
+                        <tr>
+                            <td>Car Payment</td>
+                            <td>$275-450</td>
+                        </tr>
+                        <tr>
+                            <td>Insurance</td>
+                            <td>$100-200</td>
+                        </tr>
+                        <tr>
+                            <td>Gas</td>
+                            <td>$100-200</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>$50-100</td>
+                        </tr>
+                        <tr>
+                            <td>Registration/Taxes</td>
+                            <td>$20-50</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>$545-1,000</strong></td>
+                        </tr>
+                    </table>
+
+                    <h2>How to Get the Best Deal</h2>
+
+                    <h3>1. Get Pre-Approved for Financing</h3>
+                    <p>Get loan offers from your bank or credit union before visiting dealers. This gives you negotiating power and a baseline rate to compare.</p>
+
+                    <h3>2. Negotiate the Total Price, Not Payment</h3>
+                    <p>Dealers love to focus on monthly payments because they can extend the loan term. Always negotiate the out-the-door price first.</p>
+
+                    <h3>3. Time Your Purchase</h3>
+                    <ul>
+                        <li><strong>End of month/quarter:</strong> Salespeople need to hit quotas</li>
+                        <li><strong>End of model year:</strong> Dealers clearing inventory</li>
+                        <li><strong>Holiday weekends:</strong> Special promotions</li>
+                    </ul>
+
+                    <h3>4. Consider Total Cost, Not Just Price</h3>
+                    <ul>
+                        <li>Fuel efficiency (hybrid vs. gas)</li>
+                        <li>Insurance costs (sports cars cost more)</li>
+                        <li>Reliability ratings (fewer repairs)</li>
+                        <li>Resale value</li>
+                    </ul>
+
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ol>
+                        <li><strong>Focusing only on monthly payment</strong> - A lower payment with longer term costs more overall</li>
+                        <li><strong>Skipping the down payment</strong> - You'll be underwater on the loan immediately</li>
+                        <li><strong>Buying too much car</strong> - Don't let a salesperson talk you up</li>
+                        <li><strong>Ignoring insurance costs</strong> - Get quotes before buying</li>
+                        <li><strong>Not shopping around for financing</strong> - Dealer rates are often higher</li>
+                        <li><strong>Buying brand new</strong> - Let someone else take the depreciation hit</li>
+                    </ol>
+
+                    <div class="highlight-box">
+                        <h4>Pro Tip</h4>
+                        <p>If you can't afford a 20% down payment and 4-year loan on the car you want, you're looking at too expensive a car. Save more or choose a less expensive vehicle.</p>
+                    </div>
+
+                    <h2>Recommended Cars for $60K Salary</h2>
+                    <p>Based on reliability, value, and total cost of ownership:</p>
+
+                    <h3>Under $20,000 (Used, 2-3 years old)</h3>
+                    <ul>
+                        <li>Toyota Camry/Corolla</li>
+                        <li>Honda Civic/Accord</li>
+                        <li>Mazda3/Mazda6</li>
+                        <li>Hyundai Elantra/Sonata</li>
+                    </ul>
+
+                    <h3>Under $25,000 (CPO)</h3>
+                    <ul>
+                        <li>Toyota RAV4</li>
+                        <li>Honda CR-V</li>
+                        <li>Mazda CX-5</li>
+                        <li>Subaru Outback</li>
+                    </ul>
+
+                    <div class="calculator-cta">
+                        <h3>Calculate Your Payment</h3>
+                        <p>See what your monthly payment would be on different cars.</p>
+                        <a href="/calculators/auto-loan.html" class="cta-btn">Auto Loan Calculator →</a>
+                    </div>
+
+                    <h2>Bottom Line</h2>
+                    <p>On a $60,000 salary, stick to cars in the $15,000-$25,000 range. Use the 20/4/10 rule as your guide, and remember that a car is a depreciating asset - don't let it derail your other financial goals.</p>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>House Affordability on $80K</h4>
+                        <p>Calculate your home buying budget.</p>
+                    </a>
+                    <a href="debt-snowball-vs-avalanche.html" class="related-card">
+                        <h4>Debt Payoff Strategies</h4>
+                        <p>Pay off your car loan faster.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Emergency Fund Guide</h4>
+                        <p>Save for car repairs and emergencies.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="/terms.html" style="color: #94a3b8;">Terms of Service</a></p>
+            <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

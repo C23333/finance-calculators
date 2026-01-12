@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Much Should I Contribute to My 401(k) in 2025? | FinCalc</title>
-    <meta name="description" content="Learn the optimal 401(k) contribution for 2025. Updated limits, employer match strategies, and contribution calculators for every income level.">
-    <meta name="keywords" content="401k contribution 2025, how much to contribute 401k, 401k limits 2025, 401k calculator, maximize 401k">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>How Much Should I Contribute to My 401(k) in 2026? | FinCalc</title>
+    <meta name="description" content="Learn the optimal 401(k) contribution for 2026. Updated limits, employer match strategies, and contribution calculators for every income level.">
+    <meta name="keywords" content="401k contribution 2026, how much to contribute 401k, 401k limits 2026, 401k calculator, maximize 401k">
     <link rel="canonical" href="https://financecalc.cc/blog/401k-contribution-calculator-2025.html">
 
     <!-- Force HTTPS -->
@@ -17,8 +32,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="How Much Should I Contribute to My 401(k) in 2025?">
-    <meta property="og:description" content="Learn the optimal 401(k) contribution for 2025 with updated limits and strategies.">
+    <meta property="og:title" content="How Much Should I Contribute to My 401(k) in 2026?">
+    <meta property="og:description" content="Learn the optimal 401(k) contribution for 2026 with updated limits and strategies.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://financecalc.cc/blog/401k-contribution-calculator-2025.html">
 
@@ -39,68 +54,140 @@
         gtag('config', 'G-QFTQMV9QP7');
     </script>
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "How Much Should I Contribute to My 401(k) in 2025?",
-        "description": "Learn the optimal 401(k) contribution for 2025 with updated limits and strategies for every income level.",
+        "headline": "How Much Should I Contribute to My 401(k) in 2026?",
+        "description": "Learn the optimal 401(k) contribution for 2026 with updated limits and strategies for every income level.",
+        "image": "https://financecalc.cc/images/401k-contribution-2026.jpg",
         "author": {
-            "@type": "Organization",
-            "name": "FinCalc"
-        },
-        "publisher": {
             "@type": "Organization",
             "name": "FinCalc",
             "url": "https://financecalc.cc"
         },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
         "datePublished": "2025-01-10",
-        "dateModified": "2025-01-10"
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/401k-contribution-calculator-2025.html"
+        }
     }
     </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the 401(k) contribution limit for 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 401(k) employee contribution limit for 2026 is $23,500 for those under 50. If you're 50 or older, you can contribute an additional $7,500 catch-up contribution for a total of $31,000. A new 'super catch-up' for ages 60-63 allows an extra $11,250, for a total of $34,750."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much should I contribute to my 401(k)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Financial experts recommend saving 15% of your gross income for retirement, including employer match. At minimum, contribute enough to get your full employer match - this is free money. If you can't reach 15%, start with the match and increase by 1% each year."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I choose Traditional or Roth 401(k)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Choose Traditional 401(k) if you're in a high tax bracket now (24%+) and expect lower income in retirement. Choose Roth 401(k) if you're in a lower bracket (12-22%) and expect higher income in retirement. Many experts recommend splitting contributions between both for tax diversification."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is an employer 401(k) match?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An employer match is when your company contributes money to your 401(k) based on your contributions. Common formulas include 50% match up to 6% of salary or 100% match up to 3%. For example, if you earn $80,000 and contribute 6% with a 50% match, your employer adds $2,400 per year."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the 401(k) super catch-up contribution for 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "New for 2026, if you're age 60-63, you can make a 'super catch-up' contribution of $11,250 instead of the standard $7,500 catch-up. This allows a total employee contribution of $34,750 for those in this age range, helping you boost retirement savings in your final working years."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="/#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
                 <li><a href="/#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="article-page">
+    <main id="main-content" class="article-page">
         <div class="article-container">
             <nav class="breadcrumb">
-                <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>401(k) Contributions 2025</span>
+                <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>401(k) Contributions 2026</span>
             </nav>
 
             <article>
                 <header class="article-header">
                     <div class="article-meta">
                         <span class="article-category">Retirement</span>
-                        <span>January 10, 2025</span>
+                        <span>January 10, 2026</span>
                         <span>7 min read</span>
                     </div>
-                    <h1>How Much Should I Contribute to My 401(k) in 2025?</h1>
-                    <p class="article-intro">The IRS has updated 401(k) contribution limits for 2025. Here's exactly how much you should contribute based on your income, age, and financial goals.</p>
+                    <h1>How Much Should I Contribute to My 401(k) in 2026?</h1>
+                    <p class="article-intro">The IRS has updated 401(k) contribution limits for 2026. Here's exactly how much you should contribute based on your income, age, and financial goals.</p>
                 </header>
 
                 <div class="article-content">
-                    <h2>2025 401(k) Contribution Limits</h2>
-                    <p>The IRS has increased 401(k) contribution limits for 2025:</p>
+                    <h2>2026 401(k) Contribution Limits</h2>
+                    <p>The IRS has increased 401(k) contribution limits for 2026:</p>
 
                     <table>
                         <tr>
                             <th>Contribution Type</th>
+                            <th>2026 Limit</th>
                             <th>2025 Limit</th>
-                            <th>2024 Limit</th>
                         </tr>
                         <tr>
                             <td>Employee Contribution (Under 50)</td>
@@ -125,7 +212,7 @@
                     </table>
 
                     <div class="highlight-box">
-                        <h4>New for 2025: Super Catch-Up</h4>
+                        <h4>New for 2026: Super Catch-Up</h4>
                         <p>If you're age 60-63, you can contribute an additional <strong>$11,250</strong> (instead of $7,500), for a total employee contribution of <strong>$34,750</strong>.</p>
                     </div>
 
@@ -314,7 +401,7 @@
                         <a href="/calculators/401k.html" class="cta-btn">401(k) Calculator →</a>
                     </div>
 
-                    <h2>Action Steps for 2025</h2>
+                    <h2>Action Steps for 2026</h2>
                     <ol>
                         <li><strong>Check your current contribution rate</strong> in your HR portal</li>
                         <li><strong>Verify you're getting the full employer match</strong></li>
@@ -348,10 +435,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="/terms.html" style="color: #94a3b8;">Terms of Service</a></p>
             <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
         </div>
     </footer>
+
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

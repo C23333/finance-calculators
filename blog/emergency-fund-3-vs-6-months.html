@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>Emergency Fund: Do You Need 3 or 6 Months of Expenses? | FinCalc</title>
     <meta name="description" content="Find out exactly how much emergency fund you need. Learn whether 3 or 6 months is right for your situation, plus tips to build your fund faster.">
     <meta name="keywords" content="emergency fund 3 months or 6 months, how much emergency fund, emergency savings calculator, rainy day fund">
@@ -33,35 +48,115 @@
         gtag('config', 'G-QFTQMV9QP7');
     </script>
 
+    <!-- Structured Data - Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Emergency Fund: Do You Need 3 or 6 Months of Expenses?",
         "description": "Find out exactly how much emergency fund you need based on your personal situation.",
-        "author": {"@type": "Organization", "name": "FinCalc"},
-        "publisher": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc"},
+        "image": "https://financecalc.cc/images/emergency-fund-guide.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
         "datePublished": "2025-01-10",
-        "dateModified": "2025-01-10"
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/emergency-fund-3-vs-6-months.html"
+        }
     }
     </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much emergency fund do I need?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most people need 3-6 months of essential expenses. Choose 3 months if you have a stable job, dual income, or low expenses. Choose 6 months if you're single income, have variable income, or work in a volatile industry. Self-employed individuals should aim for 9-12 months."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where should I keep my emergency fund?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Keep your emergency fund in a high-yield savings account (4.5-5% APY in 2026), money market account, or Treasury bills. The account should be liquid (accessible in 1-2 days), safe (FDIC insured), and separate from your spending money. Avoid stocks, CDs with penalties, or regular checking accounts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What counts as an emergency?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "True emergencies include job loss, medical emergencies, essential car repairs, emergency home repairs (roof leak, broken furnace), and unexpected travel for family emergencies. NOT emergencies: sales, vacations, holiday gifts, planned expenses you forgot to budget for, or wants disguised as needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I pay off debt or build an emergency fund first?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Follow this order: 1) Build a $1,000 starter emergency fund, 2) Pay off high-interest debt like credit cards, 3) Build your full 3-6 month emergency fund, 4) Pay off remaining debt, 5) Invest for retirement. The starter fund prevents small emergencies from becoming new debt."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What expenses should my emergency fund cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your emergency fund should cover essential expenses only: housing (rent/mortgage), utilities, groceries, transportation, health insurance, minimum debt payments, phone, and childcare if needed. Don't include entertainment, dining out, shopping, vacations, or gym memberships in your calculation."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="/#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
                 <li><a href="/#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="article-page">
+    <main id="main-content" class="article-page">
         <div class="article-container">
             <nav class="breadcrumb">
                 <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Emergency Fund Guide</span>
@@ -71,7 +166,7 @@
                 <header class="article-header">
                     <div class="article-meta">
                         <span class="article-category">Savings</span>
-                        <span>January 10, 2025</span>
+                        <span>January 10, 2026</span>
                         <span>6 min read</span>
                     </div>
                     <h1>Emergency Fund: Do You Need 3 or 6 Months of Expenses?</h1>
@@ -217,7 +312,7 @@
                     <table>
                         <tr>
                             <th>Account Type</th>
-                            <th>APY (2025)</th>
+                            <th>APY (2026)</th>
                             <th>Pros</th>
                         </tr>
                         <tr>
@@ -363,10 +458,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="/terms.html" style="color: #94a3b8;">Terms of Service</a></p>
             <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
         </div>
     </footer>
+
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

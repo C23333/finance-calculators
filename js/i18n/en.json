@@ -1,0 +1,395 @@
+{
+    "site": {
+        "name": "FinCalc",
+        "tagline": "Free Financial Calculators",
+        "description": "Make smarter financial decisions with our easy-to-use calculators. No signup required, 100% free."
+    },
+    "nav": {
+        "home": "Home",
+        "calculators": "Calculators",
+        "blog": "Blog",
+        "about": "About"
+    },
+    "hero": {
+        "title": "Free Financial Calculators",
+        "subtitle": "Make smarter financial decisions with our easy-to-use calculators. No signup required, 100% free."
+    },
+    "categories": {
+        "homeMortgage": "Home & Mortgage",
+        "loansDebt": "Loans & Debt",
+        "savingsInvestment": "Savings & Investment",
+        "retirement": "Retirement Planning",
+        "taxIncome": "Tax & Income"
+    },
+    "calculators": {
+        "mortgage": {
+            "title": "Mortgage Calculator",
+            "description": "Calculate monthly payments, total interest, and view amortization schedule.",
+            "homePrice": "Home Price",
+            "downPayment": "Down Payment",
+            "interestRate": "Interest Rate (Annual)",
+            "loanTerm": "Loan Term",
+            "calculate": "Calculate Payment",
+            "monthlyPayment": "Monthly Payment",
+            "principalInterest": "Principal & Interest",
+            "loanAmount": "Loan Amount",
+            "totalInterest": "Total Interest",
+            "totalCost": "Total Cost",
+            "payoffDate": "Payoff Date",
+            "amortization": "Amortization Schedule (Yearly)",
+            "year": "Year",
+            "principal": "Principal",
+            "interest": "Interest",
+            "balance": "Balance"
+        },
+        "compoundInterest": {
+            "title": "Compound Interest Calculator",
+            "description": "See how your investments grow over time with compound interest.",
+            "initialAmount": "Initial Amount",
+            "monthlyContribution": "Monthly Contribution",
+            "annualRate": "Annual Interest Rate",
+            "years": "Investment Period (Years)",
+            "compoundFrequency": "Compound Frequency",
+            "monthly": "Monthly",
+            "quarterly": "Quarterly",
+            "annually": "Annually",
+            "futureValue": "Future Value",
+            "totalContributions": "Total Contributions",
+            "totalInterest": "Total Interest Earned"
+        },
+        "retirement": {
+            "title": "Retirement Calculator",
+            "description": "Plan your retirement savings and see if you're on track.",
+            "currentAge": "Current Age",
+            "retirementAge": "Retirement Age",
+            "currentSavings": "Current Savings",
+            "monthlyContribution": "Monthly Contribution",
+            "expectedReturn": "Expected Annual Return",
+            "retirementIncome": "Desired Monthly Income",
+            "projectedSavings": "Projected Savings at Retirement",
+            "monthlyIncome": "Estimated Monthly Income",
+            "savingsGap": "Savings Gap"
+        },
+        "loan": {
+            "title": "Loan Payoff Calculator",
+            "description": "See how extra payments can help you pay off loans faster.",
+            "loanBalance": "Current Loan Balance",
+            "interestRate": "Interest Rate",
+            "monthlyPayment": "Monthly Payment",
+            "extraPayment": "Extra Monthly Payment",
+            "payoffTime": "Time to Pay Off",
+            "interestSaved": "Interest Saved",
+            "newPayoffDate": "New Payoff Date"
+        },
+        "debtPayoff": {
+            "title": "Debt Payoff Planner",
+            "description": "Create a debt payoff plan using snowball or avalanche method.",
+            "debtName": "Debt Name",
+            "balance": "Balance",
+            "interestRate": "Interest Rate",
+            "minPayment": "Minimum Payment",
+            "addDebt": "Add Debt",
+            "extraPayment": "Extra Monthly Payment",
+            "method": "Payoff Method",
+            "snowball": "Snowball (Smallest Balance First)",
+            "avalanche": "Avalanche (Highest Interest First)",
+            "totalDebt": "Total Debt",
+            "debtFreeDate": "Debt-Free Date",
+            "totalInterest": "Total Interest"
+        },
+        "autoLoan": {
+            "title": "Auto Loan Calculator",
+            "description": "Calculate car loan payments and total cost of financing.",
+            "vehiclePrice": "Vehicle Price",
+            "downPayment": "Down Payment",
+            "tradeInValue": "Trade-In Value",
+            "interestRate": "Interest Rate",
+            "loanTerm": "Loan Term",
+            "monthlyPayment": "Monthly Payment",
+            "totalInterest": "Total Interest",
+            "totalCost": "Total Cost"
+        },
+        "studentLoan": {
+            "title": "Student Loan Calculator",
+            "description": "Plan your student loan repayment and explore forgiveness options.",
+            "loanBalance": "Total Loan Balance",
+            "interestRate": "Average Interest Rate",
+            "repaymentPlan": "Repayment Plan",
+            "standard": "Standard (10 years)",
+            "extended": "Extended (25 years)",
+            "graduated": "Graduated",
+            "incomedriven": "Income-Driven",
+            "monthlyPayment": "Monthly Payment",
+            "totalPaid": "Total Amount Paid",
+            "totalInterest": "Total Interest"
+        },
+        "401k": {
+            "title": "401(k) Calculator",
+            "description": "Maximize your 401(k) contributions and employer matching.",
+            "currentAge": "Current Age",
+            "retirementAge": "Retirement Age",
+            "annualSalary": "Annual Salary",
+            "contributionPercent": "Your Contribution (%)",
+            "employerMatch": "Employer Match (%)",
+            "matchLimit": "Match Limit (%)",
+            "currentBalance": "Current 401(k) Balance",
+            "expectedReturn": "Expected Annual Return",
+            "projectedBalance": "Projected Balance at Retirement",
+            "yourContributions": "Your Total Contributions",
+            "employerContributions": "Employer Contributions",
+            "investmentGrowth": "Investment Growth"
+        },
+        "savingsGoal": {
+            "title": "Savings Goal Calculator",
+            "description": "Find out how much to save monthly to reach your goal.",
+            "goalAmount": "Goal Amount",
+            "currentSavings": "Current Savings",
+            "timeframe": "Timeframe (Months)",
+            "interestRate": "Interest Rate (APY)",
+            "monthlyNeeded": "Monthly Savings Needed",
+            "totalContributions": "Total Contributions",
+            "interestEarned": "Interest Earned"
+        },
+        "emergencyFund": {
+            "title": "Emergency Fund Calculator",
+            "description": "Calculate how much you need in your emergency fund.",
+            "monthlyExpenses": "Monthly Expenses",
+            "monthsCoverage": "Months of Coverage",
+            "currentSavings": "Current Emergency Savings",
+            "targetAmount": "Target Emergency Fund",
+            "amountNeeded": "Amount Still Needed",
+            "monthsToGoal": "Months to Reach Goal"
+        },
+        "inflation": {
+            "title": "Inflation Calculator",
+            "description": "See how inflation affects your purchasing power over time.",
+            "currentAmount": "Current Amount",
+            "inflationRate": "Annual Inflation Rate",
+            "years": "Number of Years",
+            "futureValue": "Future Value",
+            "purchasingPower": "Purchasing Power",
+            "totalInflation": "Total Inflation"
+        },
+        "salary": {
+            "title": "Salary Calculator",
+            "description": "Convert between hourly, weekly, monthly, and annual salary.",
+            "amount": "Amount",
+            "period": "Pay Period",
+            "hourly": "Hourly",
+            "weekly": "Weekly",
+            "biweekly": "Bi-Weekly",
+            "monthly": "Monthly",
+            "annual": "Annual",
+            "hoursPerWeek": "Hours Per Week",
+            "weeksPerYear": "Weeks Per Year"
+        },
+        "takeHomePay": {
+            "title": "Take-Home Pay Calculator",
+            "description": "Calculate your net pay after taxes and deductions.",
+            "grossSalary": "Gross Annual Salary",
+            "payFrequency": "Pay Frequency",
+            "filingStatus": "Filing Status",
+            "single": "Single",
+            "married": "Married Filing Jointly",
+            "head": "Head of Household",
+            "state": "State",
+            "deductions": "Pre-Tax Deductions",
+            "netPay": "Net Pay",
+            "federalTax": "Federal Tax",
+            "stateTax": "State Tax",
+            "socialSecurity": "Social Security",
+            "medicare": "Medicare"
+        },
+        "selfEmploymentTax": {
+            "title": "Self-Employment Tax Calculator",
+            "description": "Estimate self-employment taxes for freelancers and contractors.",
+            "netEarnings": "Net Self-Employment Earnings",
+            "filingStatus": "Filing Status",
+            "otherIncome": "Other Income (W-2, etc.)",
+            "seTax": "Self-Employment Tax",
+            "socialSecurity": "Social Security",
+            "medicare": "Medicare",
+            "deduction": "SE Tax Deduction"
+        },
+        "refinance": {
+            "title": "Refinance Calculator",
+            "description": "See if refinancing your mortgage could save you money.",
+            "currentBalance": "Current Loan Balance",
+            "currentRate": "Current Interest Rate",
+            "currentPayment": "Current Monthly Payment",
+            "remainingTerm": "Remaining Term (Years)",
+            "newRate": "New Interest Rate",
+            "newTerm": "New Loan Term",
+            "closingCosts": "Closing Costs",
+            "newPayment": "New Monthly Payment",
+            "monthlySavings": "Monthly Savings",
+            "breakEven": "Break-Even Point",
+            "lifetimeSavings": "Lifetime Savings"
+        },
+        "rentVsBuy": {
+            "title": "Rent vs Buy Calculator",
+            "description": "Compare the costs of renting versus buying a home.",
+            "homePrice": "Home Price",
+            "downPayment": "Down Payment",
+            "mortgageRate": "Mortgage Rate",
+            "propertyTax": "Property Tax Rate",
+            "monthlyRent": "Monthly Rent",
+            "rentIncrease": "Annual Rent Increase",
+            "yearsToStay": "Years You Plan to Stay",
+            "buyingCost": "Total Cost of Buying",
+            "rentingCost": "Total Cost of Renting",
+            "recommendation": "Recommendation"
+        },
+        "homeAffordability": {
+            "title": "Home Affordability Calculator",
+            "description": "Find out how much house you can afford based on your income.",
+            "annualIncome": "Annual Household Income",
+            "monthlyDebts": "Monthly Debt Payments",
+            "downPayment": "Down Payment",
+            "interestRate": "Interest Rate",
+            "loanTerm": "Loan Term",
+            "propertyTax": "Property Tax Rate",
+            "insurance": "Annual Insurance",
+            "maxHomePrice": "Maximum Home Price",
+            "maxLoanAmount": "Maximum Loan Amount",
+            "monthlyPayment": "Estimated Monthly Payment"
+        },
+        "socialSecurity": {
+            "title": "Social Security Estimator",
+            "description": "Estimate your Social Security benefits at different ages.",
+            "birthYear": "Birth Year",
+            "currentEarnings": "Current Annual Earnings",
+            "retirementAge": "Planned Retirement Age",
+            "earningsHistory": "Years of Work History",
+            "estimatedBenefit": "Estimated Monthly Benefit",
+            "fullRetirementAge": "Full Retirement Age",
+            "earlyBenefit": "Benefit at 62",
+            "delayedBenefit": "Benefit at 70"
+        },
+        "rothVsTraditional": {
+            "title": "Roth vs Traditional IRA Calculator",
+            "description": "Compare Roth and Traditional IRA to find the best option.",
+            "annualContribution": "Annual Contribution",
+            "currentAge": "Current Age",
+            "retirementAge": "Retirement Age",
+            "currentTaxRate": "Current Tax Rate",
+            "retirementTaxRate": "Expected Retirement Tax Rate",
+            "expectedReturn": "Expected Annual Return",
+            "rothValue": "Roth IRA Value at Retirement",
+            "traditionalValue": "Traditional IRA Value at Retirement",
+            "rothAfterTax": "Roth After-Tax Value",
+            "traditionalAfterTax": "Traditional After-Tax Value"
+        },
+        "investmentReturn": {
+            "title": "Investment Return Calculator",
+            "description": "Calculate ROI and compare different investment scenarios.",
+            "initialInvestment": "Initial Investment",
+            "finalValue": "Final Value",
+            "investmentPeriod": "Investment Period (Years)",
+            "totalReturn": "Total Return",
+            "annualizedReturn": "Annualized Return",
+            "roi": "Return on Investment (ROI)"
+        }
+    },
+    "results": {
+        "title": "Results",
+        "summary": "Summary",
+        "details": "Details",
+        "chart": "Chart",
+        "table": "Table",
+        "download": "Download Results",
+        "share": "Share",
+        "print": "Print"
+    },
+    "common": {
+        "calculate": "Calculate",
+        "reset": "Reset",
+        "clear": "Clear",
+        "save": "Save",
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "required": "Required",
+        "optional": "Optional",
+        "years": "years",
+        "months": "months",
+        "days": "days",
+        "perMonth": "/month",
+        "perYear": "/year",
+        "total": "Total",
+        "average": "Average",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "yes": "Yes",
+        "no": "No",
+        "or": "or",
+        "and": "and"
+    },
+    "validation": {
+        "required": "This field is required",
+        "invalidNumber": "Please enter a valid number",
+        "minValue": "Value must be at least {min}",
+        "maxValue": "Value must be at most {max}",
+        "invalidEmail": "Please enter a valid email address"
+    },
+    "about": {
+        "title": "Why Use Our Calculators?",
+        "free": {
+            "title": "100% Free",
+            "description": "All calculators are completely free. No hidden fees, no premium features to unlock."
+        },
+        "noSignup": {
+            "title": "No Signup Required",
+            "description": "Start calculating immediately. We don't ask for your email or personal information."
+        },
+        "privacy": {
+            "title": "Privacy First",
+            "description": "All calculations happen in your browser. Your financial data never leaves your device."
+        },
+        "mobile": {
+            "title": "Mobile Friendly",
+            "description": "Use our calculators on any device - phone, tablet, or desktop computer."
+        }
+    },
+    "footer": {
+        "copyright": "© 2026 FinCalc. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "disclaimer": "Disclaimer: These calculators are for informational purposes only. Consult a qualified financial advisor for personalized advice.",
+        "sources": "Data Sources"
+    },
+    "blog": {
+        "title": "Financial Planning Blog",
+        "subtitle": "Expert guides, practical tips, and actionable advice to help you make smarter financial decisions.",
+        "latestArticles": "Latest Articles",
+        "readMore": "Read More",
+        "minRead": "min read",
+        "relatedArticles": "Related Articles",
+        "categories": {
+            "homeBuying": "Home Buying",
+            "debtPayoff": "Debt Payoff",
+            "retirement": "Retirement",
+            "mortgages": "Mortgages",
+            "taxes": "Taxes",
+            "savings": "Savings",
+            "investing": "Investing"
+        }
+    },
+    "sources": {
+        "title": "Data Sources & References",
+        "irs": "Internal Revenue Service (IRS)",
+        "ssa": "Social Security Administration",
+        "bls": "Bureau of Labor Statistics",
+        "federalReserve": "Federal Reserve",
+        "treasury": "U.S. Department of the Treasury",
+        "lastUpdated": "Last updated: {date}"
+    },
+    "accessibility": {
+        "skipToContent": "Skip to main content",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "toggleTheme": "Toggle theme",
+        "selectLanguage": "Select language",
+        "expandSection": "Expand section",
+        "collapseSection": "Collapse section"
+    }
+}

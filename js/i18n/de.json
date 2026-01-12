@@ -1,0 +1,159 @@
+{
+    "site": {
+        "name": "FinCalc",
+        "tagline": "Kostenlose Finanzrechner",
+        "description": "Treffen Sie klügere finanzielle Entscheidungen mit unseren benutzerfreundlichen Rechnern. Keine Anmeldung erforderlich, 100% kostenlos."
+    },
+    "nav": {
+        "home": "Startseite",
+        "calculators": "Rechner",
+        "blog": "Blog",
+        "about": "Über uns"
+    },
+    "hero": {
+        "title": "Kostenlose Finanzrechner",
+        "subtitle": "Treffen Sie klügere finanzielle Entscheidungen mit unseren benutzerfreundlichen Rechnern. Keine Anmeldung erforderlich, 100% kostenlos."
+    },
+    "categories": {
+        "homeMortgage": "Haus & Hypothek",
+        "loansDebt": "Kredite & Schulden",
+        "savingsInvestment": "Sparen & Investieren",
+        "retirement": "Altersvorsorge",
+        "taxIncome": "Steuern & Einkommen"
+    },
+    "calculators": {
+        "mortgage": {
+            "title": "Hypothekenrechner",
+            "description": "Berechnen Sie monatliche Zahlungen, Gesamtzinsen und sehen Sie den Tilgungsplan.",
+            "homePrice": "Hauspreis",
+            "downPayment": "Anzahlung",
+            "interestRate": "Zinssatz (Jährlich)",
+            "loanTerm": "Kreditlaufzeit",
+            "calculate": "Zahlung berechnen",
+            "monthlyPayment": "Monatliche Zahlung",
+            "principalInterest": "Kapital & Zinsen",
+            "loanAmount": "Kreditbetrag",
+            "totalInterest": "Gesamtzinsen",
+            "totalCost": "Gesamtkosten",
+            "payoffDate": "Rückzahlungsdatum",
+            "amortization": "Tilgungsplan (Jährlich)",
+            "year": "Jahr",
+            "principal": "Kapital",
+            "interest": "Zinsen",
+            "balance": "Restschuld"
+        },
+        "compoundInterest": {
+            "title": "Zinseszinsrechner",
+            "description": "Sehen Sie, wie Ihre Investitionen durch Zinseszins wachsen.",
+            "initialAmount": "Anfangsbetrag",
+            "monthlyContribution": "Monatlicher Beitrag",
+            "annualRate": "Jährlicher Zinssatz",
+            "years": "Anlagezeitraum (Jahre)",
+            "compoundFrequency": "Zinseszinsfrequenz",
+            "monthly": "Monatlich",
+            "quarterly": "Vierteljährlich",
+            "annually": "Jährlich",
+            "futureValue": "Zukünftiger Wert",
+            "totalContributions": "Gesamtbeiträge",
+            "totalInterest": "Gesamtzinsen"
+        },
+        "retirement": {
+            "title": "Rentenrechner",
+            "description": "Planen Sie Ihre Altersvorsorge und sehen Sie, ob Sie auf Kurs sind.",
+            "currentAge": "Aktuelles Alter",
+            "retirementAge": "Rentenalter",
+            "currentSavings": "Aktuelle Ersparnisse",
+            "monthlyContribution": "Monatlicher Beitrag",
+            "expectedReturn": "Erwartete Jahresrendite",
+            "retirementIncome": "Gewünschtes Monatseinkommen",
+            "projectedSavings": "Prognostizierte Ersparnisse bei Renteneintritt",
+            "monthlyIncome": "Geschätztes Monatseinkommen",
+            "savingsGap": "Sparlücke"
+        }
+    },
+    "results": {
+        "title": "Ergebnisse",
+        "summary": "Zusammenfassung",
+        "details": "Details",
+        "chart": "Diagramm",
+        "table": "Tabelle",
+        "download": "Ergebnisse herunterladen",
+        "share": "Teilen",
+        "print": "Drucken"
+    },
+    "common": {
+        "calculate": "Berechnen",
+        "reset": "Zurücksetzen",
+        "clear": "Löschen",
+        "save": "Speichern",
+        "loading": "Laden...",
+        "error": "Ein Fehler ist aufgetreten",
+        "required": "Erforderlich",
+        "optional": "Optional",
+        "years": "Jahre",
+        "months": "Monate",
+        "days": "Tage",
+        "perMonth": "/Monat",
+        "perYear": "/Jahr",
+        "total": "Gesamt",
+        "average": "Durchschnitt",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "yes": "Ja",
+        "no": "Nein",
+        "or": "oder",
+        "and": "und"
+    },
+    "validation": {
+        "required": "Dieses Feld ist erforderlich",
+        "invalidNumber": "Bitte geben Sie eine gültige Zahl ein",
+        "minValue": "Der Wert muss mindestens {min} sein",
+        "maxValue": "Der Wert darf höchstens {max} sein",
+        "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+    },
+    "about": {
+        "title": "Warum unsere Rechner nutzen?",
+        "free": {
+            "title": "100% Kostenlos",
+            "description": "Alle Rechner sind völlig kostenlos. Keine versteckten Gebühren, keine Premium-Funktionen zum Freischalten."
+        },
+        "noSignup": {
+            "title": "Keine Anmeldung erforderlich",
+            "description": "Beginnen Sie sofort mit dem Rechnen. Wir fragen nicht nach Ihrer E-Mail oder persönlichen Daten."
+        },
+        "privacy": {
+            "title": "Datenschutz zuerst",
+            "description": "Alle Berechnungen erfolgen in Ihrem Browser. Ihre Finanzdaten verlassen niemals Ihr Gerät."
+        },
+        "mobile": {
+            "title": "Mobilfreundlich",
+            "description": "Nutzen Sie unsere Rechner auf jedem Gerät - Handy, Tablet oder Desktop-Computer."
+        }
+    },
+    "footer": {
+        "copyright": "© 2026 FinCalc. Alle Rechte vorbehalten.",
+        "privacy": "Datenschutzrichtlinie",
+        "terms": "Nutzungsbedingungen",
+        "disclaimer": "Haftungsausschluss: Diese Rechner dienen nur zu Informationszwecken. Konsultieren Sie einen qualifizierten Finanzberater für persönliche Beratung.",
+        "sources": "Datenquellen"
+    },
+    "blog": {
+        "title": "Finanzplanungs-Blog",
+        "subtitle": "Expertenratgeber, praktische Tipps und umsetzbare Ratschläge für klügere finanzielle Entscheidungen.",
+        "latestArticles": "Neueste Artikel",
+        "readMore": "Mehr lesen",
+        "minRead": "Min. Lesezeit",
+        "relatedArticles": "Verwandte Artikel"
+    },
+    "sources": {
+        "title": "Datenquellen & Referenzen",
+        "lastUpdated": "Zuletzt aktualisiert: {date}"
+    },
+    "accessibility": {
+        "skipToContent": "Zum Hauptinhalt springen",
+        "openMenu": "Menü öffnen",
+        "closeMenu": "Menü schließen",
+        "toggleTheme": "Design wechseln",
+        "selectLanguage": "Sprache auswählen"
+    }
+}

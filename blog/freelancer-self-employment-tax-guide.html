@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>Freelancer's Guide to Self-Employment Taxes | FinCalc</title>
     <meta name="description" content="Complete guide to self-employment taxes for freelancers. Learn about quarterly payments, deductions, and how to calculate your tax liability as a contractor.">
     <meta name="keywords" content="self employment tax calculator, freelancer taxes, quarterly tax payments, 1099 taxes, independent contractor taxes">
@@ -33,35 +48,115 @@
         gtag('config', 'G-QFTQMV9QP7');
     </script>
 
+    <!-- Structured Data - Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Freelancer's Guide to Self-Employment Taxes",
         "description": "Complete guide to self-employment taxes for freelancers and independent contractors.",
-        "author": {"@type": "Organization", "name": "FinCalc"},
-        "publisher": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc"},
+        "image": "https://financecalc.cc/images/freelancer-self-employment-tax.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
         "datePublished": "2025-01-10",
-        "dateModified": "2025-01-10"
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/freelancer-self-employment-tax-guide.html"
+        }
     }
     </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the self-employment tax rate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The self-employment tax rate is 15.3%, which consists of 12.4% for Social Security and 2.9% for Medicare. This is double what employees pay because freelancers must cover both the employee and employer portions. The tax is calculated on 92.35% of your net self-employment income."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When are quarterly estimated tax payments due?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 2026, quarterly estimated tax payments are due: Q1 (Jan-Mar) on April 15, Q2 (Apr-May) on June 16, Q3 (Jun-Aug) on September 15, and Q4 (Sep-Dec) on January 15, 2027. Missing these deadlines can result in penalties and interest charges."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What deductions can freelancers claim?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freelancers can deduct business expenses including home office ($5/sq ft up to $1,500), health insurance premiums (100% deductible), retirement contributions (SEP IRA up to $70,000), equipment and software, professional development, business travel, and marketing costs. The QBI deduction also allows up to 20% off qualified business income."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much should freelancers set aside for taxes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freelancers should set aside 25-30% of their income for taxes. This covers both self-employment tax (15.3%) and federal income tax (10-37% depending on bracket). To avoid penalties, pay at least 100% of last year's tax liability (110% if income over $150,000) or 90% of current year's tax."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What retirement accounts are available for freelancers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freelancers have several retirement options: Solo 401(k) allows up to $70,000 in 2026 contributions with both employee and employer portions. SEP IRA allows up to 25% of net self-employment income (max $70,000). SIMPLE IRA allows $16,500 plus 3% match. All reduce taxable income."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="/#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
                 <li><a href="/#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="article-page">
+    <main id="main-content" class="article-page">
         <div class="article-container">
             <nav class="breadcrumb">
                 <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Freelancer Tax Guide</span>
@@ -71,7 +166,7 @@
                 <header class="article-header">
                     <div class="article-meta">
                         <span class="article-category">Taxes</span>
-                        <span>January 10, 2025</span>
+                        <span>January 10, 2026</span>
                         <span>9 min read</span>
                     </div>
                     <h1>Freelancer's Guide to Self-Employment Taxes</h1>
@@ -151,7 +246,7 @@
                     <h2>Quarterly Estimated Tax Payments</h2>
                     <p>Unlike employees who have taxes withheld from each paycheck, freelancers must pay estimated taxes quarterly.</p>
 
-                    <h3>2025 Quarterly Due Dates</h3>
+                    <h3>2026 Quarterly Due Dates</h3>
                     <table>
                         <tr>
                             <th>Quarter</th>
@@ -161,22 +256,22 @@
                         <tr>
                             <td>Q1</td>
                             <td>Jan 1 - Mar 31</td>
-                            <td>April 15, 2025</td>
+                            <td>April 15, 2026</td>
                         </tr>
                         <tr>
                             <td>Q2</td>
                             <td>Apr 1 - May 31</td>
-                            <td>June 16, 2025</td>
+                            <td>June 16, 2026</td>
                         </tr>
                         <tr>
                             <td>Q3</td>
                             <td>Jun 1 - Aug 31</td>
-                            <td>September 15, 2025</td>
+                            <td>September 15, 2026</td>
                         </tr>
                         <tr>
                             <td>Q4</td>
                             <td>Sep 1 - Dec 31</td>
-                            <td>January 15, 2026</td>
+                            <td>January 15, 2027</td>
                         </tr>
                     </table>
 
@@ -214,8 +309,8 @@
 
                     <h3>Retirement Contributions</h3>
                     <ul>
-                        <li><strong>SEP IRA:</strong> Up to 25% of net SE income (max $69,000 in 2025)</li>
-                        <li><strong>Solo 401(k):</strong> Up to $69,000 total (2025)</li>
+                        <li><strong>SEP IRA:</strong> Up to 25% of net SE income (max $70,000 in 2026)</li>
+                        <li><strong>Solo 401(k):</strong> Up to $70,000 total (2026)</li>
                         <li><strong>Traditional IRA:</strong> Up to $7,000 ($8,000 if 50+)</li>
                     </ul>
 
@@ -362,10 +457,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="/terms.html" style="color: #94a3b8;">Terms of Service</a></p>
             <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified tax professional for personalized advice.</p>
         </div>
     </footer>
+
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

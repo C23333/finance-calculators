@@ -1,0 +1,395 @@
+{
+    "site": {
+        "name": "FinCalc",
+        "tagline": "Calculadoras Financieras Gratuitas",
+        "description": "Toma decisiones financieras más inteligentes con nuestras calculadoras fáciles de usar. Sin registro, 100% gratis."
+    },
+    "nav": {
+        "home": "Inicio",
+        "calculators": "Calculadoras",
+        "blog": "Blog",
+        "about": "Acerca de"
+    },
+    "hero": {
+        "title": "Calculadoras Financieras Gratuitas",
+        "subtitle": "Toma decisiones financieras más inteligentes con nuestras calculadoras fáciles de usar. Sin registro, 100% gratis."
+    },
+    "categories": {
+        "homeMortgage": "Hogar e Hipoteca",
+        "loansDebt": "Préstamos y Deudas",
+        "savingsInvestment": "Ahorro e Inversión",
+        "retirement": "Planificación de Jubilación",
+        "taxIncome": "Impuestos e Ingresos"
+    },
+    "calculators": {
+        "mortgage": {
+            "title": "Calculadora de Hipoteca",
+            "description": "Calcula pagos mensuales, interés total y ve el calendario de amortización.",
+            "homePrice": "Precio de la Vivienda",
+            "downPayment": "Pago Inicial",
+            "interestRate": "Tasa de Interés (Anual)",
+            "loanTerm": "Plazo del Préstamo",
+            "calculate": "Calcular Pago",
+            "monthlyPayment": "Pago Mensual",
+            "principalInterest": "Capital e Interés",
+            "loanAmount": "Monto del Préstamo",
+            "totalInterest": "Interés Total",
+            "totalCost": "Costo Total",
+            "payoffDate": "Fecha de Liquidación",
+            "amortization": "Calendario de Amortización (Anual)",
+            "year": "Año",
+            "principal": "Capital",
+            "interest": "Interés",
+            "balance": "Saldo"
+        },
+        "compoundInterest": {
+            "title": "Calculadora de Interés Compuesto",
+            "description": "Ve cómo crecen tus inversiones con el interés compuesto.",
+            "initialAmount": "Monto Inicial",
+            "monthlyContribution": "Aportación Mensual",
+            "annualRate": "Tasa de Interés Anual",
+            "years": "Período de Inversión (Años)",
+            "compoundFrequency": "Frecuencia de Capitalización",
+            "monthly": "Mensual",
+            "quarterly": "Trimestral",
+            "annually": "Anual",
+            "futureValue": "Valor Futuro",
+            "totalContributions": "Aportaciones Totales",
+            "totalInterest": "Interés Total Ganado"
+        },
+        "retirement": {
+            "title": "Calculadora de Jubilación",
+            "description": "Planifica tus ahorros para la jubilación y ve si vas por buen camino.",
+            "currentAge": "Edad Actual",
+            "retirementAge": "Edad de Jubilación",
+            "currentSavings": "Ahorros Actuales",
+            "monthlyContribution": "Aportación Mensual",
+            "expectedReturn": "Rendimiento Anual Esperado",
+            "retirementIncome": "Ingreso Mensual Deseado",
+            "projectedSavings": "Ahorros Proyectados al Jubilarse",
+            "monthlyIncome": "Ingreso Mensual Estimado",
+            "savingsGap": "Déficit de Ahorro"
+        },
+        "loan": {
+            "title": "Calculadora de Pago de Préstamos",
+            "description": "Ve cómo los pagos extra pueden ayudarte a pagar préstamos más rápido.",
+            "loanBalance": "Saldo Actual del Préstamo",
+            "interestRate": "Tasa de Interés",
+            "monthlyPayment": "Pago Mensual",
+            "extraPayment": "Pago Extra Mensual",
+            "payoffTime": "Tiempo para Liquidar",
+            "interestSaved": "Interés Ahorrado",
+            "newPayoffDate": "Nueva Fecha de Liquidación"
+        },
+        "debtPayoff": {
+            "title": "Planificador de Pago de Deudas",
+            "description": "Crea un plan de pago usando el método bola de nieve o avalancha.",
+            "debtName": "Nombre de la Deuda",
+            "balance": "Saldo",
+            "interestRate": "Tasa de Interés",
+            "minPayment": "Pago Mínimo",
+            "addDebt": "Agregar Deuda",
+            "extraPayment": "Pago Extra Mensual",
+            "method": "Método de Pago",
+            "snowball": "Bola de Nieve (Saldo Menor Primero)",
+            "avalanche": "Avalancha (Mayor Interés Primero)",
+            "totalDebt": "Deuda Total",
+            "debtFreeDate": "Fecha Libre de Deudas",
+            "totalInterest": "Interés Total"
+        },
+        "autoLoan": {
+            "title": "Calculadora de Préstamo de Auto",
+            "description": "Calcula pagos de préstamo de auto y costo total de financiamiento.",
+            "vehiclePrice": "Precio del Vehículo",
+            "downPayment": "Pago Inicial",
+            "tradeInValue": "Valor de Intercambio",
+            "interestRate": "Tasa de Interés",
+            "loanTerm": "Plazo del Préstamo",
+            "monthlyPayment": "Pago Mensual",
+            "totalInterest": "Interés Total",
+            "totalCost": "Costo Total"
+        },
+        "studentLoan": {
+            "title": "Calculadora de Préstamos Estudiantiles",
+            "description": "Planifica el pago de tus préstamos estudiantiles y explora opciones de condonación.",
+            "loanBalance": "Saldo Total del Préstamo",
+            "interestRate": "Tasa de Interés Promedio",
+            "repaymentPlan": "Plan de Pago",
+            "standard": "Estándar (10 años)",
+            "extended": "Extendido (25 años)",
+            "graduated": "Graduado",
+            "incomedriven": "Basado en Ingresos",
+            "monthlyPayment": "Pago Mensual",
+            "totalPaid": "Monto Total Pagado",
+            "totalInterest": "Interés Total"
+        },
+        "401k": {
+            "title": "Calculadora 401(k)",
+            "description": "Maximiza tus contribuciones al 401(k) y el aporte del empleador.",
+            "currentAge": "Edad Actual",
+            "retirementAge": "Edad de Jubilación",
+            "annualSalary": "Salario Anual",
+            "contributionPercent": "Tu Contribución (%)",
+            "employerMatch": "Aporte del Empleador (%)",
+            "matchLimit": "Límite de Aporte (%)",
+            "currentBalance": "Saldo Actual del 401(k)",
+            "expectedReturn": "Rendimiento Anual Esperado",
+            "projectedBalance": "Saldo Proyectado al Jubilarse",
+            "yourContributions": "Tus Contribuciones Totales",
+            "employerContributions": "Contribuciones del Empleador",
+            "investmentGrowth": "Crecimiento de la Inversión"
+        },
+        "savingsGoal": {
+            "title": "Calculadora de Meta de Ahorro",
+            "description": "Descubre cuánto ahorrar mensualmente para alcanzar tu meta.",
+            "goalAmount": "Monto de la Meta",
+            "currentSavings": "Ahorros Actuales",
+            "timeframe": "Plazo (Meses)",
+            "interestRate": "Tasa de Interés (APY)",
+            "monthlyNeeded": "Ahorro Mensual Necesario",
+            "totalContributions": "Contribuciones Totales",
+            "interestEarned": "Interés Ganado"
+        },
+        "emergencyFund": {
+            "title": "Calculadora de Fondo de Emergencia",
+            "description": "Calcula cuánto necesitas en tu fondo de emergencia.",
+            "monthlyExpenses": "Gastos Mensuales",
+            "monthsCoverage": "Meses de Cobertura",
+            "currentSavings": "Ahorros de Emergencia Actuales",
+            "targetAmount": "Fondo de Emergencia Objetivo",
+            "amountNeeded": "Monto Aún Necesario",
+            "monthsToGoal": "Meses para Alcanzar la Meta"
+        },
+        "inflation": {
+            "title": "Calculadora de Inflación",
+            "description": "Ve cómo la inflación afecta tu poder adquisitivo con el tiempo.",
+            "currentAmount": "Monto Actual",
+            "inflationRate": "Tasa de Inflación Anual",
+            "years": "Número de Años",
+            "futureValue": "Valor Futuro",
+            "purchasingPower": "Poder Adquisitivo",
+            "totalInflation": "Inflación Total"
+        },
+        "salary": {
+            "title": "Calculadora de Salario",
+            "description": "Convierte entre salario por hora, semanal, mensual y anual.",
+            "amount": "Monto",
+            "period": "Período de Pago",
+            "hourly": "Por Hora",
+            "weekly": "Semanal",
+            "biweekly": "Quincenal",
+            "monthly": "Mensual",
+            "annual": "Anual",
+            "hoursPerWeek": "Horas por Semana",
+            "weeksPerYear": "Semanas por Año"
+        },
+        "takeHomePay": {
+            "title": "Calculadora de Salario Neto",
+            "description": "Calcula tu pago neto después de impuestos y deducciones.",
+            "grossSalary": "Salario Bruto Anual",
+            "payFrequency": "Frecuencia de Pago",
+            "filingStatus": "Estado Civil",
+            "single": "Soltero",
+            "married": "Casado Declarando Juntos",
+            "head": "Jefe de Familia",
+            "state": "Estado",
+            "deductions": "Deducciones Pre-Impuesto",
+            "netPay": "Pago Neto",
+            "federalTax": "Impuesto Federal",
+            "stateTax": "Impuesto Estatal",
+            "socialSecurity": "Seguro Social",
+            "medicare": "Medicare"
+        },
+        "selfEmploymentTax": {
+            "title": "Calculadora de Impuesto de Trabajo Independiente",
+            "description": "Estima impuestos de trabajo independiente para freelancers y contratistas.",
+            "netEarnings": "Ganancias Netas de Trabajo Independiente",
+            "filingStatus": "Estado Civil",
+            "otherIncome": "Otros Ingresos (W-2, etc.)",
+            "seTax": "Impuesto de Trabajo Independiente",
+            "socialSecurity": "Seguro Social",
+            "medicare": "Medicare",
+            "deduction": "Deducción de Impuesto SE"
+        },
+        "refinance": {
+            "title": "Calculadora de Refinanciamiento",
+            "description": "Ve si refinanciar tu hipoteca podría ahorrarte dinero.",
+            "currentBalance": "Saldo Actual del Préstamo",
+            "currentRate": "Tasa de Interés Actual",
+            "currentPayment": "Pago Mensual Actual",
+            "remainingTerm": "Plazo Restante (Años)",
+            "newRate": "Nueva Tasa de Interés",
+            "newTerm": "Nuevo Plazo del Préstamo",
+            "closingCosts": "Costos de Cierre",
+            "newPayment": "Nuevo Pago Mensual",
+            "monthlySavings": "Ahorro Mensual",
+            "breakEven": "Punto de Equilibrio",
+            "lifetimeSavings": "Ahorro de por Vida"
+        },
+        "rentVsBuy": {
+            "title": "Calculadora Alquilar vs Comprar",
+            "description": "Compara los costos de alquilar versus comprar una casa.",
+            "homePrice": "Precio de la Casa",
+            "downPayment": "Pago Inicial",
+            "mortgageRate": "Tasa Hipotecaria",
+            "propertyTax": "Tasa de Impuesto a la Propiedad",
+            "monthlyRent": "Alquiler Mensual",
+            "rentIncrease": "Aumento Anual del Alquiler",
+            "yearsToStay": "Años que Planeas Quedarte",
+            "buyingCost": "Costo Total de Comprar",
+            "rentingCost": "Costo Total de Alquilar",
+            "recommendation": "Recomendación"
+        },
+        "homeAffordability": {
+            "title": "Calculadora de Asequibilidad de Vivienda",
+            "description": "Descubre cuánta casa puedes pagar según tus ingresos.",
+            "annualIncome": "Ingreso Anual del Hogar",
+            "monthlyDebts": "Pagos Mensuales de Deuda",
+            "downPayment": "Pago Inicial",
+            "interestRate": "Tasa de Interés",
+            "loanTerm": "Plazo del Préstamo",
+            "propertyTax": "Tasa de Impuesto a la Propiedad",
+            "insurance": "Seguro Anual",
+            "maxHomePrice": "Precio Máximo de Casa",
+            "maxLoanAmount": "Monto Máximo del Préstamo",
+            "monthlyPayment": "Pago Mensual Estimado"
+        },
+        "socialSecurity": {
+            "title": "Estimador de Seguro Social",
+            "description": "Estima tus beneficios de Seguro Social a diferentes edades.",
+            "birthYear": "Año de Nacimiento",
+            "currentEarnings": "Ingresos Anuales Actuales",
+            "retirementAge": "Edad de Jubilación Planeada",
+            "earningsHistory": "Años de Historial Laboral",
+            "estimatedBenefit": "Beneficio Mensual Estimado",
+            "fullRetirementAge": "Edad de Jubilación Completa",
+            "earlyBenefit": "Beneficio a los 62",
+            "delayedBenefit": "Beneficio a los 70"
+        },
+        "rothVsTraditional": {
+            "title": "Calculadora Roth vs IRA Tradicional",
+            "description": "Compara Roth e IRA Tradicional para encontrar la mejor opción.",
+            "annualContribution": "Contribución Anual",
+            "currentAge": "Edad Actual",
+            "retirementAge": "Edad de Jubilación",
+            "currentTaxRate": "Tasa de Impuesto Actual",
+            "retirementTaxRate": "Tasa de Impuesto Esperada en Jubilación",
+            "expectedReturn": "Rendimiento Anual Esperado",
+            "rothValue": "Valor Roth IRA al Jubilarse",
+            "traditionalValue": "Valor IRA Tradicional al Jubilarse",
+            "rothAfterTax": "Valor Roth Después de Impuestos",
+            "traditionalAfterTax": "Valor Tradicional Después de Impuestos"
+        },
+        "investmentReturn": {
+            "title": "Calculadora de Retorno de Inversión",
+            "description": "Calcula el ROI y compara diferentes escenarios de inversión.",
+            "initialInvestment": "Inversión Inicial",
+            "finalValue": "Valor Final",
+            "investmentPeriod": "Período de Inversión (Años)",
+            "totalReturn": "Retorno Total",
+            "annualizedReturn": "Retorno Anualizado",
+            "roi": "Retorno de Inversión (ROI)"
+        }
+    },
+    "results": {
+        "title": "Resultados",
+        "summary": "Resumen",
+        "details": "Detalles",
+        "chart": "Gráfico",
+        "table": "Tabla",
+        "download": "Descargar Resultados",
+        "share": "Compartir",
+        "print": "Imprimir"
+    },
+    "common": {
+        "calculate": "Calcular",
+        "reset": "Restablecer",
+        "clear": "Limpiar",
+        "save": "Guardar",
+        "loading": "Cargando...",
+        "error": "Ocurrió un error",
+        "required": "Requerido",
+        "optional": "Opcional",
+        "years": "años",
+        "months": "meses",
+        "days": "días",
+        "perMonth": "/mes",
+        "perYear": "/año",
+        "total": "Total",
+        "average": "Promedio",
+        "minimum": "Mínimo",
+        "maximum": "Máximo",
+        "yes": "Sí",
+        "no": "No",
+        "or": "o",
+        "and": "y"
+    },
+    "validation": {
+        "required": "Este campo es requerido",
+        "invalidNumber": "Por favor ingresa un número válido",
+        "minValue": "El valor debe ser al menos {min}",
+        "maxValue": "El valor debe ser como máximo {max}",
+        "invalidEmail": "Por favor ingresa un correo electrónico válido"
+    },
+    "about": {
+        "title": "¿Por Qué Usar Nuestras Calculadoras?",
+        "free": {
+            "title": "100% Gratis",
+            "description": "Todas las calculadoras son completamente gratuitas. Sin tarifas ocultas, sin funciones premium que desbloquear."
+        },
+        "noSignup": {
+            "title": "Sin Registro",
+            "description": "Comienza a calcular inmediatamente. No pedimos tu correo ni información personal."
+        },
+        "privacy": {
+            "title": "Privacidad Primero",
+            "description": "Todos los cálculos ocurren en tu navegador. Tus datos financieros nunca salen de tu dispositivo."
+        },
+        "mobile": {
+            "title": "Compatible con Móviles",
+            "description": "Usa nuestras calculadoras en cualquier dispositivo - teléfono, tablet o computadora."
+        }
+    },
+    "footer": {
+        "copyright": "© 2026 FinCalc. Todos los derechos reservados.",
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Servicio",
+        "disclaimer": "Aviso: Estas calculadoras son solo para fines informativos. Consulta a un asesor financiero calificado para consejos personalizados.",
+        "sources": "Fuentes de Datos"
+    },
+    "blog": {
+        "title": "Blog de Planificación Financiera",
+        "subtitle": "Guías expertas, consejos prácticos y asesoramiento accionable para ayudarte a tomar decisiones financieras más inteligentes.",
+        "latestArticles": "Últimos Artículos",
+        "readMore": "Leer Más",
+        "minRead": "min de lectura",
+        "relatedArticles": "Artículos Relacionados",
+        "categories": {
+            "homeBuying": "Compra de Casa",
+            "debtPayoff": "Pago de Deudas",
+            "retirement": "Jubilación",
+            "mortgages": "Hipotecas",
+            "taxes": "Impuestos",
+            "savings": "Ahorro",
+            "investing": "Inversiones"
+        }
+    },
+    "sources": {
+        "title": "Fuentes de Datos y Referencias",
+        "irs": "Servicio de Impuestos Internos (IRS)",
+        "ssa": "Administración del Seguro Social",
+        "bls": "Oficina de Estadísticas Laborales",
+        "federalReserve": "Reserva Federal",
+        "treasury": "Departamento del Tesoro de EE.UU.",
+        "lastUpdated": "Última actualización: {date}"
+    },
+    "accessibility": {
+        "skipToContent": "Saltar al contenido principal",
+        "openMenu": "Abrir menú",
+        "closeMenu": "Cerrar menú",
+        "toggleTheme": "Cambiar tema",
+        "selectLanguage": "Seleccionar idioma",
+        "expandSection": "Expandir sección",
+        "collapseSection": "Contraer sección"
+    }
+}

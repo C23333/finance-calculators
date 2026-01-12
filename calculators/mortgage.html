@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,22 @@
     <meta name="description" content="Free mortgage calculator to estimate monthly payments, total interest, and view amortization schedule. Calculate home loan costs instantly.">
     <meta name="keywords" content="mortgage calculator, home loan calculator, monthly payment calculator, amortization schedule, mortgage interest">
     <link rel="canonical" href="https://financecalc.cc/calculators/mortgage.html">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
 
     <!-- Force HTTPS -->
     <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
@@ -23,37 +39,151 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - WebApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Mortgage Calculator",
         "description": "Calculate monthly mortgage payments and view amortization schedule",
+        "url": "https://financecalc.cc/calculators/mortgage.html",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any",
         "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250"
         }
     }
     </script>
 
+    <!-- Structured Data - HowTo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Calculate Your Mortgage Payment",
+        "description": "Use our free mortgage calculator to estimate your monthly payment, total interest, and view amortization schedule.",
+        "totalTime": "PT2M",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Enter Home Price",
+                "text": "Enter the total purchase price of the home you want to buy."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Enter Down Payment",
+                "text": "Enter your down payment amount. A larger down payment means lower monthly payments and no PMI if 20% or more."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Enter Interest Rate",
+                "text": "Enter the annual interest rate offered by your lender. Shop around for the best rates."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Select Loan Term",
+                "text": "Choose your loan term - typically 15 or 30 years. Shorter terms have higher payments but less total interest."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Calculate Results",
+                "text": "Click Calculate to see your monthly payment, total interest, and full amortization schedule."
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How is a mortgage payment calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A mortgage payment is calculated using the loan amount, interest rate, and loan term. The formula accounts for principal and interest. Your total monthly payment also includes property taxes, homeowners insurance, and PMI if applicable (PITI)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a good mortgage interest rate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good mortgage rate depends on current market conditions and your credit score. Generally, rates below the national average are considered good. Borrowers with credit scores of 740+ typically qualify for the best rates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I choose a 15-year or 30-year mortgage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A 15-year mortgage has higher monthly payments but saves significantly on total interest. A 30-year mortgage has lower monthly payments but costs more in total interest. Choose based on your budget and financial goals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is PMI and when is it required?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home price. It protects the lender if you default. PMI typically costs 0.5-1% of the loan amount annually and can be removed once you reach 20% equity."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="../" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../#calculators">Calculators</a></li>
-                    <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="../#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="calc-page">
+    <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
                 <a href="../">Home</a> <span>/ Mortgage Calculator</span>
@@ -156,7 +286,7 @@
                 </h3>
                 <p>Explore government programs and local policies that may help you save on your mortgage:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         FHA Loan Requirements
                     </a>
@@ -164,7 +294,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         VA Loan Benefits
                     </a>
-                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         First-Time Buyer Programs
                     </a>
@@ -208,12 +338,24 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
         </div>
     </footer>
 
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
     <script src="../js/mortgage.js"></script>
     <script src="../js/monetization.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

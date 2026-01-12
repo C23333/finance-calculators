@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>First-Time Homebuyer's Complete Mortgage Guide | FinCalc</title>
     <meta name="description" content="Everything first-time homebuyers need to know about mortgages. From pre-approval to closing, learn the process, requirements, and tips to get the best rate.">
     <meta name="keywords" content="first time homebuyer mortgage, mortgage guide, how to get a mortgage, first home loan, mortgage pre-approval">
@@ -33,35 +48,115 @@
         gtag('config', 'G-QFTQMV9QP7');
     </script>
 
+    <!-- Structured Data - Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "First-Time Homebuyer's Complete Mortgage Guide",
         "description": "Everything first-time homebuyers need to know about mortgages, from pre-approval to closing.",
-        "author": {"@type": "Organization", "name": "FinCalc"},
-        "publisher": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc"},
+        "image": "https://financecalc.cc/images/first-time-homebuyer-mortgage.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
         "datePublished": "2025-01-10",
-        "dateModified": "2025-01-10"
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/first-time-homebuyer-mortgage-guide.html"
+        }
     }
     </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What types of mortgages are available for first-time homebuyers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "First-time homebuyers can choose from several mortgage types: Conventional loans (3-20% down, best for good credit), FHA loans (3.5% down with 580 credit score), VA loans (0% down for veterans), and USDA loans (0% down for rural areas). Each has different credit requirements and down payment options."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much down payment do I need for my first home?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Down payment requirements vary by loan type: Conventional loans require 3-20% (PMI required under 20%), FHA loans require 3.5% minimum, VA loans require 0% for eligible veterans, and USDA loans require 0% for rural areas. Many states also offer down payment assistance programs for first-time buyers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between pre-qualification and pre-approval?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pre-qualification is a quick estimate based on self-reported information with a soft credit check. Pre-approval is a verified loan amount based on full document review and a hard credit check. Pre-approval is much stronger when making offers because sellers know you're a serious, qualified buyer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What credit score do I need to buy a house?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Minimum credit scores vary by loan type: Conventional loans require 620 (740+ for best rates), FHA loans require 580 for 3.5% down (500-579 requires 10% down), VA loans have no official minimum but lenders typically want 620+, and USDA loans require 640. Higher scores get better interest rates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are closing costs and how much should I expect to pay?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Closing costs typically range from 2-5% of the purchase price and include loan origination fees (0.5-1%), appraisal ($300-500), title insurance ($500-1,500), home inspection ($300-500), escrow deposits (2-3 months of taxes/insurance), and recording fees ($50-250). Some costs can be negotiated or rolled into the loan."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="/#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
                 <li><a href="/#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="article-page">
+    <main id="main-content" class="article-page">
         <div class="article-container">
             <nav class="breadcrumb">
                 <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>First-Time Homebuyer Guide</span>
@@ -71,7 +166,7 @@
                 <header class="article-header">
                     <div class="article-meta">
                         <span class="article-category">Mortgages</span>
-                        <span>January 10, 2025</span>
+                        <span>January 10, 2026</span>
                         <span>12 min read</span>
                     </div>
                     <h1>First-Time Homebuyer's Complete Mortgage Guide</h1>
@@ -370,10 +465,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="/terms.html" style="color: #94a3b8;">Terms of Service</a></p>
             <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
         </div>
     </footer>
+
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

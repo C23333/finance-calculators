@@ -1,0 +1,395 @@
+{
+    "site": {
+        "name": "FinCalc",
+        "tagline": "免费财务计算器",
+        "description": "使用我们简单易用的计算器做出更明智的财务决策。无需注册，100%免费。"
+    },
+    "nav": {
+        "home": "首页",
+        "calculators": "计算器",
+        "blog": "博客",
+        "about": "关于"
+    },
+    "hero": {
+        "title": "免费财务计算器",
+        "subtitle": "使用我们简单易用的计算器做出更明智的财务决策。无需注册，100%免费。"
+    },
+    "categories": {
+        "homeMortgage": "房屋与抵押贷款",
+        "loansDebt": "贷款与债务",
+        "savingsInvestment": "储蓄与投资",
+        "retirement": "退休规划",
+        "taxIncome": "税务与收入"
+    },
+    "calculators": {
+        "mortgage": {
+            "title": "房贷计算器",
+            "description": "计算月供、总利息，查看还款计划表。",
+            "homePrice": "房屋价格",
+            "downPayment": "首付",
+            "interestRate": "年利率",
+            "loanTerm": "贷款期限",
+            "calculate": "计算月供",
+            "monthlyPayment": "月供",
+            "principalInterest": "本金与利息",
+            "loanAmount": "贷款金额",
+            "totalInterest": "总利息",
+            "totalCost": "总成本",
+            "payoffDate": "还清日期",
+            "amortization": "还款计划表（按年）",
+            "year": "年份",
+            "principal": "本金",
+            "interest": "利息",
+            "balance": "余额"
+        },
+        "compoundInterest": {
+            "title": "复利计算器",
+            "description": "查看您的投资如何随时间通过复利增长。",
+            "initialAmount": "初始金额",
+            "monthlyContribution": "每月投入",
+            "annualRate": "年利率",
+            "years": "投资期限（年）",
+            "compoundFrequency": "复利频率",
+            "monthly": "每月",
+            "quarterly": "每季度",
+            "annually": "每年",
+            "futureValue": "未来价值",
+            "totalContributions": "总投入",
+            "totalInterest": "总利息收益"
+        },
+        "retirement": {
+            "title": "退休计算器",
+            "description": "规划您的退休储蓄，看看是否走在正轨上。",
+            "currentAge": "当前年龄",
+            "retirementAge": "退休年龄",
+            "currentSavings": "当前储蓄",
+            "monthlyContribution": "每月投入",
+            "expectedReturn": "预期年回报率",
+            "retirementIncome": "期望月收入",
+            "projectedSavings": "退休时预计储蓄",
+            "monthlyIncome": "预计月收入",
+            "savingsGap": "储蓄缺口"
+        },
+        "loan": {
+            "title": "贷款还款计算器",
+            "description": "查看额外还款如何帮助您更快还清贷款。",
+            "loanBalance": "当前贷款余额",
+            "interestRate": "利率",
+            "monthlyPayment": "月供",
+            "extraPayment": "每月额外还款",
+            "payoffTime": "还清时间",
+            "interestSaved": "节省利息",
+            "newPayoffDate": "新还清日期"
+        },
+        "debtPayoff": {
+            "title": "债务还款规划器",
+            "description": "使用雪球法或雪崩法创建债务还款计划。",
+            "debtName": "债务名称",
+            "balance": "余额",
+            "interestRate": "利率",
+            "minPayment": "最低还款",
+            "addDebt": "添加债务",
+            "extraPayment": "每月额外还款",
+            "method": "还款方法",
+            "snowball": "雪球法（先还最小余额）",
+            "avalanche": "雪崩法（先还最高利率）",
+            "totalDebt": "总债务",
+            "debtFreeDate": "无债日期",
+            "totalInterest": "总利息"
+        },
+        "autoLoan": {
+            "title": "汽车贷款计算器",
+            "description": "计算汽车贷款月供和融资总成本。",
+            "vehiclePrice": "车辆价格",
+            "downPayment": "首付",
+            "tradeInValue": "旧车折价",
+            "interestRate": "利率",
+            "loanTerm": "贷款期限",
+            "monthlyPayment": "月供",
+            "totalInterest": "总利息",
+            "totalCost": "总成本"
+        },
+        "studentLoan": {
+            "title": "学生贷款计算器",
+            "description": "规划学生贷款还款并探索减免选项。",
+            "loanBalance": "贷款总余额",
+            "interestRate": "平均利率",
+            "repaymentPlan": "还款计划",
+            "standard": "标准（10年）",
+            "extended": "延长（25年）",
+            "graduated": "递增式",
+            "incomedriven": "收入驱动型",
+            "monthlyPayment": "月供",
+            "totalPaid": "总还款额",
+            "totalInterest": "总利息"
+        },
+        "401k": {
+            "title": "401(k)计算器",
+            "description": "最大化您的401(k)供款和雇主匹配。",
+            "currentAge": "当前年龄",
+            "retirementAge": "退休年龄",
+            "annualSalary": "年薪",
+            "contributionPercent": "您的供款比例（%）",
+            "employerMatch": "雇主匹配（%）",
+            "matchLimit": "匹配上限（%）",
+            "currentBalance": "当前401(k)余额",
+            "expectedReturn": "预期年回报率",
+            "projectedBalance": "退休时预计余额",
+            "yourContributions": "您的总供款",
+            "employerContributions": "雇主供款",
+            "investmentGrowth": "投资增长"
+        },
+        "savingsGoal": {
+            "title": "储蓄目标计算器",
+            "description": "了解每月需要储蓄多少才能达到目标。",
+            "goalAmount": "目标金额",
+            "currentSavings": "当前储蓄",
+            "timeframe": "时间范围（月）",
+            "interestRate": "利率（APY）",
+            "monthlyNeeded": "每月需储蓄",
+            "totalContributions": "总投入",
+            "interestEarned": "利息收益"
+        },
+        "emergencyFund": {
+            "title": "应急基金计算器",
+            "description": "计算您的应急基金需要多少。",
+            "monthlyExpenses": "月支出",
+            "monthsCoverage": "覆盖月数",
+            "currentSavings": "当前应急储蓄",
+            "targetAmount": "目标应急基金",
+            "amountNeeded": "还需金额",
+            "monthsToGoal": "达到目标月数"
+        },
+        "inflation": {
+            "title": "通胀计算器",
+            "description": "查看通胀如何随时间影响您的购买力。",
+            "currentAmount": "当前金额",
+            "inflationRate": "年通胀率",
+            "years": "年数",
+            "futureValue": "未来价值",
+            "purchasingPower": "购买力",
+            "totalInflation": "总通胀"
+        },
+        "salary": {
+            "title": "工资计算器",
+            "description": "在时薪、周薪、月薪和年薪之间转换。",
+            "amount": "金额",
+            "period": "支付周期",
+            "hourly": "时薪",
+            "weekly": "周薪",
+            "biweekly": "双周薪",
+            "monthly": "月薪",
+            "annual": "年薪",
+            "hoursPerWeek": "每周工时",
+            "weeksPerYear": "每年周数"
+        },
+        "takeHomePay": {
+            "title": "税后工资计算器",
+            "description": "计算扣除税款和其他扣款后的净工资。",
+            "grossSalary": "税前年薪",
+            "payFrequency": "支付频率",
+            "filingStatus": "报税身份",
+            "single": "单身",
+            "married": "已婚联合申报",
+            "head": "户主",
+            "state": "州",
+            "deductions": "税前扣除",
+            "netPay": "净工资",
+            "federalTax": "联邦税",
+            "stateTax": "州税",
+            "socialSecurity": "社会保障",
+            "medicare": "医疗保险"
+        },
+        "selfEmploymentTax": {
+            "title": "自雇税计算器",
+            "description": "为自由职业者和承包商估算自雇税。",
+            "netEarnings": "自雇净收入",
+            "filingStatus": "报税身份",
+            "otherIncome": "其他收入（W-2等）",
+            "seTax": "自雇税",
+            "socialSecurity": "社会保障",
+            "medicare": "医疗保险",
+            "deduction": "自雇税扣除"
+        },
+        "refinance": {
+            "title": "再融资计算器",
+            "description": "看看再融资是否能为您省钱。",
+            "currentBalance": "当前贷款余额",
+            "currentRate": "当前利率",
+            "currentPayment": "当前月供",
+            "remainingTerm": "剩余期限（年）",
+            "newRate": "新利率",
+            "newTerm": "新贷款期限",
+            "closingCosts": "过户费用",
+            "newPayment": "新月供",
+            "monthlySavings": "每月节省",
+            "breakEven": "盈亏平衡点",
+            "lifetimeSavings": "终身节省"
+        },
+        "rentVsBuy": {
+            "title": "租房vs买房计算器",
+            "description": "比较租房和买房的成本。",
+            "homePrice": "房价",
+            "downPayment": "首付",
+            "mortgageRate": "房贷利率",
+            "propertyTax": "房产税率",
+            "monthlyRent": "月租金",
+            "rentIncrease": "年租金涨幅",
+            "yearsToStay": "计划居住年数",
+            "buyingCost": "买房总成本",
+            "rentingCost": "租房总成本",
+            "recommendation": "建议"
+        },
+        "homeAffordability": {
+            "title": "购房能力计算器",
+            "description": "根据您的收入了解能负担多少房价。",
+            "annualIncome": "家庭年收入",
+            "monthlyDebts": "每月债务还款",
+            "downPayment": "首付",
+            "interestRate": "利率",
+            "loanTerm": "贷款期限",
+            "propertyTax": "房产税率",
+            "insurance": "年保险费",
+            "maxHomePrice": "最高可负担房价",
+            "maxLoanAmount": "最高贷款额",
+            "monthlyPayment": "预计月供"
+        },
+        "socialSecurity": {
+            "title": "社会保障估算器",
+            "description": "估算不同年龄的社会保障福利。",
+            "birthYear": "出生年份",
+            "currentEarnings": "当前年收入",
+            "retirementAge": "计划退休年龄",
+            "earningsHistory": "工作年限",
+            "estimatedBenefit": "预计月福利",
+            "fullRetirementAge": "完全退休年龄",
+            "earlyBenefit": "62岁福利",
+            "delayedBenefit": "70岁福利"
+        },
+        "rothVsTraditional": {
+            "title": "Roth vs 传统IRA计算器",
+            "description": "比较Roth和传统IRA，找到最佳选择。",
+            "annualContribution": "年供款",
+            "currentAge": "当前年龄",
+            "retirementAge": "退休年龄",
+            "currentTaxRate": "当前税率",
+            "retirementTaxRate": "预期退休税率",
+            "expectedReturn": "预期年回报率",
+            "rothValue": "退休时Roth IRA价值",
+            "traditionalValue": "退休时传统IRA价值",
+            "rothAfterTax": "Roth税后价值",
+            "traditionalAfterTax": "传统税后价值"
+        },
+        "investmentReturn": {
+            "title": "投资回报计算器",
+            "description": "计算投资回报率并比较不同投资方案。",
+            "initialInvestment": "初始投资",
+            "finalValue": "最终价值",
+            "investmentPeriod": "投资期限（年）",
+            "totalReturn": "总回报",
+            "annualizedReturn": "年化回报",
+            "roi": "投资回报率（ROI）"
+        }
+    },
+    "results": {
+        "title": "结果",
+        "summary": "摘要",
+        "details": "详情",
+        "chart": "图表",
+        "table": "表格",
+        "download": "下载结果",
+        "share": "分享",
+        "print": "打印"
+    },
+    "common": {
+        "calculate": "计算",
+        "reset": "重置",
+        "clear": "清除",
+        "save": "保存",
+        "loading": "加载中...",
+        "error": "发生错误",
+        "required": "必填",
+        "optional": "可选",
+        "years": "年",
+        "months": "月",
+        "days": "天",
+        "perMonth": "/月",
+        "perYear": "/年",
+        "total": "总计",
+        "average": "平均",
+        "minimum": "最小",
+        "maximum": "最大",
+        "yes": "是",
+        "no": "否",
+        "or": "或",
+        "and": "和"
+    },
+    "validation": {
+        "required": "此字段为必填项",
+        "invalidNumber": "请输入有效数字",
+        "minValue": "值必须至少为 {min}",
+        "maxValue": "值最多为 {max}",
+        "invalidEmail": "请输入有效的电子邮件地址"
+    },
+    "about": {
+        "title": "为什么使用我们的计算器？",
+        "free": {
+            "title": "100%免费",
+            "description": "所有计算器完全免费。没有隐藏费用，没有需要解锁的高级功能。"
+        },
+        "noSignup": {
+            "title": "无需注册",
+            "description": "立即开始计算。我们不要求您的电子邮件或个人信息。"
+        },
+        "privacy": {
+            "title": "隐私优先",
+            "description": "所有计算都在您的浏览器中进行。您的财务数据永远不会离开您的设备。"
+        },
+        "mobile": {
+            "title": "移动端友好",
+            "description": "在任何设备上使用我们的计算器 - 手机、平板或台式电脑。"
+        }
+    },
+    "footer": {
+        "copyright": "© 2026 FinCalc. 保留所有权利。",
+        "privacy": "隐私政策",
+        "terms": "服务条款",
+        "disclaimer": "免责声明：这些计算器仅供参考。请咨询合格的财务顾问获取个性化建议。",
+        "sources": "数据来源"
+    },
+    "blog": {
+        "title": "财务规划博客",
+        "subtitle": "专家指南、实用技巧和可操作的建议，帮助您做出更明智的财务决策。",
+        "latestArticles": "最新文章",
+        "readMore": "阅读更多",
+        "minRead": "分钟阅读",
+        "relatedArticles": "相关文章",
+        "categories": {
+            "homeBuying": "购房",
+            "debtPayoff": "债务还款",
+            "retirement": "退休",
+            "mortgages": "抵押贷款",
+            "taxes": "税务",
+            "savings": "储蓄",
+            "investing": "投资"
+        }
+    },
+    "sources": {
+        "title": "数据来源与参考",
+        "irs": "美国国税局（IRS）",
+        "ssa": "社会保障管理局",
+        "bls": "劳工统计局",
+        "federalReserve": "美联储",
+        "treasury": "美国财政部",
+        "lastUpdated": "最后更新：{date}"
+    },
+    "accessibility": {
+        "skipToContent": "跳转到主要内容",
+        "openMenu": "打开菜单",
+        "closeMenu": "关闭菜单",
+        "toggleTheme": "切换主题",
+        "selectLanguage": "选择语言",
+        "expandSection": "展开部分",
+        "collapseSection": "折叠部分"
+    }
+}

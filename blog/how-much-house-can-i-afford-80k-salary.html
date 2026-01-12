@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>How Much House Can I Afford on an $80,000 Salary? | FinCalc</title>
     <meta name="description" content="Calculate exactly how much house you can afford on an $80,000 salary. Learn the 28/36 rule, see real examples, and use our free calculator to find your budget.">
     <meta name="keywords" content="how much house can I afford 80k salary, home affordability calculator, 80000 salary mortgage, house budget calculator">
@@ -39,43 +54,115 @@
         gtag('config', 'G-QFTQMV9QP7');
     </script>
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "How Much House Can I Afford on an $80,000 Salary?",
         "description": "Calculate exactly how much house you can afford on an $80,000 salary with real examples and expert tips.",
+        "image": "https://financecalc.cc/images/house-affordability-80k.jpg",
         "author": {
-            "@type": "Organization",
-            "name": "FinCalc"
-        },
-        "publisher": {
             "@type": "Organization",
             "name": "FinCalc",
             "url": "https://financecalc.cc"
         },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
         "datePublished": "2025-01-10",
-        "dateModified": "2025-01-10"
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/how-much-house-can-i-afford-80k-salary.html"
+        }
     }
     </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much house can I afford on an $80,000 salary?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On an $80,000 annual salary, you can typically afford a home priced between $240,000 and $320,000, depending on your down payment, debt levels, interest rates, and location. Using the 28% rule, your maximum monthly housing payment should be around $1,867."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the 28/36 rule for mortgages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 28/36 rule states that your monthly housing costs shouldn't exceed 28% of your gross monthly income (front-end ratio), and your total monthly debt payments shouldn't exceed 36% of your gross monthly income (back-end ratio)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much down payment do I need for a house?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Down payment requirements vary by loan type: Conventional loans require 3-20%, FHA loans require 3.5% minimum, VA loans require 0% for eligible veterans, and USDA loans require 0% for rural areas. A larger down payment means lower monthly payments and no PMI if you put 20% down."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What credit score do I need to buy a house?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Credit score requirements vary by loan type: Conventional loans typically require 620+, FHA loans require 580+ for 3.5% down, VA loans have no minimum but lenders prefer 620+. For the best interest rates, aim for a credit score of 740 or higher."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I buy the maximum house I can afford?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, many financial experts recommend spending no more than 25% of your take-home pay on housing. Just because a bank will lend you money doesn't mean you should borrow the maximum. Consider keeping an emergency fund, budgeting for maintenance costs (1-2% of home value annually), and leaving room for other financial goals."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="/#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
                 <li><a href="/#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="article-page">
+    <main id="main-content" class="article-page">
         <div class="article-container">
             <nav class="breadcrumb">
                 <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>House Affordability on $80K</span>
@@ -85,7 +172,7 @@
                 <header class="article-header">
                     <div class="article-meta">
                         <span class="article-category">Home Buying</span>
-                        <span>January 10, 2025</span>
+                        <span>January 10, 2026</span>
                         <span>8 min read</span>
                     </div>
                     <h1>How Much House Can I Afford on an $80,000 Salary?</h1>
@@ -260,10 +347,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="/terms.html" style="color: #94a3b8;">Terms of Service</a></p>
             <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
         </div>
     </footer>
+
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

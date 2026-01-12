@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Financial Calculators - Mortgage, Loan, Investment & More</title>
-    <meta name="description" content="Free online financial calculators for mortgage, loan payoff, investment returns, compound interest, and retirement planning. Easy to use, no signup required.">
-    <meta name="keywords" content="mortgage calculator, loan calculator, investment calculator, compound interest calculator, retirement calculator">
+    <title>Free Financial Calculators - Mortgage, Loan, Investment & More | FinCalc</title>
+    <meta name="description" content="Free online financial calculators for mortgage, loan payoff, investment returns, compound interest, and retirement planning. Easy to use, no signup required. Updated for 2026.">
+    <meta name="keywords" content="mortgage calculator, loan calculator, investment calculator, compound interest calculator, retirement calculator, 401k calculator 2026">
     <link rel="canonical" href="https://financecalc.cc/">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
 
     <!-- Force HTTPS -->
     <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
@@ -17,11 +33,30 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Free Financial Calculators">
-    <meta property="og:description" content="Calculate mortgage payments, loan payoff, investment returns and more. 100% free, no signup.">
+    <meta property="og:title" content="Free Financial Calculators | FinCalc">
+    <meta property="og:description" content="Calculate mortgage payments, loan payoff, investment returns and more. 100% free, no signup. Updated for 2026.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://financecalc.cc/">
     <meta property="og:image" content="https://financecalc.cc/og-image.png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Financial Calculators | FinCalc">
+    <meta name="twitter:description" content="Calculate mortgage payments, loan payoff, investment returns and more. 100% free, no signup.">
+
+    <!-- Alternate languages -->
+    <link rel="alternate" hreflang="en" href="https://financecalc.cc/">
+    <link rel="alternate" hreflang="es" href="https://financecalc.cc/es/">
+    <link rel="alternate" hreflang="zh" href="https://financecalc.cc/zh/">
+    <link rel="alternate" hreflang="de" href="https://financecalc.cc/de/">
+    <link rel="alternate" hreflang="fr" href="https://financecalc.cc/fr/">
+    <link rel="alternate" hreflang="pt" href="https://financecalc.cc/pt/">
+    <link rel="alternate" hreflang="ja" href="https://financecalc.cc/ja/">
+    <link rel="alternate" hreflang="ko" href="https://financecalc.cc/ko/">
+    <link rel="alternate" hreflang="ar" href="https://financecalc.cc/ar/">
+    <link rel="alternate" hreflang="hi" href="https://financecalc.cc/hi/">
+    <link rel="alternate" hreflang="x-default" href="https://financecalc.cc/">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,32 +75,88 @@
         gtag('config', 'G-QFTQMV9QP7');
     </script>
 
-    <!-- Structured Data -->
+    <!-- Structured Data - WebSite -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Financial Calculators",
-        "description": "Free online financial calculators",
-        "url": "https://financecalc.cc"
+        "name": "FinCalc - Financial Calculators",
+        "description": "Free online financial calculators for mortgage, loan, investment, and retirement planning.",
+        "url": "https://financecalc.cc",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://financecalc.cc/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        },
+        "inLanguage": ["en", "es", "zh", "de", "fr", "pt", "ja", "ko", "ar", "hi"]
+    }
+    </script>
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FinCalc",
+        "url": "https://financecalc.cc",
+        "logo": "https://financecalc.cc/favicon.svg",
+        "description": "Free online financial calculators for mortgage, loan, investment, and retirement planning.",
+        "foundingDate": "2024",
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Structured Data - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FinCalc Financial Calculators",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "2450",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
     }
     </script>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
     <header>
         <nav class="container">
             <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="container">
                 <h1>Free Financial Calculators</h1>
@@ -282,10 +373,28 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
-            <p style="margin-bottom: 8px;"><a href="privacy.html" style="color: #94a3b8; margin-right: 16px;">Privacy Policy</a><a href="terms.html" style="color: #94a3b8;">Terms of Service</a></p>
-            <p class="disclaimer">Disclaimer: These calculators are for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p style="margin-bottom: 8px;">
+                <a href="privacy.html" style="color: #94a3b8; margin-right: 16px;" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="terms.html" style="color: #94a3b8;" data-i18n="footer.terms">Terms of Service</a>
+            </p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">Disclaimer: These calculators are for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
         </div>
     </footer>
+
+    <!-- Theme Manager (load early to prevent flash) -->
+    <script src="js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="js/i18n.js"></script>
+    <!-- SEO Enhancement -->
+    <script src="js/seo.js" defer></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

@@ -1,8 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
     <title>Salary Calculator - Convert Hourly to Annual & More</title>
     <meta name="description" content="Free salary calculator. Convert between hourly, weekly, bi-weekly, monthly, and annual salary. See your equivalent pay across different time periods.">
     <meta name="keywords" content="salary calculator, hourly to annual, wage calculator, pay calculator, income calculator">
@@ -22,15 +37,25 @@
     <header>
         <nav class="container">
             <a href="../" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../#calculators">Calculators</a></li>
-                    <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="../#about">About</a></li>
             </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
         </nav>
     </header>
 
-    <main class="calc-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
                 <a href="../">Home</a> <span>/ Salary Calculator</span>
@@ -127,11 +152,11 @@
                 </h3>
                 <p>Learn about minimum wage laws and employment rights:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=federal+minimum+wage+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=federal+minimum+wage+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         Federal Minimum Wage
                     </a>
-                    <a href="https://www.google.com/search?q=minimum+wage+by+state+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=minimum+wage+by+state+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         State Minimum Wages
                     </a>
@@ -143,7 +168,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         Exempt vs Non-Exempt
                     </a>
-                    <a href="https://www.google.com/search?q=average+salary+by+profession+2025" target="_blank" rel="noopener" class="policy-link">
+                    <a href="https://www.google.com/search?q=average+salary+by+profession+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         Average Salaries by Job
                     </a>
@@ -174,12 +199,23 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator shows gross pay before taxes and deductions. Actual take-home pay will be lower.</p>
         </div>
     </footer>
 
+    <!-- Theme Manager -->
+    <script src="../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../js/i18n.js"></script>
     <script src="../js/salary.js"></script>
     <script src="../js/monetization.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
