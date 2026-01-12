@@ -139,9 +139,18 @@
     --remove-btn-bg: rgba(220, 38, 38, 0.2);
     --remove-btn-color: #f87171;
 
-    /* Footer colors for dark mode */
-    --footer-bg: #0f172a;
+    /* Footer colors for dark mode - 与 header 统一 */
+    --footer-bg: rgba(15, 23, 42, 0.95);
     --footer-text: #e2e8f0;
+    --footer-link: #94a3b8;
+}
+
+/* Light mode footer variables */
+:root,
+[data-effective-theme="light"] {
+    --footer-bg: #1e293b;
+    --footer-text: #ffffff;
+    --footer-link: #94a3b8;
 }
 
 /* Color scheme for form elements */
@@ -493,10 +502,11 @@ header nav {
 
 /* Footer */
 footer {
-    background: var(--footer-bg, #1e293b);
-    color: var(--footer-text, white);
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 40px 24px;
     text-align: center;
+    border-top: 1px solid var(--border);
 }
 
 footer p {
@@ -505,7 +515,7 @@ footer p {
 }
 
 footer a {
-    color: var(--footer-link, #94a3b8);
+    color: var(--footer-link);
     text-decoration: none;
     transition: var(--transition);
 }

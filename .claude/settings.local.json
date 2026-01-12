@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(grep:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:developers.google.com)",
+      "WebFetch(domain:web.dev)"
     ]
   }
 }
