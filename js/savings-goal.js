@@ -2,10 +2,10 @@
 
 document.getElementById('savingsGoalForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateSavingsGoal();
+    calculateSavingsGoal(true);
 });
 
-function calculateSavingsGoal() {
+function calculateSavingsGoal(shouldScroll = false) {
     const goalAmount = parseFloat(document.getElementById('goalAmount').value);
     const currentSavings = parseFloat(document.getElementById('currentSavings').value);
     const timeframe = parseInt(document.getElementById('timeframe').value);
@@ -43,7 +43,9 @@ function calculateSavingsGoal() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -55,4 +57,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateSavingsGoal);
+document.addEventListener('DOMContentLoaded', () => calculateSavingsGoal(false));

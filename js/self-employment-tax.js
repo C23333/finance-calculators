@@ -1,9 +1,9 @@
 document.getElementById('selfEmploymentForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateSelfEmploymentTax();
+    calculateSelfEmploymentTax(true);
 });
 
-function calculateSelfEmploymentTax() {
+function calculateSelfEmploymentTax(shouldScroll = false) {
     const grossIncome = parseFloat(document.getElementById('grossIncome').value);
     const businessExpenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
     const filingStatus = document.getElementById('filingStatus').value;
@@ -134,7 +134,9 @@ function calculateSelfEmploymentTax() {
     `;
 
     document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function calculateFederalTax(income, filingStatus) {
@@ -216,5 +218,5 @@ function formatCurrency(amount) {
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {
-    calculateSelfEmploymentTax();
+    calculateSelfEmploymentTax(false);
 });

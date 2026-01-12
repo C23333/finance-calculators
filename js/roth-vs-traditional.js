@@ -1,9 +1,9 @@
 document.getElementById('rothTraditionalForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateRothVsTraditional();
+    calculateRothVsTraditional(true);
 });
 
-function calculateRothVsTraditional() {
+function calculateRothVsTraditional(shouldScroll = false) {
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
     const annualContribution = parseFloat(document.getElementById('annualContribution').value);
@@ -137,7 +137,9 @@ function calculateRothVsTraditional() {
     `;
 
     document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -151,5 +153,5 @@ function formatCurrency(amount) {
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {
-    calculateRothVsTraditional();
+    calculateRothVsTraditional(false);
 });

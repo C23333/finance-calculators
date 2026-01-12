@@ -1,9 +1,9 @@
 document.getElementById('takeHomePayForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateTakeHomePay();
+    calculateTakeHomePay(true);
 });
 
-function calculateTakeHomePay() {
+function calculateTakeHomePay(shouldScroll = false) {
     const grossSalary = parseFloat(document.getElementById('grossSalary').value);
     const payFrequency = document.getElementById('payFrequency').value;
     const filingStatus = document.getElementById('filingStatus').value;
@@ -136,7 +136,9 @@ function calculateTakeHomePay() {
     `;
 
     document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function calculateFederalTax(income, filingStatus) {
@@ -222,5 +224,5 @@ function formatCurrency(amount) {
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {
-    calculateTakeHomePay();
+    calculateTakeHomePay(false);
 });

@@ -73,6 +73,11 @@
 
     /* Focus ring */
     --focus-ring: 0 0 0 3px rgba(79, 70, 229, 0.3);
+
+    /* Additional color backgrounds */
+    --blue-bg: #dbeafe;
+    --purple-bg: #f3e8ff;
+    --rose-bg: #ffe4e6;
 }
 
 /* ========================================
@@ -124,6 +129,19 @@
 
     /* Focus ring */
     --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.4);
+
+    /* Additional color backgrounds - darker versions for dark mode */
+    --blue-bg: rgba(59, 130, 246, 0.2);
+    --purple-bg: rgba(168, 85, 247, 0.2);
+    --rose-bg: rgba(244, 63, 94, 0.2);
+
+    /* Remove button colors for dark mode */
+    --remove-btn-bg: rgba(220, 38, 38, 0.2);
+    --remove-btn-color: #f87171;
+
+    /* Footer colors for dark mode */
+    --footer-bg: #0f172a;
+    --footer-text: #e2e8f0;
 }
 
 /* Color scheme for form elements */
@@ -186,6 +204,7 @@ header nav {
     padding: 16px 24px;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 16px;
 }
 
 .logo {
@@ -414,9 +433,9 @@ header nav {
 /* Different card colors */
 .calc-card.green .calc-icon { background: var(--secondary-bg); }
 .calc-card.amber .calc-icon { background: var(--accent-bg); }
-.calc-card.blue .calc-icon { background: #dbeafe; }
-.calc-card.purple .calc-icon { background: #f3e8ff; }
-.calc-card.rose .calc-icon { background: #ffe4e6; }
+.calc-card.blue .calc-icon { background: var(--blue-bg, #dbeafe); }
+.calc-card.purple .calc-icon { background: var(--purple-bg, #f3e8ff); }
+.calc-card.rose .calc-icon { background: var(--rose-bg, #ffe4e6); }
 
 /* About Section */
 .about {
@@ -474,8 +493,8 @@ header nav {
 
 /* Footer */
 footer {
-    background: var(--text);
-    color: white;
+    background: var(--footer-bg, #1e293b);
+    color: var(--footer-text, white);
     padding: 40px 24px;
     text-align: center;
 }
@@ -483,6 +502,29 @@ footer {
 footer p {
     margin-bottom: 8px;
     opacity: 0.9;
+}
+
+footer a {
+    color: var(--footer-link, #94a3b8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.footer-links {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    margin-right: 16px;
+}
+
+.footer-links a:last-child {
+    margin-right: 0;
 }
 
 .disclaimer {
@@ -981,8 +1023,8 @@ footer p {
 }
 
 .remove-btn {
-    background: #fee2e2;
-    color: #dc2626;
+    background: var(--remove-btn-bg, #fee2e2);
+    color: var(--remove-btn-color, #dc2626);
     border: none;
     padding: 8px 14px;
     border-radius: var(--radius-sm);
@@ -1358,6 +1400,7 @@ footer p {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 768px) {

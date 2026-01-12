@@ -2,7 +2,7 @@
 
 document.getElementById('debtForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateDebtPayoff();
+    calculateDebtPayoff(true);
 });
 
 // Store debts
@@ -54,7 +54,7 @@ function clearDebtInputs() {
     document.getElementById('debtMinPayment').value = '';
 }
 
-function calculateDebtPayoff() {
+function calculateDebtPayoff(shouldScroll = false) {
     if (debts.length === 0) {
         alert('Please add at least one debt');
         return;
@@ -85,7 +85,9 @@ function calculateDebtPayoff() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function simulatePayoff(debtsCopy, extraPayment, method) {

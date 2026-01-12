@@ -1,9 +1,9 @@
 document.getElementById('emergencyFundForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateEmergencyFund();
+    calculateEmergencyFund(true);
 });
 
-function calculateEmergencyFund() {
+function calculateEmergencyFund(shouldScroll = false) {
     const housing = parseFloat(document.getElementById('housing').value) || 0;
     const utilities = parseFloat(document.getElementById('utilities').value) || 0;
     const food = parseFloat(document.getElementById('food').value) || 0;
@@ -36,7 +36,9 @@ function calculateEmergencyFund() {
     }
 
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -48,4 +50,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateEmergencyFund);
+document.addEventListener('DOMContentLoaded', () => calculateEmergencyFund(false));

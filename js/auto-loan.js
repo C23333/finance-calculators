@@ -2,10 +2,10 @@
 
 document.getElementById('autoLoanForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateAutoLoan();
+    calculateAutoLoan(true);
 });
 
-function calculateAutoLoan() {
+function calculateAutoLoan(shouldScroll = false) {
     const vehiclePrice = parseFloat(document.getElementById('vehiclePrice').value);
     const downPayment = parseFloat(document.getElementById('downPayment').value);
     const tradeInValue = parseFloat(document.getElementById('tradeInValue').value) || 0;
@@ -46,7 +46,9 @@ function calculateAutoLoan() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -58,4 +60,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateAutoLoan);
+document.addEventListener('DOMContentLoaded', () => calculateAutoLoan(false));

@@ -1,9 +1,9 @@
 document.getElementById('affordabilityForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateAffordability();
+    calculateAffordability(true);
 });
 
-function calculateAffordability() {
+function calculateAffordability(shouldScroll = false) {
     const annualIncome = parseFloat(document.getElementById('annualIncome').value);
     const monthlyDebts = parseFloat(document.getElementById('monthlyDebts').value);
     const downPayment = parseFloat(document.getElementById('downPaymentAmount').value);
@@ -88,7 +88,9 @@ function calculateAffordability() {
     document.getElementById('monthlyInsurance').textContent = formatCurrency(monthlyInsurance);
 
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -100,4 +102,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateAffordability);
+document.addEventListener('DOMContentLoaded', () => calculateAffordability(false));

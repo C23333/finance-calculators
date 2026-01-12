@@ -2,10 +2,10 @@
 
 document.getElementById('investmentForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateInvestmentReturn();
+    calculateInvestmentReturn(true);
 });
 
-function calculateInvestmentReturn() {
+function calculateInvestmentReturn(shouldScroll = false) {
     // Get input values
     const initialInvestment = parseFloat(document.getElementById('initialInvestment').value);
     const finalValue = parseFloat(document.getElementById('finalValue').value);
@@ -50,7 +50,9 @@ function calculateInvestmentReturn() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -69,4 +71,4 @@ function formatPercent(value) {
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', calculateInvestmentReturn);
+document.addEventListener('DOMContentLoaded', () => calculateInvestmentReturn(false));

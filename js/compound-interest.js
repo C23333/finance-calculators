@@ -2,10 +2,10 @@
 
 document.getElementById('compoundForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateCompoundInterest();
+    calculateCompoundInterest(true);
 });
 
-function calculateCompoundInterest() {
+function calculateCompoundInterest(shouldScroll = false) {
     // Get input values
     const principal = parseFloat(document.getElementById('principal').value);
     const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value);
@@ -61,7 +61,9 @@ function calculateCompoundInterest() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function generateGrowthTable(principal, monthlyContribution, annualRate, compoundFrequency, years) {
@@ -113,4 +115,4 @@ function formatCurrency(amount) {
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', calculateCompoundInterest);
+document.addEventListener('DOMContentLoaded', () => calculateCompoundInterest(false));

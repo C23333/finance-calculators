@@ -1,9 +1,9 @@
 document.getElementById('studentLoanForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateStudentLoan();
+    calculateStudentLoan(true);
 });
 
-function calculateStudentLoan() {
+function calculateStudentLoan(shouldScroll = false) {
     const loanBalance = parseFloat(document.getElementById('loanBalance').value);
     const annualRate = parseFloat(document.getElementById('interestRate').value);
     const repaymentMonths = parseInt(document.getElementById('repaymentPlan').value);
@@ -59,7 +59,9 @@ function calculateStudentLoan() {
     document.getElementById('interestSaved').textContent = formatCurrency(Math.max(0, interestSaved));
 
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -71,4 +73,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateStudentLoan);
+document.addEventListener('DOMContentLoaded', () => calculateStudentLoan(false));

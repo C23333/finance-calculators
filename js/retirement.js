@@ -2,10 +2,10 @@
 
 document.getElementById('retirementForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateRetirement();
+    calculateRetirement(true);
 });
 
-function calculateRetirement() {
+function calculateRetirement(shouldScroll = false) {
     // Get input values
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
@@ -77,7 +77,9 @@ function calculateRetirement() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -90,4 +92,4 @@ function formatCurrency(amount) {
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', calculateRetirement);
+document.addEventListener('DOMContentLoaded', () => calculateRetirement(false));

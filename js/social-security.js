@@ -1,9 +1,9 @@
 document.getElementById('socialSecurityForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateSocialSecurity();
+    calculateSocialSecurity(true);
 });
 
-function calculateSocialSecurity() {
+function calculateSocialSecurity(shouldScroll = false) {
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const birthYear = parseInt(document.getElementById('birthYear').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
@@ -145,7 +145,9 @@ function calculateSocialSecurity() {
     }).join('');
 
     document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -166,5 +168,5 @@ function formatAge(age) {
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {
-    calculateSocialSecurity();
+    calculateSocialSecurity(false);
 });

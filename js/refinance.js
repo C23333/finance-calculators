@@ -1,9 +1,9 @@
 document.getElementById('refinanceForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateRefinance();
+    calculateRefinance(true);
 });
 
-function calculateRefinance() {
+function calculateRefinance(shouldScroll = false) {
     const currentBalance = parseFloat(document.getElementById('currentBalance').value);
     const currentRate = parseFloat(document.getElementById('currentRate').value) / 100 / 12;
     const currentTermRemaining = parseInt(document.getElementById('currentTermRemaining').value);
@@ -60,7 +60,9 @@ function calculateRefinance() {
     document.getElementById('newInterest').textContent = formatCurrency(newInterest);
 
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -72,4 +74,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateRefinance);
+document.addEventListener('DOMContentLoaded', () => calculateRefinance(false));

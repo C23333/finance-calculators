@@ -2,10 +2,10 @@
 
 document.getElementById('inflationForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateInflation();
+    calculateInflation(true);
 });
 
-function calculateInflation() {
+function calculateInflation(shouldScroll = false) {
     const currentAmount = parseFloat(document.getElementById('currentAmount').value);
     const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100;
     const years = parseInt(document.getElementById('years').value);
@@ -33,7 +33,9 @@ function calculateInflation() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function generateInflationTable(amount, rate, years) {
@@ -73,4 +75,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateInflation);
+document.addEventListener('DOMContentLoaded', () => calculateInflation(false));

@@ -2,10 +2,10 @@
 
 document.getElementById('calc401kForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculate401k();
+    calculate401k(true);
 });
 
-function calculate401k() {
+function calculate401k(shouldScroll = false) {
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
     const annualSalary = parseFloat(document.getElementById('annualSalary').value);
@@ -66,7 +66,9 @@ function calculate401k() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -78,4 +80,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculate401k);
+document.addEventListener('DOMContentLoaded', () => calculate401k(false));

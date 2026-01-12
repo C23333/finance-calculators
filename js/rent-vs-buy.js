@@ -1,9 +1,9 @@
 document.getElementById('rentVsBuyForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateRentVsBuy();
+    calculateRentVsBuy(true);
 });
 
-function calculateRentVsBuy() {
+function calculateRentVsBuy(shouldScroll = false) {
     const homePrice = parseFloat(document.getElementById('homePrice').value);
     const downPaymentPercent = parseFloat(document.getElementById('downPayment').value) / 100;
     const mortgageRate = parseFloat(document.getElementById('mortgageRate').value) / 100 / 12;
@@ -90,7 +90,9 @@ function calculateRentVsBuy() {
     document.getElementById('monthlyMortgage').textContent = formatCurrency(monthlyMortgage);
 
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function formatCurrency(amount) {
@@ -102,4 +104,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateRentVsBuy);
+document.addEventListener('DOMContentLoaded', () => calculateRentVsBuy(false));

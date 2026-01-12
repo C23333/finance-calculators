@@ -206,7 +206,7 @@
 
 /* Highlight Box */
 .highlight-box {
-    background: linear-gradient(135deg, var(--primary-bg) 0%, #dbeafe 100%);
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--blue-bg, #dbeafe) 100%);
     border-left: 4px solid var(--primary);
     padding: 24px;
     border-radius: 0 var(--radius) var(--radius) 0;

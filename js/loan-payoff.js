@@ -2,10 +2,10 @@
 
 document.getElementById('loanPayoffForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateLoanPayoff();
+    calculateLoanPayoff(true);
 });
 
-function calculateLoanPayoff() {
+function calculateLoanPayoff(shouldScroll = false) {
     // Get input values
     const balance = parseFloat(document.getElementById('loanBalance').value);
     const annualRate = parseFloat(document.getElementById('interestRate').value);
@@ -36,7 +36,9 @@ function calculateLoanPayoff() {
 
     // Show results
     document.getElementById('results').classList.add('show');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function calculatePayoff(balance, monthlyRate, payment) {
@@ -100,4 +102,4 @@ function formatTime(months) {
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', calculateLoanPayoff);
+document.addEventListener('DOMContentLoaded', () => calculateLoanPayoff(false));

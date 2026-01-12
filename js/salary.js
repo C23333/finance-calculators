@@ -2,15 +2,15 @@
 
 document.getElementById('salaryForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateSalary();
+    calculateSalary(true);
 });
 
 // Also calculate on input change for real-time updates
 document.querySelectorAll('#salaryForm input, #salaryForm select').forEach(el => {
-    el.addEventListener('change', calculateSalary);
+    el.addEventListener('change', () => calculateSalary(false));
 });
 
-function calculateSalary() {
+function calculateSalary(shouldScroll = false) {
     const amount = parseFloat(document.getElementById('salaryAmount').value);
     const period = document.getElementById('salaryPeriod').value;
     const hoursPerWeek = parseFloat(document.getElementById('hoursPerWeek').value);
@@ -70,4 +70,4 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-document.addEventListener('DOMContentLoaded', calculateSalary);
+document.addEventListener('DOMContentLoaded', () => calculateSalary(false));

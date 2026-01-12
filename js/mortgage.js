@@ -2,10 +2,10 @@
 
 document.getElementById('mortgageForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateMortgage();
+    calculateMortgage(true);
 });
 
-function calculateMortgage() {
+function calculateMortgage(shouldScroll = false) {
     // Get input values
     const homePrice = parseFloat(document.getElementById('homePrice').value);
     const downPayment = parseFloat(document.getElementById('downPayment').value);
@@ -57,8 +57,10 @@ function calculateMortgage() {
     // Show results
     document.getElementById('results').classList.add('show');
 
-    // Scroll to results
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Scroll to results only when user clicks calculate
+    if (shouldScroll) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
 
     // Trigger calculation complete event for monetization
     document.dispatchEvent(new CustomEvent('calculationComplete', {
@@ -115,5 +117,5 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-// Calculate on page load with default values
-document.addEventListener('DOMContentLoaded', calculateMortgage);
+// Calculate on page load with default values (without scrolling)
+document.addEventListener('DOMContentLoaded', () => calculateMortgage(false));

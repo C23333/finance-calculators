@@ -134,7 +134,7 @@ const I18n = {
      * @param {object} params - Interpolation parameters
      * @returns {string} Translated string
      */
-    t(key, params = ) {
+    t(key, params = {}) {
         // Get translation by dot notation
         let text = key.split('.').reduce((obj, k) => obj?.[k], this.translations);
 
@@ -184,7 +184,7 @@ const I18n = {
     /**
      * Format date based on current locale
      */
-    formatDate(date, options = ) {
+    formatDate(date, options = {}) {
         const langData = this.LANGUAGES[this.currentLang];
         const defaultOptions = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Intl.DateTimeFormat(langData.locale, { ...defaultOptions, ...options }).format(date);
