@@ -4,7 +4,10 @@
       "Bash(grep:*)",
       "WebSearch",
       "WebFetch(domain:developers.google.com)",
-      "WebFetch(domain:web.dev)"
+      "WebFetch(domain:web.dev)",
+      "WebFetch(domain:ahrefs.com)",
+      "WebFetch(domain:www.webfx.com)",
+      "Bash(done)"
     ]
   }
 }
