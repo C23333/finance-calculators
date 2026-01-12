@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Loan Calculator - Calculate Car Payment & Total Cost</title>
+    <meta name="description" content="Free auto loan calculator. Calculate your monthly car payment, total interest, and compare different loan terms to find the best deal.">
+    <meta name="keywords" content="auto loan calculator, car payment calculator, car loan calculator, vehicle financing calculator">
+    <link rel="canonical" href="https://financecalc.cc/calculators/auto-loan.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Auto Loan Calculator",
+        "description": "Calculate car loan payments and total financing costs",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Auto Loan Calculator</span>
+            </nav>
+
+            <h1>Auto Loan Calculator</h1>
+            <p>Calculate your monthly car payment and see the total cost of financing your vehicle.</p>
+
+            <div class="calculator">
+                <form id="autoLoanForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vehiclePrice">Vehicle Price</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="vehiclePrice" value="35000" min="0" step="500" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="downPayment">Down Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="downPayment" value="5000" min="0" step="500" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tradeInValue">Trade-In Value</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="tradeInValue" value="0" min="0" step="500">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="salesTax">Sales Tax Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="salesTax" value="7" min="0" max="15" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (APR)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term</label>
+                            <select id="loanTerm">
+                                <option value="36">36 months (3 years)</option>
+                                <option value="48">48 months (4 years)</option>
+                                <option value="60" selected>60 months (5 years)</option>
+                                <option value="72">72 months (6 years)</option>
+                                <option value="84">84 months (7 years)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate Payment</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="monthlyPayment">$0</div>
+                        <p>Monthly Payment</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Loan Amount</div>
+                            <div class="value" id="loanAmount">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Interest</div>
+                            <div class="value" id="totalInterest">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Cost</div>
+                            <div class="value" id="totalCost">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Sales Tax</div>
+                            <div class="value" id="taxAmount">$0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Auto Loan Resources & Policies
+                </h3>
+                <p>Learn about auto financing options and consumer protections:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=best+auto+loan+rates+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Best Auto Loan Rates
+                    </a>
+                    <a href="https://www.google.com/search?q=credit+union+auto+loans+benefits" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Credit Union Auto Loans
+                    </a>
+                    <a href="https://www.google.com/search?q=car+sales+tax+by+state" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Sales Tax by State
+                    </a>
+                    <a href="https://www.google.com/search?q=EV+tax+credit+electric+vehicle+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        EV Tax Credits
+                    </a>
+                    <a href="https://www.google.com/search?q=gap+insurance+worth+it" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        GAP Insurance Guide
+                    </a>
+                    <a href="https://www.google.com/search?q=refinance+auto+loan+when" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        When to Refinance
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>How to Get the Best Auto Loan</h2>
+                <p>Getting pre-approved for an auto loan before visiting the dealership gives you negotiating power and helps you understand your budget.</p>
+
+                <h3>Tips for Lower Payments</h3>
+                <ul>
+                    <li><strong>Improve your credit score:</strong> Even a small improvement can significantly lower your rate</li>
+                    <li><strong>Make a larger down payment:</strong> 20% down is ideal to avoid being "underwater"</li>
+                    <li><strong>Choose a shorter term:</strong> You'll pay less interest overall</li>
+                    <li><strong>Shop around:</strong> Compare rates from banks, credit unions, and online lenders</li>
+                </ul>
+
+                <h3>New vs Used Car Financing</h3>
+                <ul>
+                    <li>New cars typically have lower interest rates but higher prices</li>
+                    <li>Used cars depreciate less but may have higher rates</li>
+                    <li>Certified pre-owned (CPO) vehicles often offer the best of both worlds</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on fees, taxes, and lender terms.</p>
+        </div>
+    </footer>
+
+    <script src="../js/auto-loan.js"></script>
+</body>
+</html>

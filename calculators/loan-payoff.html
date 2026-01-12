@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Payoff Calculator - Pay Off Debt Faster</title>
+    <meta name="description" content="Free loan payoff calculator. See how extra payments can help you pay off your loan faster and save thousands in interest.">
+    <meta name="keywords" content="loan payoff calculator, debt payoff calculator, extra payment calculator, loan amortization, pay off loan early">
+    <link rel="canonical" href="https://financecalc.cc/calculators/loan-payoff.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Loan Payoff Calculator",
+        "description": "Calculate how to pay off your loan faster with extra payments",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Loan Payoff Calculator</span>
+            </nav>
+
+            <h1>Loan Payoff Calculator</h1>
+            <p>See how extra payments can help you become debt-free faster and save money on interest.</p>
+
+            <div class="calculator">
+                <form id="loanPayoffForm">
+                    <div class="form-group">
+                        <label for="loanBalance">Current Loan Balance</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="loanBalance" value="25000" min="0" step="100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate (Annual %)</label>
+                        <div class="input-group">
+                            <span>%</span>
+                            <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthlyPayment">Current Monthly Payment</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="monthlyPayment" value="500" min="0" step="10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="extraPayment">Extra Monthly Payment</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="extraPayment" value="100" min="0" step="10">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="interestSaved">$0</div>
+                        <p>Interest Saved</p>
+                    </div>
+
+                    <h2>Comparison</h2>
+
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--text-light);">Without Extra Payments</h3>
+                    <div class="result-item">
+                        <span class="result-label">Payoff Time</span>
+                        <span class="result-value" id="originalTime">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Interest</span>
+                        <span class="result-value" id="originalInterest">$0</span>
+                    </div>
+
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--secondary);">With Extra Payments</h3>
+                    <div class="result-item">
+                        <span class="result-label">Payoff Time</span>
+                        <span class="result-value" id="newTime" style="color: var(--secondary);">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Interest</span>
+                        <span class="result-value" id="newInterest" style="color: var(--secondary);">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time Saved</span>
+                        <span class="result-value" id="timeSaved" style="color: var(--secondary);">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <article class="content" style="margin-top: 40px;">
+                <h2>How Extra Payments Help</h2>
+                <p>Making extra payments on your loan goes directly toward your principal balance. This reduces the amount of interest you pay over time and shortens your loan term.</p>
+
+                <h3>Strategies for Paying Off Debt Faster</h3>
+                <ul>
+                    <li><strong>Round Up Payments:</strong> Round your payment to the nearest $50 or $100</li>
+                    <li><strong>Bi-Weekly Payments:</strong> Pay half your monthly payment every two weeks (equals 13 monthly payments per year)</li>
+                    <li><strong>Lump Sum Payments:</strong> Apply tax refunds or bonuses to your principal</li>
+                    <li><strong>Refinance:</strong> If rates have dropped, refinancing could lower your interest rate</li>
+                </ul>
+
+                <h3>Important Considerations</h3>
+                <ul>
+                    <li>Check if your loan has prepayment penalties</li>
+                    <li>Ensure extra payments are applied to principal, not future payments</li>
+                    <li>Consider building an emergency fund before aggressive debt payoff</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Contact your lender for exact payoff amounts.</p>
+        </div>
+    </footer>
+
+    <script src="../js/loan-payoff.js"></script>
+</body>
+</html>

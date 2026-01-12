@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent vs Buy Calculator - Should You Rent or Buy a Home?</title>
+    <meta name="description" content="Free rent vs buy calculator. Compare the true costs of renting versus buying a home over time.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Rent vs Buy Calculator</span>
+            </nav>
+
+            <h1>Rent vs Buy Calculator</h1>
+            <p>Compare the total costs of renting versus buying a home over your expected time horizon.</p>
+
+            <div class="calculator">
+                <form id="rentVsBuyForm">
+                    <h3 style="margin-bottom: 20px; color: var(--text-secondary);">Home Purchase</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homePrice">Home Price</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="homePrice" value="400000" min="0" step="5000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="downPayment">Down Payment (%)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="downPayment" value="20" min="0" max="100" step="1" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mortgageRate">Mortgage Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="mortgageRate" value="6.5" min="0" max="15" step="0.125" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="propertyTax">Property Tax (Annual %)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="propertyTax" value="1.2" min="0" max="5" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homeInsurance">Home Insurance (Annual)</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="homeInsurance" value="1500" min="0" step="100">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="maintenance">Maintenance (Annual %)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="maintenance" value="1" min="0" max="5" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 30px 0 20px; color: var(--text-secondary);">Renting</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="monthlyRent">Monthly Rent</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="monthlyRent" value="2000" min="0" step="50" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rentIncrease">Annual Rent Increase</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="rentIncrease" value="3" min="0" max="10" step="0.5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 30px 0 20px; color: var(--text-secondary);">Assumptions</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="yearsToStay">Years You'll Stay</label>
+                            <input type="number" id="yearsToStay" value="7" min="1" max="30" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="homeAppreciation">Home Appreciation (Annual)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="homeAppreciation" value="3" min="-5" max="10" step="0.5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Compare Costs</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="recommendation">-</div>
+                        <p id="savingsAmount">-</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Total Cost to Buy</div>
+                            <div class="value" id="totalBuyCost">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Cost to Rent</div>
+                            <div class="value" id="totalRentCost">$0</div>
+                        </div>
+                        <div class="result-card success">
+                            <div class="label">Home Equity Built</div>
+                            <div class="value" id="equityBuilt">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Monthly Mortgage</div>
+                            <div class="value" id="monthlyMortgage">$0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Housing Resources
+                </h3>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        First-Time Buyer Programs
+                    </a>
+                    <a href="https://www.google.com/search?q=rent+control+laws+by+state" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Rent Control Laws
+                    </a>
+                    <a href="https://www.google.com/search?q=property+tax+rates+by+state" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Property Tax by State
+                    </a>
+                    <a href="https://www.google.com/search?q=housing+market+forecast+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Housing Market Forecast
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>Rent vs Buy: Key Considerations</h2>
+                <h3>Advantages of Buying</h3>
+                <ul>
+                    <li>Build equity over time</li>
+                    <li>Potential tax deductions</li>
+                    <li>Stable monthly payments (fixed-rate mortgage)</li>
+                    <li>Freedom to customize your home</li>
+                </ul>
+                <h3>Advantages of Renting</h3>
+                <ul>
+                    <li>Flexibility to move easily</li>
+                    <li>No maintenance responsibilities</li>
+                    <li>Lower upfront costs</li>
+                    <li>No risk of home value decline</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/rent-vs-buy.js"></script>
+</body>
+</html>

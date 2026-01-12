@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Affordability Calculator - How Much House Can I Afford?</title>
+    <meta name="description" content="Free home affordability calculator. Find out how much house you can afford based on your income, debts, and down payment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Home Affordability Calculator</span>
+            </nav>
+
+            <h1>Home Affordability Calculator</h1>
+            <p>Find out how much house you can afford based on your income and financial situation.</p>
+
+            <div class="calculator">
+                <form id="affordabilityForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="annualIncome">Annual Gross Income</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="annualIncome" value="100000" min="0" step="1000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthlyDebts">Monthly Debt Payments</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="monthlyDebts" value="500" min="0" step="50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="downPaymentAmount">Down Payment Available</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="downPaymentAmount" value="60000" min="0" step="1000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="interestRate" value="6.5" min="0" max="15" step="0.125" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term</label>
+                            <select id="loanTerm">
+                                <option value="30" selected>30 years</option>
+                                <option value="20">20 years</option>
+                                <option value="15">15 years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="propertyTax">Property Tax Rate (Annual)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="propertyTax" value="1.2" min="0" max="5" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="homeInsurance">Annual Home Insurance</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="homeInsurance" value="1500" min="0" step="100">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate Affordability</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="maxHomePrice">$0</div>
+                        <p>Maximum Home Price</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Monthly Payment</div>
+                            <div class="value" id="monthlyPayment">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Loan Amount</div>
+                            <div class="value" id="loanAmount">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">DTI Ratio</div>
+                            <div class="value" id="dtiRatio">0%</div>
+                        </div>
+                        <div class="result-card success">
+                            <div class="label">Down Payment %</div>
+                            <div class="value" id="downPaymentPercent">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="result-label">Principal & Interest</span>
+                        <span class="result-value" id="principalInterest">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Property Tax (Monthly)</span>
+                        <span class="result-value" id="monthlyTax">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Insurance (Monthly)</span>
+                        <span class="result-value" id="monthlyInsurance">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Home Buying Resources
+                </h3>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        FHA Loan Requirements
+                    </a>
+                    <a href="https://www.google.com/search?q=DTI+ratio+requirements+mortgage" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        DTI Requirements
+                    </a>
+                    <a href="https://www.google.com/search?q=PMI+private+mortgage+insurance+cost" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        PMI Costs
+                    </a>
+                    <a href="https://www.google.com/search?q=credit+score+needed+for+mortgage" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Credit Score Requirements
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>How Much House Can You Afford?</h2>
+                <p>Lenders typically use two key ratios to determine how much you can borrow:</p>
+                <h3>The 28/36 Rule</h3>
+                <ul>
+                    <li><strong>28% Rule:</strong> Your housing costs should not exceed 28% of gross monthly income</li>
+                    <li><strong>36% Rule:</strong> Total debt payments should not exceed 36% of gross monthly income</li>
+                </ul>
+                <h3>Tips for Buying Within Your Means</h3>
+                <ul>
+                    <li>Don't max out your budget - leave room for unexpected expenses</li>
+                    <li>Consider all costs: taxes, insurance, maintenance, HOA fees</li>
+                    <li>Save for a 20% down payment to avoid PMI</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/home-affordability.js"></script>
+</body>
+</html>

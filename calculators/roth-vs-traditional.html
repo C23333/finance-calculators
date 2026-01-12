@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roth vs Traditional IRA/401k Calculator - Compare Retirement Accounts</title>
+    <meta name="description" content="Compare Roth vs Traditional IRA and 401k accounts. Calculate which retirement account type is better for your tax situation and financial goals.">
+    <meta name="keywords" content="roth vs traditional, IRA calculator, 401k comparison, retirement account, tax-advantaged savings">
+    <link rel="canonical" href="https://financecalculators.com/calculators/roth-vs-traditional.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .recommendation {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+        .recommendation h4 {
+            margin-bottom: 0.5rem;
+        }
+        .roth-better {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 4px solid #28a745;
+        }
+        .traditional-better {
+            background: linear-gradient(135deg, #cce5ff 0%, #b8daff 100%);
+            border-left: 4px solid #007bff;
+        }
+        .equal {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">FinanceCalc</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#guide">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="calculator-page">
+        <div class="container">
+            <div class="calculator-header">
+                <h1>Roth vs Traditional Calculator</h1>
+                <p>Compare Roth and Traditional retirement accounts to determine which is better for your situation</p>
+            </div>
+
+            <div class="calculator-layout">
+                <div class="calculator-main">
+                    <div class="card" id="calculator">
+                        <h2>Compare Your Options</h2>
+                        <form id="rothTraditionalForm" class="calculator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="currentAge">Current Age</label>
+                                    <input type="number" id="currentAge" min="18" max="70" value="35" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="retirementAge">Retirement Age</label>
+                                    <input type="number" id="retirementAge" min="55" max="80" value="65" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="annualContribution">Annual Contribution ($)</label>
+                                <input type="number" id="annualContribution" min="0" max="30500" value="7000" required>
+                                <small>2024 IRA limit: $7,000 ($8,000 if 50+) | 401k limit: $23,000 ($30,500 if 50+)</small>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="currentTaxRate">Current Marginal Tax Rate (%)</label>
+                                    <input type="number" id="currentTaxRate" min="0" max="50" step="0.1" value="24" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="retirementTaxRate">Expected Retirement Tax Rate (%)</label>
+                                    <input type="number" id="retirementTaxRate" min="0" max="50" step="0.1" value="22" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="expectedReturn">Expected Annual Return (%)</label>
+                                <input type="number" id="expectedReturn" min="0" max="15" step="0.1" value="7" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="currentTraditional">Current Traditional Balance ($)</label>
+                                    <input type="number" id="currentTraditional" min="0" value="50000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="currentRoth">Current Roth Balance ($)</label>
+                                    <input type="number" id="currentRoth" min="0" value="25000">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Compare Accounts</button>
+                        </form>
+                    </div>
+
+                    <div class="card results-card" id="results" style="display: none;">
+                        <h2>Comparison Results</h2>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-label">Traditional Balance at Retirement</span>
+                                <span class="result-value" id="traditionalBalance">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Roth Balance at Retirement</span>
+                                <span class="result-value" id="rothBalance">$0</span>
+                            </div>
+                            <div class="result-item highlight">
+                                <span class="result-label">Traditional After-Tax Value</span>
+                                <span class="result-value" id="traditionalAfterTax">$0</span>
+                            </div>
+                            <div class="result-item highlight">
+                                <span class="result-label">Roth After-Tax Value</span>
+                                <span class="result-value" id="rothAfterTax">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Traditional Monthly Income</span>
+                                <span class="result-value" id="traditionalMonthly">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Roth Monthly Income</span>
+                                <span class="result-value" id="rothMonthly">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Difference</span>
+                                <span class="result-value" id="difference">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Break-Even Tax Rate</span>
+                                <span class="result-value" id="breakEvenRate">0%</span>
+                            </div>
+                        </div>
+
+                        <div id="recommendation"></div>
+
+                        <div class="comparison-table">
+                            <h3>Detailed Comparison</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Factor</th>
+                                        <th>Traditional</th>
+                                        <th>Roth</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="comparisonBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-sidebar">
+                    <div class="card">
+                        <h3>Key Differences</h3>
+                        <ul class="info-list">
+                            <li><strong>Traditional:</strong> Tax deduction now, pay taxes on withdrawals</li>
+                            <li><strong>Roth:</strong> No deduction now, tax-free withdrawals</li>
+                            <li><strong>RMDs:</strong> Traditional has required minimum distributions at 73; Roth IRAs do not</li>
+                            <li><strong>Income Limits:</strong> Roth IRA has income limits; Traditional does not</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>When to Choose Roth</h3>
+                        <ul class="info-list">
+                            <li>You expect higher taxes in retirement</li>
+                            <li>You're early in your career (lower tax bracket)</li>
+                            <li>You want tax-free growth</li>
+                            <li>You want to avoid RMDs</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>When to Choose Traditional</h3>
+                        <ul class="info-list">
+                            <li>You expect lower taxes in retirement</li>
+                            <li>You're in your peak earning years</li>
+                            <li>You need the tax deduction now</li>
+                            <li>You're above Roth income limits</li>
+                        </ul>
+                    </div>
+
+                    <div class="card policy-links">
+                        <h3>Learn More</h3>
+                        <p>Research retirement account rules:</p>
+                        <a href="https://www.google.com/search?q=IRS+Roth+IRA+contribution+limits+2024" target="_blank" class="btn btn-outline btn-block">Roth IRA Limits</a>
+                        <a href="https://www.google.com/search?q=IRS+traditional+IRA+deduction+rules" target="_blank" class="btn btn-outline btn-block">Traditional IRA Rules</a>
+                        <a href="https://www.google.com/search?q=401k+contribution+limits+2024" target="_blank" class="btn btn-outline btn-block">401(k) Limits</a>
+                        <a href="https://www.google.com/search?q=backdoor+Roth+IRA+strategy" target="_blank" class="btn btn-outline btn-block">Backdoor Roth Strategy</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="card" id="guide">
+                <h2>Roth vs Traditional Guide</h2>
+                <div class="guide-content">
+                    <h3>Understanding the Tax Treatment</h3>
+                    <p>The fundamental difference between Roth and Traditional accounts is when you pay taxes. Traditional accounts give you a tax break today but you pay taxes on withdrawals. Roth accounts are funded with after-tax dollars but grow and can be withdrawn tax-free.</p>
+
+                    <h3>The Tax Rate Question</h3>
+                    <p>The key factor in choosing between Roth and Traditional is comparing your current marginal tax rate to your expected tax rate in retirement. If you expect to be in a higher bracket in retirement, Roth is generally better. If you expect to be in a lower bracket, Traditional is usually better.</p>
+
+                    <h3>2024 Contribution Limits</h3>
+                    <ul>
+                        <li><strong>IRA (Roth or Traditional):</strong> $7,000 ($8,000 if age 50+)</li>
+                        <li><strong>401(k)/403(b):</strong> $23,000 ($30,500 if age 50+)</li>
+                        <li><strong>Roth IRA Income Limits:</strong> Phase-out begins at $146,000 (single) / $230,000 (married)</li>
+                    </ul>
+
+                    <h3>Consider Tax Diversification</h3>
+                    <p>Many financial advisors recommend having both Roth and Traditional accounts for tax diversification. This gives you flexibility in retirement to manage your tax liability by choosing which accounts to withdraw from.</p>
+
+                    <h3>Other Considerations</h3>
+                    <ul>
+                        <li><strong>Required Minimum Distributions:</strong> Traditional accounts require RMDs starting at age 73; Roth IRAs do not</li>
+                        <li><strong>Early Withdrawal:</strong> Roth contributions (not earnings) can be withdrawn penalty-free anytime</li>
+                        <li><strong>Estate Planning:</strong> Roth accounts can be more beneficial for heirs</li>
+                        <li><strong>State Taxes:</strong> Consider your state's tax treatment of retirement income</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FinanceCalc. For educational purposes only. Consult a tax professional for personalized advice.</p>
+        </div>
+    </footer>
+
+    <script src="../js/roth-vs-traditional.js"></script>
+</body>
+</html>

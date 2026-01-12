@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Home Pay Calculator - Calculate Your Net Paycheck</title>
+    <meta name="description" content="Calculate your take home pay after federal and state taxes, Social Security, Medicare, and other deductions. See your actual paycheck amount.">
+    <meta name="keywords" content="take home pay calculator, paycheck calculator, net pay, salary after taxes, payroll calculator">
+    <link rel="canonical" href="https://financecalculators.com/calculators/take-home-pay.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .deduction td:nth-child(2), .deduction td:nth-child(3) {
+            color: #dc3545;
+        }
+        .total {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .total td {
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">FinanceCalc</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#guide">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="calculator-page">
+        <div class="container">
+            <div class="calculator-header">
+                <h1>Take Home Pay Calculator</h1>
+                <p>Calculate your net paycheck after all taxes and deductions</p>
+            </div>
+
+            <div class="calculator-layout">
+                <div class="calculator-main">
+                    <div class="card" id="calculator">
+                        <h2>Enter Your Pay Information</h2>
+                        <form id="takeHomePayForm" class="calculator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="grossSalary">Gross Pay Amount ($)</label>
+                                    <input type="number" id="grossSalary" min="0" value="75000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payFrequency">Pay Frequency</label>
+                                    <select id="payFrequency" required>
+                                        <option value="annual" selected>Annual</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="semimonthly">Semi-Monthly (24/year)</option>
+                                        <option value="biweekly">Bi-Weekly (26/year)</option>
+                                        <option value="weekly">Weekly</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="filingStatus">Filing Status</label>
+                                    <select id="filingStatus" required>
+                                        <option value="single" selected>Single</option>
+                                        <option value="married">Married Filing Jointly</option>
+                                        <option value="head">Head of Household</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <select id="state" required>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA" selected>California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="allowances">Federal Allowances (W-4)</label>
+                                <input type="number" id="allowances" min="0" max="10" value="1">
+                            </div>
+
+                            <h3>Pre-Tax Deductions (Per Pay Period)</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preTax401k">401(k) Contribution ($)</label>
+                                    <input type="number" id="preTax401k" min="0" value="500">
+                                </div>
+                                <div class="form-group">
+                                    <label for="healthInsurance">Health Insurance ($)</label>
+                                    <input type="number" id="healthInsurance" min="0" value="200">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="hsaContribution">HSA Contribution ($)</label>
+                                    <input type="number" id="hsaContribution" min="0" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="otherDeductions">Other Pre-Tax ($)</label>
+                                    <input type="number" id="otherDeductions" min="0" value="0">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Calculate Take Home Pay</button>
+                        </form>
+                    </div>
+
+                    <div class="card results-card" id="results" style="display: none;">
+                        <h2>Your Paycheck Breakdown</h2>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-label">Gross Pay (Per Period)</span>
+                                <span class="result-value" id="grossPay">$0</span>
+                            </div>
+                            <div class="result-item highlight">
+                                <span class="result-label">Net Pay (Take Home)</span>
+                                <span class="result-value" id="netPay">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Annual Gross</span>
+                                <span class="result-value" id="annualGross">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Annual Net</span>
+                                <span class="result-value" id="annualNet">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Federal Tax (Per Period)</span>
+                                <span class="result-value" id="federalTax">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">State Tax (Per Period)</span>
+                                <span class="result-value" id="stateTaxResult">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Social Security</span>
+                                <span class="result-value" id="socialSecurity">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Medicare</span>
+                                <span class="result-value" id="medicare">$0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Effective Tax Rate</span>
+                                <span class="result-value" id="effectiveRate">0%</span>
+                            </div>
+                        </div>
+
+                        <div class="comparison-table">
+                            <h3>Detailed Breakdown</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Per Period</th>
+                                        <th>Annual</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="breakdownBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-sidebar">
+                    <div class="card">
+                        <h3>Tax Withholdings</h3>
+                        <ul class="info-list">
+                            <li><strong>Federal Tax:</strong> Based on W-4 and tax brackets</li>
+                            <li><strong>Social Security:</strong> 6.2% up to $168,600</li>
+                            <li><strong>Medicare:</strong> 1.45% (+ 0.9% over $200k)</li>
+                            <li><strong>State Tax:</strong> Varies by state (0-13%)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>No State Income Tax</h3>
+                        <p>These states have no state income tax:</p>
+                        <ul class="info-list">
+                            <li>Alaska</li>
+                            <li>Florida</li>
+                            <li>Nevada</li>
+                            <li>New Hampshire*</li>
+                            <li>South Dakota</li>
+                            <li>Tennessee*</li>
+                            <li>Texas</li>
+                            <li>Washington</li>
+                            <li>Wyoming</li>
+                        </ul>
+                        <small>*No tax on wages; may tax investment income</small>
+                    </div>
+
+                    <div class="card policy-links">
+                        <h3>Tax Resources</h3>
+                        <p>Learn more about payroll taxes:</p>
+                        <a href="https://www.google.com/search?q=IRS+W-4+form+2024" target="_blank" class="btn btn-outline btn-block">W-4 Form Guide</a>
+                        <a href="https://www.google.com/search?q=federal+income+tax+brackets+2024" target="_blank" class="btn btn-outline btn-block">Federal Tax Brackets</a>
+                        <a href="https://www.google.com/search?q=state+income+tax+rates+by+state" target="_blank" class="btn btn-outline btn-block">State Tax Rates</a>
+                        <a href="https://www.google.com/search?q=FICA+taxes+explained" target="_blank" class="btn btn-outline btn-block">FICA Taxes Explained</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="card" id="guide">
+                <h2>Understanding Your Paycheck</h2>
+                <div class="guide-content">
+                    <h3>Federal Income Tax</h3>
+                    <p>Federal income tax is calculated based on your taxable income and filing status. The U.S. uses a progressive tax system with seven tax brackets ranging from 10% to 37%. Your W-4 form determines how much is withheld from each paycheck.</p>
+
+                    <h3>FICA Taxes</h3>
+                    <p>FICA (Federal Insurance Contributions Act) taxes fund Social Security and Medicare:</p>
+                    <ul>
+                        <li><strong>Social Security:</strong> 6.2% of wages up to $168,600 (2024)</li>
+                        <li><strong>Medicare:</strong> 1.45% of all wages, plus an additional 0.9% on wages over $200,000 (single) or $250,000 (married)</li>
+                    </ul>
+
+                    <h3>Pre-Tax Deductions</h3>
+                    <p>Pre-tax deductions reduce your taxable income, lowering your tax burden:</p>
+                    <ul>
+                        <li><strong>401(k):</strong> Up to $23,000 in 2024 ($30,500 if 50+)</li>
+                        <li><strong>Health Insurance:</strong> Employer-sponsored premiums</li>
+                        <li><strong>HSA:</strong> Up to $4,150 individual / $8,300 family</li>
+                        <li><strong>FSA:</strong> Up to $3,200 for healthcare expenses</li>
+                    </ul>
+
+                    <h3>Tips to Increase Take Home Pay</h3>
+                    <ul>
+                        <li>Maximize pre-tax retirement contributions</li>
+                        <li>Use HSA/FSA for medical expenses</li>
+                        <li>Review your W-4 withholdings annually</li>
+                        <li>Consider living in a state with no income tax</li>
+                        <li>Take advantage of commuter benefits if available</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FinanceCalc. For educational purposes only. Actual paycheck may vary based on additional factors.</p>
+        </div>
+    </footer>
+
+    <script src="../js/take-home-pay.js"></script>
+</body>
+</html>

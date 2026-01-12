@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Fund Calculator - How Much Do You Need?</title>
+    <meta name="description" content="Free emergency fund calculator. Calculate how much you need in your emergency fund based on your monthly expenses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Emergency Fund Calculator</span>
+            </nav>
+
+            <h1>Emergency Fund Calculator</h1>
+            <p>Calculate how much you need in your emergency fund to protect against unexpected expenses.</p>
+
+            <div class="calculator">
+                <form id="emergencyFundForm">
+                    <h3 style="margin-bottom: 20px; color: var(--text-secondary);">Monthly Expenses</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="housing">Housing (Rent/Mortgage)</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="housing" value="1500" min="0" step="50">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="utilities">Utilities</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="utilities" value="200" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="food">Food & Groceries</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="food" value="500" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="transportation">Transportation</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="transportation" value="400" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="insurance">Insurance (Health, Auto, etc.)</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="insurance" value="300" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="debtPayments">Minimum Debt Payments</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="debtPayments" value="200" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="otherExpenses">Other Essential Expenses</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="otherExpenses" value="300" min="0" step="25">
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 30px 0 20px; color: var(--text-secondary);">Your Situation</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="monthsCoverage">Months of Coverage</label>
+                            <select id="monthsCoverage">
+                                <option value="3">3 months (minimum)</option>
+                                <option value="6" selected>6 months (recommended)</option>
+                                <option value="9">9 months (conservative)</option>
+                                <option value="12">12 months (very conservative)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentSavings">Current Emergency Savings</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentSavings" value="5000" min="0" step="500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="targetFund">$0</div>
+                        <p>Target Emergency Fund</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Monthly Expenses</div>
+                            <div class="value" id="monthlyExpenses">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Current Savings</div>
+                            <div class="value" id="currentDisplay">$0</div>
+                        </div>
+                        <div class="result-card warning">
+                            <div class="label">Still Needed</div>
+                            <div class="value" id="stillNeeded">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Progress</div>
+                            <div class="value" id="progress">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Savings Resources
+                </h3>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=best+high+yield+savings+accounts+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Best Savings Accounts
+                    </a>
+                    <a href="https://www.google.com/search?q=money+market+accounts+rates" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Money Market Rates
+                    </a>
+                    <a href="https://www.google.com/search?q=FDIC+insurance+limits" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        FDIC Insurance
+                    </a>
+                    <a href="https://www.google.com/search?q=automate+savings+tips" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Automate Savings
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>Why You Need an Emergency Fund</h2>
+                <p>An emergency fund protects you from unexpected expenses like job loss, medical bills, or car repairs without going into debt.</p>
+                <h3>How Much Should You Save?</h3>
+                <ul>
+                    <li><strong>3 months:</strong> Minimum for stable income, dual-income households</li>
+                    <li><strong>6 months:</strong> Recommended for most people</li>
+                    <li><strong>9-12 months:</strong> Self-employed, single income, or volatile industry</li>
+                </ul>
+                <h3>Where to Keep Your Emergency Fund</h3>
+                <ul>
+                    <li>High-yield savings account (easy access, earns interest)</li>
+                    <li>Money market account</li>
+                    <li>NOT in investments (too risky for emergency funds)</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/emergency-fund.js"></script>
+</body>
+</html>

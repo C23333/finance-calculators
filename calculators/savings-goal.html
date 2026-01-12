@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goal Calculator - How Much to Save Monthly</title>
+    <meta name="description" content="Free savings goal calculator. Find out how much you need to save each month to reach your financial goal on time.">
+    <meta name="keywords" content="savings goal calculator, savings calculator, how much to save, monthly savings calculator">
+    <link rel="canonical" href="https://financecalc.cc/calculators/savings-goal.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Savings Goal Calculator</span>
+            </nav>
+
+            <h1>Savings Goal Calculator</h1>
+            <p>Find out how much you need to save each month to reach your financial goal.</p>
+
+            <div class="calculator">
+                <form id="savingsGoalForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="goalAmount">Savings Goal</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="goalAmount" value="10000" min="0" step="100" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentSavings">Current Savings</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentSavings" value="0" min="0" step="100" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timeframe">Timeframe (Months)</label>
+                            <input type="number" id="timeframe" value="24" min="1" max="600" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interestRate">Expected Interest Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="interestRate" value="4" min="0" max="15" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="monthlySavings">$0</div>
+                        <p>Monthly Savings Needed</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Weekly</div>
+                            <div class="value" id="weeklySavings">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Daily</div>
+                            <div class="value" id="dailySavings">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Contributions</div>
+                            <div class="value" id="totalContributions">$0</div>
+                        </div>
+                        <div class="result-card success">
+                            <div class="label">Interest Earned</div>
+                            <div class="value" id="interestEarned">$0</div>
+                        </div>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="result-label">Your Goal</span>
+                        <span class="result-value" id="goalDisplay">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Savings Resources
+                </h3>
+                <p>Find the best places to grow your savings:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=best+high+yield+savings+accounts+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Best High-Yield Savings
+                    </a>
+                    <a href="https://www.google.com/search?q=CD+rates+comparison+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Best CD Rates
+                    </a>
+                    <a href="https://www.google.com/search?q=money+market+accounts+best+rates" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Money Market Accounts
+                    </a>
+                    <a href="https://www.google.com/search?q=FDIC+insurance+limits+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        FDIC Insurance Limits
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>Tips for Reaching Your Savings Goal</h2>
+
+                <h3>Automate Your Savings</h3>
+                <p>Set up automatic transfers from your checking to savings account right after payday. This "pay yourself first" approach ensures you save before you spend.</p>
+
+                <h3>Common Savings Goals</h3>
+                <ul>
+                    <li><strong>Emergency Fund:</strong> 3-6 months of expenses</li>
+                    <li><strong>Down Payment:</strong> 20% of home price</li>
+                    <li><strong>Vacation:</strong> Varies by destination</li>
+                    <li><strong>New Car:</strong> 10-20% down payment</li>
+                    <li><strong>Wedding:</strong> Average $30,000 in the US</li>
+                </ul>
+
+                <h3>Where to Keep Your Savings</h3>
+                <ul>
+                    <li><strong>High-Yield Savings:</strong> Best for emergency funds and short-term goals</li>
+                    <li><strong>CDs:</strong> Higher rates for money you won't need for a set period</li>
+                    <li><strong>Money Market:</strong> Combines savings with limited check-writing</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates based on constant interest rates. Actual results may vary.</p>
+        </div>
+    </footer>
+
+    <script src="../js/savings-goal.js"></script>
+</body>
+</html>

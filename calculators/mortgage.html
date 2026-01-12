@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator - Calculate Monthly Payments & Amortization</title>
+    <meta name="description" content="Free mortgage calculator to estimate monthly payments, total interest, and view amortization schedule. Calculate home loan costs instantly.">
+    <meta name="keywords" content="mortgage calculator, home loan calculator, monthly payment calculator, amortization schedule, mortgage interest">
+    <link rel="canonical" href="https://financecalc.cc/calculators/mortgage.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mortgage Calculator",
+        "description": "Calculate monthly mortgage payments and view amortization schedule",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Mortgage Calculator</span>
+            </nav>
+
+            <h1>Mortgage Calculator</h1>
+            <p>Calculate your monthly mortgage payment, total interest paid, and view a complete amortization schedule.</p>
+
+            <div class="calculator">
+                <form id="mortgageForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homePrice">Home Price</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="downPayment">Down Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="downPayment" value="70000" min="0" step="1000" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (Annual)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term</label>
+                            <select id="loanTerm">
+                                <option value="30">30 years</option>
+                                <option value="20">20 years</option>
+                                <option value="15">15 years</option>
+                                <option value="10">10 years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate Payment</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="monthlyPayment">$0</div>
+                        <p>Monthly Payment (Principal & Interest)</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Loan Amount</div>
+                            <div class="value" id="loanAmount">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Interest</div>
+                            <div class="value" id="totalInterest">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Cost</div>
+                            <div class="value" id="totalCost">$0</div>
+                        </div>
+                        <div class="result-card success">
+                            <div class="label">Payoff Date</div>
+                            <div class="value" id="payoffDate">-</div>
+                        </div>
+                    </div>
+
+                    <div class="amortization-table">
+                        <h3>Amortization Schedule (Yearly)</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="amortizationBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Links Section -->
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Local Mortgage Programs & Policies
+                </h3>
+                <p>Explore government programs and local policies that may help you save on your mortgage:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        FHA Loan Requirements
+                    </a>
+                    <a href="https://www.google.com/search?q=VA+home+loan+benefits+eligibility" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        VA Loan Benefits
+                    </a>
+                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        First-Time Buyer Programs
+                    </a>
+                    <a href="https://www.google.com/search?q=USDA+rural+home+loan+eligibility" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        USDA Rural Loans
+                    </a>
+                    <a href="https://www.google.com/search?q=mortgage+interest+tax+deduction+rules" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Mortgage Tax Deduction
+                    </a>
+                    <a href="https://www.google.com/search?q=down+payment+assistance+programs+by+state" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Down Payment Assistance
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>How to Use This Mortgage Calculator</h2>
+                <p>Enter your home price, down payment, interest rate, and loan term to calculate your estimated monthly mortgage payment. The calculator also shows you the total interest you'll pay over the life of the loan and provides a yearly amortization schedule.</p>
+
+                <h3>Understanding Your Results</h3>
+                <ul>
+                    <li><strong>Monthly Payment:</strong> The amount you'll pay each month (principal + interest only, not including taxes or insurance)</li>
+                    <li><strong>Total Interest:</strong> The total amount of interest you'll pay over the entire loan term</li>
+                    <li><strong>Amortization Schedule:</strong> Shows how your payments are split between principal and interest each year</li>
+                </ul>
+
+                <h3>Tips for Getting a Better Mortgage Rate</h3>
+                <ul>
+                    <li>Improve your credit score before applying (aim for 740+)</li>
+                    <li>Save for a larger down payment (20% or more to avoid PMI)</li>
+                    <li>Compare rates from at least 3-5 different lenders</li>
+                    <li>Consider a shorter loan term for lower interest rates</li>
+                    <li>Lock in your rate when you find a good deal</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
+        </div>
+    </footer>
+
+    <script src="../js/mortgage.js"></script>
+</body>
+</html>

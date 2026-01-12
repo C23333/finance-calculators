@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refinance Calculator - Should You Refinance Your Mortgage?</title>
+    <meta name="description" content="Free refinance calculator. See if refinancing your mortgage could save you money. Compare your current loan with new rates.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Refinance Calculator</span>
+            </nav>
+
+            <h1>Refinance Calculator</h1>
+            <p>See if refinancing your mortgage could save you money over time.</p>
+
+            <div class="calculator">
+                <form id="refinanceForm">
+                    <h3 style="margin-bottom: 20px; color: var(--text-secondary);">Current Loan</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentBalance">Current Balance</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentBalance" value="250000" min="0" step="1000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentRate">Current Interest Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="currentRate" value="7.5" min="0" max="20" step="0.125" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentTermRemaining">Months Remaining</label>
+                            <input type="number" id="currentTermRemaining" value="300" min="1" max="360" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentPayment">Current Monthly Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentPayment" value="1800" min="0" step="10" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 30px 0 20px; color: var(--text-secondary);">New Loan</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="newRate">New Interest Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="newRate" value="6.0" min="0" max="20" step="0.125" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newTerm">New Loan Term</label>
+                            <select id="newTerm">
+                                <option value="360">30 years</option>
+                                <option value="240">20 years</option>
+                                <option value="180" selected>15 years</option>
+                                <option value="120">10 years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="closingCosts">Closing Costs</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="closingCosts" value="5000" min="0" step="100">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Compare Loans</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="monthlySavings">$0</div>
+                        <p>Monthly Savings</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">New Payment</div>
+                            <div class="value" id="newPayment">$0</div>
+                        </div>
+                        <div class="result-card success">
+                            <div class="label">Lifetime Savings</div>
+                            <div class="value" id="lifetimeSavings">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Break-Even</div>
+                            <div class="value" id="breakEven">0 months</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Recommendation</div>
+                            <div class="value" id="recommendation">-</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-section">
+                        <h3>Current Loan</h3>
+                        <div class="result-item">
+                            <span class="result-label">Total Remaining Payments</span>
+                            <span class="result-value" id="currentTotal">$0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Interest</span>
+                            <span class="result-value" id="currentInterest">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-section highlight">
+                        <h3>New Loan</h3>
+                        <div class="result-item">
+                            <span class="result-label">Total Payments</span>
+                            <span class="result-value" id="newTotal">$0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Interest</span>
+                            <span class="result-value" id="newInterest">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Refinance Resources
+                </h3>
+                <p>Learn more about refinancing options:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=current+mortgage+refinance+rates+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Current Refinance Rates
+                    </a>
+                    <a href="https://www.google.com/search?q=cash+out+refinance+rules" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Cash-Out Refinance
+                    </a>
+                    <a href="https://www.google.com/search?q=FHA+streamline+refinance" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        FHA Streamline Refinance
+                    </a>
+                    <a href="https://www.google.com/search?q=VA+IRRRL+refinance" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        VA IRRRL Program
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>When Should You Refinance?</h2>
+                <p>Refinancing makes sense when you can lower your interest rate enough to offset closing costs within a reasonable timeframe.</p>
+                <h3>General Guidelines</h3>
+                <ul>
+                    <li>Rate reduction of at least 0.5-1% is typically worthwhile</li>
+                    <li>Plan to stay in the home long enough to reach break-even</li>
+                    <li>Consider shortening your term to build equity faster</li>
+                    <li>Factor in all closing costs, not just the rate</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Consult a mortgage professional for accurate quotes.</p>
+        </div>
+    </footer>
+
+    <script src="../js/refinance.js"></script>
+</body>
+</html>

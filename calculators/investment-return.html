@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Return Calculator - Calculate ROI & Compare Investments</title>
+    <meta name="description" content="Free investment return calculator. Calculate ROI, compare different investment scenarios, and see your potential returns over time.">
+    <meta name="keywords" content="investment calculator, ROI calculator, return on investment, investment comparison, stock return calculator">
+    <link rel="canonical" href="https://financecalc.cc/calculators/investment-return.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Investment Return Calculator",
+        "description": "Calculate investment returns and compare different scenarios",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Investment Return Calculator</span>
+            </nav>
+
+            <h1>Investment Return Calculator</h1>
+            <p>Calculate your investment returns and ROI. Compare what you invested vs what you got back.</p>
+
+            <div class="calculator">
+                <form id="investmentForm">
+                    <div class="form-group">
+                        <label for="initialInvestment">Initial Investment</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="initialInvestment" value="10000" min="0" step="100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="finalValue">Final Value</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="finalValue" value="15000" min="0" step="100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="holdingPeriod">Holding Period (Years)</label>
+                        <input type="number" id="holdingPeriod" value="3" min="0.1" max="100" step="0.1" required>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="totalReturn">0%</div>
+                        <p>Total Return</p>
+                    </div>
+
+                    <h2>Investment Summary</h2>
+                    <div class="result-item">
+                        <span class="result-label">Profit/Loss</span>
+                        <span class="result-value" id="profitLoss">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Annualized Return (CAGR)</span>
+                        <span class="result-value" id="annualizedReturn">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Simple ROI</span>
+                        <span class="result-value" id="simpleROI">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Doubling Time</span>
+                        <span class="result-value" id="doublingTime">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <article class="content" style="margin-top: 40px;">
+                <h2>Understanding Investment Returns</h2>
+
+                <h3>Total Return vs Annualized Return</h3>
+                <p><strong>Total Return</strong> shows your overall gain or loss as a percentage. <strong>Annualized Return (CAGR)</strong> shows the equivalent yearly return rate, which is useful for comparing investments held for different time periods.</p>
+
+                <h3>CAGR Formula</h3>
+                <p>CAGR = (Final Value / Initial Value)^(1/Years) - 1</p>
+                <p>This gives you the constant annual growth rate that would take your initial investment to its final value.</p>
+
+                <h3>Historical Average Returns</h3>
+                <ul>
+                    <li><strong>S&P 500:</strong> ~10% annually (before inflation)</li>
+                    <li><strong>Bonds:</strong> ~5-6% annually</li>
+                    <li><strong>Savings Account:</strong> ~0.5-5% (varies by rate environment)</li>
+                    <li><strong>Real Estate:</strong> ~8-12% annually (including appreciation and rental income)</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="../js/investment-return.js"></script>
+</body>
+</html>

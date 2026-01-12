@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Calculator - Plan Your Retirement Savings</title>
+    <meta name="description" content="Free retirement calculator. See if you're on track for retirement, calculate how much you need to save, and plan your financial future.">
+    <meta name="keywords" content="retirement calculator, retirement planning, 401k calculator, retirement savings, how much to retire">
+    <link rel="canonical" href="https://financecalc.cc/calculators/retirement.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Retirement Calculator",
+        "description": "Plan your retirement savings and see if you're on track",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Retirement Calculator</span>
+            </nav>
+
+            <h1>Retirement Calculator</h1>
+            <p>Plan your retirement and see if you're on track to meet your financial goals.</p>
+
+            <div class="calculator">
+                <form id="retirementForm">
+                    <div class="form-group">
+                        <label for="currentAge">Current Age</label>
+                        <input type="number" id="currentAge" value="30" min="18" max="80" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="retirementAge">Retirement Age</label>
+                        <input type="number" id="retirementAge" value="65" min="50" max="80" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="currentSavings">Current Retirement Savings</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="currentSavings" value="50000" min="0" step="1000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthlyContribution">Monthly Contribution</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="monthlyContribution" value="1000" min="0" step="50" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expectedReturn">Expected Annual Return (%)</label>
+                        <div class="input-group">
+                            <span>%</span>
+                            <input type="number" id="expectedReturn" value="7" min="0" max="20" step="0.5" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="desiredIncome">Desired Annual Retirement Income</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="desiredIncome" value="60000" min="0" step="1000" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="projectedSavings">$0</div>
+                        <p>Projected Savings at Retirement</p>
+                    </div>
+
+                    <h2>Retirement Summary</h2>
+                    <div class="result-item">
+                        <span class="result-label">Years Until Retirement</span>
+                        <span class="result-value" id="yearsToRetirement">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Contributions</span>
+                        <span class="result-value" id="totalContributions">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Investment Growth</span>
+                        <span class="result-value" id="investmentGrowth">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Savings Needed (4% Rule)</span>
+                        <span class="result-value" id="savingsNeeded">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Status</span>
+                        <span class="result-value" id="status">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Annual Income from Savings</span>
+                        <span class="result-value" id="annualIncome">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <article class="content" style="margin-top: 40px;">
+                <h2>Understanding Retirement Planning</h2>
+
+                <h3>The 4% Rule</h3>
+                <p>The 4% rule suggests you can withdraw 4% of your retirement savings annually without running out of money over a 30-year retirement. To find how much you need, multiply your desired annual income by 25.</p>
+
+                <h3>Key Factors in Retirement Planning</h3>
+                <ul>
+                    <li><strong>Time:</strong> The earlier you start, the more compound interest works in your favor</li>
+                    <li><strong>Contribution Rate:</strong> Aim to save 15-20% of your income for retirement</li>
+                    <li><strong>Investment Returns:</strong> A diversified portfolio historically returns 6-8% after inflation</li>
+                    <li><strong>Social Security:</strong> This calculator doesn't include Social Security benefits, which can supplement your savings</li>
+                </ul>
+
+                <h3>Tips for Retirement Success</h3>
+                <ul>
+                    <li>Maximize employer 401(k) matching - it's free money</li>
+                    <li>Consider a Roth IRA for tax-free growth</li>
+                    <li>Increase contributions when you get raises</li>
+                    <li>Keep investment fees low with index funds</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Consult a financial advisor for personalized retirement planning.</p>
+        </div>
+    </footer>
+
+    <script src="../js/retirement.js"></script>
+</body>
+</html>

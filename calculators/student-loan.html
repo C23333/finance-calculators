@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Loan Calculator - Plan Your Repayment</title>
+    <meta name="description" content="Free student loan calculator. Calculate monthly payments, explore repayment plans, and see total interest costs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">FinCalc</a>
+            <ul class="nav-links">
+                <li><a href="../#calculators">Calculators</a></li>
+                <li><a href="../#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-page">
+        <div class="calc-container">
+            <nav class="breadcrumb">
+                <a href="../">Home</a> <span>/ Student Loan Calculator</span>
+            </nav>
+
+            <h1>Student Loan Calculator</h1>
+            <p>Calculate your student loan payments and explore different repayment strategies.</p>
+
+            <div class="calculator">
+                <form id="studentLoanForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="loanBalance">Total Loan Balance</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="loanBalance" value="35000" min="0" step="1000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="interestRate" value="5.5" min="0" max="15" step="0.1" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="repaymentPlan">Repayment Plan</label>
+                            <select id="repaymentPlan">
+                                <option value="120">Standard (10 years)</option>
+                                <option value="180">Extended (15 years)</option>
+                                <option value="240">Extended (20 years)</option>
+                                <option value="300">Extended (25 years)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="extraPayment">Extra Monthly Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="extraPayment" value="0" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+
+                <div class="results" id="results">
+                    <div class="result-highlight">
+                        <div class="big-number" id="monthlyPayment">$0</div>
+                        <p>Monthly Payment</p>
+                    </div>
+
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <div class="label">Total Interest</div>
+                            <div class="value" id="totalInterest">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Total Cost</div>
+                            <div class="value" id="totalCost">$0</div>
+                        </div>
+                        <div class="result-card success">
+                            <div class="label">Payoff Date</div>
+                            <div class="value" id="payoffDate">-</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="label">Interest Saved</div>
+                            <div class="value" id="interestSaved">$0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-links">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Student Loan Resources
+                </h3>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=PSLF+public+service+loan+forgiveness+requirements" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        PSLF Forgiveness
+                    </a>
+                    <a href="https://www.google.com/search?q=income+driven+repayment+plans+IDR" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Income-Driven Plans
+                    </a>
+                    <a href="https://www.google.com/search?q=student+loan+interest+deduction+tax" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Interest Tax Deduction
+                    </a>
+                    <a href="https://www.google.com/search?q=student+loan+refinance+rates+2025" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Refinance Rates
+                    </a>
+                    <a href="https://www.google.com/search?q=SAVE+plan+student+loans" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        SAVE Plan Details
+                    </a>
+                    <a href="https://www.google.com/search?q=federal+student+loan+deferment+forbearance" target="_blank" rel="noopener" class="policy-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Deferment Options
+                    </a>
+                </div>
+            </div>
+
+            <article class="content">
+                <h2>Student Loan Repayment Strategies</h2>
+                <h3>Federal Loan Options</h3>
+                <ul>
+                    <li><strong>Standard Repayment:</strong> Fixed payments over 10 years</li>
+                    <li><strong>Income-Driven:</strong> Payments based on income (IBR, PAYE, SAVE)</li>
+                    <li><strong>PSLF:</strong> Forgiveness after 10 years of public service</li>
+                </ul>
+                <h3>Tips to Pay Off Faster</h3>
+                <ul>
+                    <li>Make payments during grace period</li>
+                    <li>Pay more than the minimum when possible</li>
+                    <li>Consider refinancing for lower rates (but lose federal benefits)</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FinCalc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/student-loan.js"></script>
+</body>
+</html>
