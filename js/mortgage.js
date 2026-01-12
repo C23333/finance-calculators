@@ -59,6 +59,11 @@ function calculateMortgage() {
 
     // Scroll to results
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+    // Trigger calculation complete event for monetization
+    document.dispatchEvent(new CustomEvent('calculationComplete', {
+        detail: { calculator: 'mortgage', results: { monthlyPayment, loanAmount, totalInterest } }
+    }));
 }
 
 function generateAmortizationSchedule(principal, monthlyRate, monthlyPayment, years) {

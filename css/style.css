@@ -920,3 +920,115 @@ footer p {
 .comparison-section.highlight h3 {
     color: var(--secondary);
 }
+
+/* Affiliate Section Styles */
+.affiliate-section {
+    margin-top: 32px;
+    padding: 28px;
+    background: linear-gradient(135deg, var(--bg-soft) 0%, var(--primary-bg) 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.affiliate-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.affiliate-section h3 svg {
+    color: var(--accent);
+}
+
+.affiliate-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.affiliate-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--bg);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+    min-height: 120px;
+}
+
+.affiliate-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.affiliate-content h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.affiliate-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.affiliate-cta {
+    margin-top: 12px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.affiliate-card:hover .affiliate-cta {
+    color: var(--primary-dark);
+}
+
+/* Ad Container Styles */
+.ad-container {
+    margin: 24px 0;
+    padding: 16px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    text-align: center;
+    min-height: 100px;
+}
+
+.ad-container::before {
+    content: 'Advertisement';
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .affiliate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .affiliate-section {
+        padding: 20px;
+    }
+}

@@ -46,8 +46,16 @@ function showResults(elementId = 'results') {
     const results = document.getElementById(elementId);
     if (results) {
         results.style.display = 'block';
+        results.classList.add('show');
         results.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+}
+
+// Trigger calculation complete event for monetization
+function triggerCalculationComplete(calculatorName, resultsData = {}) {
+    document.dispatchEvent(new CustomEvent('calculationComplete', {
+        detail: { calculator: calculatorName, results: resultsData }
+    }));
 }
 
 // 2024 Federal Tax Brackets
@@ -231,6 +239,7 @@ if (typeof module !== 'undefined' && module.exports) {
         parseCurrency,
         validateNumber,
         showResults,
+        triggerCalculationComplete,
         calculateFederalIncomeTax,
         calculateStateIncomeTax,
         calculateFICATaxes,
