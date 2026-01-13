@@ -10,7 +10,7 @@ const AffiliateLinks = {
         trackingEnabled: true,
         // Affiliate program IDs (replace with actual IDs)
         affiliates: {
-            amazon: 'fincalc-20',
+            amazon: 'human0f7-20',
             creditKarma: 'fincalc',
             nerdwallet: 'fincalc',
             bankrate: 'fincalc'
@@ -181,8 +181,14 @@ const AffiliateLinks = {
 
     /**
      * Initialize affiliate system
+     * DISABLED - Amazon Associates doesn't support China payment
      */
     init() {
+        // Disabled - only using Google Ads for now
+        console.log('[Affiliate] Disabled');
+        return;
+        
+        /* Original code disabled:
         if (this.state.initialized) return;
 
         this.loadClickHistory();
@@ -191,6 +197,7 @@ const AffiliateLinks = {
 
         this.state.initialized = true;
         console.log('[Affiliate] Initialized');
+        */
     },
 
     /**
