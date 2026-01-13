@@ -537,6 +537,33 @@ footer a:hover {
     margin-right: 0;
 }
 
+/* Friend Links */
+.friend-links {
+    margin: 12px 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.friend-links span {
+    margin-right: 8px;
+}
+
+.friend-links a {
+    color: var(--footer-link);
+    text-decoration: none;
+    transition: var(--transition);
+    margin-right: 12px;
+}
+
+.friend-links a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.friend-links a:last-child {
+    margin-right: 0;
+}
+
 .disclaimer {
     font-size: 0.85rem;
     opacity: 0.6;

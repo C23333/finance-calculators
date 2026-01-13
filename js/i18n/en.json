@@ -40,7 +40,8 @@
             "year": "Year",
             "principal": "Principal",
             "interest": "Interest",
-            "balance": "Balance"
+            "balance": "Balance",
+            "desc": "Calculate monthly payments, total interest, and view amortization schedule."
         },
         "compoundInterest": {
             "title": "Compound Interest Calculator",
@@ -78,7 +79,8 @@
             "factorFrequency": "More frequent compounding (daily vs yearly) yields slightly higher returns",
             "factorContributions": "Adding money consistently dramatically increases your final balance",
             "ruleOf72": "The Rule of 72",
-            "ruleOf72Text": "A quick way to estimate how long it takes to double your money: divide 72 by your interest rate. At 7% interest, your money doubles in approximately 10.3 years (72 / 7 = 10.3)."
+            "ruleOf72Text": "A quick way to estimate how long it takes to double your money: divide 72 by your interest rate. At 7% interest, your money doubles in approximately 10.3 years (72 / 7 = 10.3).",
+            "desc": "See how your investments grow over time with compound interest."
         },
         "retirement": {
             "title": "Retirement Calculator",
@@ -118,7 +120,8 @@
             "tip401k": "Maximize employer 401(k) matching - it's free money",
             "tipRoth": "Consider a Roth IRA for tax-free growth",
             "tipIncrease": "Increase contributions when you get raises",
-            "tipFees": "Keep investment fees low with index funds"
+            "tipFees": "Keep investment fees low with index funds",
+            "desc": "Plan your retirement savings and see if you're on track."
         },
         "loan": {
             "title": "Loan Payoff Calculator",
@@ -201,7 +204,8 @@
             "relatedArticles": "Related Articles",
             "disclaimer": "Disclaimer: This calculator provides estimates only. Actual payoff times may vary based on interest rate changes and payment timing.",
             "fillAllFields": "Please fill in all debt fields",
-            "addAtLeastOne": "Please add at least one debt"
+            "addAtLeastOne": "Please add at least one debt",
+            "desc": "Create a debt payoff plan using snowball or avalanche method."
         },
         "autoLoan": {
             "title": "Auto Loan Calculator",
@@ -245,7 +249,8 @@
             "newVsUsedTitle": "New vs Used Car Financing",
             "newVsUsed1": "New cars typically have lower interest rates but higher prices",
             "newVsUsed2": "Used cars depreciate less but may have higher rates",
-            "newVsUsed3": "Certified pre-owned (CPO) vehicles often offer the best of both worlds"
+            "newVsUsed3": "Certified pre-owned (CPO) vehicles often offer the best of both worlds",
+            "desc": "Calculate car loan payments and total cost of financing."
         },
         "studentLoan": {
             "title": "Student Loan Calculator",
@@ -260,7 +265,7 @@
             "extended20": "Extended (20 years)",
             "extended25": "Extended (25 years)",
             "graduated": "Graduated",
-            "incomedriven": "Income-Driven",
+            "incomeDrivenOption": "Income-Driven",
             "extraPayment": "Extra Monthly Payment",
             "calculate": "Calculate",
             "monthlyPayment": "Monthly Payment",
@@ -288,7 +293,8 @@
             "tipsTitle": "Tips to Pay Off Faster",
             "tip1": "Make payments during grace period",
             "tip2": "Pay more than the minimum when possible",
-            "tip3": "Consider refinancing for lower rates (but lose federal benefits)"
+            "tip3": "Consider refinancing for lower rates (but lose federal benefits)",
+            "desc": "Plan your student loan repayment and explore forgiveness options."
         },
         "401k": {
             "title": "401(k) Calculator",
@@ -380,7 +386,8 @@
             "cdsDesc": "Higher rates for money you won't need for a set period",
             "moneyMarket": "Money Market:",
             "moneyMarketDesc": "Combines savings with limited check-writing",
-            "disclaimer": "Disclaimer: This calculator provides estimates based on constant interest rates. Actual results may vary."
+            "disclaimer": "Disclaimer: This calculator provides estimates based on constant interest rates. Actual results may vary.",
+            "desc": "Find out how much to save monthly to reach your goal."
         },
         "emergencyFund": {
             "title": "Emergency Fund Calculator",
@@ -424,7 +431,8 @@
             "whereToKeepTitle": "Where to Keep Your Emergency Fund",
             "whereToKeep1": "High-yield savings account (easy access, earns interest)",
             "whereToKeep2": "Money market account",
-            "whereToKeep3": "NOT in investments (too risky for emergency funds)"
+            "whereToKeep3": "NOT in investments (too risky for emergency funds)",
+            "desc": "Calculate how much you need in your emergency fund."
         },
         "inflation": {
             "title": "Inflation Calculator",
@@ -434,7 +442,46 @@
             "years": "Number of Years",
             "futureValue": "Future Value",
             "purchasingPower": "Purchasing Power",
-            "totalInflation": "Total Inflation"
+            "totalInflation": "Total Inflation",
+            "breadcrumb": "Inflation Calculator",
+            "calculate": "Calculate",
+            "futureCostLabel": "Future Cost of Same Goods",
+            "purchasingPowerLost": "Purchasing Power Lost",
+            "valueDecrease": "Value Decrease",
+            "futureBuyingPower": "Future Buying Power",
+            "priceIncrease": "Price Increase",
+            "yearByYearBreakdown": "Year-by-Year Breakdown",
+            "year": "Year",
+            "futureCost": "Future Cost",
+            "buyingPowerOf100": "Buying Power of $100",
+            "resourcesTitle": "Inflation Resources",
+            "resourcesDescription": "Stay informed about inflation and economic trends:",
+            "currentUSInflationRate": "Current US Inflation Rate",
+            "fedInterestRate": "Fed Interest Rate",
+            "iBonds": "I Bonds (Inflation Protected)",
+            "tipsSecurities": "TIPS Securities",
+            "socialSecurityCOLA": "Social Security COLA",
+            "historicalInflationRates": "Historical Inflation Rates",
+            "articleTitle": "Understanding Inflation",
+            "articleIntro": "Inflation is the rate at which the general level of prices for goods and services rises, causing purchasing power to fall. The Federal Reserve targets 2% annual inflation as healthy for the economy.",
+            "historicalUSInflation": "Historical US Inflation",
+            "longTermAverage": "Long-term average:",
+            "longTermAverageValue": "~3% per year",
+            "period2020_2023": "2020-2023:",
+            "period2020_2023Value": "Higher than average due to pandemic effects",
+            "fedTarget": "Fed target:",
+            "fedTargetValue": "2% annual inflation",
+            "protectingAgainstInflation": "Protecting Against Inflation",
+            "investInStocks": "Invest in stocks:",
+            "investInStocksDesc": "Historically outpace inflation over long periods",
+            "iBondsProtection": "I Bonds:",
+            "iBondsProtectionDesc": "Government bonds that adjust for inflation",
+            "tipsProtection": "TIPS:",
+            "tipsProtectionDesc": "Treasury Inflation-Protected Securities",
+            "realEstate": "Real estate:",
+            "realEstateDesc": "Property values often rise with inflation",
+            "disclaimer": "Disclaimer: This calculator uses a constant inflation rate. Actual inflation varies year to year.",
+            "desc": "See how inflation affects your purchasing power over time."
         },
         "salary": {
             "title": "Salary Calculator",
@@ -447,7 +494,30 @@
             "monthly": "Monthly",
             "annual": "Annual",
             "hoursPerWeek": "Hours Per Week",
-            "weeksPerYear": "Weeks Per Year"
+            "weeksPerYear": "Weeks Per Year",
+            "breakdown": "Your Salary Breakdown",
+            "daily": "Daily",
+            "semimonthly": "Semi-Monthly",
+            "quarterly": "Quarterly",
+            "resourcesTitle": "Wage & Employment Resources",
+            "resourcesDescription": "Learn about minimum wage laws and employment rights:",
+            "federalMinimumWage": "Federal Minimum Wage",
+            "stateMinimumWages": "State Minimum Wages",
+            "overtimePayLaws": "Overtime Pay Laws",
+            "exemptVsNonExempt": "Exempt vs Non-Exempt",
+            "averageSalaries": "Average Salaries by Job",
+            "costOfLiving": "Cost of Living by City",
+            "articleTitle": "Understanding Your Salary",
+            "articleIntro": "Knowing how your salary breaks down across different time periods helps you budget effectively and compare job offers.",
+            "commonPayPeriods": "Common Pay Periods",
+            "weeklyDesc": "52 paychecks per year",
+            "biweeklyDesc": "26 paychecks per year (every 2 weeks)",
+            "semimonthlyDesc": "24 paychecks per year (1st and 15th)",
+            "monthlyDesc": "12 paychecks per year",
+            "salaryVsHourly": "Salary vs Hourly",
+            "salaryVsHourlyDesc": "Salaried employees typically receive the same pay regardless of hours worked, while hourly employees are paid for actual hours worked and may receive overtime pay for hours over 40 per week.",
+            "disclaimer": "Disclaimer: This calculator shows gross pay before taxes and deductions. Actual take-home pay will be lower.",
+            "desc": "Convert between hourly, weekly, monthly, and annual salary."
         },
         "takeHomePay": {
             "title": "Take-Home Pay Calculator",
@@ -542,7 +612,8 @@
             "deductions": "Pre-Tax Deductions",
             "netPay": "Net Pay",
             "federalTax": "Federal Tax",
-            "stateTax": "State Tax"
+            "stateTax": "State Tax",
+            "desc": "Calculate your net pay after taxes and deductions."
         },
         "selfEmploymentTax": {
             "title": "Self-Employment Tax Calculator",
@@ -662,7 +733,8 @@
             "estimatedPaymentsText": "Self-employed individuals must make quarterly estimated tax payments if they expect to owe $1,000 or more in taxes. Failing to make these payments can result in penalties. Use Form 1040-ES to calculate and pay your estimated taxes.",
             "recordKeeping": "Record Keeping",
             "recordKeepingText": "Keep detailed records of all income and expenses. Save receipts, invoices, and bank statements. Good record keeping makes tax time easier and protects you in case of an audit.",
-            "footerDisclaimer": "For educational purposes only. Consult a tax professional for personalized advice."
+            "footerDisclaimer": "For educational purposes only. Consult a tax professional for personalized advice.",
+            "desc": "Estimate self-employment taxes for freelancers and contractors."
         },
         "refinance": {
             "title": "Refinance Calculator",
@@ -677,7 +749,34 @@
             "newPayment": "New Monthly Payment",
             "monthlySavings": "Monthly Savings",
             "breakEven": "Break-Even Point",
-            "lifetimeSavings": "Lifetime Savings"
+            "lifetimeSavings": "Lifetime Savings",
+            "currentLoan": "Current Loan",
+            "monthsRemaining": "Months Remaining",
+            "newLoan": "New Loan",
+            "years30": "30 years",
+            "years20": "20 years",
+            "years15": "15 years",
+            "years10": "10 years",
+            "compareLoans": "Compare Loans",
+            "recommendation": "Recommendation",
+            "totalRemainingPayments": "Total Remaining Payments",
+            "totalInterest": "Total Interest",
+            "totalPayments": "Total Payments",
+            "resourcesTitle": "Refinance Resources",
+            "resourcesDescription": "Learn more about refinancing options:",
+            "currentRefinanceRates": "Current Refinance Rates",
+            "cashOutRefinance": "Cash-Out Refinance",
+            "fhaStreamline": "FHA Streamline Refinance",
+            "vaIrrrl": "VA IRRRL Program",
+            "articleTitle": "When Should You Refinance?",
+            "articleIntro": "Refinancing makes sense when you can lower your interest rate enough to offset closing costs within a reasonable timeframe.",
+            "guidelinesTitle": "General Guidelines",
+            "guideline1": "Rate reduction of at least 0.5-1% is typically worthwhile",
+            "guideline2": "Plan to stay in the home long enough to reach break-even",
+            "guideline3": "Consider shortening your term to build equity faster",
+            "guideline4": "Factor in all closing costs, not just the rate",
+            "disclaimer": "Disclaimer: This calculator provides estimates only. Consult a mortgage professional for accurate quotes.",
+            "desc": "See if refinancing your mortgage could save you money."
         },
         "rentVsBuy": {
             "title": "Rent vs Buy Calculator",
@@ -726,7 +825,8 @@
             "rentAdvantage1": "Flexibility to move easily",
             "rentAdvantage2": "No maintenance responsibilities",
             "rentAdvantage3": "Lower upfront costs",
-            "rentAdvantage4": "No risk of home value decline"
+            "rentAdvantage4": "No risk of home value decline",
+            "desc": "Compare the costs of renting versus buying a home."
         },
         "homeAffordability": {
             "title": "Home Affordability Calculator",
@@ -768,7 +868,8 @@
             "tip1": "Don't max out your budget - leave room for unexpected expenses",
             "tip2": "Consider all costs: taxes, insurance, maintenance, HOA fees",
             "tip3": "Save for a 20% down payment to avoid PMI",
-            "relatedArticles": "Related Articles"
+            "relatedArticles": "Related Articles",
+            "desc": "Find out how much house you can afford based on your income."
         },
         "socialSecurity": {
             "title": "Social Security Benefits Calculator",
@@ -842,7 +943,8 @@
             "guideSpousalDesc": "You may be eligible for benefits based on your spouse's record",
             "guideSurvivor": "Survivor benefits:",
             "guideSurvivorDesc": "Your spouse may receive benefits based on your record after your death",
-            "footerDisclaimer": "For educational purposes only. Consult the SSA for official benefit estimates."
+            "footerDisclaimer": "For educational purposes only. Consult the SSA for official benefit estimates.",
+            "desc": "Estimate your Social Security benefits at different ages."
         },
         "rothVsTraditional": {
             "title": "Roth vs Traditional IRA Calculator",
@@ -856,7 +958,96 @@
             "rothValue": "Roth IRA Value at Retirement",
             "traditionalValue": "Traditional IRA Value at Retirement",
             "rothAfterTax": "Roth After-Tax Value",
-            "traditionalAfterTax": "Traditional After-Tax Value"
+            "traditionalAfterTax": "Traditional After-Tax Value",
+            "breadcrumb": "Roth vs Traditional Calculator",
+            "pageDescription": "Compare Roth and Traditional retirement accounts to determine which is better for your situation",
+            "compareOptions": "Compare Your Options",
+            "annualContributionLabel": "Annual Contribution ($)",
+            "contributionLimitsNote": "2024 IRA limit: $7,000 ($8,000 if 50+) | 401k limit: $23,000 ($30,500 if 50+)",
+            "currentTaxRateLabel": "Current Marginal Tax Rate (%)",
+            "retirementTaxRateLabel": "Expected Retirement Tax Rate (%)",
+            "expectedReturnLabel": "Expected Annual Return (%)",
+            "currentTraditionalBalance": "Current Traditional Balance ($)",
+            "currentRothBalance": "Current Roth Balance ($)",
+            "compareAccounts": "Compare Accounts",
+            "comparisonResults": "Comparison Results",
+            "traditionalBalanceAtRetirement": "Traditional Balance at Retirement",
+            "rothBalanceAtRetirement": "Roth Balance at Retirement",
+            "traditionalAfterTaxValue": "Traditional After-Tax Value",
+            "rothAfterTaxValue": "Roth After-Tax Value",
+            "traditionalMonthlyIncome": "Traditional Monthly Income",
+            "rothMonthlyIncome": "Roth Monthly Income",
+            "difference": "Difference",
+            "breakEvenTaxRate": "Break-Even Tax Rate",
+            "detailedComparison": "Detailed Comparison",
+            "factor": "Factor",
+            "traditional": "Traditional",
+            "roth": "Roth",
+            "keyDifferences": "Key Differences",
+            "traditionalLabel": "Traditional:",
+            "traditionalDesc": "Tax deduction now, pay taxes on withdrawals",
+            "rothLabel": "Roth:",
+            "rothDesc": "No deduction now, tax-free withdrawals",
+            "rmdsLabel": "RMDs:",
+            "rmdsDesc": "Traditional has required minimum distributions at 73; Roth IRAs do not",
+            "incomeLimitsLabel": "Income Limits:",
+            "incomeLimitsDesc": "Roth IRA has income limits; Traditional does not",
+            "whenChooseRoth": "When to Choose Roth",
+            "rothReason1": "You expect higher taxes in retirement",
+            "rothReason2": "You're early in your career (lower tax bracket)",
+            "rothReason3": "You want tax-free growth",
+            "rothReason4": "You want to avoid RMDs",
+            "whenChooseTraditional": "When to Choose Traditional",
+            "traditionalReason1": "You expect lower taxes in retirement",
+            "traditionalReason2": "You're in your peak earning years",
+            "traditionalReason3": "You need the tax deduction now",
+            "traditionalReason4": "You're above Roth income limits",
+            "learnMore": "Learn More",
+            "researchRules": "Research retirement account rules:",
+            "rothIRALimits": "Roth IRA Limits",
+            "traditionalIRARules": "Traditional IRA Rules",
+            "401kLimits": "401(k) Limits",
+            "backdoorRothStrategy": "Backdoor Roth Strategy",
+            "guideTitle": "Roth vs Traditional Guide",
+            "understandingTaxTreatment": "Understanding the Tax Treatment",
+            "taxTreatmentDesc": "The fundamental difference between Roth and Traditional accounts is when you pay taxes. Traditional accounts give you a tax break today but you pay taxes on withdrawals. Roth accounts are funded with after-tax dollars but grow and can be withdrawn tax-free.",
+            "taxRateQuestion": "The Tax Rate Question",
+            "taxRateQuestionDesc": "The key factor in choosing between Roth and Traditional is comparing your current marginal tax rate to your expected tax rate in retirement. If you expect to be in a higher bracket in retirement, Roth is generally better. If you expect to be in a lower bracket, Traditional is usually better.",
+            "contributionLimits2024": "2024 Contribution Limits",
+            "iraLimit": "IRA (Roth or Traditional):",
+            "iraLimitValue": "$7,000 ($8,000 if age 50+)",
+            "401kLimit": "401(k)/403(b):",
+            "401kLimitValue": "$23,000 ($30,500 if age 50+)",
+            "rothIncomeLimit": "Roth IRA Income Limits:",
+            "rothIncomeLimitValue": "Phase-out begins at $146,000 (single) / $230,000 (married)",
+            "taxDiversification": "Consider Tax Diversification",
+            "taxDiversificationDesc": "Many financial advisors recommend having both Roth and Traditional accounts for tax diversification. This gives you flexibility in retirement to manage your tax liability by choosing which accounts to withdraw from.",
+            "otherConsiderations": "Other Considerations",
+            "rmdConsideration": "Required Minimum Distributions:",
+            "rmdConsiderationDesc": "Traditional accounts require RMDs starting at age 73; Roth IRAs do not",
+            "earlyWithdrawal": "Early Withdrawal:",
+            "earlyWithdrawalDesc": "Roth contributions (not earnings) can be withdrawn penalty-free anytime",
+            "estatePlanning": "Estate Planning:",
+            "estatePlanningDesc": "Roth accounts can be more beneficial for heirs",
+            "stateTaxes": "State Taxes:",
+            "stateTaxesDesc": "Consider your state's tax treatment of retirement income",
+            "footerDisclaimer": "&copy; 2026 FinCalc. For educational purposes only. Consult a tax professional for personalized advice.",
+            "desc": "Compare Roth and Traditional IRA to find the best option.",
+            "rothBetterTitle": "Roth is Better for You",
+            "rothBetterDesc": "Based on your inputs, a Roth account would provide <strong>{amount}</strong> more in after-tax retirement savings ({percent}% more).",
+            "rothBetterReason": "This is because your expected retirement tax rate ({retirementRate}%) is higher than or close to your current rate ({currentRate}%).",
+            "traditionalBetterTitle": "Traditional is Better for You",
+            "traditionalBetterDesc": "Based on your inputs, a Traditional account would provide <strong>{amount}</strong> more in after-tax retirement savings ({percent}% more).",
+            "traditionalBetterReason": "This is because your current tax rate ({currentRate}%) is higher than your expected retirement rate ({retirementRate}%).",
+            "equalTitle": "Both Options Are Equal",
+            "equalDesc": "Based on your inputs, both Traditional and Roth accounts would provide similar after-tax retirement savings.",
+            "equalAdvice": "Consider other factors like tax diversification and flexibility.",
+            "tableAnnualContribution": "Annual Contribution",
+            "tableTaxSavingsNow": "Tax Savings Now",
+            "tableBalanceAtRetirement": "Balance at Retirement",
+            "tableTaxesAtWithdrawal": "Taxes at Withdrawal",
+            "tableAfterTaxValue": "After-Tax Value",
+            "tableMonthlyIncome": "Monthly Income (4% rule)"
         },
         "investmentReturn": {
             "title": "Investment Return Calculator",
@@ -889,7 +1080,16 @@
             "savingsReturn": "~0.5-5% (varies by rate environment)",
             "realEstate": "Real Estate:",
             "realEstateReturn": "~8-12% annually (including appreciation and rental income)",
-            "footerDisclaimer": "Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only."
+            "footerDisclaimer": "Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.",
+            "desc": "Calculate ROI and compare different investment scenarios."
+        },
+        "loanPayoff": {
+            "title": "Loan Payoff Calculator",
+            "desc": "See how extra payments can help you pay off loans faster."
+        },
+        "calc401k": {
+            "title": "401(k) Calculator",
+            "desc": "Maximize your 401(k) contributions and employer matching."
         }
     },
     "results": {
@@ -923,7 +1123,8 @@
         "yes": "Yes",
         "no": "No",
         "or": "or",
-        "and": "and"
+        "and": "and",
+        "calculateArrow": "Calculate →"
     },
     "validation": {
         "required": "This field is required",
@@ -936,19 +1137,23 @@
         "title": "Why Use Our Calculators?",
         "free": {
             "title": "100% Free",
-            "description": "All calculators are completely free. No hidden fees, no premium features to unlock."
+            "description": "All calculators are completely free. No hidden fees, no premium features to unlock.",
+            "desc": "All calculators are completely free. No hidden fees, no premium features to unlock."
         },
         "noSignup": {
             "title": "No Signup Required",
-            "description": "Start calculating immediately. We don't ask for your email or personal information."
+            "description": "Start calculating immediately. We don't ask for your email or personal information.",
+            "desc": "Start calculating immediately. We don't ask for your email or personal information."
         },
         "privacy": {
             "title": "Privacy First",
-            "description": "All calculations happen in your browser. Your financial data never leaves your device."
+            "description": "All calculations happen in your browser. Your financial data never leaves your device.",
+            "desc": "All calculations happen in your browser. Your financial data never leaves your device."
         },
         "mobile": {
             "title": "Mobile Friendly",
-            "description": "Use our calculators on any device - phone, tablet, or desktop computer."
+            "description": "Use our calculators on any device - phone, tablet, or desktop computer.",
+            "desc": "Use our calculators on any device - phone, tablet, or desktop computer."
         }
     },
     "footer": {
@@ -956,7 +1161,9 @@
         "privacy": "Privacy Policy",
         "terms": "Terms of Service",
         "disclaimer": "Disclaimer: These calculators are for informational purposes only. Consult a qualified financial advisor for personalized advice.",
-        "sources": "Data Sources"
+        "sources": "Data Sources",
+        "friendLinks": "Friend Links",
+        "qrmaker": "QR Code Generator"
     },
     "blog": {
         "title": "Financial Planning Blog",
@@ -1179,6 +1386,13 @@
                 "content": "If you have questions about these Terms of Service, please contact us at:",
                 "email": "Email: legal@financecalc.cc"
             }
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Free Financial Calculators - Mortgage, Loan, Investment | FinCalc",
+            "description": "Free online financial calculators for mortgage, loan payoff, investment returns, compound interest, and retirement planning. Easy to use, no signup required.",
+            "keywords": "mortgage calculator, loan calculator, investment calculator, compound interest calculator, retirement calculator, 401k calculator"
         }
     }
 }
