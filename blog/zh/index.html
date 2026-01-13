@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>财务规划博客 - 理财技巧、指南与计算器 | FinCalc</title>
+    <meta name="description" content="专业的财务规划指南、省钱技巧，以及关于房贷、债务偿还、退休规划等方面的实用建议。免费计算器工具。">
+    <meta name="keywords" content="财务规划博客, 理财技巧, 房贷指南, 债务偿还策略, 退休规划, 投资建议">
+    <link rel="canonical" href="https://financecalc.cc/blog/zh/">
+
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://financecalc.cc/blog/">
+    <link rel="alternate" hreflang="zh" href="https://financecalc.cc/blog/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://financecalc.cc/blog/">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="财务规划博客 - FinCalc">
+    <meta property="og:description" content="专业的财务规划指南和实用理财建议，配有免费计算器工具。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://financecalc.cc/blog/zh/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "FinCalc 财务规划博客",
+        "description": "专业的财务规划指南和实用理财建议",
+        "url": "https://financecalc.cc/blog/zh/",
+        "inLanguage": "zh",
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="切换菜单" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators" data-i18n="nav.calculators">计算器</a></li>
+                <li><a href="/blog/zh/" class="active" data-i18n="nav.blog">博客</a></li>
+                <li><a href="/#about" data-i18n="nav.about">关于</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="blog-hero">
+            <div class="container">
+                <h1 data-i18n="blog.title">财务规划博客</h1>
+                <p data-i18n="blog.subtitle">专业指南、实用技巧和可操作的建议，帮助您做出更明智的财务决策。</p>
+            </div>
+        </section>
+
+        <section class="blog-grid">
+            <div class="container">
+                <h2 data-i18n="blog.latestArticles">最新文章</h2>
+
+                <div class="blog-posts">
+                    <!-- Article 1 -->
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🏠</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.homeBuying">购房指南</span>
+                                <span>8 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>年薪8万美元能买多少钱的房子？</h2>
+                            <p>根据您的收入计算购房预算的完整指南，包含真实案例和专家建议。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="debt-snowball-vs-avalanche.html" class="blog-card">
+                        <div class="blog-card-image">💳</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.debtPayoff">债务偿还</span>
+                                <span>10 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>债务雪球法 vs 雪崩法：哪种方法更好？</h2>
+                            <p>比较两种最流行的债务偿还策略，找出哪种方法能帮助您更快摆脱债务。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="401k-contribution-calculator-2025.html" class="blog-card">
+                        <div class="blog-card-image">📋</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">退休规划</span>
+                                <span>7 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>2026年我应该向401(k)缴纳多少？</h2>
+                            <p>通过更新的2026年缴款限额和适合各收入水平的策略，最大化您的退休储蓄。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="first-time-homebuyer-mortgage-guide.html" class="blog-card">
+                        <div class="blog-card-image">🔑</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.mortgages">房贷</span>
+                                <span>12 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>首次购房者完整房贷指南</h2>
+                            <p>关于获得首套房贷款您需要了解的一切，从预批准到交房日。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 5 -->
+                    <a href="freelancer-self-employment-tax-guide.html" class="blog-card">
+                        <div class="blog-card-image">📝</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.taxes">税务</span>
+                                <span>9 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>自由职业者自雇税指南</h2>
+                            <p>了解自雇税、季度缴税以及每个自由职业者都应该知道的扣除项目。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 6 -->
+                    <a href="emergency-fund-3-vs-6-months.html" class="blog-card">
+                        <div class="blog-card-image">🛡️</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.savings">储蓄</span>
+                                <span>6 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>应急基金：您需要3个月还是6个月的开支？</h2>
+                            <p>根据您的个人情况，了解应急基金应该存多少钱。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 7 -->
+                    <a href="how-much-car-can-i-afford-60k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🚗</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.autoLoans">汽车贷款</span>
+                                <span>7 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>年薪6万美元能买多少钱的车？</h2>
+                            <p>使用20/4/10法则计算您的购车预算，找到适合您收入的车辆。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 8 -->
+                    <a href="how-to-pay-off-50000-student-loans.html" class="blog-card">
+                        <div class="blog-card-image">🎓</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.studentLoans">学生贷款</span>
+                                <span>10 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>如何偿还5万美元学生贷款</h2>
+                            <p>更快还清学生债务并节省数千美元利息的策略和还款计划。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 9 -->
+                    <a href="retirement-calculator-teachers.html" class="blog-card">
+                        <div class="blog-card-image">👩‍🏫</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">退休规划</span>
+                                <span>8 <span data-i18n="blog.minRead">分钟阅读</span></span>
+                            </div>
+                            <h2>教师退休计算器</h2>
+                            <p>教育工作者的特殊退休规划考虑因素，包括养老金福利和403(b)选项。</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">阅读更多 →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 FinCalc. 保留所有权利。</p>
+            <p class="footer-links">
+                <a href="/privacy.html" data-i18n="footer.privacy">隐私政策</a>
+                <a href="/terms.html" data-i18n="footer.terms">服务条款</a>
+            </p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">免责声明：本内容仅供参考。如需个性化建议，请咨询专业财务顾问。</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

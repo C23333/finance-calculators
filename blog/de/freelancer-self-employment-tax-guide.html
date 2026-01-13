@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Freiberufler-Leitfaden zur Selbststaendigensteuer | FinCalc</title>
+    <meta name="description" content="Vollstaendiger Leitfaden zur Selbststaendigensteuer fuer Freiberufler. Erfahren Sie mehr ueber Vorauszahlungen, Abzuege und wie Sie Ihre Steuerlast als Auftragnehmer berechnen.">
+    <meta name="keywords" content="Selbststaendigensteuer-Rechner, Freiberufler-Steuern, Steuervorauszahlungen, 1099-Steuern, Auftragnehmer-Steuern">
+    <link rel="canonical" href="https://financecalc.cc/blog/de/freelancer-self-employment-tax-guide.html">
+
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="Freiberufler-Leitfaden zur Selbststaendigensteuer">
+    <meta property="og:description" content="Vollstaendiger Leitfaden zur Selbststaendigensteuer fuer Freiberufler und unabhaengige Auftragnehmer.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/de/freelancer-self-employment-tax-guide.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Freiberufler-Leitfaden zur Selbststaendigensteuer",
+        "description": "Vollstaendiger Leitfaden zur Selbststaendigensteuer fuer Freiberufler und unabhaengige Auftragnehmer.",
+        "author": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc"},
+        "publisher": {"@type": "Organization", "name": "FinCalc", "url": "https://financecalc.cc"},
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12"
+    }
+    </script>
+
+    <script src="/js/seo.js" defer></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Menue umschalten" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Rechner</a></li>
+                <li><a href="/blog/de/" class="active">Blog</a></li>
+                <li><a href="/#about">Ueber uns</a></li>
+            </ul>
+            <div class="nav-controls"></div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Startseite</a> <span>/</span> <a href="/blog/de/">Blog</a> <span>/</span> <span>Freiberufler-Steuer-Leitfaden</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Steuern</span>
+                        <span>10. Januar 2026</span>
+                        <span>9 Min. Lesezeit</span>
+                    </div>
+                    <h1>Freiberufler-Leitfaden zur Selbststaendigensteuer</h1>
+                    <p class="article-intro">Selbststaendigensteuer kann fuer neue Freiberufler verwirrend sein. Dieser Leitfaden erklaert genau, was Sie schulden, wann Sie zahlen muessen und wie Sie Ihre Steuerlast legal reduzieren koennen.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Was ist Selbststaendigensteuer?</h2>
+                    <p>Selbststaendigensteuer ist die Sozialversicherungs- und Krankenversicherungssteuer, die Selbststaendige zahlen. Als Angestellter zahlt Ihr Arbeitgeber die Haelfte dieser Steuern. Als Freiberufler zahlen Sie beide Haelften.</p>
+
+                    <table>
+                        <tr>
+                            <th>Steuer</th>
+                            <th>Angestellter zahlt</th>
+                            <th>Selbststaendiger zahlt</th>
+                        </tr>
+                        <tr>
+                            <td>Rentenversicherung</td>
+                            <td>9,3%</td>
+                            <td>18,6%</td>
+                        </tr>
+                        <tr>
+                            <td>Krankenversicherung</td>
+                            <td>7,3%</td>
+                            <td>14,6%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gesamt</strong></td>
+                            <td><strong>~16,6%</strong></td>
+                            <td><strong>~33,2%</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>Wichtig</h4>
+                        <p>Selbststaendigensteuer kommt <strong>zusaetzlich zu</strong> Ihrer regulaeren Einkommensteuer. Ein Freiberufler mit 100.000 € Einkommen koennte etwa 33.000 € an Sozialabgaben plus 15.000-25.000 € an Einkommensteuer zahlen.</p>
+                    </div>
+
+                    <h2>So berechnen Sie Ihre Steuerlast</h2>
+                    <p>Hier ist die Formel:</p>
+                    <ol>
+                        <li>Berechnen Sie das Netto-Selbststaendigeneinkommen (Einnahmen - Ausgaben)</li>
+                        <li>Beruecksichtigen Sie Freibetraege und Abzuege</li>
+                        <li>Berechnen Sie Sozialversicherungsbeitraege</li>
+                        <li>Berechnen Sie Einkommensteuer</li>
+                    </ol>
+
+                    <h3>Beispiel: 80.000 € Nettoeinkommen</h3>
+                    <table>
+                        <tr>
+                            <th>Schritt</th>
+                            <th>Berechnung</th>
+                            <th>Betrag</th>
+                        </tr>
+                        <tr>
+                            <td>Nettoeinkommen</td>
+                            <td>-</td>
+                            <td>80.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>Geschaetzte Sozialabgaben</td>
+                            <td>80.000 € x ~33%</td>
+                            <td>~26.400 €</td>
+                        </tr>
+                        <tr>
+                            <td>Einkommensteuer (geschaetzt)</td>
+                            <td>Nach Abzuegen</td>
+                            <td>~12.000 €</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Berechnen Sie Ihre Selbststaendigensteuer</h3>
+                        <p>Erhalten Sie eine genaue Schaetzung Ihrer Steuerlast.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Steuerrechner →</a>
+                    </div>
+
+                    <h2>Steuervorauszahlungen</h2>
+                    <p>Anders als Angestellte, denen Steuern von jedem Gehalt abgezogen werden, muessen Freiberufler geschaetzte Steuern vierteljaehrlich zahlen.</p>
+
+                    <h3>Faelligkeitstermine 2026</h3>
+                    <table>
+                        <tr>
+                            <th>Quartal</th>
+                            <th>Einkommenszeitraum</th>
+                            <th>Faelligkeitsdatum</th>
+                        </tr>
+                        <tr>
+                            <td>Q1</td>
+                            <td>1. Jan - 31. Maerz</td>
+                            <td>10. Maerz 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>1. Apr - 30. Juni</td>
+                            <td>10. Juni 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Q3</td>
+                            <td>1. Juli - 30. Sept</td>
+                            <td>10. September 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Q4</td>
+                            <td>1. Okt - 31. Dez</td>
+                            <td>10. Dezember 2026</td>
+                        </tr>
+                    </table>
+
+                    <h3>Wie viel vierteljaehrlich zahlen</h3>
+                    <p>Um Strafen zu vermeiden, zahlen Sie mindestens:</p>
+                    <ul>
+                        <li><strong>100% der Vorjahressteuer</strong>, ODER</li>
+                        <li><strong>90% der diesjaehrigen Steuer</strong></li>
+                    </ul>
+
+                    <p>Ein einfacher Ansatz: Legen Sie 30-40% jeder Zahlung, die Sie erhalten, fuer Steuern zurueck.</p>
+
+                    <h2>Steuerabzuege fuer Freiberufler</h2>
+                    <p>Reduzieren Sie Ihr zu versteuerndes Einkommen mit diesen gaengigen Abzuegen:</p>
+
+                    <h3>Homeoffice-Abzug</h3>
+                    <ul>
+                        <li><strong>Vereinfachte Methode:</strong> Pauschale pro Quadratmeter</li>
+                        <li><strong>Regulaere Methode:</strong> Tatsaechliche Kosten x Prozentsatz der geschaeftlich genutzten Wohnung</li>
+                    </ul>
+
+                    <h3>Betriebsausgaben</h3>
+                    <ul>
+                        <li>Computer und Ausruestung</li>
+                        <li>Software und Abonnements</li>
+                        <li>Buerobedarf</li>
+                        <li>Weiterbildung und Kurse</li>
+                        <li>Geschaeftsreisen</li>
+                        <li>Marketing und Werbung</li>
+                        <li>Professionelle Dienstleistungen (Steuerberater, Anwalt)</li>
+                    </ul>
+
+                    <h3>Krankenversicherungsabzug</h3>
+                    <p>Selbststaendige koennen Krankenversicherungspraemien fuer sich und ihre Familie absetzen.</p>
+
+                    <h3>Altersvorsorgebeitraege</h3>
+                    <ul>
+                        <li><strong>Ruerup-Rente:</strong> Bis zu 27.566 € (2026) absetzbar</li>
+                        <li><strong>Private Altersvorsorge:</strong> Verschiedene Optionen verfuegbar</li>
+                    </ul>
+
+                    <h2>Altersvorsorge-Optionen fuer Freiberufler</h2>
+
+                    <h3>Ruerup-Rente (Basisrente)</h3>
+                    <ul>
+                        <li><strong>Am besten fuer:</strong> Gutverdiener, die Steuern sparen wollen</li>
+                        <li><strong>2026 Grenze:</strong> Bis zu 27.566 € absetzbar</li>
+                        <li><strong>Vorteile:</strong> Hohe Steuerersparnis, flexible Beitraege</li>
+                    </ul>
+
+                    <h3>Private Rentenversicherung</h3>
+                    <ul>
+                        <li><strong>Am besten fuer:</strong> Flexibilitaet und Kapitalwahlrecht</li>
+                        <li><strong>Vorteile:</strong> Flexible Auszahlungsoptionen</li>
+                    </ul>
+
+                    <h2>Haeufige Freiberufler-Steuerfehler</h2>
+                    <ol>
+                        <li><strong>Keine Vorauszahlungen leisten</strong> - Fuehrt zu Strafen und Zinsen</li>
+                        <li><strong>Private und geschaeftliche Ausgaben vermischen</strong> - Nutzen Sie separate Konten</li>
+                        <li><strong>Kilometerstand nicht erfassen</strong> - Fuehren Sie ein Fahrtenbuch fuer Geschaeftsfahrten</li>
+                        <li><strong>Abzuege verpassen</strong> - Erfassen Sie jede Betriebsausgabe</li>
+                        <li><strong>Nicht genug sparen</strong> - Legen Sie 30-40% des Einkommens zurueck</li>
+                        <li><strong>Gewerbesteuer vergessen</strong> - Pruefen Sie Ihre Gewerbesteuerpflicht</li>
+                    </ol>
+
+                    <div class="calculator-cta">
+                        <h3>Schaetzen Sie Ihre Steuerlast</h3>
+                        <p>Planen Sie voraus mit unserem Selbststaendigensteuer-Rechner.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Jetzt berechnen →</a>
+                    </div>
+
+                    <h2>Steuer-Checkliste fuer Freiberufler</h2>
+                    <ol>
+                        <li>Eroeffnen Sie ein separates Geschaeftskonto</li>
+                        <li>Erfassen Sie alle Einnahmen und Ausgaben</li>
+                        <li>Sparen Sie 30-40% des Einkommens fuer Steuern</li>
+                        <li>Zahlen Sie vierteljaehrliche Steuervorauszahlungen</li>
+                        <li>Maximieren Sie Abzuege (Homeoffice, Krankenversicherung, Altersvorsorge)</li>
+                        <li>Erwaegen Sie, einen Steuerberater zu beauftragen</li>
+                        <li>Bewahren Sie Unterlagen mindestens 10 Jahre auf</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Verwandte Artikel</h3>
+                <div class="related-grid">
+                    <a href="401k-contribution-calculator-2025.html" class="related-card">
+                        <h4>Betriebliche Altersvorsorge 2026</h4>
+                        <p>Altersvorsorge-Optionen fuer Freiberufler.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Notgroschen-Ratgeber</h4>
+                        <p>Besonders wichtig bei variablem Einkommen.</p>
+                    </a>
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>Hauserschwinglichkeit</h4>
+                        <p>Hypothekenoptionen fuer Selbststaendige.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. Alle Rechte vorbehalten.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Datenschutzerklaerung</a>
+                <a href="/terms.html">Nutzungsbedingungen</a>
+            </p>
+            <p class="disclaimer">Haftungsausschluss: Dieser Inhalt dient nur zu Informationszwecken. Konsultieren Sie einen qualifizierten Steuerberater fuer persoenliche Beratung.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/i18n.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

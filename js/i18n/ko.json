@@ -189,6 +189,41 @@
       "avalanche": "아발란치 방식"
     }
   },
+  "calculators": {
+    "investmentReturn": {
+      "title": "투자 수익률 계산기",
+      "breadcrumb": "투자 수익률 계산기",
+      "description": "투자 수익률과 ROI를 계산하세요. 투자금과 회수금을 비교하세요.",
+      "initialInvestment": "초기 투자금",
+      "finalValue": "최종 가치",
+      "holdingPeriod": "보유 기간 (년)",
+      "calculate": "계산하기",
+      "totalReturn": "총 수익률",
+      "investmentSummary": "투자 요약",
+      "profitLoss": "손익",
+      "annualizedReturn": "연환산 수익률 (CAGR)",
+      "simpleROI": "단순 ROI",
+      "doublingTime": "배가 시간",
+      "doublingTimeYears": "{years}년",
+      "doublingTimeNA": "해당 없음 (마이너스 수익)",
+      "articleTitle": "투자 수익률 이해하기",
+      "totalVsAnnualized": "총 수익률 vs 연환산 수익률",
+      "totalVsAnnualizedText": "<strong>총 수익률</strong>은 전체 손익을 백분율로 표시합니다. <strong>연환산 수익률 (CAGR)</strong>은 동등한 연간 수익률을 표시하여 다른 보유 기간의 투자를 비교하는 데 유용합니다.",
+      "cagrFormula": "CAGR 공식",
+      "cagrFormulaText": "CAGR = (최종 가치 / 초기 가치)^(1/년수) - 1",
+      "cagrFormulaDesc": "초기 투자를 최종 가치로 성장시키는 일정한 연간 성장률을 제공합니다.",
+      "historicalReturns": "역사적 평균 수익률",
+      "sp500": "S&P 500:",
+      "sp500Return": "연간 약 10% (인플레이션 전)",
+      "bonds": "채권:",
+      "bondsReturn": "연간 약 5-6%",
+      "savingsAccount": "저축 계좌:",
+      "savingsReturn": "약 0.5-5% (금리 환경에 따라 변동)",
+      "realEstate": "부동산:",
+      "realEstateReturn": "연간 약 8-12% (가치 상승 및 임대 수입 포함)",
+      "footerDisclaimer": "면책 조항: 과거 실적이 미래 결과를 보장하지 않습니다. 이 계산기는 교육 목적으로만 사용됩니다."
+    }
+  },
   "blog": {
     "title": "금융 블로그",
     "subtitle": "재정 여정을 위한 전문가 팁과 가이드",

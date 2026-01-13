@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Wie viel Haus kann ich mir mit 80.000 Euro Gehalt leisten? | FinCalc</title>
+    <meta name="description" content="Berechnen Sie genau, wie viel Haus Sie sich mit einem Gehalt von 80.000 Euro leisten koennen. Lernen Sie die 28/36-Regel, sehen Sie echte Beispiele und nutzen Sie unseren kostenlosen Rechner.">
+    <meta name="keywords" content="wie viel Haus kann ich mir leisten 80k Gehalt, Immobilien-Erschwinglichkeitsrechner, 80000 Gehalt Hypothek, Hausbudget-Rechner">
+    <link rel="canonical" href="https://financecalc.cc/blog/de/how-much-house-can-i-afford-80k-salary.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Wie viel Haus kann ich mir mit 80.000 Euro Gehalt leisten?">
+    <meta property="og:description" content="Berechnen Sie genau, wie viel Haus Sie sich mit einem 80k Gehalt leisten koennen, mit echten Beispielen und Expertentipps.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/de/how-much-house-can-i-afford-80k-salary.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Wie viel Haus kann ich mir mit 80.000 Euro Gehalt leisten?",
+        "description": "Berechnen Sie genau, wie viel Haus Sie sich mit einem 80.000 Euro Gehalt leisten koennen, mit echten Beispielen und Expertentipps.",
+        "image": "https://financecalc.cc/images/house-affordability-80k.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/de/how-much-house-can-i-afford-80k-salary.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Wie viel Haus kann ich mir mit 80.000 Euro Gehalt leisten?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Mit einem Jahresgehalt von 80.000 Euro koennen Sie sich typischerweise ein Haus im Wert von 240.000 bis 320.000 Euro leisten, abhaengig von Ihrer Anzahlung, Schuldenhoehe, Zinssaetzen und Standort. Nach der 28%-Regel sollte Ihre maximale monatliche Wohnkostenzahlung etwa 1.867 Euro betragen."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist die 28/36-Regel fuer Hypotheken?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die 28/36-Regel besagt, dass Ihre monatlichen Wohnkosten 28% Ihres Bruttomonatseinkommens nicht ueberschreiten sollten (Front-End-Ratio), und Ihre gesamten monatlichen Schuldenzahlungen 36% Ihres Bruttomonatseinkommens nicht ueberschreiten sollten (Back-End-Ratio)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie viel Anzahlung brauche ich fuer ein Haus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Anzahlungsanforderungen variieren je nach Kreditart: Konventionelle Kredite erfordern 3-20%, FHA-Kredite erfordern mindestens 3,5%, VA-Kredite erfordern 0% fuer berechtigte Veteranen, und USDA-Kredite erfordern 0% fuer laendliche Gebiete. Eine groessere Anzahlung bedeutet niedrigere monatliche Zahlungen und keine PMI bei 20% Anzahlung."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Welche Kreditwuerdigkeit brauche ich, um ein Haus zu kaufen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Anforderungen an die Kreditwuerdigkeit variieren je nach Kreditart: Konventionelle Kredite erfordern typischerweise 620+, FHA-Kredite erfordern 580+ fuer 3,5% Anzahlung, VA-Kredite haben kein Minimum, aber Kreditgeber bevorzugen 620+. Fuer die besten Zinssaetze streben Sie eine Kreditwuerdigkeit von 740 oder hoeher an."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Sollte ich das Maximum kaufen, das ich mir leisten kann?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nein, viele Finanzexperten empfehlen, nicht mehr als 25% Ihres Nettoeinkommens fuer Wohnen auszugeben. Nur weil eine Bank Ihnen Geld leiht, bedeutet das nicht, dass Sie das Maximum leihen sollten. Behalten Sie einen Notgroschen, budgetieren Sie fuer Wartungskosten (1-2% des Hauswerts jaehrlich) und lassen Sie Raum fuer andere finanzielle Ziele."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Menue umschalten" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Rechner</a></li>
+                <li><a href="/blog/de/" class="active">Blog</a></li>
+                <li><a href="/#about">Ueber uns</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Startseite</a> <span>/</span> <a href="/blog/de/">Blog</a> <span>/</span> <span>Hauserschwinglichkeit bei 80K</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Hauskauf</span>
+                        <span>10. Januar 2026</span>
+                        <span>8 Min. Lesezeit</span>
+                    </div>
+                    <h1>Wie viel Haus kann ich mir mit 80.000 Euro Gehalt leisten?</h1>
+                    <p class="article-intro">Mit einem Verdienst von 80.000 Euro pro Jahr sind Sie in einer starken Position, um ein Haus zu kaufen. Aber wie viel Haus koennen Sie sich genau leisten? Lassen Sie uns die Zahlen aufschluesseln und Ihnen helfen, Ihr ideales Budget zu finden.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Die schnelle Antwort</h2>
+                    <p>Mit einem Jahresgehalt von 80.000 Euro koennen Sie sich typischerweise ein Haus im Wert von <strong>240.000 bis 320.000 Euro</strong> leisten, abhaengig von Ihrer Anzahlung, Schuldenhoehe, Zinssaetzen und Standort. Dies setzt voraus, dass Sie die Standard-Kreditrichtlinien befolgen, die die meisten Banken verwenden.</p>
+
+                    <div class="highlight-box">
+                        <h4>Wichtige Erkenntnis</h4>
+                        <p>Mit einem 80K-Gehalt sollte Ihre maximale monatliche Wohnkostenzahlung etwa <strong>1.867 Euro</strong> betragen (nach der 28%-Regel). Dies beinhaltet Ihre Hypothekentilgung, Zinsen, Grundsteuern und Versicherung.</p>
+                    </div>
+
+                    <h2>Die 28/36-Regel verstehen</h2>
+                    <p>Kreditgeber verwenden die "28/36-Regel", um zu bestimmen, wie viel Sie leihen koennen. Hier ist, was sie bedeutet:</p>
+                    <ul>
+                        <li><strong>28%-Regel (Front-End-Ratio):</strong> Ihre monatlichen Wohnkosten sollten 28% Ihres Bruttomonatseinkommens nicht ueberschreiten</li>
+                        <li><strong>36%-Regel (Back-End-Ratio):</strong> Ihre gesamten monatlichen Schuldenzahlungen (Wohnen + Autokredit + Kreditkarten + Studienkredite) sollten 36% Ihres Bruttomonatseinkommens nicht ueberschreiten</li>
+                    </ul>
+
+                    <h3>Ihre Zahlen berechnen</h3>
+                    <p>Wenden wir diese Regeln auf ein Gehalt von 80.000 Euro an:</p>
+                    <table>
+                        <tr>
+                            <th>Berechnung</th>
+                            <th>Betrag</th>
+                        </tr>
+                        <tr>
+                            <td>Jahresgehalt</td>
+                            <td>80.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>Monatliches Bruttoeinkommen</td>
+                            <td>6.667 €</td>
+                        </tr>
+                        <tr>
+                            <td>Max. Wohnkostenzahlung (28%)</td>
+                            <td>1.867 €/Monat</td>
+                        </tr>
+                        <tr>
+                            <td>Max. Gesamtschulden (36%)</td>
+                            <td>2.400 €/Monat</td>
+                        </tr>
+                    </table>
+
+                    <h2>Wie viel Haus kann 1.867 €/Monat kaufen?</h2>
+                    <p>Ihre monatliche Zahlung von 1.867 € muss mehrere Kosten abdecken:</p>
+                    <ul>
+                        <li><strong>Tilgung & Zinsen:</strong> Die eigentliche Hypothekenzahlung</li>
+                        <li><strong>Grundsteuern:</strong> Typischerweise 1-2% des Hauswerts jaehrlich</li>
+                        <li><strong>Hausratversicherung:</strong> Normalerweise 100-200 €/Monat</li>
+                        <li><strong>PMI:</strong> Erforderlich, wenn die Anzahlung weniger als 20% betraegt</li>
+                    </ul>
+
+                    <h3>Beispielszenarien</h3>
+                    <table>
+                        <tr>
+                            <th>Anzahlung</th>
+                            <th>Zinssatz</th>
+                            <th>Max. Hauspreis</th>
+                        </tr>
+                        <tr>
+                            <td>5% (12.000 €)</td>
+                            <td>7,0%</td>
+                            <td>240.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>10% (28.000 €)</td>
+                            <td>7,0%</td>
+                            <td>280.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>20% (64.000 €)</td>
+                            <td>7,0%</td>
+                            <td>320.000 €</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Berechnen Sie Ihr genaues Budget</h3>
+                        <p>Nutzen Sie unseren kostenlosen Immobilien-Erschwinglichkeitsrechner fuer personalisierte Ergebnisse basierend auf Ihrer spezifischen Situation.</p>
+                        <a href="/calculators/home-affordability.html" class="cta-btn">Zum Rechner →</a>
+                    </div>
+
+                    <h2>Faktoren, die Ihre Kaufkraft beeinflussen</h2>
+
+                    <h3>1. Ihre bestehenden Schulden</h3>
+                    <p>Wenn Sie Autozahlungen, Studienkredite oder Kreditkartenschulden haben, werden Kreditgeber reduzieren, wie viel sie Ihnen leihen. Zum Beispiel:</p>
+                    <ul>
+                        <li>400 €/Monat Autozahlung = etwa 50.000 € weniger Haus, das Sie sich leisten koennen</li>
+                        <li>300 €/Monat Studienkredite = etwa 40.000 € weniger Haus, das Sie sich leisten koennen</li>
+                    </ul>
+
+                    <h3>2. Ihre Kreditwuerdigkeit</h3>
+                    <p>Eine hoehere Kreditwuerdigkeit bedeutet bessere Zinssaetze:</p>
+                    <ul>
+                        <li><strong>760+:</strong> Beste verfuegbare Zinssaetze</li>
+                        <li><strong>700-759:</strong> Gute Zinssaetze, etwas hoeher</li>
+                        <li><strong>620-699:</strong> Hoehere Zinssaetze, moeglicherweise groessere Anzahlung erforderlich</li>
+                        <li><strong>Unter 620:</strong> Moeglicherweise Schwierigkeiten bei der Qualifizierung</li>
+                    </ul>
+
+                    <h3>3. Hoehe der Anzahlung</h3>
+                    <p>Eine groessere Anzahlung hilft auf mehrere Arten:</p>
+                    <ul>
+                        <li>Niedrigere monatliche Zahlungen</li>
+                        <li>Keine PMI bei 20% Anzahlung</li>
+                        <li>Bessere Zinssaetze</li>
+                        <li>Mehr Eigenkapital von Anfang an</li>
+                    </ul>
+
+                    <h3>4. Standort</h3>
+                    <p>Grundsteuern und Versicherung variieren dramatisch je nach Standort. Ein 300.000 €-Haus in einer Region koennte 600 €/Monat an Grundsteuern haben, waehrend das gleiche Haus in einer anderen Region nur 200 €/Monat haben koennte.</p>
+
+                    <h2>Was Sie sich tatsaechlich leisten koennen vs. was Sie ausgeben sollten</h2>
+                    <p>Nur weil eine Bank Ihnen Geld leiht, bedeutet das nicht, dass Sie das Maximum leihen sollten. Beruecksichtigen Sie diese Faktoren:</p>
+                    <ul>
+                        <li><strong>Notgroschen:</strong> Halten Sie 3-6 Monatsausgaben gespart</li>
+                        <li><strong>Wartungskosten:</strong> Budgetieren Sie 1-2% des Hauswerts jaehrlich</li>
+                        <li><strong>Lebensstil:</strong> Werden Sie nicht "hausarm" ohne Geld fuer alles andere</li>
+                        <li><strong>Zukunftsziele:</strong> Lassen Sie Raum fuer Altersvorsorge, Urlaub usw.</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Konservativer Ansatz</h4>
+                        <p>Viele Finanzexperten empfehlen, nicht mehr als <strong>25% Ihres Nettoeinkommens</strong> fuer Wohnen auszugeben. Bei einem 80K-Gehalt (etwa 5.000 €/Monat netto) sind das etwa <strong>1.250 €/Monat</strong> - was ein Haus um 180.000-220.000 € kaufen wuerde.</p>
+                    </div>
+
+                    <h2>Schritte zum Hauskauf mit 80K</h2>
+                    <ol>
+                        <li><strong>Ueberpruefen Sie Ihre Kreditwuerdigkeit</strong> und beheben Sie eventuelle Fehler</li>
+                        <li><strong>Zahlen Sie bestehende Schulden ab</strong>, um Ihr Schulden-Einkommens-Verhaeltnis zu verbessern</li>
+                        <li><strong>Sparen Sie fuer eine Anzahlung</strong> - streben Sie mindestens 10-20% an</li>
+                        <li><strong>Holen Sie sich eine Vorabgenehmigung</strong>, um Ihr genaues Budget zu kennen</li>
+                        <li><strong>Beruecksichtigen Sie Abschlusskosten</strong> - typischerweise 2-5% des Kaufpreises</li>
+                        <li><strong>Vergessen Sie nicht die Umzugskosten</strong> und anfaenglichen Hausausgaben</li>
+                    </ol>
+
+                    <h2>Fazit</h2>
+                    <p>Mit einem Gehalt von 80.000 Euro koennen Sie sich bequem ein Haus im Bereich von 240.000-320.000 Euro leisten, abhaengig von Ihrer Anzahlung und anderen Schulden. Erwaegen Sie jedoch, unter Ihrem Maximum zu kaufen, um finanzielle Flexibilitaet zu bewahren und nicht hausarm zu werden.</p>
+                    <p>Nutzen Sie unsere Rechner unten, um genaue Zahlen fuer Ihre Situation zu erhalten.</p>
+
+                    <div class="calculator-cta">
+                        <h3>Bereit, Ihr Budget zu berechnen?</h3>
+                        <p>Erhalten Sie personalisierte Ergebnisse mit unseren kostenlosen Rechnern.</p>
+                        <a href="/calculators/home-affordability.html" class="cta-btn">Immobilien-Erschwinglichkeitsrechner →</a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Verwandte Artikel</h3>
+                <div class="related-grid">
+                    <a href="first-time-homebuyer-mortgage-guide.html" class="related-card">
+                        <h4>Hypotheken-Ratgeber fuer Erstkäufer</h4>
+                        <p>Alles, was Sie ueber Ihre erste Hypothek wissen muessen.</p>
+                    </a>
+                    <a href="debt-snowball-vs-avalanche.html" class="related-card">
+                        <h4>Schulden-Schneeball vs. Lawine</h4>
+                        <p>Schulden schneller abbezahlen, um Ihre Kaufkraft zu verbessern.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Notgroschen-Ratgeber</h4>
+                        <p>Bauen Sie Ihr Sicherheitsnetz vor dem Hauskauf auf.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. Alle Rechte vorbehalten.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Datenschutzerklaerung</a>
+                <a href="/terms.html">Nutzungsbedingungen</a>
+            </p>
+            <p class="disclaimer">Haftungsausschluss: Dieser Inhalt dient nur zu Informationszwecken. Konsultieren Sie einen qualifizierten Finanzberater fuer persoenliche Beratung.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

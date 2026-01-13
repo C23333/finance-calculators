@@ -66,72 +66,72 @@ function calculateTakeHomePay(shouldScroll = false) {
     const effectiveTaxRate = (totalTaxes / annualGross) * 100;
 
     // Display results
-    document.getElementById('grossPay').textContent = formatCurrency(grossSalary);
-    document.getElementById('netPay').textContent = formatCurrency(periodNetPay);
-    document.getElementById('annualGross').textContent = formatCurrency(annualGross);
-    document.getElementById('annualNet').textContent = formatCurrency(annualNetPay);
-    document.getElementById('federalTax').textContent = formatCurrency(totalFederalTax / periodsPerYear);
-    document.getElementById('stateTaxResult').textContent = formatCurrency(totalStateTax / periodsPerYear);
-    document.getElementById('socialSecurity').textContent = formatCurrency(socialSecurityTax / periodsPerYear);
-    document.getElementById('medicare').textContent = formatCurrency(medicareTax / periodsPerYear);
+    document.getElementById('grossPay').textContent = I18n.formatCurrency(grossSalary);
+    document.getElementById('netPay').textContent = I18n.formatCurrency(periodNetPay);
+    document.getElementById('annualGross').textContent = I18n.formatCurrency(annualGross);
+    document.getElementById('annualNet').textContent = I18n.formatCurrency(annualNetPay);
+    document.getElementById('federalTax').textContent = I18n.formatCurrency(totalFederalTax / periodsPerYear);
+    document.getElementById('stateTaxResult').textContent = I18n.formatCurrency(totalStateTax / periodsPerYear);
+    document.getElementById('socialSecurity').textContent = I18n.formatCurrency(socialSecurityTax / periodsPerYear);
+    document.getElementById('medicare').textContent = I18n.formatCurrency(medicareTax / periodsPerYear);
     document.getElementById('effectiveRate').textContent = effectiveTaxRate.toFixed(1) + '%';
 
     // Build breakdown table
     const breakdownBody = document.getElementById('breakdownBody');
     breakdownBody.innerHTML = `
         <tr>
-            <td>Gross Pay</td>
-            <td>${formatCurrency(grossSalary)}</td>
-            <td>${formatCurrency(annualGross)}</td>
+            <td>${I18n.t('calculators.takeHomePay.grossPay')}</td>
+            <td>${I18n.formatCurrency(grossSalary)}</td>
+            <td>${I18n.formatCurrency(annualGross)}</td>
         </tr>
         <tr class="deduction">
-            <td>Federal Income Tax</td>
-            <td>-${formatCurrency(totalFederalTax / periodsPerYear)}</td>
-            <td>-${formatCurrency(totalFederalTax)}</td>
+            <td>${I18n.t('calculators.takeHomePay.federalIncomeTaxTable')}</td>
+            <td>-${I18n.formatCurrency(totalFederalTax / periodsPerYear)}</td>
+            <td>-${I18n.formatCurrency(totalFederalTax)}</td>
         </tr>
         <tr class="deduction">
-            <td>State Income Tax (${state})</td>
-            <td>-${formatCurrency(totalStateTax / periodsPerYear)}</td>
-            <td>-${formatCurrency(totalStateTax)}</td>
+            <td>${I18n.t('calculators.takeHomePay.stateIncomeTaxTable')} (${state})</td>
+            <td>-${I18n.formatCurrency(totalStateTax / periodsPerYear)}</td>
+            <td>-${I18n.formatCurrency(totalStateTax)}</td>
         </tr>
         <tr class="deduction">
-            <td>Social Security (6.2%)</td>
-            <td>-${formatCurrency(socialSecurityTax / periodsPerYear)}</td>
-            <td>-${formatCurrency(socialSecurityTax)}</td>
+            <td>${I18n.t('calculators.takeHomePay.socialSecurityTable')} (6.2%)</td>
+            <td>-${I18n.formatCurrency(socialSecurityTax / periodsPerYear)}</td>
+            <td>-${I18n.formatCurrency(socialSecurityTax)}</td>
         </tr>
         <tr class="deduction">
-            <td>Medicare (1.45%)</td>
-            <td>-${formatCurrency(medicareTax / periodsPerYear)}</td>
-            <td>-${formatCurrency(medicareTax)}</td>
+            <td>${I18n.t('calculators.takeHomePay.medicareTable')} (1.45%)</td>
+            <td>-${I18n.formatCurrency(medicareTax / periodsPerYear)}</td>
+            <td>-${I18n.formatCurrency(medicareTax)}</td>
         </tr>
         ${annual401k > 0 ? `
         <tr class="deduction">
-            <td>401(k) Contribution</td>
-            <td>-${formatCurrency(preTax401k)}</td>
-            <td>-${formatCurrency(annual401k)}</td>
+            <td>${I18n.t('calculators.takeHomePay.contribution401kTable')}</td>
+            <td>-${I18n.formatCurrency(preTax401k)}</td>
+            <td>-${I18n.formatCurrency(annual401k)}</td>
         </tr>` : ''}
         ${annualHealth > 0 ? `
         <tr class="deduction">
-            <td>Health Insurance</td>
-            <td>-${formatCurrency(healthInsurance)}</td>
-            <td>-${formatCurrency(annualHealth)}</td>
+            <td>${I18n.t('calculators.takeHomePay.healthInsuranceTable')}</td>
+            <td>-${I18n.formatCurrency(healthInsurance)}</td>
+            <td>-${I18n.formatCurrency(annualHealth)}</td>
         </tr>` : ''}
         ${annualHSA > 0 ? `
         <tr class="deduction">
-            <td>HSA Contribution</td>
-            <td>-${formatCurrency(hsaContribution)}</td>
-            <td>-${formatCurrency(annualHSA)}</td>
+            <td>${I18n.t('calculators.takeHomePay.hsaContributionTable')}</td>
+            <td>-${I18n.formatCurrency(hsaContribution)}</td>
+            <td>-${I18n.formatCurrency(annualHSA)}</td>
         </tr>` : ''}
         ${annualOther > 0 ? `
         <tr class="deduction">
-            <td>Other Deductions</td>
-            <td>-${formatCurrency(otherDeductions)}</td>
-            <td>-${formatCurrency(annualOther)}</td>
+            <td>${I18n.t('calculators.takeHomePay.otherDeductionsTable')}</td>
+            <td>-${I18n.formatCurrency(otherDeductions)}</td>
+            <td>-${I18n.formatCurrency(annualOther)}</td>
         </tr>` : ''}
         <tr class="total">
-            <td><strong>Net Pay (Take Home)</strong></td>
-            <td><strong>${formatCurrency(periodNetPay)}</strong></td>
-            <td><strong>${formatCurrency(annualNetPay)}</strong></td>
+            <td><strong>${I18n.t('calculators.takeHomePay.netPayTable')}</strong></td>
+            <td><strong>${I18n.formatCurrency(periodNetPay)}</strong></td>
+            <td><strong>${I18n.formatCurrency(annualNetPay)}</strong></td>
         </tr>
     `;
 
@@ -213,14 +213,13 @@ function calculateStateTax(income, state, filingStatus) {
     return income * rate;
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    }).format(amount);
-}
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').style.display !== 'none') {
+        calculateTakeHomePay(false);
+    }
+});
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {

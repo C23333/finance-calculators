@@ -41,7 +41,17 @@ function calculateEmergencyFund(shouldScroll = false) {
     }
 }
 
+/**
+ * Format currency using I18n if available, otherwise fallback to default
+ * @param {number} amount - The amount to format
+ * @returns {string} Formatted currency string
+ */
 function formatCurrency(amount) {
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return I18n.formatCurrency(amount, { decimals: 0 });
+    }
+    // Fallback to default formatting
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -50,4 +60,8 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
+// Calculate on page load
 document.addEventListener('DOMContentLoaded', () => calculateEmergencyFund(false));
+
+// Recalculate when language changes to update currency format
+document.addEventListener('languageChange', () => calculateEmergencyFund(false));

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Guia de Impuestos de Trabajo Autonomo para Freelancers | FinCalc</title>
+    <meta name="description" content="Guia completa de impuestos de trabajo autonomo para freelancers. Aprende sobre pagos trimestrales, deducciones y como calcular tu obligacion tributaria como contratista.">
+    <meta name="keywords" content="calculadora impuestos autonomo, impuestos freelancer, pagos trimestrales impuestos, impuestos 1099, impuestos contratista independiente">
+    <link rel="canonical" href="https://financecalc.cc/blog/es/freelancer-self-employment-tax-guide.html">
+
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="Guia de Impuestos de Trabajo Autonomo para Freelancers">
+    <meta property="og:description" content="Guia completa de impuestos de trabajo autonomo para freelancers y contratistas independientes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/es/freelancer-self-employment-tax-guide.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Guia de Impuestos de Trabajo Autonomo para Freelancers",
+        "description": "Guia completa de impuestos de trabajo autonomo para freelancers y contratistas independientes.",
+        "image": "https://financecalc.cc/images/freelancer-self-employment-tax.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/es/freelancer-self-employment-tax-guide.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Cual es la tasa del impuesto de trabajo autonomo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La tasa del impuesto de trabajo autonomo es del 15.3%, que consiste en 12.4% para el Seguro Social y 2.9% para Medicare. Esto es el doble de lo que pagan los empleados porque los freelancers deben cubrir tanto la porcion del empleado como la del empleador. El impuesto se calcula sobre el 92.35% de tus ingresos netos de trabajo autonomo."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Cuando vencen los pagos trimestrales de impuestos estimados?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para 2026, los pagos trimestrales de impuestos estimados vencen: T1 (Ene-Mar) el 15 de abril, T2 (Abr-May) el 16 de junio, T3 (Jun-Ago) el 15 de septiembre, y T4 (Sep-Dic) el 15 de enero de 2027. No cumplir con estas fechas puede resultar en multas y cargos por intereses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Que deducciones pueden reclamar los freelancers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los freelancers pueden deducir gastos de negocio incluyendo oficina en casa ($5/pie cuadrado hasta $1,500), primas de seguro de salud (100% deducible), contribuciones de jubilacion (SEP IRA hasta $70,000), equipo y software, desarrollo profesional, viajes de negocios y costos de marketing. La deduccion QBI tambien permite hasta 20% de descuento en ingresos de negocio calificados."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Cuanto deben reservar los freelancers para impuestos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los freelancers deben reservar 25-30% de sus ingresos para impuestos. Esto cubre tanto el impuesto de trabajo autonomo (15.3%) como el impuesto federal sobre la renta (10-37% dependiendo del tramo). Para evitar multas, paga al menos el 100% de la obligacion tributaria del ano anterior (110% si los ingresos superan $150,000) o el 90% del impuesto del ano actual."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Que cuentas de jubilacion estan disponibles para freelancers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los freelancers tienen varias opciones de jubilacion: Solo 401(k) permite hasta $70,000 en contribuciones de 2026 con porciones de empleado y empleador. SEP IRA permite hasta 25% de ingresos netos de trabajo autonomo (maximo $70,000). SIMPLE IRA permite $16,500 mas 3% de igualacion. Todas reducen el ingreso gravable."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Alternar menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculadoras</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
+                <li><a href="/#about">Acerca de</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Inicio</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Guia de Impuestos para Freelancers</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Impuestos</span>
+                        <span>10 de enero de 2026</span>
+                        <span>9 min de lectura</span>
+                    </div>
+                    <h1>Guia de Impuestos de Trabajo Autonomo para Freelancers</h1>
+                    <p class="article-intro">Los impuestos de trabajo autonomo pueden ser confusos para nuevos freelancers. Esta guia explica exactamente lo que debes, cuando pagar y como reducir tu factura de impuestos legalmente.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Que es el Impuesto de Trabajo Autonomo?</h2>
+                    <p>El impuesto de trabajo autonomo es el impuesto del Seguro Social y Medicare que pagan las personas que trabajan por cuenta propia. Cuando eres empleado, tu empleador paga la mitad de estos impuestos. Como freelancer, pagas ambas mitades.</p>
+
+                    <table>
+                        <tr>
+                            <th>Impuesto</th>
+                            <th>Empleado Paga</th>
+                            <th>Autonomo Paga</th>
+                        </tr>
+                        <tr>
+                            <td>Seguro Social</td>
+                            <td>6.2%</td>
+                            <td>12.4%</td>
+                        </tr>
+                        <tr>
+                            <td>Medicare</td>
+                            <td>1.45%</td>
+                            <td>2.9%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>7.65%</strong></td>
+                            <td><strong>15.3%</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>Importante</h4>
+                        <p>El impuesto de trabajo autonomo es <strong>adicional a</strong> tu impuesto sobre la renta regular. Un freelancer que gana $100,000 podria pagar $15,300 en impuesto SE mas $15,000-$20,000 en impuesto sobre la renta.</p>
+                    </div>
+
+                    <h2>Como Calcular el Impuesto de Trabajo Autonomo</h2>
+                    <p>Aqui esta la formula:</p>
+                    <ol>
+                        <li>Calcular ingresos netos de trabajo autonomo (ingresos - gastos)</li>
+                        <li>Multiplicar por 92.35% (esto representa la porcion equivalente al empleador)</li>
+                        <li>Multiplicar por 15.3% para el impuesto SE</li>
+                    </ol>
+
+                    <h3>Ejemplo: $80,000 de Ingreso Neto</h3>
+                    <table>
+                        <tr>
+                            <th>Paso</th>
+                            <th>Calculo</th>
+                            <th>Monto</th>
+                        </tr>
+                        <tr>
+                            <td>Ingreso neto</td>
+                            <td>-</td>
+                            <td>$80,000</td>
+                        </tr>
+                        <tr>
+                            <td>Ingreso SE gravable</td>
+                            <td>$80,000 x 92.35%</td>
+                            <td>$73,880</td>
+                        </tr>
+                        <tr>
+                            <td>Impuesto SE</td>
+                            <td>$73,880 x 15.3%</td>
+                            <td>$11,304</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Calcula Tu Impuesto de Trabajo Autonomo</h3>
+                        <p>Obtener una estimacion precisa de tu obligacion tributaria.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Calculadora de Impuesto SE</a>
+                    </div>
+
+                    <h2>Pagos Trimestrales de Impuestos Estimados</h2>
+                    <p>A diferencia de los empleados que tienen impuestos retenidos de cada cheque de pago, los freelancers deben pagar impuestos estimados trimestralmente.</p>
+
+                    <h3>Fechas de Vencimiento Trimestrales 2026</h3>
+                    <table>
+                        <tr>
+                            <th>Trimestre</th>
+                            <th>Periodo de Ingresos</th>
+                            <th>Fecha de Vencimiento</th>
+                        </tr>
+                        <tr>
+                            <td>T1</td>
+                            <td>1 Ene - 31 Mar</td>
+                            <td>15 de abril de 2026</td>
+                        </tr>
+                        <tr>
+                            <td>T2</td>
+                            <td>1 Abr - 31 May</td>
+                            <td>16 de junio de 2026</td>
+                        </tr>
+                        <tr>
+                            <td>T3</td>
+                            <td>1 Jun - 31 Ago</td>
+                            <td>15 de septiembre de 2026</td>
+                        </tr>
+                        <tr>
+                            <td>T4</td>
+                            <td>1 Sep - 31 Dic</td>
+                            <td>15 de enero de 2027</td>
+                        </tr>
+                    </table>
+
+                    <h3>Cuanto Pagar Trimestralmente</h3>
+                    <p>Para evitar multas, paga al menos:</p>
+                    <ul>
+                        <li><strong>100% del impuesto del ano anterior</strong> (110% si los ingresos superan $150,000), O</li>
+                        <li><strong>90% del impuesto de este ano</strong></li>
+                    </ul>
+
+                    <p>Un enfoque simple: Reserva 25-30% de cada pago que recibas para impuestos.</p>
+
+                    <h2>Deducciones Fiscales para Freelancers</h2>
+                    <p>Reduce tu ingreso gravable con estas deducciones comunes:</p>
+
+                    <h3>Deduccion de Oficina en Casa</h3>
+                    <ul>
+                        <li><strong>Metodo simplificado:</strong> $5 por pie cuadrado, hasta 300 pies cuadrados ($1,500 maximo)</li>
+                        <li><strong>Metodo regular:</strong> Gastos reales x porcentaje de la casa usado para negocios</li>
+                    </ul>
+
+                    <h3>Gastos de Negocio</h3>
+                    <ul>
+                        <li>Computadora y equipo</li>
+                        <li>Software y suscripciones</li>
+                        <li>Suministros de oficina</li>
+                        <li>Desarrollo profesional y cursos</li>
+                        <li>Viajes de negocios</li>
+                        <li>Marketing y publicidad</li>
+                        <li>Servicios profesionales (contador, abogado)</li>
+                    </ul>
+
+                    <h3>Deduccion de Seguro de Salud</h3>
+                    <p>Las personas que trabajan por cuenta propia pueden deducir el 100% de las primas de seguro de salud para ellos y su familia. Esta es una deduccion "por encima de la linea", lo que significa que la obtienes incluso si no detallas.</p>
+
+                    <h3>Contribuciones de Jubilacion</h3>
+                    <ul>
+                        <li><strong>SEP IRA:</strong> Hasta 25% de ingresos netos SE (maximo $70,000 en 2026)</li>
+                        <li><strong>Solo 401(k):</strong> Hasta $70,000 total (2026)</li>
+                        <li><strong>IRA Tradicional:</strong> Hasta $7,000 ($8,000 si tienes 50+)</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>La Deduccion QBI</h4>
+                        <p>La deduccion de Ingresos de Negocio Calificados (QBI) te permite deducir hasta <strong>20% de tus ingresos netos de trabajo autonomo</strong>. Esto puede reducir significativamente tu impuesto sobre la renta (no el impuesto SE).</p>
+                    </div>
+
+                    <h2>Ejemplo: Calculo Completo de Impuestos</h2>
+                    <p>Calculemos los impuestos para un freelancer con $100,000 de ingreso bruto:</p>
+
+                    <table>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                        </tr>
+                        <tr>
+                            <td>Ingreso Bruto</td>
+                            <td>$100,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gastos de Negocio</td>
+                            <td>-$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Ingreso Neto SE</td>
+                            <td>$85,000</td>
+                        </tr>
+                        <tr>
+                            <td>Impuesto SE (15.3% x 92.35%)</td>
+                            <td>$12,012</td>
+                        </tr>
+                        <tr>
+                            <td>Deduccion 1/2 Impuesto SE</td>
+                            <td>-$6,006</td>
+                        </tr>
+                        <tr>
+                            <td>Deduccion Seguro de Salud</td>
+                            <td>-$6,000</td>
+                        </tr>
+                        <tr>
+                            <td>Contribucion SEP IRA</td>
+                            <td>-$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Ingreso Bruto Ajustado</td>
+                            <td>$57,994</td>
+                        </tr>
+                        <tr>
+                            <td>Deduccion QBI (20%)</td>
+                            <td>-$11,599</td>
+                        </tr>
+                        <tr>
+                            <td>Deduccion Estandar (Soltero)</td>
+                            <td>-$14,600</td>
+                        </tr>
+                        <tr>
+                            <td>Ingreso Gravable</td>
+                            <td>$31,795</td>
+                        </tr>
+                        <tr>
+                            <td>Impuesto Federal sobre la Renta</td>
+                            <td>~$3,600</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Impuesto Federal</strong></td>
+                            <td><strong>~$15,612</strong></td>
+                        </tr>
+                    </table>
+
+                    <p>Tasa efectiva de impuestos: 15.6% sobre $100,000 de ingreso bruto (antes de impuestos estatales).</p>
+
+                    <h2>Opciones de Jubilacion para Freelancers</h2>
+
+                    <h3>Solo 401(k)</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Altos ingresos que quieren maximizar contribuciones</li>
+                        <li><strong>Limite 2025:</strong> $23,500 empleado + 25% empleador = hasta $69,000</li>
+                        <li><strong>Ventajas:</strong> Limites de contribucion mas altos, opcion Roth disponible</li>
+                    </ul>
+
+                    <h3>SEP IRA</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Configuracion simple, ingresos variables</li>
+                        <li><strong>Limite 2025:</strong> 25% de ingresos netos SE, hasta $69,000</li>
+                        <li><strong>Ventajas:</strong> Facil de configurar, contribuciones flexibles</li>
+                    </ul>
+
+                    <h3>SIMPLE IRA</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Freelancers con empleados</li>
+                        <li><strong>Limite 2025:</strong> $16,500 + 3% igualacion</li>
+                        <li><strong>Ventajas:</strong> Menores costos administrativos que 401(k)</li>
+                    </ul>
+
+                    <h2>Errores Comunes de Impuestos de Freelancers</h2>
+                    <ol>
+                        <li><strong>No pagar trimestralmente</strong> - Resulta en multas e intereses</li>
+                        <li><strong>Mezclar gastos personales y de negocio</strong> - Usa cuentas separadas</li>
+                        <li><strong>No rastrear kilometraje</strong> - Mantener un registro de conduccion de negocios</li>
+                        <li><strong>Perder deducciones</strong> - Rastrear cada gasto de negocio</li>
+                        <li><strong>No ahorrar suficiente</strong> - Reservar 25-30% de ingresos</li>
+                        <li><strong>Olvidar impuestos estatales</strong> - Muchos estados tambien tienen impuesto sobre la renta</li>
+                    </ol>
+
+                    <div class="calculator-cta">
+                        <h3>Estima Tu Obligacion Tributaria</h3>
+                        <p>Planifica con anticipacion con nuestra calculadora de impuestos de trabajo autonomo.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Calcular Ahora</a>
+                    </div>
+
+                    <h2>Lista de Verificacion de Impuestos para Freelancers</h2>
+                    <ol>
+                        <li>Abrir una cuenta bancaria de negocios separada</li>
+                        <li>Rastrear todos los ingresos y gastos</li>
+                        <li>Ahorrar 25-30% de ingresos para impuestos</li>
+                        <li>Pagar impuestos estimados trimestralmente</li>
+                        <li>Maximizar deducciones (oficina en casa, seguro de salud, jubilacion)</li>
+                        <li>Considerar contratar un profesional de impuestos</li>
+                        <li>Mantener registros por al menos 7 anos</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Articulos Relacionados</h3>
+                <div class="related-grid">
+                    <a href="401k-contribution-calculator-2025.html" class="related-card">
+                        <h4>Contribuciones 401(k) 2025</h4>
+                        <p>Opciones de Solo 401(k) para freelancers.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Guia del Fondo de Emergencia</h4>
+                        <p>Extra importante para ingresos variables.</p>
+                    </a>
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>Asequibilidad de Vivienda</h4>
+                        <p>Opciones de hipoteca para autonomos.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FinCalc. Todos los derechos reservados.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Politica de Privacidad</a>
+                <a href="/terms.html">Terminos de Servicio</a>
+            </p>
+            <p class="disclaimer">Aviso: Este contenido es solo para fines informativos. Consulta a un profesional de impuestos calificado para consejos personalizados.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

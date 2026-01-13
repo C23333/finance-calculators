@@ -49,13 +49,20 @@ function calculateStudentLoan(shouldScroll = false) {
     // Payoff date
     const payoffDate = new Date();
     payoffDate.setMonth(payoffDate.getMonth() + months);
-    const payoffDateStr = payoffDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+    // Format payoff date based on locale
+    let payoffDateStr;
+    if (months === Infinity) {
+        payoffDateStr = getNeverText();
+    } else {
+        payoffDateStr = formatPayoffDate(payoffDate);
+    }
 
     // Update results
     document.getElementById('monthlyPayment').textContent = formatCurrency(totalPayment);
     document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
     document.getElementById('totalCost').textContent = formatCurrency(totalCost);
-    document.getElementById('payoffDate').textContent = months === Infinity ? 'Never' : payoffDateStr;
+    document.getElementById('payoffDate').textContent = payoffDateStr;
     document.getElementById('interestSaved').textContent = formatCurrency(Math.max(0, interestSaved));
 
     document.getElementById('results').classList.add('show');
@@ -64,7 +71,44 @@ function calculateStudentLoan(shouldScroll = false) {
     }
 }
 
+/**
+ * Get localized "Never" text
+ * @returns {string} Localized never text
+ */
+function getNeverText() {
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        const neverText = I18n.t('calculators.studentLoan.never');
+        if (neverText && neverText !== 'calculators.studentLoan.never') {
+            return neverText;
+        }
+    }
+    return 'Never';
+}
+
+/**
+ * Format payoff date based on current locale
+ * @param {Date} date - The date to format
+ * @returns {string} Formatted date string
+ */
+function formatPayoffDate(date) {
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        const locale = I18n.currentLanguage === 'zh' ? 'zh-CN' : 'en-US';
+        return date.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+    }
+    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+/**
+ * Format currency using I18n if available, otherwise fallback to default
+ * @param {number} amount - The amount to format
+ * @returns {string} Formatted currency string
+ */
 function formatCurrency(amount) {
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return I18n.formatCurrency(amount, { decimals: 0 });
+    }
+    // Fallback to default formatting
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -73,4 +117,8 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
+// Calculate on page load
 document.addEventListener('DOMContentLoaded', () => calculateStudentLoan(false));
+
+// Recalculate when language changes to update currency format
+document.addEventListener('languageChange', () => calculateStudentLoan(false));

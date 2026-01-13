@@ -61,40 +61,40 @@ function calculateSelfEmploymentTax(shouldScroll = false) {
     const effectiveRate = (totalTax / (netSEIncome + otherIncome)) * 100;
 
     // Display results
-    document.getElementById('quarterlyPayment').textContent = formatCurrency(quarterlyPayment);
-    document.getElementById('netIncome').textContent = formatCurrency(netSEIncome);
-    document.getElementById('seTax').textContent = formatCurrency(totalSETax);
-    document.getElementById('socialSecurityTax').textContent = formatCurrency(socialSecurityTax);
-    document.getElementById('medicareTax').textContent = formatCurrency(medicareTax);
-    document.getElementById('federalTax').textContent = formatCurrency(federalTax);
-    document.getElementById('stateTax').textContent = formatCurrency(stateTax);
-    document.getElementById('totalTax').textContent = formatCurrency(totalTax);
+    document.getElementById('quarterlyPayment').textContent = I18n.formatCurrency(quarterlyPayment, { decimals: 0 });
+    document.getElementById('netIncome').textContent = I18n.formatCurrency(netSEIncome, { decimals: 0 });
+    document.getElementById('seTax').textContent = I18n.formatCurrency(totalSETax, { decimals: 0 });
+    document.getElementById('socialSecurityTax').textContent = I18n.formatCurrency(socialSecurityTax, { decimals: 0 });
+    document.getElementById('medicareTax').textContent = I18n.formatCurrency(medicareTax, { decimals: 0 });
+    document.getElementById('federalTax').textContent = I18n.formatCurrency(federalTax, { decimals: 0 });
+    document.getElementById('stateTax').textContent = I18n.formatCurrency(stateTax, { decimals: 0 });
+    document.getElementById('totalTax').textContent = I18n.formatCurrency(totalTax, { decimals: 0 });
     document.getElementById('effectiveRate').textContent = effectiveRate.toFixed(1) + '%';
 
     // Build deductions table
     const deductionsBody = document.getElementById('deductionsBody');
     deductionsBody.innerHTML = `
         <tr>
-            <td>Business Expenses</td>
-            <td>${formatCurrency(businessExpenses)}</td>
+            <td data-i18n="calculators.selfEmploymentTax.businessExpensesLabel">${I18n.t('calculators.selfEmploymentTax.businessExpensesLabel')}</td>
+            <td>${I18n.formatCurrency(businessExpenses, { decimals: 0 })}</td>
         </tr>
         <tr>
-            <td>Half of SE Tax (Deductible)</td>
-            <td>${formatCurrency(seDeduction)}</td>
+            <td data-i18n="calculators.selfEmploymentTax.halfSeTaxDeductible">${I18n.t('calculators.selfEmploymentTax.halfSeTaxDeductible')}</td>
+            <td>${I18n.formatCurrency(seDeduction, { decimals: 0 })}</td>
         </tr>
         ${retirementContribution > 0 ? `
         <tr>
-            <td>Retirement Contribution</td>
-            <td>${formatCurrency(retirementContribution)}</td>
+            <td data-i18n="calculators.selfEmploymentTax.retirementContributionLabel">${I18n.t('calculators.selfEmploymentTax.retirementContributionLabel')}</td>
+            <td>${I18n.formatCurrency(retirementContribution, { decimals: 0 })}</td>
         </tr>` : ''}
         ${healthInsurance > 0 ? `
         <tr>
-            <td>Health Insurance Premium</td>
-            <td>${formatCurrency(healthInsurance)}</td>
+            <td data-i18n="calculators.selfEmploymentTax.healthInsurancePremium">${I18n.t('calculators.selfEmploymentTax.healthInsurancePremium')}</td>
+            <td>${I18n.formatCurrency(healthInsurance, { decimals: 0 })}</td>
         </tr>` : ''}
         <tr style="font-weight: bold; border-top: 2px solid #ddd;">
-            <td>Total Deductions</td>
-            <td>${formatCurrency(businessExpenses + seDeduction + retirementContribution + healthInsurance)}</td>
+            <td data-i18n="calculators.selfEmploymentTax.totalDeductions">${I18n.t('calculators.selfEmploymentTax.totalDeductions')}</td>
+            <td>${I18n.formatCurrency(businessExpenses + seDeduction + retirementContribution + healthInsurance, { decimals: 0 })}</td>
         </tr>
     `;
 
@@ -102,34 +102,34 @@ function calculateSelfEmploymentTax(shouldScroll = false) {
     const breakdownBody = document.getElementById('breakdownBody');
     breakdownBody.innerHTML = `
         <tr>
-            <td>Social Security Tax</td>
-            <td>${formatCurrency(socialSecurityTax)}</td>
-            <td>12.4% (up to $168,600)</td>
+            <td data-i18n="calculators.selfEmploymentTax.socialSecurityTax">${I18n.t('calculators.selfEmploymentTax.socialSecurityTax')}</td>
+            <td>${I18n.formatCurrency(socialSecurityTax, { decimals: 0 })}</td>
+            <td data-i18n="calculators.selfEmploymentTax.ssRateNote">${I18n.t('calculators.selfEmploymentTax.ssRateNote')}</td>
         </tr>
         <tr>
-            <td>Medicare Tax</td>
-            <td>${formatCurrency(medicareTax)}</td>
-            <td>2.9% + 0.9% additional</td>
+            <td data-i18n="calculators.selfEmploymentTax.medicareTax">${I18n.t('calculators.selfEmploymentTax.medicareTax')}</td>
+            <td>${I18n.formatCurrency(medicareTax, { decimals: 0 })}</td>
+            <td data-i18n="calculators.selfEmploymentTax.medicareRateNote">${I18n.t('calculators.selfEmploymentTax.medicareRateNote')}</td>
         </tr>
         <tr style="background: #f8f9fa;">
-            <td><strong>Total SE Tax</strong></td>
-            <td><strong>${formatCurrency(totalSETax)}</strong></td>
-            <td>15.3%</td>
+            <td><strong data-i18n="calculators.selfEmploymentTax.totalSeTax">${I18n.t('calculators.selfEmploymentTax.totalSeTax')}</strong></td>
+            <td><strong>${I18n.formatCurrency(totalSETax, { decimals: 0 })}</strong></td>
+            <td data-i18n="calculators.selfEmploymentTax.seTaxRate">${I18n.t('calculators.selfEmploymentTax.seTaxRate')}</td>
         </tr>
         <tr>
-            <td>Federal Income Tax</td>
-            <td>${formatCurrency(federalTax)}</td>
-            <td>10-37% (progressive)</td>
+            <td data-i18n="calculators.selfEmploymentTax.federalTax">${I18n.t('calculators.selfEmploymentTax.federalTax')}</td>
+            <td>${I18n.formatCurrency(federalTax, { decimals: 0 })}</td>
+            <td data-i18n="calculators.selfEmploymentTax.federalRateNote">${I18n.t('calculators.selfEmploymentTax.federalRateNote')}</td>
         </tr>
         <tr>
-            <td>State Income Tax (${state})</td>
-            <td>${formatCurrency(stateTax)}</td>
-            <td>Varies by state</td>
+            <td>${I18n.t('calculators.selfEmploymentTax.stateTax')} (${state})</td>
+            <td>${I18n.formatCurrency(stateTax, { decimals: 0 })}</td>
+            <td data-i18n="calculators.selfEmploymentTax.stateRateNote">${I18n.t('calculators.selfEmploymentTax.stateRateNote')}</td>
         </tr>
         <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-            <td><strong>Total Annual Tax</strong></td>
-            <td><strong>${formatCurrency(totalTax)}</strong></td>
-            <td>${effectiveRate.toFixed(1)}% effective</td>
+            <td><strong data-i18n="calculators.selfEmploymentTax.totalTax">${I18n.t('calculators.selfEmploymentTax.totalTax')}</strong></td>
+            <td><strong>${I18n.formatCurrency(totalTax, { decimals: 0 })}</strong></td>
+            <td>${effectiveRate.toFixed(1)}% ${I18n.t('calculators.selfEmploymentTax.effective')}</td>
         </tr>
     `;
 
@@ -207,14 +207,13 @@ function calculateStateTax(income, state) {
     return Math.max(0, income) * rate;
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').style.display !== 'none') {
+        calculateSelfEmploymentTax(false);
+    }
+});
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {

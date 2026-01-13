@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>재무 계획 블로그 - 팁, 가이드 및 계산기 | FinCalc</title>
+    <meta name="description" content="전문적인 재무 계획 가이드, 절약 팁, 주택담보대출, 부채 상환, 은퇴 계획 등에 대한 실용적인 조언. 무료 계산기 포함.">
+    <meta name="keywords" content="재무 계획 블로그, 돈 관리 팁, 주택담보대출 가이드, 부채 상환 전략, 은퇴 계획, 투자 조언">
+    <link rel="canonical" href="https://financecalc.cc/blog/ko/">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="재무 계획 블로그 - FinCalc">
+    <meta property="og:description" content="전문적인 재무 계획 가이드와 무료 계산기를 통한 실용적인 돈 관리 조언.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://financecalc.cc/blog/ko/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "FinCalc 재무 계획 블로그",
+        "description": "전문적인 재무 계획 가이드와 실용적인 돈 관리 조언",
+        "url": "https://financecalc.cc/blog/ko/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="메뉴 토글" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators" data-i18n="nav.calculators">계산기</a></li>
+                <li><a href="/blog/ko/" class="active" data-i18n="nav.blog">블로그</a></li>
+                <li><a href="/#about" data-i18n="nav.about">소개</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="blog-hero">
+            <div class="container">
+                <h1 data-i18n="blog.title">재무 계획 블로그</h1>
+                <p data-i18n="blog.subtitle">더 현명한 재무 결정을 내리는 데 도움이 되는 전문 가이드, 실용적인 팁, 실행 가능한 조언.</p>
+            </div>
+        </section>
+
+        <section class="blog-grid">
+            <div class="container">
+                <h2 data-i18n="blog.latestArticles">최신 글</h2>
+
+                <div class="blog-posts">
+                    <!-- Article 1 -->
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🏠</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.homeBuying">주택 구매</span>
+                                <span>8 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>연봉 8천만원으로 얼마짜리 집을 살 수 있을까?</h2>
+                            <p>소득을 기반으로 주택 구매 예산을 계산하는 완벽한 가이드, 실제 예시와 전문가 팁 포함.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="debt-snowball-vs-avalanche.html" class="blog-card">
+                        <div class="blog-card-image">💳</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.debtPayoff">부채 상환</span>
+                                <span>10 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>눈덩이 vs 눈사태 방식: 어떤 부채 상환 방법이 더 좋을까?</h2>
+                            <p>가장 인기 있는 두 가지 부채 상환 전략을 비교하고 어떤 것이 더 빨리 빚을 갚는 데 도움이 되는지 알아보세요.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="401k-contribution-calculator-2025.html" class="blog-card">
+                        <div class="blog-card-image">📋</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">은퇴</span>
+                                <span>7 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>2026년 401(k)에 얼마를 납입해야 할까?</h2>
+                            <p>2026년 업데이트된 납입 한도와 모든 소득 수준에 맞는 전략으로 은퇴 저축을 극대화하세요.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="first-time-homebuyer-mortgage-guide.html" class="blog-card">
+                        <div class="blog-card-image">🔑</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.mortgages">주택담보대출</span>
+                                <span>12 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>첫 주택 구매자를 위한 완벽한 주택담보대출 가이드</h2>
+                            <p>사전 승인부터 계약 완료일까지, 첫 주택담보대출에 대해 알아야 할 모든 것.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 5 -->
+                    <a href="freelancer-self-employment-tax-guide.html" class="blog-card">
+                        <div class="blog-card-image">📝</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.taxes">세금</span>
+                                <span>9 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>프리랜서를 위한 자영업 세금 가이드</h2>
+                            <p>모든 프리랜서가 알아야 할 자영업 세금, 분기별 납부, 공제에 대해 이해하세요.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 6 -->
+                    <a href="emergency-fund-3-vs-6-months.html" class="blog-card">
+                        <div class="blog-card-image">🛡️</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.savings">저축</span>
+                                <span>6 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>비상금: 3개월치가 필요할까, 6개월치가 필요할까?</h2>
+                            <p>개인 상황에 따라 비상금을 얼마나 저축해야 하는지 정확히 알아보세요.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 7 -->
+                    <a href="how-much-car-can-i-afford-60k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🚗</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.autoLoans">자동차 대출</span>
+                                <span>7 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>연봉 6천만원으로 얼마짜리 차를 살 수 있을까?</h2>
+                            <p>20/4/10 규칙으로 자동차 구매 예산을 계산하고 소득에 맞는 적절한 차량을 찾으세요.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 8 -->
+                    <a href="how-to-pay-off-50000-student-loans.html" class="blog-card">
+                        <div class="blog-card-image">🎓</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.studentLoans">학자금 대출</span>
+                                <span>10 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>5천만원 학자금 대출 상환 방법</h2>
+                            <p>학자금 부채를 더 빨리 갚고 이자를 수천만원 절약하는 전략과 상환 계획.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 9 -->
+                    <a href="retirement-calculator-teachers.html" class="blog-card">
+                        <div class="blog-card-image">👩‍🏫</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">은퇴</span>
+                                <span>8 <span data-i18n="blog.minRead">분 소요</span></span>
+                            </div>
+                            <h2>교사를 위한 은퇴 계산기</h2>
+                            <p>연금 혜택과 403(b) 옵션을 포함한 교육자를 위한 특별한 은퇴 계획 고려사항.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">더 읽기 →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html" data-i18n="footer.privacy">개인정보 처리방침</a>
+                <a href="/terms.html" data-i18n="footer.terms">이용약관</a>
+            </p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">면책조항: 이 콘텐츠는 정보 제공 목적으로만 제공됩니다. 개인 맞춤 조언은 자격을 갖춘 재무 상담사와 상담하세요.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

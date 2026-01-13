@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Guia Completa de Hipotecas para Compradores de Primera Vivienda | FinCalc</title>
+    <meta name="description" content="Todo lo que los compradores de primera vivienda necesitan saber sobre hipotecas. Desde la preaprobacion hasta el cierre, aprende el proceso, requisitos y consejos para obtener la mejor tasa.">
+    <meta name="keywords" content="hipoteca primera vivienda, guia hipotecas, como obtener hipoteca, primer prestamo vivienda, preaprobacion hipoteca">
+    <link rel="canonical" href="https://financecalc.cc/blog/es/first-time-homebuyer-mortgage-guide.html">
+
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="Guia Completa de Hipotecas para Compradores de Primera Vivienda">
+    <meta property="og:description" content="Todo lo que los compradores de primera vivienda necesitan saber sobre hipotecas, desde la preaprobacion hasta el cierre.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/es/first-time-homebuyer-mortgage-guide.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Guia Completa de Hipotecas para Compradores de Primera Vivienda",
+        "description": "Todo lo que los compradores de primera vivienda necesitan saber sobre hipotecas, desde la preaprobacion hasta el cierre.",
+        "image": "https://financecalc.cc/images/first-time-homebuyer-mortgage.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/es/first-time-homebuyer-mortgage-guide.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Que tipos de hipotecas estan disponibles para compradores de primera vivienda?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los compradores de primera vivienda pueden elegir entre varios tipos de hipotecas: Prestamos convencionales (3-20% de enganche, mejor para buen credito), prestamos FHA (3.5% de enganche con puntaje de credito de 580), prestamos VA (0% de enganche para veteranos), y prestamos USDA (0% de enganche para areas rurales). Cada uno tiene diferentes requisitos de credito y opciones de pago inicial."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Cuanto enganche necesito para mi primera vivienda?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los requisitos de enganche varian segun el tipo de prestamo: Los prestamos convencionales requieren 3-20% (se requiere PMI por debajo del 20%), los prestamos FHA requieren minimo 3.5%, los prestamos VA requieren 0% para veteranos elegibles, y los prestamos USDA requieren 0% para areas rurales. Muchos estados tambien ofrecen programas de asistencia para el enganche para compradores primerizos."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Cual es la diferencia entre precalificacion y preaprobacion?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La precalificacion es una estimacion rapida basada en informacion autorreportada con una verificacion de credito suave. La preaprobacion es un monto de prestamo verificado basado en una revision completa de documentos y una verificacion de credito dura. La preaprobacion es mucho mas fuerte al hacer ofertas porque los vendedores saben que eres un comprador serio y calificado."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Que puntaje de credito necesito para comprar una casa?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los puntajes de credito minimos varian segun el tipo de prestamo: Los prestamos convencionales requieren 620 (740+ para las mejores tasas), los prestamos FHA requieren 580 para 3.5% de enganche (500-579 requiere 10% de enganche), los prestamos VA no tienen minimo oficial pero los prestamistas tipicamente quieren 620+, y los prestamos USDA requieren 640. Puntajes mas altos obtienen mejores tasas de interes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Que son los costos de cierre y cuanto debo esperar pagar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los costos de cierre tipicamente van del 2-5% del precio de compra e incluyen tarifas de originacion del prestamo (0.5-1%), avaluo ($300-500), seguro de titulo ($500-1,500), inspeccion de la vivienda ($300-500), depositos de garantia (2-3 meses de impuestos/seguro), y tarifas de registro ($50-250). Algunos costos pueden negociarse o incluirse en el prestamo."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Alternar menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculadoras</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
+                <li><a href="/#about">Acerca de</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Inicio</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Guia para Compradores Primerizos</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Hipotecas</span>
+                        <span>10 de enero de 2026</span>
+                        <span>12 min de lectura</span>
+                    </div>
+                    <h1>Guia Completa de Hipotecas para Compradores de Primera Vivienda</h1>
+                    <p class="article-intro">Comprar tu primera casa es emocionante pero puede sentirse abrumador. Esta guia te lleva a traves de cada paso del proceso hipotecario, desde la preparacion hasta el dia del cierre.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Paso 1: Verifica Tu Preparacion Financiera</h2>
+                    <p>Antes de comenzar a buscar casas, asegurate de estar financieramente preparado:</p>
+
+                    <h3>Requisitos de Puntaje de Credito</h3>
+                    <table>
+                        <tr>
+                            <th>Tipo de Prestamo</th>
+                            <th>Puntaje Minimo</th>
+                            <th>Mejores Tasas</th>
+                        </tr>
+                        <tr>
+                            <td>Convencional</td>
+                            <td>620</td>
+                            <td>740+</td>
+                        </tr>
+                        <tr>
+                            <td>FHA</td>
+                            <td>580 (3.5% enganche)</td>
+                            <td>680+</td>
+                        </tr>
+                        <tr>
+                            <td>VA</td>
+                            <td>Sin minimo (varia por prestamista)</td>
+                            <td>700+</td>
+                        </tr>
+                        <tr>
+                            <td>USDA</td>
+                            <td>640</td>
+                            <td>680+</td>
+                        </tr>
+                    </table>
+
+                    <h3>Opciones de Enganche</h3>
+                    <ul>
+                        <li><strong>Convencional:</strong> 3-20% (se requiere PMI por debajo del 20%)</li>
+                        <li><strong>FHA:</strong> 3.5% minimo</li>
+                        <li><strong>VA:</strong> 0% (para veteranos elegibles)</li>
+                        <li><strong>USDA:</strong> 0% (solo areas rurales)</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Consejo para Compradores Primerizos</h4>
+                        <p>Muchos estados ofrecen programas de asistencia para el enganche para compradores primerizos. Consulta la agencia de financiamiento de vivienda de tu estado para subvenciones y prestamos a bajo interes.</p>
+                    </div>
+
+                    <h2>Paso 2: Obtener la Preaprobacion</h2>
+                    <p>La preaprobacion muestra a los vendedores que eres un comprador serio y te dice exactamente cuanto puedes pedir prestado.</p>
+
+                    <h3>Documentos que Necesitaras:</h3>
+                    <ul>
+                        <li>Recibos de nomina (ultimos 30 dias)</li>
+                        <li>Formularios W-2 (ultimos 2 anos)</li>
+                        <li>Declaraciones de impuestos (ultimos 2 anos)</li>
+                        <li>Estados de cuenta bancarios (ultimos 2-3 meses)</li>
+                        <li>Identificacion y numero de Seguro Social</li>
+                        <li>Verificacion de empleo</li>
+                    </ul>
+
+                    <h3>Precalificacion vs Preaprobacion</h3>
+                    <table>
+                        <tr>
+                            <th>Precalificacion</th>
+                            <th>Preaprobacion</th>
+                        </tr>
+                        <tr>
+                            <td>Estimacion rapida</td>
+                            <td>Monto verificado</td>
+                        </tr>
+                        <tr>
+                            <td>Sin revision de documentos</td>
+                            <td>Revision completa de documentos</td>
+                        </tr>
+                        <tr>
+                            <td>Verificacion de credito suave</td>
+                            <td>Verificacion de credito dura</td>
+                        </tr>
+                        <tr>
+                            <td>Menos credible para vendedores</td>
+                            <td>Fuerte respaldo para ofertas</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Calcula Tu Pago Hipotecario</h3>
+                        <p>Ve cual seria tu pago mensual en diferentes puntos de precio.</p>
+                        <a href="/calculators/mortgage.html" class="cta-btn">Calculadora de Hipoteca</a>
+                    </div>
+
+                    <h2>Paso 3: Elige el Tipo de Prestamo Correcto</h2>
+
+                    <h3>Prestamos Convencionales</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Buen credito (680+), 5%+ de enganche</li>
+                        <li><strong>Ventajas:</strong> PMI mas bajo que FHA, puede eliminarse al 20% de capital</li>
+                        <li><strong>Desventajas:</strong> Requisitos de credito mas estrictos</li>
+                    </ul>
+
+                    <h3>Prestamos FHA</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Puntajes de credito mas bajos, enganches mas pequenos</li>
+                        <li><strong>Ventajas:</strong> 3.5% de enganche con puntaje de credito de 580</li>
+                        <li><strong>Desventajas:</strong> Seguro hipotecario de por vida del prestamo</li>
+                    </ul>
+
+                    <h3>Prestamos VA</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Veteranos, militares activos, conyuges elegibles</li>
+                        <li><strong>Ventajas:</strong> Sin enganche, sin PMI, tasas competitivas</li>
+                        <li><strong>Desventajas:</strong> Tarifa de financiamiento (puede incluirse en el prestamo)</li>
+                    </ul>
+
+                    <h3>Prestamos USDA</h3>
+                    <ul>
+                        <li><strong>Mejor para:</strong> Compradores de viviendas rurales y suburbanas</li>
+                        <li><strong>Ventajas:</strong> Sin enganche, tasas bajas</li>
+                        <li><strong>Desventajas:</strong> Restricciones geograficas y de ingresos</li>
+                    </ul>
+
+                    <h2>Paso 4: Entiende Tus Costos</h2>
+
+                    <h3>Componentes del Pago Mensual (PITI)</h3>
+                    <ul>
+                        <li><strong>P - Principal:</strong> Paga el saldo de tu prestamo</li>
+                        <li><strong>I - Interes:</strong> Costo del prestamo</li>
+                        <li><strong>T - Impuestos:</strong> Impuestos sobre la propiedad (en deposito)</li>
+                        <li><strong>I - Seguro:</strong> Seguro de propietario + PMI si aplica</li>
+                    </ul>
+
+                    <h3>Costos de Cierre (2-5% del precio de compra)</h3>
+                    <table>
+                        <tr>
+                            <th>Costo</th>
+                            <th>Monto Tipico</th>
+                        </tr>
+                        <tr>
+                            <td>Tarifa de originacion del prestamo</td>
+                            <td>0.5-1% del prestamo</td>
+                        </tr>
+                        <tr>
+                            <td>Avaluo</td>
+                            <td>$300-$500</td>
+                        </tr>
+                        <tr>
+                            <td>Seguro de titulo</td>
+                            <td>$500-$1,500</td>
+                        </tr>
+                        <tr>
+                            <td>Inspeccion de la vivienda</td>
+                            <td>$300-$500</td>
+                        </tr>
+                        <tr>
+                            <td>Depositos de garantia</td>
+                            <td>2-3 meses de impuestos/seguro</td>
+                        </tr>
+                        <tr>
+                            <td>Tarifas de registro</td>
+                            <td>$50-$250</td>
+                        </tr>
+                    </table>
+
+                    <h2>Paso 5: Busca la Mejor Tasa</h2>
+                    <p>Incluso una diferencia del 0.25% en la tasa de interes puede ahorrar miles durante la vida de tu prestamo.</p>
+
+                    <h3>Consejos para Comparar Tasas:</h3>
+                    <ol>
+                        <li><strong>Obtener al menos 3 cotizaciones</strong> de diferentes prestamistas</li>
+                        <li><strong>Comparar el mismo dia</strong> - las tasas cambian diariamente</li>
+                        <li><strong>Mirar el APR, no solo la tasa</strong> - el APR incluye tarifas</li>
+                        <li><strong>Preguntar sobre puntos</strong> - pagar puntos puede reducir tu tasa</li>
+                        <li><strong>Multiples consultas dentro de 45 dias</strong> cuentan como una sola verificacion de credito</li>
+                    </ol>
+
+                    <div class="highlight-box">
+                        <h4>Bloqueo de Tasa</h4>
+                        <p>Una vez que encuentres una buena tasa, bloqueala. Los bloqueos de tasa tipicamente duran 30-60 dias. Si las tasas bajan significativamente, pregunta sobre una opcion de "reduccion flotante".</p>
+                    </div>
+
+                    <h2>Paso 6: Cronograma del Proceso Hipotecario</h2>
+                    <table>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Tiempo</th>
+                            <th>Que Sucede</th>
+                        </tr>
+                        <tr>
+                            <td>Preaprobacion</td>
+                            <td>1-3 dias</td>
+                            <td>Verificacion de credito, revision de documentos</td>
+                        </tr>
+                        <tr>
+                            <td>Busqueda de casa</td>
+                            <td>Variable</td>
+                            <td>Encontrar y hacer oferta por una casa</td>
+                        </tr>
+                        <tr>
+                            <td>Bajo contrato</td>
+                            <td>Dia 1</td>
+                            <td>Oferta aceptada, deposito de arras</td>
+                        </tr>
+                        <tr>
+                            <td>Solicitud de prestamo</td>
+                            <td>Dias 1-7</td>
+                            <td>Solicitud completa enviada</td>
+                        </tr>
+                        <tr>
+                            <td>Procesamiento</td>
+                            <td>Dias 7-21</td>
+                            <td>Documentos verificados, avaluo ordenado</td>
+                        </tr>
+                        <tr>
+                            <td>Suscripcion</td>
+                            <td>Dias 21-30</td>
+                            <td>Decision de aprobacion final</td>
+                        </tr>
+                        <tr>
+                            <td>Listo para cerrar</td>
+                            <td>Dias 30-35</td>
+                            <td>Documentos finales preparados</td>
+                        </tr>
+                        <tr>
+                            <td>Cierre</td>
+                            <td>Dia 35-45</td>
+                            <td>Firmar papeles, obtener las llaves!</td>
+                        </tr>
+                    </table>
+
+                    <h2>Errores Comunes de Compradores Primerizos</h2>
+                    <ol>
+                        <li><strong>No obtener preaprobacion primero</strong> - Pierde tiempo mirando casas que no puedes pagar</li>
+                        <li><strong>Hacer compras grandes antes del cierre</strong> - No compres un auto o muebles hasta despues del cierre</li>
+                        <li><strong>Cambiar de trabajo</strong> - Los prestamistas quieren historial de empleo estable</li>
+                        <li><strong>Saltarse la inspeccion</strong> - Siempre obtener una inspeccion profesional</li>
+                        <li><strong>Agotar ahorros para el enganche</strong> - Mantener reservas para emergencias</li>
+                        <li><strong>Solo mirar el pago mensual</strong> - Considerar el costo total de propiedad</li>
+                    </ol>
+
+                    <h2>Programas para Compradores Primerizos</h2>
+                    <p>Aprovecha los programas disenados para ayudar a compradores primerizos:</p>
+                    <ul>
+                        <li><strong>Prestamos FHA</strong> - Bajo enganche, credito flexible</li>
+                        <li><strong>Programas estatales de vivienda</strong> - Asistencia para enganche, creditos fiscales</li>
+                        <li><strong>Good Neighbor Next Door</strong> - 50% de descuento para maestros, policias, bomberos, paramedicos</li>
+                        <li><strong>HomeReady/Home Possible</strong> - Prestamos convencionales con 3% de enganche</li>
+                        <li><strong>Hipotecas de eficiencia energetica</strong> - Financiar mejoras energeticas</li>
+                    </ul>
+
+                    <div class="calculator-cta">
+                        <h3>Listo para Calcular Tu Presupuesto?</h3>
+                        <p>Usa nuestras calculadoras para planificar tu compra de vivienda.</p>
+                        <a href="/calculators/home-affordability.html" class="cta-btn">Calculadora de Asequibilidad de Vivienda</a>
+                    </div>
+
+                    <h2>Tu Lista de Verificacion para Compradores Primerizos</h2>
+                    <ol>
+                        <li>Verificar puntaje de credito y corregir errores</li>
+                        <li>Ahorrar para enganche y costos de cierre</li>
+                        <li>Obtener preaprobacion para una hipoteca</li>
+                        <li>Encontrar un agente de bienes raices</li>
+                        <li>Buscar casas dentro de tu presupuesto</li>
+                        <li>Hacer una oferta y negociar</li>
+                        <li>Obtener inspeccion de la vivienda</li>
+                        <li>Completar solicitud de prestamo</li>
+                        <li>Revisar divulgacion de cierre</li>
+                        <li>Hacer recorrido final</li>
+                        <li>Cerrar y obtener tus llaves!</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Articulos Relacionados</h3>
+                <div class="related-grid">
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>Asequibilidad de Vivienda con $80K</h4>
+                        <p>Calcula tu presupuesto para comprar casa.</p>
+                    </a>
+                    <a href="debt-snowball-vs-avalanche.html" class="related-card">
+                        <h4>Pagar Deudas Primero</h4>
+                        <p>Mejora tus probabilidades de aprobacion hipotecaria.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Guia del Fondo de Emergencia</h4>
+                        <p>Construye ahorros antes de comprar.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FinCalc. Todos los derechos reservados.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Politica de Privacidad</a>
+                <a href="/terms.html">Terminos de Servicio</a>
+            </p>
+            <p class="disclaimer">Aviso: Este contenido es solo para fines informativos. Consulta a un asesor financiero calificado para consejos personalizados.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

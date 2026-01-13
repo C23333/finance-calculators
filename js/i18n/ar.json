@@ -189,6 +189,41 @@
       "avalanche": "طريقة الانهيار الجليدي"
     }
   },
+  "calculators": {
+    "investmentReturn": {
+      "title": "حاسبة عائد الاستثمار",
+      "breadcrumb": "حاسبة عائد الاستثمار",
+      "description": "احسب عوائد استثمارك وROI. قارن ما استثمرته مقابل ما حصلت عليه.",
+      "initialInvestment": "الاستثمار الأولي",
+      "finalValue": "القيمة النهائية",
+      "holdingPeriod": "فترة الاحتفاظ (سنوات)",
+      "calculate": "احسب",
+      "totalReturn": "العائد الإجمالي",
+      "investmentSummary": "ملخص الاستثمار",
+      "profitLoss": "الربح/الخسارة",
+      "annualizedReturn": "العائد السنوي (CAGR)",
+      "simpleROI": "ROI البسيط",
+      "doublingTime": "وقت المضاعفة",
+      "doublingTimeYears": "{years} سنوات",
+      "doublingTimeNA": "غير متاح (عائد سلبي)",
+      "articleTitle": "فهم عوائد الاستثمار",
+      "totalVsAnnualized": "العائد الإجمالي مقابل العائد السنوي",
+      "totalVsAnnualizedText": "<strong>العائد الإجمالي</strong> يُظهر ربحك أو خسارتك الإجمالية كنسبة مئوية. <strong>العائد السنوي (CAGR)</strong> يُظهر معدل العائد السنوي المكافئ، وهو مفيد لمقارنة الاستثمارات المحتفظ بها لفترات مختلفة.",
+      "cagrFormula": "صيغة CAGR",
+      "cagrFormulaText": "CAGR = (القيمة النهائية / القيمة الأولية)^(1/السنوات) - 1",
+      "cagrFormulaDesc": "هذا يعطيك معدل النمو السنوي الثابت الذي سيأخذ استثمارك الأولي إلى قيمته النهائية.",
+      "historicalReturns": "متوسط العوائد التاريخية",
+      "sp500": "S&P 500:",
+      "sp500Return": "~10% سنوياً (قبل التضخم)",
+      "bonds": "السندات:",
+      "bondsReturn": "~5-6% سنوياً",
+      "savingsAccount": "حساب التوفير:",
+      "savingsReturn": "~0.5-5% (يختلف حسب بيئة الأسعار)",
+      "realEstate": "العقارات:",
+      "realEstateReturn": "~8-12% سنوياً (بما في ذلك الارتفاع ودخل الإيجار)",
+      "footerDisclaimer": "إخلاء المسؤولية: الأداء السابق لا يضمن النتائج المستقبلية. هذه الحاسبة للأغراض التعليمية فقط."
+    }
+  },
   "blog": {
     "title": "المدونة المالية",
     "subtitle": "نصائح الخبراء وأدلة لرحلتك المالية",

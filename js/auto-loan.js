@@ -38,11 +38,11 @@ function calculateAutoLoan(shouldScroll = false) {
     const totalInterest = totalCost - loanAmount;
 
     // Update results
-    document.getElementById('monthlyPayment').textContent = formatCurrency(monthlyPayment);
-    document.getElementById('loanAmount').textContent = formatCurrency(loanAmount);
-    document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
-    document.getElementById('totalCost').textContent = formatCurrency(totalCost);
-    document.getElementById('taxAmount').textContent = formatCurrency(salesTax);
+    document.getElementById('monthlyPayment').textContent = I18n.formatCurrency(monthlyPayment);
+    document.getElementById('loanAmount').textContent = I18n.formatCurrency(loanAmount);
+    document.getElementById('totalInterest').textContent = I18n.formatCurrency(totalInterest);
+    document.getElementById('totalCost').textContent = I18n.formatCurrency(totalCost);
+    document.getElementById('taxAmount').textContent = I18n.formatCurrency(salesTax);
 
     // Show results
     document.getElementById('results').classList.add('show');
@@ -51,13 +51,15 @@ function calculateAutoLoan(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Calculate on page load with default values (without scrolling)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for i18n to be ready before calculating
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        calculateAutoLoan(false);
+    } else {
+        document.addEventListener('i18nReady', () => calculateAutoLoan(false));
+    }
+});
 
-document.addEventListener('DOMContentLoaded', () => calculateAutoLoan(false));
+// Recalculate when language changes
+document.addEventListener('languageChange', () => calculateAutoLoan(false));

@@ -49,27 +49,30 @@ function calculateRetirement(shouldScroll = false) {
     const annualIncome = projectedSavings * 0.04;
 
     // Determine status
-    let status, statusColor;
+    let statusKey, statusColor;
     const ratio = projectedSavings / savingsNeeded;
 
     if (ratio >= 1) {
-        status = 'On Track';
+        statusKey = 'calculators.retirement.statusOnTrack';
         statusColor = '#10b981';
     } else if (ratio >= 0.75) {
-        status = 'Close - Consider increasing contributions';
+        statusKey = 'calculators.retirement.statusClose';
         statusColor = '#f59e0b';
     } else {
-        status = 'Behind - Need to save more';
+        statusKey = 'calculators.retirement.statusBehind';
         statusColor = '#ef4444';
     }
 
-    // Update results
-    document.getElementById('projectedSavings').textContent = formatCurrency(projectedSavings);
-    document.getElementById('yearsToRetirement').textContent = yearsToRetirement + ' years';
-    document.getElementById('totalContributions').textContent = formatCurrency(totalContributions);
-    document.getElementById('investmentGrowth').textContent = formatCurrency(investmentGrowth);
-    document.getElementById('savingsNeeded').textContent = formatCurrency(savingsNeeded);
-    document.getElementById('annualIncome').textContent = formatCurrency(annualIncome) + '/year';
+    // Get translated status text
+    const status = I18n.isLoaded ? I18n.t(statusKey) : getDefaultStatus(statusKey);
+
+    // Update results using I18n.formatCurrency
+    document.getElementById('projectedSavings').textContent = I18n.formatCurrency(projectedSavings, { decimals: 0 });
+    document.getElementById('yearsToRetirement').textContent = yearsToRetirement + ' ' + (I18n.isLoaded ? I18n.t('common.years') : 'years');
+    document.getElementById('totalContributions').textContent = I18n.formatCurrency(totalContributions, { decimals: 0 });
+    document.getElementById('investmentGrowth').textContent = I18n.formatCurrency(investmentGrowth, { decimals: 0 });
+    document.getElementById('savingsNeeded').textContent = I18n.formatCurrency(savingsNeeded, { decimals: 0 });
+    document.getElementById('annualIncome').textContent = I18n.formatCurrency(annualIncome, { decimals: 0 }) + (I18n.isLoaded ? I18n.t('common.perYear') : '/year');
 
     const statusEl = document.getElementById('status');
     statusEl.textContent = status;
@@ -82,14 +85,18 @@ function calculateRetirement(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
+// Fallback status text when I18n is not loaded
+function getDefaultStatus(key) {
+    const defaults = {
+        'calculators.retirement.statusOnTrack': 'On Track',
+        'calculators.retirement.statusClose': 'Close - Consider increasing contributions',
+        'calculators.retirement.statusBehind': 'Behind - Need to save more'
+    };
+    return defaults[key] || key;
 }
 
 // Calculate on page load
 document.addEventListener('DOMContentLoaded', () => calculateRetirement(false));
+
+// Recalculate when language changes
+document.addEventListener('languageChange', () => calculateRetirement(false));

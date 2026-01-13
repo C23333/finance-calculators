@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Schulden-Schneeball vs. Lawine: Welche Methode ist besser? | FinCalc</title>
+    <meta name="description" content="Vergleichen Sie Schulden-Schneeball vs. Lawinen-Methode. Erfahren Sie, welche Schuldenabbau-Strategie mehr Geld spart, welche Sie motiviert haelt, und finden Sie den besten Ansatz fuer Ihre Situation.">
+    <meta name="keywords" content="Schulden-Schneeball vs. Lawine, Schuldenabbau-Methoden, Schneeball-Methode, Lawinen-Methode, Schulden schneller abbezahlen, schuldenfrei">
+    <link rel="canonical" href="https://financecalc.cc/blog/de/debt-snowball-vs-avalanche.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Schulden-Schneeball vs. Lawine: Welche Methode ist besser?">
+    <meta property="og:description" content="Vergleichen Sie die beiden beliebtesten Schuldenabbau-Strategien und finden Sie heraus, welche Ihnen schneller zur Schuldenfreiheit verhilft.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/de/debt-snowball-vs-avalanche.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Schulden-Schneeball vs. Lawine: Welche Methode ist besser?",
+        "description": "Vergleichen Sie die beiden beliebtesten Schuldenabbau-Strategien und finden Sie heraus, welche Ihnen schneller zur Schuldenfreiheit verhilft.",
+        "image": "https://financecalc.cc/images/debt-snowball-avalanche.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/de/debt-snowball-vs-avalanche.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Was ist die Schulden-Schneeball-Methode?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Schulden-Schneeball-Methode konzentriert sich darauf, zuerst Ihre kleinste Schuld abzubezahlen, unabhaengig vom Zinssatz. Sie leisten Mindestzahlungen auf alle Schulden und stecken zusaetzliches Geld in die kleinste Schuld. Sobald diese abbezahlt ist, rollen Sie diese Zahlung zur naechstkleineren Schuld. Diese Methode bietet schnelle Erfolge, die Motivation aufbauen."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist die Schulden-Lawinen-Methode?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Schulden-Lawinen-Methode konzentriert sich darauf, zuerst Ihre Schuld mit dem hoechsten Zinssatz abzubezahlen, unabhaengig vom Saldo. Sie leisten Mindestzahlungen auf alle Schulden und stecken zusaetzliches Geld in die Schuld mit dem hoechsten Zinssatz. Diese Methode spart am meisten Geld an Zinsen und ist mathematisch optimal."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Welche Schuldenabbau-Methode ist besser: Schneeball oder Lawine?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Schulden-Lawinen-Methode spart mehr Geld an Zinsen, waehrend die Schulden-Schneeball-Methode psychologische Erfolge bietet, die Sie motiviert halten. Forschungen zeigen, dass Menschen, die die Schneeball-Methode verwenden, eher erfolgreich alle ihre Schulden abbezahlen. Die beste Methode ist die, bei der Sie tatsaechlich durchhalten."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie viel mehr kostet die Schneeball-Methode im Vergleich zur Lawine?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Der Unterschied haengt von Ihren spezifischen Schulden ab. Typischerweise kostet die Schneeball-Methode einige hundert bis einige tausend Euro mehr an Zinsen. Zum Beispiel koennte bei 23.000 Euro Schulden die Lawinen-Methode etwa 530 Euro sparen und Sie 2 Monate frueher schuldenfrei machen."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kann ich zwischen Schneeball- und Lawinen-Methode wechseln?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja, absolut. Viele Menschen beginnen mit der Schneeball-Methode zur Motivation, indem sie 1-2 kleine Schulden abbezahlen, und wechseln dann zur Lawinen-Methode, um hochverzinsliche Schulden anzugehen. Sie koennen auch einen hybriden Ansatz verwenden, der beide Strategien kombiniert."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Menue umschalten" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Rechner</a></li>
+                <li><a href="/blog/de/" class="active">Blog</a></li>
+                <li><a href="/#about">Ueber uns</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Startseite</a> <span>/</span> <a href="/blog/de/">Blog</a> <span>/</span> <span>Schulden-Schneeball vs. Lawine</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Schuldenabbau</span>
+                        <span>10. Januar 2026</span>
+                        <span>10 Min. Lesezeit</span>
+                    </div>
+                    <h1>Schulden-Schneeball vs. Lawine: Welche Methode ist besser?</h1>
+                    <p class="article-intro">Sie haben beschlossen, ernsthaft Schulden abzubauen. Aber welche Strategie sollten Sie verwenden? Lassen Sie uns die beiden beliebtesten Methoden vergleichen und Ihnen helfen, die richtige zu waehlen.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Die schnelle Antwort</h2>
+                    <p>Die <strong>Schulden-Lawinen-Methode</strong> spart Ihnen am meisten Geld an Zinsen. Die <strong>Schulden-Schneeball-Methode</strong> gibt Ihnen schnelle Erfolge, die Sie motiviert halten. Die beste Methode ist die, bei der Sie tatsaechlich durchhalten.</p>
+
+                    <div class="highlight-box">
+                        <h4>Fazit</h4>
+                        <ul>
+                            <li><strong>Waehlen Sie Lawine</strong>, wenn Sie durch Mathematik und Geldsparen motiviert werden</li>
+                            <li><strong>Waehlen Sie Schneeball</strong>, wenn Sie schnelle Erfolge brauchen, um motiviert zu bleiben</li>
+                        </ul>
+                    </div>
+
+                    <h2>Was ist die Schulden-Schneeball-Methode?</h2>
+                    <p>Die Schulden-Schneeball-Methode, populaer gemacht durch Dave Ramsey, konzentriert sich darauf, zuerst Ihren <strong>kleinsten Saldo</strong> abzubezahlen, unabhaengig vom Zinssatz.</p>
+
+                    <h3>So funktioniert es:</h3>
+                    <ol>
+                        <li>Listen Sie alle Schulden vom kleinsten zum groessten Saldo auf</li>
+                        <li>Leisten Sie Mindestzahlungen auf alle Schulden</li>
+                        <li>Stecken Sie alles zusaetzliche Geld in die kleinste Schuld</li>
+                        <li>Sobald abbezahlt, rollen Sie diese Zahlung zur naechstkleineren Schuld</li>
+                        <li>Wiederholen Sie, bis Sie schuldenfrei sind</li>
+                    </ol>
+
+                    <h3>Vorteile des Schneeballs:</h3>
+                    <ul>
+                        <li>Schnelle Erfolge bauen Schwung und Motivation auf</li>
+                        <li>Psychologisch befriedigend, Schulden zu eliminieren</li>
+                        <li>Vereinfacht Ihre Finanzen schneller (weniger Konten)</li>
+                        <li>Einfacher, Fortschritte zu verfolgen</li>
+                    </ul>
+
+                    <h3>Nachteile des Schneeballs:</h3>
+                    <ul>
+                        <li>Moeglicherweise zahlen Sie mehr Gesamtzinsen</li>
+                        <li>Hochverzinsliche Schulden wachsen weiter</li>
+                        <li>Nicht mathematisch optimal</li>
+                    </ul>
+
+                    <h2>Was ist die Schulden-Lawinen-Methode?</h2>
+                    <p>Die Schulden-Lawinen-Methode konzentriert sich darauf, zuerst Ihre Schuld mit dem <strong>hoechsten Zinssatz</strong> abzubezahlen, unabhaengig vom Saldo.</p>
+
+                    <h3>So funktioniert es:</h3>
+                    <ol>
+                        <li>Listen Sie alle Schulden vom hoechsten zum niedrigsten Zinssatz auf</li>
+                        <li>Leisten Sie Mindestzahlungen auf alle Schulden</li>
+                        <li>Stecken Sie alles zusaetzliche Geld in die Schuld mit dem hoechsten Zinssatz</li>
+                        <li>Sobald abbezahlt, rollen Sie diese Zahlung zur naechsthoeher verzinsten Schuld</li>
+                        <li>Wiederholen Sie, bis Sie schuldenfrei sind</li>
+                    </ol>
+
+                    <h3>Vorteile der Lawine:</h3>
+                    <ul>
+                        <li>Spart am meisten Geld an Zinsen</li>
+                        <li>Mathematisch optimaler Ansatz</li>
+                        <li>Moeglicherweise schnellere Gesamtschuldenfreiheit</li>
+                        <li>Stoppt das Wachstum der teuersten Schulden</li>
+                    </ul>
+
+                    <h3>Nachteile der Lawine:</h3>
+                    <ul>
+                        <li>Kann laenger dauern, die erste Schuld abzubezahlen</li>
+                        <li>Kann ohne schnelle Erfolge entmutigend sein</li>
+                        <li>Erfordert mehr Disziplin zum Durchhalten</li>
+                    </ul>
+
+                    <h2>Echtes Beispiel: Vergleich beider Methoden</h2>
+                    <p>Angenommen, Sie haben diese Schulden und koennen 500 €/Monat fuer den Schuldenabbau aufwenden:</p>
+
+                    <table>
+                        <tr>
+                            <th>Schuld</th>
+                            <th>Saldo</th>
+                            <th>Zinssatz</th>
+                            <th>Mindestzahlung</th>
+                        </tr>
+                        <tr>
+                            <td>Kreditkarte A</td>
+                            <td>2.500 €</td>
+                            <td>22%</td>
+                            <td>75 €</td>
+                        </tr>
+                        <tr>
+                            <td>Kreditkarte B</td>
+                            <td>7.000 €</td>
+                            <td>18%</td>
+                            <td>140 €</td>
+                        </tr>
+                        <tr>
+                            <td>Autokredit</td>
+                            <td>12.000 €</td>
+                            <td>6%</td>
+                            <td>250 €</td>
+                        </tr>
+                        <tr>
+                            <td>Studienkredit</td>
+                            <td>1.500 €</td>
+                            <td>5%</td>
+                            <td>35 €</td>
+                        </tr>
+                    </table>
+
+                    <h3>Schneeball-Reihenfolge (Kleinster zum Groessten):</h3>
+                    <ol>
+                        <li>Studienkredit (1.500 €)</li>
+                        <li>Kreditkarte A (2.500 €)</li>
+                        <li>Kreditkarte B (7.000 €)</li>
+                        <li>Autokredit (12.000 €)</li>
+                    </ol>
+
+                    <h3>Lawinen-Reihenfolge (Hoechster zum Niedrigsten Zinssatz):</h3>
+                    <ol>
+                        <li>Kreditkarte A (22%)</li>
+                        <li>Kreditkarte B (18%)</li>
+                        <li>Autokredit (6%)</li>
+                        <li>Studienkredit (5%)</li>
+                    </ol>
+
+                    <h3>Ergebnisvergleich:</h3>
+                    <table>
+                        <tr>
+                            <th>Methode</th>
+                            <th>Zeit bis Schuldenfreiheit</th>
+                            <th>Gezahlte Gesamtzinsen</th>
+                        </tr>
+                        <tr>
+                            <td>Schneeball</td>
+                            <td>38 Monate</td>
+                            <td>3.420 €</td>
+                        </tr>
+                        <tr>
+                            <td>Lawine</td>
+                            <td>36 Monate</td>
+                            <td>2.890 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unterschied</strong></td>
+                            <td><strong>2 Monate</strong></td>
+                            <td><strong>530 €</strong></td>
+                        </tr>
+                    </table>
+
+                    <p>In diesem Beispiel spart die Lawinen-Methode 530 € und macht Sie 2 Monate frueher schuldenfrei. Mit dem Schneeball wuerden Sie jedoch Ihre erste Schuld in nur 3 Monaten abbezahlen, gegenueber 5 Monaten mit der Lawine.</p>
+
+                    <div class="calculator-cta">
+                        <h3>Vergleichen Sie Ihre eigenen Schulden</h3>
+                        <p>Nutzen Sie unseren kostenlosen Schuldenabbau-Rechner, um genau zu sehen, wie viel jede Methode Sie kosten wuerde.</p>
+                        <a href="/calculators/debt-payoff.html" class="cta-btn">Zum Rechner →</a>
+                    </div>
+
+                    <h2>Welche Methode sollten Sie waehlen?</h2>
+
+                    <h3>Waehlen Sie Schulden-Schneeball, wenn:</h3>
+                    <ul>
+                        <li>Sie schon versucht haben, Schulden abzubauen und aufgegeben haben</li>
+                        <li>Sie Motivation und schnelle Erfolge brauchen</li>
+                        <li>Ihre Zinssaetze aehnlich sind bei allen Schulden</li>
+                        <li>Sie mehrere kleine Schulden haben, die Sie schnell abbauen koennen</li>
+                        <li>Psychologie Ihnen wichtiger ist als Mathematik</li>
+                    </ul>
+
+                    <h3>Waehlen Sie Schulden-Lawine, wenn:</h3>
+                    <ul>
+                        <li>Sie durch Geldsparen motiviert werden</li>
+                        <li>Sie hochverzinsliche Schulden haben (20%+ Kreditkarten)</li>
+                        <li>Sie diszipliniert sind und keine schnellen Erfolge brauchen</li>
+                        <li>Die Mathematik Sie stoert (mehr Zinsen zu zahlen fuehlt sich falsch an)</li>
+                        <li>Ihre hoechstverzinsliche Schuld nicht auch Ihre groesste ist</li>
+                    </ul>
+
+                    <h2>Der hybride Ansatz</h2>
+                    <p>Sie muessen sich nicht nur fuer eine Methode entscheiden. Erwaegen Sie einen hybriden Ansatz:</p>
+                    <ol>
+                        <li><strong>Beginnen Sie mit Schneeball</strong>, um Schwung aufzubauen, indem Sie 1-2 kleine Schulden abbezahlen</li>
+                        <li><strong>Wechseln Sie zur Lawine</strong>, sobald Sie motiviert sind, und gehen Sie hochverzinsliche Schulden an</li>
+                        <li><strong>Feiern Sie Meilensteine</strong> auf dem Weg, um motiviert zu bleiben</li>
+                    </ol>
+
+                    <div class="highlight-box">
+                        <h4>Die beste Methode</h4>
+                        <p>Forschungen zeigen, dass Menschen, die die Schneeball-Methode verwenden, eher erfolgreich alle ihre Schulden abbezahlen. Die psychologischen Erfolge zaehlen fuer die meisten Menschen mehr als die mathematische Optimierung. <strong>Die beste Methode ist die, die Sie tatsaechlich abschliessen.</strong></p>
+                    </div>
+
+                    <h2>Tipps fuer den Erfolg mit beiden Methoden</h2>
+                    <ol>
+                        <li><strong>Hoeren Sie auf, neue Schulden zu machen</strong> - Schneiden Sie Kreditkarten ab, wenn noetig</li>
+                        <li><strong>Bauen Sie zuerst einen kleinen Notgroschen auf</strong> - 1.000 € verhindern neue Schulden</li>
+                        <li><strong>Automatisieren Sie Zahlungen</strong> - Entfernen Sie die Versuchung, auszusetzen</li>
+                        <li><strong>Verfolgen Sie Ihren Fortschritt</strong> - Visueller Fortschritt haelt Sie motiviert</li>
+                        <li><strong>Finden Sie zusaetzliches Geld</strong> - Nebenjobs, Verkauf von Gegenstaenden, Ausgaben kuerzen</li>
+                        <li><strong>Feiern Sie Erfolge</strong> - Belohnen Sie sich (guenstig), wenn Sie eine Schuld abbezahlen</li>
+                    </ol>
+
+                    <h2>Haeufig gestellte Fragen</h2>
+
+                    <h3>Funktioniert die Schneeball-Methode wirklich?</h3>
+                    <p>Ja. Studien zeigen, dass Menschen, die die Schneeball-Methode verwenden, eher alle ihre Schulden abbezahlen, weil die schnellen Erfolge sie motiviert halten. Der psychologische Nutzen ueberwiegt oft die zusaetzlich gezahlten Zinsen.</p>
+
+                    <h3>Wie viel mehr kostet der Schneeball?</h3>
+                    <p>Es haengt von Ihren spezifischen Schulden ab. Der Unterschied betraegt normalerweise einige hundert bis einige tausend Euro. Nutzen Sie unseren Rechner, um Ihre genauen Zahlen zu sehen.</p>
+
+                    <h3>Kann ich mittendrin die Methode wechseln?</h3>
+                    <p>Absolut. Viele Menschen beginnen mit dem Schneeball zur Motivation und wechseln dann zur Lawine, sobald sie Schwung aufgebaut haben.</p>
+
+                    <h3>Was ist mit Umschuldungskarten?</h3>
+                    <p>Eine 0%-Umschuldung kann beide Methoden beschleunigen, indem sie voruebergehend Zinsen eliminiert. Stellen Sie nur sicher, dass Sie sie abbezahlen, bevor der Aktionszeitraum endet.</p>
+
+                    <h2>Handeln Sie heute</h2>
+                    <p>Der wichtigste Schritt ist, anzufangen. Waehlen Sie eine Methode, machen Sie einen Plan und beginnen Sie. Sie koennen Ihre Strategie spaeter immer noch anpassen. Der Schluessel ist, den ersten Schritt zur Schuldenfreiheit zu machen.</p>
+
+                    <div class="calculator-cta">
+                        <h3>Erstellen Sie Ihren Schuldenabbau-Plan</h3>
+                        <p>Sehen Sie genau, wie lange es dauern wird und wie viel Sie mit jeder Methode zahlen werden.</p>
+                        <a href="/calculators/debt-payoff.html" class="cta-btn">Schuldenabbau-Rechner →</a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Verwandte Artikel</h3>
+                <div class="related-grid">
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Notgroschen: 3 oder 6 Monate?</h4>
+                        <p>Bauen Sie Ihr Sicherheitsnetz waehrend des Schuldenabbaus auf.</p>
+                    </a>
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>Hauserschwinglichkeit bei 80K</h4>
+                        <p>Planen Sie den Hauskauf nach der Schuldenfreiheit.</p>
+                    </a>
+                    <a href="401k-contribution-calculator-2025.html" class="related-card">
+                        <h4>Betriebliche Altersvorsorge 2026</h4>
+                        <p>Schuldenabbau mit Altersvorsorge ausbalancieren.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. Alle Rechte vorbehalten.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Datenschutzerklaerung</a>
+                <a href="/terms.html">Nutzungsbedingungen</a>
+            </p>
+            <p class="disclaimer">Haftungsausschluss: Dieser Inhalt dient nur zu Informationszwecken. Konsultieren Sie einen qualifizierten Finanzberater fuer persoenliche Beratung.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Emergency Fund Calculator - How Much Do You Need?</title>
-    <meta name="description" content="Free emergency fund calculator. Calculate how much you need in your emergency fund based on your monthly expenses.">
+    <title>Emergency Fund Calculator 2026 - How Much Do You Need? | FinCalc</title>
+    <meta name="description" content="Free emergency fund calculator for 2026. Calculate how much you need in your emergency fund based on monthly expenses. Build your financial safety net.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -40,9 +41,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -50,30 +51,30 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Emergency Fund Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.emergencyFund.breadcrumb">Emergency Fund Calculator</span></span>
             </nav>
 
-            <h1>Emergency Fund Calculator</h1>
-            <p>Calculate how much you need in your emergency fund to protect against unexpected expenses.</p>
+            <h1 data-i18n="calculators.emergencyFund.title">Emergency Fund Calculator</h1>
+            <p data-i18n="calculators.emergencyFund.description">Calculate how much you need in your emergency fund to protect against unexpected expenses.</p>
 
             <div class="calculator">
                 <form id="emergencyFundForm">
-                    <h3 style="margin-bottom: 20px; color: var(--text-secondary);">Monthly Expenses</h3>
+                    <h3 style="margin-bottom: 20px; color: var(--text-secondary);" data-i18n="calculators.emergencyFund.monthlyExpensesTitle">Monthly Expenses</h3>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="housing">Housing (Rent/Mortgage)</label>
+                            <label for="housing" data-i18n="calculators.emergencyFund.housing">Housing (Rent/Mortgage)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="housing" value="1500" min="0" step="50">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="utilities">Utilities</label>
+                            <label for="utilities" data-i18n="calculators.emergencyFund.utilities">Utilities</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="utilities" value="200" min="0" step="25">
@@ -82,14 +83,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="food">Food & Groceries</label>
+                            <label for="food" data-i18n="calculators.emergencyFund.food">Food & Groceries</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="food" value="500" min="0" step="25">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="transportation">Transportation</label>
+                            <label for="transportation" data-i18n="calculators.emergencyFund.transportation">Transportation</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="transportation" value="400" min="0" step="25">
@@ -98,14 +99,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="insurance">Insurance (Health, Auto, etc.)</label>
+                            <label for="insurance" data-i18n="calculators.emergencyFund.insurance">Insurance (Health, Auto, etc.)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="insurance" value="300" min="0" step="25">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="debtPayments">Minimum Debt Payments</label>
+                            <label for="debtPayments" data-i18n="calculators.emergencyFund.debtPayments">Minimum Debt Payments</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="debtPayments" value="200" min="0" step="25">
@@ -113,26 +114,26 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="otherExpenses">Other Essential Expenses</label>
+                        <label for="otherExpenses" data-i18n="calculators.emergencyFund.otherExpenses">Other Essential Expenses</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="otherExpenses" value="300" min="0" step="25">
                         </div>
                     </div>
 
-                    <h3 style="margin: 30px 0 20px; color: var(--text-secondary);">Your Situation</h3>
+                    <h3 style="margin: 30px 0 20px; color: var(--text-secondary);" data-i18n="calculators.emergencyFund.yourSituation">Your Situation</h3>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="monthsCoverage">Months of Coverage</label>
+                            <label for="monthsCoverage" data-i18n="calculators.emergencyFund.monthsCoverage">Months of Coverage</label>
                             <select id="monthsCoverage">
-                                <option value="3">3 months (minimum)</option>
-                                <option value="6" selected>6 months (recommended)</option>
-                                <option value="9">9 months (conservative)</option>
-                                <option value="12">12 months (very conservative)</option>
+                                <option value="3" data-i18n="calculators.emergencyFund.months3">3 months (minimum)</option>
+                                <option value="6" selected data-i18n="calculators.emergencyFund.months6">6 months (recommended)</option>
+                                <option value="9" data-i18n="calculators.emergencyFund.months9">9 months (conservative)</option>
+                                <option value="12" data-i18n="calculators.emergencyFund.months12">12 months (very conservative)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="currentSavings">Current Emergency Savings</label>
+                            <label for="currentSavings" data-i18n="calculators.emergencyFund.currentSavings">Current Emergency Savings</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="currentSavings" value="5000" min="0" step="500">
@@ -140,30 +141,30 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="common.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="targetFund">$0</div>
-                        <p>Target Emergency Fund</p>
+                        <p data-i18n="calculators.emergencyFund.targetAmount">Target Emergency Fund</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Monthly Expenses</div>
+                            <div class="label" data-i18n="calculators.emergencyFund.monthlyExpenses">Monthly Expenses</div>
                             <div class="value" id="monthlyExpenses">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Current Savings</div>
+                            <div class="label" data-i18n="calculators.emergencyFund.currentSavingsLabel">Current Savings</div>
                             <div class="value" id="currentDisplay">$0</div>
                         </div>
                         <div class="result-card warning">
-                            <div class="label">Still Needed</div>
+                            <div class="label" data-i18n="calculators.emergencyFund.amountNeeded">Still Needed</div>
                             <div class="value" id="stillNeeded">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Progress</div>
+                            <div class="label" data-i18n="calculators.emergencyFund.progress">Progress</div>
                             <div class="value" id="progress">0%</div>
                         </div>
                     </div>
@@ -173,42 +174,42 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Savings Resources
+                    <span data-i18n="calculators.emergencyFund.resourcesTitle">Savings Resources</span>
                 </h3>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=best+high+yield+savings+accounts+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Best Savings Accounts
+                        <span data-i18n="calculators.emergencyFund.bestSavingsAccounts">Best Savings Accounts</span>
                     </a>
                     <a href="https://www.google.com/search?q=money+market+accounts+rates" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Money Market Rates
+                        <span data-i18n="calculators.emergencyFund.moneyMarketRates">Money Market Rates</span>
                     </a>
                     <a href="https://www.google.com/search?q=FDIC+insurance+limits" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        FDIC Insurance
+                        <span data-i18n="calculators.emergencyFund.fdicInsurance">FDIC Insurance</span>
                     </a>
                     <a href="https://www.google.com/search?q=automate+savings+tips" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Automate Savings
+                        <span data-i18n="calculators.emergencyFund.automateSavings">Automate Savings</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>Why You Need an Emergency Fund</h2>
-                <p>An emergency fund protects you from unexpected expenses like job loss, medical bills, or car repairs without going into debt.</p>
-                <h3>How Much Should You Save?</h3>
+                <h2 data-i18n="calculators.emergencyFund.articleTitle">Why You Need an Emergency Fund</h2>
+                <p data-i18n="calculators.emergencyFund.articleIntro">An emergency fund protects you from unexpected expenses like job loss, medical bills, or car repairs without going into debt.</p>
+                <h3 data-i18n="calculators.emergencyFund.howMuchTitle">How Much Should You Save?</h3>
                 <ul>
-                    <li><strong>3 months:</strong> Minimum for stable income, dual-income households</li>
-                    <li><strong>6 months:</strong> Recommended for most people</li>
-                    <li><strong>9-12 months:</strong> Self-employed, single income, or volatile industry</li>
+                    <li><strong data-i18n="calculators.emergencyFund.threeMonths">3 months:</strong> <span data-i18n="calculators.emergencyFund.threeMonthsDesc">Minimum for stable income, dual-income households</span></li>
+                    <li><strong data-i18n="calculators.emergencyFund.sixMonths">6 months:</strong> <span data-i18n="calculators.emergencyFund.sixMonthsDesc">Recommended for most people</span></li>
+                    <li><strong data-i18n="calculators.emergencyFund.nineToTwelveMonths">9-12 months:</strong> <span data-i18n="calculators.emergencyFund.nineToTwelveMonthsDesc">Self-employed, single income, or volatile industry</span></li>
                 </ul>
-                <h3>Where to Keep Your Emergency Fund</h3>
+                <h3 data-i18n="calculators.emergencyFund.whereToKeepTitle">Where to Keep Your Emergency Fund</h3>
                 <ul>
-                    <li>High-yield savings account (easy access, earns interest)</li>
-                    <li>Money market account</li>
-                    <li>NOT in investments (too risky for emergency funds)</li>
+                    <li data-i18n="calculators.emergencyFund.whereToKeep1">High-yield savings account (easy access, earns interest)</li>
+                    <li data-i18n="calculators.emergencyFund.whereToKeep2">Money market account</li>
+                    <li data-i18n="calculators.emergencyFund.whereToKeep3">NOT in investments (too risky for emergency funds)</li>
                 </ul>
             </article>
         </div>
@@ -216,7 +217,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
         </div>
     </footer>
 
@@ -226,6 +227,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/emergency-fund.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Investment Return Calculator - Calculate ROI & Compare Investments</title>
-    <meta name="description" content="Free investment return calculator. Calculate ROI, compare different investment scenarios, and see your potential returns over time.">
+    <title>Investment Return Calculator 2026 - ROI & Portfolio Growth | FinCalc</title>
+    <meta name="description" content="Free investment return calculator for 2026. Calculate ROI, compare investment scenarios, and project your portfolio growth over time. Make smarter investment decisions.">
     <meta name="keywords" content="investment calculator, ROI calculator, return on investment, investment comparison, stock return calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/investment-return.html">
 
@@ -44,6 +44,7 @@
     </script>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -55,9 +56,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -65,21 +66,21 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Investment Return Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.investmentReturn.breadcrumb">Investment Return Calculator</span></span>
             </nav>
 
-            <h1>Investment Return Calculator</h1>
-            <p>Calculate your investment returns and ROI. Compare what you invested vs what you got back.</p>
+            <h1 data-i18n="calculators.investmentReturn.title">Investment Return Calculator</h1>
+            <p data-i18n="calculators.investmentReturn.description">Calculate your investment returns and ROI. Compare what you invested vs what you got back.</p>
 
             <div class="calculator">
                 <form id="investmentForm">
                     <div class="form-group">
-                        <label for="initialInvestment">Initial Investment</label>
+                        <label for="initialInvestment" data-i18n="calculators.investmentReturn.initialInvestment">Initial Investment</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="initialInvestment" value="10000" min="0" step="100" required>
@@ -87,7 +88,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="finalValue">Final Value</label>
+                        <label for="finalValue" data-i18n="calculators.investmentReturn.finalValue">Final Value</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="finalValue" value="15000" min="0" step="100" required>
@@ -95,55 +96,55 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="holdingPeriod">Holding Period (Years)</label>
+                        <label for="holdingPeriod" data-i18n="calculators.investmentReturn.holdingPeriod">Holding Period (Years)</label>
                         <input type="number" id="holdingPeriod" value="3" min="0.1" max="100" step="0.1" required>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="calculators.investmentReturn.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="totalReturn">0%</div>
-                        <p>Total Return</p>
+                        <p data-i18n="calculators.investmentReturn.totalReturn">Total Return</p>
                     </div>
 
-                    <h2>Investment Summary</h2>
+                    <h2 data-i18n="calculators.investmentReturn.investmentSummary">Investment Summary</h2>
                     <div class="result-item">
-                        <span class="result-label">Profit/Loss</span>
+                        <span class="result-label" data-i18n="calculators.investmentReturn.profitLoss">Profit/Loss</span>
                         <span class="result-value" id="profitLoss">$0</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Annualized Return (CAGR)</span>
+                        <span class="result-label" data-i18n="calculators.investmentReturn.annualizedReturn">Annualized Return (CAGR)</span>
                         <span class="result-value" id="annualizedReturn">0%</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Simple ROI</span>
+                        <span class="result-label" data-i18n="calculators.investmentReturn.simpleROI">Simple ROI</span>
                         <span class="result-value" id="simpleROI">0%</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Doubling Time</span>
+                        <span class="result-label" data-i18n="calculators.investmentReturn.doublingTime">Doubling Time</span>
                         <span class="result-value" id="doublingTime">-</span>
                     </div>
                 </div>
             </div>
 
             <article class="content" style="margin-top: 40px;">
-                <h2>Understanding Investment Returns</h2>
+                <h2 data-i18n="calculators.investmentReturn.articleTitle">Understanding Investment Returns</h2>
 
-                <h3>Total Return vs Annualized Return</h3>
-                <p><strong>Total Return</strong> shows your overall gain or loss as a percentage. <strong>Annualized Return (CAGR)</strong> shows the equivalent yearly return rate, which is useful for comparing investments held for different time periods.</p>
+                <h3 data-i18n="calculators.investmentReturn.totalVsAnnualized">Total Return vs Annualized Return</h3>
+                <p data-i18n="calculators.investmentReturn.totalVsAnnualizedText"><strong>Total Return</strong> shows your overall gain or loss as a percentage. <strong>Annualized Return (CAGR)</strong> shows the equivalent yearly return rate, which is useful for comparing investments held for different time periods.</p>
 
-                <h3>CAGR Formula</h3>
-                <p>CAGR = (Final Value / Initial Value)^(1/Years) - 1</p>
-                <p>This gives you the constant annual growth rate that would take your initial investment to its final value.</p>
+                <h3 data-i18n="calculators.investmentReturn.cagrFormula">CAGR Formula</h3>
+                <p data-i18n="calculators.investmentReturn.cagrFormulaText">CAGR = (Final Value / Initial Value)^(1/Years) - 1</p>
+                <p data-i18n="calculators.investmentReturn.cagrFormulaDesc">This gives you the constant annual growth rate that would take your initial investment to its final value.</p>
 
-                <h3>Historical Average Returns</h3>
+                <h3 data-i18n="calculators.investmentReturn.historicalReturns">Historical Average Returns</h3>
                 <ul>
-                    <li><strong>S&P 500:</strong> ~10% annually (before inflation)</li>
-                    <li><strong>Bonds:</strong> ~5-6% annually</li>
-                    <li><strong>Savings Account:</strong> ~0.5-5% (varies by rate environment)</li>
-                    <li><strong>Real Estate:</strong> ~8-12% annually (including appreciation and rental income)</li>
+                    <li><strong data-i18n="calculators.investmentReturn.sp500">S&P 500:</strong> <span data-i18n="calculators.investmentReturn.sp500Return">~10% annually (before inflation)</span></li>
+                    <li><strong data-i18n="calculators.investmentReturn.bonds">Bonds:</strong> <span data-i18n="calculators.investmentReturn.bondsReturn">~5-6% annually</span></li>
+                    <li><strong data-i18n="calculators.investmentReturn.savingsAccount">Savings Account:</strong> <span data-i18n="calculators.investmentReturn.savingsReturn">~0.5-5% (varies by rate environment)</span></li>
+                    <li><strong data-i18n="calculators.investmentReturn.realEstate">Real Estate:</strong> <span data-i18n="calculators.investmentReturn.realEstateReturn">~8-12% annually (including appreciation and rental income)</span></li>
                 </ul>
             </article>
         </div>
@@ -151,8 +152,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.investmentReturn.footerDisclaimer">Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.</p>
         </div>
     </footer>
 
@@ -162,6 +163,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/investment-return.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

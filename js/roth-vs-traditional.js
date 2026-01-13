@@ -64,75 +64,95 @@ function calculateRothVsTraditional(shouldScroll = false) {
     const rothMonthlyIncome = (rothAfterTax * 0.04) / 12;
 
     // Display results
-    document.getElementById('traditionalBalance').textContent = formatCurrency(traditionalBalance);
-    document.getElementById('rothBalance').textContent = formatCurrency(rothBalance);
-    document.getElementById('traditionalAfterTax').textContent = formatCurrency(traditionalAfterTax);
-    document.getElementById('rothAfterTax').textContent = formatCurrency(rothAfterTax);
-    document.getElementById('traditionalMonthly').textContent = formatCurrency(traditionalMonthlyIncome);
-    document.getElementById('rothMonthly').textContent = formatCurrency(rothMonthlyIncome);
-    document.getElementById('difference').textContent = formatCurrency(Math.abs(difference));
+    document.getElementById('traditionalBalance').textContent = I18n.formatCurrency(traditionalBalance, { decimals: 0 });
+    document.getElementById('rothBalance').textContent = I18n.formatCurrency(rothBalance, { decimals: 0 });
+    document.getElementById('traditionalAfterTax').textContent = I18n.formatCurrency(traditionalAfterTax, { decimals: 0 });
+    document.getElementById('rothAfterTax').textContent = I18n.formatCurrency(rothAfterTax, { decimals: 0 });
+    document.getElementById('traditionalMonthly').textContent = I18n.formatCurrency(traditionalMonthlyIncome, { decimals: 0 });
+    document.getElementById('rothMonthly').textContent = I18n.formatCurrency(rothMonthlyIncome, { decimals: 0 });
+    document.getElementById('difference').textContent = I18n.formatCurrency(Math.abs(difference), { decimals: 0 });
     document.getElementById('breakEvenRate').textContent = (breakEvenRate * 100).toFixed(1) + '%';
 
     // Recommendation
     const recommendationEl = document.getElementById('recommendation');
     if (difference > 0) {
+        const rothBetterTitle = I18n.t('calculators.rothVsTraditional.rothBetterTitle') || 'Roth is Better for You';
+        const rothBetterDesc = I18n.t('calculators.rothVsTraditional.rothBetterDesc') || 'Based on your inputs, a Roth account would provide <strong>{amount}</strong> more in after-tax retirement savings ({percent}% more).';
+        const rothBetterReason = I18n.t('calculators.rothVsTraditional.rothBetterReason') || 'This is because your expected retirement tax rate ({retirementRate}%) is higher than or close to your current rate ({currentRate}%).';
+
         recommendationEl.innerHTML = `
             <div class="recommendation roth-better">
-                <h4>Roth is Better for You</h4>
-                <p>Based on your inputs, a Roth account would provide <strong>${formatCurrency(difference)}</strong> more in after-tax retirement savings (${percentDifference.toFixed(1)}% more).</p>
-                <p>This is because your expected retirement tax rate (${(retirementTaxRate * 100).toFixed(0)}%) is higher than or close to your current rate (${(currentTaxRate * 100).toFixed(0)}%).</p>
+                <h4>${rothBetterTitle}</h4>
+                <p>${rothBetterDesc.replace('{amount}', I18n.formatCurrency(difference, { decimals: 0 })).replace('{percent}', percentDifference.toFixed(1))}</p>
+                <p>${rothBetterReason.replace('{retirementRate}', (retirementTaxRate * 100).toFixed(0)).replace('{currentRate}', (currentTaxRate * 100).toFixed(0))}</p>
             </div>
         `;
     } else if (difference < 0) {
+        const traditionalBetterTitle = I18n.t('calculators.rothVsTraditional.traditionalBetterTitle') || 'Traditional is Better for You';
+        const traditionalBetterDesc = I18n.t('calculators.rothVsTraditional.traditionalBetterDesc') || 'Based on your inputs, a Traditional account would provide <strong>{amount}</strong> more in after-tax retirement savings ({percent}% more).';
+        const traditionalBetterReason = I18n.t('calculators.rothVsTraditional.traditionalBetterReason') || 'This is because your current tax rate ({currentRate}%) is higher than your expected retirement rate ({retirementRate}%).';
+
         recommendationEl.innerHTML = `
             <div class="recommendation traditional-better">
-                <h4>Traditional is Better for You</h4>
-                <p>Based on your inputs, a Traditional account would provide <strong>${formatCurrency(Math.abs(difference))}</strong> more in after-tax retirement savings (${Math.abs(percentDifference).toFixed(1)}% more).</p>
-                <p>This is because your current tax rate (${(currentTaxRate * 100).toFixed(0)}%) is higher than your expected retirement rate (${(retirementTaxRate * 100).toFixed(0)}%).</p>
+                <h4>${traditionalBetterTitle}</h4>
+                <p>${traditionalBetterDesc.replace('{amount}', I18n.formatCurrency(Math.abs(difference), { decimals: 0 })).replace('{percent}', Math.abs(percentDifference).toFixed(1))}</p>
+                <p>${traditionalBetterReason.replace('{currentRate}', (currentTaxRate * 100).toFixed(0)).replace('{retirementRate}', (retirementTaxRate * 100).toFixed(0))}</p>
             </div>
         `;
     } else {
+        const equalTitle = I18n.t('calculators.rothVsTraditional.equalTitle') || 'Both Options Are Equal';
+        const equalDesc = I18n.t('calculators.rothVsTraditional.equalDesc') || 'Based on your inputs, both Traditional and Roth accounts would provide similar after-tax retirement savings.';
+        const equalAdvice = I18n.t('calculators.rothVsTraditional.equalAdvice') || 'Consider other factors like tax diversification and flexibility.';
+
         recommendationEl.innerHTML = `
             <div class="recommendation equal">
-                <h4>Both Options Are Equal</h4>
-                <p>Based on your inputs, both Traditional and Roth accounts would provide similar after-tax retirement savings.</p>
-                <p>Consider other factors like tax diversification and flexibility.</p>
+                <h4>${equalTitle}</h4>
+                <p>${equalDesc}</p>
+                <p>${equalAdvice}</p>
             </div>
         `;
     }
 
     // Build comparison table
     const comparisonBody = document.getElementById('comparisonBody');
+    const annualContributionLabel = I18n.t('calculators.rothVsTraditional.tableAnnualContribution') || 'Annual Contribution';
+    const taxSavingsNowLabel = I18n.t('calculators.rothVsTraditional.tableTaxSavingsNow') || 'Tax Savings Now';
+    const balanceAtRetirementLabel = I18n.t('calculators.rothVsTraditional.tableBalanceAtRetirement') || 'Balance at Retirement';
+    const taxesAtWithdrawalLabel = I18n.t('calculators.rothVsTraditional.tableTaxesAtWithdrawal') || 'Taxes at Withdrawal';
+    const afterTaxValueLabel = I18n.t('calculators.rothVsTraditional.tableAfterTaxValue') || 'After-Tax Value';
+    const monthlyIncomeLabel = I18n.t('calculators.rothVsTraditional.tableMonthlyIncome') || 'Monthly Income (4% rule)';
+    const perYearLabel = I18n.t('common.perYear') || '/year';
+
     comparisonBody.innerHTML = `
         <tr>
-            <td>Annual Contribution</td>
-            <td>${formatCurrency(traditionalContribution)}</td>
-            <td>${formatCurrency(rothContribution)}</td>
+            <td>${annualContributionLabel}</td>
+            <td>${I18n.formatCurrency(traditionalContribution, { decimals: 0 })}</td>
+            <td>${I18n.formatCurrency(rothContribution, { decimals: 0 })}</td>
         </tr>
         <tr>
-            <td>Tax Savings Now</td>
-            <td>${formatCurrency(annualTaxSavings)}/year</td>
+            <td>${taxSavingsNowLabel}</td>
+            <td>${I18n.formatCurrency(annualTaxSavings, { decimals: 0 })}${perYearLabel}</td>
             <td>$0</td>
         </tr>
         <tr>
-            <td>Balance at Retirement</td>
-            <td>${formatCurrency(traditionalBalance)}</td>
-            <td>${formatCurrency(rothBalance)}</td>
+            <td>${balanceAtRetirementLabel}</td>
+            <td>${I18n.formatCurrency(traditionalBalance, { decimals: 0 })}</td>
+            <td>${I18n.formatCurrency(rothBalance, { decimals: 0 })}</td>
         </tr>
         <tr>
-            <td>Taxes at Withdrawal</td>
-            <td>${formatCurrency(traditionalBalance * retirementTaxRate)}</td>
+            <td>${taxesAtWithdrawalLabel}</td>
+            <td>${I18n.formatCurrency(traditionalBalance * retirementTaxRate, { decimals: 0 })}</td>
             <td>$0</td>
         </tr>
         <tr>
-            <td>After-Tax Value</td>
-            <td>${formatCurrency(traditionalAfterTax)}</td>
-            <td>${formatCurrency(rothAfterTax)}</td>
+            <td>${afterTaxValueLabel}</td>
+            <td>${I18n.formatCurrency(traditionalAfterTax, { decimals: 0 })}</td>
+            <td>${I18n.formatCurrency(rothAfterTax, { decimals: 0 })}</td>
         </tr>
         <tr>
-            <td>Monthly Income (4% rule)</td>
-            <td>${formatCurrency(traditionalMonthlyIncome)}</td>
-            <td>${formatCurrency(rothMonthlyIncome)}</td>
+            <td>${monthlyIncomeLabel}</td>
+            <td>${I18n.formatCurrency(traditionalMonthlyIncome, { decimals: 0 })}</td>
+            <td>${I18n.formatCurrency(rothMonthlyIncome, { decimals: 0 })}</td>
         </tr>
     `;
 
@@ -142,14 +162,13 @@ function calculateRothVsTraditional(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').style.display !== 'none') {
+        calculateRothVsTraditional(false);
+    }
+});
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {

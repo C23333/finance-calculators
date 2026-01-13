@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Guia Completo de Impostos para Autonomos e Freelancers | FinCalc</title>
+    <meta name="description" content="Guia completo de impostos para autonomos e freelancers. Aprenda sobre pagamentos trimestrais, deducoes e como calcular sua obrigacao tributaria como prestador de servicos.">
+    <meta name="keywords" content="imposto autonomo, impostos freelancer, carne leao, MEI impostos, prestador de servicos impostos">
+    <link rel="canonical" href="https://financecalc.cc/blog/pt/freelancer-self-employment-tax-guide.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Guia Completo de Impostos para Autonomos e Freelancers">
+    <meta property="og:description" content="Guia completo de impostos para autonomos, freelancers e prestadores de servicos independentes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/pt/freelancer-self-employment-tax-guide.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Guia Completo de Impostos para Autonomos e Freelancers",
+        "description": "Guia completo de impostos para autonomos, freelancers e prestadores de servicos independentes.",
+        "image": "https://financecalc.cc/images/freelancer-self-employment-tax.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/pt/freelancer-self-employment-tax-guide.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Qual a aliquota de imposto para autonomos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para autonomos pessoa fisica, o Imposto de Renda segue a tabela progressiva de 0% a 27,5%, alem do INSS de 20% sobre o rendimento (limitado ao teto). MEIs pagam uma taxa fixa mensal de R$70-76 dependendo da atividade. Empresas no Simples Nacional pagam de 6% a 33% dependendo do faturamento e atividade."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quando devo pagar o carne-leao?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "O carne-leao deve ser pago mensalmente ate o ultimo dia util do mes seguinte ao recebimento. Por exemplo, rendimentos de janeiro devem ser pagos ate o ultimo dia util de fevereiro. O nao pagamento resulta em multa e juros."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quais deducoes autonomos podem declarar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Autonomos podem deduzir despesas do livro-caixa como aluguel de escritorio, equipamentos, software, cursos profissionalizantes, viagens a trabalho, marketing e servicos profissionais. Tambem podem deduzir contribuicoes ao INSS, dependentes e despesas medicas na declaracao anual."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto autonomos devem guardar para impostos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Autonomos devem separar 25-35% da renda para impostos. Isso cobre Imposto de Renda (0-27,5% dependendo da faixa) e INSS (20% ate o teto). MEIs tem carga tributaria muito menor, pagando apenas a taxa fixa mensal."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quais opcoes de previdencia estao disponiveis para autonomos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Autonomos tem varias opcoes: INSS como contribuinte individual (20% sobre o salario de contribuicao), INSS simplificado (11% sobre o minimo), previdencia privada PGBL (dedutivel ate 12% da renda bruta) ou VGBL (sem deducao, mas tributacao apenas sobre rendimentos). MEIs contribuem automaticamente com 5% do minimo."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Alternar menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculadoras</a></li>
+                <li><a href="/blog/pt/" class="active">Blog</a></li>
+                <li><a href="/#about">Sobre</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Inicio</a> <span>/</span> <a href="/blog/pt/">Blog</a> <span>/</span> <span>Guia de Impostos para Autonomos</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Impostos</span>
+                        <span>10 de Janeiro de 2026</span>
+                        <span>9 min de leitura</span>
+                    </div>
+                    <h1>Guia Completo de Impostos para Autonomos e Freelancers</h1>
+                    <p class="article-intro">Impostos para autonomos podem ser confusos para novos freelancers. Este guia explica exatamente o que voce deve, quando pagar e como reduzir sua carga tributaria legalmente.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Opcoes de Tributacao para Autonomos</h2>
+                    <p>Como autonomo ou freelancer, voce tem diferentes opcoes de como se formalizar e pagar impostos:</p>
+
+                    <table>
+                        <tr>
+                            <th>Opcao</th>
+                            <th>Limite de Faturamento</th>
+                            <th>Carga Tributaria</th>
+                        </tr>
+                        <tr>
+                            <td>Pessoa Fisica (Carne-Leao)</td>
+                            <td>Sem limite</td>
+                            <td>0-27,5% IR + 20% INSS</td>
+                        </tr>
+                        <tr>
+                            <td>MEI</td>
+                            <td>R$81.000/ano</td>
+                            <td>R$70-76/mes fixo</td>
+                        </tr>
+                        <tr>
+                            <td>Simples Nacional</td>
+                            <td>R$4,8 milhoes/ano</td>
+                            <td>6-33% sobre faturamento</td>
+                        </tr>
+                        <tr>
+                            <td>Lucro Presumido</td>
+                            <td>R$78 milhoes/ano</td>
+                            <td>~16-22% sobre faturamento</td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>Importante</h4>
+                        <p>A escolha do regime tributario pode fazer uma diferenca enorme no quanto voce paga de impostos. Um contador pode ajudar a escolher a melhor opcao para sua situacao.</p>
+                    </div>
+
+                    <h2>Tributacao como Pessoa Fisica (Carne-Leao)</h2>
+                    <p>Se voce trabalha como autonomo sem empresa, precisa pagar o carne-leao mensalmente:</p>
+
+                    <h3>Tabela do Imposto de Renda 2026</h3>
+                    <table>
+                        <tr>
+                            <th>Base de Calculo Mensal</th>
+                            <th>Aliquota</th>
+                            <th>Deducao</th>
+                        </tr>
+                        <tr>
+                            <td>Ate R$2.259,20</td>
+                            <td>Isento</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>R$2.259,21 a R$2.826,65</td>
+                            <td>7,5%</td>
+                            <td>R$169,44</td>
+                        </tr>
+                        <tr>
+                            <td>R$2.826,66 a R$3.751,05</td>
+                            <td>15%</td>
+                            <td>R$381,44</td>
+                        </tr>
+                        <tr>
+                            <td>R$3.751,06 a R$4.664,68</td>
+                            <td>22,5%</td>
+                            <td>R$662,77</td>
+                        </tr>
+                        <tr>
+                            <td>Acima de R$4.664,68</td>
+                            <td>27,5%</td>
+                            <td>R$896,00</td>
+                        </tr>
+                    </table>
+
+                    <h3>Exemplo: Renda Mensal de R$10.000</h3>
+                    <table>
+                        <tr>
+                            <th>Calculo</th>
+                            <th>Valor</th>
+                        </tr>
+                        <tr>
+                            <td>Renda bruta</td>
+                            <td>R$10.000</td>
+                        </tr>
+                        <tr>
+                            <td>INSS (20%, teto R$1.557,20)</td>
+                            <td>-R$1.557,20</td>
+                        </tr>
+                        <tr>
+                            <td>Base de calculo IR</td>
+                            <td>R$8.442,80</td>
+                        </tr>
+                        <tr>
+                            <td>IR (27,5% - R$896)</td>
+                            <td>R$1.425,77</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total de impostos</strong></td>
+                            <td><strong>R$2.982,97</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Calcule Seus Impostos de Autonomo</h3>
+                        <p>Obtenha uma estimativa precisa da sua obrigacao tributaria.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Calculadora de Impostos</a>
+                    </div>
+
+                    <h2>MEI - Microempreendedor Individual</h2>
+                    <p>O MEI e a opcao mais simples e barata para quem fatura ate R$81.000/ano:</p>
+
+                    <h3>Vantagens do MEI</h3>
+                    <ul>
+                        <li>Taxa fixa mensal (R$70-76 em 2026)</li>
+                        <li>Emissao de nota fiscal</li>
+                        <li>Cobertura previdenciaria (aposentadoria, auxilio-doenca)</li>
+                        <li>Pode ter 1 funcionario</li>
+                        <li>Declaracao anual simplificada</li>
+                    </ul>
+
+                    <h3>Valores do DAS MEI 2026</h3>
+                    <table>
+                        <tr>
+                            <th>Atividade</th>
+                            <th>Valor Mensal</th>
+                        </tr>
+                        <tr>
+                            <td>Comercio e Industria</td>
+                            <td>R$71,60</td>
+                        </tr>
+                        <tr>
+                            <td>Servicos</td>
+                            <td>R$75,60</td>
+                        </tr>
+                        <tr>
+                            <td>Comercio e Servicos</td>
+                            <td>R$76,60</td>
+                        </tr>
+                    </table>
+
+                    <h2>Pagamentos Mensais e Prazos</h2>
+                    <p>Diferente de empregados CLT que tem impostos retidos na fonte, autonomos devem pagar seus impostos por conta propria.</p>
+
+                    <h3>Prazos de Pagamento</h3>
+                    <table>
+                        <tr>
+                            <th>Imposto</th>
+                            <th>Prazo</th>
+                        </tr>
+                        <tr>
+                            <td>Carne-Leao (IR)</td>
+                            <td>Ultimo dia util do mes seguinte</td>
+                        </tr>
+                        <tr>
+                            <td>INSS Autonomo</td>
+                            <td>Dia 15 do mes seguinte</td>
+                        </tr>
+                        <tr>
+                            <td>DAS MEI</td>
+                            <td>Dia 20 do mes seguinte</td>
+                        </tr>
+                        <tr>
+                            <td>DAS Simples Nacional</td>
+                            <td>Dia 20 do mes seguinte</td>
+                        </tr>
+                    </table>
+
+                    <h3>Quanto Separar para Impostos</h3>
+                    <p>Uma abordagem simples: separe 25-35% de cada pagamento recebido para impostos.</p>
+
+                    <h2>Deducoes para Autonomos</h2>
+                    <p>Reduza sua base de calculo com estas deducoes comuns:</p>
+
+                    <h3>Livro-Caixa (Despesas Dedutiveis)</h3>
+                    <ul>
+                        <li>Aluguel de escritorio ou coworking</li>
+                        <li>Computador e equipamentos</li>
+                        <li>Software e assinaturas profissionais</li>
+                        <li>Material de escritorio</li>
+                        <li>Cursos e desenvolvimento profissional</li>
+                        <li>Viagens a trabalho</li>
+                        <li>Marketing e publicidade</li>
+                        <li>Servicos profissionais (contador, advogado)</li>
+                    </ul>
+
+                    <h3>Deducoes na Declaracao Anual</h3>
+                    <ul>
+                        <li><strong>INSS:</strong> Contribuicoes sao dedutiveis</li>
+                        <li><strong>Dependentes:</strong> R$2.275,08 por dependente</li>
+                        <li><strong>Educacao:</strong> Ate R$3.561,50 por pessoa</li>
+                        <li><strong>Saude:</strong> Sem limite (despesas medicas)</li>
+                        <li><strong>Previdencia privada PGBL:</strong> Ate 12% da renda bruta</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Dica do Livro-Caixa</h4>
+                        <p>Mantenha todos os recibos e notas fiscais das suas despesas profissionais. O livro-caixa pode reduzir significativamente sua base de calculo do Imposto de Renda.</p>
+                    </div>
+
+                    <h2>Exemplo: Calculo Completo de Impostos</h2>
+                    <p>Vamos calcular os impostos para um freelancer com R$120.000 de renda anual:</p>
+
+                    <table>
+                        <tr>
+                            <th>Item</th>
+                            <th>Valor</th>
+                        </tr>
+                        <tr>
+                            <td>Renda Bruta Anual</td>
+                            <td>R$120.000</td>
+                        </tr>
+                        <tr>
+                            <td>Despesas Livro-Caixa</td>
+                            <td>-R$18.000</td>
+                        </tr>
+                        <tr>
+                            <td>Renda Liquida</td>
+                            <td>R$102.000</td>
+                        </tr>
+                        <tr>
+                            <td>INSS Anual (teto)</td>
+                            <td>-R$18.686,40</td>
+                        </tr>
+                        <tr>
+                            <td>Base de Calculo IR</td>
+                            <td>R$83.313,60</td>
+                        </tr>
+                        <tr>
+                            <td>IR Anual (tabela progressiva)</td>
+                            <td>~R$12.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total de Impostos</strong></td>
+                            <td><strong>~R$30.686</strong></td>
+                        </tr>
+                    </table>
+
+                    <p>Taxa efetiva: aproximadamente 25,5% sobre a renda bruta.</p>
+
+                    <h2>Previdencia para Autonomos</h2>
+
+                    <h3>INSS Contribuinte Individual</h3>
+                    <ul>
+                        <li><strong>Plano Normal:</strong> 20% sobre o salario de contribuicao (minimo a teto)</li>
+                        <li><strong>Plano Simplificado:</strong> 11% sobre o salario minimo</li>
+                        <li><strong>MEI:</strong> 5% sobre o salario minimo (incluso no DAS)</li>
+                    </ul>
+
+                    <h3>Previdencia Privada</h3>
+                    <ul>
+                        <li><strong>PGBL:</strong> Deducao de ate 12% da renda bruta, tributacao sobre total no resgate</li>
+                        <li><strong>VGBL:</strong> Sem deducao, tributacao apenas sobre rendimentos</li>
+                    </ul>
+
+                    <h2>Erros Comuns de Autonomos com Impostos</h2>
+                    <ol>
+                        <li><strong>Nao pagar mensalmente</strong> - Resulta em multa e juros</li>
+                        <li><strong>Misturar contas pessoais e profissionais</strong> - Use contas separadas</li>
+                        <li><strong>Nao guardar recibos</strong> - Mantenha documentacao de todas as despesas</li>
+                        <li><strong>Perder deducoes</strong> - Registre todas as despesas profissionais</li>
+                        <li><strong>Nao economizar para impostos</strong> - Separe 25-35% da renda</li>
+                        <li><strong>Escolher regime errado</strong> - Consulte um contador</li>
+                    </ol>
+
+                    <div class="calculator-cta">
+                        <h3>Estime Sua Obrigacao Tributaria</h3>
+                        <p>Planeje com antecedencia usando nossa calculadora de impostos para autonomos.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Calcular Agora</a>
+                    </div>
+
+                    <h2>Checklist de Impostos para Autonomos</h2>
+                    <ol>
+                        <li>Abra uma conta bancaria separada para o negocio</li>
+                        <li>Registre todas as receitas e despesas</li>
+                        <li>Separe 25-35% da renda para impostos</li>
+                        <li>Pague impostos mensalmente nos prazos</li>
+                        <li>Maximize deducoes (livro-caixa, previdencia)</li>
+                        <li>Considere contratar um contador</li>
+                        <li>Guarde documentos por pelo menos 5 anos</li>
+                        <li>Avalie anualmente se o regime tributario ainda e o melhor</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Artigos Relacionados</h3>
+                <div class="related-grid">
+                    <a href="401k-contribution-calculator-2025.html" class="related-card">
+                        <h4>Contribuicoes para Aposentadoria 2025</h4>
+                        <p>Opcoes de previdencia para autonomos.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Guia de Reserva de Emergencia</h4>
+                        <p>Extra importante para renda variavel.</p>
+                    </a>
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>Acessibilidade de Imovel</h4>
+                        <p>Opcoes de financiamento para autonomos.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FinCalc. Todos os direitos reservados.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Politica de Privacidade</a>
+                <a href="/terms.html">Termos de Servico</a>
+            </p>
+            <p class="disclaimer">Aviso: Este conteudo e apenas para fins informativos. Consulte um profissional de contabilidade qualificado para aconselhamento personalizado.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

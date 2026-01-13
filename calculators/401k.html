@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>401(k) Calculator - Maximize Your Retirement Savings</title>
-    <meta name="description" content="Free 401(k) calculator. See how your contributions grow, maximize employer matching, and plan for a comfortable retirement.">
+    <title>401(k) Calculator 2026 - Maximize Retirement Savings & Employer Match | FinCalc</title>
+    <meta name="description" content="Free 401(k) calculator for 2026. Calculate contributions, maximize employer matching, and see how your retirement savings grow. Updated with 2026 contribution limits.">
     <meta name="keywords" content="401k calculator, retirement calculator, employer match calculator, 401k contribution calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/401k.html">
 
@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -43,9 +44,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -53,34 +54,34 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ 401(k) Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.401k.breadcrumb">401(k) Calculator</span></span>
             </nav>
 
-            <h1>401(k) Calculator</h1>
-            <p>Calculate how your 401(k) contributions will grow and see the impact of employer matching.</p>
+            <h1 data-i18n="calculators.401k.title">401(k) Calculator</h1>
+            <p data-i18n="calculators.401k.pageDescription">Calculate how your 401(k) contributions will grow and see the impact of employer matching.</p>
 
             <div class="calculator">
                 <form id="calc401kForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="currentAge">Current Age</label>
+                            <label for="currentAge" data-i18n="calculators.401k.currentAge">Current Age</label>
                             <input type="number" id="currentAge" value="30" min="18" max="70" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="retirementAge">Retirement Age</label>
+                            <label for="retirementAge" data-i18n="calculators.401k.retirementAge">Retirement Age</label>
                             <input type="number" id="retirementAge" value="65" min="50" max="75" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="annualSalary">Annual Salary</label>
+                            <label for="annualSalary" data-i18n="calculators.401k.annualSalary">Annual Salary</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="annualSalary" value="75000" min="0" step="1000" required>
@@ -88,7 +89,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="currentBalance">Current 401(k) Balance</label>
+                            <label for="currentBalance" data-i18n="calculators.401k.currentBalance">Current 401(k) Balance</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="currentBalance" value="25000" min="0" step="1000" required>
@@ -98,7 +99,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="contributionPercent">Your Contribution (%)</label>
+                            <label for="contributionPercent" data-i18n="calculators.401k.contributionPercent">Your Contribution (%)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="contributionPercent" value="10" min="0" max="100" step="1" required>
@@ -106,7 +107,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="employerMatch">Employer Match (%)</label>
+                            <label for="employerMatch" data-i18n="calculators.401k.employerMatch">Employer Match (%)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="employerMatch" value="50" min="0" max="100" step="1">
@@ -116,7 +117,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="matchLimit">Match Limit (% of salary)</label>
+                            <label for="matchLimit" data-i18n="calculators.401k.matchLimit">Match Limit (% of salary)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="matchLimit" value="6" min="0" max="100" step="1">
@@ -124,7 +125,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="expectedReturn">Expected Annual Return</label>
+                            <label for="expectedReturn" data-i18n="calculators.401k.expectedReturn">Expected Annual Return</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="expectedReturn" value="7" min="0" max="15" step="0.5" required>
@@ -133,51 +134,51 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="salaryIncrease">Annual Salary Increase (%)</label>
+                        <label for="salaryIncrease" data-i18n="calculators.401k.salaryIncrease">Annual Salary Increase (%)</label>
                         <div class="input-group">
                             <span>%</span>
                             <input type="number" id="salaryIncrease" value="3" min="0" max="10" step="0.5">
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate Growth</button>
+                    <button type="submit" class="btn" data-i18n="calculators.401k.calculate">Calculate Growth</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="totalAtRetirement">$0</div>
-                        <p>Projected 401(k) Balance at Retirement</p>
+                        <p data-i18n="calculators.401k.projectedBalanceLabel">Projected 401(k) Balance at Retirement</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Your Contributions</div>
+                            <div class="label" data-i18n="calculators.401k.yourContributions">Your Contributions</div>
                             <div class="value" id="yourContributions">$0</div>
                         </div>
                         <div class="result-card success">
-                            <div class="label">Employer Match</div>
+                            <div class="label" data-i18n="calculators.401k.employerMatchLabel">Employer Match</div>
                             <div class="value" id="employerContributions">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Investment Growth</div>
+                            <div class="label" data-i18n="calculators.401k.investmentGrowth">Investment Growth</div>
                             <div class="value" id="investmentGrowth">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Monthly Income (4% rule)</div>
+                            <div class="label" data-i18n="calculators.401k.monthlyIncome">Monthly Income (4% rule)</div>
                             <div class="value" id="monthlyIncome">$0</div>
                         </div>
                     </div>
 
                     <div class="result-item">
-                        <span class="result-label">Years Until Retirement</span>
+                        <span class="result-label" data-i18n="calculators.401k.yearsUntilRetirement">Years Until Retirement</span>
                         <span class="result-value" id="yearsToRetirement">0</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Annual Contribution (Year 1)</span>
+                        <span class="result-label" data-i18n="calculators.401k.annualContribution">Annual Contribution (Year 1)</span>
                         <span class="result-value" id="annualContribution">$0</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Annual Employer Match (Year 1)</span>
+                        <span class="result-label" data-i18n="calculators.401k.annualMatch">Annual Employer Match (Year 1)</span>
                         <span class="result-value" id="annualMatch">$0</span>
                     </div>
                 </div>
@@ -186,61 +187,61 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    401(k) Rules & Policies
+                    <span data-i18n="calculators.401k.rulesTitle">401(k) Rules & Policies</span>
                 </h3>
-                <p>Stay informed about contribution limits and retirement account rules:</p>
+                <p data-i18n="calculators.401k.rulesDescription">Stay informed about contribution limits and retirement account rules:</p>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=401k+contribution+limits+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        2026 Contribution Limits
+                        <span data-i18n="calculators.401k.contributionLimits">2026 Contribution Limits</span>
                     </a>
                     <a href="https://www.google.com/search?q=401k+catch+up+contributions+age+50" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Catch-Up Contributions
+                        <span data-i18n="calculators.401k.catchUpContributions">Catch-Up Contributions</span>
                     </a>
                     <a href="https://www.google.com/search?q=401k+early+withdrawal+penalty+exceptions" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Early Withdrawal Rules
+                        <span data-i18n="calculators.401k.earlyWithdrawalRules">Early Withdrawal Rules</span>
                     </a>
                     <a href="https://www.google.com/search?q=401k+rollover+to+IRA+rules" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        401(k) Rollover Rules
+                        <span data-i18n="calculators.401k.rolloverRules">401(k) Rollover Rules</span>
                     </a>
                     <a href="https://www.google.com/search?q=required+minimum+distribution+RMD+rules" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        RMD Requirements
+                        <span data-i18n="calculators.401k.rmdRequirements">RMD Requirements</span>
                     </a>
                     <a href="https://www.google.com/search?q=Roth+401k+vs+traditional+401k" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Roth vs Traditional 401(k)
+                        <span data-i18n="calculators.401k.rothVsTraditional401k">Roth vs Traditional 401(k)</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>Maximizing Your 401(k)</h2>
-                <p>Your 401(k) is one of the most powerful tools for building retirement wealth, especially when your employer offers matching contributions.</p>
+                <h2 data-i18n="calculators.401k.articleTitle">Maximizing Your 401(k)</h2>
+                <p data-i18n="calculators.401k.articleIntro">Your 401(k) is one of the most powerful tools for building retirement wealth, especially when your employer offers matching contributions.</p>
 
-                <h3>The Power of Employer Matching</h3>
-                <p>Employer matching is essentially free money. If your employer matches 50% of contributions up to 6% of your salary, you should contribute at least 6% to get the full match. Not doing so is leaving money on the table.</p>
+                <h3 data-i18n="calculators.401k.employerMatchingTitle">The Power of Employer Matching</h3>
+                <p data-i18n="calculators.401k.employerMatchingText">Employer matching is essentially free money. If your employer matches 50% of contributions up to 6% of your salary, you should contribute at least 6% to get the full match. Not doing so is leaving money on the table.</p>
 
-                <h3>2026 Contribution Limits</h3>
+                <h3 data-i18n="calculators.401k.limitsTitle">2026 Contribution Limits</h3>
                 <ul>
-                    <li><strong>Under 50:</strong> $23,500 employee contribution limit</li>
-                    <li><strong>50 and older:</strong> Additional $7,500 catch-up contribution allowed</li>
-                    <li><strong>Total limit (including employer):</strong> $70,000</li>
+                    <li><strong data-i18n="calculators.401k.limitUnder50">Under 50: $23,500 employee contribution limit</strong></li>
+                    <li><strong data-i18n="calculators.401k.limit50Plus">50 and older: Additional $7,500 catch-up contribution allowed</strong></li>
+                    <li><strong data-i18n="calculators.401k.limitTotal">Total limit (including employer): $70,000</strong></li>
                 </ul>
 
-                <h3>Investment Strategy Tips</h3>
+                <h3 data-i18n="calculators.401k.strategyTitle">Investment Strategy Tips</h3>
                 <ul>
-                    <li>Choose low-cost index funds when available</li>
-                    <li>Diversify across stocks, bonds, and international investments</li>
-                    <li>Consider target-date funds for automatic rebalancing</li>
-                    <li>Review and rebalance your portfolio annually</li>
+                    <li data-i18n="calculators.401k.strategyTip1">Choose low-cost index funds when available</li>
+                    <li data-i18n="calculators.401k.strategyTip2">Diversify across stocks, bonds, and international investments</li>
+                    <li data-i18n="calculators.401k.strategyTip3">Consider target-date funds for automatic rebalancing</li>
+                    <li data-i18n="calculators.401k.strategyTip4">Review and rebalance your portfolio annually</li>
                 </ul>
 
                 <div class="related-articles" style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 8px;">
-                    <h3>Related Articles</h3>
+                    <h3 data-i18n="calculators.401k.relatedArticles">Related Articles</h3>
                     <ul style="list-style: none; padding: 0; margin: 15px 0 0 0;">
                         <li style="margin-bottom: 12px;"><a href="/blog/401k-contribution-calculator-2025.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">How Much Should I Contribute to My 401(k) in 2026?</a> - Updated limits and strategies</li>
                         <li style="margin-bottom: 12px;"><a href="/blog/retirement-calculator-teachers.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Retirement Calculator for Teachers</a> - Special considerations for educators</li>
@@ -253,8 +254,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual returns will vary. Consult a financial advisor for personalized retirement planning.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.401k.footerDisclaimer">Disclaimer: This calculator provides estimates only. Actual returns will vary. Consult a financial advisor for personalized retirement planning.</p>
         </div>
     </footer>
 
@@ -264,6 +265,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/401k.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>프리랜서 자영업 세금 가이드 | FinCalc</title>
+    <meta name="description" content="프리랜서를 위한 자영업 세금 완벽 가이드. 분기별 납부, 공제 항목, 세금 계산 방법을 알아보세요.">
+    <meta name="keywords" content="자영업 세금 계산기, 프리랜서 세금, 분기별 세금 납부, 1099 세금, 개인사업자 세금">
+    <link rel="canonical" href="https://financecalc.cc/blog/ko/freelancer-self-employment-tax-guide.html">
+
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="프리랜서 자영업 세금 가이드">
+    <meta property="og:description" content="프리랜서와 개인사업자를 위한 자영업 세금 완벽 가이드.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/ko/freelancer-self-employment-tax-guide.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "프리랜서 자영업 세금 가이드",
+        "description": "프리랜서와 개인사업자를 위한 자영업 세금 완벽 가이드.",
+        "image": "https://financecalc.cc/images/freelancer-self-employment-tax.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/ko/freelancer-self-employment-tax-guide.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "자영업 세율은 얼마인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "자영업 세율은 15.3%로, 사회보장세 12.4%와 메디케어 2.9%로 구성됩니다. 이는 직원이 내는 금액의 두 배인데, 프리랜서는 고용주와 직원 몫을 모두 부담해야 하기 때문입니다. 세금은 순 자영업 소득의 92.35%에 대해 계산됩니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "분기별 예상 세금 납부일은 언제인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026년 분기별 예상 세금 납부일: 1분기(1-3월)는 4월 15일, 2분기(4-5월)는 6월 16일, 3분기(6-8월)는 9월 15일, 4분기(9-12월)는 2027년 1월 15일입니다. 이 기한을 놓치면 가산세와 이자가 부과될 수 있습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "프리랜서가 청구할 수 있는 공제 항목은 무엇인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "프리랜서는 홈오피스(평방피트당 $5, 최대 $1,500), 건강보험료(100% 공제), 퇴직연금 기여금(SEP IRA 최대 $70,000), 장비 및 소프트웨어, 전문 교육, 출장비, 마케팅 비용 등의 사업 경비를 공제할 수 있습니다. QBI 공제를 통해 적격 사업 소득의 최대 20%까지 공제받을 수 있습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "프리랜서는 세금을 위해 얼마나 저축해야 하나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "프리랜서는 소득의 25-30%를 세금용으로 저축해야 합니다. 이는 자영업세(15.3%)와 연방 소득세(구간에 따라 10-37%)를 모두 포함합니다. 가산세를 피하려면 전년도 세금의 최소 100%(소득이 $150,000 이상이면 110%) 또는 당해 연도 세금의 90%를 납부하세요."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "프리랜서가 이용할 수 있는 퇴직연금 계좌는 무엇인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "프리랜서는 여러 퇴직연금 옵션을 이용할 수 있습니다: Solo 401(k)는 2026년에 직원 및 고용주 기여금을 합쳐 최대 $70,000까지 가능합니다. SEP IRA는 순 자영업 소득의 최대 25%(최대 $70,000)까지 가능합니다. SIMPLE IRA는 $16,500 + 3% 매칭이 가능합니다. 모두 과세 소득을 줄여줍니다."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="메뉴 토글" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">계산기</a></li>
+                <li><a href="/blog/" class="active">블로그</a></li>
+                <li><a href="/#about">소개</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">홈</a> <span>/</span> <a href="/blog/">블로그</a> <span>/</span> <span>프리랜서 세금 가이드</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">세금</span>
+                        <span>2026년 1월 10일</span>
+                        <span>9분 읽기</span>
+                    </div>
+                    <h1>프리랜서 자영업 세금 가이드</h1>
+                    <p class="article-intro">자영업 세금은 새로운 프리랜서에게 혼란스러울 수 있습니다. 이 가이드에서는 납부해야 할 금액, 납부 시기, 합법적으로 세금을 줄이는 방법을 정확히 설명합니다.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>자영업세란 무엇인가요?</h2>
+                    <p>자영업세는 자영업자가 납부하는 사회보장세와 메디케어세입니다. 직원일 때는 고용주가 이 세금의 절반을 납부합니다. 프리랜서로서는 양쪽 몫을 모두 납부해야 합니다.</p>
+
+                    <table>
+                        <tr>
+                            <th>세금</th>
+                            <th>직원 납부</th>
+                            <th>자영업자 납부</th>
+                        </tr>
+                        <tr>
+                            <td>사회보장세</td>
+                            <td>6.2%</td>
+                            <td>12.4%</td>
+                        </tr>
+                        <tr>
+                            <td>메디케어</td>
+                            <td>1.45%</td>
+                            <td>2.9%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>합계</strong></td>
+                            <td><strong>7.65%</strong></td>
+                            <td><strong>15.3%</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>중요</h4>
+                        <p>자영업세는 일반 소득세에 <strong>추가로</strong> 납부합니다. $100,000을 버는 프리랜서는 자영업세 $15,300에 소득세 $15,000-$20,000을 더 납부할 수 있습니다.</p>
+                    </div>
+
+                    <h2>자영업세 계산 방법</h2>
+                    <p>공식은 다음과 같습니다:</p>
+                    <ol>
+                        <li>순 자영업 소득 계산 (수입 - 경비)</li>
+                        <li>92.35% 곱하기 (고용주 상당 부분 반영)</li>
+                        <li>자영업세로 15.3% 곱하기</li>
+                    </ol>
+
+                    <h3>예시: 순소득 $80,000</h3>
+                    <table>
+                        <tr>
+                            <th>단계</th>
+                            <th>계산</th>
+                            <th>금액</th>
+                        </tr>
+                        <tr>
+                            <td>순소득</td>
+                            <td>-</td>
+                            <td>$80,000</td>
+                        </tr>
+                        <tr>
+                            <td>과세 자영업 소득</td>
+                            <td>$80,000 x 92.35%</td>
+                            <td>$73,880</td>
+                        </tr>
+                        <tr>
+                            <td>자영업세</td>
+                            <td>$73,880 x 15.3%</td>
+                            <td>$11,304</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>자영업세 계산하기</h3>
+                        <p>세금 부담액을 정확하게 추정해 보세요.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">자영업세 계산기 &rarr;</a>
+                    </div>
+
+                    <h2>분기별 예상 세금 납부</h2>
+                    <p>급여에서 세금이 원천징수되는 직원과 달리, 프리랜서는 분기별로 예상 세금을 납부해야 합니다.</p>
+
+                    <h3>2026년 분기별 납부 기한</h3>
+                    <table>
+                        <tr>
+                            <th>분기</th>
+                            <th>소득 기간</th>
+                            <th>납부 기한</th>
+                        </tr>
+                        <tr>
+                            <td>1분기</td>
+                            <td>1월 1일 - 3월 31일</td>
+                            <td>2026년 4월 15일</td>
+                        </tr>
+                        <tr>
+                            <td>2분기</td>
+                            <td>4월 1일 - 5월 31일</td>
+                            <td>2026년 6월 16일</td>
+                        </tr>
+                        <tr>
+                            <td>3분기</td>
+                            <td>6월 1일 - 8월 31일</td>
+                            <td>2026년 9월 15일</td>
+                        </tr>
+                        <tr>
+                            <td>4분기</td>
+                            <td>9월 1일 - 12월 31일</td>
+                            <td>2027년 1월 15일</td>
+                        </tr>
+                    </table>
+
+                    <h3>분기별 납부 금액</h3>
+                    <p>가산세를 피하려면 최소한 다음을 납부하세요:</p>
+                    <ul>
+                        <li><strong>전년도 세금의 100%</strong> (소득이 $150,000 이상이면 110%), 또는</li>
+                        <li><strong>당해 연도 세금의 90%</strong></li>
+                    </ul>
+
+                    <p>간단한 방법: 받는 모든 수입의 25-30%를 세금용으로 저축하세요.</p>
+
+                    <h2>프리랜서를 위한 세금 공제</h2>
+                    <p>다음과 같은 일반적인 공제로 과세 소득을 줄이세요:</p>
+
+                    <h3>홈오피스 공제</h3>
+                    <ul>
+                        <li><strong>간편 방법:</strong> 평방피트당 $5, 최대 300평방피트 ($1,500 한도)</li>
+                        <li><strong>일반 방법:</strong> 실제 경비 x 사업용 사용 비율</li>
+                    </ul>
+
+                    <h3>사업 경비</h3>
+                    <ul>
+                        <li>컴퓨터 및 장비</li>
+                        <li>소프트웨어 및 구독</li>
+                        <li>사무용품</li>
+                        <li>전문 교육 및 강좌</li>
+                        <li>출장</li>
+                        <li>마케팅 및 광고</li>
+                        <li>전문 서비스 (회계사, 변호사)</li>
+                    </ul>
+
+                    <h3>건강보험 공제</h3>
+                    <p>자영업자는 본인과 가족의 건강보험료 100%를 공제할 수 있습니다. 이는 "조정 전" 공제로, 항목별 공제를 하지 않아도 받을 수 있습니다.</p>
+
+                    <h3>퇴직연금 기여금</h3>
+                    <ul>
+                        <li><strong>SEP IRA:</strong> 순 자영업 소득의 최대 25% (2026년 최대 $70,000)</li>
+                        <li><strong>Solo 401(k):</strong> 총 최대 $70,000 (2026년)</li>
+                        <li><strong>Traditional IRA:</strong> 최대 $7,000 (50세 이상 $8,000)</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>QBI 공제</h4>
+                        <p>적격 사업 소득(QBI) 공제를 통해 순 자영업 소득의 <strong>최대 20%</strong>를 공제할 수 있습니다. 이는 소득세를 크게 줄일 수 있습니다 (자영업세는 아님).</p>
+                    </div>
+
+                    <h2>예시: 전체 세금 계산</h2>
+                    <p>총소득 $100,000인 프리랜서의 세금을 계산해 봅시다:</p>
+
+                    <table>
+                        <tr>
+                            <th>항목</th>
+                            <th>금액</th>
+                        </tr>
+                        <tr>
+                            <td>총소득</td>
+                            <td>$100,000</td>
+                        </tr>
+                        <tr>
+                            <td>사업 경비</td>
+                            <td>-$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>순 자영업 소득</td>
+                            <td>$85,000</td>
+                        </tr>
+                        <tr>
+                            <td>자영업세 (15.3% x 92.35%)</td>
+                            <td>$12,012</td>
+                        </tr>
+                        <tr>
+                            <td>자영업세 1/2 공제</td>
+                            <td>-$6,006</td>
+                        </tr>
+                        <tr>
+                            <td>건강보험 공제</td>
+                            <td>-$6,000</td>
+                        </tr>
+                        <tr>
+                            <td>SEP IRA 기여금</td>
+                            <td>-$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>조정 총소득</td>
+                            <td>$57,994</td>
+                        </tr>
+                        <tr>
+                            <td>QBI 공제 (20%)</td>
+                            <td>-$11,599</td>
+                        </tr>
+                        <tr>
+                            <td>표준 공제 (독신)</td>
+                            <td>-$14,600</td>
+                        </tr>
+                        <tr>
+                            <td>과세 소득</td>
+                            <td>$31,795</td>
+                        </tr>
+                        <tr>
+                            <td>연방 소득세</td>
+                            <td>~$3,600</td>
+                        </tr>
+                        <tr>
+                            <td><strong>총 연방세</strong></td>
+                            <td><strong>~$15,612</strong></td>
+                        </tr>
+                    </table>
+
+                    <p>실효 세율: 총소득 $100,000에 대해 15.6% (주세 제외).</p>
+
+                    <h2>프리랜서를 위한 퇴직연금 옵션</h2>
+
+                    <h3>Solo 401(k)</h3>
+                    <ul>
+                        <li><strong>적합한 대상:</strong> 기여금을 최대화하려는 고소득자</li>
+                        <li><strong>2025년 한도:</strong> 직원 $23,500 + 고용주 25% = 최대 $69,000</li>
+                        <li><strong>장점:</strong> 가장 높은 기여 한도, Roth 옵션 가능</li>
+                    </ul>
+
+                    <h3>SEP IRA</h3>
+                    <ul>
+                        <li><strong>적합한 대상:</strong> 간단한 설정, 변동 소득</li>
+                        <li><strong>2025년 한도:</strong> 순 자영업 소득의 25%, 최대 $69,000</li>
+                        <li><strong>장점:</strong> 설정이 쉽고 기여금이 유연함</li>
+                    </ul>
+
+                    <h3>SIMPLE IRA</h3>
+                    <ul>
+                        <li><strong>적합한 대상:</strong> 직원이 있는 프리랜서</li>
+                        <li><strong>2025년 한도:</strong> $16,500 + 3% 매칭</li>
+                        <li><strong>장점:</strong> 401(k)보다 관리 비용이 낮음</li>
+                    </ul>
+
+                    <h2>프리랜서의 흔한 세금 실수</h2>
+                    <ol>
+                        <li><strong>분기별 납부 안 함</strong> - 가산세와 이자 발생</li>
+                        <li><strong>개인 경비와 사업 경비 혼합</strong> - 별도 계좌 사용</li>
+                        <li><strong>주행 거리 기록 안 함</strong> - 사업용 운전 기록 유지</li>
+                        <li><strong>공제 누락</strong> - 모든 사업 경비 추적</li>
+                        <li><strong>저축 부족</strong> - 소득의 25-30% 저축</li>
+                        <li><strong>주세 잊음</strong> - 많은 주에서 소득세 부과</li>
+                    </ol>
+
+                    <div class="calculator-cta">
+                        <h3>세금 부담 추정하기</h3>
+                        <p>자영업세 계산기로 미리 계획하세요.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">지금 계산하기 &rarr;</a>
+                    </div>
+
+                    <h2>프리랜서 세금 체크리스트</h2>
+                    <ol>
+                        <li>별도의 사업용 은행 계좌 개설</li>
+                        <li>모든 수입과 경비 추적</li>
+                        <li>소득의 25-30%를 세금용으로 저축</li>
+                        <li>분기별 예상 세금 납부</li>
+                        <li>공제 최대화 (홈오피스, 건강보험, 퇴직연금)</li>
+                        <li>세무 전문가 고용 고려</li>
+                        <li>최소 7년간 기록 보관</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>관련 기사</h3>
+                <div class="related-grid">
+                    <a href="401k-contribution-calculator-2025.html" class="related-card">
+                        <h4>401(k) 기여금 2025</h4>
+                        <p>프리랜서를 위한 Solo 401(k) 옵션.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>비상금 가이드</h4>
+                        <p>변동 소득에 특히 중요합니다.</p>
+                    </a>
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>주택 구매 여력</h4>
+                        <p>자영업자를 위한 모기지 옵션.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">개인정보 처리방침</a>
+                <a href="/terms.html">이용약관</a>
+            </p>
+            <p class="disclaimer">면책조항: 이 콘텐츠는 정보 제공 목적으로만 제공됩니다. 개인화된 조언은 자격을 갖춘 세무 전문가와 상담하세요.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

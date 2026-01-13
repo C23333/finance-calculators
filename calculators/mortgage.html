@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculator - Calculate Monthly Payments & Amortization</title>
-    <meta name="description" content="Free mortgage calculator to estimate monthly payments, total interest, and view amortization schedule. Calculate home loan costs instantly.">
+    <title>Mortgage Calculator 2026 - Monthly Payment & Amortization Schedule | FinCalc</title>
+    <meta name="description" content="Free mortgage calculator for 2026. Calculate monthly payments, total interest, and view full amortization schedule. Estimate home loan costs instantly with current rates.">
     <meta name="keywords" content="mortgage calculator, home loan calculator, monthly payment calculator, amortization schedule, mortgage interest">
     <link rel="canonical" href="https://financecalc.cc/calculators/mortgage.html">
 
@@ -160,6 +160,7 @@
     <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -186,17 +187,17 @@
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Mortgage Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.mortgage.title">Mortgage Calculator</span></span>
             </nav>
 
-            <h1>Mortgage Calculator</h1>
-            <p>Calculate your monthly mortgage payment, total interest paid, and view a complete amortization schedule.</p>
+            <h1 data-i18n="calculators.mortgage.title">Mortgage Calculator</h1>
+            <p data-i18n="calculators.mortgage.description">Calculate your monthly mortgage payment, total interest paid, and view a complete amortization schedule.</p>
 
             <div class="calculator">
                 <form id="mortgageForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="homePrice">Home Price</label>
+                            <label for="homePrice" data-i18n="calculators.mortgage.homePrice">Home Price</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
@@ -204,7 +205,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="downPayment">Down Payment</label>
+                            <label for="downPayment" data-i18n="calculators.mortgage.downPayment">Down Payment</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="downPayment" value="70000" min="0" step="1000" required>
@@ -214,7 +215,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="interestRate">Interest Rate (Annual)</label>
+                            <label for="interestRate" data-i18n="calculators.mortgage.interestRate">Interest Rate (Annual)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
@@ -222,7 +223,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="loanTerm">Loan Term</label>
+                            <label for="loanTerm" data-i18n="calculators.mortgage.loanTerm">Loan Term</label>
                             <select id="loanTerm">
                                 <option value="30">30 years</option>
                                 <option value="20">20 years</option>
@@ -232,43 +233,43 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate Payment</button>
+                    <button type="submit" class="btn" data-i18n="calculators.mortgage.calculate">Calculate Payment</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="monthlyPayment">$0</div>
-                        <p>Monthly Payment (Principal & Interest)</p>
+                        <p><span data-i18n="calculators.mortgage.monthlyPayment">Monthly Payment</span> (<span data-i18n="calculators.mortgage.principalInterest">Principal & Interest</span>)</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Loan Amount</div>
+                            <div class="label" data-i18n="calculators.mortgage.loanAmount">Loan Amount</div>
                             <div class="value" id="loanAmount">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Total Interest</div>
+                            <div class="label" data-i18n="calculators.mortgage.totalInterest">Total Interest</div>
                             <div class="value" id="totalInterest">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Total Cost</div>
+                            <div class="label" data-i18n="calculators.mortgage.totalCost">Total Cost</div>
                             <div class="value" id="totalCost">$0</div>
                         </div>
                         <div class="result-card success">
-                            <div class="label">Payoff Date</div>
+                            <div class="label" data-i18n="calculators.mortgage.payoffDate">Payoff Date</div>
                             <div class="value" id="payoffDate">-</div>
                         </div>
                     </div>
 
                     <div class="amortization-table">
-                        <h3>Amortization Schedule (Yearly)</h3>
+                        <h3 data-i18n="calculators.mortgage.amortization">Amortization Schedule (Yearly)</h3>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Year</th>
-                                    <th>Principal</th>
-                                    <th>Interest</th>
-                                    <th>Balance</th>
+                                    <th data-i18n="calculators.mortgage.year">Year</th>
+                                    <th data-i18n="calculators.mortgage.principal">Principal</th>
+                                    <th data-i18n="calculators.mortgage.interest">Interest</th>
+                                    <th data-i18n="calculators.mortgage.balance">Balance</th>
                                 </tr>
                             </thead>
                             <tbody id="amortizationBody">
@@ -347,8 +348,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
         </div>
     </footer>
 
@@ -358,6 +359,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/mortgage.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <!-- Mobile menu toggle -->
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {

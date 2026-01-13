@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Auto Loan Calculator - Calculate Car Payment & Total Cost</title>
-    <meta name="description" content="Free auto loan calculator. Calculate your monthly car payment, total interest, and compare different loan terms to find the best deal.">
+    <title>Auto Loan Calculator 2026 - Car Payment & Total Cost | FinCalc</title>
+    <meta name="description" content="Free auto loan calculator for 2026. Calculate monthly car payments, total interest, and compare loan terms. Find the best deal on your next vehicle purchase.">
     <meta name="keywords" content="auto loan calculator, car payment calculator, car loan calculator, vehicle financing calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/auto-loan.html">
 
@@ -44,6 +44,7 @@
     </script>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -55,9 +56,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -65,22 +66,22 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Auto Loan Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.autoLoan.title">Auto Loan Calculator</span></span>
             </nav>
 
-            <h1>Auto Loan Calculator</h1>
-            <p>Calculate your monthly car payment and see the total cost of financing your vehicle.</p>
+            <h1 data-i18n="calculators.autoLoan.title">Auto Loan Calculator</h1>
+            <p data-i18n="calculators.autoLoan.description">Calculate car loan payments and total cost of financing.</p>
 
             <div class="calculator">
                 <form id="autoLoanForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="vehiclePrice">Vehicle Price</label>
+                            <label for="vehiclePrice" data-i18n="calculators.autoLoan.vehiclePrice">Vehicle Price</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="vehiclePrice" value="35000" min="0" step="500" required>
@@ -88,7 +89,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="downPayment">Down Payment</label>
+                            <label for="downPayment" data-i18n="calculators.autoLoan.downPayment">Down Payment</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="downPayment" value="5000" min="0" step="500" required>
@@ -98,7 +99,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="tradeInValue">Trade-In Value</label>
+                            <label for="tradeInValue" data-i18n="calculators.autoLoan.tradeInValue">Trade-In Value</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="tradeInValue" value="0" min="0" step="500">
@@ -106,7 +107,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="salesTax">Sales Tax Rate</label>
+                            <label for="salesTax" data-i18n="calculators.autoLoan.salesTaxRate">Sales Tax Rate</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="salesTax" value="7" min="0" max="15" step="0.1">
@@ -116,7 +117,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="interestRate">Interest Rate (APR)</label>
+                            <label for="interestRate" data-i18n="calculators.autoLoan.interestRate">Interest Rate (APR)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.1" required>
@@ -124,41 +125,41 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="loanTerm">Loan Term</label>
+                            <label for="loanTerm" data-i18n="calculators.autoLoan.loanTerm">Loan Term</label>
                             <select id="loanTerm">
-                                <option value="36">36 months (3 years)</option>
-                                <option value="48">48 months (4 years)</option>
-                                <option value="60" selected>60 months (5 years)</option>
-                                <option value="72">72 months (6 years)</option>
-                                <option value="84">84 months (7 years)</option>
+                                <option value="36" data-i18n="calculators.autoLoan.months36">36 months (3 years)</option>
+                                <option value="48" data-i18n="calculators.autoLoan.months48">48 months (4 years)</option>
+                                <option value="60" selected data-i18n="calculators.autoLoan.months60">60 months (5 years)</option>
+                                <option value="72" data-i18n="calculators.autoLoan.months72">72 months (6 years)</option>
+                                <option value="84" data-i18n="calculators.autoLoan.months84">84 months (7 years)</option>
                             </select>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate Payment</button>
+                    <button type="submit" class="btn" data-i18n="calculators.autoLoan.calculate">Calculate Payment</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="monthlyPayment">$0</div>
-                        <p>Monthly Payment</p>
+                        <p data-i18n="calculators.autoLoan.monthlyPayment">Monthly Payment</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Loan Amount</div>
+                            <div class="label" data-i18n="calculators.autoLoan.loanAmount">Loan Amount</div>
                             <div class="value" id="loanAmount">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Total Interest</div>
+                            <div class="label" data-i18n="calculators.autoLoan.totalInterest">Total Interest</div>
                             <div class="value" id="totalInterest">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Total Cost</div>
+                            <div class="label" data-i18n="calculators.autoLoan.totalCost">Total Cost</div>
                             <div class="value" id="totalCost">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Sales Tax</div>
+                            <div class="label" data-i18n="calculators.autoLoan.salesTax">Sales Tax</div>
                             <div class="value" id="taxAmount">$0</div>
                         </div>
                     </div>
@@ -168,54 +169,54 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Auto Loan Resources & Policies
+                    <span data-i18n="calculators.autoLoan.resourcesTitle">Auto Loan Resources & Policies</span>
                 </h3>
-                <p>Learn about auto financing options and consumer protections:</p>
+                <p data-i18n="calculators.autoLoan.resourcesDescription">Learn about auto financing options and consumer protections:</p>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=best+auto+loan+rates+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Best Auto Loan Rates
+                        <span data-i18n="calculators.autoLoan.bestRates">Best Auto Loan Rates</span>
                     </a>
                     <a href="https://www.google.com/search?q=credit+union+auto+loans+benefits" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Credit Union Auto Loans
+                        <span data-i18n="calculators.autoLoan.creditUnionLoans">Credit Union Auto Loans</span>
                     </a>
                     <a href="https://www.google.com/search?q=car+sales+tax+by+state" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Sales Tax by State
+                        <span data-i18n="calculators.autoLoan.salesTaxByState">Sales Tax by State</span>
                     </a>
                     <a href="https://www.google.com/search?q=EV+tax+credit+electric+vehicle+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        EV Tax Credits
+                        <span data-i18n="calculators.autoLoan.evTaxCredits">EV Tax Credits</span>
                     </a>
                     <a href="https://www.google.com/search?q=gap+insurance+worth+it" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        GAP Insurance Guide
+                        <span data-i18n="calculators.autoLoan.gapInsurance">GAP Insurance Guide</span>
                     </a>
                     <a href="https://www.google.com/search?q=refinance+auto+loan+when" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        When to Refinance
+                        <span data-i18n="calculators.autoLoan.whenToRefinance">When to Refinance</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>How to Get the Best Auto Loan</h2>
-                <p>Getting pre-approved for an auto loan before visiting the dealership gives you negotiating power and helps you understand your budget.</p>
+                <h2 data-i18n="calculators.autoLoan.articleTitle">How to Get the Best Auto Loan</h2>
+                <p data-i18n="calculators.autoLoan.articleIntro">Getting pre-approved for an auto loan before visiting the dealership gives you negotiating power and helps you understand your budget.</p>
 
-                <h3>Tips for Lower Payments</h3>
+                <h3 data-i18n="calculators.autoLoan.tipsTitle">Tips for Lower Payments</h3>
                 <ul>
-                    <li><strong>Improve your credit score:</strong> Even a small improvement can significantly lower your rate</li>
-                    <li><strong>Make a larger down payment:</strong> 20% down is ideal to avoid being "underwater"</li>
-                    <li><strong>Choose a shorter term:</strong> You'll pay less interest overall</li>
-                    <li><strong>Shop around:</strong> Compare rates from banks, credit unions, and online lenders</li>
+                    <li><strong data-i18n="calculators.autoLoan.tipCreditTitle">Improve your credit score:</strong> <span data-i18n="calculators.autoLoan.tipCreditDesc">Even a small improvement can significantly lower your rate</span></li>
+                    <li><strong data-i18n="calculators.autoLoan.tipDownPaymentTitle">Make a larger down payment:</strong> <span data-i18n="calculators.autoLoan.tipDownPaymentDesc">20% down is ideal to avoid being "underwater"</span></li>
+                    <li><strong data-i18n="calculators.autoLoan.tipTermTitle">Choose a shorter term:</strong> <span data-i18n="calculators.autoLoan.tipTermDesc">You'll pay less interest overall</span></li>
+                    <li><strong data-i18n="calculators.autoLoan.tipShopTitle">Shop around:</strong> <span data-i18n="calculators.autoLoan.tipShopDesc">Compare rates from banks, credit unions, and online lenders</span></li>
                 </ul>
 
-                <h3>New vs Used Car Financing</h3>
+                <h3 data-i18n="calculators.autoLoan.newVsUsedTitle">New vs Used Car Financing</h3>
                 <ul>
-                    <li>New cars typically have lower interest rates but higher prices</li>
-                    <li>Used cars depreciate less but may have higher rates</li>
-                    <li>Certified pre-owned (CPO) vehicles often offer the best of both worlds</li>
+                    <li data-i18n="calculators.autoLoan.newVsUsed1">New cars typically have lower interest rates but higher prices</li>
+                    <li data-i18n="calculators.autoLoan.newVsUsed2">Used cars depreciate less but may have higher rates</li>
+                    <li data-i18n="calculators.autoLoan.newVsUsed3">Certified pre-owned (CPO) vehicles often offer the best of both worlds</li>
                 </ul>
             </article>
         </div>
@@ -223,8 +224,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on fees, taxes, and lender terms.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on fees, taxes, and lender terms.</p>
         </div>
     </footer>
 
@@ -234,6 +235,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/auto-loan.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

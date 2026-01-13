@@ -189,6 +189,41 @@
       "avalanche": "Método avalanche"
     }
   },
+  "calculators": {
+    "investmentReturn": {
+      "title": "Calculadora de Retorno de Investimento",
+      "breadcrumb": "Calculadora de Retorno de Investimento",
+      "description": "Calcule seus retornos de investimento e ROI. Compare o que você investiu vs o que recebeu.",
+      "initialInvestment": "Investimento Inicial",
+      "finalValue": "Valor Final",
+      "holdingPeriod": "Período de Retenção (Anos)",
+      "calculate": "Calcular",
+      "totalReturn": "Retorno Total",
+      "investmentSummary": "Resumo do Investimento",
+      "profitLoss": "Lucro/Prejuízo",
+      "annualizedReturn": "Retorno Anualizado (CAGR)",
+      "simpleROI": "ROI Simples",
+      "doublingTime": "Tempo de Duplicação",
+      "doublingTimeYears": "{years} anos",
+      "doublingTimeNA": "N/A (retorno negativo)",
+      "articleTitle": "Entendendo Retornos de Investimento",
+      "totalVsAnnualized": "Retorno Total vs Retorno Anualizado",
+      "totalVsAnnualizedText": "<strong>Retorno Total</strong> mostra seu ganho ou perda geral como porcentagem. <strong>Retorno Anualizado (CAGR)</strong> mostra a taxa de retorno anual equivalente, útil para comparar investimentos mantidos por diferentes períodos.",
+      "cagrFormula": "Fórmula CAGR",
+      "cagrFormulaText": "CAGR = (Valor Final / Valor Inicial)^(1/Anos) - 1",
+      "cagrFormulaDesc": "Isso fornece a taxa de crescimento anual constante que levaria seu investimento inicial ao seu valor final.",
+      "historicalReturns": "Retornos Históricos Médios",
+      "sp500": "S&P 500:",
+      "sp500Return": "~10% anualmente (antes da inflação)",
+      "bonds": "Títulos:",
+      "bondsReturn": "~5-6% anualmente",
+      "savingsAccount": "Conta Poupança:",
+      "savingsReturn": "~0,5-5% (varia conforme ambiente de taxas)",
+      "realEstate": "Imóveis:",
+      "realEstateReturn": "~8-12% anualmente (incluindo valorização e renda de aluguel)",
+      "footerDisclaimer": "Aviso: Desempenho passado não garante resultados futuros. Esta calculadora é apenas para fins educacionais."
+    }
+  },
   "blog": {
     "title": "Blog Financeiro",
     "subtitle": "Dicas de especialistas e guias para sua jornada financeira",

@@ -24,9 +24,10 @@ function calculateInvestmentReturn(shouldScroll = false) {
     // Calculate doubling time using Rule of 72
     let doublingTime = '-';
     if (cagr > 0) {
-        doublingTime = (72 / cagr).toFixed(1) + ' years';
+        const doublingYears = (72 / cagr).toFixed(1);
+        doublingTime = getDoublingTimeText(doublingYears);
     } else if (cagr < 0) {
-        doublingTime = 'N/A (negative return)';
+        doublingTime = getDoublingTimeNAText();
     }
 
     // Update results
@@ -55,14 +56,58 @@ function calculateInvestmentReturn(shouldScroll = false) {
     }
 }
 
+/**
+ * Get localized doubling time text with years
+ * @param {string} years - The number of years
+ * @returns {string} Localized doubling time text
+ */
+function getDoublingTimeText(years) {
+    // Check if I18n is available and has the translation
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        const template = I18n.t('calculators.investmentReturn.doublingTimeYears');
+        // If translation exists and contains {years} placeholder
+        if (template && template !== 'calculators.investmentReturn.doublingTimeYears') {
+            return template.replace('{years}', years);
+        }
+    }
+    // Fallback to English
+    return `${years} years`;
+}
+
+/**
+ * Get localized N/A text for negative returns
+ * @returns {string} Localized N/A text
+ */
+function getDoublingTimeNAText() {
+    // Check if I18n is available and has the translation
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        const text = I18n.t('calculators.investmentReturn.doublingTimeNA');
+        if (text && text !== 'calculators.investmentReturn.doublingTimeNA') {
+            return text;
+        }
+    }
+    // Fallback to English
+    return 'N/A (negative return)';
+}
+
+/**
+ * Format currency using I18n if available, otherwise fallback to default
+ * @param {number} amount - The amount to format
+ * @returns {string} Formatted currency string
+ */
 function formatCurrency(amount) {
     const prefix = amount >= 0 ? '+' : '';
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return prefix + I18n.formatCurrency(Math.abs(amount), { decimals: 0 });
+    }
+    // Fallback to default formatting
     return prefix + new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
-    }).format(amount);
+    }).format(Math.abs(amount));
 }
 
 function formatPercent(value) {
@@ -72,3 +117,6 @@ function formatPercent(value) {
 
 // Calculate on page load
 document.addEventListener('DOMContentLoaded', () => calculateInvestmentReturn(false));
+
+// Recalculate when language changes to update currency format
+document.addEventListener('languageChange', () => calculateInvestmentReturn(false));

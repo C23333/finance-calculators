@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>年収600万円で買える車はいくら？ | FinCalc</title>
+    <meta name="description" content="年収600万円で購入できる車の予算を計算。20/4/10ルール、月々の支払い例、車選びの注意点を詳しく解説します。">
+    <meta name="keywords" content="年収600万 車 予算, 車 いくらまで買える, カーローン 計算, 車 購入 年収, 自動車ローン 目安">
+    <link rel="canonical" href="https://financecalc.cc/blog/ja/how-much-car-can-i-afford-60k-salary.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="年収600万円で買える車はいくら？">
+    <meta property="og:description" content="年収600万円で購入できる車の予算を計算します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/ja/how-much-car-can-i-afford-60k-salary.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "年収600万円で買える車はいくら？",
+        "description": "年収600万円で購入できる車の予算を計算します。",
+        "image": "https://financecalc.cc/images/car-affordability.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-12",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/ja/how-much-car-can-i-afford-60k-salary.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "年収600万円で買える車の予算は？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年収600万円の場合、車の予算は150万円〜250万円が目安です。年収の25〜40%程度が無理のない範囲とされています。月々の支払いは手取りの10%以内に抑えましょう。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "車のローンは月々いくらまで？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "手取り月収の10〜15%が目安です。年収600万円（手取り約40万円/月）なら、月々4〜6万円が上限です。これには保険料やガソリン代は含まれません。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "新車と中古車、どちらがお得？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "一般的に2〜3年落ちの中古車がコスパ最強です。新車は購入後1年で20〜30%値下がりします。認定中古車なら保証もついて安心です。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "車の維持費はいくらかかる？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年間の維持費は30〜50万円程度です。内訳は自動車税（3〜5万円）、保険料（5〜10万円）、車検（5〜10万円/年換算）、ガソリン代（10〜15万円）、駐車場代（0〜15万円）などです。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="メニューを切り替え" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">計算機</a></li>
+                <li><a href="/blog/ja/" class="active">ブログ</a></li>
+                <li><a href="/#about">概要</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">ホーム</a> <span>/</span> <a href="/blog/ja/">ブログ</a> <span>/</span> <span>年収600万円の車予算</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">カーローン</span>
+                        <span>2026年1月12日</span>
+                        <span>8分で読める</span>
+                    </div>
+                    <h1>年収600万円で買える車はいくら？</h1>
+                    <p class="article-intro">車の購入は大きな買い物です。年収600万円の場合、無理なく購入できる車の予算と、賢い車選びのポイントを解説します。</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>結論：年収600万円の車予算</h2>
+                    <p>年収600万円の場合、無理なく購入できる車の価格は<strong>150万円〜250万円</strong>です。これにより、他の財務目標を犠牲にせずに車を所有できます。</p>
+
+                    <div class="highlight-box">
+                        <h4>車購入の目安</h4>
+                        <ul>
+                            <li><strong>車両価格：</strong>年収の25〜40%（150万〜240万円）</li>
+                            <li><strong>頭金：</strong>車両価格の20%以上</li>
+                            <li><strong>ローン期間：</strong>5年以内</li>
+                            <li><strong>月々の支払い：</strong>手取りの10%以内</li>
+                        </ul>
+                    </div>
+
+                    <h2>年収600万円の家計シミュレーション</h2>
+                    <p>車にかけられる予算を計算してみましょう。</p>
+
+                    <table>
+                        <tr>
+                            <th>項目</th>
+                            <th>金額</th>
+                        </tr>
+                        <tr>
+                            <td>年収</td>
+                            <td>600万円</td>
+                        </tr>
+                        <tr>
+                            <td>手取り月収（税引後）</td>
+                            <td>約40万円</td>
+                        </tr>
+                        <tr>
+                            <td>車関連費用の上限（10%）</td>
+                            <td>4万円/月</td>
+                        </tr>
+                        <tr>
+                            <td>保険料（目安）</td>
+                            <td>-0.8万円/月</td>
+                        </tr>
+                        <tr>
+                            <td>ガソリン代（目安）</td>
+                            <td>-1万円/月</td>
+                        </tr>
+                        <tr>
+                            <td>駐車場代（目安）</td>
+                            <td>-1万円/月</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ローン返済に使える金額</strong></td>
+                            <td><strong>1.2万円/月</strong></td>
+                        </tr>
+                    </table>
+
+                    <h3>月々1.2万円で買える車は？</h3>
+                    <p>頭金20%、5年ローン、金利3%の場合：</p>
+                    <ul>
+                        <li><strong>車両価格：</strong>約80万円</li>
+                        <li><strong>頭金（20%）：</strong>16万円</li>
+                        <li><strong>ローン額：</strong>64万円</li>
+                    </ul>
+
+                    <p>これは非常に保守的な計算です。より現実的なシナリオを見てみましょう。</p>
+
+                    <h2>より現実的なシナリオ</h2>
+                    <p>車関連費用を手取りの15%まで許容する場合：</p>
+
+                    <table>
+                        <tr>
+                            <th>アプローチ</th>
+                            <th>月々の上限</th>
+                            <th>購入可能な車両価格</th>
+                        </tr>
+                        <tr>
+                            <td>保守的（10%）</td>
+                            <td>4万円</td>
+                            <td>約80万円</td>
+                        </tr>
+                        <tr>
+                            <td>標準（15%）</td>
+                            <td>6万円</td>
+                            <td>約180万円</td>
+                        </tr>
+                        <tr>
+                            <td>積極的（20%）</td>
+                            <td>8万円</td>
+                            <td>約280万円</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>カーローンを計算する</h3>
+                        <p>あなたの予算に合った車を見つけましょう。</p>
+                        <a href="/calculators/auto-loan.html" class="cta-btn">カーローン計算機 →</a>
+                    </div>
+
+                    <h2>新車 vs 中古車：どちらがお得？</h2>
+
+                    <h3>中古車のメリット</h3>
+                    <ul>
+                        <li>新車は1年目で20〜30%値下がり</li>
+                        <li>2〜3年落ちの車は30〜40%安い</li>
+                        <li>現代の車は15万km以上走れる</li>
+                        <li>保険料も安くなる</li>
+                    </ul>
+
+                    <h3>認定中古車がおすすめ</h3>
+                    <ul>
+                        <li>メーカーの点検済み</li>
+                        <li>保証付き</li>
+                        <li>2〜4年落ちで走行距離も少ない</li>
+                        <li>新車より大幅に安い</li>
+                    </ul>
+
+                    <h2>車の維持費を把握する</h2>
+                    <p>車両価格だけでなく、維持費も考慮しましょう。</p>
+
+                    <table>
+                        <tr>
+                            <th>費用項目</th>
+                            <th>年間目安</th>
+                        </tr>
+                        <tr>
+                            <td>自動車税</td>
+                            <td>3〜5万円</td>
+                        </tr>
+                        <tr>
+                            <td>自動車保険</td>
+                            <td>5〜10万円</td>
+                        </tr>
+                        <tr>
+                            <td>車検（2年ごと÷2）</td>
+                            <td>5〜10万円</td>
+                        </tr>
+                        <tr>
+                            <td>ガソリン代</td>
+                            <td>10〜15万円</td>
+                        </tr>
+                        <tr>
+                            <td>駐車場代</td>
+                            <td>0〜18万円</td>
+                        </tr>
+                        <tr>
+                            <td>メンテナンス</td>
+                            <td>3〜5万円</td>
+                        </tr>
+                        <tr>
+                            <td><strong>年間合計</strong></td>
+                            <td><strong>26〜63万円</strong></td>
+                        </tr>
+                    </table>
+
+                    <h2>賢い車の買い方</h2>
+
+                    <h3>1. 事前にローン審査を受ける</h3>
+                    <p>ディーラーに行く前に、銀行やJAなどでローンの事前審査を受けましょう。金利の比較ができ、交渉力も上がります。</p>
+
+                    <h3>2. 月々の支払いではなく総額で交渉</h3>
+                    <p>ディーラーは月々の支払いを強調しますが、ローン期間を延ばせば月々は安くなります。必ず総支払額で比較しましょう。</p>
+
+                    <h3>3. 購入時期を選ぶ</h3>
+                    <ul>
+                        <li><strong>決算期（3月、9月）：</strong>値引きが大きい</li>
+                        <li><strong>モデルチェンジ前：</strong>在庫処分で安くなる</li>
+                        <li><strong>ボーナス時期：</strong>キャンペーンが多い</li>
+                    </ul>
+
+                    <h3>4. 総コストで考える</h3>
+                    <ul>
+                        <li>燃費（ハイブリッド vs ガソリン）</li>
+                        <li>保険料（スポーツカーは高い）</li>
+                        <li>信頼性（故障が少ない車種）</li>
+                        <li>リセールバリュー</li>
+                    </ul>
+
+                    <h2>よくある失敗</h2>
+                    <ol>
+                        <li><strong>月々の支払いだけで判断</strong> - 期間が長いと総額が増える</li>
+                        <li><strong>頭金なしで購入</strong> - すぐにローン残高が車の価値を上回る</li>
+                        <li><strong>予算オーバーの車を買う</strong> - 営業トークに乗せられない</li>
+                        <li><strong>保険料を考慮しない</strong> - 購入前に見積もりを取る</li>
+                        <li><strong>ディーラーローンだけで決める</strong> - 銀行ローンの方が安いことも</li>
+                        <li><strong>新車にこだわる</strong> - 値下がり分を他の人に払わせる</li>
+                    </ol>
+
+                    <div class="highlight-box">
+                        <h4>アドバイス</h4>
+                        <p>頭金20%と5年ローンで買えない車は、予算オーバーです。もっと貯金するか、安い車を選びましょう。</p>
+                    </div>
+
+                    <h2>年収600万円におすすめの車</h2>
+                    <p>信頼性、コスパ、維持費を考慮したおすすめ：</p>
+
+                    <h3>150万円以下（中古車）</h3>
+                    <ul>
+                        <li>トヨタ アクア</li>
+                        <li>ホンダ フィット</li>
+                        <li>マツダ デミオ</li>
+                        <li>日産 ノート</li>
+                    </ul>
+
+                    <h3>150〜250万円（認定中古車）</h3>
+                    <ul>
+                        <li>トヨタ プリウス</li>
+                        <li>ホンダ ヴェゼル</li>
+                        <li>マツダ CX-3</li>
+                        <li>スバル インプレッサ</li>
+                    </ul>
+
+                    <h3>200〜300万円（新車コンパクト）</h3>
+                    <ul>
+                        <li>トヨタ ヤリス</li>
+                        <li>ホンダ フィット</li>
+                        <li>マツダ MAZDA2</li>
+                        <li>日産 ノート e-POWER</li>
+                    </ul>
+
+                    <div class="calculator-cta">
+                        <h3>月々の支払いを計算</h3>
+                        <p>気になる車の月々の支払いを計算しましょう。</p>
+                        <a href="/calculators/auto-loan.html" class="cta-btn">カーローン計算機 →</a>
+                    </div>
+
+                    <h2>まとめ</h2>
+                    <p>年収600万円なら、<strong>150万円〜250万円</strong>の車が無理のない範囲です。車は減価する資産なので、他の財務目標（貯蓄、投資、住宅購入など）を犠牲にしないようにしましょう。</p>
+
+                    <h2>チェックリスト</h2>
+                    <ol>
+                        <li>月々の車関連費用を手取りの10〜15%以内に</li>
+                        <li>頭金は車両価格の20%以上</li>
+                        <li>ローン期間は5年以内</li>
+                        <li>維持費（保険、ガソリン、駐車場）も計算に入れる</li>
+                        <li>購入前に複数のローンを比較</li>
+                        <li>中古車・認定中古車も検討</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>関連記事</h3>
+                <div class="related-grid">
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>住宅購入の予算</h4>
+                        <p>年収別の住宅購入予算を計算。</p>
+                    </a>
+                    <a href="debt-snowball-vs-avalanche.html" class="related-card">
+                        <h4>借金返済戦略</h4>
+                        <p>カーローンを早く返済する方法。</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>緊急資金ガイド</h4>
+                        <p>車の修理や緊急事態に備える。</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">プライバシーポリシー</a>
+                <a href="/terms.html">利用規約</a>
+            </p>
+            <p class="disclaimer">免責事項：このコンテンツは情報提供のみを目的としています。個別のアドバイスについては、資格のあるファイナンシャルアドバイザーにご相談ください。</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

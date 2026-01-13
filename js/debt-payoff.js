@@ -15,7 +15,8 @@ function addDebt() {
     const minPayment = parseFloat(document.getElementById('debtMinPayment').value);
 
     if (!name || !balance || !rate || !minPayment) {
-        alert('Please fill in all debt fields');
+        const message = getTranslation('calculators.debtPayoff.fillAllFields', 'Please fill in all debt fields');
+        alert(message);
         return;
     }
 
@@ -32,17 +33,19 @@ function removeDebt(index) {
 function renderDebtList() {
     const list = document.getElementById('debtList');
     if (debts.length === 0) {
-        list.innerHTML = '<p style="color: var(--text-light); text-align: center;">No debts added yet</p>';
+        const noDebtsText = getTranslation('calculators.debtPayoff.noDebtsYet', 'No debts added yet');
+        list.innerHTML = `<p style="color: var(--text-light); text-align: center;">${noDebtsText}</p>`;
         return;
     }
 
+    const removeText = getTranslation('calculators.debtPayoff.remove', 'Remove');
     list.innerHTML = debts.map((debt, index) => `
         <div class="debt-item">
             <div class="debt-info">
                 <strong>${debt.name}</strong>
                 <span>${formatCurrency(debt.balance)} @ ${debt.rate}%</span>
             </div>
-            <button type="button" class="remove-btn" onclick="removeDebt(${index})">Remove</button>
+            <button type="button" class="remove-btn" onclick="removeDebt(${index})">${removeText}</button>
         </div>
     `).join('');
 }
@@ -56,7 +59,8 @@ function clearDebtInputs() {
 
 function calculateDebtPayoff(shouldScroll = false) {
     if (debts.length === 0) {
-        alert('Please add at least one debt');
+        const message = getTranslation('calculators.debtPayoff.addAtLeastOne', 'Please add at least one debt');
+        alert(message);
         return;
     }
 
@@ -163,7 +167,31 @@ function generatePayoffOrder(method) {
     `).join('');
 }
 
+/**
+ * Get translation using I18n if available, otherwise return fallback
+ * @param {string} key - Translation key
+ * @param {string} fallback - Fallback text
+ * @returns {string} Translated text or fallback
+ */
+function getTranslation(key, fallback) {
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        const translation = I18n.t(key);
+        return translation !== key ? translation : fallback;
+    }
+    return fallback;
+}
+
+/**
+ * Format currency using I18n if available, otherwise fallback to default
+ * @param {number} amount - The amount to format
+ * @returns {string} Formatted currency string
+ */
 function formatCurrency(amount) {
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return I18n.formatCurrency(amount, { decimals: 0 });
+    }
+    // Fallback to default formatting
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -173,14 +201,17 @@ function formatCurrency(amount) {
 }
 
 function formatTime(months) {
-    if (months <= 0) return '0 months';
+    if (months <= 0) return '0 ' + getTranslation('common.months', 'months');
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
 
+    const yearsText = getTranslation('common.years', 'years');
+    const monthsText = getTranslation('common.months', 'months');
+
     if (years === 0) {
-        return `${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
+        return `${remainingMonths} ${remainingMonths !== 1 ? monthsText : monthsText.replace(/s$/, '')}`;
     } else if (remainingMonths === 0) {
-        return `${years} year${years !== 1 ? 's' : ''}`;
+        return `${years} ${years !== 1 ? yearsText : yearsText.replace(/s$/, '')}`;
     } else {
         return `${years}y ${remainingMonths}m`;
     }
@@ -188,3 +219,12 @@ function formatTime(months) {
 
 // Initialize
 renderDebtList();
+
+// Recalculate when language changes to update currency format and translations
+document.addEventListener('languageChange', () => {
+    renderDebtList();
+    // Recalculate if results are visible
+    if (document.getElementById('results').classList.contains('show') && debts.length > 0) {
+        calculateDebtPayoff(false);
+    }
+});

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Blog de Planification Financiere - Conseils, Guides et Calculateurs | FinCalc</title>
+    <meta name="description" content="Guides experts de planification financiere, conseils pour economiser et conseils pratiques sur les prets immobiliers, le remboursement de dettes, la planification de la retraite et plus encore. Calculateurs gratuits inclus.">
+    <meta name="keywords" content="blog planification financiere, conseils argent, guide pret immobilier, strategies remboursement dette, planification retraite, conseils investissement">
+    <link rel="canonical" href="https://financecalc.cc/blog/fr/">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog de Planification Financiere - FinCalc">
+    <meta property="og:description" content="Guides experts de planification financiere et conseils pratiques avec calculateurs gratuits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://financecalc.cc/blog/fr/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog de Planification Financiere FinCalc",
+        "description": "Guides experts de planification financiere et conseils pratiques",
+        "url": "https://financecalc.cc/blog/fr/",
+        "inLanguage": "fr",
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Basculer le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators" data-i18n="nav.calculators">Calculateurs</a></li>
+                <li><a href="/blog/fr/" class="active" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="/#about" data-i18n="nav.about">A propos</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="blog-hero">
+            <div class="container">
+                <h1 data-i18n="blog.title">Blog de Planification Financiere</h1>
+                <p data-i18n="blog.subtitle">Guides experts, conseils pratiques et recommandations concretes pour vous aider a prendre des decisions financieres plus intelligentes.</p>
+            </div>
+        </section>
+
+        <section class="blog-grid">
+            <div class="container">
+                <h2 data-i18n="blog.latestArticles">Derniers Articles</h2>
+
+                <div class="blog-posts">
+                    <!-- Article 1 -->
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🏠</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.homeBuying">Achat Immobilier</span>
+                                <span>8 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Quelle Maison Puis-je Me Permettre avec un Salaire de 80 000 $ ?</h2>
+                            <p>Un guide complet pour calculer votre budget d'achat immobilier en fonction de vos revenus, avec des exemples concrets et des conseils d'experts.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="debt-snowball-vs-avalanche.html" class="blog-card">
+                        <div class="blog-card-image">💳</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.debtPayoff">Remboursement de Dettes</span>
+                                <span>10 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Methode Boule de Neige vs Avalanche : Laquelle est la Meilleure ?</h2>
+                            <p>Comparez les deux strategies de remboursement de dettes les plus populaires et decouvrez laquelle vous aidera a vous liberer de vos dettes plus rapidement.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="401k-contribution-calculator-2025.html" class="blog-card">
+                        <div class="blog-card-image">📋</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">Retraite</span>
+                                <span>7 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Combien Devrais-je Cotiser a Mon 401(k) en 2026 ?</h2>
+                            <p>Maximisez votre epargne retraite avec les plafonds de cotisation 2026 mis a jour et des strategies pour chaque niveau de revenu.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="first-time-homebuyer-mortgage-guide.html" class="blog-card">
+                        <div class="blog-card-image">🔑</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.mortgages">Prets Immobiliers</span>
+                                <span>12 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Guide Complet du Pret Immobilier pour les Primo-Accedants</h2>
+                            <p>Tout ce que vous devez savoir pour obtenir votre premier pret immobilier, de la pre-approbation jusqu'a la signature.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 5 -->
+                    <a href="freelancer-self-employment-tax-guide.html" class="blog-card">
+                        <div class="blog-card-image">📝</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.taxes">Impots</span>
+                                <span>9 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Guide des Impots sur le Travail Independant pour les Freelances</h2>
+                            <p>Comprenez les impots sur le travail independant, les paiements trimestriels et les deductions que tout freelance devrait connaitre.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 6 -->
+                    <a href="emergency-fund-3-vs-6-months.html" class="blog-card">
+                        <div class="blog-card-image">🛡️</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.savings">Epargne</span>
+                                <span>6 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Fonds d'Urgence : Faut-il 3 ou 6 Mois de Depenses ?</h2>
+                            <p>Decouvrez exactement combien vous devriez epargner dans votre fonds d'urgence en fonction de votre situation personnelle.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 7 -->
+                    <a href="how-much-car-can-i-afford-60k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🚗</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.autoLoans">Prets Auto</span>
+                                <span>7 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Quelle Voiture Puis-je Me Permettre avec un Salaire de 60 000 $ ?</h2>
+                            <p>Calculez votre budget automobile avec la regle 20/4/10 et trouvez le vehicule adapte a vos revenus.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 8 -->
+                    <a href="how-to-pay-off-50000-student-loans.html" class="blog-card">
+                        <div class="blog-card-image">🎓</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.studentLoans">Prets Etudiants</span>
+                                <span>10 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Comment Rembourser 50 000 $ de Prets Etudiants</h2>
+                            <p>Strategies et plans de remboursement pour eliminer votre dette etudiante plus rapidement et economiser des milliers en interets.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 9 -->
+                    <a href="retirement-calculator-teachers.html" class="blog-card">
+                        <div class="blog-card-image">👩‍🏫</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">Retraite</span>
+                                <span>8 <span data-i18n="blog.minRead">min de lecture</span></span>
+                            </div>
+                            <h2>Calculateur de Retraite pour les Enseignants</h2>
+                            <p>Considerations speciales de planification de retraite pour les educateurs, incluant les avantages de pension et les options 403(b).</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">Lire la suite →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 FinCalc. Tous droits reserves.</p>
+            <p class="footer-links">
+                <a href="/privacy.html" data-i18n="footer.privacy">Politique de Confidentialite</a>
+                <a href="/terms.html" data-i18n="footer.terms">Conditions d'Utilisation</a>
+            </p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">Avertissement : Ce contenu est fourni a titre informatif uniquement. Consultez un conseiller financier qualifie pour des conseils personnalises.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

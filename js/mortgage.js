@@ -39,16 +39,13 @@ function calculateMortgage(shouldScroll = false) {
     // Calculate payoff date
     const payoffDate = new Date();
     payoffDate.setMonth(payoffDate.getMonth() + totalPayments);
-    const payoffDateStr = payoffDate.toLocaleDateString('en-US', {
-        month: 'long',
-        year: 'numeric'
-    });
+    const payoffDateStr = I18n.formatDate(payoffDate, { month: 'long', year: 'numeric' });
 
     // Update results
-    document.getElementById('monthlyPayment').textContent = formatCurrency(monthlyPayment);
-    document.getElementById('loanAmount').textContent = formatCurrency(loanAmount);
-    document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
-    document.getElementById('totalCost').textContent = formatCurrency(totalCost);
+    document.getElementById('monthlyPayment').textContent = I18n.formatCurrency(monthlyPayment);
+    document.getElementById('loanAmount').textContent = I18n.formatCurrency(loanAmount);
+    document.getElementById('totalInterest').textContent = I18n.formatCurrency(totalInterest);
+    document.getElementById('totalCost').textContent = I18n.formatCurrency(totalCost);
     document.getElementById('payoffDate').textContent = payoffDateStr;
 
     // Generate amortization schedule
@@ -76,6 +73,9 @@ function generateAmortizationSchedule(principal, monthlyRate, monthlyPayment, ye
     let yearlyPrincipal = 0;
     let yearlyInterest = 0;
 
+    // Get the translated "Year" text
+    const yearText = I18n.t('calculators.mortgage.year') || 'Year';
+
     for (let month = 1; month <= years * 12; month++) {
         // Calculate interest for this month
         const interestPayment = balance * monthlyRate;
@@ -94,10 +94,10 @@ function generateAmortizationSchedule(principal, monthlyRate, monthlyPayment, ye
             const year = month / 12;
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>Year ${year}</td>
-                <td>${formatCurrency(yearlyPrincipal)}</td>
-                <td>${formatCurrency(yearlyInterest)}</td>
-                <td>${formatCurrency(balance)}</td>
+                <td>${yearText} ${year}</td>
+                <td>${I18n.formatCurrency(yearlyPrincipal)}</td>
+                <td>${I18n.formatCurrency(yearlyInterest)}</td>
+                <td>${I18n.formatCurrency(balance)}</td>
             `;
             tbody.appendChild(row);
 
@@ -108,14 +108,15 @@ function generateAmortizationSchedule(principal, monthlyRate, monthlyPayment, ye
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
-
 // Calculate on page load with default values (without scrolling)
-document.addEventListener('DOMContentLoaded', () => calculateMortgage(false));
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for i18n to be ready before calculating
+    if (I18n.isLoaded) {
+        calculateMortgage(false);
+    } else {
+        document.addEventListener('i18nReady', () => calculateMortgage(false));
+    }
+});
+
+// Recalculate when language changes
+document.addEventListener('languageChange', () => calculateMortgage(false));

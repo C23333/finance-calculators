@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Take Home Pay Calculator - Calculate Your Net Paycheck</title>
-    <meta name="description" content="Calculate your take home pay after federal and state taxes, Social Security, Medicare, and other deductions. See your actual paycheck amount.">
+    <title>Take Home Pay Calculator 2026 - Calculate Net Paycheck After Taxes | FinCalc</title>
+    <meta name="description" content="Free take home pay calculator for 2026. Calculate your net paycheck after federal and state taxes, Social Security, Medicare, and deductions. See your actual pay.">
     <meta name="keywords" content="take home pay calculator, paycheck calculator, net pay, salary after taxes, payroll calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/take-home-pay.html">
 
@@ -31,6 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
     <style>
         .deduction td:nth-child(2), .deduction td:nth-child(3) {
             color: #dc3545;
@@ -54,9 +55,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -64,48 +65,52 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calculator-page">
         <div class="container">
+            <nav class="breadcrumb">
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.takeHomePay.breadcrumb">Take-Home Pay Calculator</span></span>
+            </nav>
+
             <div class="calculator-header">
-                <h1>Take Home Pay Calculator</h1>
-                <p>Calculate your net paycheck after all taxes and deductions</p>
+                <h1 data-i18n="calculators.takeHomePay.title">Take-Home Pay Calculator</h1>
+                <p data-i18n="calculators.takeHomePay.description">Calculate your net pay after taxes and deductions.</p>
             </div>
 
             <div class="calculator-layout">
                 <div class="calculator-main">
                     <div class="card" id="calculator">
-                        <h2>Enter Your Pay Information</h2>
+                        <h2 data-i18n="calculators.takeHomePay.enterPayInfo">Enter Your Pay Information</h2>
                         <form id="takeHomePayForm" class="calculator-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="grossSalary">Gross Pay Amount ($)</label>
+                                    <label for="grossSalary" data-i18n="calculators.takeHomePay.grossPayAmount">Gross Pay Amount ($)</label>
                                     <input type="number" id="grossSalary" min="0" value="75000" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="payFrequency">Pay Frequency</label>
+                                    <label for="payFrequency" data-i18n="calculators.takeHomePay.payFrequency">Pay Frequency</label>
                                     <select id="payFrequency" required>
-                                        <option value="annual" selected>Annual</option>
-                                        <option value="monthly">Monthly</option>
-                                        <option value="semimonthly">Semi-Monthly (24/year)</option>
-                                        <option value="biweekly">Bi-Weekly (26/year)</option>
-                                        <option value="weekly">Weekly</option>
+                                        <option value="annual" selected data-i18n="calculators.takeHomePay.annual">Annual</option>
+                                        <option value="monthly" data-i18n="calculators.takeHomePay.monthly">Monthly</option>
+                                        <option value="semimonthly" data-i18n="calculators.takeHomePay.semiMonthly">Semi-Monthly (24/year)</option>
+                                        <option value="biweekly" data-i18n="calculators.takeHomePay.biWeekly">Bi-Weekly (26/year)</option>
+                                        <option value="weekly" data-i18n="calculators.takeHomePay.weekly">Weekly</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="filingStatus">Filing Status</label>
+                                    <label for="filingStatus" data-i18n="calculators.takeHomePay.filingStatus">Filing Status</label>
                                     <select id="filingStatus" required>
-                                        <option value="single" selected>Single</option>
-                                        <option value="married">Married Filing Jointly</option>
-                                        <option value="head">Head of Household</option>
+                                        <option value="single" selected data-i18n="calculators.takeHomePay.single">Single</option>
+                                        <option value="married" data-i18n="calculators.takeHomePay.married">Married Filing Jointly</option>
+                                        <option value="head" data-i18n="calculators.takeHomePay.head">Head of Household</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="state">State</label>
+                                    <label for="state" data-i18n="calculators.takeHomePay.state">State</label>
                                     <select id="state" required>
                                         <option value="AL">Alabama</option>
                                         <option value="AK">Alaska</option>
@@ -162,86 +167,86 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="allowances">Federal Allowances (W-4)</label>
+                                <label for="allowances" data-i18n="calculators.takeHomePay.federalAllowances">Federal Allowances (W-4)</label>
                                 <input type="number" id="allowances" min="0" max="10" value="1">
                             </div>
 
-                            <h3>Pre-Tax Deductions (Per Pay Period)</h3>
+                            <h3 data-i18n="calculators.takeHomePay.preTaxDeductions">Pre-Tax Deductions (Per Pay Period)</h3>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="preTax401k">401(k) Contribution ($)</label>
+                                    <label for="preTax401k" data-i18n="calculators.takeHomePay.contribution401k">401(k) Contribution ($)</label>
                                     <input type="number" id="preTax401k" min="0" value="500">
                                 </div>
                                 <div class="form-group">
-                                    <label for="healthInsurance">Health Insurance ($)</label>
+                                    <label for="healthInsurance" data-i18n="calculators.takeHomePay.healthInsurance">Health Insurance ($)</label>
                                     <input type="number" id="healthInsurance" min="0" value="200">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="hsaContribution">HSA Contribution ($)</label>
+                                    <label for="hsaContribution" data-i18n="calculators.takeHomePay.hsaContribution">HSA Contribution ($)</label>
                                     <input type="number" id="hsaContribution" min="0" value="0">
                                 </div>
                                 <div class="form-group">
-                                    <label for="otherDeductions">Other Pre-Tax ($)</label>
+                                    <label for="otherDeductions" data-i18n="calculators.takeHomePay.otherPreTax">Other Pre-Tax ($)</label>
                                     <input type="number" id="otherDeductions" min="0" value="0">
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Calculate Take Home Pay</button>
+                            <button type="submit" class="btn btn-primary btn-block" data-i18n="calculators.takeHomePay.calculate">Calculate Take Home Pay</button>
                         </form>
                     </div>
 
                     <div class="card results-card" id="results" style="display: none;">
-                        <h2>Your Paycheck Breakdown</h2>
+                        <h2 data-i18n="calculators.takeHomePay.paycheckBreakdown">Your Paycheck Breakdown</h2>
                         <div class="results-grid">
                             <div class="result-item">
-                                <span class="result-label">Gross Pay (Per Period)</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.grossPayPerPeriod">Gross Pay (Per Period)</span>
                                 <span class="result-value" id="grossPay">$0</span>
                             </div>
                             <div class="result-item highlight">
-                                <span class="result-label">Net Pay (Take Home)</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.netPayTakeHome">Net Pay (Take Home)</span>
                                 <span class="result-value" id="netPay">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Annual Gross</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.annualGross">Annual Gross</span>
                                 <span class="result-value" id="annualGross">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Annual Net</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.annualNet">Annual Net</span>
                                 <span class="result-value" id="annualNet">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Federal Tax (Per Period)</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.federalTaxPerPeriod">Federal Tax (Per Period)</span>
                                 <span class="result-value" id="federalTax">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">State Tax (Per Period)</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.stateTaxPerPeriod">State Tax (Per Period)</span>
                                 <span class="result-value" id="stateTaxResult">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Social Security</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.socialSecurity">Social Security</span>
                                 <span class="result-value" id="socialSecurity">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Medicare</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.medicare">Medicare</span>
                                 <span class="result-value" id="medicare">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Effective Tax Rate</span>
+                                <span class="result-label" data-i18n="calculators.takeHomePay.effectiveTaxRate">Effective Tax Rate</span>
                                 <span class="result-value" id="effectiveRate">0%</span>
                             </div>
                         </div>
 
                         <div class="comparison-table">
-                            <h3>Detailed Breakdown</h3>
+                            <h3 data-i18n="calculators.takeHomePay.detailedBreakdown">Detailed Breakdown</h3>
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Item</th>
-                                        <th>Per Period</th>
-                                        <th>Annual</th>
+                                        <th data-i18n="calculators.takeHomePay.item">Item</th>
+                                        <th data-i18n="calculators.takeHomePay.perPeriod">Per Period</th>
+                                        <th data-i18n="calculators.takeHomePay.annualLabel">Annual</th>
                                     </tr>
                                 </thead>
                                 <tbody id="breakdownBody">
@@ -253,18 +258,18 @@
 
                 <div class="calculator-sidebar">
                     <div class="card">
-                        <h3>Tax Withholdings</h3>
+                        <h3 data-i18n="calculators.takeHomePay.taxWithholdings">Tax Withholdings</h3>
                         <ul class="info-list">
-                            <li><strong>Federal Tax:</strong> Based on W-4 and tax brackets</li>
-                            <li><strong>Social Security:</strong> 6.2% up to $168,600</li>
-                            <li><strong>Medicare:</strong> 1.45% (+ 0.9% over $200k)</li>
-                            <li><strong>State Tax:</strong> Varies by state (0-13%)</li>
+                            <li><strong data-i18n="calculators.takeHomePay.federalTaxLabel">Federal Tax:</strong> <span data-i18n="calculators.takeHomePay.federalTaxDesc">Based on W-4 and tax brackets</span></li>
+                            <li><strong data-i18n="calculators.takeHomePay.socialSecurityLabel">Social Security:</strong> <span data-i18n="calculators.takeHomePay.socialSecurityDesc">6.2% up to $168,600</span></li>
+                            <li><strong data-i18n="calculators.takeHomePay.medicareLabel">Medicare:</strong> <span data-i18n="calculators.takeHomePay.medicareDesc">1.45% (+ 0.9% over $200k)</span></li>
+                            <li><strong data-i18n="calculators.takeHomePay.stateTaxLabel">State Tax:</strong> <span data-i18n="calculators.takeHomePay.stateTaxDesc">Varies by state (0-13%)</span></li>
                         </ul>
                     </div>
 
                     <div class="card">
-                        <h3>No State Income Tax</h3>
-                        <p>These states have no state income tax:</p>
+                        <h3 data-i18n="calculators.takeHomePay.noStateTax">No State Income Tax</h3>
+                        <p data-i18n="calculators.takeHomePay.noStateTaxDesc">These states have no state income tax:</p>
                         <ul class="info-list">
                             <li>Alaska</li>
                             <li>Florida</li>
@@ -276,49 +281,49 @@
                             <li>Washington</li>
                             <li>Wyoming</li>
                         </ul>
-                        <small>*No tax on wages; may tax investment income</small>
+                        <small data-i18n="calculators.takeHomePay.noStateTaxNote">*No tax on wages; may tax investment income</small>
                     </div>
 
                     <div class="card policy-links">
-                        <h3>Tax Resources</h3>
-                        <p>Learn more about payroll taxes:</p>
-                        <a href="https://www.google.com/search?q=IRS+W-4+form+2024" target="_blank" class="btn btn-outline btn-block">W-4 Form Guide</a>
-                        <a href="https://www.google.com/search?q=federal+income+tax+brackets+2024" target="_blank" class="btn btn-outline btn-block">Federal Tax Brackets</a>
-                        <a href="https://www.google.com/search?q=state+income+tax+rates+by+state" target="_blank" class="btn btn-outline btn-block">State Tax Rates</a>
-                        <a href="https://www.google.com/search?q=FICA+taxes+explained" target="_blank" class="btn btn-outline btn-block">FICA Taxes Explained</a>
+                        <h3 data-i18n="calculators.takeHomePay.taxResources">Tax Resources</h3>
+                        <p data-i18n="calculators.takeHomePay.taxResourcesDesc">Learn more about payroll taxes:</p>
+                        <a href="https://www.google.com/search?q=IRS+W-4+form+2024" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.takeHomePay.w4FormGuide">W-4 Form Guide</a>
+                        <a href="https://www.google.com/search?q=federal+income+tax+brackets+2024" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.takeHomePay.federalTaxBrackets">Federal Tax Brackets</a>
+                        <a href="https://www.google.com/search?q=state+income+tax+rates+by+state" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.takeHomePay.stateTaxRates">State Tax Rates</a>
+                        <a href="https://www.google.com/search?q=FICA+taxes+explained" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.takeHomePay.ficaTaxesExplained">FICA Taxes Explained</a>
                     </div>
                 </div>
             </div>
 
             <section class="card" id="guide">
-                <h2>Understanding Your Paycheck</h2>
+                <h2 data-i18n="calculators.takeHomePay.understandingPaycheck">Understanding Your Paycheck</h2>
                 <div class="guide-content">
-                    <h3>Federal Income Tax</h3>
-                    <p>Federal income tax is calculated based on your taxable income and filing status. The U.S. uses a progressive tax system with seven tax brackets ranging from 10% to 37%. Your W-4 form determines how much is withheld from each paycheck.</p>
+                    <h3 data-i18n="calculators.takeHomePay.federalIncomeTax">Federal Income Tax</h3>
+                    <p data-i18n="calculators.takeHomePay.federalIncomeTaxDesc">Federal income tax is calculated based on your taxable income and filing status. The U.S. uses a progressive tax system with seven tax brackets ranging from 10% to 37%. Your W-4 form determines how much is withheld from each paycheck.</p>
 
-                    <h3>FICA Taxes</h3>
-                    <p>FICA (Federal Insurance Contributions Act) taxes fund Social Security and Medicare:</p>
+                    <h3 data-i18n="calculators.takeHomePay.ficaTaxes">FICA Taxes</h3>
+                    <p data-i18n="calculators.takeHomePay.ficaTaxesDesc">FICA (Federal Insurance Contributions Act) taxes fund Social Security and Medicare:</p>
                     <ul>
-                        <li><strong>Social Security:</strong> 6.2% of wages up to $168,600 (2024)</li>
-                        <li><strong>Medicare:</strong> 1.45% of all wages, plus an additional 0.9% on wages over $200,000 (single) or $250,000 (married)</li>
+                        <li><strong data-i18n="calculators.takeHomePay.socialSecurityFica">Social Security:</strong> <span data-i18n="calculators.takeHomePay.socialSecurityFicaDesc">6.2% of wages up to $168,600 (2024)</span></li>
+                        <li><strong data-i18n="calculators.takeHomePay.medicareFica">Medicare:</strong> <span data-i18n="calculators.takeHomePay.medicareFicaDesc">1.45% of all wages, plus an additional 0.9% on wages over $200,000 (single) or $250,000 (married)</span></li>
                     </ul>
 
-                    <h3>Pre-Tax Deductions</h3>
-                    <p>Pre-tax deductions reduce your taxable income, lowering your tax burden:</p>
+                    <h3 data-i18n="calculators.takeHomePay.preTaxDeductionsTitle">Pre-Tax Deductions</h3>
+                    <p data-i18n="calculators.takeHomePay.preTaxDeductionsDesc">Pre-tax deductions reduce your taxable income, lowering your tax burden:</p>
                     <ul>
-                        <li><strong>401(k):</strong> Up to $23,000 in 2024 ($30,500 if 50+)</li>
-                        <li><strong>Health Insurance:</strong> Employer-sponsored premiums</li>
-                        <li><strong>HSA:</strong> Up to $4,150 individual / $8,300 family</li>
-                        <li><strong>FSA:</strong> Up to $3,200 for healthcare expenses</li>
+                        <li><strong>401(k):</strong> <span data-i18n="calculators.takeHomePay.deduction401kDesc">Up to $23,000 in 2024 ($30,500 if 50+)</span></li>
+                        <li><strong data-i18n="calculators.takeHomePay.deductionHealthInsurance">Health Insurance:</strong> <span data-i18n="calculators.takeHomePay.deductionHealthInsuranceDesc">Employer-sponsored premiums</span></li>
+                        <li><strong>HSA:</strong> <span data-i18n="calculators.takeHomePay.deductionHsaDesc">Up to $4,150 individual / $8,300 family</span></li>
+                        <li><strong>FSA:</strong> <span data-i18n="calculators.takeHomePay.deductionFsaDesc">Up to $3,200 for healthcare expenses</span></li>
                     </ul>
 
-                    <h3>Tips to Increase Take Home Pay</h3>
+                    <h3 data-i18n="calculators.takeHomePay.tipsTitle">Tips to Increase Take Home Pay</h3>
                     <ul>
-                        <li>Maximize pre-tax retirement contributions</li>
-                        <li>Use HSA/FSA for medical expenses</li>
-                        <li>Review your W-4 withholdings annually</li>
-                        <li>Consider living in a state with no income tax</li>
-                        <li>Take advantage of commuter benefits if available</li>
+                        <li data-i18n="calculators.takeHomePay.tip1">Maximize pre-tax retirement contributions</li>
+                        <li data-i18n="calculators.takeHomePay.tip2">Use HSA/FSA for medical expenses</li>
+                        <li data-i18n="calculators.takeHomePay.tip3">Review your W-4 withholdings annually</li>
+                        <li data-i18n="calculators.takeHomePay.tip4">Consider living in a state with no income tax</li>
+                        <li data-i18n="calculators.takeHomePay.tip5">Take advantage of commuter benefits if available</li>
                     </ul>
                 </div>
             </section>
@@ -327,7 +332,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 FinCalc. For educational purposes only. Actual paycheck may vary based on additional factors.</p>
+            <p data-i18n="calculators.takeHomePay.footerDisclaimer">&copy; 2026 FinCalc. For educational purposes only. Actual paycheck may vary based on additional factors.</p>
         </div>
     </footer>
 
@@ -337,6 +342,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/take-home-pay.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

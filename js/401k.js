@@ -55,14 +55,14 @@ function calculate401k(shouldScroll = false) {
     const monthlyIncome = (balance * 0.04) / 12;
 
     // Update results
-    document.getElementById('totalAtRetirement').textContent = formatCurrency(balance);
-    document.getElementById('yourContributions').textContent = formatCurrency(totalYourContributions);
-    document.getElementById('employerContributions').textContent = formatCurrency(totalEmployerContributions);
-    document.getElementById('investmentGrowth').textContent = formatCurrency(investmentGrowth);
-    document.getElementById('monthlyIncome').textContent = formatCurrency(monthlyIncome);
-    document.getElementById('yearsToRetirement').textContent = yearsToRetirement + ' years';
-    document.getElementById('annualContribution').textContent = formatCurrency(firstYearContribution);
-    document.getElementById('annualMatch').textContent = formatCurrency(firstYearMatch);
+    document.getElementById('totalAtRetirement').textContent = I18n.formatCurrency(balance, { decimals: 0 });
+    document.getElementById('yourContributions').textContent = I18n.formatCurrency(totalYourContributions, { decimals: 0 });
+    document.getElementById('employerContributions').textContent = I18n.formatCurrency(totalEmployerContributions, { decimals: 0 });
+    document.getElementById('investmentGrowth').textContent = I18n.formatCurrency(investmentGrowth, { decimals: 0 });
+    document.getElementById('monthlyIncome').textContent = I18n.formatCurrency(monthlyIncome, { decimals: 0 });
+    document.getElementById('yearsToRetirement').textContent = yearsToRetirement + ' ' + I18n.t('common.years');
+    document.getElementById('annualContribution').textContent = I18n.formatCurrency(firstYearContribution, { decimals: 0 });
+    document.getElementById('annualMatch').textContent = I18n.formatCurrency(firstYearMatch, { decimals: 0 });
 
     // Show results
     document.getElementById('results').classList.add('show');
@@ -71,13 +71,12 @@ function calculate401k(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').classList.contains('show')) {
+        calculate401k(false);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => calculate401k(false));

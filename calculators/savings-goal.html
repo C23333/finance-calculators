@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Savings Goal Calculator - How Much to Save Monthly</title>
-    <meta name="description" content="Free savings goal calculator. Find out how much you need to save each month to reach your financial goal on time.">
+    <title>Savings Goal Calculator 2026 - How Much to Save Monthly | FinCalc</title>
+    <meta name="description" content="Free savings goal calculator for 2026. Find out exactly how much to save each month to reach your financial goal on time. Plan for vacation, car, house, or any goal.">
     <meta name="keywords" content="savings goal calculator, savings calculator, how much to save, monthly savings calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/savings-goal.html">
 
@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -58,17 +59,17 @@
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Savings Goal Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.savingsGoal.title">Savings Goal Calculator</span></span>
             </nav>
 
-            <h1>Savings Goal Calculator</h1>
-            <p>Find out how much you need to save each month to reach your financial goal.</p>
+            <h1 data-i18n="calculators.savingsGoal.title">Savings Goal Calculator</h1>
+            <p data-i18n="calculators.savingsGoal.description">Find out how much you need to save each month to reach your financial goal.</p>
 
             <div class="calculator">
                 <form id="savingsGoalForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="goalAmount">Savings Goal</label>
+                            <label for="goalAmount" data-i18n="calculators.savingsGoal.goalAmount">Savings Goal</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="goalAmount" value="10000" min="0" step="100" required>
@@ -76,7 +77,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="currentSavings">Current Savings</label>
+                            <label for="currentSavings" data-i18n="calculators.savingsGoal.currentSavings">Current Savings</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="currentSavings" value="0" min="0" step="100" required>
@@ -86,12 +87,12 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="timeframe">Timeframe (Months)</label>
+                            <label for="timeframe" data-i18n="calculators.savingsGoal.timeframe">Timeframe (Months)</label>
                             <input type="number" id="timeframe" value="24" min="1" max="600" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="interestRate">Expected Interest Rate</label>
+                            <label for="interestRate" data-i18n="calculators.savingsGoal.interestRate">Expected Interest Rate</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="interestRate" value="4" min="0" max="15" step="0.1">
@@ -99,36 +100,36 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="common.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="monthlySavings">$0</div>
-                        <p>Monthly Savings Needed</p>
+                        <p data-i18n="calculators.savingsGoal.monthlyNeeded">Monthly Savings Needed</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Weekly</div>
+                            <div class="label" data-i18n="calculators.savingsGoal.weekly">Weekly</div>
                             <div class="value" id="weeklySavings">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Daily</div>
+                            <div class="label" data-i18n="calculators.savingsGoal.daily">Daily</div>
                             <div class="value" id="dailySavings">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Total Contributions</div>
+                            <div class="label" data-i18n="calculators.savingsGoal.totalContributions">Total Contributions</div>
                             <div class="value" id="totalContributions">$0</div>
                         </div>
                         <div class="result-card success">
-                            <div class="label">Interest Earned</div>
+                            <div class="label" data-i18n="calculators.savingsGoal.interestEarned">Interest Earned</div>
                             <div class="value" id="interestEarned">$0</div>
                         </div>
                     </div>
 
                     <div class="result-item">
-                        <span class="result-label">Your Goal</span>
+                        <span class="result-label" data-i18n="calculators.savingsGoal.yourGoal">Your Goal</span>
                         <span class="result-value" id="goalDisplay">$0</span>
                     </div>
                 </div>
@@ -137,49 +138,49 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Savings Resources
+                    <span data-i18n="calculators.savingsGoal.resourcesTitle">Savings Resources</span>
                 </h3>
-                <p>Find the best places to grow your savings:</p>
+                <p data-i18n="calculators.savingsGoal.resourcesDescription">Find the best places to grow your savings:</p>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=best+high+yield+savings+accounts+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Best High-Yield Savings
+                        <span data-i18n="calculators.savingsGoal.bestHighYieldSavings">Best High-Yield Savings</span>
                     </a>
                     <a href="https://www.google.com/search?q=CD+rates+comparison+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Best CD Rates
+                        <span data-i18n="calculators.savingsGoal.bestCDRates">Best CD Rates</span>
                     </a>
                     <a href="https://www.google.com/search?q=money+market+accounts+best+rates" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Money Market Accounts
+                        <span data-i18n="calculators.savingsGoal.moneyMarketAccounts">Money Market Accounts</span>
                     </a>
                     <a href="https://www.google.com/search?q=FDIC+insurance+limits+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        FDIC Insurance Limits
+                        <span data-i18n="calculators.savingsGoal.fdicInsuranceLimits">FDIC Insurance Limits</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>Tips for Reaching Your Savings Goal</h2>
+                <h2 data-i18n="calculators.savingsGoal.articleTitle">Tips for Reaching Your Savings Goal</h2>
 
-                <h3>Automate Your Savings</h3>
-                <p>Set up automatic transfers from your checking to savings account right after payday. This "pay yourself first" approach ensures you save before you spend.</p>
+                <h3 data-i18n="calculators.savingsGoal.automateSavings">Automate Your Savings</h3>
+                <p data-i18n="calculators.savingsGoal.automateSavingsText">Set up automatic transfers from your checking to savings account right after payday. This "pay yourself first" approach ensures you save before you spend.</p>
 
-                <h3>Common Savings Goals</h3>
+                <h3 data-i18n="calculators.savingsGoal.commonGoals">Common Savings Goals</h3>
                 <ul>
-                    <li><strong>Emergency Fund:</strong> 3-6 months of expenses</li>
-                    <li><strong>Down Payment:</strong> 20% of home price</li>
-                    <li><strong>Vacation:</strong> Varies by destination</li>
-                    <li><strong>New Car:</strong> 10-20% down payment</li>
-                    <li><strong>Wedding:</strong> Average $30,000 in the US</li>
+                    <li><strong data-i18n="calculators.savingsGoal.emergencyFund">Emergency Fund:</strong> <span data-i18n="calculators.savingsGoal.emergencyFundDesc">3-6 months of expenses</span></li>
+                    <li><strong data-i18n="calculators.savingsGoal.downPayment">Down Payment:</strong> <span data-i18n="calculators.savingsGoal.downPaymentDesc">20% of home price</span></li>
+                    <li><strong data-i18n="calculators.savingsGoal.vacation">Vacation:</strong> <span data-i18n="calculators.savingsGoal.vacationDesc">Varies by destination</span></li>
+                    <li><strong data-i18n="calculators.savingsGoal.newCar">New Car:</strong> <span data-i18n="calculators.savingsGoal.newCarDesc">10-20% down payment</span></li>
+                    <li><strong data-i18n="calculators.savingsGoal.wedding">Wedding:</strong> <span data-i18n="calculators.savingsGoal.weddingDesc">Average $30,000 in the US</span></li>
                 </ul>
 
-                <h3>Where to Keep Your Savings</h3>
+                <h3 data-i18n="calculators.savingsGoal.whereToKeep">Where to Keep Your Savings</h3>
                 <ul>
-                    <li><strong>High-Yield Savings:</strong> Best for emergency funds and short-term goals</li>
-                    <li><strong>CDs:</strong> Higher rates for money you won't need for a set period</li>
-                    <li><strong>Money Market:</strong> Combines savings with limited check-writing</li>
+                    <li><strong data-i18n="calculators.savingsGoal.highYieldSavings">High-Yield Savings:</strong> <span data-i18n="calculators.savingsGoal.highYieldSavingsDesc">Best for emergency funds and short-term goals</span></li>
+                    <li><strong data-i18n="calculators.savingsGoal.cds">CDs:</strong> <span data-i18n="calculators.savingsGoal.cdsDesc">Higher rates for money you won't need for a set period</span></li>
+                    <li><strong data-i18n="calculators.savingsGoal.moneyMarket">Money Market:</strong> <span data-i18n="calculators.savingsGoal.moneyMarketDesc">Combines savings with limited check-writing</span></li>
                 </ul>
             </article>
         </div>
@@ -187,8 +188,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator provides estimates based on constant interest rates. Actual results may vary.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.savingsGoal.disclaimer">Disclaimer: This calculator provides estimates based on constant interest rates. Actual results may vary.</p>
         </div>
     </footer>
 
@@ -198,6 +199,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/savings-goal.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

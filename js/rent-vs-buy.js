@@ -73,21 +73,21 @@ function calculateRentVsBuy(shouldScroll = false) {
     let recommendation, savingsText;
 
     if (netBuyCost < totalRentCost) {
-        recommendation = 'Buy';
-        savingsText = `Buying saves ${formatCurrency(savings)} over ${yearsToStay} years`;
+        recommendation = I18n.t('calculators.rentVsBuy.recommendBuy');
+        savingsText = I18n.t('calculators.rentVsBuy.buyingSaves', { amount: I18n.formatCurrency(savings, { decimals: 0 }), years: yearsToStay });
     } else {
-        recommendation = 'Rent';
-        savingsText = `Renting saves ${formatCurrency(savings)} over ${yearsToStay} years`;
+        recommendation = I18n.t('calculators.rentVsBuy.recommendRent');
+        savingsText = I18n.t('calculators.rentVsBuy.rentingSaves', { amount: I18n.formatCurrency(savings, { decimals: 0 }), years: yearsToStay });
     }
 
     // Update results
     document.getElementById('recommendation').textContent = recommendation;
-    document.getElementById('recommendation').style.color = recommendation === 'Buy' ? 'var(--secondary)' : 'var(--accent)';
+    document.getElementById('recommendation').style.color = netBuyCost < totalRentCost ? 'var(--secondary)' : 'var(--accent)';
     document.getElementById('savingsAmount').textContent = savingsText;
-    document.getElementById('totalBuyCost').textContent = formatCurrency(netBuyCost);
-    document.getElementById('totalRentCost').textContent = formatCurrency(totalRentCost);
-    document.getElementById('equityBuilt').textContent = formatCurrency(equityBuilt);
-    document.getElementById('monthlyMortgage').textContent = formatCurrency(monthlyMortgage);
+    document.getElementById('totalBuyCost').textContent = I18n.formatCurrency(netBuyCost, { decimals: 0 });
+    document.getElementById('totalRentCost').textContent = I18n.formatCurrency(totalRentCost, { decimals: 0 });
+    document.getElementById('equityBuilt').textContent = I18n.formatCurrency(equityBuilt, { decimals: 0 });
+    document.getElementById('monthlyMortgage').textContent = I18n.formatCurrency(monthlyMortgage, { decimals: 0 });
 
     document.getElementById('results').classList.add('show');
     if (shouldScroll) {
@@ -95,13 +95,12 @@ function calculateRentVsBuy(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').classList.contains('show')) {
+        calculateRentVsBuy(false);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => calculateRentVsBuy(false));

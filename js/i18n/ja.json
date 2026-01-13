@@ -189,6 +189,41 @@
       "avalanche": "アバランチ方式"
     }
   },
+  "calculators": {
+    "investmentReturn": {
+      "title": "投資リターン計算機",
+      "breadcrumb": "投資リターン計算機",
+      "description": "投資リターンとROIを計算。投資額と回収額を比較。",
+      "initialInvestment": "初期投資額",
+      "finalValue": "最終価値",
+      "holdingPeriod": "保有期間（年）",
+      "calculate": "計算する",
+      "totalReturn": "総リターン",
+      "investmentSummary": "投資サマリー",
+      "profitLoss": "損益",
+      "annualizedReturn": "年率リターン（CAGR）",
+      "simpleROI": "単純ROI",
+      "doublingTime": "倍増時間",
+      "doublingTimeYears": "{years}年",
+      "doublingTimeNA": "該当なし（マイナスリターン）",
+      "articleTitle": "投資リターンを理解する",
+      "totalVsAnnualized": "総リターン vs 年率リターン",
+      "totalVsAnnualizedText": "<strong>総リターン</strong>は全体の損益をパーセントで表示。<strong>年率リターン（CAGR）</strong>は等価の年間リターン率を表示し、異なる保有期間の投資を比較するのに便利。",
+      "cagrFormula": "CAGR公式",
+      "cagrFormulaText": "CAGR = (最終価値 / 初期価値)^(1/年数) - 1",
+      "cagrFormulaDesc": "初期投資を最終価値に成長させる一定の年間成長率を算出。",
+      "historicalReturns": "過去の平均リターン",
+      "sp500": "S&P 500：",
+      "sp500Return": "年間約10%（インフレ前）",
+      "bonds": "債券：",
+      "bondsReturn": "年間約5-6%",
+      "savingsAccount": "普通預金：",
+      "savingsReturn": "約0.5-5%（金利環境により変動）",
+      "realEstate": "不動産：",
+      "realEstateReturn": "年間約8-12%（値上がりと賃貸収入を含む）",
+      "footerDisclaimer": "免責事項：過去の実績は将来の結果を保証するものではありません。この計算機は教育目的のみです。"
+    }
+  },
   "blog": {
     "title": "金融ブログ",
     "subtitle": "あなたの財務の旅のための専門家のヒントとガイド",

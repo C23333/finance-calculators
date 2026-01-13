@@ -34,12 +34,12 @@ function calculateSavingsGoal(shouldScroll = false) {
     const dailySavings = monthlySavings * 12 / 365;
 
     // Update results
-    document.getElementById('monthlySavings').textContent = formatCurrency(monthlySavings);
-    document.getElementById('weeklySavings').textContent = formatCurrency(weeklySavings);
-    document.getElementById('dailySavings').textContent = formatCurrency(dailySavings);
-    document.getElementById('totalContributions').textContent = formatCurrency(totalContributions);
-    document.getElementById('interestEarned').textContent = formatCurrency(Math.max(0, interestEarned));
-    document.getElementById('goalDisplay').textContent = formatCurrency(goalAmount);
+    document.getElementById('monthlySavings').textContent = I18n.formatCurrency(monthlySavings, { decimals: 0 });
+    document.getElementById('weeklySavings').textContent = I18n.formatCurrency(weeklySavings, { decimals: 0 });
+    document.getElementById('dailySavings').textContent = I18n.formatCurrency(dailySavings, { decimals: 0 });
+    document.getElementById('totalContributions').textContent = I18n.formatCurrency(totalContributions, { decimals: 0 });
+    document.getElementById('interestEarned').textContent = I18n.formatCurrency(Math.max(0, interestEarned), { decimals: 0 });
+    document.getElementById('goalDisplay').textContent = I18n.formatCurrency(goalAmount, { decimals: 0 });
 
     // Show results
     document.getElementById('results').classList.add('show');
@@ -48,13 +48,12 @@ function calculateSavingsGoal(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').classList.contains('show')) {
+        calculateSavingsGoal(false);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => calculateSavingsGoal(false));

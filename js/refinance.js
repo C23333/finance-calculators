@@ -47,17 +47,17 @@ function calculateRefinance(shouldScroll = false) {
     }
 
     // Update results
-    document.getElementById('newPayment').textContent = formatCurrency(newPayment);
-    document.getElementById('monthlySavings').textContent = formatCurrency(monthlySavings);
-    document.getElementById('lifetimeSavings').textContent = formatCurrency(lifetimeSavings);
+    document.getElementById('newPayment').textContent = I18n.formatCurrency(newPayment);
+    document.getElementById('monthlySavings').textContent = I18n.formatCurrency(monthlySavings);
+    document.getElementById('lifetimeSavings').textContent = I18n.formatCurrency(lifetimeSavings);
     document.getElementById('breakEven').textContent = breakEven === Infinity ? 'Never' : breakEven + ' months';
     document.getElementById('recommendation').textContent = recommendation;
     document.getElementById('recommendation').style.color = recommendation === 'Refinance' ? 'var(--secondary)' : recommendation === 'Keep current' ? '#ef4444' : 'var(--accent)';
 
-    document.getElementById('currentTotal').textContent = formatCurrency(currentTotal);
-    document.getElementById('currentInterest').textContent = formatCurrency(currentInterest);
-    document.getElementById('newTotal').textContent = formatCurrency(newTotal);
-    document.getElementById('newInterest').textContent = formatCurrency(newInterest);
+    document.getElementById('currentTotal').textContent = I18n.formatCurrency(currentTotal);
+    document.getElementById('currentInterest').textContent = I18n.formatCurrency(currentInterest);
+    document.getElementById('newTotal').textContent = I18n.formatCurrency(newTotal);
+    document.getElementById('newInterest').textContent = I18n.formatCurrency(newInterest);
 
     document.getElementById('results').classList.add('show');
     if (shouldScroll) {
@@ -65,13 +65,15 @@ function calculateRefinance(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Calculate on page load with default values (without scrolling)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for i18n to be ready before calculating
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        calculateRefinance(false);
+    } else {
+        document.addEventListener('i18nReady', () => calculateRefinance(false));
+    }
+});
 
-document.addEventListener('DOMContentLoaded', () => calculateRefinance(false));
+// Recalculate when language changes
+document.addEventListener('languageChange', () => calculateRefinance(false));

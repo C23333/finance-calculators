@@ -47,27 +47,29 @@ function calculateSalary(shouldScroll = false) {
     const monthly = annualSalary / 12;
     const quarterly = annualSalary / 4;
 
-    // Update results
-    document.getElementById('hourlyPay').textContent = formatCurrency(hourly);
-    document.getElementById('dailyPay').textContent = formatCurrency(daily);
-    document.getElementById('weeklyPay').textContent = formatCurrency(weekly);
-    document.getElementById('biweeklyPay').textContent = formatCurrency(biweekly);
-    document.getElementById('semimonthlyPay').textContent = formatCurrency(semimonthly);
-    document.getElementById('monthlyPay').textContent = formatCurrency(monthly);
-    document.getElementById('quarterlyPay').textContent = formatCurrency(quarterly);
-    document.getElementById('annualPay').textContent = formatCurrency(annualSalary);
+    // Update results using I18n.formatCurrency()
+    document.getElementById('hourlyPay').textContent = I18n.formatCurrency(hourly);
+    document.getElementById('dailyPay').textContent = I18n.formatCurrency(daily);
+    document.getElementById('weeklyPay').textContent = I18n.formatCurrency(weekly);
+    document.getElementById('biweeklyPay').textContent = I18n.formatCurrency(biweekly);
+    document.getElementById('semimonthlyPay').textContent = I18n.formatCurrency(semimonthly);
+    document.getElementById('monthlyPay').textContent = I18n.formatCurrency(monthly);
+    document.getElementById('quarterlyPay').textContent = I18n.formatCurrency(quarterly);
+    document.getElementById('annualPay').textContent = I18n.formatCurrency(annualSalary);
 
     // Show results
     document.getElementById('results').classList.add('show');
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    }).format(amount);
-}
+// Calculate on page load with default values (without scrolling)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for i18n to be ready before calculating
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        calculateSalary(false);
+    } else {
+        document.addEventListener('i18nReady', () => calculateSalary(false));
+    }
+});
 
-document.addEventListener('DOMContentLoaded', () => calculateSalary(false));
+// Recalculate when language changes to update currency formatting
+document.addEventListener('languageChange', () => calculateSalary(false));

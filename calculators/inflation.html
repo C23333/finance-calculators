@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Inflation Calculator - See How Prices Change Over Time</title>
-    <meta name="description" content="Free inflation calculator. See how inflation affects your purchasing power and calculate the future value of money.">
+    <title>Inflation Calculator 2026 - Purchasing Power Over Time | FinCalc</title>
+    <meta name="description" content="Free inflation calculator for 2026. See how inflation affects your purchasing power and calculate the future value of money. Plan for rising costs.">
     <meta name="keywords" content="inflation calculator, purchasing power calculator, future value calculator, cost of living calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/inflation.html">
 
@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -43,9 +44,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -53,22 +54,22 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Inflation Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.inflation.breadcrumb">Inflation Calculator</span></span>
             </nav>
 
-            <h1>Inflation Calculator</h1>
-            <p>See how inflation affects your purchasing power over time.</p>
+            <h1 data-i18n="calculators.inflation.title">Inflation Calculator</h1>
+            <p data-i18n="calculators.inflation.description">See how inflation affects your purchasing power over time.</p>
 
             <div class="calculator">
                 <form id="inflationForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="currentAmount">Current Amount</label>
+                            <label for="currentAmount" data-i18n="calculators.inflation.currentAmount">Current Amount</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="currentAmount" value="100" min="0" step="1" required>
@@ -76,7 +77,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="inflationRate">Annual Inflation Rate</label>
+                            <label for="inflationRate" data-i18n="calculators.inflation.inflationRate">Annual Inflation Rate</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="inflationRate" value="3" min="0" max="50" step="0.1" required>
@@ -85,46 +86,46 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="years">Number of Years</label>
+                        <label for="years" data-i18n="calculators.inflation.years">Number of Years</label>
                         <input type="number" id="years" value="10" min="1" max="100" required>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="calculators.inflation.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="futureValue">$0</div>
-                        <p>Future Cost of Same Goods</p>
+                        <p data-i18n="calculators.inflation.futureCostLabel">Future Cost of Same Goods</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Purchasing Power Lost</div>
+                            <div class="label" data-i18n="calculators.inflation.purchasingPowerLost">Purchasing Power Lost</div>
                             <div class="value" id="purchasingPowerLost">$0</div>
                         </div>
                         <div class="result-card warning">
-                            <div class="label">Value Decrease</div>
+                            <div class="label" data-i18n="calculators.inflation.valueDecrease">Value Decrease</div>
                             <div class="value" id="percentDecrease">0%</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Future Buying Power</div>
+                            <div class="label" data-i18n="calculators.inflation.futureBuyingPower">Future Buying Power</div>
                             <div class="value" id="futureBuyingPower">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Price Increase</div>
+                            <div class="label" data-i18n="calculators.inflation.priceIncrease">Price Increase</div>
                             <div class="value" id="priceIncrease">$0</div>
                         </div>
                     </div>
 
                     <div class="amortization-table">
-                        <h3>Year-by-Year Breakdown</h3>
+                        <h3 data-i18n="calculators.inflation.yearByYearBreakdown">Year-by-Year Breakdown</h3>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Year</th>
-                                    <th>Future Cost</th>
-                                    <th>Buying Power of $100</th>
+                                    <th data-i18n="calculators.inflation.year">Year</th>
+                                    <th data-i18n="calculators.inflation.futureCost">Future Cost</th>
+                                    <th data-i18n="calculators.inflation.buyingPowerOf100">Buying Power of $100</th>
                                 </tr>
                             </thead>
                             <tbody id="inflationTable">
@@ -137,54 +138,54 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Inflation Resources
+                    <span data-i18n="calculators.inflation.resourcesTitle">Inflation Resources</span>
                 </h3>
-                <p>Stay informed about inflation and economic trends:</p>
+                <p data-i18n="calculators.inflation.resourcesDescription">Stay informed about inflation and economic trends:</p>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=current+US+inflation+rate+CPI" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Current US Inflation Rate
+                        <span data-i18n="calculators.inflation.currentUSInflationRate">Current US Inflation Rate</span>
                     </a>
                     <a href="https://www.google.com/search?q=Federal+Reserve+interest+rate+decision" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Fed Interest Rate
+                        <span data-i18n="calculators.inflation.fedInterestRate">Fed Interest Rate</span>
                     </a>
                     <a href="https://www.google.com/search?q=I+bonds+inflation+protected+savings" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        I Bonds (Inflation Protected)
+                        <span data-i18n="calculators.inflation.iBonds">I Bonds (Inflation Protected)</span>
                     </a>
                     <a href="https://www.google.com/search?q=TIPS+treasury+inflation+protected+securities" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        TIPS Securities
+                        <span data-i18n="calculators.inflation.tipsSecurities">TIPS Securities</span>
                     </a>
                     <a href="https://www.google.com/search?q=social+security+COLA+adjustment+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Social Security COLA
+                        <span data-i18n="calculators.inflation.socialSecurityCOLA">Social Security COLA</span>
                     </a>
                     <a href="https://www.google.com/search?q=historical+inflation+rates+by+year" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Historical Inflation Rates
+                        <span data-i18n="calculators.inflation.historicalInflationRates">Historical Inflation Rates</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>Understanding Inflation</h2>
-                <p>Inflation is the rate at which the general level of prices for goods and services rises, causing purchasing power to fall. The Federal Reserve targets 2% annual inflation as healthy for the economy.</p>
+                <h2 data-i18n="calculators.inflation.articleTitle">Understanding Inflation</h2>
+                <p data-i18n="calculators.inflation.articleIntro">Inflation is the rate at which the general level of prices for goods and services rises, causing purchasing power to fall. The Federal Reserve targets 2% annual inflation as healthy for the economy.</p>
 
-                <h3>Historical US Inflation</h3>
+                <h3 data-i18n="calculators.inflation.historicalUSInflation">Historical US Inflation</h3>
                 <ul>
-                    <li><strong>Long-term average:</strong> ~3% per year</li>
-                    <li><strong>2020-2023:</strong> Higher than average due to pandemic effects</li>
-                    <li><strong>Fed target:</strong> 2% annual inflation</li>
+                    <li><strong data-i18n="calculators.inflation.longTermAverage">Long-term average:</strong> <span data-i18n="calculators.inflation.longTermAverageValue">~3% per year</span></li>
+                    <li><strong data-i18n="calculators.inflation.period2020_2023">2020-2023:</strong> <span data-i18n="calculators.inflation.period2020_2023Value">Higher than average due to pandemic effects</span></li>
+                    <li><strong data-i18n="calculators.inflation.fedTarget">Fed target:</strong> <span data-i18n="calculators.inflation.fedTargetValue">2% annual inflation</span></li>
                 </ul>
 
-                <h3>Protecting Against Inflation</h3>
+                <h3 data-i18n="calculators.inflation.protectingAgainstInflation">Protecting Against Inflation</h3>
                 <ul>
-                    <li><strong>Invest in stocks:</strong> Historically outpace inflation over long periods</li>
-                    <li><strong>I Bonds:</strong> Government bonds that adjust for inflation</li>
-                    <li><strong>TIPS:</strong> Treasury Inflation-Protected Securities</li>
-                    <li><strong>Real estate:</strong> Property values often rise with inflation</li>
+                    <li><strong data-i18n="calculators.inflation.investInStocks">Invest in stocks:</strong> <span data-i18n="calculators.inflation.investInStocksDesc">Historically outpace inflation over long periods</span></li>
+                    <li><strong data-i18n="calculators.inflation.iBondsProtection">I Bonds:</strong> <span data-i18n="calculators.inflation.iBondsProtectionDesc">Government bonds that adjust for inflation</span></li>
+                    <li><strong data-i18n="calculators.inflation.tipsProtection">TIPS:</strong> <span data-i18n="calculators.inflation.tipsProtectionDesc">Treasury Inflation-Protected Securities</span></li>
+                    <li><strong data-i18n="calculators.inflation.realEstate">Real estate:</strong> <span data-i18n="calculators.inflation.realEstateDesc">Property values often rise with inflation</span></li>
                 </ul>
             </article>
         </div>
@@ -192,8 +193,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator uses a constant inflation rate. Actual inflation varies year to year.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.inflation.disclaimer">Disclaimer: This calculator uses a constant inflation rate. Actual inflation varies year to year.</p>
         </div>
     </footer>
 
@@ -203,6 +204,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/inflation.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

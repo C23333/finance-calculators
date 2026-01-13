@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Salary Calculator - Convert Hourly to Annual & More</title>
-    <meta name="description" content="Free salary calculator. Convert between hourly, weekly, bi-weekly, monthly, and annual salary. See your equivalent pay across different time periods.">
+    <title>Salary Calculator 2026 - Hourly to Annual Conversion | FinCalc</title>
+    <meta name="description" content="Free salary calculator for 2026. Convert between hourly, weekly, bi-weekly, monthly, and annual salary instantly. See your equivalent pay across time periods.">
     <meta name="keywords" content="salary calculator, hourly to annual, wage calculator, pay calculator, income calculator">
     <link rel="canonical" href="https://financecalc.cc/calculators/salary.html">
 
@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -43,9 +44,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -53,22 +54,22 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Salary Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.salary.title">Salary Calculator</span></span>
             </nav>
 
-            <h1>Salary Calculator</h1>
-            <p>Convert your salary between hourly, weekly, bi-weekly, monthly, and annual amounts.</p>
+            <h1 data-i18n="calculators.salary.title">Salary Calculator</h1>
+            <p data-i18n="calculators.salary.description">Convert your salary between hourly, weekly, bi-weekly, monthly, and annual amounts.</p>
 
             <div class="calculator">
                 <form id="salaryForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="salaryAmount">Salary Amount</label>
+                            <label for="salaryAmount" data-i18n="calculators.salary.amount">Salary Amount</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="salaryAmount" value="50000" min="0" step="100" required>
@@ -76,69 +77,69 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="salaryPeriod">Pay Period</label>
+                            <label for="salaryPeriod" data-i18n="calculators.salary.period">Pay Period</label>
                             <select id="salaryPeriod">
-                                <option value="annual" selected>Annual</option>
-                                <option value="monthly">Monthly</option>
-                                <option value="biweekly">Bi-Weekly</option>
-                                <option value="weekly">Weekly</option>
-                                <option value="hourly">Hourly</option>
+                                <option value="annual" selected data-i18n="calculators.salary.annual">Annual</option>
+                                <option value="monthly" data-i18n="calculators.salary.monthly">Monthly</option>
+                                <option value="biweekly" data-i18n="calculators.salary.biweekly">Bi-Weekly</option>
+                                <option value="weekly" data-i18n="calculators.salary.weekly">Weekly</option>
+                                <option value="hourly" data-i18n="calculators.salary.hourly">Hourly</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="hoursPerWeek">Hours Per Week</label>
+                            <label for="hoursPerWeek" data-i18n="calculators.salary.hoursPerWeek">Hours Per Week</label>
                             <input type="number" id="hoursPerWeek" value="40" min="1" max="168" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="weeksPerYear">Weeks Per Year</label>
+                            <label for="weeksPerYear" data-i18n="calculators.salary.weeksPerYear">Weeks Per Year</label>
                             <input type="number" id="weeksPerYear" value="52" min="1" max="52" required>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="common.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
-                    <h2>Your Salary Breakdown</h2>
+                    <h2 data-i18n="calculators.salary.breakdown">Your Salary Breakdown</h2>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Hourly</div>
+                            <div class="label" data-i18n="calculators.salary.hourly">Hourly</div>
                             <div class="value" id="hourlyPay">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Daily</div>
+                            <div class="label" data-i18n="calculators.salary.daily">Daily</div>
                             <div class="value" id="dailyPay">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Weekly</div>
+                            <div class="label" data-i18n="calculators.salary.weekly">Weekly</div>
                             <div class="value" id="weeklyPay">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Bi-Weekly</div>
+                            <div class="label" data-i18n="calculators.salary.biweekly">Bi-Weekly</div>
                             <div class="value" id="biweeklyPay">$0</div>
                         </div>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Semi-Monthly</div>
+                            <div class="label" data-i18n="calculators.salary.semimonthly">Semi-Monthly</div>
                             <div class="value" id="semimonthlyPay">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Monthly</div>
+                            <div class="label" data-i18n="calculators.salary.monthly">Monthly</div>
                             <div class="value" id="monthlyPay">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Quarterly</div>
+                            <div class="label" data-i18n="calculators.salary.quarterly">Quarterly</div>
                             <div class="value" id="quarterlyPay">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Annual</div>
+                            <div class="label" data-i18n="calculators.salary.annual">Annual</div>
                             <div class="value" id="annualPay">$0</div>
                         </div>
                     </div>
@@ -148,59 +149,59 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Wage & Employment Resources
+                    <span data-i18n="calculators.salary.resourcesTitle">Wage & Employment Resources</span>
                 </h3>
-                <p>Learn about minimum wage laws and employment rights:</p>
+                <p data-i18n="calculators.salary.resourcesDescription">Learn about minimum wage laws and employment rights:</p>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=federal+minimum+wage+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Federal Minimum Wage
+                        <span data-i18n="calculators.salary.federalMinimumWage">Federal Minimum Wage</span>
                     </a>
                     <a href="https://www.google.com/search?q=minimum+wage+by+state+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        State Minimum Wages
+                        <span data-i18n="calculators.salary.stateMinimumWages">State Minimum Wages</span>
                     </a>
                     <a href="https://www.google.com/search?q=overtime+pay+laws+FLSA" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Overtime Pay Laws
+                        <span data-i18n="calculators.salary.overtimePayLaws">Overtime Pay Laws</span>
                     </a>
                     <a href="https://www.google.com/search?q=salary+vs+hourly+exempt+non+exempt" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Exempt vs Non-Exempt
+                        <span data-i18n="calculators.salary.exemptVsNonExempt">Exempt vs Non-Exempt</span>
                     </a>
                     <a href="https://www.google.com/search?q=average+salary+by+profession+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Average Salaries by Job
+                        <span data-i18n="calculators.salary.averageSalaries">Average Salaries by Job</span>
                     </a>
                     <a href="https://www.google.com/search?q=cost+of+living+calculator+by+city" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Cost of Living by City
+                        <span data-i18n="calculators.salary.costOfLiving">Cost of Living by City</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>Understanding Your Salary</h2>
-                <p>Knowing how your salary breaks down across different time periods helps you budget effectively and compare job offers.</p>
+                <h2 data-i18n="calculators.salary.articleTitle">Understanding Your Salary</h2>
+                <p data-i18n="calculators.salary.articleIntro">Knowing how your salary breaks down across different time periods helps you budget effectively and compare job offers.</p>
 
-                <h3>Common Pay Periods</h3>
+                <h3 data-i18n="calculators.salary.commonPayPeriods">Common Pay Periods</h3>
                 <ul>
-                    <li><strong>Weekly:</strong> 52 paychecks per year</li>
-                    <li><strong>Bi-Weekly:</strong> 26 paychecks per year (every 2 weeks)</li>
-                    <li><strong>Semi-Monthly:</strong> 24 paychecks per year (1st and 15th)</li>
-                    <li><strong>Monthly:</strong> 12 paychecks per year</li>
+                    <li><strong data-i18n="calculators.salary.weekly">Weekly:</strong> <span data-i18n="calculators.salary.weeklyDesc">52 paychecks per year</span></li>
+                    <li><strong data-i18n="calculators.salary.biweekly">Bi-Weekly:</strong> <span data-i18n="calculators.salary.biweeklyDesc">26 paychecks per year (every 2 weeks)</span></li>
+                    <li><strong data-i18n="calculators.salary.semimonthly">Semi-Monthly:</strong> <span data-i18n="calculators.salary.semimonthlyDesc">24 paychecks per year (1st and 15th)</span></li>
+                    <li><strong data-i18n="calculators.salary.monthly">Monthly:</strong> <span data-i18n="calculators.salary.monthlyDesc">12 paychecks per year</span></li>
                 </ul>
 
-                <h3>Salary vs Hourly</h3>
-                <p>Salaried employees typically receive the same pay regardless of hours worked, while hourly employees are paid for actual hours worked and may receive overtime pay for hours over 40 per week.</p>
+                <h3 data-i18n="calculators.salary.salaryVsHourly">Salary vs Hourly</h3>
+                <p data-i18n="calculators.salary.salaryVsHourlyDesc">Salaried employees typically receive the same pay regardless of hours worked, while hourly employees are paid for actual hours worked and may receive overtime pay for hours over 40 per week.</p>
             </article>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator shows gross pay before taxes and deductions. Actual take-home pay will be lower.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.salary.disclaimer">Disclaimer: This calculator shows gross pay before taxes and deductions. Actual take-home pay will be lower.</p>
         </div>
     </footer>
 
@@ -210,6 +211,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/salary.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

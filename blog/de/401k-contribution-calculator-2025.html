@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Wie viel sollte ich 2026 in meine betriebliche Altersvorsorge einzahlen? | FinCalc</title>
+    <meta name="description" content="Erfahren Sie den optimalen Beitrag zur betrieblichen Altersvorsorge fuer 2026. Aktualisierte Grenzen, Arbeitgeber-Matching-Strategien und Beitragsrechner fuer jedes Einkommensniveau.">
+    <meta name="keywords" content="betriebliche Altersvorsorge Beitrag 2026, wie viel einzahlen Altersvorsorge, Beitragsgrenzen 2026, Altersvorsorge-Rechner, Altersvorsorge maximieren">
+    <link rel="canonical" href="https://financecalc.cc/blog/de/401k-contribution-calculator-2025.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Wie viel sollte ich 2026 in meine betriebliche Altersvorsorge einzahlen?">
+    <meta property="og:description" content="Erfahren Sie den optimalen Beitrag zur betrieblichen Altersvorsorge fuer 2026 mit aktualisierten Grenzen und Strategien.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/de/401k-contribution-calculator-2025.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Wie viel sollte ich 2026 in meine betriebliche Altersvorsorge einzahlen?",
+        "description": "Erfahren Sie den optimalen Beitrag zur betrieblichen Altersvorsorge fuer 2026 mit aktualisierten Grenzen und Strategien fuer jedes Einkommensniveau.",
+        "image": "https://financecalc.cc/images/401k-contribution-2026.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/de/401k-contribution-calculator-2025.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Was ist die Beitragsgrenze fuer die betriebliche Altersvorsorge 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Arbeitnehmer-Beitragsgrenze fuer 2026 betraegt 23.500 Euro fuer Personen unter 50. Wenn Sie 50 oder aelter sind, koennen Sie zusaetzlich 7.500 Euro als Nachholbeitrag einzahlen, insgesamt also 31.000 Euro. Ein neuer 'Super-Nachholbeitrag' fuer 60-63-Jaehrige erlaubt zusaetzliche 11.250 Euro, insgesamt 34.750 Euro."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie viel sollte ich in meine betriebliche Altersvorsorge einzahlen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Finanzexperten empfehlen, 15% Ihres Bruttoeinkommens fuer die Altersvorsorge zu sparen, einschliesslich Arbeitgeber-Matching. Zahlen Sie mindestens genug ein, um das volle Arbeitgeber-Matching zu erhalten - das ist geschenktes Geld. Wenn Sie 15% nicht erreichen koennen, beginnen Sie mit dem Matching und erhoehen Sie jaehrlich um 1%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Sollte ich klassische oder Ruerup-Altersvorsorge waehlen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Waehlen Sie klassische Altersvorsorge, wenn Sie jetzt in einer hohen Steuerklasse sind (24%+) und im Ruhestand niedrigeres Einkommen erwarten. Waehlen Sie Ruerup, wenn Sie in einer niedrigeren Steuerklasse sind (12-22%) und im Ruhestand hoeheres Einkommen erwarten. Viele Experten empfehlen, Beitraege zwischen beiden aufzuteilen fuer Steuerdiversifikation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist Arbeitgeber-Matching bei der Altersvorsorge?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Arbeitgeber-Matching bedeutet, dass Ihr Unternehmen basierend auf Ihren Beitraegen Geld in Ihre Altersvorsorge einzahlt. Gaengige Formeln sind 50% Matching bis zu 6% des Gehalts oder 100% Matching bis zu 3%. Zum Beispiel: Bei 80.000 Euro Gehalt und 6% Beitrag mit 50% Matching fuegt Ihr Arbeitgeber 2.400 Euro pro Jahr hinzu."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist der Super-Nachholbeitrag fuer 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Neu fuer 2026: Wenn Sie 60-63 Jahre alt sind, koennen Sie einen 'Super-Nachholbeitrag' von 11.250 Euro statt der Standard-7.500 Euro leisten. Dies ermoeglicht einen Gesamtarbeitnehmerbeitrag von 34.750 Euro fuer diese Altersgruppe und hilft Ihnen, Ihre Altersvorsorge in den letzten Arbeitsjahren zu steigern."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Menue umschalten" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Rechner</a></li>
+                <li><a href="/blog/de/" class="active">Blog</a></li>
+                <li><a href="/#about">Ueber uns</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Startseite</a> <span>/</span> <a href="/blog/de/">Blog</a> <span>/</span> <span>Betriebliche Altersvorsorge 2026</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Altersvorsorge</span>
+                        <span>10. Januar 2026</span>
+                        <span>7 Min. Lesezeit</span>
+                    </div>
+                    <h1>Wie viel sollte ich 2026 in meine betriebliche Altersvorsorge einzahlen?</h1>
+                    <p class="article-intro">Die Beitragsgrenzen fuer die betriebliche Altersvorsorge wurden fuer 2026 aktualisiert. Hier erfahren Sie genau, wie viel Sie basierend auf Ihrem Einkommen, Alter und Ihren finanziellen Zielen einzahlen sollten.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Beitragsgrenzen 2026 fuer die betriebliche Altersvorsorge</h2>
+                    <p>Die Beitragsgrenzen wurden fuer 2026 erhoeht:</p>
+
+                    <table>
+                        <tr>
+                            <th>Beitragsart</th>
+                            <th>Grenze 2026</th>
+                            <th>Grenze 2025</th>
+                        </tr>
+                        <tr>
+                            <td>Arbeitnehmerbeitrag (unter 50)</td>
+                            <td><strong>23.500 €</strong></td>
+                            <td>23.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>Nachholbeitrag (ab 50)</td>
+                            <td><strong>7.500 €</strong></td>
+                            <td>7.500 €</td>
+                        </tr>
+                        <tr>
+                            <td>Gesamt ab 50 (nur Arbeitnehmer)</td>
+                            <td><strong>31.000 €</strong></td>
+                            <td>30.500 €</td>
+                        </tr>
+                        <tr>
+                            <td>Gesamtgrenze (Arbeitnehmer + Arbeitgeber)</td>
+                            <td><strong>70.000 €</strong></td>
+                            <td>69.000 €</td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>Neu fuer 2026: Super-Nachholbeitrag</h4>
+                        <p>Wenn Sie 60-63 Jahre alt sind, koennen Sie zusaetzlich <strong>11.250 €</strong> (statt 7.500 €) einzahlen, fuer einen Gesamtarbeitnehmerbeitrag von <strong>34.750 €</strong>.</p>
+                    </div>
+
+                    <h2>Das Minimum: Holen Sie sich das volle Arbeitgeber-Matching</h2>
+                    <p>Zahlen Sie mindestens genug ein, um das volle Arbeitgeber-Matching zu erhalten. Das ist geschenktes Geld - lassen Sie es nicht liegen.</p>
+
+                    <h3>Gaengige Arbeitgeber-Matching-Formeln:</h3>
+                    <ul>
+                        <li><strong>100% Matching bis zu 3%:</strong> Zahlen Sie mindestens 3% des Gehalts ein</li>
+                        <li><strong>50% Matching bis zu 6%:</strong> Zahlen Sie mindestens 6% des Gehalts ein</li>
+                        <li><strong>100% Matching bis zu 6%:</strong> Zahlen Sie mindestens 6% des Gehalts ein</li>
+                        <li><strong>Euro-fuer-Euro bis zu X €:</strong> Zahlen Sie mindestens X € ein</li>
+                    </ul>
+
+                    <h3>Beispiel: 80.000 € Gehalt mit 50% Matching bis zu 6%</h3>
+                    <table>
+                        <tr>
+                            <th>Ihr Beitrag</th>
+                            <th>Arbeitgeber-Matching</th>
+                            <th>Jaehrlich gesamt</th>
+                        </tr>
+                        <tr>
+                            <td>3% (2.400 €)</td>
+                            <td>1.200 €</td>
+                            <td>3.600 €</td>
+                        </tr>
+                        <tr>
+                            <td>6% (4.800 €)</td>
+                            <td>2.400 € (max)</td>
+                            <td>7.200 €</td>
+                        </tr>
+                        <tr>
+                            <td>10% (8.000 €)</td>
+                            <td>2.400 € (max)</td>
+                            <td>10.400 €</td>
+                        </tr>
+                    </table>
+
+                    <p>In diesem Beispiel erhalten Sie bei 6% Beitrag das volle Matching. Mehr als 6% einzuzahlen erhoeht das Matching nicht, waechst aber trotzdem steuerbeguenstigt.</p>
+
+                    <div class="calculator-cta">
+                        <h3>Berechnen Sie Ihren optimalen Beitrag</h3>
+                        <p>Sehen Sie, wie verschiedene Beitragssaetze Ihre Altersvorsorge beeinflussen.</p>
+                        <a href="/calculators/401k.html" class="cta-btn">Altersvorsorge-Rechner →</a>
+                    </div>
+
+                    <h2>Empfohlener Beitrag nach Einkommensniveau</h2>
+
+                    <h3>Berufseinsteiger (40.000 - 60.000 €)</h3>
+                    <ul>
+                        <li><strong>Minimum:</strong> Genug fuer volles Arbeitgeber-Matching (typischerweise 3-6%)</li>
+                        <li><strong>Ziel:</strong> 10-12% des Gehalts</li>
+                        <li><strong>Prioritaet:</strong> Erst Notgroschen aufbauen, dann Altersvorsorge erhoehen</li>
+                    </ul>
+
+                    <h3>Mitte der Karriere (60.000 - 100.000 €)</h3>
+                    <ul>
+                        <li><strong>Minimum:</strong> Volles Arbeitgeber-Matching</li>
+                        <li><strong>Ziel:</strong> 15% des Gehalts (einschliesslich Arbeitgeber-Matching)</li>
+                        <li><strong>Strategie:</strong> Ruerup-Rente ausschoepfen (7.000 €), dann betriebliche Altersvorsorge erhoehen</li>
+                    </ul>
+
+                    <h3>Gutverdiener (100.000 €+)</h3>
+                    <ul>
+                        <li><strong>Ziel:</strong> Betriebliche Altersvorsorge ausschoepfen (23.500 €)</li>
+                        <li><strong>Strategie:</strong> Auch Ruerup-Rente ausschoepfen wenn berechtigt</li>
+                        <li><strong>Bonus:</strong> Zusaetzliche Anlageoptionen pruefen</li>
+                    </ul>
+
+                    <h2>Die 15%-Regel</h2>
+                    <p>Finanzexperten empfehlen generell, <strong>15% Ihres Bruttoeinkommens</strong> fuer die Altersvorsorge zu sparen, einschliesslich Arbeitgeber-Matching. So sieht das aufgeschluesselt aus:</p>
+
+                    <table>
+                        <tr>
+                            <th>Gehalt</th>
+                            <th>15% Ziel</th>
+                            <th>Monatlicher Betrag</th>
+                        </tr>
+                        <tr>
+                            <td>50.000 €</td>
+                            <td>7.500 €/Jahr</td>
+                            <td>625 €/Monat</td>
+                        </tr>
+                        <tr>
+                            <td>75.000 €</td>
+                            <td>11.250 €/Jahr</td>
+                            <td>938 €/Monat</td>
+                        </tr>
+                        <tr>
+                            <td>100.000 €</td>
+                            <td>15.000 €/Jahr</td>
+                            <td>1.250 €/Monat</td>
+                        </tr>
+                        <tr>
+                            <td>150.000 €</td>
+                            <td>22.500 €/Jahr</td>
+                            <td>1.875 €/Monat</td>
+                        </tr>
+                    </table>
+
+                    <h2>Klassische vs. Ruerup-Altersvorsorge</h2>
+                    <p>Viele Arbeitgeber bieten mittlerweile beide Optionen an. So waehlen Sie:</p>
+
+                    <h3>Waehlen Sie klassische Altersvorsorge, wenn:</h3>
+                    <ul>
+                        <li>Sie jetzt in einer hohen Steuerklasse sind (24%+)</li>
+                        <li>Sie im Ruhestand niedrigeres Einkommen erwarten</li>
+                        <li>Sie das aktuelle zu versteuernde Einkommen reduzieren moechten</li>
+                        <li>Sie kurz vor dem Ruhestand stehen</li>
+                    </ul>
+
+                    <h3>Waehlen Sie Ruerup-Altersvorsorge, wenn:</h3>
+                    <ul>
+                        <li>Sie jetzt in einer niedrigeren Steuerklasse sind (12-22%)</li>
+                        <li>Sie im Ruhestand hoeheres Einkommen erwarten</li>
+                        <li>Sie steuerfreie Auszahlungen im Ruhestand wuenschen</li>
+                        <li>Sie jung sind mit Jahrzehnten Wachstum vor sich</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Profi-Tipp: Teilen Sie Ihre Beitraege auf</h4>
+                        <p>Erwaegen Sie, zwischen klassischer und Ruerup-Altersvorsorge aufzuteilen fuer Steuerdiversifikation. Das gibt Ihnen Flexibilitaet im Ruhestand, um Ihre Steuerklasse zu steuern.</p>
+                    </div>
+
+                    <h2>So erhoehen Sie Ihren Beitrag</h2>
+                    <p>Wenn Sie 15% nicht sofort erreichen koennen, nutzen Sie diese Strategien:</p>
+
+                    <h3>1. Beginnen Sie mit dem Matching</h3>
+                    <p>Beginnen Sie damit, genug einzuzahlen, um das volle Arbeitgeber-Matching zu erhalten. Das ist eine sofortige 50-100% Rendite auf Ihr Geld.</p>
+
+                    <h3>2. Erhoehen Sie jaehrlich um 1%</h3>
+                    <p>Steigern Sie Ihren Beitrag jaehrlich um 1%. Sie werden den Unterschied in Ihrem Gehalt kaum bemerken, aber es summiert sich erheblich ueber die Zeit.</p>
+
+                    <h3>3. Sparen Sie Ihre Gehaltserhoehungen</h3>
+                    <p>Wenn Sie eine Gehaltserhoehung bekommen, erhoehen Sie Ihren Altersvorsorgebeitrag um die Haelfte des Erhoehungsbetrags. Sie bekommen trotzdem mehr Netto, aber Sie sparen auch mehr.</p>
+
+                    <h3>4. Nutzen Sie Sonderzahlungen</h3>
+                    <p>Steuerrueckerstattungen, Boni und Geschenke koennen Ihre Altersvorsorge steigern. Erwaegen Sie, Ihren Beitragssatz voruebergehend zu erhoehen.</p>
+
+                    <h2>Was, wenn Sie sich 15% nicht leisten koennen?</h2>
+                    <p>Lassen Sie nicht zu, dass Perfektion der Feind des Guten ist. Jeder Betrag hilft:</p>
+                    <ul>
+                        <li><strong>3%:</strong> Besser als nichts, bekommt etwas Arbeitgeber-Matching</li>
+                        <li><strong>6%:</strong> Erfasst normalerweise das volle Arbeitgeber-Matching</li>
+                        <li><strong>10%:</strong> Solide Grundlage fuer den Ruhestand</li>
+                        <li><strong>15%:</strong> Auf Kurs fuer komfortablen Ruhestand</li>
+                        <li><strong>20%+:</strong> Frueherer Ruhestand moeglich</li>
+                    </ul>
+
+                    <h2>Die Kraft des fruehen Anfangens</h2>
+                    <p>Zeit ist Ihr groesstes Kapital. So waechst 500 €/Monat bei durchschnittlich 7% Rendite:</p>
+
+                    <table>
+                        <tr>
+                            <th>Startalter</th>
+                            <th>Jahre bis 65</th>
+                            <th>Gesamt mit 65</th>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>40 Jahre</td>
+                            <td>1.320.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>30 Jahre</td>
+                            <td>610.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>20 Jahre</td>
+                            <td>260.000 €</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td>10 Jahre</td>
+                            <td>87.000 €</td>
+                        </tr>
+                    </table>
+
+                    <p>Mit 25 statt 35 anzufangen verdoppelt Ihre Altersvorsorge mehr als bei gleichem monatlichen Beitrag.</p>
+
+                    <div class="calculator-cta">
+                        <h3>Sehen Sie Ihre Ruhestandsprognose</h3>
+                        <p>Berechnen Sie, wie Ihre Altersvorsorge basierend auf Ihrem Beitragssatz wachsen wird.</p>
+                        <a href="/calculators/401k.html" class="cta-btn">Altersvorsorge-Rechner →</a>
+                    </div>
+
+                    <h2>Handlungsschritte fuer 2026</h2>
+                    <ol>
+                        <li><strong>Pruefen Sie Ihren aktuellen Beitragssatz</strong> in Ihrem HR-Portal</li>
+                        <li><strong>Stellen Sie sicher, dass Sie das volle Arbeitgeber-Matching erhalten</strong></li>
+                        <li><strong>Erhoehen Sie Ihren Beitrag um mindestens 1%</strong></li>
+                        <li><strong>Erwaegen Sie klassisch vs. Ruerup</strong> basierend auf Ihrer Steuersituation</li>
+                        <li><strong>Ueberpruefen Sie Ihre Anlageallokation</strong> - Zielfonds sind ein guter Standard</li>
+                        <li><strong>Setzen Sie eine Erinnerung</strong>, um naechstes Jahr wieder zu erhoehen</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Verwandte Artikel</h3>
+                <div class="related-grid">
+                    <a href="debt-snowball-vs-avalanche.html" class="related-card">
+                        <h4>Schulden-Schneeball vs. Lawine</h4>
+                        <p>Schulden abbezahlen waehrend Sie fuer den Ruhestand sparen.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Notgroschen-Ratgeber</h4>
+                        <p>Bauen Sie Ihr Sicherheitsnetz neben der Altersvorsorge auf.</p>
+                    </a>
+                    <a href="freelancer-self-employment-tax-guide.html" class="related-card">
+                        <h4>Altersvorsorge fuer Selbststaendige</h4>
+                        <p>Ruerup-Rente und andere Optionen fuer Freiberufler.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. Alle Rechte vorbehalten.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Datenschutzerklaerung</a>
+                <a href="/terms.html">Nutzungsbedingungen</a>
+            </p>
+            <p class="disclaimer">Haftungsausschluss: Dieser Inhalt dient nur zu Informationszwecken. Konsultieren Sie einen qualifizierten Finanzberater fuer persoenliche Beratung.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

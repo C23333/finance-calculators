@@ -114,13 +114,13 @@ function calculateSocialSecurity(shouldScroll = false) {
     }
 
     // Display results
-    document.getElementById('monthlyBenefit').textContent = formatCurrency(monthlyBenefit);
-    document.getElementById('annualBenefit').textContent = formatCurrency(monthlyBenefit * 12);
+    document.getElementById('monthlyBenefit').textContent = I18n.formatCurrency(monthlyBenefit, { decimals: 0 });
+    document.getElementById('annualBenefit').textContent = I18n.formatCurrency(monthlyBenefit * 12, { decimals: 0 });
     document.getElementById('fullRetirementAge').textContent = formatAge(fra);
-    document.getElementById('benefitAt62').textContent = formatCurrency(benefitAt62);
-    document.getElementById('benefitAtFRA').textContent = formatCurrency(benefitAtFRA);
-    document.getElementById('benefitAt70').textContent = formatCurrency(benefitAt70);
-    document.getElementById('lifetimeBenefits').textContent = formatCurrency(lifetimeBenefits);
+    document.getElementById('benefitAt62').textContent = I18n.formatCurrency(benefitAt62, { decimals: 0 });
+    document.getElementById('benefitAtFRA').textContent = I18n.formatCurrency(benefitAtFRA, { decimals: 0 });
+    document.getElementById('benefitAt70').textContent = I18n.formatCurrency(benefitAt70, { decimals: 0 });
+    document.getElementById('lifetimeBenefits').textContent = I18n.formatCurrency(lifetimeBenefits, { decimals: 0 });
     document.getElementById('breakEvenAge').textContent = breakEvenAge ? `Age ${breakEvenAge}` : 'N/A';
 
     // Build comparison table
@@ -137,9 +137,9 @@ function calculateSocialSecurity(shouldScroll = false) {
         return `
             <tr>
                 <td>${s.label}</td>
-                <td>${formatCurrency(s.benefit)}</td>
-                <td>${formatCurrency(s.benefit * 12)}</td>
-                <td>${formatCurrency(lifetime)}</td>
+                <td>${I18n.formatCurrency(s.benefit, { decimals: 0 })}</td>
+                <td>${I18n.formatCurrency(s.benefit * 12, { decimals: 0 })}</td>
+                <td>${I18n.formatCurrency(lifetime, { decimals: 0 })}</td>
             </tr>
         `;
     }).join('');
@@ -150,21 +150,20 @@ function calculateSocialSecurity(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
-
 function formatAge(age) {
     const years = Math.floor(age);
     const months = Math.round((age - years) * 12);
     if (months === 0) return `${years}`;
     return `${years} and ${months} months`;
 }
+
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update currency formatting
+    if (document.getElementById('results').style.display !== 'none') {
+        calculateSocialSecurity(false);
+    }
+});
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {

@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Social Security Benefits Calculator - Estimate Your Retirement Benefits</title>
-    <meta name="description" content="Calculate your estimated Social Security retirement benefits based on your earnings history and retirement age. Plan your retirement income strategy.">
+    <title>Social Security Calculator 2026 - Estimate Retirement Benefits | FinCalc</title>
+    <meta name="description" content="Free Social Security calculator for 2026. Estimate your retirement benefits based on earnings history and retirement age. Plan when to claim for maximum benefits.">
     <meta name="keywords" content="social security calculator, retirement benefits, SSA benefits, social security estimate, retirement planning">
     <link rel="canonical" href="https://financecalc.cc/calculators/social-security.html">
 
@@ -31,6 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -42,9 +43,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -52,105 +53,109 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calculator-page">
         <div class="container">
+            <nav class="breadcrumb">
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.socialSecurity.breadcrumb">Social Security Calculator</span></span>
+            </nav>
+
             <div class="calculator-header">
-                <h1>Social Security Benefits Calculator</h1>
-                <p>Estimate your Social Security retirement benefits based on your earnings and planned retirement age</p>
+                <h1 data-i18n="calculators.socialSecurity.title">Social Security Benefits Calculator</h1>
+                <p data-i18n="calculators.socialSecurity.pageDescription">Estimate your Social Security retirement benefits based on your earnings and planned retirement age</p>
             </div>
 
             <div class="calculator-layout">
                 <div class="calculator-main">
                     <div class="card" id="calculator">
-                        <h2>Calculate Your Benefits</h2>
+                        <h2 data-i18n="calculators.socialSecurity.calculate">Calculate Your Benefits</h2>
                         <form id="socialSecurityForm" class="calculator-form">
                             <div class="form-group">
-                                <label for="currentAge">Current Age</label>
+                                <label for="currentAge" data-i18n="calculators.socialSecurity.currentAge">Current Age</label>
                                 <input type="number" id="currentAge" min="22" max="70" value="45" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="birthYear">Birth Year</label>
+                                <label for="birthYear" data-i18n="calculators.socialSecurity.birthYear">Birth Year</label>
                                 <input type="number" id="birthYear" min="1940" max="2004" value="1980" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="retirementAge">Planned Retirement Age</label>
+                                <label for="retirementAge" data-i18n="calculators.socialSecurity.retirementAge">Planned Retirement Age</label>
                                 <select id="retirementAge" required>
-                                    <option value="62">62 (Early - Reduced Benefits)</option>
-                                    <option value="67" selected>67 (Full Retirement Age)</option>
-                                    <option value="70">70 (Delayed - Maximum Benefits)</option>
+                                    <option value="62" data-i18n="calculators.socialSecurity.retirementAge62">62 (Early - Reduced Benefits)</option>
+                                    <option value="67" selected data-i18n="calculators.socialSecurity.retirementAge67">67 (Full Retirement Age)</option>
+                                    <option value="70" data-i18n="calculators.socialSecurity.retirementAge70">70 (Delayed - Maximum Benefits)</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="averageEarnings">Average Annual Earnings (Last 35 Years)</label>
+                                <label for="averageEarnings" data-i18n="calculators.socialSecurity.averageEarnings">Average Annual Earnings (Last 35 Years)</label>
                                 <input type="number" id="averageEarnings" min="0" value="65000" required>
-                                <small>Your average indexed monthly earnings will be calculated</small>
+                                <small data-i18n="calculators.socialSecurity.averageEarningsHint">Your average indexed monthly earnings will be calculated</small>
                             </div>
 
                             <div class="form-group">
-                                <label for="currentEarnings">Current Annual Earnings</label>
+                                <label for="currentEarnings" data-i18n="calculators.socialSecurity.currentEarnings">Current Annual Earnings</label>
                                 <input type="number" id="currentEarnings" min="0" value="75000" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="expectedRaise">Expected Annual Raise (%)</label>
+                                <label for="expectedRaise" data-i18n="calculators.socialSecurity.expectedRaise">Expected Annual Raise (%)</label>
                                 <input type="number" id="expectedRaise" min="0" max="10" step="0.1" value="2.5" required>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Calculate Benefits</button>
+                            <button type="submit" class="btn btn-primary btn-block" data-i18n="calculators.socialSecurity.calculate">Calculate Benefits</button>
                         </form>
                     </div>
 
                     <div class="card results-card" id="results" style="display: none;">
-                        <h2>Your Estimated Benefits</h2>
+                        <h2 data-i18n="calculators.socialSecurity.resultsTitle">Your Estimated Benefits</h2>
                         <div class="results-grid">
                             <div class="result-item highlight">
-                                <span class="result-label">Monthly Benefit at Retirement</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.monthlyBenefit">Monthly Benefit at Retirement</span>
                                 <span class="result-value" id="monthlyBenefit">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Annual Benefit</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.annualBenefit">Annual Benefit</span>
                                 <span class="result-value" id="annualBenefit">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Full Retirement Age (FRA)</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.fullRetirementAge">Full Retirement Age (FRA)</span>
                                 <span class="result-value" id="fullRetirementAge">67</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Benefit at Age 62</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.benefitAt62">Benefit at Age 62</span>
                                 <span class="result-value" id="benefitAt62">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Benefit at FRA</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.benefitAtFRA">Benefit at FRA</span>
                                 <span class="result-value" id="benefitAtFRA">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Benefit at Age 70</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.benefitAt70">Benefit at Age 70</span>
                                 <span class="result-value" id="benefitAt70">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Lifetime Benefits (to Age 85)</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.lifetimeBenefits">Lifetime Benefits (to Age 85)</span>
                                 <span class="result-value" id="lifetimeBenefits">$0</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Break-Even Age vs Early</span>
+                                <span class="result-label" data-i18n="calculators.socialSecurity.breakEvenAge">Break-Even Age vs Early</span>
                                 <span class="result-value" id="breakEvenAge">--</span>
                             </div>
                         </div>
 
                         <div class="comparison-table">
-                            <h3>Retirement Age Comparison</h3>
+                            <h3 data-i18n="calculators.socialSecurity.comparisonTitle">Retirement Age Comparison</h3>
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Retirement Age</th>
-                                        <th>Monthly Benefit</th>
-                                        <th>Annual Benefit</th>
-                                        <th>Lifetime (to 85)</th>
+                                        <th data-i18n="calculators.socialSecurity.comparisonRetirementAge">Retirement Age</th>
+                                        <th data-i18n="calculators.socialSecurity.comparisonMonthlyBenefit">Monthly Benefit</th>
+                                        <th data-i18n="calculators.socialSecurity.comparisonAnnualBenefit">Annual Benefit</th>
+                                        <th data-i18n="calculators.socialSecurity.comparisonLifetime">Lifetime (to 85)</th>
                                     </tr>
                                 </thead>
                                 <tbody id="comparisonBody">
@@ -162,58 +167,58 @@
 
                 <div class="calculator-sidebar">
                     <div class="card">
-                        <h3>Understanding Social Security</h3>
+                        <h3 data-i18n="calculators.socialSecurity.understandingTitle">Understanding Social Security</h3>
                         <ul class="info-list">
-                            <li><strong>Full Retirement Age:</strong> 67 for those born 1960 or later</li>
-                            <li><strong>Early Retirement:</strong> Benefits reduced ~6.67% per year before FRA</li>
-                            <li><strong>Delayed Retirement:</strong> Benefits increase 8% per year after FRA until 70</li>
-                            <li><strong>AIME:</strong> Average Indexed Monthly Earnings from highest 35 years</li>
+                            <li><strong data-i18n="calculators.socialSecurity.understandingFRA">Full Retirement Age:</strong> <span data-i18n="calculators.socialSecurity.understandingFRADesc">67 for those born 1960 or later</span></li>
+                            <li><strong data-i18n="calculators.socialSecurity.understandingEarly">Early Retirement:</strong> <span data-i18n="calculators.socialSecurity.understandingEarlyDesc">Benefits reduced ~6.67% per year before FRA</span></li>
+                            <li><strong data-i18n="calculators.socialSecurity.understandingDelayed">Delayed Retirement:</strong> <span data-i18n="calculators.socialSecurity.understandingDelayedDesc">Benefits increase 8% per year after FRA until 70</span></li>
+                            <li><strong data-i18n="calculators.socialSecurity.understandingAIME">AIME:</strong> <span data-i18n="calculators.socialSecurity.understandingAIMEDesc">Average Indexed Monthly Earnings from highest 35 years</span></li>
                         </ul>
                     </div>
 
                     <div class="card">
-                        <h3>2024 Social Security Facts</h3>
+                        <h3 data-i18n="calculators.socialSecurity.factsTitle">2024 Social Security Facts</h3>
                         <ul class="info-list">
-                            <li>Maximum benefit at FRA: $3,822/month</li>
-                            <li>Maximum taxable earnings: $168,600</li>
-                            <li>COLA adjustment: 3.2%</li>
-                            <li>Social Security tax rate: 6.2%</li>
+                            <li data-i18n="calculators.socialSecurity.factsMaxBenefit">Maximum benefit at FRA: $3,822/month</li>
+                            <li data-i18n="calculators.socialSecurity.factsMaxEarnings">Maximum taxable earnings: $168,600</li>
+                            <li data-i18n="calculators.socialSecurity.factsCOLA">COLA adjustment: 3.2%</li>
+                            <li data-i18n="calculators.socialSecurity.factsTaxRate">Social Security tax rate: 6.2%</li>
                         </ul>
                     </div>
 
                     <div class="card policy-links">
-                        <h3>Official Resources</h3>
-                        <p>Get accurate information from official sources:</p>
-                        <a href="https://www.google.com/search?q=SSA+my+social+security+account" target="_blank" class="btn btn-outline btn-block">My Social Security Account</a>
-                        <a href="https://www.google.com/search?q=social+security+retirement+benefits+eligibility" target="_blank" class="btn btn-outline btn-block">Eligibility Requirements</a>
-                        <a href="https://www.google.com/search?q=social+security+spousal+benefits" target="_blank" class="btn btn-outline btn-block">Spousal Benefits</a>
-                        <a href="https://www.google.com/search?q=social+security+survivor+benefits" target="_blank" class="btn btn-outline btn-block">Survivor Benefits</a>
+                        <h3 data-i18n="calculators.socialSecurity.resourcesTitle">Official Resources</h3>
+                        <p data-i18n="calculators.socialSecurity.resourcesDescription">Get accurate information from official sources:</p>
+                        <a href="https://www.google.com/search?q=SSA+my+social+security+account" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.socialSecurity.resourceMyAccount">My Social Security Account</a>
+                        <a href="https://www.google.com/search?q=social+security+retirement+benefits+eligibility" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.socialSecurity.resourceEligibility">Eligibility Requirements</a>
+                        <a href="https://www.google.com/search?q=social+security+spousal+benefits" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.socialSecurity.resourceSpousal">Spousal Benefits</a>
+                        <a href="https://www.google.com/search?q=social+security+survivor+benefits" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.socialSecurity.resourceSurvivor">Survivor Benefits</a>
                     </div>
                 </div>
             </div>
 
             <section class="card" id="guide">
-                <h2>Social Security Benefits Guide</h2>
+                <h2 data-i18n="calculators.socialSecurity.guideTitle">Social Security Benefits Guide</h2>
                 <div class="guide-content">
-                    <h3>How Benefits Are Calculated</h3>
-                    <p>Social Security benefits are based on your 35 highest-earning years. The Social Security Administration (SSA) calculates your Average Indexed Monthly Earnings (AIME) and applies a formula to determine your Primary Insurance Amount (PIA).</p>
+                    <h3 data-i18n="calculators.socialSecurity.guideHowCalculated">How Benefits Are Calculated</h3>
+                    <p data-i18n="calculators.socialSecurity.guideHowCalculatedText">Social Security benefits are based on your 35 highest-earning years. The Social Security Administration (SSA) calculates your Average Indexed Monthly Earnings (AIME) and applies a formula to determine your Primary Insurance Amount (PIA).</p>
 
-                    <h3>The PIA Formula (2024)</h3>
+                    <h3 data-i18n="calculators.socialSecurity.guidePIAFormula">The PIA Formula (2024)</h3>
                     <ul>
-                        <li>90% of the first $1,174 of AIME</li>
-                        <li>32% of AIME between $1,174 and $7,078</li>
-                        <li>15% of AIME above $7,078</li>
+                        <li data-i18n="calculators.socialSecurity.guidePIA1">90% of the first $1,174 of AIME</li>
+                        <li data-i18n="calculators.socialSecurity.guidePIA2">32% of AIME between $1,174 and $7,078</li>
+                        <li data-i18n="calculators.socialSecurity.guidePIA3">15% of AIME above $7,078</li>
                     </ul>
 
-                    <h3>When to Claim Benefits</h3>
-                    <p>The decision of when to claim Social Security is personal and depends on factors like health, other income sources, and life expectancy. Claiming early provides income sooner but at a permanently reduced rate. Delaying until 70 maximizes your monthly benefit.</p>
+                    <h3 data-i18n="calculators.socialSecurity.guideWhenToClaim">When to Claim Benefits</h3>
+                    <p data-i18n="calculators.socialSecurity.guideWhenToClaimText">The decision of when to claim Social Security is personal and depends on factors like health, other income sources, and life expectancy. Claiming early provides income sooner but at a permanently reduced rate. Delaying until 70 maximizes your monthly benefit.</p>
 
-                    <h3>Important Considerations</h3>
+                    <h3 data-i18n="calculators.socialSecurity.guideConsiderations">Important Considerations</h3>
                     <ul>
-                        <li><strong>Working while receiving benefits:</strong> If you claim before FRA and continue working, benefits may be temporarily reduced</li>
-                        <li><strong>Taxation:</strong> Up to 85% of benefits may be taxable depending on your total income</li>
-                        <li><strong>Spousal benefits:</strong> You may be eligible for benefits based on your spouse's record</li>
-                        <li><strong>Survivor benefits:</strong> Your spouse may receive benefits based on your record after your death</li>
+                        <li><strong data-i18n="calculators.socialSecurity.guideWorking">Working while receiving benefits:</strong> <span data-i18n="calculators.socialSecurity.guideWorkingDesc">If you claim before FRA and continue working, benefits may be temporarily reduced</span></li>
+                        <li><strong data-i18n="calculators.socialSecurity.guideTaxation">Taxation:</strong> <span data-i18n="calculators.socialSecurity.guideTaxationDesc">Up to 85% of benefits may be taxable depending on your total income</span></li>
+                        <li><strong data-i18n="calculators.socialSecurity.guideSpousal">Spousal benefits:</strong> <span data-i18n="calculators.socialSecurity.guideSpousalDesc">You may be eligible for benefits based on your spouse's record</span></li>
+                        <li><strong data-i18n="calculators.socialSecurity.guideSurvivor">Survivor benefits:</strong> <span data-i18n="calculators.socialSecurity.guideSurvivorDesc">Your spouse may receive benefits based on your record after your death</span></li>
                     </ul>
                 </div>
             </section>
@@ -222,7 +227,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 FinCalc. For educational purposes only. Consult the SSA for official benefit estimates.</p>
+            <p><span data-i18n="footer.copyright">&copy; 2026 FinCalc.</span> <span data-i18n="calculators.socialSecurity.footerDisclaimer">For educational purposes only. Consult the SSA for official benefit estimates.</span></p>
         </div>
     </footer>
 
@@ -232,6 +237,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/social-security.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

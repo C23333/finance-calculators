@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Student Loan Calculator - Plan Your Repayment</title>
-    <meta name="description" content="Free student loan calculator. Calculate monthly payments, explore repayment plans, and see total interest costs.">
+    <title>Student Loan Calculator 2026 - Repayment Plans & Forgiveness | FinCalc</title>
+    <meta name="description" content="Free student loan calculator for 2026. Calculate monthly payments, explore repayment plans including SAVE, and see total interest costs. Plan your path to debt freedom.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -40,9 +41,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -50,29 +51,29 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Student Loan Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.studentLoan.breadcrumb">Student Loan Calculator</span></span>
             </nav>
 
-            <h1>Student Loan Calculator</h1>
-            <p>Calculate your student loan payments and explore different repayment strategies.</p>
+            <h1 data-i18n="calculators.studentLoan.title">Student Loan Calculator</h1>
+            <p data-i18n="calculators.studentLoan.pageDescription">Calculate your student loan payments and explore different repayment strategies.</p>
 
             <div class="calculator">
                 <form id="studentLoanForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="loanBalance">Total Loan Balance</label>
+                            <label for="loanBalance" data-i18n="calculators.studentLoan.loanBalance">Total Loan Balance</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="loanBalance" value="35000" min="0" step="1000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="interestRate">Interest Rate</label>
+                            <label for="interestRate" data-i18n="calculators.studentLoan.interestRate">Interest Rate</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="interestRate" value="5.5" min="0" max="15" step="0.1" required>
@@ -82,16 +83,16 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="repaymentPlan">Repayment Plan</label>
+                            <label for="repaymentPlan" data-i18n="calculators.studentLoan.repaymentPlan">Repayment Plan</label>
                             <select id="repaymentPlan">
-                                <option value="120">Standard (10 years)</option>
-                                <option value="180">Extended (15 years)</option>
-                                <option value="240">Extended (20 years)</option>
-                                <option value="300">Extended (25 years)</option>
+                                <option value="120" data-i18n="calculators.studentLoan.standard">Standard (10 years)</option>
+                                <option value="180" data-i18n="calculators.studentLoan.extended15">Extended (15 years)</option>
+                                <option value="240" data-i18n="calculators.studentLoan.extended20">Extended (20 years)</option>
+                                <option value="300" data-i18n="calculators.studentLoan.extended25">Extended (25 years)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="extraPayment">Extra Monthly Payment</label>
+                            <label for="extraPayment" data-i18n="calculators.studentLoan.extraPayment">Extra Monthly Payment</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="extraPayment" value="0" min="0" step="25">
@@ -99,30 +100,30 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="calculators.studentLoan.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="monthlyPayment">$0</div>
-                        <p>Monthly Payment</p>
+                        <p data-i18n="calculators.studentLoan.monthlyPayment">Monthly Payment</p>
                     </div>
 
                     <div class="result-cards">
                         <div class="result-card">
-                            <div class="label">Total Interest</div>
+                            <div class="label" data-i18n="calculators.studentLoan.totalInterest">Total Interest</div>
                             <div class="value" id="totalInterest">$0</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Total Cost</div>
+                            <div class="label" data-i18n="calculators.studentLoan.totalCost">Total Cost</div>
                             <div class="value" id="totalCost">$0</div>
                         </div>
                         <div class="result-card success">
-                            <div class="label">Payoff Date</div>
+                            <div class="label" data-i18n="calculators.studentLoan.payoffDate">Payoff Date</div>
                             <div class="value" id="payoffDate">-</div>
                         </div>
                         <div class="result-card">
-                            <div class="label">Interest Saved</div>
+                            <div class="label" data-i18n="calculators.studentLoan.interestSaved">Interest Saved</div>
                             <div class="value" id="interestSaved">$0</div>
                         </div>
                     </div>
@@ -132,49 +133,49 @@
             <div class="policy-links">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Student Loan Resources
+                    <span data-i18n="calculators.studentLoan.resourcesTitle">Student Loan Resources</span>
                 </h3>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=PSLF+public+service+loan+forgiveness+requirements" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        PSLF Forgiveness
+                        <span data-i18n="calculators.studentLoan.pslfForgiveness">PSLF Forgiveness</span>
                     </a>
                     <a href="https://www.google.com/search?q=income+driven+repayment+plans+IDR" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Income-Driven Plans
+                        <span data-i18n="calculators.studentLoan.incomeDrivenPlans">Income-Driven Plans</span>
                     </a>
                     <a href="https://www.google.com/search?q=student+loan+interest+deduction+tax" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Interest Tax Deduction
+                        <span data-i18n="calculators.studentLoan.interestTaxDeduction">Interest Tax Deduction</span>
                     </a>
                     <a href="https://www.google.com/search?q=student+loan+refinance+rates+2026" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Refinance Rates
+                        <span data-i18n="calculators.studentLoan.refinanceRates">Refinance Rates</span>
                     </a>
                     <a href="https://www.google.com/search?q=SAVE+plan+student+loans" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        SAVE Plan Details
+                        <span data-i18n="calculators.studentLoan.savePlanDetails">SAVE Plan Details</span>
                     </a>
                     <a href="https://www.google.com/search?q=federal+student+loan+deferment+forbearance" target="_blank" rel="noopener" class="policy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Deferment Options
+                        <span data-i18n="calculators.studentLoan.defermentOptions">Deferment Options</span>
                     </a>
                 </div>
             </div>
 
             <article class="content">
-                <h2>Student Loan Repayment Strategies</h2>
-                <h3>Federal Loan Options</h3>
+                <h2 data-i18n="calculators.studentLoan.articleTitle">Student Loan Repayment Strategies</h2>
+                <h3 data-i18n="calculators.studentLoan.federalLoanOptions">Federal Loan Options</h3>
                 <ul>
-                    <li><strong>Standard Repayment:</strong> Fixed payments over 10 years</li>
-                    <li><strong>Income-Driven:</strong> Payments based on income (IBR, PAYE, SAVE)</li>
-                    <li><strong>PSLF:</strong> Forgiveness after 10 years of public service</li>
+                    <li><strong data-i18n="calculators.studentLoan.standardRepayment">Standard Repayment:</strong> <span data-i18n="calculators.studentLoan.standardRepaymentDesc">Fixed payments over 10 years</span></li>
+                    <li><strong data-i18n="calculators.studentLoan.incomeDriven">Income-Driven:</strong> <span data-i18n="calculators.studentLoan.incomeDrivenDesc">Payments based on income (IBR, PAYE, SAVE)</span></li>
+                    <li><strong data-i18n="calculators.studentLoan.pslf">PSLF:</strong> <span data-i18n="calculators.studentLoan.pslfDesc">Forgiveness after 10 years of public service</span></li>
                 </ul>
-                <h3>Tips to Pay Off Faster</h3>
+                <h3 data-i18n="calculators.studentLoan.tipsTitle">Tips to Pay Off Faster</h3>
                 <ul>
-                    <li>Make payments during grace period</li>
-                    <li>Pay more than the minimum when possible</li>
-                    <li>Consider refinancing for lower rates (but lose federal benefits)</li>
+                    <li data-i18n="calculators.studentLoan.tip1">Make payments during grace period</li>
+                    <li data-i18n="calculators.studentLoan.tip2">Pay more than the minimum when possible</li>
+                    <li data-i18n="calculators.studentLoan.tip3">Consider refinancing for lower rates (but lose federal benefits)</li>
                 </ul>
             </article>
         </div>
@@ -182,7 +183,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
         </div>
     </footer>
 
@@ -192,6 +193,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/student-loan.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

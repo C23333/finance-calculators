@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>مدونة التخطيط المالي - نصائح وأدلة وحاسبات | FinCalc</title>
+    <meta name="description" content="أدلة التخطيط المالي المتخصصة، نصائح لتوفير المال، ونصائح عملية حول الرهون العقارية، سداد الديون، التخطيط للتقاعد، والمزيد. حاسبات مجانية متضمنة.">
+    <meta name="keywords" content="مدونة التخطيط المالي, نصائح مالية, دليل الرهن العقاري, استراتيجيات سداد الديون, التخطيط للتقاعد, نصائح الاستثمار">
+    <link rel="canonical" href="https://financecalc.cc/blog/ar/">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="مدونة التخطيط المالي - FinCalc">
+    <meta property="og:description" content="أدلة التخطيط المالي المتخصصة ونصائح مالية عملية مع حاسبات مجانية.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://financecalc.cc/blog/ar/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "مدونة FinCalc للتخطيط المالي",
+        "description": "أدلة التخطيط المالي المتخصصة ونصائح مالية عملية",
+        "url": "https://financecalc.cc/blog/ar/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="تبديل القائمة" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators" data-i18n="nav.calculators">الحاسبات</a></li>
+                <li><a href="/blog/ar/" class="active" data-i18n="nav.blog">المدونة</a></li>
+                <li><a href="/#about" data-i18n="nav.about">حول</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="blog-hero">
+            <div class="container">
+                <h1 data-i18n="blog.title">مدونة التخطيط المالي</h1>
+                <p data-i18n="blog.subtitle">أدلة متخصصة، نصائح عملية، ومشورة قابلة للتنفيذ لمساعدتك على اتخاذ قرارات مالية أذكى.</p>
+            </div>
+        </section>
+
+        <section class="blog-grid">
+            <div class="container">
+                <h2 data-i18n="blog.latestArticles">أحدث المقالات</h2>
+
+                <div class="blog-posts">
+                    <!-- Article 1 -->
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🏠</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.homeBuying">شراء المنزل</span>
+                                <span>8 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>كم منزلاً يمكنني تحمله براتب 80,000 دولار؟</h2>
+                            <p>دليل شامل لحساب ميزانية شراء منزلك بناءً على دخلك، مع أمثلة حقيقية ونصائح الخبراء.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="debt-snowball-vs-avalanche.html" class="blog-card">
+                        <div class="blog-card-image">💳</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.debtPayoff">سداد الديون</span>
+                                <span>10 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>كرة الثلج مقابل الانهيار الجليدي: أي طريقة أفضل؟</h2>
+                            <p>قارن بين أكثر استراتيجيتين شيوعاً لسداد الديون واكتشف أيهما سيساعدك على التخلص من الديون بشكل أسرع.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="401k-contribution-calculator-2025.html" class="blog-card">
+                        <div class="blog-card-image">📋</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">التقاعد</span>
+                                <span>7 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>كم يجب أن أساهم في 401(k) في 2026؟</h2>
+                            <p>عظّم مدخراتك التقاعدية مع حدود المساهمة المحدثة لعام 2026 واستراتيجيات لكل مستوى دخل.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="first-time-homebuyer-mortgage-guide.html" class="blog-card">
+                        <div class="blog-card-image">🔑</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.mortgages">الرهون العقارية</span>
+                                <span>12 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>الدليل الشامل للرهن العقاري لمشتري المنزل لأول مرة</h2>
+                            <p>كل ما تحتاج معرفته للحصول على رهنك العقاري الأول، من الموافقة المسبقة إلى يوم الإغلاق.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 5 -->
+                    <a href="freelancer-self-employment-tax-guide.html" class="blog-card">
+                        <div class="blog-card-image">📝</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.taxes">الضرائب</span>
+                                <span>9 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>دليل المستقل لضرائب العمل الحر</h2>
+                            <p>افهم ضرائب العمل الحر، المدفوعات الفصلية، والخصومات التي يجب أن يعرفها كل مستقل.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 6 -->
+                    <a href="emergency-fund-3-vs-6-months.html" class="blog-card">
+                        <div class="blog-card-image">🛡️</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.savings">المدخرات</span>
+                                <span>6 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>صندوق الطوارئ: هل تحتاج 3 أو 6 أشهر من النفقات؟</h2>
+                            <p>اكتشف بالضبط كم يجب أن تدخر في صندوق الطوارئ بناءً على وضعك الشخصي.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 7 -->
+                    <a href="how-much-car-can-i-afford-60k-salary.html" class="blog-card">
+                        <div class="blog-card-image">🚗</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.autoLoans">قروض السيارات</span>
+                                <span>7 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>كم سيارة يمكنني تحملها براتب 60,000 دولار؟</h2>
+                            <p>احسب ميزانية شراء سيارتك باستخدام قاعدة 20/4/10 واعثر على السيارة المناسبة لدخلك.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 8 -->
+                    <a href="how-to-pay-off-50000-student-loans.html" class="blog-card">
+                        <div class="blog-card-image">🎓</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.studentLoans">قروض الطلاب</span>
+                                <span>10 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>كيفية سداد 50,000 دولار من قروض الطلاب</h2>
+                            <p>استراتيجيات وخطط سداد للتعامل مع ديون الطلاب بشكل أسرع وتوفير آلاف الدولارات من الفوائد.</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+
+                    <!-- Article 9 -->
+                    <a href="retirement-calculator-teachers.html" class="blog-card">
+                        <div class="blog-card-image">👩‍🏫</div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-category" data-i18n="blog.categories.retirement">التقاعد</span>
+                                <span>8 <span data-i18n="blog.minRead">دقائق قراءة</span></span>
+                            </div>
+                            <h2>حاسبة التقاعد للمعلمين</h2>
+                            <p>اعتبارات خاصة للتخطيط للتقاعد للمعلمين، بما في ذلك مزايا المعاش وخيارات 403(b).</p>
+                            <span class="blog-card-link" data-i18n="blog.readMore">اقرأ المزيد ←</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 FinCalc. جميع الحقوق محفوظة.</p>
+            <p class="footer-links">
+                <a href="/privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                <a href="/terms.html" data-i18n="footer.terms">شروط الخدمة</a>
+            </p>
+            <p class="disclaimer" data-i18n="footer.disclaimer">إخلاء المسؤولية: هذا المحتوى لأغراض إعلامية فقط. استشر مستشاراً مالياً مؤهلاً للحصول على نصيحة شخصية.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

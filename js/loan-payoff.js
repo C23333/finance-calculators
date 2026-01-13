@@ -76,7 +76,18 @@ function calculatePayoff(balance, monthlyRate, payment) {
 }
 
 function formatCurrency(amount) {
-    if (amount === Infinity) return 'Never';
+    if (amount === Infinity) {
+        // Use i18n translation for "Never" if available
+        if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+            return I18n.t('calculators.loan.never');
+        }
+        return 'Never';
+    }
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return I18n.formatCurrency(amount, { decimals: 0 });
+    }
+    // Fallback to basic formatting
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -86,20 +97,50 @@ function formatCurrency(amount) {
 }
 
 function formatTime(months) {
-    if (months === Infinity) return 'Never';
-    if (months === 0) return '0 months';
+    if (months === Infinity) {
+        // Use i18n translation for "Never" if available
+        if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+            return I18n.t('calculators.loan.never');
+        }
+        return 'Never';
+    }
+    if (months === 0) {
+        if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+            return '0 ' + I18n.t('common.months');
+        }
+        return '0 months';
+    }
 
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
 
-    if (years === 0) {
-        return `${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
-    } else if (remainingMonths === 0) {
-        return `${years} year${years !== 1 ? 's' : ''}`;
+    // Get localized strings
+    let yearStr, monthStr;
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        yearStr = I18n.t('common.years');
+        monthStr = I18n.t('common.months');
     } else {
-        return `${years} year${years !== 1 ? 's' : ''}, ${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
+        yearStr = years !== 1 ? 'years' : 'year';
+        monthStr = remainingMonths !== 1 ? 'months' : 'month';
+    }
+
+    if (years === 0) {
+        return `${remainingMonths} ${monthStr}`;
+    } else if (remainingMonths === 0) {
+        return `${years} ${yearStr}`;
+    } else {
+        return `${years} ${yearStr}, ${remainingMonths} ${monthStr}`;
     }
 }
 
+// Listen for language changes and recalculate
+document.addEventListener('languageChange', function() {
+    // Recalculate to update formatted values with new locale
+    calculateLoanPayoff(false);
+});
+
 // Calculate on page load
 document.addEventListener('DOMContentLoaded', () => calculateLoanPayoff(false));
+
+// Also recalculate when i18n is ready (in case it loads after DOMContentLoaded)
+document.addEventListener('i18nReady', () => calculateLoanPayoff(false));

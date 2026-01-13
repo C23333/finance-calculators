@@ -77,15 +77,15 @@ function calculateAffordability(shouldScroll = false) {
     const dtiRatio = ((totalMonthlyPayment + monthlyDebts) / monthlyIncome) * 100;
     const downPaymentPercent = (downPayment / homePrice) * 100;
 
-    // Update results
-    document.getElementById('maxHomePrice').textContent = formatCurrency(homePrice);
-    document.getElementById('monthlyPayment').textContent = formatCurrency(totalMonthlyPayment);
-    document.getElementById('loanAmount').textContent = formatCurrency(loanAmount);
+    // Update results using I18n.formatCurrency
+    document.getElementById('maxHomePrice').textContent = I18n.formatCurrency(homePrice, { decimals: 0 });
+    document.getElementById('monthlyPayment').textContent = I18n.formatCurrency(totalMonthlyPayment, { decimals: 0 });
+    document.getElementById('loanAmount').textContent = I18n.formatCurrency(loanAmount, { decimals: 0 });
     document.getElementById('dtiRatio').textContent = dtiRatio.toFixed(1) + '%';
     document.getElementById('downPaymentPercent').textContent = downPaymentPercent.toFixed(1) + '%';
-    document.getElementById('principalInterest').textContent = formatCurrency(principalInterest);
-    document.getElementById('monthlyTax').textContent = formatCurrency(monthlyTax);
-    document.getElementById('monthlyInsurance').textContent = formatCurrency(monthlyInsurance);
+    document.getElementById('principalInterest').textContent = I18n.formatCurrency(principalInterest, { decimals: 0 });
+    document.getElementById('monthlyTax').textContent = I18n.formatCurrency(monthlyTax, { decimals: 0 });
+    document.getElementById('monthlyInsurance').textContent = I18n.formatCurrency(monthlyInsurance, { decimals: 0 });
 
     document.getElementById('results').classList.add('show');
     if (shouldScroll) {
@@ -93,13 +93,15 @@ function calculateAffordability(shouldScroll = false) {
     }
 }
 
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(amount);
-}
+// Calculate on page load with default values (without scrolling)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for i18n to be ready before calculating
+    if (I18n.isLoaded) {
+        calculateAffordability(false);
+    } else {
+        document.addEventListener('i18nReady', () => calculateAffordability(false));
+    }
+});
 
-document.addEventListener('DOMContentLoaded', () => calculateAffordability(false));
+// Recalculate when language changes to update currency formatting
+document.addEventListener('languageChange', () => calculateAffordability(false));

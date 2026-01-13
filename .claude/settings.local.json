@@ -7,7 +7,12 @@
       "WebFetch(domain:web.dev)",
       "WebFetch(domain:ahrefs.com)",
       "WebFetch(domain:www.webfx.com)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(node --check:*)",
+      "Bash(ls -la \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\"\" 2>/dev/null || echo \"Directory does not exist \")",
+      "Bash(ls \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\"\" 2>nul || echo \"Directory does not exist \")",
+      "Bash(if not exist \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\" mkdir \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\")",
+      "Bash(ls:*)"
     ]
   }
 }

@@ -18,8 +18,8 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Loan Payoff Calculator - Pay Off Debt Faster</title>
-    <meta name="description" content="Free loan payoff calculator. See how extra payments can help you pay off your loan faster and save thousands in interest.">
+    <title>Loan Payoff Calculator 2026 - Pay Off Debt Faster | FinCalc</title>
+    <meta name="description" content="Free loan payoff calculator for 2026. See how extra payments help you pay off loans faster and save thousands in interest. Create your accelerated payoff plan.">
     <meta name="keywords" content="loan payoff calculator, debt payoff calculator, extra payment calculator, loan amortization, pay off loan early">
     <link rel="canonical" href="https://financecalc.cc/calculators/loan-payoff.html">
 
@@ -44,6 +44,7 @@
     </script>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
     <header>
@@ -55,9 +56,9 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
+                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
+                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../#about" data-i18n="nav.about">About</a></li>
             </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
@@ -65,21 +66,21 @@
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
 
     <main id="main-content" class="calc-page">
         <div class="calc-container">
             <nav class="breadcrumb">
-                <a href="../">Home</a> <span>/ Loan Payoff Calculator</span>
+                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.loan.breadcrumb">Loan Payoff Calculator</span></span>
             </nav>
 
-            <h1>Loan Payoff Calculator</h1>
-            <p>See how extra payments can help you become debt-free faster and save money on interest.</p>
+            <h1 data-i18n="calculators.loan.title">Loan Payoff Calculator</h1>
+            <p data-i18n="calculators.loan.pageDescription">See how extra payments can help you become debt-free faster and save money on interest.</p>
 
             <div class="calculator">
                 <form id="loanPayoffForm">
                     <div class="form-group">
-                        <label for="loanBalance">Current Loan Balance</label>
+                        <label for="loanBalance" data-i18n="calculators.loan.loanBalance">Current Loan Balance</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="loanBalance" value="25000" min="0" step="100" required>
@@ -87,7 +88,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="interestRate">Interest Rate (Annual %)</label>
+                        <label for="interestRate" data-i18n="calculators.loan.interestRate">Interest Rate (Annual %)</label>
                         <div class="input-group">
                             <span>%</span>
                             <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
@@ -95,7 +96,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="monthlyPayment">Current Monthly Payment</label>
+                        <label for="monthlyPayment" data-i18n="calculators.loan.monthlyPayment">Current Monthly Payment</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="monthlyPayment" value="500" min="0" step="10" required>
@@ -103,67 +104,67 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="extraPayment">Extra Monthly Payment</label>
+                        <label for="extraPayment" data-i18n="calculators.loan.extraPayment">Extra Monthly Payment</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="extraPayment" value="100" min="0" step="10">
                         </div>
                     </div>
 
-                    <button type="submit" class="btn">Calculate</button>
+                    <button type="submit" class="btn" data-i18n="calculators.loan.calculate">Calculate</button>
                 </form>
 
                 <div class="results" id="results">
                     <div class="result-highlight">
                         <div class="big-number" id="interestSaved">$0</div>
-                        <p>Interest Saved</p>
+                        <p data-i18n="calculators.loan.interestSaved">Interest Saved</p>
                     </div>
 
-                    <h2>Comparison</h2>
+                    <h2 data-i18n="calculators.loan.comparison">Comparison</h2>
 
-                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--text-light);">Without Extra Payments</h3>
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--text-light);" data-i18n="calculators.loan.withoutExtra">Without Extra Payments</h3>
                     <div class="result-item">
-                        <span class="result-label">Payoff Time</span>
+                        <span class="result-label" data-i18n="calculators.loan.payoffTime">Payoff Time</span>
                         <span class="result-value" id="originalTime">-</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Total Interest</span>
+                        <span class="result-label" data-i18n="calculators.loan.totalInterest">Total Interest</span>
                         <span class="result-value" id="originalInterest">$0</span>
                     </div>
 
-                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--secondary);">With Extra Payments</h3>
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--secondary);" data-i18n="calculators.loan.withExtra">With Extra Payments</h3>
                     <div class="result-item">
-                        <span class="result-label">Payoff Time</span>
+                        <span class="result-label" data-i18n="calculators.loan.payoffTime">Payoff Time</span>
                         <span class="result-value" id="newTime" style="color: var(--secondary);">-</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Total Interest</span>
+                        <span class="result-label" data-i18n="calculators.loan.totalInterest">Total Interest</span>
                         <span class="result-value" id="newInterest" style="color: var(--secondary);">$0</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Time Saved</span>
+                        <span class="result-label" data-i18n="calculators.loan.timeSaved">Time Saved</span>
                         <span class="result-value" id="timeSaved" style="color: var(--secondary);">-</span>
                     </div>
                 </div>
             </div>
 
             <article class="content" style="margin-top: 40px;">
-                <h2>How Extra Payments Help</h2>
-                <p>Making extra payments on your loan goes directly toward your principal balance. This reduces the amount of interest you pay over time and shortens your loan term.</p>
+                <h2 data-i18n="calculators.loan.articleTitle">How Extra Payments Help</h2>
+                <p data-i18n="calculators.loan.articleIntro">Making extra payments on your loan goes directly toward your principal balance. This reduces the amount of interest you pay over time and shortens your loan term.</p>
 
-                <h3>Strategies for Paying Off Debt Faster</h3>
+                <h3 data-i18n="calculators.loan.strategiesTitle">Strategies for Paying Off Debt Faster</h3>
                 <ul>
-                    <li><strong>Round Up Payments:</strong> Round your payment to the nearest $50 or $100</li>
-                    <li><strong>Bi-Weekly Payments:</strong> Pay half your monthly payment every two weeks (equals 13 monthly payments per year)</li>
-                    <li><strong>Lump Sum Payments:</strong> Apply tax refunds or bonuses to your principal</li>
-                    <li><strong>Refinance:</strong> If rates have dropped, refinancing could lower your interest rate</li>
+                    <li><strong data-i18n="calculators.loan.strategyRoundUp">Round Up Payments:</strong> <span data-i18n="calculators.loan.strategyRoundUpDesc">Round your payment to the nearest $50 or $100</span></li>
+                    <li><strong data-i18n="calculators.loan.strategyBiWeekly">Bi-Weekly Payments:</strong> <span data-i18n="calculators.loan.strategyBiWeeklyDesc">Pay half your monthly payment every two weeks (equals 13 monthly payments per year)</span></li>
+                    <li><strong data-i18n="calculators.loan.strategyLumpSum">Lump Sum Payments:</strong> <span data-i18n="calculators.loan.strategyLumpSumDesc">Apply tax refunds or bonuses to your principal</span></li>
+                    <li><strong data-i18n="calculators.loan.strategyRefinance">Refinance:</strong> <span data-i18n="calculators.loan.strategyRefinanceDesc">If rates have dropped, refinancing could lower your interest rate</span></li>
                 </ul>
 
-                <h3>Important Considerations</h3>
+                <h3 data-i18n="calculators.loan.considerationsTitle">Important Considerations</h3>
                 <ul>
-                    <li>Check if your loan has prepayment penalties</li>
-                    <li>Ensure extra payments are applied to principal, not future payments</li>
-                    <li>Consider building an emergency fund before aggressive debt payoff</li>
+                    <li data-i18n="calculators.loan.consideration1">Check if your loan has prepayment penalties</li>
+                    <li data-i18n="calculators.loan.consideration2">Ensure extra payments are applied to principal, not future payments</li>
+                    <li data-i18n="calculators.loan.consideration3">Consider building an emergency fund before aggressive debt payoff</li>
                 </ul>
             </article>
         </div>
@@ -171,8 +172,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Contact your lender for exact payoff amounts.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.loan.footerDisclaimer">Disclaimer: This calculator provides estimates only. Contact your lender for exact payoff amounts.</p>
         </div>
     </footer>
 
@@ -182,6 +183,8 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/loan-payoff.js"></script>
     <script src="../js/monetization.js"></script>
+    <script src="../js/premium.js"></script>
+    <script src="../js/affiliate-links.js"></script>
     <script>
         document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
             this.classList.toggle('active');

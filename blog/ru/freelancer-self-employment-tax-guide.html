@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+    <title>Руководство по налогам для фрилансеров и самозанятых | FinCalc</title>
+    <meta name="description" content="Полное руководство по налогам на самозанятость для фрилансеров. Узнайте о квартальных платежах, вычетах и как рассчитать налоговые обязательства как подрядчик.">
+    <meta name="keywords" content="калькулятор налога на самозанятость, налоги фрилансера, квартальные налоговые платежи, налоги 1099, налоги независимого подрядчика">
+    <link rel="canonical" href="https://financecalc.cc/blog/ru/freelancer-self-employment-tax-guide.html">
+
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:title" content="Руководство по налогам для фрилансеров и самозанятых">
+    <meta property="og:description" content="Полное руководство по налогам на самозанятость для фрилансеров и независимых подрядчиков.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://financecalc.cc/blog/ru/freelancer-self-employment-tax-guide.html">
+    <meta property="og:locale" content="ru_RU">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Руководство по налогам для фрилансеров и самозанятых",
+        "description": "Полное руководство по налогам на самозанятость для фрилансеров и независимых подрядчиков.",
+        "image": "https://financecalc.cc/images/freelancer-self-employment-tax.jpg",
+        "inLanguage": "ru",
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://financecalc.cc/blog/ru/freelancer-self-employment-tax-guide.html"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Какова ставка налога на самозанятость?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ставка налога на самозанятость составляет 15.3%, из которых 12.4% идет на Social Security и 2.9% на Medicare. Это вдвое больше, чем платят наемные работники, потому что фрилансеры должны покрывать как долю работника, так и долю работодателя. Налог рассчитывается на 92.35% чистого дохода от самозанятости."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Когда нужно платить квартальные налоги?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "В 2026 году квартальные налоговые платежи должны быть уплачены: Q1 (янв-март) до 15 апреля, Q2 (апр-май) до 16 июня, Q3 (июн-авг) до 15 сентября, и Q4 (сен-дек) до 15 января 2027. Пропуск сроков может привести к штрафам и начислению процентов."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие вычеты могут использовать фрилансеры?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Фрилансеры могут вычитать бизнес-расходы, включая домашний офис ($5/кв.фут до $1,500), страховые премии на здоровье (100% вычитаемы), пенсионные взносы (SEP IRA до $70,000), оборудование и программное обеспечение, профессиональное развитие, деловые поездки и маркетинговые расходы."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько фрилансеры должны откладывать на налоги?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Фрилансеры должны откладывать 25-30% своего дохода на налоги. Это покрывает как налог на самозанятость (15.3%), так и федеральный подоходный налог (10-37% в зависимости от налоговой категории)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие пенсионные счета доступны для фрилансеров?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "У фрилансеров есть несколько пенсионных опций: Solo 401(k) позволяет вносить до $70,000 в 2026 году с долями работника и работодателя. SEP IRA позволяет вносить до 25% чистого дохода от самозанятости (макс $70,000). SIMPLE IRA позволяет $16,500 плюс 3% match."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Переключить меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Калькуляторы</a></li>
+                <li><a href="/blog/ru/" class="active">Блог</a></li>
+                <li><a href="/#about">О нас</a></li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language selector and theme toggle will be injected by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="article-page">
+        <div class="article-container">
+            <nav class="breadcrumb">
+                <a href="/">Главная</a> <span>/</span> <a href="/blog/ru/">Блог</a> <span>/</span> <span>Налоги для фрилансеров</span>
+            </nav>
+
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Налоги</span>
+                        <span>10 января 2026</span>
+                        <span>9 мин чтения</span>
+                    </div>
+                    <h1>Руководство по налогам для фрилансеров и самозанятых</h1>
+                    <p class="article-intro">Налоги на самозанятость могут сбивать с толку начинающих фрилансеров. Это руководство объясняет, сколько именно вы должны, когда платить и как законно уменьшить налоговый счет.</p>
+                </header>
+
+                <div class="article-content">
+                    <h2>Что такое налог на самозанятость?</h2>
+                    <p>Налог на самозанятость - это налог на Social Security и Medicare, который платят самозанятые люди. Когда вы наемный работник, ваш работодатель платит половину этих налогов. Как фрилансер, вы платите обе половины.</p>
+
+                    <table>
+                        <tr>
+                            <th>Налог</th>
+                            <th>Работник платит</th>
+                            <th>Самозанятый платит</th>
+                        </tr>
+                        <tr>
+                            <td>Social Security</td>
+                            <td>6.2%</td>
+                            <td>12.4%</td>
+                        </tr>
+                        <tr>
+                            <td>Medicare</td>
+                            <td>1.45%</td>
+                            <td>2.9%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Итого</strong></td>
+                            <td><strong>7.65%</strong></td>
+                            <td><strong>15.3%</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>Важно</h4>
+                        <p>Налог на самозанятость <strong>добавляется к</strong> вашему обычному подоходному налогу. Фрилансер, зарабатывающий $100,000, может заплатить $15,300 налога на самозанятость плюс $15,000-$20,000 подоходного налога.</p>
+                    </div>
+
+                    <h2>Как рассчитать налог на самозанятость</h2>
+                    <p>Вот формула:</p>
+                    <ol>
+                        <li>Рассчитайте чистый доход от самозанятости (выручка - расходы)</li>
+                        <li>Умножьте на 92.35% (это учитывает эквивалент доли работодателя)</li>
+                        <li>Умножьте на 15.3% для налога на самозанятость</li>
+                    </ol>
+
+                    <h3>Пример: чистый доход $80,000</h3>
+                    <table>
+                        <tr>
+                            <th>Шаг</th>
+                            <th>Расчет</th>
+                            <th>Сумма</th>
+                        </tr>
+                        <tr>
+                            <td>Чистый доход</td>
+                            <td>-</td>
+                            <td>$80,000</td>
+                        </tr>
+                        <tr>
+                            <td>Налогооблагаемый доход SE</td>
+                            <td>$80,000 × 92.35%</td>
+                            <td>$73,880</td>
+                        </tr>
+                        <tr>
+                            <td>Налог SE</td>
+                            <td>$73,880 × 15.3%</td>
+                            <td>$11,304</td>
+                        </tr>
+                    </table>
+
+                    <div class="calculator-cta">
+                        <h3>Рассчитайте ваш налог на самозанятость</h3>
+                        <p>Получите точную оценку ваших налоговых обязательств.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Калькулятор налога SE →</a>
+                    </div>
+
+                    <h2>Квартальные авансовые налоговые платежи</h2>
+                    <p>В отличие от наемных работников, у которых налоги удерживаются из каждой зарплаты, фрилансеры должны платить авансовые налоги ежеквартально.</p>
+
+                    <h3>Сроки квартальных платежей 2026</h3>
+                    <table>
+                        <tr>
+                            <th>Квартал</th>
+                            <th>Период дохода</th>
+                            <th>Срок оплаты</th>
+                        </tr>
+                        <tr>
+                            <td>Q1</td>
+                            <td>1 янв - 31 март</td>
+                            <td>15 апреля 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>1 апр - 31 май</td>
+                            <td>16 июня 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Q3</td>
+                            <td>1 июн - 31 авг</td>
+                            <td>15 сентября 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Q4</td>
+                            <td>1 сен - 31 дек</td>
+                            <td>15 января 2027</td>
+                        </tr>
+                    </table>
+
+                    <h3>Сколько платить ежеквартально</h3>
+                    <p>Чтобы избежать штрафов, платите минимум:</p>
+                    <ul>
+                        <li><strong>100% налога прошлого года</strong> (110% если доход выше $150,000), ИЛИ</li>
+                        <li><strong>90% налога текущего года</strong></li>
+                    </ul>
+
+                    <p>Простой подход: откладывайте 25-30% от каждого полученного платежа на налоги.</p>
+
+                    <h2>Налоговые вычеты для фрилансеров</h2>
+                    <p>Уменьшите налогооблагаемый доход с помощью этих распространенных вычетов:</p>
+
+                    <h3>Вычет за домашний офис</h3>
+                    <ul>
+                        <li><strong>Упрощенный метод:</strong> $5 за квадратный фут, до 300 кв.футов (максимум $1,500)</li>
+                        <li><strong>Обычный метод:</strong> Фактические расходы × процент дома, используемого для бизнеса</li>
+                    </ul>
+
+                    <h3>Бизнес-расходы</h3>
+                    <ul>
+                        <li>Компьютер и оборудование</li>
+                        <li>Программное обеспечение и подписки</li>
+                        <li>Офисные принадлежности</li>
+                        <li>Профессиональное развитие и курсы</li>
+                        <li>Деловые поездки</li>
+                        <li>Маркетинг и реклама</li>
+                        <li>Профессиональные услуги (бухгалтер, юрист)</li>
+                    </ul>
+
+                    <h3>Вычет на медицинское страхование</h3>
+                    <p>Самозанятые могут вычитать 100% страховых премий на здоровье для себя и своей семьи. Это вычет "над чертой", то есть вы получаете его, даже если не детализируете вычеты.</p>
+
+                    <h3>Пенсионные взносы</h3>
+                    <ul>
+                        <li><strong>SEP IRA:</strong> До 25% чистого дохода SE (максимум $70,000 в 2026)</li>
+                        <li><strong>Solo 401(k):</strong> До $70,000 всего (2026)</li>
+                        <li><strong>Традиционный IRA:</strong> До $7,000 ($8,000 если 50+)</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Вычет QBI</h4>
+                        <p>Вычет квалифицированного бизнес-дохода (QBI) позволяет вычитать до <strong>20% вашего чистого дохода от самозанятости</strong>. Это может значительно уменьшить ваш подоходный налог (не налог SE).</p>
+                    </div>
+
+                    <h2>Пример: полный расчет налогов</h2>
+                    <p>Рассчитаем налоги для фрилансера с валовым доходом $100,000:</p>
+
+                    <table>
+                        <tr>
+                            <th>Статья</th>
+                            <th>Сумма</th>
+                        </tr>
+                        <tr>
+                            <td>Валовой доход</td>
+                            <td>$100,000</td>
+                        </tr>
+                        <tr>
+                            <td>Бизнес-расходы</td>
+                            <td>-$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Чистый доход SE</td>
+                            <td>$85,000</td>
+                        </tr>
+                        <tr>
+                            <td>Налог SE (15.3% × 92.35%)</td>
+                            <td>$12,012</td>
+                        </tr>
+                        <tr>
+                            <td>Вычет 1/2 налога SE</td>
+                            <td>-$6,006</td>
+                        </tr>
+                        <tr>
+                            <td>Вычет медстрахования</td>
+                            <td>-$6,000</td>
+                        </tr>
+                        <tr>
+                            <td>Взнос SEP IRA</td>
+                            <td>-$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Скорректированный валовой доход</td>
+                            <td>$57,994</td>
+                        </tr>
+                        <tr>
+                            <td>Вычет QBI (20%)</td>
+                            <td>-$11,599</td>
+                        </tr>
+                        <tr>
+                            <td>Стандартный вычет (одинокий)</td>
+                            <td>-$14,600</td>
+                        </tr>
+                        <tr>
+                            <td>Налогооблагаемый доход</td>
+                            <td>$31,795</td>
+                        </tr>
+                        <tr>
+                            <td>Федеральный подоходный налог</td>
+                            <td>~$3,600</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Общий федеральный налог</strong></td>
+                            <td><strong>~$15,612</strong></td>
+                        </tr>
+                    </table>
+
+                    <p>Эффективная налоговая ставка: 15.6% на $100,000 валового дохода (до налогов штата).</p>
+
+                    <h2>Пенсионные опции для фрилансеров</h2>
+
+                    <h3>Solo 401(k)</h3>
+                    <ul>
+                        <li><strong>Лучше для:</strong> Высокооплачиваемых, желающих максимизировать взносы</li>
+                        <li><strong>Лимит 2026:</strong> $23,500 работник + 25% работодатель = до $70,000</li>
+                        <li><strong>Плюсы:</strong> Самые высокие лимиты взносов, доступна опция Roth</li>
+                    </ul>
+
+                    <h3>SEP IRA</h3>
+                    <ul>
+                        <li><strong>Лучше для:</strong> Простой настройки, переменного дохода</li>
+                        <li><strong>Лимит 2026:</strong> 25% чистого дохода SE, до $70,000</li>
+                        <li><strong>Плюсы:</strong> Легко открыть, гибкие взносы</li>
+                    </ul>
+
+                    <h3>SIMPLE IRA</h3>
+                    <ul>
+                        <li><strong>Лучше для:</strong> Фрилансеров с сотрудниками</li>
+                        <li><strong>Лимит 2026:</strong> $16,500 + 3% match</li>
+                        <li><strong>Плюсы:</strong> Более низкие административные расходы, чем 401(k)</li>
+                    </ul>
+
+                    <h2>Распространенные налоговые ошибки фрилансеров</h2>
+                    <ol>
+                        <li><strong>Не платить ежеквартально</strong> - Приводит к штрафам и процентам</li>
+                        <li><strong>Смешивать личные и бизнес-расходы</strong> - Используйте отдельные счета</li>
+                        <li><strong>Не отслеживать пробег</strong> - Ведите журнал деловых поездок</li>
+                        <li><strong>Упускать вычеты</strong> - Отслеживайте каждый бизнес-расход</li>
+                        <li><strong>Не откладывать достаточно</strong> - Откладывайте 25-30% дохода</li>
+                        <li><strong>Забывать о налогах штата</strong> - Во многих штатах тоже есть подоходный налог</li>
+                    </ol>
+
+                    <div class="calculator-cta">
+                        <h3>Оцените ваши налоговые обязательства</h3>
+                        <p>Планируйте заранее с нашим калькулятором налога на самозанятость.</p>
+                        <a href="/calculators/self-employment-tax.html" class="cta-btn">Рассчитать сейчас →</a>
+                    </div>
+
+                    <h2>Налоговый чек-лист для фрилансеров</h2>
+                    <ol>
+                        <li>Откройте отдельный бизнес-счет в банке</li>
+                        <li>Отслеживайте все доходы и расходы</li>
+                        <li>Откладывайте 25-30% дохода на налоги</li>
+                        <li>Платите квартальные авансовые налоги</li>
+                        <li>Максимизируйте вычеты (домашний офис, медстрахование, пенсия)</li>
+                        <li>Рассмотрите найм налогового специалиста</li>
+                        <li>Храните записи минимум 7 лет</li>
+                    </ol>
+                </div>
+            </article>
+
+            <div class="related-articles">
+                <h3>Похожие статьи</h3>
+                <div class="related-grid">
+                    <a href="401k-contribution-calculator-2025.html" class="related-card">
+                        <h4>Взносы 401(k) 2026</h4>
+                        <p>Опции Solo 401(k) для фрилансеров.</p>
+                    </a>
+                    <a href="emergency-fund-3-vs-6-months.html" class="related-card">
+                        <h4>Руководство по резервному фонду</h4>
+                        <p>Особенно важно при переменном доходе.</p>
+                    </a>
+                    <a href="how-much-house-can-i-afford-80k-salary.html" class="related-card">
+                        <h4>Доступность жилья</h4>
+                        <p>Ипотечные опции для самозанятых.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 FinCalc. Все права защищены.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Политика конфиденциальности</a>
+                <a href="/terms.html">Условия использования</a>
+            </p>
+            <p class="disclaimer">Отказ от ответственности: Данный контент предназначен только для информационных целей. Проконсультируйтесь с квалифицированным налоговым специалистом для получения персональных рекомендаций.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Manager -->
+    <script src="../../js/theme.js"></script>
+    <!-- Internationalization -->
+    <script src="../../js/i18n.js"></script>
+    <!-- Mobile menu toggle -->
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

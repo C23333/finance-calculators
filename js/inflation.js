@@ -46,9 +46,12 @@ function generateInflationTable(amount, rate, years) {
         const futureCost = amount * Math.pow(1 + rate, year);
         const buyingPower = amount / Math.pow(1 + rate, year);
 
+        // Get localized "Year X" text
+        const yearText = getYearText(year);
+
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>Year ${year}</td>
+            <td>${yearText}</td>
             <td>${formatCurrency(futureCost)}</td>
             <td>${formatCurrency(buyingPower)}</td>
         `;
@@ -56,9 +59,12 @@ function generateInflationTable(amount, rate, years) {
     }
 
     if (years > 20) {
+        // Get localized "Year X" text for the final year
+        const yearText = getYearText(years);
+
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>Year ${years}</td>
+            <td>${yearText}</td>
             <td>${formatCurrency(amount * Math.pow(1 + rate, years))}</td>
             <td>${formatCurrency(amount / Math.pow(1 + rate, years))}</td>
         `;
@@ -66,7 +72,35 @@ function generateInflationTable(amount, rate, years) {
     }
 }
 
+/**
+ * Get localized "Year X" text
+ * @param {number} year - The year number
+ * @returns {string} Localized year text
+ */
+function getYearText(year) {
+    // Check if I18n is available and has the translation
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        const yearXTemplate = I18n.t('calculators.inflation.yearX');
+        // If translation exists and contains {year} placeholder
+        if (yearXTemplate && yearXTemplate !== 'calculators.inflation.yearX') {
+            return yearXTemplate.replace('{year}', year);
+        }
+    }
+    // Fallback to English
+    return `Year ${year}`;
+}
+
+/**
+ * Format currency using I18n if available, otherwise fallback to default
+ * @param {number} amount - The amount to format
+ * @returns {string} Formatted currency string
+ */
 function formatCurrency(amount) {
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return I18n.formatCurrency(amount, { decimals: 2 });
+    }
+    // Fallback to default formatting
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -75,4 +109,8 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
+// Calculate on page load
 document.addEventListener('DOMContentLoaded', () => calculateInflation(false));
+
+// Recalculate when language changes to update currency format
+document.addEventListener('languageChange', () => calculateInflation(false));
