@@ -1,0 +1,21 @@
+{
+  "sourceLocale": "en",
+  "targetLocales": ["zh", "ja", "ko", "es", "fr", "de", "pt", "ru", "ar", "hi"],
+  "sourceFile": "js/i18n/en.json",
+  "targetPattern": "js/i18n/{locale}.json",
+  "provider": {
+    "name": "google",
+    "options": {
+      "useFreeApi": true
+    },
+    "rateLimit": 5
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 604800
+  },
+  "quality": {
+    "preservePlaceholders": true,
+    "preserveHtml": true
+  }
+}
