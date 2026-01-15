@@ -1,13 +1,13 @@
 /* ========================================
-   SIDEBAR NAVIGATION
+   SIDEBAR NAVIGATION - Compact
    ======================================== */
 
 /* Calculator page with sidebar layout */
 .calc-page-with-sidebar {
     display: flex;
-    gap: 24px;
-    padding: 24px;
-    min-height: calc(100vh - 200px);
+    gap: 20px;
+    padding: 16px 24px;
+    min-height: calc(100vh - 120px);
     background: var(--bg-soft);
     max-width: 1400px;
     margin: 0 auto;
@@ -15,40 +15,40 @@
 
 /* Sidebar */
 .calc-sidebar {
-    width: 260px;
+    width: 220px;
     flex-shrink: 0;
     position: sticky;
-    top: 80px;
+    top: 70px;
     height: fit-content;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 90px);
     overflow-y: auto;
 }
 
 .calc-sidebar-inner {
     background: var(--bg);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     border: 1px solid var(--border-light);
-    padding: 16px;
+    padding: 12px;
 }
 
 /* Sidebar header */
 .sidebar-header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+    gap: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     border-bottom: 1px solid var(--border-light);
 }
 
 .sidebar-header a {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     color: var(--primary);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: var(--transition);
 }
 
@@ -57,13 +57,13 @@
 }
 
 .sidebar-header svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
 }
 
 /* Sidebar category */
 .sidebar-category {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .sidebar-category:last-child {
@@ -71,13 +71,13 @@
 }
 
 .sidebar-category-title {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 600;
     color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 8px;
-    padding: 0 8px;
+    margin-bottom: 6px;
+    padding: 0 6px;
 }
 
 .sidebar-links {
@@ -87,17 +87,17 @@
 }
 
 .sidebar-links li {
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .sidebar-links a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 10px;
+    gap: 6px;
+    padding: 6px 8px;
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     border-radius: var(--radius-sm);
     transition: var(--transition);
 }
@@ -114,8 +114,8 @@
 }
 
 .sidebar-links .calc-emoji {
-    font-size: 1rem;
-    width: 20px;
+    font-size: 0.85rem;
+    width: 18px;
     text-align: center;
 }
 
@@ -127,41 +127,41 @@
 
 /* Related calculators section */
 .related-calculators {
-    margin-top: 24px;
-    padding: 20px;
+    margin-top: 16px;
+    padding: 14px;
     background: var(--bg);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     border: 1px solid var(--border-light);
 }
 
 .related-calculators h3 {
-    font-size: 1rem;
-    margin-bottom: 16px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
     color: var(--text);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .related-calculators h3 svg {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     color: var(--primary);
 }
 
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
 }
 
 .related-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px;
+    gap: 8px;
+    padding: 8px 10px;
     background: var(--bg-soft);
-    border-radius: var(--radius);
+    border-radius: var(--radius-sm);
     text-decoration: none;
     color: var(--text);
     transition: var(--transition);
@@ -175,7 +175,7 @@
 }
 
 .related-item .emoji {
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .related-item .info {
@@ -185,14 +185,14 @@
 
 .related-item .title {
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .related-item .desc {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: var(--text-secondary);
     white-space: nowrap;
     overflow: hidden;
@@ -207,9 +207,9 @@
 .breadcrumb-enhanced {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    font-size: 0.85rem;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-size: 0.75rem;
     flex-wrap: wrap;
 }
 
@@ -236,7 +236,7 @@
 @media (max-width: 1024px) {
     .calc-page-with-sidebar {
         display: block;
-        padding: 24px;
+        padding: 16px;
     }
 
     .calc-sidebar {
@@ -252,7 +252,7 @@
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
     .calc-page-with-sidebar {
-        padding: 16px;
+        padding: 12px;
     }
 
     .related-grid {

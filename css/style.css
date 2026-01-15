@@ -210,14 +210,14 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 24px;
+    padding: 12px 24px;
     max-width: 1200px;
     margin: 0 auto;
     gap: 16px;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
@@ -590,35 +590,35 @@ footer a:hover {
     margin: 0 auto;
 }
 
-/* Calculator Page Styles */
+/* Calculator Page Styles - Optimized for above-the-fold */
 .calc-page {
-    padding: 32px 24px;
-    min-height: calc(100vh - 200px);
+    padding: 16px 24px;
+    min-height: calc(100vh - 120px);
     background: var(--bg-soft);
 }
 
 .calc-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .calc-container h1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--text);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     letter-spacing: -0.5px;
 }
 
 .calc-container > p {
     color: var(--text-secondary);
-    margin-bottom: 24px;
-    font-size: 0.95rem;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
 }
 
 .calculator {
     background: var(--bg);
-    border-radius: var(--radius-lg);
-    padding: 28px;
+    border-radius: var(--radius);
+    padding: 20px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border-light);
 }
@@ -626,28 +626,39 @@ footer a:hover {
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 12px;
+}
+
+/* 3-column layout for wider screens */
+@media (min-width: 768px) {
+    .form-row.three-col {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-weight: 500;
     color: var(--text);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 10px 12px;
-    border: 2px solid var(--border);
+    padding: 8px 10px;
+    border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition);
     background: var(--bg);
     color: var(--text);
@@ -657,7 +668,7 @@ footer a:hover {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--primary-bg);
+    box-shadow: 0 0 0 2px var(--primary-bg);
 }
 
 .form-group input::placeholder {
@@ -671,12 +682,13 @@ footer a:hover {
 
 .input-group span {
     background: var(--bg-muted);
-    padding: 10px 12px;
-    border: 2px solid var(--border);
+    padding: 8px 10px;
+    border: 1.5px solid var(--border);
     border-right: none;
     border-radius: var(--radius-sm) 0 0 var(--radius-sm);
     color: var(--text-secondary);
     font-weight: 500;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
 }
@@ -689,14 +701,15 @@ footer a:hover {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     border: none;
-    padding: 12px 24px;
-    font-size: 0.95rem;
+    padding: 10px 20px;
+    font-size: 0.9rem;
     font-weight: 600;
     border-radius: var(--radius-sm);
     cursor: pointer;
     width: 100%;
     transition: var(--transition);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    margin-top: 8px;
 }
 
 .btn:hover {
@@ -708,17 +721,17 @@ footer a:hover {
     transform: translateY(0);
 }
 
-/* Results */
+/* Results - Compact */
 .results {
-    margin-top: 28px;
-    padding-top: 28px;
-    border-top: 2px solid var(--border-light);
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1.5px solid var(--border-light);
     display: none;
     animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -727,54 +740,60 @@ footer a:hover {
 }
 
 .results h2 {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: var(--text);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .result-highlight {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    padding: 24px;
-    border-radius: var(--radius);
+    padding: 16px;
+    border-radius: var(--radius-sm);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: white;
 }
 
 .result-highlight .big-number {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .result-highlight p {
     opacity: 0.9;
-    margin-top: 4px;
-    font-size: 0.9rem;
+    margin-top: 2px;
+    font-size: 0.8rem;
 }
 
 .result-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .result-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .result-card {
     background: var(--bg-soft);
-    padding: 14px;
+    padding: 10px;
     border-radius: var(--radius-sm);
     text-align: center;
 }
 
 .result-card .label {
     color: var(--text-secondary);
-    font-size: 0.8rem;
-    margin-bottom: 4px;
+    font-size: 0.7rem;
+    margin-bottom: 2px;
 }
 
 .result-card .value {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text);
 }
