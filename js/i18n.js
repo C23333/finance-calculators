@@ -96,6 +96,22 @@ const I18n = {
     },
 
     /**
+     * Get base URL for loading resources
+     */
+    getBaseUrl() {
+        // For production, use origin; for local file:// protocol, detect from script
+        if (window.location.protocol === 'file:') {
+            const scripts = document.querySelectorAll('script[src*="i18n.js"]');
+            if (scripts.length > 0) {
+                const src = scripts[0].src;
+                return src.replace(/\/js\/i18n\.js.*$/, '');
+            }
+        }
+        // For http/https, use empty string (absolute paths work)
+        return '';
+    },
+
+    /**
      * Load translations for a language
      */
     async loadTranslations(lang) {
@@ -103,32 +119,85 @@ const I18n = {
             // Try to load from embedded translations first
             if (window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
                 this.translations = window.TRANSLATIONS[lang];
+                console.log(`[i18n] Loaded embedded translations for ${lang}`);
                 return;
             }
 
+            // Get base URL and construct full path
+            const baseUrl = this.getBaseUrl();
+            const jsonPath = `${baseUrl}/js/i18n/${lang}.json`;
+            
+            console.log(`[i18n] Fetching translations from: ${jsonPath}`);
+            
             // Otherwise load from JSON file
-            const response = await fetch(`/js/i18n/${lang}.json`);
+            const response = await fetch(jsonPath);
             if (response.ok) {
                 this.translations = await response.json();
+                console.log(`[i18n] Successfully loaded translations for ${lang}`);
             } else {
-                console.warn(`Translation file not found for ${lang}, falling back to English`);
+                console.warn(`[i18n] Translation file not found for ${lang} (status: ${response.status}), falling back to English`);
                 if (lang !== 'en') {
                     await this.loadTranslations('en');
                 }
             }
         } catch (error) {
-            console.error('Error loading translations:', error);
+            console.error('[i18n] Error loading translations:', error);
+            // Try alternative path (relative from current page)
+            try {
+                const altPath = this.getAlternativePath(lang);
+                console.log(`[i18n] Trying alternative path: ${altPath}`);
+                const altResponse = await fetch(altPath);
+                if (altResponse.ok) {
+                    this.translations = await altResponse.json();
+                    console.log(`[i18n] Successfully loaded translations from alternative path`);
+                    return;
+                }
+            } catch (altError) {
+                console.error('[i18n] Alternative path also failed:', altError);
+            }
             // Use embedded fallback
             this.translations = this.getEmbeddedTranslations(lang);
         }
     },
 
     /**
+     * Get alternative path for translations (relative path)
+     */
+    getAlternativePath(lang) {
+        // Detect if we're in a subdirectory
+        const path = window.location.pathname;
+        if (path.includes('/calculators/') || path.includes('/blog/')) {
+            return `../js/i18n/${lang}.json`;
+        }
+        return `./js/i18n/${lang}.json`;
+    },
+
+    /**
      * Get embedded translations (fallback)
      */
     getEmbeddedTranslations(lang) {
-        // Return English as fallback
-        return window.TRANSLATIONS?.en || {};
+        // Return English as fallback with essential translations
+        if (window.TRANSLATIONS?.en) {
+            return window.TRANSLATIONS.en;
+        }
+        
+        // Minimal fallback translations for critical UI elements
+        return {
+            nav: {
+                home: 'Home',
+                calculators: 'Calculators',
+                blog: 'Blog',
+                about: 'About'
+            },
+            footer: {
+                copyright: '© 2026 FinCalc. All rights reserved.',
+                friendLinks: 'Friend Links:',
+                qrmaker: 'QR Code Generator'
+            },
+            accessibility: {
+                skipToContent: 'Skip to main content'
+            }
+        };
     },
 
     /**
@@ -138,12 +207,18 @@ const I18n = {
      * @returns {string} Translated string
      */
     t(key, params = {}) {
+        // Check if translations are loaded
+        if (!this.translations || Object.keys(this.translations).length === 0) {
+            console.warn(`[i18n] Translations not loaded yet, returning key: ${key}`);
+            return key;
+        }
+        
         // Get translation by dot notation
         let text = key.split('.').reduce((obj, k) => obj?.[k], this.translations);
 
         // Fallback to key if not found
         if (text === undefined) {
-            console.warn(`Translation missing: ${key}`);
+            console.warn(`[i18n] Translation missing: ${key}`);
             return key;
         }
 
@@ -368,6 +443,8 @@ const I18n = {
      * Apply translations to DOM elements with data-i18n attribute
      */
     applyTranslations() {
+        console.log(`[i18n] Applying translations. Loaded keys: ${Object.keys(this.translations).length > 0 ? Object.keys(this.translations).join(', ') : 'NONE'}`);
+        
         // Translate elements with data-i18n attribute
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
@@ -406,6 +483,8 @@ const I18n = {
         if (titleKey) {
             document.title = this.t(titleKey);
         }
+        
+        console.log(`[i18n] Translations applied to ${document.querySelectorAll('[data-i18n]').length} elements`);
     },
 
     /**
