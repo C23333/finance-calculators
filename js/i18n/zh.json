@@ -41,7 +41,11 @@
       "principal": "本金",
       "interest": "利息",
       "balance": "余额",
-      "desc": "Calculate monthly payments, total interest, and view amortization schedule."
+      "desc": "Calculate monthly payments, total interest, and view amortization schedule.",
+      "loanTerm30": "30年",
+      "loanTerm20": "20年",
+      "loanTerm15": "15年",
+      "loanTerm10": "10年"
     },
     "compoundInterest": {
       "title": "复利计算器",
@@ -1130,7 +1134,18 @@
     "no": "否",
     "or": "或",
     "and": "和",
-    "calculateArrow": "Calculate →"
+    "calculateArrow": "Calculate →",
+    "loanTerm30": "30年",
+    "loanTerm20": "20年",
+    "loanTerm15": "15年",
+    "loanTerm10": "10年",
+    "annual": "年度的",
+    "monthly": "每月",
+    "biWeekly": "双周刊",
+    "weekly": "每周",
+    "hourly": "每小时",
+    "daily": "日常的",
+    "quarterly": "季刊"
   },
   "validation": {
     "required": "此字段为必填项",

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * FinCalc Internationalization (i18n) System
  * Supports: English, Spanish, Chinese, German, French, Portuguese, Japanese, Korean, Arabic, Hindi
  * Features: Auto-detection, URL-based routing, localStorage persistence, currency localization
@@ -460,6 +460,8 @@ const I18n = {
                 if (el.placeholder !== undefined) {
                     el.placeholder = translation;
                 }
+            } else if (el.tagName === 'OPTION') {
+                el.textContent = translation;
             } else {
                 el.textContent = translation;
             }
@@ -480,6 +482,9 @@ const I18n = {
             });
         });
 
+        // Update currency symbols in input groups
+        this.updateCurrencySymbols();
+
         // Update page title if translation exists
         const titleKey = document.querySelector('meta[name="i18n-title"]')?.content;
         if (titleKey) {
@@ -487,6 +492,28 @@ const I18n = {
         }
         
         console.log(`[i18n] Translations applied to ${document.querySelectorAll('[data-i18n]').length} elements`);
+    },
+
+    /**
+     * Update currency symbols based on current language
+     */
+    updateCurrencySymbols() {
+        const symbol = this.getCurrencySymbol();
+        
+        // Update all currency prefix spans in input groups
+        document.querySelectorAll('.input-group span.currency-symbol, .input-group span[data-currency]').forEach(el => {
+            el.textContent = symbol;
+        });
+        
+        // Also update spans that contain just $ and are in input-group (legacy support)
+        document.querySelectorAll('.input-group > span').forEach(el => {
+            const text = el.textContent.trim();
+            // Only update if it's a currency symbol (not % or other)
+            if (text === '$' || text === '¥' || text === '€' || text === '£' || text === '₹' || text === '₩' || text === 'R$' || text === 'ر.س') {
+                el.textContent = symbol;
+                el.classList.add('currency-symbol');
+            }
+        });
     },
 
     /**
@@ -1555,3 +1582,4 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 window.I18n = I18n;
+

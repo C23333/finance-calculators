@@ -41,7 +41,11 @@
       "principal": "Capital",
       "interest": "Intérêts",
       "balance": "Solde",
-      "desc": "Calculate monthly payments, total interest, and view amortization schedule."
+      "desc": "Calculate monthly payments, total interest, and view amortization schedule.",
+      "loanTerm30": "30 ans",
+      "loanTerm20": "20 ans",
+      "loanTerm15": "15 ans",
+      "loanTerm10": "10 ans"
     },
     "compoundInterest": {
       "title": "Calculateur d'Intérêts Composés",
@@ -1133,7 +1137,18 @@
     "no": "Non",
     "or": "ou",
     "and": "et",
-    "calculateArrow": "Calculate →"
+    "calculateArrow": "Calculate →",
+    "loanTerm30": "30 ans",
+    "loanTerm20": "20 ans",
+    "loanTerm15": "15 ans",
+    "loanTerm10": "10 ans",
+    "annual": "Annuel",
+    "monthly": "Mensuel",
+    "biWeekly": "Bihebdomadaire",
+    "weekly": "Hebdomadaire",
+    "hourly": "Horaire",
+    "daily": "Tous les jours",
+    "quarterly": "Trimestriel"
   },
   "validation": {
     "required": "Ce champ est requis",

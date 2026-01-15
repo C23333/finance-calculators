@@ -41,7 +41,11 @@
       "principal": "Kapital",
       "interest": "Zinsen",
       "balance": "Restschuld",
-      "desc": "Calculate monthly payments, total interest, and view amortization schedule."
+      "desc": "Calculate monthly payments, total interest, and view amortization schedule.",
+      "loanTerm30": "30 Jahre",
+      "loanTerm20": "20 Jahre",
+      "loanTerm15": "15 Jahre",
+      "loanTerm10": "10 Jahre"
     },
     "compoundInterest": {
       "title": "Zinseszinsrechner",
@@ -1133,7 +1137,18 @@
     "no": "Nein",
     "or": "oder",
     "and": "und",
-    "calculateArrow": "Calculate →"
+    "calculateArrow": "Calculate →",
+    "loanTerm30": "30 Jahre",
+    "loanTerm20": "20 Jahre",
+    "loanTerm15": "15 Jahre",
+    "loanTerm10": "10 Jahre",
+    "annual": "Jährlich",
+    "monthly": "Monatlich",
+    "biWeekly": "Zweiwöchentlich",
+    "weekly": "Wöchentlich",
+    "hourly": "Stündlich",
+    "daily": "Täglich",
+    "quarterly": "Vierteljährlich"
   },
   "validation": {
     "required": "Dieses Feld ist erforderlich",

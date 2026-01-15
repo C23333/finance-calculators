@@ -65,7 +65,15 @@
     "maximum": "Maximum",
     "or": "or",
     "and": "and",
-    "calculateArrow": "Calculate →"
+    "calculateArrow": "Calculate →",
+    "loanTerm30": "30 سنة",
+    "loanTerm20": "20 سنة",
+    "loanTerm15": "15 سنة",
+    "loanTerm10": "10 سنوات",
+    "annual": "سنوي",
+    "biWeekly": "نصف أسبوعية",
+    "hourly": "كل ساعة",
+    "quarterly": "ربع سنوية"
   },
   "nav": {
     "home": "الرئيسية",
@@ -254,7 +262,11 @@
       "principal": "Principal",
       "interest": "Interest",
       "balance": "Balance",
-      "desc": "Calculate monthly payments, total interest, and view amortization schedule."
+      "desc": "Calculate monthly payments, total interest, and view amortization schedule.",
+      "loanTerm30": "30 سنة",
+      "loanTerm20": "20 سنة",
+      "loanTerm15": "15 سنة",
+      "loanTerm10": "10 سنوات"
     },
     "compoundInterest": {
       "title": "Compound Interest Calculator",

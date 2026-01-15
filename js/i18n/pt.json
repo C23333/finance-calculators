@@ -65,7 +65,15 @@
     "maximum": "Maximum",
     "or": "or",
     "and": "and",
-    "calculateArrow": "Calculate →"
+    "calculateArrow": "Calculate →",
+    "loanTerm30": "30 anos",
+    "loanTerm20": "20 anos",
+    "loanTerm15": "15 anos",
+    "loanTerm10": "10 anos",
+    "annual": "Anual",
+    "biWeekly": "Quinzenal",
+    "hourly": "De hora em hora",
+    "quarterly": "Trimestral"
   },
   "nav": {
     "home": "Início",
@@ -254,7 +262,11 @@
       "principal": "Principal",
       "interest": "Interest",
       "balance": "Balance",
-      "desc": "Calculate monthly payments, total interest, and view amortization schedule."
+      "desc": "Calculate monthly payments, total interest, and view amortization schedule.",
+      "loanTerm30": "30 anos",
+      "loanTerm20": "20 anos",
+      "loanTerm15": "15 anos",
+      "loanTerm10": "10 anos"
     },
     "compoundInterest": {
       "title": "Compound Interest Calculator",

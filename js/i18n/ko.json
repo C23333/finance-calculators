@@ -65,7 +65,15 @@
     "maximum": "Maximum",
     "or": "or",
     "and": "and",
-    "calculateArrow": "Calculate →"
+    "calculateArrow": "Calculate →",
+    "loanTerm30": "30년",
+    "loanTerm20": "20년",
+    "loanTerm15": "15년",
+    "loanTerm10": "10년",
+    "annual": "연간",
+    "biWeekly": "격주 간행물",
+    "hourly": "시간별",
+    "quarterly": "계간지"
   },
   "nav": {
     "home": "홈",
@@ -254,7 +262,11 @@
       "principal": "Principal",
       "interest": "Interest",
       "balance": "Balance",
-      "desc": "Calculate monthly payments, total interest, and view amortization schedule."
+      "desc": "Calculate monthly payments, total interest, and view amortization schedule.",
+      "loanTerm30": "30년",
+      "loanTerm20": "20년",
+      "loanTerm15": "15년",
+      "loanTerm10": "10년"
     },
     "compoundInterest": {
       "title": "Compound Interest Calculator",
