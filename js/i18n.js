@@ -116,47 +116,49 @@ const I18n = {
      */
     async loadTranslations(lang) {
         try {
-            // Try to load from embedded translations first
-            if (window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
-                this.translations = window.TRANSLATIONS[lang];
-                console.log(`[i18n] Loaded embedded translations for ${lang}`);
-                return;
-            }
-
-            // Get base URL and construct full path
+            // Always try to load from JSON file first (it's more complete)
             const baseUrl = this.getBaseUrl();
             const jsonPath = `${baseUrl}/js/i18n/${lang}.json`;
             
             console.log(`[i18n] Fetching translations from: ${jsonPath}`);
             
-            // Otherwise load from JSON file
             const response = await fetch(jsonPath);
             if (response.ok) {
                 this.translations = await response.json();
-                console.log(`[i18n] Successfully loaded translations for ${lang}`);
+                console.log(`[i18n] Successfully loaded translations for ${lang} from JSON`);
+                return;
             } else {
-                console.warn(`[i18n] Translation file not found for ${lang} (status: ${response.status}), falling back to English`);
-                if (lang !== 'en') {
-                    await this.loadTranslations('en');
-                }
+                console.warn(`[i18n] JSON file not found (status: ${response.status}), trying alternatives...`);
             }
         } catch (error) {
-            console.error('[i18n] Error loading translations:', error);
-            // Try alternative path (relative from current page)
-            try {
-                const altPath = this.getAlternativePath(lang);
-                console.log(`[i18n] Trying alternative path: ${altPath}`);
-                const altResponse = await fetch(altPath);
-                if (altResponse.ok) {
-                    this.translations = await altResponse.json();
-                    console.log(`[i18n] Successfully loaded translations from alternative path`);
-                    return;
-                }
-            } catch (altError) {
-                console.error('[i18n] Alternative path also failed:', altError);
+            console.warn('[i18n] Failed to fetch JSON:', error.message);
+        }
+        
+        // Try alternative relative path
+        try {
+            const altPath = this.getAlternativePath(lang);
+            console.log(`[i18n] Trying alternative path: ${altPath}`);
+            const altResponse = await fetch(altPath);
+            if (altResponse.ok) {
+                this.translations = await altResponse.json();
+                console.log(`[i18n] Successfully loaded translations from alternative path`);
+                return;
             }
-            // Use embedded fallback
-            this.translations = this.getEmbeddedTranslations(lang);
+        } catch (altError) {
+            console.warn('[i18n] Alternative path also failed:', altError.message);
+        }
+        
+        // Fallback to embedded translations
+        if (window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
+            this.translations = window.TRANSLATIONS[lang];
+            console.log(`[i18n] Using embedded translations for ${lang} (fallback)`);
+            return;
+        }
+        
+        // Last resort: try English
+        if (lang !== 'en') {
+            console.warn(`[i18n] Falling back to English`);
+            await this.loadTranslations('en');
         }
     },
 
