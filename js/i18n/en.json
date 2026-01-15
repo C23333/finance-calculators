@@ -1156,6 +1156,34 @@
             "desc": "Use our calculators on any device - phone, tablet, or desktop computer."
         }
     },
+    "premium": {
+        "exportPDF": "Export PDF",
+        "saveResult": "Save Result",
+        "viewHistory": "History",
+        "upgradeTitle": "Upgrade to Premium",
+        "upgradeDescription": "Unlock all features including PDF export, unlimited saves, and ad-free experience.",
+        "feature": {
+            "pdfExport": "Export calculations to PDF",
+            "unlimitedSaves": "Unlimited saved calculations",
+            "noAds": "Ad-free experience",
+            "support": "Priority support"
+        },
+        "plan": {
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "lifetime": "Lifetime"
+        },
+        "bestValue": "Best Value",
+        "save50": "Save 50%",
+        "oneTime": "One-time payment",
+        "getStarted": "Get Premium",
+        "guarantee": "7-day money-back guarantee",
+        "savedCalculations": "Saved Calculations",
+        "noSavedResults": "No saved calculations yet",
+        "deleteAll": "Delete All",
+        "load": "Load",
+        "delete": "Delete"
+    },
     "footer": {
         "copyright": "© 2026 FinCalc. All rights reserved.",
         "privacy": "Privacy Policy",

@@ -81,40 +81,40 @@
 }
 
 /* ========================================
-   DARK MODE
+   DARK MODE - Optimized for eye comfort
    ======================================== */
 [data-effective-theme="dark"] {
-    /* Primary Colors - slightly brighter for dark mode */
-    --primary: #6366f1;
+    /* Primary Colors - softer indigo for dark mode */
+    --primary: #818cf8;
     --primary-light: #a5b4fc;
-    --primary-dark: #4f46e5;
-    --primary-bg: rgba(99, 102, 241, 0.15);
-    --primary-rgb: 99, 102, 241;
+    --primary-dark: #6366f1;
+    --primary-bg: rgba(129, 140, 248, 0.12);
+    --primary-rgb: 129, 140, 248;
 
     /* Secondary Colors */
-    --secondary: #34d399;
-    --secondary-light: #6ee7b7;
-    --secondary-bg: rgba(52, 211, 153, 0.15);
+    --secondary: #4ade80;
+    --secondary-light: #86efac;
+    --secondary-bg: rgba(74, 222, 128, 0.12);
 
     /* Accent Colors */
-    --accent: #fbbf24;
-    --accent-bg: rgba(251, 191, 36, 0.15);
+    --accent: #fcd34d;
+    --accent-bg: rgba(252, 211, 77, 0.12);
 
-    /* Text Colors */
-    --text: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-light: #64748b;
-    --text-inverse: #0f172a;
+    /* Text Colors - not pure white, easier on eyes */
+    --text: #e2e8f0;
+    --text-secondary: #a1a1aa;
+    --text-light: #71717a;
+    --text-inverse: #18181b;
 
-    /* Background Colors */
-    --bg: #1e293b;
-    --bg-soft: #0f172a;
-    --bg-muted: #334155;
-    --bg-elevated: #334155;
+    /* Background Colors - dark gray, not pure black */
+    --bg: #18181b;
+    --bg-soft: #09090b;
+    --bg-muted: #27272a;
+    --bg-elevated: #27272a;
 
     /* Border Colors */
-    --border: #475569;
-    --border-light: #334155;
+    --border: #3f3f46;
+    --border-light: #27272a;
 
     /* Header */
     --header-bg: rgba(15, 23, 42, 0.9);
@@ -592,7 +592,7 @@ footer a:hover {
 
 /* Calculator Page Styles */
 .calc-page {
-    padding: 48px 24px;
+    padding: 32px 24px;
     min-height: calc(100vh - 200px);
     background: var(--bg-soft);
 }
@@ -603,22 +603,22 @@ footer a:hover {
 }
 
 .calc-container h1 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: var(--text);
-    font-size: 2rem;
+    font-size: 1.75rem;
     letter-spacing: -0.5px;
 }
 
 .calc-container > p {
     color: var(--text-secondary);
-    margin-bottom: 32px;
-    font-size: 1.05rem;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
 }
 
 .calculator {
     background: var(--bg);
-    border-radius: var(--radius-xl);
-    padding: 36px;
+    border-radius: var(--radius-lg);
+    padding: 28px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border-light);
 }
@@ -626,28 +626,28 @@ footer a:hover {
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 16px;
 }
 
 .form-group {
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
     color: var(--text);
-    font-size: 0.95rem;
+    font-size: 0.875rem;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 14px 16px;
+    padding: 10px 12px;
     border: 2px solid var(--border);
-    border-radius: var(--radius);
-    font-size: 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
     transition: var(--transition);
     background: var(--bg);
     color: var(--text);
@@ -657,7 +657,7 @@ footer a:hover {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px var(--primary-bg);
+    box-shadow: 0 0 0 3px var(--primary-bg);
 }
 
 .form-group input::placeholder {
@@ -671,10 +671,10 @@ footer a:hover {
 
 .input-group span {
     background: var(--bg-muted);
-    padding: 14px 16px;
+    padding: 10px 12px;
     border: 2px solid var(--border);
     border-right: none;
-    border-radius: var(--radius) 0 0 var(--radius);
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
     color: var(--text-secondary);
     font-weight: 500;
     display: flex;
@@ -682,26 +682,26 @@ footer a:hover {
 }
 
 .input-group input {
-    border-radius: 0 var(--radius) var(--radius) 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .btn {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     border: none;
-    padding: 16px 32px;
-    font-size: 1rem;
+    padding: 12px 24px;
+    font-size: 0.95rem;
     font-weight: 600;
-    border-radius: var(--radius);
+    border-radius: var(--radius-sm);
     cursor: pointer;
     width: 100%;
     transition: var(--transition);
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
 }
 
 .btn:active {
@@ -710,8 +710,8 @@ footer a:hover {
 
 /* Results */
 .results {
-    margin-top: 36px;
-    padding-top: 36px;
+    margin-top: 28px;
+    padding-top: 28px;
     border-top: 2px solid var(--border-light);
     display: none;
     animation: fadeIn 0.3s ease;
@@ -727,22 +727,22 @@ footer a:hover {
 }
 
 .results h2 {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     color: var(--text);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .result-highlight {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    padding: 32px;
-    border-radius: var(--radius-lg);
+    padding: 24px;
+    border-radius: var(--radius);
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     color: white;
 }
 
 .result-highlight .big-number {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 700;
     letter-spacing: -1px;
 }
@@ -750,31 +750,31 @@ footer a:hover {
 .result-highlight p {
     opacity: 0.9;
     margin-top: 4px;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .result-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-    margin-bottom: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .result-card {
     background: var(--bg-soft);
-    padding: 20px;
-    border-radius: var(--radius);
+    padding: 14px;
+    border-radius: var(--radius-sm);
     text-align: center;
 }
 
 .result-card .label {
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-bottom: 4px;
 }
 
 .result-card .value {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--text);
 }
@@ -786,7 +786,7 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -796,7 +796,7 @@ footer a:hover {
 
 .result-label {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.875rem;
 }
 
 .result-value {
