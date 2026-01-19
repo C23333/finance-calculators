@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Payoff Calculator 2026 - Pay Off Debt Faster | FinCalc</title>
+    <meta name="description" content="Free loan payoff calculator for 2026. See how extra payments help you pay off loans faster and save thousands in interest. Create your accelerated payoff plan.">
+    <meta name="keywords" content="loan payoff calculator, debt payoff calculator, extra payment calculator, loan amortization, pay off loan early">
+    <link rel="canonical" href="https://financecalc.cc/calculators/loan-payoff.html">
+
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
@@ -18,158 +23,340 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Loan Payoff Calculator 2026 - Pay Off Debt Faster | FinCalc</title>
-    <meta name="description" content="Free loan payoff calculator for 2026. See how extra payments help you pay off loans faster and save thousands in interest. Create your accelerated payoff plan.">
-    <meta name="keywords" content="loan payoff calculator, debt payoff calculator, extra payment calculator, loan amortization, pay off loan early">
-    <link rel="canonical" href="https://financecalc.cc/calculators/loan-payoff.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="/js/init.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - WebApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Loan Payoff Calculator",
         "description": "Calculate how to pay off your loan faster with extra payments",
+        "url": "https://financecalc.cc/calculators/loan-payoff.html",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any",
         "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "720"
         }
     }
     </script>
 
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.loanPayoff.title">Loan Payoff Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
-                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="../#about" data-i18n="nav.about">About</a></li>
-            </ul>
-            <div class="nav-controls">
-                <!-- Language selector and theme toggle will be injected by JS -->
-            </div>
+            <div class="nav-controls"></div>
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
-
-    <main id="main-content" class="calc-page">
-        <div class="calc-container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.loan.breadcrumb">Loan Payoff Calculator</span></span>
-            </nav>
-
-            <h1 data-i18n="calculators.loan.title">Loan Payoff Calculator</h1>
-            <p data-i18n="calculators.loan.pageDescription">See how extra payments can help you become debt-free faster and save money on interest.</p>
-
-            <div class="calculator">
-                <form id="loanPayoffForm">
-                    <div class="form-group">
-                        <label for="loanBalance" data-i18n="calculators.loan.loanBalance">Current Loan Balance</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="loanBalance" value="25000" min="0" step="100" required>
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                    <span data-i18n="calculators.loanPayoff.loanDetails">Loan Details</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="loanPayoffForm" class="calc-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="loanBalance" data-i18n="calculators.loan.loanBalance">Current Loan Balance</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="loanBalance" value="25000" min="0" step="100" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interestRate" data-i18n="calculators.loan.interestRate">Interest Rate (Annual %)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="interestRate" data-i18n="calculators.loan.interestRate">Interest Rate (Annual %)</label>
-                        <div class="input-group">
-                            <span>%</span>
-                            <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="monthlyPayment" data-i18n="calculators.loan.monthlyPayment">Current Monthly Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="monthlyPayment" value="500" min="0" step="10" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="extraPayment" data-i18n="calculators.loan.extraPayment">Extra Monthly Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="extraPayment" value="100" min="0" step="10">
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="monthlyPayment" data-i18n="calculators.loan.monthlyPayment">Current Monthly Payment</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="monthlyPayment" value="500" min="0" step="10" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="extraPayment" data-i18n="calculators.loan.extraPayment">Extra Monthly Payment</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="extraPayment" value="100" min="0" step="10">
-                        </div>
-                    </div>
-
                     <button type="submit" class="btn" data-i18n="calculators.loan.calculate">Calculate</button>
                 </form>
+            </div>
 
-                <div class="results" id="results">
-                    <div class="result-highlight">
-                        <div class="big-number" id="interestSaved">$0</div>
-                        <p data-i18n="calculators.loan.interestSaved">Interest Saved</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="debt-payoff.html" class="calc-quick-link">📊 <span data-i18n="calculators.debtPayoff.title">Debt Payoff</span></a>
+                <a href="auto-loan.html" class="calc-quick-link">🚗 <span data-i18n="calculators.autoLoan.title">Auto Loan</span></a>
+                <a href="student-loan.html" class="calc-quick-link">🎓 <span data-i18n="calculators.studentLoan.title">Student Loan</span></a>
+                <a href="mortgage.html" class="calc-quick-link">🏠 <span data-i18n="calculators.mortgage.title">Mortgage</span></a>
+            </div>
+        </div>
 
-                    <h2 data-i18n="calculators.loan.comparison">Comparison</h2>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="interestSaved">$0</div>
+                <div class="label" data-i18n="calculators.loan.interestSaved">Interest Saved</div>
+            </div>
 
-                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--text-light);" data-i18n="calculators.loan.withoutExtra">Without Extra Payments</h3>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.loan.payoffTime">Payoff Time</span>
-                        <span class="result-value" id="originalTime">-</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.loan.totalInterest">Total Interest</span>
-                        <span class="result-value" id="originalInterest">$0</span>
-                    </div>
-
-                    <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--secondary);" data-i18n="calculators.loan.withExtra">With Extra Payments</h3>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.loan.payoffTime">Payoff Time</span>
-                        <span class="result-value" id="newTime" style="color: var(--secondary);">-</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.loan.totalInterest">Total Interest</span>
-                        <span class="result-value" id="newInterest" style="color: var(--secondary);">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.loan.timeSaved">Time Saved</span>
-                        <span class="result-value" id="timeSaved" style="color: var(--secondary);">-</span>
-                    </div>
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="newTime">-</div>
+                    <div class="label" data-i18n="calculators.loan.newPayoffTime">New Payoff Time</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="timeSaved">-</div>
+                    <div class="label" data-i18n="calculators.loan.timeSaved">Time Saved</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="newInterest">$0</div>
+                    <div class="label" data-i18n="calculators.loan.newTotalInterest">New Total Interest</div>
+                </div>
+                <div class="calc-result-item success">
+                    <div class="value" id="payoffDate">-</div>
+                    <div class="label" data-i18n="calculators.loan.payoffDate">Payoff Date</div>
                 </div>
             </div>
 
-            <article class="content" style="margin-top: 40px;">
-                <h2 data-i18n="calculators.loan.articleTitle">How Extra Payments Help</h2>
-                <p data-i18n="calculators.loan.articleIntro">Making extra payments on your loan goes directly toward your principal balance. This reduces the amount of interest you pay over time and shortens your loan term.</p>
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="comparison" data-i18n="calculators.loan.comparison">Comparison</button>
+                <button class="calc-output-tab" data-tab="schedule" data-i18n="calculators.loan.schedule">Schedule</button>
+            </div>
 
-                <h3 data-i18n="calculators.loan.strategiesTitle">Strategies for Paying Off Debt Faster</h3>
-                <ul>
-                    <li><strong data-i18n="calculators.loan.strategyRoundUp">Round Up Payments:</strong> <span data-i18n="calculators.loan.strategyRoundUpDesc">Round your payment to the nearest $50 or $100</span></li>
-                    <li><strong data-i18n="calculators.loan.strategyBiWeekly">Bi-Weekly Payments:</strong> <span data-i18n="calculators.loan.strategyBiWeeklyDesc">Pay half your monthly payment every two weeks (equals 13 monthly payments per year)</span></li>
-                    <li><strong data-i18n="calculators.loan.strategyLumpSum">Lump Sum Payments:</strong> <span data-i18n="calculators.loan.strategyLumpSumDesc">Apply tax refunds or bonuses to your principal</span></li>
-                    <li><strong data-i18n="calculators.loan.strategyRefinance">Refinance:</strong> <span data-i18n="calculators.loan.strategyRefinanceDesc">If rates have dropped, refinancing could lower your interest rate</span></li>
-                </ul>
+            <div class="calc-output-content" id="outputContent">
+                <!-- Comparison Tab -->
+                <div class="calc-tab-content active" id="comparisonContent">
+                    <div class="calc-breakdown">
+                        <h4 style="margin-bottom: 12px; color: var(--text-light);" data-i18n="calculators.loan.withoutExtra">Without Extra Payments</h4>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.loan.payoffTime">Payoff Time</span>
+                            <span class="breakdown-value" id="originalTime">-</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.loan.totalInterest">Total Interest</span>
+                            <span class="breakdown-value" id="originalInterest">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.loan.totalPaid">Total Paid</span>
+                            <span class="breakdown-value" id="originalTotal">$0</span>
+                        </div>
+                        
+                        <h4 style="margin: 20px 0 12px; color: var(--secondary);" data-i18n="calculators.loan.withExtra">With Extra Payments</h4>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.loan.payoffTime">Payoff Time</span>
+                            <span class="breakdown-value" id="newTimeBreakdown" style="color: var(--secondary);">-</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.loan.totalInterest">Total Interest</span>
+                            <span class="breakdown-value" id="newInterestBreakdown" style="color: var(--secondary);">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.loan.totalPaid">Total Paid</span>
+                            <span class="breakdown-value" id="newTotal" style="color: var(--secondary);">$0</span>
+                        </div>
+                        
+                        <div class="breakdown-item total">
+                            <span class="breakdown-label" data-i18n="calculators.loan.youSave">You Save</span>
+                            <span class="breakdown-value" id="totalSavings" style="color: var(--secondary);">$0</span>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 data-i18n="calculators.loan.considerationsTitle">Important Considerations</h3>
-                <ul>
-                    <li data-i18n="calculators.loan.consideration1">Check if your loan has prepayment penalties</li>
-                    <li data-i18n="calculators.loan.consideration2">Ensure extra payments are applied to principal, not future payments</li>
-                    <li data-i18n="calculators.loan.consideration3">Consider building an emergency fund before aggressive debt payoff</li>
-                </ul>
-            </article>
+                <!-- Schedule Tab -->
+                <div class="calc-tab-content" id="scheduleContent">
+                    <table class="calc-table" id="scheduleTable">
+                        <thead>
+                            <tr>
+                                <th data-i18n="calculators.loan.month">Month</th>
+                                <th data-i18n="calculators.loan.payment">Payment</th>
+                                <th data-i18n="calculators.loan.principal">Principal</th>
+                                <th data-i18n="calculators.loan.interest">Interest</th>
+                                <th data-i18n="calculators.loan.balance">Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleBody"></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.loanPayoff.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
+                </h3>
+                <p>Enter your current loan balance, interest rate, monthly payment, and any extra amount you can pay each month. The calculator shows how much time and interest you'll save by making extra payments.</p>
+            </section>
+
+            <!-- Understanding Results Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Understanding Your Results
+                </h3>
+                <ul>
+                    <li><strong>Interest Saved:</strong> The total amount of interest you'll avoid paying by making extra payments</li>
+                    <li><strong>Time Saved:</strong> How many months or years earlier you'll pay off the loan</li>
+                    <li><strong>New Payoff Time:</strong> Your new loan payoff timeline with extra payments</li>
+                    <li><strong>Payoff Date:</strong> The estimated date when your loan will be fully paid</li>
+                </ul>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    Strategies for Paying Off Debt Faster
+                </h3>
+                <ul>
+                    <li><strong>Round Up Payments:</strong> Round your payment to the nearest $50 or $100</li>
+                    <li><strong>Bi-Weekly Payments:</strong> Pay half your monthly payment every two weeks (equals 13 monthly payments per year)</li>
+                    <li><strong>Lump Sum Payments:</strong> Apply tax refunds or bonuses to your principal</li>
+                    <li><strong>Refinance:</strong> If rates have dropped, refinancing could lower your interest rate</li>
+                    <li><strong>Automate Extra Payments:</strong> Set up automatic transfers to ensure consistency</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Frequently Asked Questions
+                </h3>
+                <div class="faq-item">
+                    <h4>How do extra payments help?</h4>
+                    <p>Extra payments go directly toward your principal balance, reducing the amount of interest you pay over time and shortening your loan term. Even small extra payments can save thousands in interest.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Should I pay off debt or save?</h4>
+                    <p>Generally, if your debt interest rate is higher than what you'd earn on savings, prioritize debt payoff. However, always maintain a small emergency fund first to avoid taking on new debt.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are there prepayment penalties?</h4>
+                    <p>Some loans have prepayment penalties. Check your loan agreement or contact your lender before making extra payments. Most personal loans and mortgages don't have these penalties.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How do I ensure extra payments go to principal?</h4>
+                    <p>Contact your lender and specify that extra payments should be applied to principal, not future payments. Some lenders have online options to designate this.</p>
+                </div>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/debt-snowball-vs-avalanche.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Debt Snowball vs Avalanche: Which is Better?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/how-to-pay-off-50000-student-loans.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How to Pay Off $50,000 in Student Loans
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/emergency-fund-3-vs-6-months.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Emergency Fund: 3 or 6 Months?
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Policy Links Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Loan Payoff Resources
+                </h3>
+                <p>Learn more about debt payoff strategies and tools:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=debt+payoff+strategies+2026" target="_blank" rel="noopener">Payoff Strategies</a>
+                    <a href="https://www.google.com/search?q=loan+refinancing+options" target="_blank" rel="noopener">Refinancing Options</a>
+                    <a href="https://www.google.com/search?q=debt+consolidation+pros+cons" target="_blank" rel="noopener">Debt Consolidation</a>
+                    <a href="https://www.google.com/search?q=prepayment+penalty+check" target="_blank" rel="noopener">Prepayment Penalties</a>
+                    <a href="https://www.google.com/search?q=credit+score+impact+paying+off+debt" target="_blank" rel="noopener">Credit Score Impact</a>
+                    <a href="https://www.google.com/search?q=biweekly+payment+calculator" target="_blank" rel="noopener">Bi-Weekly Payments</a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
 
     <footer>
         <div class="container">
@@ -186,18 +373,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Loan Payoff Calculator -->
     <script src="../js/loan-payoff.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>

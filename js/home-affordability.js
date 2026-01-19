@@ -3,6 +3,31 @@ document.getElementById('affordabilityForm').addEventListener('submit', function
     calculateAffordability(true);
 });
 
+// Auto-calculate on input change
+document.querySelectorAll('#affordabilityForm input, #affordabilityForm select').forEach(input => {
+    input.addEventListener('input', () => calculateAffordability(false));
+    input.addEventListener('change', () => calculateAffordability(false));
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show the corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
 function calculateAffordability(shouldScroll = false) {
     const annualIncome = parseFloat(document.getElementById('annualIncome').value);
     const monthlyDebts = parseFloat(document.getElementById('monthlyDebts').value);
@@ -87,9 +112,36 @@ function calculateAffordability(shouldScroll = false) {
     document.getElementById('monthlyTax').textContent = I18n.formatCurrency(monthlyTax, { decimals: 0 });
     document.getElementById('monthlyInsurance').textContent = I18n.formatCurrency(monthlyInsurance, { decimals: 0 });
 
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Update details tab if elements exist
+    const totalMonthlyEl = document.getElementById('totalMonthly');
+    const monthlyIncomeEl = document.getElementById('monthlyIncome');
+    const maxHousingPaymentEl = document.getElementById('maxHousingPayment');
+    const maxTotalDebtEl = document.getElementById('maxTotalDebt');
+    const availableForHousingEl = document.getElementById('availableForHousing');
+    
+    if (totalMonthlyEl) {
+        totalMonthlyEl.textContent = I18n.formatCurrency(totalMonthlyPayment, { decimals: 0 });
+    }
+    if (monthlyIncomeEl) {
+        monthlyIncomeEl.textContent = I18n.formatCurrency(monthlyIncome, { decimals: 0 });
+    }
+    if (maxHousingPaymentEl) {
+        maxHousingPaymentEl.textContent = I18n.formatCurrency(maxHousingPayment, { decimals: 0 });
+    }
+    if (maxTotalDebtEl) {
+        maxTotalDebtEl.textContent = I18n.formatCurrency(maxTotalDebt, { decimals: 0 });
+    }
+    if (availableForHousingEl) {
+        availableForHousingEl.textContent = I18n.formatCurrency(maxHousingFromBackEnd, { decimals: 0 });
+    }
+
+    // Show results (for old layout compatibility)
+    const resultsEl = document.getElementById('results');
+    if (resultsEl) {
+        resultsEl.classList.add('show');
+        if (shouldScroll) {
+            resultsEl.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 

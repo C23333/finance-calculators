@@ -44,42 +44,39 @@
     </script>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.investmentReturn.title">Investment Return Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
-                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="../#about" data-i18n="nav.about">About</a></li>
-            </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
             </div>
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
-
-    <main id="main-content" class="calc-page">
-        <div class="calc-container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.investmentReturn.breadcrumb">Investment Return Calculator</span></span>
-            </nav>
-
-            <h1 data-i18n="calculators.investmentReturn.title">Investment Return Calculator</h1>
-            <p data-i18n="calculators.investmentReturn.description">Calculate your investment returns and ROI. Compare what you invested vs what you got back.</p>
-
-            <div class="calculator">
-                <form id="investmentForm">
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <span data-i18n="calculators.investmentReturn.investmentDetails">Investment Details</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="investmentForm" class="calc-form">
                     <div class="form-group">
                         <label for="initialInvestment" data-i18n="calculators.investmentReturn.initialInvestment">Initial Investment</label>
                         <div class="input-group">
@@ -87,7 +84,6 @@
                             <input type="number" id="initialInvestment" value="10000" min="0" step="100" required>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="finalValue" data-i18n="calculators.investmentReturn.finalValue">Final Value</label>
                         <div class="input-group">
@@ -95,61 +91,183 @@
                             <input type="number" id="finalValue" value="15000" min="0" step="100" required>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="holdingPeriod" data-i18n="calculators.investmentReturn.holdingPeriod">Holding Period (Years)</label>
                         <input type="number" id="holdingPeriod" value="3" min="0.1" max="100" step="0.1" required>
                     </div>
-
                     <button type="submit" class="btn" data-i18n="calculators.investmentReturn.calculate">Calculate</button>
                 </form>
+            </div>
 
-                <div class="results" id="results">
-                    <div class="result-highlight">
-                        <div class="big-number" id="totalReturn">0%</div>
-                        <p data-i18n="calculators.investmentReturn.totalReturn">Total Return</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
+                <a href="401k.html" class="calc-quick-link">💼 <span data-i18n="calculators.401k.title">401(k)</span></a>
+                <a href="retirement.html" class="calc-quick-link">🎯 <span data-i18n="calculators.retirement.title">Retirement</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🏦 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
+            </div>
+        </div>
 
-                    <h2 data-i18n="calculators.investmentReturn.investmentSummary">Investment Summary</h2>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.investmentReturn.profitLoss">Profit/Loss</span>
-                        <span class="result-value" id="profitLoss">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.investmentReturn.annualizedReturn">Annualized Return (CAGR)</span>
-                        <span class="result-value" id="annualizedReturn">0%</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.investmentReturn.simpleROI">Simple ROI</span>
-                        <span class="result-value" id="simpleROI">0%</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.investmentReturn.doublingTime">Doubling Time</span>
-                        <span class="result-value" id="doublingTime">-</span>
-                    </div>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="totalReturn">0%</div>
+                <div class="label" data-i18n="calculators.investmentReturn.totalReturn">Total Return</div>
+            </div>
+
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="profitLoss">$0</div>
+                    <div class="label" data-i18n="calculators.investmentReturn.profitLoss">Profit/Loss</div>
+                </div>
+                <div class="calc-result-item success">
+                    <div class="value" id="annualizedReturn">0%</div>
+                    <div class="label" data-i18n="calculators.investmentReturn.annualizedReturn">Annualized Return (CAGR)</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="simpleROI">0%</div>
+                    <div class="label" data-i18n="calculators.investmentReturn.simpleROI">Simple ROI</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="doublingTime">-</div>
+                    <div class="label" data-i18n="calculators.investmentReturn.doublingTime">Doubling Time</div>
                 </div>
             </div>
 
-            <article class="content" style="margin-top: 40px;">
-                <h2 data-i18n="calculators.investmentReturn.articleTitle">Understanding Investment Returns</h2>
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="details" data-i18n="calculators.investmentReturn.detailsTab">Details</button>
+                <button class="calc-output-tab" data-tab="benchmarks" data-i18n="calculators.investmentReturn.benchmarksTab">Benchmarks</button>
+            </div>
 
-                <h3 data-i18n="calculators.investmentReturn.totalVsAnnualized">Total Return vs Annualized Return</h3>
-                <p data-i18n="calculators.investmentReturn.totalVsAnnualizedText"><strong>Total Return</strong> shows your overall gain or loss as a percentage. <strong>Annualized Return (CAGR)</strong> shows the equivalent yearly return rate, which is useful for comparing investments held for different time periods.</p>
+            <div class="calc-output-content" id="outputContent">
+                <!-- Details Tab -->
+                <div class="calc-tab-content active" id="detailsContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.initialInvestment">Initial Investment</span>
+                            <span class="breakdown-value" id="initialDisplay">$10,000</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.finalValue">Final Value</span>
+                            <span class="breakdown-value" id="finalDisplay">$15,000</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.holdingPeriod">Holding Period</span>
+                            <span class="breakdown-value" id="periodDisplay">3 years</span>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 data-i18n="calculators.investmentReturn.cagrFormula">CAGR Formula</h3>
-                <p data-i18n="calculators.investmentReturn.cagrFormulaText">CAGR = (Final Value / Initial Value)^(1/Years) - 1</p>
-                <p data-i18n="calculators.investmentReturn.cagrFormulaDesc">This gives you the constant annual growth rate that would take your initial investment to its final value.</p>
-
-                <h3 data-i18n="calculators.investmentReturn.historicalReturns">Historical Average Returns</h3>
-                <ul>
-                    <li><strong data-i18n="calculators.investmentReturn.sp500">S&P 500:</strong> <span data-i18n="calculators.investmentReturn.sp500Return">~10% annually (before inflation)</span></li>
-                    <li><strong data-i18n="calculators.investmentReturn.bonds">Bonds:</strong> <span data-i18n="calculators.investmentReturn.bondsReturn">~5-6% annually</span></li>
-                    <li><strong data-i18n="calculators.investmentReturn.savingsAccount">Savings Account:</strong> <span data-i18n="calculators.investmentReturn.savingsReturn">~0.5-5% (varies by rate environment)</span></li>
-                    <li><strong data-i18n="calculators.investmentReturn.realEstate">Real Estate:</strong> <span data-i18n="calculators.investmentReturn.realEstateReturn">~8-12% annually (including appreciation and rental income)</span></li>
-                </ul>
-            </article>
+                <!-- Benchmarks Tab -->
+                <div class="calc-tab-content" id="benchmarksContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.sp500">S&P 500 (Historical)</span>
+                            <span class="breakdown-value">~10%/year</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.bonds">Bonds</span>
+                            <span class="breakdown-value">~5-6%/year</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.realEstate">Real Estate</span>
+                            <span class="breakdown-value">~8-12%/year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.investmentReturn.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
+                </h3>
+                <p>Enter your initial investment amount, the final value of your investment, and the holding period in years. The calculator will show your total return, annualized return (CAGR), and how long it would take to double your money at this rate.</p>
+            </section>
+
+            <!-- Total vs Annualized Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Total Return vs Annualized Return
+                </h3>
+                <p><strong>Total Return</strong> shows your overall gain or loss as a percentage. <strong>Annualized Return (CAGR)</strong> shows the equivalent yearly return rate, which is useful for comparing investments held for different time periods.</p>
+            </section>
+
+            <!-- CAGR Formula Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    CAGR Formula
+                </h3>
+                <p><code>CAGR = (Final Value / Initial Value)^(1/Years) - 1</code></p>
+                <p>This gives you the constant annual growth rate that would take your initial investment to its final value.</p>
+            </section>
+
+            <!-- Historical Returns Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    Historical Average Returns
+                </h3>
+                <ul>
+                    <li><strong>S&P 500:</strong> ~10% annually (before inflation)</li>
+                    <li><strong>Bonds:</strong> ~5-6% annually</li>
+                    <li><strong>Savings Account:</strong> ~0.5-5% (varies by rate environment)</li>
+                    <li><strong>Real Estate:</strong> ~8-12% annually (including appreciation and rental income)</li>
+                </ul>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/401k-contribution-calculator-2025.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How Much Should I Contribute to My 401(k)?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/emergency-fund-3-vs-6-months.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Emergency Fund: 3 or 6 Months?
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Resources Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Investment Resources
+                </h3>
+                <p>Learn more about investing:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=S%26P+500+historical+returns" target="_blank" rel="noopener">S&P 500 Returns</a>
+                    <a href="https://www.google.com/search?q=best+index+funds+2026" target="_blank" rel="noopener">Best Index Funds</a>
+                    <a href="https://www.google.com/search?q=capital+gains+tax+rates+2026" target="_blank" rel="noopener">Capital Gains Tax</a>
+                    <a href="https://www.google.com/search?q=diversification+investment+strategy" target="_blank" rel="noopener">Diversification Strategy</a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
 
     <footer>
         <div class="container">
@@ -166,18 +284,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Investment Return Calculator -->
     <script src="../js/investment-return.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>

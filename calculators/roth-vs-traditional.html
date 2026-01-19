@@ -27,20 +27,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <script src="/js/init.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
     <style>
         .recommendation {
-            padding: 1.5rem;
-            border-radius: 12px;
+            padding: 1rem;
+            border-radius: 8px;
             margin-top: 1rem;
         }
         .recommendation h4 {
             margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .recommendation p {
+            margin: 0.25rem 0;
+            font-size: 0.875rem;
         }
         .roth-better {
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
@@ -54,226 +55,304 @@
             background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
             border-left: 4px solid #ffc107;
         }
+        [data-effective-theme="dark"] .roth-better {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.2) 0%, rgba(40, 167, 69, 0.1) 100%);
+        }
+        [data-effective-theme="dark"] .traditional-better {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.2) 0%, rgba(0, 123, 255, 0.1) 100%);
+        }
+        [data-effective-theme="dark"] .equal {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 193, 7, 0.1) 100%);
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.rothVsTraditional.title">Roth vs Traditional Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
-                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="../#about" data-i18n="nav.about">About</a></li>
-            </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
             </div>
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
-
-    <main id="main-content" class="calculator-page">
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.rothVsTraditional.breadcrumb">Roth vs Traditional Calculator</span></span>
-            </nav>
-
-            <div class="calculator-header">
-                <h1 data-i18n="calculators.rothVsTraditional.title">Roth vs Traditional Calculator</h1>
-                <p data-i18n="calculators.rothVsTraditional.pageDescription">Compare Roth and Traditional retirement accounts to determine which is better for your situation</p>
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+                    <span data-i18n="calculators.rothVsTraditional.compareOptions">Compare Your Options</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="rothTraditionalForm" class="calc-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentAge" data-i18n="calculators.rothVsTraditional.currentAge">Current Age</label>
+                            <input type="number" id="currentAge" min="18" max="70" value="35" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="retirementAge" data-i18n="calculators.rothVsTraditional.retirementAge">Retirement Age</label>
+                            <input type="number" id="retirementAge" min="55" max="80" value="65" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="annualContribution" data-i18n="calculators.rothVsTraditional.annualContributionLabel">Annual Contribution</label>
+                        <div class="input-group">
+                            <span>$</span>
+                            <input type="number" id="annualContribution" min="0" max="30500" value="7000" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentTaxRate" data-i18n="calculators.rothVsTraditional.currentTaxRateLabel">Current Tax Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="currentTaxRate" min="0" max="50" step="0.1" value="24" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="retirementTaxRate" data-i18n="calculators.rothVsTraditional.retirementTaxRateLabel">Retirement Tax Rate</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="retirementTaxRate" min="0" max="50" step="0.1" value="22" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expectedReturn" data-i18n="calculators.rothVsTraditional.expectedReturnLabel">Expected Annual Return</label>
+                        <div class="input-group">
+                            <span>%</span>
+                            <input type="number" id="expectedReturn" min="0" max="15" step="0.1" value="7" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentTraditional" data-i18n="calculators.rothVsTraditional.currentTraditionalBalance">Current Traditional</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentTraditional" min="0" value="50000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentRoth" data-i18n="calculators.rothVsTraditional.currentRothBalance">Current Roth</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentRoth" min="0" value="25000">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" data-i18n="calculators.rothVsTraditional.compareAccounts">Compare Accounts</button>
+                </form>
             </div>
 
-            <div class="calculator-layout">
-                <div class="calculator-main">
-                    <div class="card" id="calculator">
-                        <h2 data-i18n="calculators.rothVsTraditional.compareOptions">Compare Your Options</h2>
-                        <form id="rothTraditionalForm" class="calculator-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="currentAge" data-i18n="calculators.rothVsTraditional.currentAge">Current Age</label>
-                                    <input type="number" id="currentAge" min="18" max="70" value="35" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="retirementAge" data-i18n="calculators.rothVsTraditional.retirementAge">Retirement Age</label>
-                                    <input type="number" id="retirementAge" min="55" max="80" value="65" required>
-                                </div>
-                            </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="401k.html" class="calc-quick-link">💼 <span data-i18n="calculators.401k.title">401(k)</span></a>
+                <a href="retirement.html" class="calc-quick-link">🎯 <span data-i18n="calculators.retirement.title">Retirement</span></a>
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
+                <a href="investment-return.html" class="calc-quick-link">💹 <span data-i18n="calculators.investmentReturn.title">Investment Return</span></a>
+            </div>
+        </div>
 
-                            <div class="form-group">
-                                <label for="annualContribution" data-i18n="calculators.rothVsTraditional.annualContributionLabel">Annual Contribution ($)</label>
-                                <input type="number" id="annualContribution" min="0" max="30500" value="7000" required>
-                                <small data-i18n="calculators.rothVsTraditional.contributionLimitsNote">2024 IRA limit: $7,000 ($8,000 if 50+) | 401k limit: $23,000 ($30,500 if 50+)</small>
-                            </div>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="difference">$0</div>
+                <div class="label" data-i18n="calculators.rothVsTraditional.difference">Difference in After-Tax Value</div>
+            </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="currentTaxRate" data-i18n="calculators.rothVsTraditional.currentTaxRateLabel">Current Marginal Tax Rate (%)</label>
-                                    <input type="number" id="currentTaxRate" min="0" max="50" step="0.1" value="24" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="retirementTaxRate" data-i18n="calculators.rothVsTraditional.retirementTaxRateLabel">Expected Retirement Tax Rate (%)</label>
-                                    <input type="number" id="retirementTaxRate" min="0" max="50" step="0.1" value="22" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="expectedReturn" data-i18n="calculators.rothVsTraditional.expectedReturnLabel">Expected Annual Return (%)</label>
-                                <input type="number" id="expectedReturn" min="0" max="15" step="0.1" value="7" required>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="currentTraditional" data-i18n="calculators.rothVsTraditional.currentTraditionalBalance">Current Traditional Balance ($)</label>
-                                    <input type="number" id="currentTraditional" min="0" value="50000">
-                                </div>
-                                <div class="form-group">
-                                    <label for="currentRoth" data-i18n="calculators.rothVsTraditional.currentRothBalance">Current Roth Balance ($)</label>
-                                    <input type="number" id="currentRoth" min="0" value="25000">
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-block" data-i18n="calculators.rothVsTraditional.compareAccounts">Compare Accounts</button>
-                        </form>
-                    </div>
-
-                    <div class="card results-card" id="results" style="display: none;">
-                        <h2 data-i18n="calculators.rothVsTraditional.comparisonResults">Comparison Results</h2>
-                        <div class="results-grid">
-                            <div class="result-item">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.traditionalBalanceAtRetirement">Traditional Balance at Retirement</span>
-                                <span class="result-value" id="traditionalBalance">$0</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.rothBalanceAtRetirement">Roth Balance at Retirement</span>
-                                <span class="result-value" id="rothBalance">$0</span>
-                            </div>
-                            <div class="result-item highlight">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.traditionalAfterTaxValue">Traditional After-Tax Value</span>
-                                <span class="result-value" id="traditionalAfterTax">$0</span>
-                            </div>
-                            <div class="result-item highlight">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.rothAfterTaxValue">Roth After-Tax Value</span>
-                                <span class="result-value" id="rothAfterTax">$0</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.traditionalMonthlyIncome">Traditional Monthly Income</span>
-                                <span class="result-value" id="traditionalMonthly">$0</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.rothMonthlyIncome">Roth Monthly Income</span>
-                                <span class="result-value" id="rothMonthly">$0</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.difference">Difference</span>
-                                <span class="result-value" id="difference">$0</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label" data-i18n="calculators.rothVsTraditional.breakEvenTaxRate">Break-Even Tax Rate</span>
-                                <span class="result-value" id="breakEvenRate">0%</span>
-                            </div>
-                        </div>
-
-                        <div id="recommendation"></div>
-
-                        <div class="comparison-table">
-                            <h3 data-i18n="calculators.rothVsTraditional.detailedComparison">Detailed Comparison</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th data-i18n="calculators.rothVsTraditional.factor">Factor</th>
-                                        <th data-i18n="calculators.rothVsTraditional.traditional">Traditional</th>
-                                        <th data-i18n="calculators.rothVsTraditional.roth">Roth</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="comparisonBody">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="traditionalAfterTax">$0</div>
+                    <div class="label" data-i18n="calculators.rothVsTraditional.traditionalAfterTaxValue">Traditional After-Tax</div>
                 </div>
-
-                <div class="calculator-sidebar">
-                    <div class="card">
-                        <h3 data-i18n="calculators.rothVsTraditional.keyDifferences">Key Differences</h3>
-                        <ul class="info-list">
-                            <li><strong data-i18n="calculators.rothVsTraditional.traditionalLabel">Traditional:</strong> <span data-i18n="calculators.rothVsTraditional.traditionalDesc">Tax deduction now, pay taxes on withdrawals</span></li>
-                            <li><strong data-i18n="calculators.rothVsTraditional.rothLabel">Roth:</strong> <span data-i18n="calculators.rothVsTraditional.rothDesc">No deduction now, tax-free withdrawals</span></li>
-                            <li><strong data-i18n="calculators.rothVsTraditional.rmdsLabel">RMDs:</strong> <span data-i18n="calculators.rothVsTraditional.rmdsDesc">Traditional has required minimum distributions at 73; Roth IRAs do not</span></li>
-                            <li><strong data-i18n="calculators.rothVsTraditional.incomeLimitsLabel">Income Limits:</strong> <span data-i18n="calculators.rothVsTraditional.incomeLimitsDesc">Roth IRA has income limits; Traditional does not</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3 data-i18n="calculators.rothVsTraditional.whenChooseRoth">When to Choose Roth</h3>
-                        <ul class="info-list">
-                            <li data-i18n="calculators.rothVsTraditional.rothReason1">You expect higher taxes in retirement</li>
-                            <li data-i18n="calculators.rothVsTraditional.rothReason2">You're early in your career (lower tax bracket)</li>
-                            <li data-i18n="calculators.rothVsTraditional.rothReason3">You want tax-free growth</li>
-                            <li data-i18n="calculators.rothVsTraditional.rothReason4">You want to avoid RMDs</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3 data-i18n="calculators.rothVsTraditional.whenChooseTraditional">When to Choose Traditional</h3>
-                        <ul class="info-list">
-                            <li data-i18n="calculators.rothVsTraditional.traditionalReason1">You expect lower taxes in retirement</li>
-                            <li data-i18n="calculators.rothVsTraditional.traditionalReason2">You're in your peak earning years</li>
-                            <li data-i18n="calculators.rothVsTraditional.traditionalReason3">You need the tax deduction now</li>
-                            <li data-i18n="calculators.rothVsTraditional.traditionalReason4">You're above Roth income limits</li>
-                        </ul>
-                    </div>
-
-                    <div class="card policy-links">
-                        <h3 data-i18n="calculators.rothVsTraditional.learnMore">Learn More</h3>
-                        <p data-i18n="calculators.rothVsTraditional.researchRules">Research retirement account rules:</p>
-                        <a href="https://www.google.com/search?q=IRS+Roth+IRA+contribution+limits+2024" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.rothVsTraditional.rothIRALimits">Roth IRA Limits</a>
-                        <a href="https://www.google.com/search?q=IRS+traditional+IRA+deduction+rules" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.rothVsTraditional.traditionalIRARules">Traditional IRA Rules</a>
-                        <a href="https://www.google.com/search?q=401k+contribution+limits+2024" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.rothVsTraditional.401kLimits">401(k) Limits</a>
-                        <a href="https://www.google.com/search?q=backdoor+Roth+IRA+strategy" target="_blank" class="btn btn-outline btn-block" data-i18n="calculators.rothVsTraditional.backdoorRothStrategy">Backdoor Roth Strategy</a>
-                    </div>
+                <div class="calc-result-item success">
+                    <div class="value" id="rothAfterTax">$0</div>
+                    <div class="label" data-i18n="calculators.rothVsTraditional.rothAfterTaxValue">Roth After-Tax</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="traditionalMonthly">$0</div>
+                    <div class="label" data-i18n="calculators.rothVsTraditional.traditionalMonthlyIncome">Traditional Monthly</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="rothMonthly">$0</div>
+                    <div class="label" data-i18n="calculators.rothVsTraditional.rothMonthlyIncome">Roth Monthly</div>
                 </div>
             </div>
 
-            <section class="card" id="guide">
-                <h2 data-i18n="calculators.rothVsTraditional.guideTitle">Roth vs Traditional Guide</h2>
-                <div class="guide-content">
-                    <h3 data-i18n="calculators.rothVsTraditional.understandingTaxTreatment">Understanding the Tax Treatment</h3>
-                    <p data-i18n="calculators.rothVsTraditional.taxTreatmentDesc">The fundamental difference between Roth and Traditional accounts is when you pay taxes. Traditional accounts give you a tax break today but you pay taxes on withdrawals. Roth accounts are funded with after-tax dollars but grow and can be withdrawn tax-free.</p>
+            <!-- Recommendation -->
+            <div id="recommendation"></div>
 
-                    <h3 data-i18n="calculators.rothVsTraditional.taxRateQuestion">The Tax Rate Question</h3>
-                    <p data-i18n="calculators.rothVsTraditional.taxRateQuestionDesc">The key factor in choosing between Roth and Traditional is comparing your current marginal tax rate to your expected tax rate in retirement. If you expect to be in a higher bracket in retirement, Roth is generally better. If you expect to be in a lower bracket, Traditional is usually better.</p>
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="details" data-i18n="calculators.rothVsTraditional.detailsTab">Details</button>
+                <button class="calc-output-tab" data-tab="comparison" data-i18n="calculators.rothVsTraditional.comparisonTab">Comparison</button>
+            </div>
 
-                    <h3 data-i18n="calculators.rothVsTraditional.contributionLimits2024">2024 Contribution Limits</h3>
-                    <ul>
-                        <li><strong data-i18n="calculators.rothVsTraditional.iraLimit">IRA (Roth or Traditional):</strong> <span data-i18n="calculators.rothVsTraditional.iraLimitValue">$7,000 ($8,000 if age 50+)</span></li>
-                        <li><strong data-i18n="calculators.rothVsTraditional.401kLimit">401(k)/403(b):</strong> <span data-i18n="calculators.rothVsTraditional.401kLimitValue">$23,000 ($30,500 if age 50+)</span></li>
-                        <li><strong data-i18n="calculators.rothVsTraditional.rothIncomeLimit">Roth IRA Income Limits:</strong> <span data-i18n="calculators.rothVsTraditional.rothIncomeLimitValue">Phase-out begins at $146,000 (single) / $230,000 (married)</span></li>
-                    </ul>
-
-                    <h3 data-i18n="calculators.rothVsTraditional.taxDiversification">Consider Tax Diversification</h3>
-                    <p data-i18n="calculators.rothVsTraditional.taxDiversificationDesc">Many financial advisors recommend having both Roth and Traditional accounts for tax diversification. This gives you flexibility in retirement to manage your tax liability by choosing which accounts to withdraw from.</p>
-
-                    <h3 data-i18n="calculators.rothVsTraditional.otherConsiderations">Other Considerations</h3>
-                    <ul>
-                        <li><strong data-i18n="calculators.rothVsTraditional.rmdConsideration">Required Minimum Distributions:</strong> <span data-i18n="calculators.rothVsTraditional.rmdConsiderationDesc">Traditional accounts require RMDs starting at age 73; Roth IRAs do not</span></li>
-                        <li><strong data-i18n="calculators.rothVsTraditional.earlyWithdrawal">Early Withdrawal:</strong> <span data-i18n="calculators.rothVsTraditional.earlyWithdrawalDesc">Roth contributions (not earnings) can be withdrawn penalty-free anytime</span></li>
-                        <li><strong data-i18n="calculators.rothVsTraditional.estatePlanning">Estate Planning:</strong> <span data-i18n="calculators.rothVsTraditional.estatePlanningDesc">Roth accounts can be more beneficial for heirs</span></li>
-                        <li><strong data-i18n="calculators.rothVsTraditional.stateTaxes">State Taxes:</strong> <span data-i18n="calculators.rothVsTraditional.stateTaxesDesc">Consider your state's tax treatment of retirement income</span></li>
-                    </ul>
+            <div class="calc-output-content" id="outputContent">
+                <!-- Details Tab -->
+                <div class="calc-tab-content active" id="detailsContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.rothVsTraditional.traditionalBalanceAtRetirement">Traditional Balance</span>
+                            <span class="breakdown-value" id="traditionalBalance">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.rothVsTraditional.rothBalanceAtRetirement">Roth Balance</span>
+                            <span class="breakdown-value" id="rothBalance">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.rothVsTraditional.breakEvenTaxRate">Break-Even Tax Rate</span>
+                            <span class="breakdown-value" id="breakEvenRate">0%</span>
+                        </div>
+                    </div>
                 </div>
-            </section>
+
+                <!-- Comparison Tab -->
+                <div class="calc-tab-content" id="comparisonContent">
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="calculators.rothVsTraditional.factor">Factor</th>
+                                <th data-i18n="calculators.rothVsTraditional.traditional">Traditional</th>
+                                <th data-i18n="calculators.rothVsTraditional.roth">Roth</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="footer">
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.rothVsTraditional.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
+                </h3>
+                <p>Enter your current and expected retirement tax rates, contribution amount, and expected returns to compare Roth and Traditional retirement accounts. The calculator shows which option provides more after-tax value at retirement.</p>
+            </section>
+
+            <!-- Key Differences Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Key Differences
+                </h3>
+                <ul>
+                    <li><strong>Traditional:</strong> Tax deduction now, pay taxes on withdrawals</li>
+                    <li><strong>Roth:</strong> No deduction now, tax-free withdrawals</li>
+                    <li><strong>RMDs:</strong> Traditional has required minimum distributions at 73; Roth IRAs do not</li>
+                    <li><strong>Income Limits:</strong> Roth IRA has income limits; Traditional does not</li>
+                </ul>
+            </section>
+
+            <!-- When to Choose Roth Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    When to Choose Roth
+                </h3>
+                <ul>
+                    <li>You expect higher taxes in retirement</li>
+                    <li>You're early in your career (lower tax bracket)</li>
+                    <li>You want tax-free growth</li>
+                    <li>You want to avoid RMDs</li>
+                </ul>
+            </section>
+
+            <!-- When to Choose Traditional Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    When to Choose Traditional
+                </h3>
+                <ul>
+                    <li>You expect lower taxes in retirement</li>
+                    <li>You're in your peak earning years</li>
+                    <li>You need the tax deduction now</li>
+                    <li>You're above Roth income limits</li>
+                </ul>
+            </section>
+
+            <!-- 2026 Contribution Limits Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    2026 Contribution Limits
+                </h3>
+                <ul>
+                    <li><strong>IRA (Roth or Traditional):</strong> $7,000 ($8,000 if age 50+)</li>
+                    <li><strong>401(k)/403(b):</strong> $23,500 ($31,000 if age 50+)</li>
+                    <li><strong>Roth IRA Income Limits:</strong> Phase-out begins at $150,000 (single) / $236,000 (married)</li>
+                </ul>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/401k-contribution-calculator-2025.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How Much Should I Contribute to My 401(k)?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/retirement-calculator-teachers.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Retirement Calculator for Teachers
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Resources Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Learn More
+                </h3>
+                <p>Research retirement account rules:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=IRS+Roth+IRA+contribution+limits+2026" target="_blank" rel="noopener">Roth IRA Limits</a>
+                    <a href="https://www.google.com/search?q=IRS+traditional+IRA+deduction+rules" target="_blank" rel="noopener">Traditional IRA Rules</a>
+                    <a href="https://www.google.com/search?q=401k+contribution+limits+2026" target="_blank" rel="noopener">401(k) Limits</a>
+                    <a href="https://www.google.com/search?q=backdoor+Roth+IRA+strategy" target="_blank" rel="noopener">Backdoor Roth Strategy</a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
+
+    <footer>
         <div class="container">
-            <p data-i18n="calculators.rothVsTraditional.footerDisclaimer">&copy; 2026 FinCalc. For educational purposes only. Consult a tax professional for personalized advice.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.rothVsTraditional.footerDisclaimer">For educational purposes only. Consult a tax professional for personalized advice.</p>
             <div class="friend-links">
                 <span data-i18n="footer.friendLinks">Friend Links:</span>
                 <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
@@ -285,18 +364,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Roth vs Traditional Calculator -->
     <script src="../js/roth-vs-traditional.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>

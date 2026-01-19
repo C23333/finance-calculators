@@ -5,6 +5,37 @@ document.getElementById('debtForm').addEventListener('submit', function(e) {
     calculateDebtPayoff(true);
 });
 
+// Add input event listeners for real-time calculation
+document.querySelectorAll('#extraPayment, #payoffMethod').forEach(input => {
+    input.addEventListener('input', () => {
+        if (debts.length > 0) calculateDebtPayoff(false);
+    });
+    input.addEventListener('change', () => {
+        if (debts.length > 0) calculateDebtPayoff(false);
+    });
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        
+        // Show corresponding content
+        const tabName = this.getAttribute('data-tab');
+        const contentId = tabName + 'Content';
+        const content = document.getElementById(contentId);
+        if (content) {
+            content.classList.add('active');
+        }
+    });
+});
+
 // Store debts
 let debts = [];
 
@@ -23,11 +54,17 @@ function addDebt() {
     debts.push({ name, balance, rate, minPayment });
     renderDebtList();
     clearDebtInputs();
+    calculateDebtPayoff(false);
 }
 
 function removeDebt(index) {
     debts.splice(index, 1);
     renderDebtList();
+    if (debts.length > 0) {
+        calculateDebtPayoff(false);
+    } else {
+        resetResults();
+    }
 }
 
 function renderDebtList() {
@@ -57,10 +94,25 @@ function clearDebtInputs() {
     document.getElementById('debtMinPayment').value = '';
 }
 
+function resetResults() {
+    document.getElementById('totalDebt').textContent = '$0';
+    document.getElementById('payoffTime').textContent = '0 months';
+    document.getElementById('totalInterest').textContent = '$0';
+    document.getElementById('interestSaved').textContent = '$0';
+    document.getElementById('timeSaved').textContent = '0';
+    
+    const payoffOrder = document.getElementById('payoffOrder');
+    if (payoffOrder) payoffOrder.innerHTML = '';
+    
+    updateSummary(0, 0, 0, 0, 0);
+}
+
 function calculateDebtPayoff(shouldScroll = false) {
     if (debts.length === 0) {
-        const message = getTranslation('calculators.debtPayoff.addAtLeastOne', 'Please add at least one debt');
-        alert(message);
+        if (shouldScroll) {
+            const message = getTranslation('calculators.debtPayoff.addAtLeastOne', 'Please add at least one debt');
+            alert(message);
+        }
         return;
     }
 
@@ -77,21 +129,46 @@ function calculateDebtPayoff(shouldScroll = false) {
     const interestSaved = minPaymentResult.totalInterest - extraPaymentResult.totalInterest;
     const monthsSaved = minPaymentResult.months - extraPaymentResult.months;
 
-    // Update results
-    document.getElementById('totalDebt').textContent = formatCurrency(debts.reduce((sum, d) => sum + d.balance, 0));
+    const totalDebt = debts.reduce((sum, d) => sum + d.balance, 0);
+    const totalMinPayments = debts.reduce((sum, d) => sum + d.minPayment, 0);
+
+    // Update main results
+    document.getElementById('totalDebt').textContent = formatCurrency(totalDebt);
     document.getElementById('payoffTime').textContent = formatTime(extraPaymentResult.months);
     document.getElementById('totalInterest').textContent = formatCurrency(extraPaymentResult.totalInterest);
-    document.getElementById('interestSaved').textContent = formatCurrency(interestSaved);
-    document.getElementById('timeSaved').textContent = formatTime(monthsSaved);
+    document.getElementById('interestSaved').textContent = formatCurrency(Math.max(0, interestSaved));
+    document.getElementById('timeSaved').textContent = formatTime(Math.max(0, monthsSaved));
 
     // Generate payoff order
     generatePayoffOrder(method);
 
-    // Show results
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Update summary tab
+    updateSummary(totalDebt, totalMinPayments, extraPayment, extraPaymentResult.totalInterest, totalDebt + extraPaymentResult.totalInterest);
+
+    // Show results (for old layout compatibility)
+    const resultsEl = document.getElementById('results');
+    if (resultsEl) {
+        resultsEl.classList.add('show');
+        if (shouldScroll) {
+            resultsEl.scrollIntoView({ behavior: 'smooth' });
+        }
     }
+}
+
+function updateSummary(totalDebt, minPayments, extra, interest, total) {
+    const summaryTotalDebt = document.getElementById('summaryTotalDebt');
+    const summaryMinPayments = document.getElementById('summaryMinPayments');
+    const summaryExtra = document.getElementById('summaryExtra');
+    const summaryMonthly = document.getElementById('summaryMonthly');
+    const summaryInterest = document.getElementById('summaryInterest');
+    const summaryTotal = document.getElementById('summaryTotal');
+
+    if (summaryTotalDebt) summaryTotalDebt.textContent = formatCurrency(totalDebt);
+    if (summaryMinPayments) summaryMinPayments.textContent = formatCurrency(minPayments);
+    if (summaryExtra) summaryExtra.textContent = formatCurrency(extra);
+    if (summaryMonthly) summaryMonthly.textContent = formatCurrency(minPayments + extra);
+    if (summaryInterest) summaryInterest.textContent = formatCurrency(interest);
+    if (summaryTotal) summaryTotal.textContent = formatCurrency(total);
 }
 
 function simulatePayoff(debtsCopy, extraPayment, method) {
@@ -112,7 +189,7 @@ function simulatePayoff(debtsCopy, extraPayment, method) {
         currentBalance: d.balance
     }));
 
-    while (workingDebts.some(d => d.currentBalance > 0) && months < maxMonths) {
+    while (workingDebts.some(d => d.currentBalance > 0.01) && months < maxMonths) {
         months++;
 
         // Calculate total minimum payment
@@ -149,6 +226,8 @@ function simulatePayoff(debtsCopy, extraPayment, method) {
 
 function generatePayoffOrder(method) {
     const tbody = document.getElementById('payoffOrder');
+    if (!tbody) return;
+
     let sortedDebts = [...debts];
 
     if (method === 'avalanche') {
@@ -167,12 +246,6 @@ function generatePayoffOrder(method) {
     `).join('');
 }
 
-/**
- * Get translation using I18n if available, otherwise return fallback
- * @param {string} key - Translation key
- * @param {string} fallback - Fallback text
- * @returns {string} Translated text or fallback
- */
 function getTranslation(key, fallback) {
     if (typeof I18n !== 'undefined' && I18n.isLoaded) {
         const translation = I18n.t(key);
@@ -181,17 +254,10 @@ function getTranslation(key, fallback) {
     return fallback;
 }
 
-/**
- * Format currency using I18n if available, otherwise fallback to default
- * @param {number} amount - The amount to format
- * @returns {string} Formatted currency string
- */
 function formatCurrency(amount) {
-    // Use I18n.formatCurrency if available
     if (typeof I18n !== 'undefined' && I18n.isLoaded) {
         return I18n.formatCurrency(amount, { decimals: 0 });
     }
-    // Fallback to default formatting
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -223,8 +289,12 @@ renderDebtList();
 // Recalculate when language changes to update currency format and translations
 document.addEventListener('languageChange', () => {
     renderDebtList();
-    // Recalculate if results are visible
-    if (document.getElementById('results').classList.contains('show') && debts.length > 0) {
+    if (debts.length > 0) {
         calculateDebtPayoff(false);
     }
+});
+
+// Also recalculate when i18n is ready
+document.addEventListener('i18nReady', () => {
+    renderDebtList();
 });

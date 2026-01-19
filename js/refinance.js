@@ -3,6 +3,31 @@ document.getElementById('refinanceForm').addEventListener('submit', function(e) 
     calculateRefinance(true);
 });
 
+// Auto-calculate on input change
+document.querySelectorAll('#refinanceForm input, #refinanceForm select').forEach(input => {
+    input.addEventListener('input', () => calculateRefinance(false));
+    input.addEventListener('change', () => calculateRefinance(false));
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show the corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
 function calculateRefinance(shouldScroll = false) {
     const currentBalance = parseFloat(document.getElementById('currentBalance').value);
     const currentRate = parseFloat(document.getElementById('currentRate').value) / 100 / 12;
@@ -59,9 +84,34 @@ function calculateRefinance(shouldScroll = false) {
     document.getElementById('newTotal').textContent = I18n.formatCurrency(newTotal);
     document.getElementById('newInterest').textContent = I18n.formatCurrency(newInterest);
 
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Update details tab if elements exist
+    const rateReductionEl = document.getElementById('rateReduction');
+    const closingCostsDisplayEl = document.getElementById('closingCostsDisplay');
+    const newLoanAmountEl = document.getElementById('newLoanAmount');
+    const netSavingsEl = document.getElementById('netSavings');
+    
+    if (rateReductionEl) {
+        const currentRatePercent = parseFloat(document.getElementById('currentRate').value);
+        const newRatePercent = parseFloat(document.getElementById('newRate').value);
+        rateReductionEl.textContent = (currentRatePercent - newRatePercent).toFixed(2) + '%';
+    }
+    if (closingCostsDisplayEl) {
+        closingCostsDisplayEl.textContent = I18n.formatCurrency(closingCosts);
+    }
+    if (newLoanAmountEl) {
+        newLoanAmountEl.textContent = I18n.formatCurrency(currentBalance);
+    }
+    if (netSavingsEl) {
+        netSavingsEl.textContent = I18n.formatCurrency(lifetimeSavings);
+    }
+
+    // Show results (for old layout compatibility)
+    const resultsEl = document.getElementById('results');
+    if (resultsEl) {
+        resultsEl.classList.add('show');
+        if (shouldScroll) {
+            resultsEl.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 

@@ -1,9 +1,33 @@
 document.getElementById('rothTraditionalForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateRothVsTraditional(true);
+    calculateRothVsTraditional();
 });
 
-function calculateRothVsTraditional(shouldScroll = false) {
+// Auto-calculate on input change
+document.querySelectorAll('#rothTraditionalForm input, #rothTraditionalForm select').forEach(input => {
+    input.addEventListener('input', () => calculateRothVsTraditional());
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
+function calculateRothVsTraditional() {
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
     const annualContribution = parseFloat(document.getElementById('annualContribution').value);
@@ -155,22 +179,14 @@ function calculateRothVsTraditional(shouldScroll = false) {
             <td>${I18n.formatCurrency(rothMonthlyIncome, { decimals: 0 })}</td>
         </tr>
     `;
-
-    document.getElementById('results').style.display = 'block';
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-    }
 }
 
 // Listen for language changes and recalculate
 document.addEventListener('languageChange', function() {
-    // Recalculate to update currency formatting
-    if (document.getElementById('results').style.display !== 'none') {
-        calculateRothVsTraditional(false);
-    }
+    calculateRothVsTraditional();
 });
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {
-    calculateRothVsTraditional(false);
+    calculateRothVsTraditional();
 });

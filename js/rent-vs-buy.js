@@ -3,6 +3,31 @@ document.getElementById('rentVsBuyForm').addEventListener('submit', function(e) 
     calculateRentVsBuy(true);
 });
 
+// Auto-calculate on input change
+document.querySelectorAll('#rentVsBuyForm input, #rentVsBuyForm select').forEach(input => {
+    input.addEventListener('input', () => calculateRentVsBuy(false));
+    input.addEventListener('change', () => calculateRentVsBuy(false));
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show the corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
 function calculateRentVsBuy(shouldScroll = false) {
     const homePrice = parseFloat(document.getElementById('homePrice').value);
     const downPaymentPercent = parseFloat(document.getElementById('downPayment').value) / 100;
@@ -89,9 +114,68 @@ function calculateRentVsBuy(shouldScroll = false) {
     document.getElementById('equityBuilt').textContent = I18n.formatCurrency(equityBuilt, { decimals: 0 });
     document.getElementById('monthlyMortgage').textContent = I18n.formatCurrency(monthlyMortgage, { decimals: 0 });
 
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Update breakdown tab if elements exist
+    const downPaymentAmountEl = document.getElementById('downPaymentAmount');
+    const totalMortgagePaymentsEl = document.getElementById('totalMortgagePayments');
+    const totalTaxInsuranceEl = document.getElementById('totalTaxInsurance');
+    const totalMaintenanceEl = document.getElementById('totalMaintenance');
+    const totalRentPaidEl = document.getElementById('totalRentPaid');
+    
+    // Calculate breakdown values
+    const totalMortgagePayments = monthlyMortgage * 12 * yearsToStay;
+    let totalTaxInsurance = 0;
+    let totalMaintenance = 0;
+    let tempHomeValue = homePrice;
+    for (let year = 1; year <= yearsToStay; year++) {
+        totalTaxInsurance += tempHomeValue * propertyTaxRate + homeInsurance;
+        totalMaintenance += tempHomeValue * maintenanceRate;
+        tempHomeValue *= (1 + appreciationRate);
+    }
+    
+    if (downPaymentAmountEl) {
+        downPaymentAmountEl.textContent = I18n.formatCurrency(downPayment, { decimals: 0 });
+    }
+    if (totalMortgagePaymentsEl) {
+        totalMortgagePaymentsEl.textContent = I18n.formatCurrency(totalMortgagePayments, { decimals: 0 });
+    }
+    if (totalTaxInsuranceEl) {
+        totalTaxInsuranceEl.textContent = I18n.formatCurrency(totalTaxInsurance, { decimals: 0 });
+    }
+    if (totalMaintenanceEl) {
+        totalMaintenanceEl.textContent = I18n.formatCurrency(totalMaintenance, { decimals: 0 });
+    }
+    if (totalRentPaidEl) {
+        totalRentPaidEl.textContent = I18n.formatCurrency(totalRentCost, { decimals: 0 });
+    }
+    
+    // Update details tab if elements exist
+    const futureHomeValueEl = document.getElementById('futureHomeValue');
+    const remainingMortgageEl = document.getElementById('remainingMortgage');
+    const netEquityEl = document.getElementById('netEquity');
+    const netCostDifferenceEl = document.getElementById('netCostDifference');
+    
+    if (futureHomeValueEl) {
+        futureHomeValueEl.textContent = I18n.formatCurrency(currentHomeValue, { decimals: 0 });
+    }
+    if (remainingMortgageEl) {
+        remainingMortgageEl.textContent = I18n.formatCurrency(balance, { decimals: 0 });
+    }
+    if (netEquityEl) {
+        netEquityEl.textContent = I18n.formatCurrency(equityBuilt, { decimals: 0 });
+    }
+    if (netCostDifferenceEl) {
+        const difference = totalRentCost - netBuyCost;
+        netCostDifferenceEl.textContent = I18n.formatCurrency(Math.abs(difference), { decimals: 0 });
+        netCostDifferenceEl.style.color = difference > 0 ? 'var(--secondary)' : 'var(--accent)';
+    }
+
+    // Show results (for old layout compatibility)
+    const resultsEl = document.getElementById('results');
+    if (resultsEl) {
+        resultsEl.classList.add('show');
+        if (shouldScroll) {
+            resultsEl.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 

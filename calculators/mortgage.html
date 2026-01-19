@@ -160,42 +160,39 @@
     <script src="/js/seo.js" defer></script>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
 <body>
     <!-- Skip to content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.mortgage.title">Mortgage Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators">Calculators</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="../#about">About</a></li>
-            </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
             </div>
         </nav>
     </header>
 
-    <main id="main-content" class="calc-page">
-        <div class="calc-container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.mortgage.title">Mortgage Calculator</span></span>
-            </nav>
-
-            <h1 data-i18n="calculators.mortgage.title">Mortgage Calculator</h1>
-            <p data-i18n="calculators.mortgage.description">Calculate your monthly mortgage payment, total interest paid, and view a complete amortization schedule.</p>
-
-            <div class="calculator">
-                <form id="mortgageForm">
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span data-i18n="calculators.mortgage.loanDetails">Loan Details</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="mortgageForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="homePrice" data-i18n="calculators.mortgage.homePrice">Home Price</label>
@@ -204,7 +201,6 @@
                                 <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="downPayment" data-i18n="calculators.mortgage.downPayment">Down Payment</label>
                             <div class="input-group">
@@ -213,7 +209,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="form-group">
                             <label for="interestRate" data-i18n="calculators.mortgage.interestRate">Interest Rate (Annual)</label>
@@ -222,7 +217,6 @@
                                 <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="loanTerm" data-i18n="calculators.mortgage.loanTerm">Loan Term</label>
                             <select id="loanTerm">
@@ -233,100 +227,136 @@
                             </select>
                         </div>
                     </div>
-
                     <button type="submit" class="btn" data-i18n="calculators.mortgage.calculate">Calculate Payment</button>
                 </form>
+            </div>
 
-                <div class="results" id="results">
-                    <div class="result-highlight">
-                        <div class="big-number" id="monthlyPayment">$0</div>
-                        <p><span data-i18n="calculators.mortgage.monthlyPayment">Monthly Payment</span> (<span data-i18n="calculators.mortgage.principalInterest">Principal & Interest</span>)</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="refinance.html" class="calc-quick-link">🔄 <span data-i18n="calculators.refinance.title">Refinance</span></a>
+                <a href="home-affordability.html" class="calc-quick-link">💵 <span data-i18n="calculators.homeAffordability.title">Affordability</span></a>
+                <a href="rent-vs-buy.html" class="calc-quick-link">🏘️ <span data-i18n="calculators.rentVsBuy.title">Rent vs Buy</span></a>
+                <a href="loan-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.loanPayoff.title">Loan Payoff</span></a>
+            </div>
+        </div>
 
-                    <div class="result-cards">
-                        <div class="result-card">
-                            <div class="label" data-i18n="calculators.mortgage.loanAmount">Loan Amount</div>
-                            <div class="value" id="loanAmount">$0</div>
-                        </div>
-                        <div class="result-card">
-                            <div class="label" data-i18n="calculators.mortgage.totalInterest">Total Interest</div>
-                            <div class="value" id="totalInterest">$0</div>
-                        </div>
-                        <div class="result-card">
-                            <div class="label" data-i18n="calculators.mortgage.totalCost">Total Cost</div>
-                            <div class="value" id="totalCost">$0</div>
-                        </div>
-                        <div class="result-card success">
-                            <div class="label" data-i18n="calculators.mortgage.payoffDate">Payoff Date</div>
-                            <div class="value" id="payoffDate">-</div>
-                        </div>
-                    </div>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="monthlyPayment">$0</div>
+                <div class="label"><span data-i18n="calculators.mortgage.monthlyPayment">Monthly Payment</span> (<span data-i18n="calculators.mortgage.principalInterest">Principal & Interest</span>)</div>
+            </div>
 
-                    <div class="amortization-table">
-                        <h3 data-i18n="calculators.mortgage.amortization">Amortization Schedule (Yearly)</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th data-i18n="calculators.mortgage.year">Year</th>
-                                    <th data-i18n="calculators.mortgage.principal">Principal</th>
-                                    <th data-i18n="calculators.mortgage.interest">Interest</th>
-                                    <th data-i18n="calculators.mortgage.balance">Balance</th>
-                                </tr>
-                            </thead>
-                            <tbody id="amortizationBody">
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="loanAmount">$0</div>
+                    <div class="label" data-i18n="calculators.mortgage.loanAmount">Loan Amount</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="totalInterest">$0</div>
+                    <div class="label" data-i18n="calculators.mortgage.totalInterest">Total Interest</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="totalCost">$0</div>
+                    <div class="label" data-i18n="calculators.mortgage.totalCost">Total Cost</div>
+                </div>
+                <div class="calc-result-item success">
+                    <div class="value" id="payoffDate">-</div>
+                    <div class="label" data-i18n="calculators.mortgage.payoffDate">Payoff Date</div>
                 </div>
             </div>
 
-            <!-- Policy Links Section -->
-            <div class="policy-links">
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="schedule" data-i18n="calculators.mortgage.amortization">Amortization</button>
+                <button class="calc-output-tab" data-tab="chart" data-i18n="calculators.mortgage.chart">Chart</button>
+                <button class="calc-output-tab" data-tab="breakdown" data-i18n="calculators.mortgage.breakdown">Breakdown</button>
+            </div>
+
+            <div class="calc-output-content" id="outputContent">
+                <!-- Amortization Tab -->
+                <div class="calc-tab-content active" id="scheduleContent">
+                    <table class="calc-table" id="amortizationTable">
+                        <thead>
+                            <tr>
+                                <th data-i18n="calculators.mortgage.year">Year</th>
+                                <th data-i18n="calculators.mortgage.principal">Principal</th>
+                                <th data-i18n="calculators.mortgage.interest">Interest</th>
+                                <th data-i18n="calculators.mortgage.balance">Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="amortizationBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chart Tab -->
+                <div class="calc-tab-content" id="chartContent">
+                    <div class="calc-chart-container">
+                        <canvas id="mortgageChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Breakdown Tab -->
+                <div class="calc-tab-content" id="breakdownContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.mortgage.principalPaid">Principal Paid</span>
+                            <span class="breakdown-value" id="breakdownPrincipal">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.mortgage.interestPaid">Interest Paid</span>
+                            <span class="breakdown-value" id="breakdownInterest">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.mortgage.downPaymentLabel">Down Payment</span>
+                            <span class="breakdown-value" id="breakdownDownPayment">$0</span>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span class="breakdown-label" data-i18n="calculators.mortgage.totalCost">Total Cost</span>
+                            <span class="breakdown-value" id="breakdownTotal">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.mortgage.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
                 <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    Local Mortgage Programs & Policies
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
                 </h3>
-                <p>Explore government programs and local policies that may help you save on your mortgage:</p>
-                <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2026" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        FHA Loan Requirements
-                    </a>
-                    <a href="https://www.google.com/search?q=VA+home+loan+benefits+eligibility" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        VA Loan Benefits
-                    </a>
-                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2026" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        First-Time Buyer Programs
-                    </a>
-                    <a href="https://www.google.com/search?q=USDA+rural+home+loan+eligibility" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        USDA Rural Loans
-                    </a>
-                    <a href="https://www.google.com/search?q=mortgage+interest+tax+deduction+rules" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Mortgage Tax Deduction
-                    </a>
-                    <a href="https://www.google.com/search?q=down+payment+assistance+programs+by+state" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        Down Payment Assistance
-                    </a>
-                </div>
-            </div>
-
-            <article class="content">
-                <h2>How to Use This Mortgage Calculator</h2>
                 <p>Enter your home price, down payment, interest rate, and loan term to calculate your estimated monthly mortgage payment. The calculator also shows you the total interest you'll pay over the life of the loan and provides a yearly amortization schedule.</p>
+            </section>
 
-                <h3>Understanding Your Results</h3>
+            <!-- Understanding Results Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Understanding Your Results
+                </h3>
                 <ul>
                     <li><strong>Monthly Payment:</strong> The amount you'll pay each month (principal + interest only, not including taxes or insurance)</li>
                     <li><strong>Total Interest:</strong> The total amount of interest you'll pay over the entire loan term</li>
                     <li><strong>Amortization Schedule:</strong> Shows how your payments are split between principal and interest each year</li>
                 </ul>
+            </section>
 
-                <h3>Tips for Getting a Better Mortgage Rate</h3>
+            <!-- Tips Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    Tips for Getting a Better Mortgage Rate
+                </h3>
                 <ul>
                     <li>Improve your credit score before applying (aim for 740+)</li>
                     <li>Save for a larger down payment (20% or more to avoid PMI)</li>
@@ -334,18 +364,79 @@
                     <li>Consider a shorter loan term for lower interest rates</li>
                     <li>Lock in your rate when you find a good deal</li>
                 </ul>
+            </section>
 
-                <div class="related-articles" style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 8px;">
-                    <h3>Related Articles</h3>
-                    <ul style="list-style: none; padding: 0; margin: 15px 0 0 0;">
-                        <li style="margin-bottom: 12px;"><a href="/blog/how-much-house-can-i-afford-80k-salary.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">How Much House Can I Afford on an $80K Salary?</a> - Calculate your home buying budget</li>
-                        <li style="margin-bottom: 12px;"><a href="/blog/first-time-homebuyer-mortgage-guide.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">First-Time Homebuyer's Mortgage Guide</a> - Everything you need to know about getting your first mortgage</li>
-                        <li style="margin-bottom: 12px;"><a href="/blog/emergency-fund-3-vs-6-months.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Emergency Fund: 3 or 6 Months?</a> - Build your safety net before buying a home</li>
-                    </ul>
+            <!-- FAQ Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Frequently Asked Questions
+                </h3>
+                <div class="faq-item">
+                    <h4>How is a mortgage payment calculated?</h4>
+                    <p>A mortgage payment is calculated using the loan amount, interest rate, and loan term. The formula accounts for principal and interest. Your total monthly payment also includes property taxes, homeowners insurance, and PMI if applicable (PITI).</p>
                 </div>
-            </article>
+                <div class="faq-item">
+                    <h4>What is a good mortgage interest rate?</h4>
+                    <p>A good mortgage rate depends on current market conditions and your credit score. Generally, rates below the national average are considered good. Borrowers with credit scores of 740+ typically qualify for the best rates.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Should I choose a 15-year or 30-year mortgage?</h4>
+                    <p>A 15-year mortgage has higher monthly payments but saves significantly on total interest. A 30-year mortgage has lower monthly payments but costs more in total interest. Choose based on your budget and financial goals.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is PMI and when is it required?</h4>
+                    <p>PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home price. It protects the lender if you default. PMI typically costs 0.5-1% of the loan amount annually and can be removed once you reach 20% equity.</p>
+                </div>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/how-much-house-can-i-afford-80k-salary.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How Much House Can I Afford on an $80K Salary?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/first-time-homebuyer-mortgage-guide.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            First-Time Homebuyer's Mortgage Guide
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/emergency-fund-3-vs-6-months.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Emergency Fund: 3 or 6 Months?
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Policy Links Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Local Mortgage Programs & Policies
+                </h3>
+                <p>Explore government programs and local policies that may help you save on your mortgage:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2026" target="_blank" rel="noopener">FHA Loans</a>
+                    <a href="https://www.google.com/search?q=VA+home+loan+benefits+eligibility" target="_blank" rel="noopener">VA Loans</a>
+                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2026" target="_blank" rel="noopener">First-Time Buyer</a>
+                    <a href="https://www.google.com/search?q=USDA+rural+home+loan+eligibility" target="_blank" rel="noopener">USDA Loans</a>
+                    <a href="https://www.google.com/search?q=mortgage+interest+tax+deduction+rules" target="_blank" rel="noopener">Tax Deduction</a>
+                    <a href="https://www.google.com/search?q=down+payment+assistance+programs+by+state" target="_blank" rel="noopener">Down Payment Help</a>
+                </div>
+            </section>
         </div>
-    </main>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
 
     <footer>
         <div class="container">
@@ -362,19 +453,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Mortgage Calculator -->
     <script src="../js/mortgage.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <!-- Mobile menu toggle -->
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>

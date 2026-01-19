@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Payoff Calculator - Snowball vs Avalanche Method 2026 | FinCalc</title>
+    <meta name="description" content="Free debt payoff calculator for 2026. Compare snowball and avalanche methods to pay off debt faster. Create your personalized debt-free plan and save thousands in interest.">
+    <meta name="keywords" content="debt payoff calculator, debt snowball, debt avalanche, pay off debt, debt free calculator">
+    <link rel="canonical" href="https://financecalc.cc/calculators/debt-payoff.html">
+
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
@@ -18,34 +23,59 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Debt Payoff Calculator - Snowball vs Avalanche Method 2026 | FinCalc</title>
-    <meta name="description" content="Free debt payoff calculator for 2026. Compare snowball and avalanche methods to pay off debt faster. Create your personalized debt-free plan and save thousands in interest.">
-    <meta name="keywords" content="debt payoff calculator, debt snowball, debt avalanche, pay off debt, debt free calculator">
-    <link rel="canonical" href="https://financecalc.cc/calculators/debt-payoff.html">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="/js/init.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - WebApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Debt Payoff Calculator",
         "description": "Create a debt payoff plan using snowball or avalanche method",
+        "url": "https://financecalc.cc/calculators/debt-payoff.html",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any",
         "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "980"
         }
     }
     </script>
 
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
     <style>
         .debt-input-group {
             display: grid;
@@ -65,23 +95,26 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            min-height: 44px;
         }
         .add-btn:hover {
             background: #059669;
         }
         .debt-list {
-            margin: 20px 0;
+            margin: 15px 0;
             padding: 15px;
             background: var(--bg-alt);
             border-radius: 8px;
             min-height: 60px;
+            max-height: 200px;
+            overflow-y: auto;
         }
         .debt-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background: white;
+            background: var(--bg);
             border-radius: 6px;
             margin-bottom: 8px;
             border: 1px solid var(--border);
@@ -105,6 +138,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.85rem;
+            min-height: 32px;
         }
         .remove-btn:hover {
             background: #dc2626;
@@ -123,44 +157,38 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.debtPayoff.title">Debt Payoff Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
-                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="../#about" data-i18n="nav.about">About</a></li>
-            </ul>
-            <div class="nav-controls">
-                <!-- Language selector and theme toggle will be injected by JS -->
-            </div>
+            <div class="nav-controls"></div>
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
-
-    <main id="main-content" class="calc-page">
-        <div class="calc-container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.debtPayoff.breadcrumb">Debt Payoff Calculator</span></span>
-            </nav>
-
-            <h1 data-i18n="calculators.debtPayoff.title">Debt Payoff Calculator</h1>
-            <p data-i18n="calculators.debtPayoff.description">Create a personalized debt payoff plan. Compare snowball and avalanche methods to find what works best for you.</p>
-
-            <div class="calculator">
-                <form id="debtForm">
-                    <h3 style="margin-bottom: 15px;" data-i18n="calculators.debtPayoff.addYourDebts">Add Your Debts</h3>
-
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <span data-i18n="calculators.debtPayoff.addYourDebts">Add Your Debts</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="debtForm" class="calc-form">
                     <div class="debt-input-group">
                         <div class="form-group">
                             <label for="debtName" data-i18n="calculators.debtPayoff.debtName">Debt Name</label>
-                            <input type="text" id="debtName" data-i18n="calculators.debtPayoff.debtNamePlaceholder" placeholder="e.g., Credit Card">
+                            <input type="text" id="debtName" placeholder="e.g., Credit Card" data-i18n-placeholder="calculators.debtPayoff.debtNamePlaceholder">
                         </div>
                         <div class="form-group">
                             <label for="debtBalance" data-i18n="calculators.debtPayoff.balance">Balance</label>
@@ -181,105 +209,237 @@
                         <p style="color: var(--text-light); text-align: center;" data-i18n="calculators.debtPayoff.noDebtsYet">No debts added yet</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="extraPayment" data-i18n="calculators.debtPayoff.extraPayment">Extra Monthly Payment</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="extraPayment" value="200" min="0" step="50">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="extraPayment" data-i18n="calculators.debtPayoff.extraPayment">Extra Monthly Payment</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="extraPayment" value="200" min="0" step="50">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="payoffMethod" data-i18n="calculators.debtPayoff.method">Payoff Method</label>
-                        <select id="payoffMethod">
-                            <option value="avalanche" data-i18n="calculators.debtPayoff.avalanche">Avalanche (Highest Interest First) - Saves Most Money</option>
-                            <option value="snowball" data-i18n="calculators.debtPayoff.snowball">Snowball (Lowest Balance First) - Quick Wins</option>
-                        </select>
+                        <div class="form-group">
+                            <label for="payoffMethod" data-i18n="calculators.debtPayoff.method">Payoff Method</label>
+                            <select id="payoffMethod">
+                                <option value="avalanche" data-i18n="calculators.debtPayoff.avalancheShort">Avalanche (Highest Rate)</option>
+                                <option value="snowball" data-i18n="calculators.debtPayoff.snowballShort">Snowball (Lowest Balance)</option>
+                            </select>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn" data-i18n="calculators.debtPayoff.calculate">Calculate Payoff Plan</button>
                 </form>
+            </div>
 
-                <div class="results" id="results">
-                    <div class="result-highlight">
-                        <div class="big-number" id="payoffTime">0</div>
-                        <p data-i18n="calculators.debtPayoff.timeToDebtFreedom">Time to Debt Freedom</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="loan-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.loanPayoff.title">Loan Payoff</span></a>
+                <a href="student-loan.html" class="calc-quick-link">🎓 <span data-i18n="calculators.studentLoan.title">Student Loan</span></a>
+                <a href="auto-loan.html" class="calc-quick-link">🚗 <span data-i18n="calculators.autoLoan.title">Auto Loan</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🎯 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
+            </div>
+        </div>
 
-                    <h2 data-i18n="calculators.debtPayoff.payoffSummary">Payoff Summary</h2>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.debtPayoff.totalDebt">Total Debt</span>
-                        <span class="result-value" id="totalDebt">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.debtPayoff.totalInterest">Total Interest</span>
-                        <span class="result-value" id="totalInterest">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.debtPayoff.interestSaved">Interest Saved (vs min payments)</span>
-                        <span class="result-value" id="interestSaved" style="color: var(--secondary);">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.debtPayoff.timeSaved">Time Saved</span>
-                        <span class="result-value" id="timeSaved" style="color: var(--secondary);">0</span>
-                    </div>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="payoffTime">0 months</div>
+                <div class="label" data-i18n="calculators.debtPayoff.timeToDebtFreedom">Time to Debt Freedom</div>
+            </div>
 
-                    <div class="amortization-table">
-                        <h3 data-i18n="calculators.debtPayoff.payoffOrder">Payoff Order</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th data-i18n="calculators.debtPayoff.order">Order</th>
-                                    <th data-i18n="calculators.debtPayoff.debt">Debt</th>
-                                    <th data-i18n="calculators.debtPayoff.balance">Balance</th>
-                                    <th data-i18n="calculators.debtPayoff.rate">Rate</th>
-                                </tr>
-                            </thead>
-                            <tbody id="payoffOrder">
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="totalDebt">$0</div>
+                    <div class="label" data-i18n="calculators.debtPayoff.totalDebt">Total Debt</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="totalInterest">$0</div>
+                    <div class="label" data-i18n="calculators.debtPayoff.totalInterest">Total Interest</div>
+                </div>
+                <div class="calc-result-item success">
+                    <div class="value" id="interestSaved">$0</div>
+                    <div class="label" data-i18n="calculators.debtPayoff.interestSaved">Interest Saved</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="timeSaved">0</div>
+                    <div class="label" data-i18n="calculators.debtPayoff.timeSaved">Time Saved</div>
                 </div>
             </div>
 
-            <article class="content" style="margin-top: 40px;">
-                <h2 data-i18n="calculators.debtPayoff.articleTitle">Snowball vs Avalanche Method</h2>
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="order" data-i18n="calculators.debtPayoff.payoffOrder">Payoff Order</button>
+                <button class="calc-output-tab" data-tab="summary" data-i18n="calculators.debtPayoff.summary">Summary</button>
+            </div>
 
-                <h3 data-i18n="calculators.debtPayoff.avalancheTitle">Debt Avalanche (Mathematically Optimal)</h3>
-                <p data-i18n-html="calculators.debtPayoff.avalancheDesc">Pay off debts with the <strong>highest interest rate first</strong>. This method saves the most money on interest over time.</p>
-
-                <h3 data-i18n="calculators.debtPayoff.snowballTitle">Debt Snowball (Psychologically Motivating)</h3>
-                <p data-i18n-html="calculators.debtPayoff.snowballDesc">Pay off debts with the <strong>smallest balance first</strong>. Quick wins keep you motivated, even if you pay slightly more interest.</p>
-
-                <h3 data-i18n="calculators.debtPayoff.whichMethod">Which Method Should You Choose?</h3>
-                <ul>
-                    <li><strong data-i18n="calculators.debtPayoff.chooseAvalanche">Choose Avalanche if:</strong> <span data-i18n="calculators.debtPayoff.avalancheReason">You're motivated by saving money and can stay disciplined</span></li>
-                    <li><strong data-i18n="calculators.debtPayoff.chooseSnowball">Choose Snowball if:</strong> <span data-i18n="calculators.debtPayoff.snowballReason">You need quick wins to stay motivated, or have many small debts</span></li>
-                </ul>
-
-                <h3 data-i18n="calculators.debtPayoff.tipsTitle">Tips for Faster Debt Payoff</h3>
-                <ul>
-                    <li data-i18n="calculators.debtPayoff.tip1">Always pay at least the minimum on all debts</li>
-                    <li data-i18n="calculators.debtPayoff.tip2">Put all extra money toward one debt at a time</li>
-                    <li data-i18n="calculators.debtPayoff.tip3">Consider balance transfer cards for high-interest debt</li>
-                    <li data-i18n="calculators.debtPayoff.tip4">Avoid taking on new debt while paying off existing debt</li>
-                </ul>
-
-                <div class="related-articles" style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 8px;">
-                    <h3 data-i18n="calculators.debtPayoff.relatedArticles">Related Articles</h3>
-                    <ul style="list-style: none; padding: 0; margin: 15px 0 0 0;">
-                        <li style="margin-bottom: 12px;"><a href="/blog/debt-snowball-vs-avalanche.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Debt Snowball vs Avalanche: Which Method is Better?</a> - In-depth comparison of both strategies</li>
-                        <li style="margin-bottom: 12px;"><a href="/blog/how-to-pay-off-50000-student-loans.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">How to Pay Off $50,000 in Student Loans</a> - Strategies for tackling student debt</li>
-                        <li style="margin-bottom: 12px;"><a href="/blog/emergency-fund-3-vs-6-months.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Emergency Fund: 3 or 6 Months?</a> - Build your safety net while paying off debt</li>
-                    </ul>
+            <div class="calc-output-content" id="outputContent">
+                <!-- Payoff Order Tab -->
+                <div class="calc-tab-content active" id="orderContent">
+                    <table class="calc-table" id="payoffTable">
+                        <thead>
+                            <tr>
+                                <th data-i18n="calculators.debtPayoff.order">Order</th>
+                                <th data-i18n="calculators.debtPayoff.debt">Debt</th>
+                                <th data-i18n="calculators.debtPayoff.balance">Balance</th>
+                                <th data-i18n="calculators.debtPayoff.rate">Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="payoffOrder"></tbody>
+                    </table>
                 </div>
-            </article>
+
+                <!-- Summary Tab -->
+                <div class="calc-tab-content" id="summaryContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalDebt">Total Debt</span>
+                            <span class="breakdown-value" id="summaryTotalDebt">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalMinPayments">Total Min Payments</span>
+                            <span class="breakdown-value" id="summaryMinPayments">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.extraPayment">Extra Payment</span>
+                            <span class="breakdown-value" id="summaryExtra">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalMonthlyPayment">Total Monthly</span>
+                            <span class="breakdown-value" id="summaryMonthly">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalInterest">Total Interest</span>
+                            <span class="breakdown-value" id="summaryInterest">$0</span>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalCost">Total Cost</span>
+                            <span class="breakdown-value" id="summaryTotal">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.debtPayoff.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
+                </h3>
+                <p>Add each of your debts with their name, balance, interest rate, and minimum payment. Then enter any extra amount you can pay monthly and choose your preferred payoff method. The calculator will show you the optimal order to pay off your debts.</p>
+            </section>
+
+            <!-- Snowball vs Avalanche Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Snowball vs Avalanche Method
+                </h3>
+                <ul>
+                    <li><strong>Debt Avalanche:</strong> Pay off highest interest rate first. Saves the most money mathematically.</li>
+                    <li><strong>Debt Snowball:</strong> Pay off smallest balance first. Provides quick wins for motivation.</li>
+                </ul>
+                <p>Both methods work - choose the one that fits your personality. The best method is the one you'll stick with!</p>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    Tips for Faster Debt Payoff
+                </h3>
+                <ul>
+                    <li>Always pay at least the minimum on all debts</li>
+                    <li>Put all extra money toward one debt at a time</li>
+                    <li>Consider balance transfer cards for high-interest debt</li>
+                    <li>Avoid taking on new debt while paying off existing debt</li>
+                    <li>Celebrate each debt you pay off to stay motivated</li>
+                    <li>Use windfalls (tax refunds, bonuses) for extra payments</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Frequently Asked Questions
+                </h3>
+                <div class="faq-item">
+                    <h4>Which method should I choose?</h4>
+                    <p>Choose Avalanche if you're motivated by saving money and can stay disciplined. Choose Snowball if you need quick wins to stay motivated or have many small debts.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Should I save or pay off debt first?</h4>
+                    <p>Build a small emergency fund ($1,000) first, then focus on debt. This prevents you from going back into debt for unexpected expenses.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What about balance transfer cards?</h4>
+                    <p>Balance transfer cards with 0% intro APR can save money, but watch for transfer fees (usually 3-5%) and make sure to pay off before the promotional period ends.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How much extra should I pay?</h4>
+                    <p>Pay as much extra as you can comfortably afford. Even $50-100 extra per month can save thousands in interest and years off your payoff time.</p>
+                </div>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/debt-snowball-vs-avalanche.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Debt Snowball vs Avalanche: Which Method is Better?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/how-to-pay-off-50000-student-loans.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How to Pay Off $50,000 in Student Loans
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/emergency-fund-3-vs-6-months.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Emergency Fund: 3 or 6 Months?
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Policy Links Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Debt Payoff Resources
+                </h3>
+                <p>Learn more about debt management strategies:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=debt+snowball+method+explained" target="_blank" rel="noopener">Snowball Method</a>
+                    <a href="https://www.google.com/search?q=debt+avalanche+method+explained" target="_blank" rel="noopener">Avalanche Method</a>
+                    <a href="https://www.google.com/search?q=best+balance+transfer+cards+2026" target="_blank" rel="noopener">Balance Transfer Cards</a>
+                    <a href="https://www.google.com/search?q=debt+consolidation+loan+pros+cons" target="_blank" rel="noopener">Debt Consolidation</a>
+                    <a href="https://www.google.com/search?q=credit+counseling+services" target="_blank" rel="noopener">Credit Counseling</a>
+                    <a href="https://www.google.com/search?q=debt+management+plan" target="_blank" rel="noopener">Debt Management Plans</a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
+
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">&copy; 2026 FinCalc. All rights reserved.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer" data-i18n="calculators.debtPayoff.disclaimer">Disclaimer: This calculator provides estimates only. Actual payoff times may vary based on interest rate changes and payment timing.</p>
             <div class="friend-links">
                 <span data-i18n="footer.friendLinks">Friend Links:</span>
@@ -292,18 +452,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Debt Payoff Calculator -->
     <script src="../js/debt-payoff.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>

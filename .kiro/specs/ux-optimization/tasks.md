@@ -1,113 +1,216 @@
-# Implementation Plan: UX 优化 - 提高内容密度和导航效率
+# Implementation Plan: UX Optimization
 
 ## Overview
 
-本计划将优化 FinCalc 网站的用户体验，主要针对 PC 端内容密度低、导航不便的问题。采用渐进式实现，每个任务独立可测试。
+This implementation plan transforms all 20 FinCalc calculator pages from a content-heavy layout to a tool-first, side-by-side layout. The migration is performed in batches with testing checkpoints to ensure quality.
 
 ## Tasks
 
-- [x] 1. 首页 PC 端布局优化
-  - [x] 1.1 修改 CSS 网格布局，PC 端改为 4 列
-    - 修改 `.grid` 的 `grid-template-columns`
-    - 添加媒体查询：>1200px 4列，992-1200px 3列
-    - _Requirements: 1.1, 1.2_
+- [x] 1. Update CSS and Create Sidebar Component
+  - [x] 1.1 Update calc-layout.css with Info Sidebar styles
+    - Add `.info-sidebar` styles (slide-in from right, overlay)
+    - Add `.info-sidebar-header`, `.info-sidebar-content` styles
+    - Add `.info-sidebar-overlay` styles
+    - Add responsive styles for mobile sidebar (full-width)
+    - Add `.info-toggle` button styles in header
+    - _Requirements: 4.1, 4.2, 4.7, 7.2_
+  - [x] 1.2 Create js/info-sidebar.js for sidebar toggle functionality
+    - Implement toggle open/close on button click
+    - Implement close on overlay click
+    - Implement close on Escape key
+    - Add ARIA state management
+    - _Requirements: 4.2, 4.6, 5.4_
 
-  - [x] 1.2 减小卡片尺寸和间距
-    - `.calc-card` padding 从 28px 改为 20px
-    - `.grid` gap 从 20px 改为 16px
-    - `.calc-icon` 尺寸从 48px 改为 40px
-    - _Requirements: 1.3, 1.4_
+- [x] 2. Migrate Mortgage Calculator (Template Validation)
+  - [x] 2.1 Update mortgage.html to new Tool_Layout
+    - Replace existing layout with calc-tool-layout structure
+    - Move form to Input_Panel with calc-form class
+    - Move results to Output_Panel with result grid
+    - Add output tabs (Amortization, Chart, Breakdown)
+    - Add Quick_Links section
+    - _Requirements: 1.1, 1.2, 2.1, 2.2, 2.3, 3.1, 3.2, 3.3_
+  - [x] 2.2 Add Info Sidebar to mortgage.html
+    - Create sidebar structure with educational content
+    - Move "How to Use" content to sidebar
+    - Move "Tips" content to sidebar
+    - Move FAQ content to sidebar
+    - Move related articles to sidebar
+    - Move policy links to sidebar
+    - Add info toggle button to header
+    - _Requirements: 4.1, 4.3, 4.4, 4.5_
+  - [x] 2.3 Preserve SEO elements in mortgage.html
+    - Keep all JSON-LD structured data scripts
+    - Keep all meta tags
+    - Keep skip-to-content link
+    - Verify data-i18n attributes preserved
+    - _Requirements: 5.1, 5.2, 5.5, 6.3_
+  - [x] 2.4 Update mortgage.js for auto-calculation
+    - Add input event listeners for real-time calculation
+    - Implement tab switching functionality
+    - _Requirements: 2.4, 3.4_
 
-  - [x] 1.3 精简 Hero 区域
-    - `.hero` padding 从 80px 改为 48px
-    - 调整标题和副标题字号
-    - _Requirements: 5.1, 5.2_
+- [x] 3. Checkpoint - Validate Template
+  - Ensure mortgage.html displays correctly at all viewport sizes
+  - Verify sidebar opens/closes correctly
+  - Verify calculations work correctly
+  - Verify SEO elements preserved
+  - Ask user if questions arise
 
-- [x] 2. Checkpoint - 验证首页优化
-  - 在浏览器中测试首页，确认一屏可见 8+ 个计算器
-  - 测试响应式布局在不同屏幕宽度下的表现
+- [x] 4. Migrate Home-Related Calculators (Batch 2)
+  - [x] 4.1 Migrate refinance.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 4.2 Migrate home-affordability.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 4.3 Migrate rent-vs-buy.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
 
-- [x] 3. 创建侧边栏导航组件
-  - [x] 3.1 创建侧边栏 CSS 样式
-    - 创建 `css/sidebar.css`
-    - 定义侧边栏布局、分类样式、高亮状态
-    - _Requirements: 2.1, 2.3_
+- [x] 5. Checkpoint - Validate Batch 2
+  - Test all 4 home-related calculators
+  - Verify responsive layout
+  - Verify sidebar functionality
+  - Ask user if questions arise
 
-  - [x] 3.2 创建侧边栏 HTML 模板
-    - 创建 `includes/sidebar.html` 作为模板参考
-    - 包含所有计算器分类和链接
-    - _Requirements: 2.2, 2.4_
+- [x] 6. Migrate Loan Calculators (Batch 3)
+  - [x] 6.1 Migrate auto-loan.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 6.2 Migrate loan-payoff.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 6.3 Migrate student-loan.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 6.4 Migrate debt-payoff.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
 
-  - [x] 3.3 创建侧边栏 JavaScript
-    - 创建 `js/sidebar.js`
-    - 动态注入侧边栏 HTML
-    - 自动高亮当前页面
-    - _Requirements: 2.3_
+- [x] 7. Checkpoint - Validate Batch 3
+  - Test all 4 loan calculators
+  - Verify responsive layout
+  - Verify sidebar functionality
+  - Ask user if questions arise
 
-- [x] 4. 计算器页面布局重构
-  - [x] 4.1 修改计算器页面 CSS 布局
-    - 添加 `.calc-page-with-sidebar` 布局类
-    - PC 端：侧边栏 240px + 主内容区
-    - 移动端：隐藏侧边栏
-    - _Requirements: 2.1, 2.5_
+- [x] 8. Migrate Investment Calculators (Batch 4)
+  - [x] 8.1 Migrate 401k.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 8.2 Migrate retirement.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 8.3 Migrate roth-vs-traditional.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 8.4 Migrate compound-interest.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 8.5 Migrate investment-return.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
 
-  - [x] 4.2 更新 mortgage.html 作为模板
-    - 添加侧边栏容器
-    - 引入 sidebar.css 和 sidebar.js
-    - 测试布局效果
-    - _Requirements: 2.1, 2.2_
+- [x] 9. Checkpoint - Validate Batch 4
+  - Test all 5 investment calculators
+  - Verify responsive layout
+  - Verify sidebar functionality
+  - Ask user if questions arise
 
-- [x] 5. Checkpoint - 验证侧边栏功能
-  - 测试侧边栏在 PC 端的显示和高亮
-  - 测试移动端侧边栏隐藏
-  - 测试导航链接跳转
+- [x] 10. Migrate Income Calculators (Batch 5)
+  - [x] 10.1 Migrate salary.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 10.2 Migrate take-home-pay.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 10.3 Migrate self-employment-tax.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 10.4 Migrate social-security.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
 
-- [x] 6. 相关计算器推荐模块
-  - [x] 6.1 创建相关计算器 CSS 样式
-    - 在 `css/sidebar.css` 中添加 `.related-calculators` 样式
-    - 紧凑的网格或列表布局
-    - _Requirements: 3.2, 3.3_
+- [x] 11. Checkpoint - Validate Batch 5
+  - Test all 4 income calculators
+  - Verify responsive layout
+  - Verify sidebar functionality
+  - Ask user if questions arise
 
-  - [x] 6.2 定义计算器关联关系
-    - 在 `js/sidebar.js` 中定义 `CALCULATOR_RELATIONS` 映射
-    - 每个计算器关联 3-4 个相关工具
-    - _Requirements: 3.1, 3.2_
+- [x] 12. Migrate Remaining Calculators (Batch 6)
+  - [x] 12.1 Migrate emergency-fund.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 12.2 Migrate savings-goal.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
+  - [x] 12.3 Migrate inflation.html to new layout
+    - Apply Tool_Layout structure
+    - Add Info Sidebar with content
+    - Preserve SEO and i18n
+    - _Requirements: 1.1, 1.2, 4.1, 5.1, 6.1_
 
-  - [x] 6.3 动态生成相关计算器模块
-    - 根据当前页面自动显示相关推荐
-    - 放置在计算器结果区域下方
-    - _Requirements: 3.1, 3.4_
+- [x] 13. Checkpoint - Validate Batch 6
+  - Test all 3 remaining calculators
+  - Verify responsive layout
+  - Verify sidebar functionality
+  - Ask user if questions arise
 
-- [x] 7. 面包屑导航优化
-  - [x] 7.1 更新面包屑样式
-    - 添加分类层级（首页 > 分类 > 计算器）
-    - 确保每个层级可点击
-    - _Requirements: 4.1, 4.2, 4.3_
+- [x] 14. Final Cleanup
+  - [x] 14.1 Remove mortgage-new.html (template file no longer needed)
+    - Delete the temporary template file
+    - _Requirements: 6.1_
+  - [x] 14.2 Verify all 20 calculators migrated
+    - Check each calculator has calc-tool-layout class
+    - Check each calculator has info-sidebar
+    - _Requirements: 6.1_
 
-  - [x] 7.2 在 sidebar.js 中自动生成面包屑
-    - 根据当前页面和分类自动生成
-    - _Requirements: 4.2_
-
-- [x] 8. 批量更新所有计算器页面
-  - [x] 8.1 创建更新脚本
-    - 创建 `scripts/add-sidebar.js`
-    - 自动为所有计算器页面添加侧边栏
-    - _Requirements: 2.1, 2.2_
-
-  - [x] 8.2 执行批量更新
-    - 运行脚本更新所有 calculators/*.html
-    - 验证每个页面的侧边栏和相关推荐
-    - _Requirements: 2.1, 3.1_
-
-- [x] 9. Final Checkpoint - 完整性验证
-  - 测试所有计算器页面的侧边栏
-  - 测试相关计算器推荐的准确性
-  - 测试响应式布局
-  - 测试面包屑导航
+- [x] 15. Final Checkpoint
+  - Full regression test of all calculators
+  - Cross-browser testing (Chrome, Firefox, Safari, Edge)
+  - Mobile device testing
+  - Accessibility audit
+  - Ask user for final review
 
 ## Notes
 
-- 所有 CSS 修改需要考虑深色模式兼容
-- 侧边栏在移动端隐藏，不影响现有移动端体验
-- 相关计算器推荐基于业务逻辑手动定义关联关系
-- 批量更新脚本需要保留现有页面的自定义内容
+- Each calculator migration follows the same pattern established in mortgage.html
+- Sidebar content is extracted from existing article sections
+- All existing JavaScript functionality is preserved
+- SEO elements (JSON-LD, meta tags) are kept intact
+- Checkpoints allow for user review and course correction

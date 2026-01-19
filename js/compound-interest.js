@@ -2,10 +2,34 @@
 
 document.getElementById('compoundForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateCompoundInterest(true);
+    calculateCompoundInterest();
 });
 
-function calculateCompoundInterest(shouldScroll = false) {
+// Auto-calculate on input change
+document.querySelectorAll('#compoundForm input, #compoundForm select').forEach(input => {
+    input.addEventListener('input', () => calculateCompoundInterest());
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
+function calculateCompoundInterest() {
     // Get input values
     const principal = parseFloat(document.getElementById('principal').value);
     const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value);
@@ -56,14 +80,21 @@ function calculateCompoundInterest(shouldScroll = false) {
     document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
     document.getElementById('effectiveRate').textContent = effectiveRate.toFixed(2) + '%';
 
+    // Update breakdown tab
+    const ruleOf72El = document.getElementById('ruleOf72');
+    if (ruleOf72El) {
+        const yearsToDouble = annualRate > 0 ? (72 / (annualRate * 100)).toFixed(1) : '∞';
+        ruleOf72El.textContent = `~${yearsToDouble} years`;
+    }
+    
+    const interestPercentageEl = document.getElementById('interestPercentage');
+    if (interestPercentageEl) {
+        const interestPct = futureValue > 0 ? ((totalInterest / futureValue) * 100).toFixed(1) : 0;
+        interestPercentageEl.textContent = `${interestPct}%`;
+    }
+
     // Generate year-by-year breakdown
     generateGrowthTable(principal, monthlyContribution, annualRate, compoundFrequency, years);
-
-    // Show results
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-    }
 }
 
 function generateGrowthTable(principal, monthlyContribution, annualRate, compoundFrequency, years) {
@@ -146,7 +177,7 @@ function formatCurrency(amount) {
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', () => calculateCompoundInterest(false));
+document.addEventListener('DOMContentLoaded', () => calculateCompoundInterest());
 
 // Recalculate when language changes to update currency format
-document.addEventListener('languageChange', () => calculateCompoundInterest(false));
+document.addEventListener('languageChange', () => calculateCompoundInterest());

@@ -2,10 +2,34 @@
 
 document.getElementById('calc401kForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculate401k(true);
+    calculate401k();
 });
 
-function calculate401k(shouldScroll = false) {
+// Auto-calculate on input change
+document.querySelectorAll('#calc401kForm input, #calc401kForm select').forEach(input => {
+    input.addEventListener('input', () => calculate401k());
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
+function calculate401k() {
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
     const annualSalary = parseFloat(document.getElementById('annualSalary').value);
@@ -63,20 +87,11 @@ function calculate401k(shouldScroll = false) {
     document.getElementById('yearsToRetirement').textContent = yearsToRetirement + ' ' + I18n.t('common.years');
     document.getElementById('annualContribution').textContent = I18n.formatCurrency(firstYearContribution, { decimals: 0 });
     document.getElementById('annualMatch').textContent = I18n.formatCurrency(firstYearMatch, { decimals: 0 });
-
-    // Show results
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-    }
 }
 
 // Listen for language changes and recalculate
 document.addEventListener('languageChange', function() {
-    // Recalculate to update currency formatting
-    if (document.getElementById('results').classList.contains('show')) {
-        calculate401k(false);
-    }
+    calculate401k();
 });
 
-document.addEventListener('DOMContentLoaded', () => calculate401k(false));
+document.addEventListener('DOMContentLoaded', () => calculate401k());

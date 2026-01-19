@@ -2,10 +2,34 @@
 
 document.getElementById('investmentForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateInvestmentReturn(true);
+    calculateInvestmentReturn();
 });
 
-function calculateInvestmentReturn(shouldScroll = false) {
+// Auto-calculate on input change
+document.querySelectorAll('#investmentForm input, #investmentForm select').forEach(input => {
+    input.addEventListener('input', () => calculateInvestmentReturn());
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
+function calculateInvestmentReturn() {
     // Get input values
     const initialInvestment = parseFloat(document.getElementById('initialInvestment').value);
     const finalValue = parseFloat(document.getElementById('finalValue').value);
@@ -49,10 +73,20 @@ function calculateInvestmentReturn(shouldScroll = false) {
         totalReturnEl.style.color = '#ef4444';
     }
 
-    // Show results
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Update details tab
+    const initialDisplayEl = document.getElementById('initialDisplay');
+    if (initialDisplayEl) {
+        initialDisplayEl.textContent = formatCurrencySimple(initialInvestment);
+    }
+    
+    const finalDisplayEl = document.getElementById('finalDisplay');
+    if (finalDisplayEl) {
+        finalDisplayEl.textContent = formatCurrencySimple(finalValue);
+    }
+    
+    const periodDisplayEl = document.getElementById('periodDisplay');
+    if (periodDisplayEl) {
+        periodDisplayEl.textContent = `${years} years`;
     }
 }
 
@@ -110,13 +144,32 @@ function formatCurrency(amount) {
     }).format(Math.abs(amount));
 }
 
+/**
+ * Format currency without prefix
+ * @param {number} amount - The amount to format
+ * @returns {string} Formatted currency string
+ */
+function formatCurrencySimple(amount) {
+    // Use I18n.formatCurrency if available
+    if (typeof I18n !== 'undefined' && I18n.isLoaded) {
+        return I18n.formatCurrency(amount, { decimals: 0 });
+    }
+    // Fallback to default formatting
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(amount);
+}
+
 function formatPercent(value) {
     const prefix = value >= 0 ? '+' : '';
     return prefix + value.toFixed(2) + '%';
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', () => calculateInvestmentReturn(false));
+document.addEventListener('DOMContentLoaded', () => calculateInvestmentReturn());
 
 // Recalculate when language changes to update currency format
-document.addEventListener('languageChange', () => calculateInvestmentReturn(false));
+document.addEventListener('languageChange', () => calculateInvestmentReturn());

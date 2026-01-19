@@ -44,145 +44,256 @@
     </script>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.retirement.title">Retirement Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
-                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="../#about" data-i18n="nav.about">About</a></li>
-            </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
             </div>
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
-
-    <main id="main-content" class="calc-page">
-        <div class="calc-container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.retirement.title">Retirement Calculator</span></span>
-            </nav>
-
-            <h1 data-i18n="calculators.retirement.title">Retirement Calculator</h1>
-            <p data-i18n="calculators.retirement.pageDescription">Plan your retirement and see if you're on track to meet your financial goals.</p>
-
-            <div class="calculator">
-                <form id="retirementForm">
-                    <div class="form-group">
-                        <label for="currentAge" data-i18n="calculators.retirement.currentAge">Current Age</label>
-                        <input type="number" id="currentAge" value="30" min="18" max="80" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="retirementAge" data-i18n="calculators.retirement.retirementAge">Retirement Age</label>
-                        <input type="number" id="retirementAge" value="65" min="50" max="80" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="currentSavings" data-i18n="calculators.retirement.currentRetirementSavings">Current Retirement Savings</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="currentSavings" value="50000" min="0" step="1000" required>
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span data-i18n="calculators.retirement.planningDetails">Planning Details</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="retirementForm" class="calc-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentAge" data-i18n="calculators.retirement.currentAge">Current Age</label>
+                            <input type="number" id="currentAge" value="30" min="18" max="80" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="retirementAge" data-i18n="calculators.retirement.retirementAge">Retirement Age</label>
+                            <input type="number" id="retirementAge" value="65" min="50" max="80" required>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="monthlyContribution" data-i18n="calculators.retirement.monthlyContribution">Monthly Contribution</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="monthlyContribution" value="1000" min="0" step="50" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentSavings" data-i18n="calculators.retirement.currentRetirementSavings">Current Retirement Savings</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="currentSavings" value="50000" min="0" step="1000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthlyContribution" data-i18n="calculators.retirement.monthlyContribution">Monthly Contribution</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="monthlyContribution" value="1000" min="0" step="50" required>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="expectedReturn" data-i18n="calculators.retirement.expectedReturnPercent">Expected Annual Return (%)</label>
-                        <div class="input-group">
-                            <span>%</span>
-                            <input type="number" id="expectedReturn" value="7" min="0" max="20" step="0.5" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expectedReturn" data-i18n="calculators.retirement.expectedReturnPercent">Expected Annual Return (%)</label>
+                            <div class="input-group">
+                                <span>%</span>
+                                <input type="number" id="expectedReturn" value="7" min="0" max="20" step="0.5" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="desiredIncome" data-i18n="calculators.retirement.desiredAnnualIncome">Desired Annual Income</label>
+                            <div class="input-group">
+                                <span>$</span>
+                                <input type="number" id="desiredIncome" value="60000" min="0" step="1000" required>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="desiredIncome" data-i18n="calculators.retirement.desiredAnnualIncome">Desired Annual Retirement Income</label>
-                        <div class="input-group">
-                            <span>$</span>
-                            <input type="number" id="desiredIncome" value="60000" min="0" step="1000" required>
-                        </div>
-                    </div>
-
                     <button type="submit" class="btn" data-i18n="common.calculate">Calculate</button>
                 </form>
+            </div>
 
-                <div class="results" id="results">
-                    <div class="result-highlight">
-                        <div class="big-number" id="projectedSavings">$0</div>
-                        <p data-i18n="calculators.retirement.projectedSavings">Projected Savings at Retirement</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="401k.html" class="calc-quick-link">💼 <span data-i18n="calculators.401k.title">401(k)</span></a>
+                <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span data-i18n="calculators.rothVsTraditional.title">Roth vs Traditional</span></a>
+                <a href="social-security.html" class="calc-quick-link">🏛️ <span data-i18n="calculators.socialSecurity.title">Social Security</span></a>
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
+            </div>
+        </div>
 
-                    <h2 data-i18n="calculators.retirement.retirementSummary">Retirement Summary</h2>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.retirement.yearsUntilRetirement">Years Until Retirement</span>
-                        <span class="result-value" id="yearsToRetirement">0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.retirement.totalContributions">Total Contributions</span>
-                        <span class="result-value" id="totalContributions">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.retirement.investmentGrowth">Investment Growth</span>
-                        <span class="result-value" id="investmentGrowth">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.retirement.savingsNeeded">Savings Needed (4% Rule)</span>
-                        <span class="result-value" id="savingsNeeded">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.retirement.status">Status</span>
-                        <span class="result-value" id="status">-</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.retirement.annualIncomeFromSavings">Annual Income from Savings</span>
-                        <span class="result-value" id="annualIncome">$0</span>
-                    </div>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="projectedSavings">$0</div>
+                <div class="label" data-i18n="calculators.retirement.projectedSavings">Projected Savings at Retirement</div>
+            </div>
+
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="yearsToRetirement">0</div>
+                    <div class="label" data-i18n="calculators.retirement.yearsUntilRetirement">Years Until Retirement</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="totalContributions">$0</div>
+                    <div class="label" data-i18n="calculators.retirement.totalContributions">Total Contributions</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="investmentGrowth">$0</div>
+                    <div class="label" data-i18n="calculators.retirement.investmentGrowth">Investment Growth</div>
+                </div>
+                <div class="calc-result-item" id="statusCard">
+                    <div class="value" id="status">-</div>
+                    <div class="label" data-i18n="calculators.retirement.status">Status</div>
                 </div>
             </div>
 
-            <article class="content" style="margin-top: 40px;">
-                <h2 data-i18n="calculators.retirement.articleTitle">Understanding Retirement Planning</h2>
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="details" data-i18n="calculators.retirement.detailsTab">Details</button>
+                <button class="calc-output-tab" data-tab="breakdown" data-i18n="calculators.retirement.breakdownTab">Breakdown</button>
+            </div>
 
-                <h3 data-i18n="calculators.retirement.fourPercentRule">The 4% Rule</h3>
-                <p data-i18n="calculators.retirement.fourPercentRuleDesc">The 4% rule suggests you can withdraw 4% of your retirement savings annually without running out of money over a 30-year retirement. To find how much you need, multiply your desired annual income by 25.</p>
+            <div class="calc-output-content" id="outputContent">
+                <!-- Details Tab -->
+                <div class="calc-tab-content active" id="detailsContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.retirement.savingsNeeded">Savings Needed (4% Rule)</span>
+                            <span class="breakdown-value" id="savingsNeeded">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.retirement.annualIncomeFromSavings">Annual Income from Savings</span>
+                            <span class="breakdown-value" id="annualIncome">$0</span>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 data-i18n="calculators.retirement.keyFactors">Key Factors in Retirement Planning</h3>
-                <ul>
-                    <li><strong>Time:</strong> <span data-i18n="calculators.retirement.factorTime">The earlier you start, the more compound interest works in your favor</span></li>
-                    <li><strong>Contribution Rate:</strong> <span data-i18n="calculators.retirement.factorContribution">Aim to save 15-20% of your income for retirement</span></li>
-                    <li><strong>Investment Returns:</strong> <span data-i18n="calculators.retirement.factorReturns">A diversified portfolio historically returns 6-8% after inflation</span></li>
-                    <li><strong>Social Security:</strong> <span data-i18n="calculators.retirement.factorSocialSecurity">This calculator doesn't include Social Security benefits, which can supplement your savings</span></li>
-                </ul>
-
-                <h3 data-i18n="calculators.retirement.tipsTitle">Tips for Retirement Success</h3>
-                <ul>
-                    <li data-i18n="calculators.retirement.tip401k">Maximize employer 401(k) matching - it's free money</li>
-                    <li data-i18n="calculators.retirement.tipRoth">Consider a Roth IRA for tax-free growth</li>
-                    <li data-i18n="calculators.retirement.tipIncrease">Increase contributions when you get raises</li>
-                    <li data-i18n="calculators.retirement.tipFees">Keep investment fees low with index funds</li>
-                </ul>
-            </article>
+                <!-- Breakdown Tab -->
+                <div class="calc-tab-content" id="breakdownContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.retirement.fourPercentRule">4% Rule Explanation</span>
+                            <span class="breakdown-value">Desired Income × 25</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.retirement.monthlyWithdrawal">Monthly Withdrawal (4%)</span>
+                            <span class="breakdown-value" id="monthlyWithdrawal">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.retirement.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
+                </h3>
+                <p>Enter your current age, retirement age, savings, and monthly contribution to see if you're on track for retirement. The calculator uses the 4% rule to determine how much you need to save.</p>
+            </section>
+
+            <!-- 4% Rule Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    The 4% Rule
+                </h3>
+                <p>The 4% rule suggests you can withdraw 4% of your retirement savings annually without running out of money over a 30-year retirement. To find how much you need, multiply your desired annual income by 25.</p>
+            </section>
+
+            <!-- Key Factors Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    Key Factors in Retirement Planning
+                </h3>
+                <ul>
+                    <li><strong>Time:</strong> The earlier you start, the more compound interest works in your favor</li>
+                    <li><strong>Contribution Rate:</strong> Aim to save 15-20% of your income for retirement</li>
+                    <li><strong>Investment Returns:</strong> A diversified portfolio historically returns 6-8% after inflation</li>
+                    <li><strong>Social Security:</strong> This calculator doesn't include Social Security benefits, which can supplement your savings</li>
+                </ul>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Tips for Retirement Success
+                </h3>
+                <ul>
+                    <li>Maximize employer 401(k) matching - it's free money</li>
+                    <li>Consider a Roth IRA for tax-free growth</li>
+                    <li>Increase contributions when you get raises</li>
+                    <li>Keep investment fees low with index funds</li>
+                </ul>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/401k-contribution-calculator-2025.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How Much Should I Contribute to My 401(k)?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/retirement-calculator-teachers.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Retirement Calculator for Teachers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/emergency-fund-3-vs-6-months.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Emergency Fund: 3 or 6 Months?
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Resources Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Retirement Resources
+                </h3>
+                <p>Learn more about retirement planning:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=retirement+planning+guide+2026" target="_blank" rel="noopener">Retirement Planning Guide</a>
+                    <a href="https://www.google.com/search?q=social+security+benefits+calculator" target="_blank" rel="noopener">Social Security Benefits</a>
+                    <a href="https://www.google.com/search?q=IRA+contribution+limits+2026" target="_blank" rel="noopener">IRA Contribution Limits</a>
+                    <a href="https://www.google.com/search?q=retirement+withdrawal+strategies" target="_blank" rel="noopener">Withdrawal Strategies</a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
 
     <footer>
         <div class="container">
@@ -199,18 +310,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Retirement Calculator -->
     <script src="../js/retirement.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>

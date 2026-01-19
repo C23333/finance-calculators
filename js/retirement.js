@@ -2,10 +2,34 @@
 
 document.getElementById('retirementForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateRetirement(true);
+    calculateRetirement();
 });
 
-function calculateRetirement(shouldScroll = false) {
+// Auto-calculate on input change
+document.querySelectorAll('#retirementForm input, #retirementForm select').forEach(input => {
+    input.addEventListener('input', () => calculateRetirement());
+});
+
+// Tab switching functionality
+document.querySelectorAll('.calc-output-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.calc-output-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        document.querySelectorAll('.calc-tab-content').forEach(content => content.classList.remove('active'));
+        // Show corresponding tab content
+        const tabId = this.getAttribute('data-tab') + 'Content';
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
+    });
+});
+
+function calculateRetirement() {
     // Get input values
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
@@ -78,10 +102,10 @@ function calculateRetirement(shouldScroll = false) {
     statusEl.textContent = status;
     statusEl.style.color = statusColor;
 
-    // Show results
-    document.getElementById('results').classList.add('show');
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    // Update monthly withdrawal
+    const monthlyWithdrawalEl = document.getElementById('monthlyWithdrawal');
+    if (monthlyWithdrawalEl) {
+        monthlyWithdrawalEl.textContent = I18n.formatCurrency(annualIncome / 12, { decimals: 0 });
     }
 }
 
@@ -96,7 +120,7 @@ function getDefaultStatus(key) {
 }
 
 // Calculate on page load
-document.addEventListener('DOMContentLoaded', () => calculateRetirement(false));
+document.addEventListener('DOMContentLoaded', () => calculateRetirement());
 
 // Recalculate when language changes
-document.addEventListener('languageChange', () => calculateRetirement(false));
+document.addEventListener('languageChange', () => calculateRetirement());

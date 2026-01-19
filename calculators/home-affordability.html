@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Affordability Calculator 2026 - How Much House Can I Afford? | FinCalc</title>
+    <meta name="description" content="Free home affordability calculator for 2026. Find out how much house you can afford based on your income, debts, down payment, and current mortgage rates.">
+    <meta name="keywords" content="home affordability calculator, how much house can I afford, mortgage affordability, DTI calculator, home buying calculator">
+    <link rel="canonical" href="https://financecalc.cc/calculators/home-affordability.html">
+
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
@@ -18,53 +23,120 @@
             document.documentElement.setAttribute('data-effective-theme', effective);
         })();
     </script>
-    <title>Home Affordability Calculator 2026 - How Much House Can I Afford? | FinCalc</title>
-    <meta name="description" content="Free home affordability calculator for 2026. Find out how much house you can afford based on your income, debts, down payment, and current mortgage rates.">
+
+    <!-- Force HTTPS -->
+    <script>if(location.protocol !== 'https:' && location.hostname !== 'localhost'){location.replace('https:' + location.href.substring(location.protocol.length));}</script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="/js/init.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QFTQMV9QP7');
+    </script>
+
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Home Affordability Calculator",
+        "description": "Calculate how much house you can afford based on your income and financial situation",
+        "url": "https://financecalc.cc/calculators/home-affordability.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much house can I afford?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A general rule is that your monthly housing costs should not exceed 28% of your gross monthly income, and your total debt payments should not exceed 36%. Use our calculator to get a personalized estimate based on your income, debts, and down payment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the 28/36 rule for mortgages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 28/36 rule states that your housing costs should not exceed 28% of your gross monthly income (front-end ratio), and your total debt payments including housing should not exceed 36% of your gross monthly income (back-end ratio)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is DTI ratio and why does it matter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DTI (Debt-to-Income) ratio is the percentage of your gross monthly income that goes toward paying debts. Lenders use this to determine how much you can borrow. Most lenders prefer a DTI of 43% or less for mortgage approval."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- SEO Enhancement Script -->
+    <script src="/js/seo.js" defer></script>
+
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">FinCalc</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Compact Header -->
+    <header class="calc-header">
+        <a href="../" class="logo">FinCalc</a>
+        <h1 class="calc-title" data-i18n="calculators.homeAffordability.title">Home Affordability Calculator</h1>
+        <nav class="calc-nav">
+            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <button class="info-toggle" aria-label="Show information" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="../#calculators" data-i18n="nav.calculators">Calculators</a></li>
-                <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="../#about" data-i18n="nav.about">About</a></li>
-            </ul>
             <div class="nav-controls">
                 <!-- Language selector and theme toggle will be injected by JS -->
             </div>
         </nav>
     </header>
 
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
-
-    <main id="main-content" class="calc-page">
-        <div class="calc-container">
-            <nav class="breadcrumb">
-                <a href="../" data-i18n="nav.home">Home</a> <span>/ <span data-i18n="calculators.homeAffordability.breadcrumb">Home Affordability Calculator</span></span>
-            </nav>
-
-            <h1 data-i18n="calculators.homeAffordability.title">Home Affordability Calculator</h1>
-            <p data-i18n="calculators.homeAffordability.pageDescription">Find out how much house you can afford based on your income and financial situation.</p>
-
-            <div class="calculator">
-                <form id="affordabilityForm">
+    <!-- Tool Layout -->
+    <main id="main-content" class="calc-tool-layout">
+        <!-- Input Panel -->
+        <div class="calc-input-panel">
+            <div class="calc-panel-header">
+                <div class="calc-panel-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <span data-i18n="calculators.homeAffordability.financialDetails">Financial Details</span>
+                </div>
+            </div>
+            <div class="calc-panel-body">
+                <form id="affordabilityForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="annualIncome" data-i18n="calculators.homeAffordability.annualIncome">Annual Gross Income</label>
@@ -127,102 +199,210 @@
 
                     <button type="submit" class="btn" data-i18n="calculators.homeAffordability.calculate">Calculate Affordability</button>
                 </form>
+            </div>
 
-                <div class="results" id="results">
-                    <div class="result-highlight">
-                        <div class="big-number" id="maxHomePrice">$0</div>
-                        <p data-i18n="calculators.homeAffordability.maxHomePrice">Maximum Home Price</p>
-                    </div>
+            <!-- Quick Links -->
+            <div class="calc-quick-links">
+                <a href="mortgage.html" class="calc-quick-link">🏠 <span data-i18n="calculators.mortgage.title">Mortgage</span></a>
+                <a href="refinance.html" class="calc-quick-link">🔄 <span data-i18n="calculators.refinance.title">Refinance</span></a>
+                <a href="rent-vs-buy.html" class="calc-quick-link">🏘️ <span data-i18n="calculators.rentVsBuy.title">Rent vs Buy</span></a>
+                <a href="debt-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.debtPayoff.title">Debt Payoff</span></a>
+            </div>
+        </div>
 
-                    <div class="result-cards">
-                        <div class="result-card">
-                            <div class="label" data-i18n="calculators.homeAffordability.monthlyPayment">Monthly Payment</div>
-                            <div class="value" id="monthlyPayment">$0</div>
-                        </div>
-                        <div class="result-card">
-                            <div class="label" data-i18n="calculators.homeAffordability.maxLoanAmount">Loan Amount</div>
-                            <div class="value" id="loanAmount">$0</div>
-                        </div>
-                        <div class="result-card">
-                            <div class="label" data-i18n="calculators.homeAffordability.dtiRatio">DTI Ratio</div>
-                            <div class="value" id="dtiRatio">0%</div>
-                        </div>
-                        <div class="result-card success">
-                            <div class="label" data-i18n="calculators.homeAffordability.downPaymentPercent">Down Payment %</div>
-                            <div class="value" id="downPaymentPercent">0%</div>
-                        </div>
-                    </div>
+        <!-- Output Panel -->
+        <div class="calc-output-panel">
+            <div class="calc-result-main">
+                <div class="big-number" id="maxHomePrice">$0</div>
+                <div class="label" data-i18n="calculators.homeAffordability.maxHomePrice">Maximum Home Price</div>
+            </div>
 
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.homeAffordability.principalInterest">Principal & Interest</span>
-                        <span class="result-value" id="principalInterest">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.homeAffordability.monthlyTax">Property Tax (Monthly)</span>
-                        <span class="result-value" id="monthlyTax">$0</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label" data-i18n="calculators.homeAffordability.monthlyInsurance">Insurance (Monthly)</span>
-                        <span class="result-value" id="monthlyInsurance">$0</span>
-                    </div>
+            <div class="calc-result-grid">
+                <div class="calc-result-item">
+                    <div class="value" id="monthlyPayment">$0</div>
+                    <div class="label" data-i18n="calculators.homeAffordability.monthlyPayment">Monthly Payment</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="loanAmount">$0</div>
+                    <div class="label" data-i18n="calculators.homeAffordability.maxLoanAmount">Loan Amount</div>
+                </div>
+                <div class="calc-result-item">
+                    <div class="value" id="dtiRatio">0%</div>
+                    <div class="label" data-i18n="calculators.homeAffordability.dtiRatio">DTI Ratio</div>
+                </div>
+                <div class="calc-result-item success">
+                    <div class="value" id="downPaymentPercent">0%</div>
+                    <div class="label" data-i18n="calculators.homeAffordability.downPaymentPercent">Down Payment %</div>
                 </div>
             </div>
 
-            <div class="policy-links">
-                <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    <span data-i18n="calculators.homeAffordability.resourcesTitle">Home Buying Resources</span>
-                </h3>
-                <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2026" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        <span data-i18n="calculators.homeAffordability.fhaLoan">FHA Loan Requirements</span>
-                    </a>
-                    <a href="https://www.google.com/search?q=DTI+ratio+requirements+mortgage" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        <span data-i18n="calculators.homeAffordability.dtiRequirements">DTI Requirements</span>
-                    </a>
-                    <a href="https://www.google.com/search?q=PMI+private+mortgage+insurance+cost" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        <span data-i18n="calculators.homeAffordability.pmiCosts">PMI Costs</span>
-                    </a>
-                    <a href="https://www.google.com/search?q=credit+score+needed+for+mortgage" target="_blank" rel="noopener" class="policy-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        <span data-i18n="calculators.homeAffordability.creditScore">Credit Score Requirements</span>
-                    </a>
-                </div>
+            <!-- Output Tabs -->
+            <div class="calc-output-tabs">
+                <button class="calc-output-tab active" data-tab="breakdown" data-i18n="calculators.homeAffordability.breakdown">Breakdown</button>
+                <button class="calc-output-tab" data-tab="details" data-i18n="calculators.homeAffordability.details">Details</button>
             </div>
 
-            <article class="content">
-                <h2 data-i18n="calculators.homeAffordability.articleTitle">How Much House Can You Afford?</h2>
-                <p data-i18n="calculators.homeAffordability.articleIntro">Lenders typically use two key ratios to determine how much you can borrow:</p>
-                <h3 data-i18n="calculators.homeAffordability.rule2836Title">The 28/36 Rule</h3>
-                <ul>
-                    <li><strong data-i18n="calculators.homeAffordability.rule28Label">28% Rule:</strong> <span data-i18n="calculators.homeAffordability.rule28">Your housing costs should not exceed 28% of gross monthly income</span></li>
-                    <li><strong data-i18n="calculators.homeAffordability.rule36Label">36% Rule:</strong> <span data-i18n="calculators.homeAffordability.rule36">Total debt payments should not exceed 36% of gross monthly income</span></li>
-                </ul>
-                <h3 data-i18n="calculators.homeAffordability.tipsTitle">Tips for Buying Within Your Means</h3>
-                <ul>
-                    <li data-i18n="calculators.homeAffordability.tip1">Don't max out your budget - leave room for unexpected expenses</li>
-                    <li data-i18n="calculators.homeAffordability.tip2">Consider all costs: taxes, insurance, maintenance, HOA fees</li>
-                    <li data-i18n="calculators.homeAffordability.tip3">Save for a 20% down payment to avoid PMI</li>
-                </ul>
-
-                <div class="related-articles" style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 8px;">
-                    <h3 data-i18n="calculators.homeAffordability.relatedArticles">Related Articles</h3>
-                    <ul style="list-style: none; padding: 0; margin: 15px 0 0 0;">
-                        <li style="margin-bottom: 12px;"><a href="/blog/how-much-house-can-i-afford-80k-salary.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">How Much House Can I Afford on an $80K Salary?</a> - Real examples and calculations</li>
-                        <li style="margin-bottom: 12px;"><a href="/blog/first-time-homebuyer-mortgage-guide.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">First-Time Homebuyer's Mortgage Guide</a> - Everything you need to know</li>
-                        <li style="margin-bottom: 12px;"><a href="/blog/emergency-fund-3-vs-6-months.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Emergency Fund: 3 or 6 Months?</a> - Build your safety net before buying</li>
-                    </ul>
+            <div class="calc-output-content" id="outputContent">
+                <!-- Breakdown Tab -->
+                <div class="calc-tab-content active" id="breakdownContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.principalInterest">Principal & Interest</span>
+                            <span class="breakdown-value" id="principalInterest">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.monthlyTax">Property Tax (Monthly)</span>
+                            <span class="breakdown-value" id="monthlyTax">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.monthlyInsurance">Insurance (Monthly)</span>
+                            <span class="breakdown-value" id="monthlyInsurance">$0</span>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.totalMonthly">Total Monthly</span>
+                            <span class="breakdown-value" id="totalMonthly">$0</span>
+                        </div>
+                    </div>
                 </div>
-            </article>
+
+                <!-- Details Tab -->
+                <div class="calc-tab-content" id="detailsContent">
+                    <div class="calc-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.monthlyIncome">Monthly Income</span>
+                            <span class="breakdown-value" id="monthlyIncome">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.maxHousingPayment">Max Housing Payment (28%)</span>
+                            <span class="breakdown-value" id="maxHousingPayment">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.maxTotalDebt">Max Total Debt (36%)</span>
+                            <span class="breakdown-value" id="maxTotalDebt">$0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label" data-i18n="calculators.homeAffordability.availableForHousing">Available for Housing</span>
+                            <span class="breakdown-value" id="availableForHousing">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
+    <!-- Info Sidebar -->
+    <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
+        <div class="info-sidebar-header">
+            <h2 data-i18n="calculators.homeAffordability.aboutCalculator">About This Calculator</h2>
+            <button class="info-sidebar-close" aria-label="Close">×</button>
+        </div>
+        <div class="info-sidebar-content">
+            <!-- How to Use Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    How to Use This Calculator
+                </h3>
+                <p>Enter your annual income, monthly debt payments, available down payment, and expected interest rate. The calculator uses the 28/36 rule to determine the maximum home price you can afford while maintaining healthy finances.</p>
+            </section>
+
+            <!-- The 28/36 Rule Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    The 28/36 Rule
+                </h3>
+                <ul>
+                    <li><strong>28% Rule:</strong> Your housing costs should not exceed 28% of gross monthly income</li>
+                    <li><strong>36% Rule:</strong> Total debt payments should not exceed 36% of gross monthly income</li>
+                </ul>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    Tips for Buying Within Your Means
+                </h3>
+                <ul>
+                    <li>Don't max out your budget - leave room for unexpected expenses</li>
+                    <li>Consider all costs: taxes, insurance, maintenance, HOA fees</li>
+                    <li>Save for a 20% down payment to avoid PMI</li>
+                    <li>Keep an emergency fund separate from your down payment</li>
+                    <li>Factor in moving costs and initial home setup expenses</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Frequently Asked Questions
+                </h3>
+                <div class="faq-item">
+                    <h4>How much house can I afford?</h4>
+                    <p>A general rule is that your monthly housing costs should not exceed 28% of your gross monthly income. Use this calculator to get a personalized estimate based on your specific financial situation.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is DTI ratio and why does it matter?</h4>
+                    <p>DTI (Debt-to-Income) ratio is the percentage of your gross monthly income that goes toward paying debts. Lenders use this to determine how much you can borrow. Most lenders prefer a DTI of 43% or less.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Should I put 20% down?</h4>
+                    <p>A 20% down payment helps you avoid PMI (Private Mortgage Insurance) and gives you instant equity. However, many loan programs allow lower down payments if you're willing to pay PMI.</p>
+                </div>
+            </section>
+
+            <!-- Related Articles Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Related Articles
+                </h3>
+                <ul class="related-links">
+                    <li>
+                        <a href="/blog/how-much-house-can-i-afford-80k-salary.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            How Much House Can I Afford on an $80K Salary?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/first-time-homebuyer-mortgage-guide.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            First-Time Homebuyer's Mortgage Guide
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/emergency-fund-3-vs-6-months.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            Emergency Fund: 3 or 6 Months?
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Policy Links Section -->
+            <section class="info-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Home Buying Resources
+                </h3>
+                <p>Explore programs and resources for home buyers:</p>
+                <div class="policy-grid">
+                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2026" target="_blank" rel="noopener">FHA Loans</a>
+                    <a href="https://www.google.com/search?q=DTI+ratio+requirements+mortgage" target="_blank" rel="noopener">DTI Requirements</a>
+                    <a href="https://www.google.com/search?q=PMI+private+mortgage+insurance+cost" target="_blank" rel="noopener">PMI Costs</a>
+                    <a href="https://www.google.com/search?q=credit+score+needed+for+mortgage" target="_blank" rel="noopener">Credit Score</a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <div class="info-sidebar-overlay" id="sidebarOverlay"></div>
+
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">&copy; 2026 FinCalc. All rights reserved.</p>
+            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer" data-i18n="calculators.homeAffordability.disclaimer">Disclaimer: This calculator provides estimates only. Actual affordability depends on many factors including credit score, debt obligations, and lender requirements.</p>
             <div class="friend-links">
                 <span data-i18n="footer.friendLinks">Friend Links:</span>
                 <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
@@ -234,18 +414,13 @@
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
     <script src="../js/i18n.js"></script>
-    <!-- Sidebar Navigation -->
-    <script src="../js/sidebar.js"></script>
+    <!-- Info Sidebar -->
+    <script src="../js/info-sidebar.js"></script>
+    <!-- Home Affordability Calculator -->
     <script src="../js/home-affordability.js"></script>
+    <!-- Monetization -->
     <script src="../js/monetization.js"></script>
     <script src="../js/premium.js"></script>
     <script src="../js/affiliate-links.js"></script>
-    <script>
-        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-            document.querySelector('.nav-links')?.classList.toggle('open');
-        });
-    </script>
 </body>
 </html>
