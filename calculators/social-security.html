@@ -37,14 +37,14 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.socialSecurity.title">Social Security Calculator</h1>
+        <h1 class="calc-title">Social Security Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -61,39 +61,39 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <span data-i18n="calculators.socialSecurity.calculate">Calculate Your Benefits</span>
+                    <span>Calculate Your Benefits</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="socialSecurityForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="currentAge" data-i18n="calculators.socialSecurity.currentAge">Current Age</label>
+                            <label for="currentAge">Current Age</label>
                             <input type="number" id="currentAge" min="22" max="70" value="45" required>
                         </div>
                         <div class="form-group">
-                            <label for="birthYear" data-i18n="calculators.socialSecurity.birthYear">Birth Year</label>
+                            <label for="birthYear">Birth Year</label>
                             <input type="number" id="birthYear" min="1940" max="2004" value="1980" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="retirementAge" data-i18n="calculators.socialSecurity.retirementAge">Planned Retirement Age</label>
+                        <label for="retirementAge">Planned Retirement Age</label>
                         <select id="retirementAge" required>
-                            <option value="62" data-i18n="calculators.socialSecurity.retirementAge62">62 (Early - Reduced Benefits)</option>
-                            <option value="67" selected data-i18n="calculators.socialSecurity.retirementAge67">67 (Full Retirement Age)</option>
-                            <option value="70" data-i18n="calculators.socialSecurity.retirementAge70">70 (Delayed - Maximum Benefits)</option>
+                            <option value="62">62 (Early - Reduced Benefits)</option>
+                            <option value="67" selected>67 (Full Retirement Age)</option>
+                            <option value="70">70 (Delayed - Maximum Benefits)</option>
                         </select>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="averageEarnings" data-i18n="calculators.socialSecurity.averageEarnings">Avg Annual Earnings (35 yrs)</label>
+                            <label for="averageEarnings">Avg Annual Earnings (35 yrs)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="averageEarnings" min="0" value="65000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="currentEarnings" data-i18n="calculators.socialSecurity.currentEarnings">Current Annual Earnings</label>
+                            <label for="currentEarnings">Current Annual Earnings</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="currentEarnings" min="0" value="75000" required>
@@ -101,22 +101,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="expectedRaise" data-i18n="calculators.socialSecurity.expectedRaise">Expected Annual Raise</label>
+                        <label for="expectedRaise">Expected Annual Raise</label>
                         <div class="input-group">
                             <input type="number" id="expectedRaise" min="0" max="10" step="0.1" value="2.5" required>
                             <span>%</span>
                         </div>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.socialSecurity.calculate">Calculate Benefits</button>
+                    <button type="submit" class="btn">Calculate Benefits</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="retirement.html" class="calc-quick-link">🎯 <span data-i18n="calculators.retirement.title">Retirement</span></a>
-                <a href="401k.html" class="calc-quick-link">🏦 <span data-i18n="calculators.401k.title">401(k)</span></a>
-                <a href="salary.html" class="calc-quick-link">💰 <span data-i18n="calculators.salary.title">Salary</span></a>
-                <a href="take-home-pay.html" class="calc-quick-link">💵 <span data-i18n="calculators.takeHomePay.title">Take-Home Pay</span></a>
+                <a href="retirement.html" class="calc-quick-link">🎯 <span>Retirement</span></a>
+                <a href="401k.html" class="calc-quick-link">🏦 <span>401(k)</span></a>
+                <a href="salary.html" class="calc-quick-link">💰 <span>Salary</span></a>
+                <a href="take-home-pay.html" class="calc-quick-link">💵 <span>Take-Home Pay</span></a>
             </div>
         </div>
 
@@ -124,32 +124,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="monthlyBenefit">$0</div>
-                <div class="label" data-i18n="calculators.socialSecurity.monthlyBenefit">Monthly Benefit at Retirement</div>
+                <div class="label">Monthly Benefit at Retirement</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="annualBenefit">$0</div>
-                    <div class="label" data-i18n="calculators.socialSecurity.annualBenefit">Annual Benefit</div>
+                    <div class="label">Annual Benefit</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="fullRetirementAge">67</div>
-                    <div class="label" data-i18n="calculators.socialSecurity.fullRetirementAge">Full Retirement Age</div>
+                    <div class="label">Full Retirement Age</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="lifetimeBenefits">$0</div>
-                    <div class="label" data-i18n="calculators.socialSecurity.lifetimeBenefits">Lifetime (to 85)</div>
+                    <div class="label">Lifetime (to 85)</div>
                 </div>
                 <div class="calc-result-item highlight">
                     <div class="value" id="breakEvenAge">--</div>
-                    <div class="label" data-i18n="calculators.socialSecurity.breakEvenAge">Break-Even Age</div>
+                    <div class="label">Break-Even Age</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="comparison" data-i18n="calculators.socialSecurity.comparisonTitle">Age Comparison</button>
-                <button class="calc-output-tab" data-tab="breakdown" data-i18n="calculators.socialSecurity.breakdown">Benefit Details</button>
+                <button class="calc-output-tab active" data-tab="comparison">Age Comparison</button>
+                <button class="calc-output-tab" data-tab="breakdown">Benefit Details</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -158,10 +158,10 @@
                     <table class="calc-table">
                         <thead>
                             <tr>
-                                <th data-i18n="calculators.socialSecurity.comparisonRetirementAge">Retirement Age</th>
-                                <th data-i18n="calculators.socialSecurity.comparisonMonthlyBenefit">Monthly</th>
-                                <th data-i18n="calculators.socialSecurity.comparisonAnnualBenefit">Annual</th>
-                                <th data-i18n="calculators.socialSecurity.comparisonLifetime">Lifetime (85)</th>
+                                <th>Retirement Age</th>
+                                <th>Monthly</th>
+                                <th>Annual</th>
+                                <th>Lifetime (85)</th>
                             </tr>
                         </thead>
                         <tbody id="comparisonBody">
@@ -191,15 +191,15 @@
                 <div class="calc-tab-content" id="breakdownContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.socialSecurity.benefitAt62">Benefit at Age 62</span>
+                            <span class="breakdown-label">Benefit at Age 62</span>
                             <span class="breakdown-value" id="benefit62Detail">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.socialSecurity.benefitAtFRA">Benefit at FRA (67)</span>
+                            <span class="breakdown-label">Benefit at FRA (67)</span>
                             <span class="breakdown-value" id="benefitFRADetail">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.socialSecurity.benefitAt70">Benefit at Age 70</span>
+                            <span class="breakdown-label">Benefit at Age 70</span>
                             <span class="breakdown-value" id="benefit70Detail">$0</span>
                         </div>
                         <div class="breakdown-item">
@@ -223,7 +223,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.socialSecurity.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -348,11 +348,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.socialSecurity.footerDisclaimer">For educational purposes only. Consult the SSA for official benefit estimates.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">For educational purposes only. Consult the SSA for official benefit estimates.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -360,7 +360,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Social Security Calculator -->

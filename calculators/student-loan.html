@@ -84,9 +84,9 @@
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.studentLoan.title">Student Loan Calculator</h1>
+        <h1 class="calc-title">Student Loan Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -101,21 +101,21 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    <span data-i18n="calculators.studentLoan.loanDetails">Loan Details</span>
+                    <span>Loan Details</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="studentLoanForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="loanBalance" data-i18n="calculators.studentLoan.loanBalance">Total Loan Balance</label>
+                            <label for="loanBalance">Total Loan Balance</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="loanBalance" value="35000" min="0" step="1000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="interestRate" data-i18n="calculators.studentLoan.interestRate">Interest Rate</label>
+                            <label for="interestRate">Interest Rate</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="interestRate" value="5.5" min="0" max="15" step="0.1" required>
@@ -124,32 +124,32 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="repaymentPlan" data-i18n="calculators.studentLoan.repaymentPlan">Repayment Plan</label>
+                            <label for="repaymentPlan">Repayment Plan</label>
                             <select id="repaymentPlan">
-                                <option value="120" data-i18n="calculators.studentLoan.standard">Standard (10 years)</option>
-                                <option value="180" data-i18n="calculators.studentLoan.extended15">Extended (15 years)</option>
-                                <option value="240" data-i18n="calculators.studentLoan.extended20">Extended (20 years)</option>
-                                <option value="300" data-i18n="calculators.studentLoan.extended25">Extended (25 years)</option>
+                                <option value="120">Standard (10 years)</option>
+                                <option value="180">Extended (15 years)</option>
+                                <option value="240">Extended (20 years)</option>
+                                <option value="300">Extended (25 years)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="extraPayment" data-i18n="calculators.studentLoan.extraPayment">Extra Monthly Payment</label>
+                            <label for="extraPayment">Extra Monthly Payment</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="extraPayment" value="0" min="0" step="25">
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.studentLoan.calculate">Calculate</button>
+                    <button type="submit" class="btn">Calculate</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="loan-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.loanPayoff.title">Loan Payoff</span></a>
-                <a href="debt-payoff.html" class="calc-quick-link">📊 <span data-i18n="calculators.debtPayoff.title">Debt Payoff</span></a>
-                <a href="savings-goal.html" class="calc-quick-link">🎯 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
-                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
+                <a href="loan-payoff.html" class="calc-quick-link">💳 <span>Loan Payoff</span></a>
+                <a href="debt-payoff.html" class="calc-quick-link">📊 <span>Debt Payoff</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🎯 <span>Savings Goal</span></a>
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
             </div>
         </div>
 
@@ -157,32 +157,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="monthlyPayment">$0</div>
-                <div class="label" data-i18n="calculators.studentLoan.monthlyPayment">Monthly Payment</div>
+                <div class="label">Monthly Payment</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="totalInterest">$0</div>
-                    <div class="label" data-i18n="calculators.studentLoan.totalInterest">Total Interest</div>
+                    <div class="label">Total Interest</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="totalCost">$0</div>
-                    <div class="label" data-i18n="calculators.studentLoan.totalCost">Total Cost</div>
+                    <div class="label">Total Cost</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="payoffDate">-</div>
-                    <div class="label" data-i18n="calculators.studentLoan.payoffDate">Payoff Date</div>
+                    <div class="label">Payoff Date</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="interestSaved">$0</div>
-                    <div class="label" data-i18n="calculators.studentLoan.interestSaved">Interest Saved</div>
+                    <div class="label">Interest Saved</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="breakdown" data-i18n="calculators.studentLoan.breakdown">Breakdown</button>
-                <button class="calc-output-tab" data-tab="comparison" data-i18n="calculators.studentLoan.planComparison">Plan Comparison</button>
+                <button class="calc-output-tab active" data-tab="breakdown">Breakdown</button>
+                <button class="calc-output-tab" data-tab="comparison">Plan Comparison</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -190,27 +190,27 @@
                 <div class="calc-tab-content active" id="breakdownContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.studentLoan.loanBalance">Loan Balance</span>
+                            <span class="breakdown-label">Loan Balance</span>
                             <span class="breakdown-value" id="breakdownBalance">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.studentLoan.interestRate">Interest Rate</span>
+                            <span class="breakdown-label">Interest Rate</span>
                             <span class="breakdown-value" id="breakdownRate">0%</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.studentLoan.repaymentTerm">Repayment Term</span>
+                            <span class="breakdown-label">Repayment Term</span>
                             <span class="breakdown-value" id="breakdownTerm">-</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.studentLoan.monthlyPayment">Monthly Payment</span>
+                            <span class="breakdown-label">Monthly Payment</span>
                             <span class="breakdown-value" id="breakdownPayment">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.studentLoan.totalInterest">Total Interest</span>
+                            <span class="breakdown-label">Total Interest</span>
                             <span class="breakdown-value" id="breakdownInterest">$0</span>
                         </div>
                         <div class="breakdown-item total">
-                            <span class="breakdown-label" data-i18n="calculators.studentLoan.totalCost">Total Cost</span>
+                            <span class="breakdown-label">Total Cost</span>
                             <span class="breakdown-value" id="breakdownTotal">$0</span>
                         </div>
                     </div>
@@ -221,10 +221,10 @@
                     <table class="calc-table" id="comparisonTable">
                         <thead>
                             <tr>
-                                <th data-i18n="calculators.studentLoan.plan">Plan</th>
-                                <th data-i18n="calculators.studentLoan.monthlyPayment">Monthly</th>
-                                <th data-i18n="calculators.studentLoan.totalInterest">Interest</th>
-                                <th data-i18n="calculators.studentLoan.totalCost">Total</th>
+                                <th>Plan</th>
+                                <th>Monthly</th>
+                                <th>Interest</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody id="comparisonBody"></tbody>
@@ -237,7 +237,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.studentLoan.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -368,11 +368,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="footer.disclaimer">Disclaimer: This calculator provides estimates only. Contact your loan servicer for exact payment amounts and options.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Contact your loan servicer for exact payment amounts and options.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -380,7 +380,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Student Loan Calculator -->

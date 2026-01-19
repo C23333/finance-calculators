@@ -36,14 +36,14 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.401k.title">401(k) Calculator</h1>
+        <h1 class="calc-title">401(k) Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -60,31 +60,31 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    <span data-i18n="calculators.401k.contributionDetails">Contribution Details</span>
+                    <span>Contribution Details</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="calc401kForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="currentAge" data-i18n="calculators.401k.currentAge">Current Age</label>
+                            <label for="currentAge">Current Age</label>
                             <input type="number" id="currentAge" value="30" min="18" max="70" required>
                         </div>
                         <div class="form-group">
-                            <label for="retirementAge" data-i18n="calculators.401k.retirementAge">Retirement Age</label>
+                            <label for="retirementAge">Retirement Age</label>
                             <input type="number" id="retirementAge" value="65" min="50" max="75" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="annualSalary" data-i18n="calculators.401k.annualSalary">Annual Salary</label>
+                            <label for="annualSalary">Annual Salary</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="annualSalary" value="75000" min="0" step="1000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="currentBalance" data-i18n="calculators.401k.currentBalance">Current 401(k) Balance</label>
+                            <label for="currentBalance">Current 401(k) Balance</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="currentBalance" value="25000" min="0" step="1000" required>
@@ -93,14 +93,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="contributionPercent" data-i18n="calculators.401k.contributionPercent">Your Contribution (%)</label>
+                            <label for="contributionPercent">Your Contribution (%)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="contributionPercent" value="10" min="0" max="100" step="1" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="employerMatch" data-i18n="calculators.401k.employerMatch">Employer Match (%)</label>
+                            <label for="employerMatch">Employer Match (%)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="employerMatch" value="50" min="0" max="100" step="1">
@@ -109,14 +109,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="matchLimit" data-i18n="calculators.401k.matchLimit">Match Limit (% of salary)</label>
+                            <label for="matchLimit">Match Limit (% of salary)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="matchLimit" value="6" min="0" max="100" step="1">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="expectedReturn" data-i18n="calculators.401k.expectedReturn">Expected Annual Return</label>
+                            <label for="expectedReturn">Expected Annual Return</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="expectedReturn" value="7" min="0" max="15" step="0.5" required>
@@ -124,22 +124,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="salaryIncrease" data-i18n="calculators.401k.salaryIncrease">Annual Salary Increase (%)</label>
+                        <label for="salaryIncrease">Annual Salary Increase (%)</label>
                         <div class="input-group">
                             <span>%</span>
                             <input type="number" id="salaryIncrease" value="3" min="0" max="10" step="0.5">
                         </div>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.401k.calculate">Calculate Growth</button>
+                    <button type="submit" class="btn">Calculate Growth</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="retirement.html" class="calc-quick-link">🎯 <span data-i18n="calculators.retirement.title">Retirement</span></a>
-                <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span data-i18n="calculators.rothVsTraditional.title">Roth vs Traditional</span></a>
-                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
-                <a href="investment-return.html" class="calc-quick-link">💹 <span data-i18n="calculators.investmentReturn.title">Investment Return</span></a>
+                <a href="retirement.html" class="calc-quick-link">🎯 <span>Retirement</span></a>
+                <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span>Roth vs Traditional</span></a>
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
+                <a href="investment-return.html" class="calc-quick-link">💹 <span>Investment Return</span></a>
             </div>
         </div>
 
@@ -147,32 +147,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="totalAtRetirement">$0</div>
-                <div class="label" data-i18n="calculators.401k.projectedBalanceLabel">Projected 401(k) Balance at Retirement</div>
+                <div class="label">Projected 401(k) Balance at Retirement</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="yourContributions">$0</div>
-                    <div class="label" data-i18n="calculators.401k.yourContributions">Your Contributions</div>
+                    <div class="label">Your Contributions</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="employerContributions">$0</div>
-                    <div class="label" data-i18n="calculators.401k.employerMatchLabel">Employer Match</div>
+                    <div class="label">Employer Match</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="investmentGrowth">$0</div>
-                    <div class="label" data-i18n="calculators.401k.investmentGrowth">Investment Growth</div>
+                    <div class="label">Investment Growth</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="monthlyIncome">$0</div>
-                    <div class="label" data-i18n="calculators.401k.monthlyIncome">Monthly Income (4% rule)</div>
+                    <div class="label">Monthly Income (4% rule)</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="details" data-i18n="calculators.401k.detailsTab">Details</button>
-                <button class="calc-output-tab" data-tab="breakdown" data-i18n="calculators.401k.breakdownTab">Breakdown</button>
+                <button class="calc-output-tab active" data-tab="details">Details</button>
+                <button class="calc-output-tab" data-tab="breakdown">Breakdown</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -180,15 +180,15 @@
                 <div class="calc-tab-content active" id="detailsContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.401k.yearsUntilRetirement">Years Until Retirement</span>
+                            <span class="breakdown-label">Years Until Retirement</span>
                             <span class="breakdown-value" id="yearsToRetirement">0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.401k.annualContribution">Annual Contribution (Year 1)</span>
+                            <span class="breakdown-label">Annual Contribution (Year 1)</span>
                             <span class="breakdown-value" id="annualContribution">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.401k.annualMatch">Annual Employer Match (Year 1)</span>
+                            <span class="breakdown-label">Annual Employer Match (Year 1)</span>
                             <span class="breakdown-value" id="annualMatch">$0</span>
                         </div>
                     </div>
@@ -198,15 +198,15 @@
                 <div class="calc-tab-content" id="breakdownContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.401k.limitUnder50">2026 Limit (Under 50)</span>
+                            <span class="breakdown-label">2026 Limit (Under 50)</span>
                             <span class="breakdown-value">$23,500</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.401k.limit50Plus">2026 Limit (50+)</span>
+                            <span class="breakdown-label">2026 Limit (50+)</span>
                             <span class="breakdown-value">$31,000</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.401k.limitTotal">Total Limit (incl. employer)</span>
+                            <span class="breakdown-label">Total Limit (incl. employer)</span>
                             <span class="breakdown-value">$70,000</span>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.401k.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -317,11 +317,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.401k.footerDisclaimer">Disclaimer: This calculator provides estimates only. Actual returns will vary. Consult a financial advisor for personalized retirement planning.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual returns will vary. Consult a financial advisor for personalized retirement planning.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -329,7 +329,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- 401k Calculator -->

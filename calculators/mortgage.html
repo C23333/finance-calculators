@@ -169,9 +169,9 @@
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.mortgage.title">Mortgage Calculator</h1>
+        <h1 class="calc-title">Mortgage Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -188,21 +188,21 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span data-i18n="calculators.mortgage.loanDetails">Loan Details</span>
+                    <span>Loan Details</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="mortgageForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="homePrice" data-i18n="calculators.mortgage.homePrice">Home Price</label>
+                            <label for="homePrice">Home Price</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="downPayment" data-i18n="calculators.mortgage.downPayment">Down Payment</label>
+                            <label for="downPayment">Down Payment</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="downPayment" value="70000" min="0" step="1000" required>
@@ -211,32 +211,32 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="interestRate" data-i18n="calculators.mortgage.interestRate">Interest Rate (Annual)</label>
+                            <label for="interestRate">Interest Rate (Annual)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="interestRate" value="6.5" min="0" max="30" step="0.01" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="loanTerm" data-i18n="calculators.mortgage.loanTerm">Loan Term</label>
+                            <label for="loanTerm">Loan Term</label>
                             <select id="loanTerm">
-                                <option value="30" data-i18n="calculators.mortgage.loanTerm30">30 years</option>
-                                <option value="20" data-i18n="calculators.mortgage.loanTerm20">20 years</option>
-                                <option value="15" data-i18n="calculators.mortgage.loanTerm15">15 years</option>
-                                <option value="10" data-i18n="calculators.mortgage.loanTerm10">10 years</option>
+                                <option value="30">30 years</option>
+                                <option value="20">20 years</option>
+                                <option value="15">15 years</option>
+                                <option value="10">10 years</option>
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.mortgage.calculate">Calculate Payment</button>
+                    <button type="submit" class="btn">Calculate Payment</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="refinance.html" class="calc-quick-link">🔄 <span data-i18n="calculators.refinance.title">Refinance</span></a>
-                <a href="home-affordability.html" class="calc-quick-link">💵 <span data-i18n="calculators.homeAffordability.title">Affordability</span></a>
-                <a href="rent-vs-buy.html" class="calc-quick-link">🏘️ <span data-i18n="calculators.rentVsBuy.title">Rent vs Buy</span></a>
-                <a href="loan-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.loanPayoff.title">Loan Payoff</span></a>
+                <a href="refinance.html" class="calc-quick-link">🔄 <span>Refinance</span></a>
+                <a href="home-affordability.html" class="calc-quick-link">💵 <span>Affordability</span></a>
+                <a href="rent-vs-buy.html" class="calc-quick-link">🏘️ <span>Rent vs Buy</span></a>
+                <a href="loan-payoff.html" class="calc-quick-link">💳 <span>Loan Payoff</span></a>
             </div>
         </div>
 
@@ -244,33 +244,33 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="monthlyPayment">$0</div>
-                <div class="label"><span data-i18n="calculators.mortgage.monthlyPayment">Monthly Payment</span> (<span data-i18n="calculators.mortgage.principalInterest">Principal & Interest</span>)</div>
+                <div class="label"><span>Monthly Payment</span> (<span>Principal & Interest</span>)</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="loanAmount">$0</div>
-                    <div class="label" data-i18n="calculators.mortgage.loanAmount">Loan Amount</div>
+                    <div class="label">Loan Amount</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="totalInterest">$0</div>
-                    <div class="label" data-i18n="calculators.mortgage.totalInterest">Total Interest</div>
+                    <div class="label">Total Interest</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="totalCost">$0</div>
-                    <div class="label" data-i18n="calculators.mortgage.totalCost">Total Cost</div>
+                    <div class="label">Total Cost</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="payoffDate">-</div>
-                    <div class="label" data-i18n="calculators.mortgage.payoffDate">Payoff Date</div>
+                    <div class="label">Payoff Date</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="schedule" data-i18n="calculators.mortgage.amortization">Amortization</button>
-                <button class="calc-output-tab" data-tab="chart" data-i18n="calculators.mortgage.chart">Chart</button>
-                <button class="calc-output-tab" data-tab="breakdown" data-i18n="calculators.mortgage.breakdown">Breakdown</button>
+                <button class="calc-output-tab active" data-tab="schedule">Amortization</button>
+                <button class="calc-output-tab" data-tab="chart">Chart</button>
+                <button class="calc-output-tab" data-tab="breakdown">Breakdown</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -279,10 +279,10 @@
                     <table class="calc-table" id="amortizationTable">
                         <thead>
                             <tr>
-                                <th data-i18n="calculators.mortgage.year">Year</th>
-                                <th data-i18n="calculators.mortgage.principal">Principal</th>
-                                <th data-i18n="calculators.mortgage.interest">Interest</th>
-                                <th data-i18n="calculators.mortgage.balance">Balance</th>
+                                <th>Year</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Balance</th>
                             </tr>
                         </thead>
                         <tbody id="amortizationBody">
@@ -301,19 +301,19 @@
                 <div class="calc-tab-content" id="breakdownContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.mortgage.principalPaid">Principal Paid</span>
+                            <span class="breakdown-label">Principal Paid</span>
                             <span class="breakdown-value" id="breakdownPrincipal">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.mortgage.interestPaid">Interest Paid</span>
+                            <span class="breakdown-label">Interest Paid</span>
                             <span class="breakdown-value" id="breakdownInterest">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.mortgage.downPaymentLabel">Down Payment</span>
+                            <span class="breakdown-label">Down Payment</span>
                             <span class="breakdown-value" id="breakdownDownPayment">$0</span>
                         </div>
                         <div class="breakdown-item total">
-                            <span class="breakdown-label" data-i18n="calculators.mortgage.totalCost">Total Cost</span>
+                            <span class="breakdown-label">Total Cost</span>
                             <span class="breakdown-value" id="breakdownTotal">$0</span>
                         </div>
                     </div>
@@ -325,7 +325,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.mortgage.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -440,11 +440,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="footer.disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -452,7 +452,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Mortgage Calculator -->

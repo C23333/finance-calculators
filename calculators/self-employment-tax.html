@@ -37,14 +37,14 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.selfEmploymentTax.title">Self-Employment Tax Calculator</h1>
+        <h1 class="calc-title">Self-Employment Tax Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -61,60 +61,60 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                    <span data-i18n="calculators.selfEmploymentTax.enterIncome">Enter Your Self-Employment Income</span>
+                    <span>Enter Your Self-Employment Income</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="selfEmploymentForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="grossIncome" data-i18n="calculators.selfEmploymentTax.grossIncome">Gross Self-Employment Income</label>
+                            <label for="grossIncome">Gross Self-Employment Income</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="grossIncome" min="0" value="100000" required>
                             </div>
-                            <small data-i18n="calculators.selfEmploymentTax.grossIncomeHelp">Total income before expenses</small>
+                            <small>Total income before expenses</small>
                         </div>
                         <div class="form-group">
-                            <label for="businessExpenses" data-i18n="calculators.selfEmploymentTax.businessExpenses">Business Expenses</label>
+                            <label for="businessExpenses">Business Expenses</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="businessExpenses" min="0" value="20000">
                             </div>
-                            <small data-i18n="calculators.selfEmploymentTax.businessExpensesHelp">Deductible expenses</small>
+                            <small>Deductible expenses</small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="filingStatus" data-i18n="calculators.selfEmploymentTax.filingStatus">Filing Status</label>
+                            <label for="filingStatus">Filing Status</label>
                             <select id="filingStatus" required>
-                                <option value="single" selected data-i18n="calculators.selfEmploymentTax.single">Single</option>
-                                <option value="married" data-i18n="calculators.selfEmploymentTax.married">Married Filing Jointly</option>
-                                <option value="head" data-i18n="calculators.selfEmploymentTax.head">Head of Household</option>
+                                <option value="single" selected>Single</option>
+                                <option value="married">Married Filing Jointly</option>
+                                <option value="head">Head of Household</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="state" data-i18n="calculators.selfEmploymentTax.state">State</label>
+                            <label for="state">State</label>
                             <select id="state" required>
-                                <option value="CA" selected data-i18n="calculators.selfEmploymentTax.california">California</option>
-                                <option value="TX" data-i18n="calculators.selfEmploymentTax.texas">Texas</option>
-                                <option value="FL" data-i18n="calculators.selfEmploymentTax.florida">Florida</option>
-                                <option value="NY" data-i18n="calculators.selfEmploymentTax.newYork">New York</option>
-                                <option value="WA" data-i18n="calculators.selfEmploymentTax.washington">Washington</option>
-                                <option value="other" data-i18n="calculators.selfEmploymentTax.otherState">Other State</option>
+                                <option value="CA" selected>California</option>
+                                <option value="TX">Texas</option>
+                                <option value="FL">Florida</option>
+                                <option value="NY">New York</option>
+                                <option value="WA">Washington</option>
+                                <option value="other">Other State</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="otherIncome" data-i18n="calculators.selfEmploymentTax.otherIncome">Other Income (W-2, etc.)</label>
+                            <label for="otherIncome">Other Income (W-2, etc.)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="otherIncome" min="0" value="0">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="retirementContribution" data-i18n="calculators.selfEmploymentTax.retirementContribution">Retirement Contributions</label>
+                            <label for="retirementContribution">Retirement Contributions</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="retirementContribution" min="0" value="0">
@@ -122,23 +122,23 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="healthInsurance" data-i18n="calculators.selfEmploymentTax.healthInsurance">Self-Employed Health Insurance</label>
+                        <label for="healthInsurance">Self-Employed Health Insurance</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="healthInsurance" min="0" value="0">
                         </div>
-                        <small data-i18n="calculators.selfEmploymentTax.healthInsuranceHelp">Health insurance premiums for you and your family</small>
+                        <small>Health insurance premiums for you and your family</small>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.selfEmploymentTax.calculate">Calculate Taxes</button>
+                    <button type="submit" class="btn">Calculate Taxes</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="salary.html" class="calc-quick-link">💰 <span data-i18n="calculators.salary.title">Salary</span></a>
-                <a href="take-home-pay.html" class="calc-quick-link">💵 <span data-i18n="calculators.takeHomePay.title">Take-Home Pay</span></a>
-                <a href="401k.html" class="calc-quick-link">🏦 <span data-i18n="calculators.401k.title">401(k)</span></a>
-                <a href="retirement.html" class="calc-quick-link">🎯 <span data-i18n="calculators.retirement.title">Retirement</span></a>
+                <a href="salary.html" class="calc-quick-link">💰 <span>Salary</span></a>
+                <a href="take-home-pay.html" class="calc-quick-link">💵 <span>Take-Home Pay</span></a>
+                <a href="401k.html" class="calc-quick-link">🏦 <span>401(k)</span></a>
+                <a href="retirement.html" class="calc-quick-link">🎯 <span>Retirement</span></a>
             </div>
         </div>
 
@@ -146,33 +146,33 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="quarterlyPayment">$0</div>
-                <div class="label" data-i18n="calculators.selfEmploymentTax.quarterlyPayment">Estimated Quarterly Payment</div>
+                <div class="label">Estimated Quarterly Payment</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="netIncome">$0</div>
-                    <div class="label" data-i18n="calculators.selfEmploymentTax.netIncome">Net SE Income</div>
+                    <div class="label">Net SE Income</div>
                 </div>
                 <div class="calc-result-item highlight">
                     <div class="value" id="seTax">$0</div>
-                    <div class="label" data-i18n="calculators.selfEmploymentTax.seTax">SE Tax</div>
+                    <div class="label">SE Tax</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="federalTax">$0</div>
-                    <div class="label" data-i18n="calculators.selfEmploymentTax.federalIncomeTax">Federal Tax</div>
+                    <div class="label">Federal Tax</div>
                 </div>
                 <div class="calc-result-item highlight">
                     <div class="value" id="totalTax">$0</div>
-                    <div class="label" data-i18n="calculators.selfEmploymentTax.totalAnnualTax">Total Tax</div>
+                    <div class="label">Total Tax</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="breakdown" data-i18n="calculators.selfEmploymentTax.annualTaxBreakdown">Tax Breakdown</button>
-                <button class="calc-output-tab" data-tab="deductions" data-i18n="calculators.selfEmploymentTax.taxDeductionsApplied">Deductions</button>
-                <button class="calc-output-tab" data-tab="quarterly" data-i18n="calculators.selfEmploymentTax.quarterlyDueDatesTitle">Quarterly Dates</button>
+                <button class="calc-output-tab active" data-tab="breakdown">Tax Breakdown</button>
+                <button class="calc-output-tab" data-tab="deductions">Deductions</button>
+                <button class="calc-output-tab" data-tab="quarterly">Quarterly Dates</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -181,34 +181,34 @@
                     <table class="calc-table">
                         <thead>
                             <tr>
-                                <th data-i18n="calculators.selfEmploymentTax.taxType">Tax Type</th>
-                                <th data-i18n="calculators.selfEmploymentTax.amount">Amount</th>
-                                <th data-i18n="calculators.selfEmploymentTax.rate">Rate</th>
+                                <th>Tax Type</th>
+                                <th>Amount</th>
+                                <th>Rate</th>
                             </tr>
                         </thead>
                         <tbody id="breakdownBody">
                             <tr>
-                                <td data-i18n="calculators.selfEmploymentTax.socialSecurityPortion">Social Security</td>
+                                <td>Social Security</td>
                                 <td id="socialSecurityTax">$0</td>
                                 <td>12.4%</td>
                             </tr>
                             <tr>
-                                <td data-i18n="calculators.selfEmploymentTax.medicarePortion">Medicare</td>
+                                <td>Medicare</td>
                                 <td id="medicareTax">$0</td>
                                 <td>2.9%</td>
                             </tr>
                             <tr>
-                                <td data-i18n="calculators.selfEmploymentTax.federalIncomeTax">Federal Income Tax</td>
+                                <td>Federal Income Tax</td>
                                 <td id="federalTaxBreakdown">$0</td>
                                 <td id="federalRate">-</td>
                             </tr>
                             <tr>
-                                <td data-i18n="calculators.selfEmploymentTax.stateIncomeTax">State Income Tax</td>
+                                <td>State Income Tax</td>
                                 <td id="stateTax">$0</td>
                                 <td id="stateRate">-</td>
                             </tr>
                             <tr class="total-row">
-                                <td data-i18n="calculators.selfEmploymentTax.totalAnnualTax">Total Annual Tax</td>
+                                <td>Total Annual Tax</td>
                                 <td id="totalTaxBreakdown">$0</td>
                                 <td id="effectiveRate">0%</td>
                             </tr>
@@ -220,19 +220,19 @@
                 <div class="calc-tab-content" id="deductionsContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.halfSeTax">50% SE Tax Deduction</span>
+                            <span class="breakdown-label">50% SE Tax Deduction</span>
                             <span class="breakdown-value" id="halfSeTaxDeduction">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.healthInsuranceDeduction">Health Insurance Deduction</span>
+                            <span class="breakdown-label">Health Insurance Deduction</span>
                             <span class="breakdown-value" id="healthInsuranceDeduction">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.retirementDeduction">Retirement Contribution</span>
+                            <span class="breakdown-label">Retirement Contribution</span>
                             <span class="breakdown-value" id="retirementDeduction">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.businessExpenses">Business Expenses</span>
+                            <span class="breakdown-label">Business Expenses</span>
                             <span class="breakdown-value" id="businessExpensesDeduction">$0</span>
                         </div>
                         <div class="breakdown-item total">
@@ -246,27 +246,27 @@
                 <div class="calc-tab-content" id="quarterlyContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.q1">Q1 (Jan-Mar)</span>
-                            <span class="breakdown-value" data-i18n="calculators.selfEmploymentTax.q1Date">April 15, 2026</span>
+                            <span class="breakdown-label">Q1 (Jan-Mar)</span>
+                            <span class="breakdown-value">April 15, 2026</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.q2">Q2 (Apr-May)</span>
-                            <span class="breakdown-value" data-i18n="calculators.selfEmploymentTax.q2Date">June 15, 2026</span>
+                            <span class="breakdown-label">Q2 (Apr-May)</span>
+                            <span class="breakdown-value">June 15, 2026</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.q3">Q3 (Jun-Aug)</span>
-                            <span class="breakdown-value" data-i18n="calculators.selfEmploymentTax.q3Date">September 15, 2026</span>
+                            <span class="breakdown-label">Q3 (Jun-Aug)</span>
+                            <span class="breakdown-value">September 15, 2026</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.selfEmploymentTax.q4">Q4 (Sep-Dec)</span>
-                            <span class="breakdown-value" data-i18n="calculators.selfEmploymentTax.q4Date">January 15, 2027</span>
+                            <span class="breakdown-label">Q4 (Sep-Dec)</span>
+                            <span class="breakdown-value">January 15, 2027</span>
                         </div>
                         <div class="breakdown-item total">
                             <span class="breakdown-label">Each Payment</span>
                             <span class="breakdown-value" id="quarterlyPaymentAmount">$0</span>
                         </div>
                     </div>
-                    <p class="info-note" data-i18n="calculators.selfEmploymentTax.quarterlyDueDates">Due: Apr 15, Jun 15, Sep 15, Jan 15</p>
+                    <p class="info-note">Due: Apr 15, Jun 15, Sep 15, Jan 15</p>
                 </div>
             </div>
         </div>
@@ -275,7 +275,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.selfEmploymentTax.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -402,11 +402,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.selfEmploymentTax.footerDisclaimer">For educational purposes only. Consult a tax professional for personalized advice.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">For educational purposes only. Consult a tax professional for personalized advice.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -414,7 +414,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Self-Employment Tax Calculator -->

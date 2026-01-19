@@ -37,14 +37,14 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.takeHomePay.title">Take-Home Pay Calculator</h1>
+        <h1 class="calc-title">Take-Home Pay Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -61,41 +61,41 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                    <span data-i18n="calculators.takeHomePay.enterPayInfo">Pay Information</span>
+                    <span>Pay Information</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="takeHomePayForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="grossSalary" data-i18n="calculators.takeHomePay.grossPayAmount">Gross Pay ($)</label>
+                            <label for="grossSalary">Gross Pay ($)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="grossSalary" min="0" value="75000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="payFrequency" data-i18n="calculators.takeHomePay.payFrequency">Pay Frequency</label>
+                            <label for="payFrequency">Pay Frequency</label>
                             <select id="payFrequency" required>
-                                <option value="annual" selected data-i18n="calculators.takeHomePay.annual">Annual</option>
-                                <option value="monthly" data-i18n="calculators.takeHomePay.monthly">Monthly</option>
-                                <option value="semimonthly" data-i18n="calculators.takeHomePay.semiMonthly">Semi-Monthly</option>
-                                <option value="biweekly" data-i18n="calculators.takeHomePay.biWeekly">Bi-Weekly</option>
-                                <option value="weekly" data-i18n="calculators.takeHomePay.weekly">Weekly</option>
+                                <option value="annual" selected>Annual</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="semimonthly">Semi-Monthly</option>
+                                <option value="biweekly">Bi-Weekly</option>
+                                <option value="weekly">Weekly</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="filingStatus" data-i18n="calculators.takeHomePay.filingStatus">Filing Status</label>
+                            <label for="filingStatus">Filing Status</label>
                             <select id="filingStatus" required>
-                                <option value="single" selected data-i18n="calculators.takeHomePay.single">Single</option>
-                                <option value="married" data-i18n="calculators.takeHomePay.married">Married Filing Jointly</option>
-                                <option value="head" data-i18n="calculators.takeHomePay.head">Head of Household</option>
+                                <option value="single" selected>Single</option>
+                                <option value="married">Married Filing Jointly</option>
+                                <option value="head">Head of Household</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="state" data-i18n="calculators.takeHomePay.state">State</label>
+                            <label for="state">State</label>
                             <select id="state" required>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -152,11 +152,11 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="allowances" data-i18n="calculators.takeHomePay.federalAllowances">Federal Allowances</label>
+                            <label for="allowances">Federal Allowances</label>
                             <input type="number" id="allowances" min="0" max="10" value="1">
                         </div>
                         <div class="form-group">
-                            <label for="preTax401k" data-i18n="calculators.takeHomePay.contribution401k">401(k) Per Period ($)</label>
+                            <label for="preTax401k">401(k) Per Period ($)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="preTax401k" min="0" value="500">
@@ -165,14 +165,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="healthInsurance" data-i18n="calculators.takeHomePay.healthInsurance">Health Insurance ($)</label>
+                            <label for="healthInsurance">Health Insurance ($)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="healthInsurance" min="0" value="200">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="hsaContribution" data-i18n="calculators.takeHomePay.hsaContribution">HSA Contribution ($)</label>
+                            <label for="hsaContribution">HSA Contribution ($)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="hsaContribution" min="0" value="0">
@@ -180,22 +180,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="otherDeductions" data-i18n="calculators.takeHomePay.otherPreTax">Other Pre-Tax ($)</label>
+                        <label for="otherDeductions">Other Pre-Tax ($)</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="otherDeductions" min="0" value="0">
                         </div>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.takeHomePay.calculate">Calculate Take Home Pay</button>
+                    <button type="submit" class="btn">Calculate Take Home Pay</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="salary.html" class="calc-quick-link">💵 <span data-i18n="calculators.salary.title">Salary</span></a>
-                <a href="self-employment-tax.html" class="calc-quick-link">📋 <span data-i18n="calculators.selfEmploymentTax.title">Self-Employment</span></a>
-                <a href="401k.html" class="calc-quick-link">🏦 <span data-i18n="calculators.401k.title">401(k)</span></a>
-                <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span data-i18n="calculators.rothVsTraditional.title">Roth vs Traditional</span></a>
+                <a href="salary.html" class="calc-quick-link">💵 <span>Salary</span></a>
+                <a href="self-employment-tax.html" class="calc-quick-link">📋 <span>Self-Employment</span></a>
+                <a href="401k.html" class="calc-quick-link">🏦 <span>401(k)</span></a>
+                <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span>Roth vs Traditional</span></a>
             </div>
         </div>
 
@@ -203,32 +203,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="netPay">$0</div>
-                <div class="label" data-i18n="calculators.takeHomePay.netPayTakeHome">Net Pay (Take Home)</div>
+                <div class="label">Net Pay (Take Home)</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="grossPay">$0</div>
-                    <div class="label" data-i18n="calculators.takeHomePay.grossPayPerPeriod">Gross Pay</div>
+                    <div class="label">Gross Pay</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="federalTax">$0</div>
-                    <div class="label" data-i18n="calculators.takeHomePay.federalTaxPerPeriod">Federal Tax</div>
+                    <div class="label">Federal Tax</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="stateTaxResult">$0</div>
-                    <div class="label" data-i18n="calculators.takeHomePay.stateTaxPerPeriod">State Tax</div>
+                    <div class="label">State Tax</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="effectiveRate">0%</div>
-                    <div class="label" data-i18n="calculators.takeHomePay.effectiveTaxRate">Effective Rate</div>
+                    <div class="label">Effective Rate</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="breakdown" data-i18n="calculators.takeHomePay.detailedBreakdown">Breakdown</button>
-                <button class="calc-output-tab" data-tab="annual" data-i18n="calculators.takeHomePay.annualLabel">Annual</button>
+                <button class="calc-output-tab active" data-tab="breakdown">Breakdown</button>
+                <button class="calc-output-tab" data-tab="annual">Annual</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -237,9 +237,9 @@
                     <table class="calc-table" id="breakdownTable">
                         <thead>
                             <tr>
-                                <th data-i18n="calculators.takeHomePay.item">Item</th>
-                                <th data-i18n="calculators.takeHomePay.perPeriod">Per Period</th>
-                                <th data-i18n="calculators.takeHomePay.annualLabel">Annual</th>
+                                <th>Item</th>
+                                <th>Per Period</th>
+                                <th>Annual</th>
                             </tr>
                         </thead>
                         <tbody id="breakdownBody">
@@ -251,19 +251,19 @@
                 <div class="calc-tab-content" id="annualContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.takeHomePay.annualGross">Annual Gross</span>
+                            <span class="breakdown-label">Annual Gross</span>
                             <span class="breakdown-value" id="annualGross">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.takeHomePay.socialSecurity">Social Security</span>
+                            <span class="breakdown-label">Social Security</span>
                             <span class="breakdown-value" id="socialSecurity">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.takeHomePay.medicare">Medicare</span>
+                            <span class="breakdown-label">Medicare</span>
                             <span class="breakdown-value" id="medicare">$0</span>
                         </div>
                         <div class="breakdown-item total">
-                            <span class="breakdown-label" data-i18n="calculators.takeHomePay.annualNet">Annual Net</span>
+                            <span class="breakdown-label">Annual Net</span>
                             <span class="breakdown-value" id="annualNet">$0</span>
                         </div>
                     </div>
@@ -275,7 +275,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.takeHomePay.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -405,11 +405,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.takeHomePay.footerDisclaimer">For educational purposes only. Actual paycheck may vary based on additional factors.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">For educational purposes only. Actual paycheck may vary based on additional factors.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -417,7 +417,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Take Home Pay Calculator -->

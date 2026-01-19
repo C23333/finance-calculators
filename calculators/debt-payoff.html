@@ -163,9 +163,9 @@
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.debtPayoff.title">Debt Payoff Calculator</h1>
+        <h1 class="calc-title">Debt Payoff Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -180,62 +180,62 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    <span data-i18n="calculators.debtPayoff.addYourDebts">Add Your Debts</span>
+                    <span>Add Your Debts</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="debtForm" class="calc-form">
                     <div class="debt-input-group">
                         <div class="form-group">
-                            <label for="debtName" data-i18n="calculators.debtPayoff.debtName">Debt Name</label>
+                            <label for="debtName">Debt Name</label>
                             <input type="text" id="debtName" placeholder="e.g., Credit Card" data-i18n-placeholder="calculators.debtPayoff.debtNamePlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="debtBalance" data-i18n="calculators.debtPayoff.balance">Balance</label>
+                            <label for="debtBalance">Balance</label>
                             <input type="number" id="debtBalance" placeholder="5000">
                         </div>
                         <div class="form-group">
-                            <label for="debtRate" data-i18n="calculators.debtPayoff.rate">Rate %</label>
+                            <label for="debtRate">Rate %</label>
                             <input type="number" id="debtRate" placeholder="18" step="0.1">
                         </div>
                         <div class="form-group">
-                            <label for="debtMinPayment" data-i18n="calculators.debtPayoff.minPayment">Min Payment</label>
+                            <label for="debtMinPayment">Min Payment</label>
                             <input type="number" id="debtMinPayment" placeholder="150">
                         </div>
-                        <button type="button" class="add-btn" onclick="addDebt()" data-i18n="calculators.debtPayoff.addDebt">Add</button>
+                        <button type="button" class="add-btn" onclick="addDebt()">Add</button>
                     </div>
 
                     <div class="debt-list" id="debtList">
-                        <p style="color: var(--text-light); text-align: center;" data-i18n="calculators.debtPayoff.noDebtsYet">No debts added yet</p>
+                        <p style="color: var(--text-light); text-align: center;">No debts added yet</p>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="extraPayment" data-i18n="calculators.debtPayoff.extraPayment">Extra Monthly Payment</label>
+                            <label for="extraPayment">Extra Monthly Payment</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="extraPayment" value="200" min="0" step="50">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="payoffMethod" data-i18n="calculators.debtPayoff.method">Payoff Method</label>
+                            <label for="payoffMethod">Payoff Method</label>
                             <select id="payoffMethod">
-                                <option value="avalanche" data-i18n="calculators.debtPayoff.avalancheShort">Avalanche (Highest Rate)</option>
-                                <option value="snowball" data-i18n="calculators.debtPayoff.snowballShort">Snowball (Lowest Balance)</option>
+                                <option value="avalanche">Avalanche (Highest Rate)</option>
+                                <option value="snowball">Snowball (Lowest Balance)</option>
                             </select>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn" data-i18n="calculators.debtPayoff.calculate">Calculate Payoff Plan</button>
+                    <button type="submit" class="btn">Calculate Payoff Plan</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="loan-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.loanPayoff.title">Loan Payoff</span></a>
-                <a href="student-loan.html" class="calc-quick-link">🎓 <span data-i18n="calculators.studentLoan.title">Student Loan</span></a>
-                <a href="auto-loan.html" class="calc-quick-link">🚗 <span data-i18n="calculators.autoLoan.title">Auto Loan</span></a>
-                <a href="savings-goal.html" class="calc-quick-link">🎯 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
+                <a href="loan-payoff.html" class="calc-quick-link">💳 <span>Loan Payoff</span></a>
+                <a href="student-loan.html" class="calc-quick-link">🎓 <span>Student Loan</span></a>
+                <a href="auto-loan.html" class="calc-quick-link">🚗 <span>Auto Loan</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🎯 <span>Savings Goal</span></a>
             </div>
         </div>
 
@@ -243,32 +243,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="payoffTime">0 months</div>
-                <div class="label" data-i18n="calculators.debtPayoff.timeToDebtFreedom">Time to Debt Freedom</div>
+                <div class="label">Time to Debt Freedom</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="totalDebt">$0</div>
-                    <div class="label" data-i18n="calculators.debtPayoff.totalDebt">Total Debt</div>
+                    <div class="label">Total Debt</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="totalInterest">$0</div>
-                    <div class="label" data-i18n="calculators.debtPayoff.totalInterest">Total Interest</div>
+                    <div class="label">Total Interest</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="interestSaved">$0</div>
-                    <div class="label" data-i18n="calculators.debtPayoff.interestSaved">Interest Saved</div>
+                    <div class="label">Interest Saved</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="timeSaved">0</div>
-                    <div class="label" data-i18n="calculators.debtPayoff.timeSaved">Time Saved</div>
+                    <div class="label">Time Saved</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="order" data-i18n="calculators.debtPayoff.payoffOrder">Payoff Order</button>
-                <button class="calc-output-tab" data-tab="summary" data-i18n="calculators.debtPayoff.summary">Summary</button>
+                <button class="calc-output-tab active" data-tab="order">Payoff Order</button>
+                <button class="calc-output-tab" data-tab="summary">Summary</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -277,10 +277,10 @@
                     <table class="calc-table" id="payoffTable">
                         <thead>
                             <tr>
-                                <th data-i18n="calculators.debtPayoff.order">Order</th>
-                                <th data-i18n="calculators.debtPayoff.debt">Debt</th>
-                                <th data-i18n="calculators.debtPayoff.balance">Balance</th>
-                                <th data-i18n="calculators.debtPayoff.rate">Rate</th>
+                                <th>Order</th>
+                                <th>Debt</th>
+                                <th>Balance</th>
+                                <th>Rate</th>
                             </tr>
                         </thead>
                         <tbody id="payoffOrder"></tbody>
@@ -291,27 +291,27 @@
                 <div class="calc-tab-content" id="summaryContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalDebt">Total Debt</span>
+                            <span class="breakdown-label">Total Debt</span>
                             <span class="breakdown-value" id="summaryTotalDebt">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalMinPayments">Total Min Payments</span>
+                            <span class="breakdown-label">Total Min Payments</span>
                             <span class="breakdown-value" id="summaryMinPayments">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.extraPayment">Extra Payment</span>
+                            <span class="breakdown-label">Extra Payment</span>
                             <span class="breakdown-value" id="summaryExtra">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalMonthlyPayment">Total Monthly</span>
+                            <span class="breakdown-label">Total Monthly</span>
                             <span class="breakdown-value" id="summaryMonthly">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalInterest">Total Interest</span>
+                            <span class="breakdown-label">Total Interest</span>
                             <span class="breakdown-value" id="summaryInterest">$0</span>
                         </div>
                         <div class="breakdown-item total">
-                            <span class="breakdown-label" data-i18n="calculators.debtPayoff.totalCost">Total Cost</span>
+                            <span class="breakdown-label">Total Cost</span>
                             <span class="breakdown-value" id="summaryTotal">$0</span>
                         </div>
                     </div>
@@ -323,7 +323,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.debtPayoff.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -439,11 +439,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.debtPayoff.disclaimer">Disclaimer: This calculator provides estimates only. Actual payoff times may vary based on interest rate changes and payment timing.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payoff times may vary based on interest rate changes and payment timing.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -451,7 +451,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Debt Payoff Calculator -->

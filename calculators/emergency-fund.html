@@ -37,14 +37,14 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.emergencyFund.title">Emergency Fund Calculator</h1>
+        <h1 class="calc-title">Emergency Fund Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -61,21 +61,21 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                    <span data-i18n="calculators.emergencyFund.monthlyExpensesTitle">Monthly Expenses</span>
+                    <span>Monthly Expenses</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="emergencyFundForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="housing" data-i18n="calculators.emergencyFund.housing">Housing (Rent/Mortgage)</label>
+                            <label for="housing">Housing (Rent/Mortgage)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="housing" value="1500" min="0" step="50">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="utilities" data-i18n="calculators.emergencyFund.utilities">Utilities</label>
+                            <label for="utilities">Utilities</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="utilities" value="200" min="0" step="25">
@@ -84,14 +84,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="food" data-i18n="calculators.emergencyFund.food">Food & Groceries</label>
+                            <label for="food">Food & Groceries</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="food" value="500" min="0" step="25">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="transportation" data-i18n="calculators.emergencyFund.transportation">Transportation</label>
+                            <label for="transportation">Transportation</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="transportation" value="400" min="0" step="25">
@@ -100,14 +100,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="insurance" data-i18n="calculators.emergencyFund.insurance">Insurance (Health, Auto)</label>
+                            <label for="insurance">Insurance (Health, Auto)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="insurance" value="300" min="0" step="25">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="debtPayments" data-i18n="calculators.emergencyFund.debtPayments">Minimum Debt Payments</label>
+                            <label for="debtPayments">Minimum Debt Payments</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="debtPayments" value="200" min="0" step="25">
@@ -116,39 +116,39 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="otherExpenses" data-i18n="calculators.emergencyFund.otherExpenses">Other Essential Expenses</label>
+                            <label for="otherExpenses">Other Essential Expenses</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="otherExpenses" value="300" min="0" step="25">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="monthsCoverage" data-i18n="calculators.emergencyFund.monthsCoverage">Months of Coverage</label>
+                            <label for="monthsCoverage">Months of Coverage</label>
                             <select id="monthsCoverage">
-                                <option value="3" data-i18n="calculators.emergencyFund.months3">3 months (minimum)</option>
-                                <option value="6" selected data-i18n="calculators.emergencyFund.months6">6 months (recommended)</option>
-                                <option value="9" data-i18n="calculators.emergencyFund.months9">9 months (conservative)</option>
-                                <option value="12" data-i18n="calculators.emergencyFund.months12">12 months (very conservative)</option>
+                                <option value="3">3 months (minimum)</option>
+                                <option value="6" selected>6 months (recommended)</option>
+                                <option value="9">9 months (conservative)</option>
+                                <option value="12">12 months (very conservative)</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="currentSavings" data-i18n="calculators.emergencyFund.currentSavings">Current Emergency Savings</label>
+                        <label for="currentSavings">Current Emergency Savings</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="currentSavings" value="5000" min="0" step="500">
                         </div>
                     </div>
-                    <button type="submit" class="btn" data-i18n="common.calculate">Calculate</button>
+                    <button type="submit" class="btn">Calculate</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="savings-goal.html" class="calc-quick-link">🎯 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
-                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
-                <a href="debt-payoff.html" class="calc-quick-link">💳 <span data-i18n="calculators.debtPayoff.title">Debt Payoff</span></a>
-                <a href="retirement.html" class="calc-quick-link">🏖️ <span data-i18n="calculators.retirement.title">Retirement</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🎯 <span>Savings Goal</span></a>
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
+                <a href="debt-payoff.html" class="calc-quick-link">💳 <span>Debt Payoff</span></a>
+                <a href="retirement.html" class="calc-quick-link">🏖️ <span>Retirement</span></a>
             </div>
         </div>
 
@@ -156,32 +156,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="targetFund">$21,000</div>
-                <div class="label" data-i18n="calculators.emergencyFund.targetAmount">Target Emergency Fund</div>
+                <div class="label">Target Emergency Fund</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="monthlyExpenses">$3,500</div>
-                    <div class="label" data-i18n="calculators.emergencyFund.monthlyExpenses">Monthly Expenses</div>
+                    <div class="label">Monthly Expenses</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="currentDisplay">$5,000</div>
-                    <div class="label" data-i18n="calculators.emergencyFund.currentSavingsLabel">Current Savings</div>
+                    <div class="label">Current Savings</div>
                 </div>
                 <div class="calc-result-item highlight">
                     <div class="value" id="stillNeeded">$16,000</div>
-                    <div class="label" data-i18n="calculators.emergencyFund.amountNeeded">Still Needed</div>
+                    <div class="label">Still Needed</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="progress">24%</div>
-                    <div class="label" data-i18n="calculators.emergencyFund.progress">Progress</div>
+                    <div class="label">Progress</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="breakdown" data-i18n="calculators.emergencyFund.breakdown">Breakdown</button>
-                <button class="calc-output-tab" data-tab="savings" data-i18n="calculators.emergencyFund.savingsPlan">Savings Plan</button>
+                <button class="calc-output-tab active" data-tab="breakdown">Breakdown</button>
+                <button class="calc-output-tab" data-tab="savings">Savings Plan</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -189,35 +189,35 @@
                 <div class="calc-tab-content active" id="breakdownContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.housing">Housing</span>
+                            <span class="breakdown-label">Housing</span>
                             <span class="breakdown-value" id="housingBreakdown">$1,500</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.utilities">Utilities</span>
+                            <span class="breakdown-label">Utilities</span>
                             <span class="breakdown-value" id="utilitiesBreakdown">$200</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.food">Food & Groceries</span>
+                            <span class="breakdown-label">Food & Groceries</span>
                             <span class="breakdown-value" id="foodBreakdown">$500</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.transportation">Transportation</span>
+                            <span class="breakdown-label">Transportation</span>
                             <span class="breakdown-value" id="transportationBreakdown">$400</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.insurance">Insurance</span>
+                            <span class="breakdown-label">Insurance</span>
                             <span class="breakdown-value" id="insuranceBreakdown">$300</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.debtPayments">Debt Payments</span>
+                            <span class="breakdown-label">Debt Payments</span>
                             <span class="breakdown-value" id="debtBreakdown">$200</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.otherExpenses">Other Expenses</span>
+                            <span class="breakdown-label">Other Expenses</span>
                             <span class="breakdown-value" id="otherBreakdown">$300</span>
                         </div>
                         <div class="breakdown-item total">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.totalMonthly">Total Monthly</span>
+                            <span class="breakdown-label">Total Monthly</span>
                             <span class="breakdown-value" id="totalMonthlyBreakdown">$3,500</span>
                         </div>
                     </div>
@@ -227,19 +227,19 @@
                 <div class="calc-tab-content" id="savingsContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.save6Months">Save in 6 months</span>
+                            <span class="breakdown-label">Save in 6 months</span>
                             <span class="breakdown-value" id="save6Months">$2,667/mo</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.save12Months">Save in 12 months</span>
+                            <span class="breakdown-label">Save in 12 months</span>
                             <span class="breakdown-value" id="save12Months">$1,333/mo</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.save24Months">Save in 24 months</span>
+                            <span class="breakdown-label">Save in 24 months</span>
                             <span class="breakdown-value" id="save24Months">$667/mo</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.emergencyFund.save36Months">Save in 36 months</span>
+                            <span class="breakdown-label">Save in 36 months</span>
                             <span class="breakdown-value" id="save36Months">$444/mo</span>
                         </div>
                     </div>
@@ -251,7 +251,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.emergencyFund.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -367,11 +367,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.emergencyFund.disclaimer">Disclaimer: This calculator provides estimates. Your actual needs may vary based on your situation.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates. Your actual needs may vary based on your situation.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -379,7 +379,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Emergency Fund Calculator -->

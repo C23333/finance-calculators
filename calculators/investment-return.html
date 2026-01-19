@@ -48,14 +48,14 @@
 </head>
 <body>
     <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToContent">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.investmentReturn.title">Investment Return Calculator</h1>
+        <h1 class="calc-title">Investment Return Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -72,39 +72,39 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                    <span data-i18n="calculators.investmentReturn.investmentDetails">Investment Details</span>
+                    <span>Investment Details</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="investmentForm" class="calc-form">
                     <div class="form-group">
-                        <label for="initialInvestment" data-i18n="calculators.investmentReturn.initialInvestment">Initial Investment</label>
+                        <label for="initialInvestment">Initial Investment</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="initialInvestment" value="10000" min="0" step="100" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="finalValue" data-i18n="calculators.investmentReturn.finalValue">Final Value</label>
+                        <label for="finalValue">Final Value</label>
                         <div class="input-group">
                             <span>$</span>
                             <input type="number" id="finalValue" value="15000" min="0" step="100" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="holdingPeriod" data-i18n="calculators.investmentReturn.holdingPeriod">Holding Period (Years)</label>
+                        <label for="holdingPeriod">Holding Period (Years)</label>
                         <input type="number" id="holdingPeriod" value="3" min="0.1" max="100" step="0.1" required>
                     </div>
-                    <button type="submit" class="btn" data-i18n="calculators.investmentReturn.calculate">Calculate</button>
+                    <button type="submit" class="btn">Calculate</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="compound-interest.html" class="calc-quick-link">📈 <span data-i18n="calculators.compoundInterest.title">Compound Interest</span></a>
-                <a href="401k.html" class="calc-quick-link">💼 <span data-i18n="calculators.401k.title">401(k)</span></a>
-                <a href="retirement.html" class="calc-quick-link">🎯 <span data-i18n="calculators.retirement.title">Retirement</span></a>
-                <a href="savings-goal.html" class="calc-quick-link">🏦 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
+                <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
+                <a href="401k.html" class="calc-quick-link">💼 <span>401(k)</span></a>
+                <a href="retirement.html" class="calc-quick-link">🎯 <span>Retirement</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🏦 <span>Savings Goal</span></a>
             </div>
         </div>
 
@@ -112,32 +112,32 @@
         <div class="calc-output-panel">
             <div class="calc-result-main">
                 <div class="big-number" id="totalReturn">0%</div>
-                <div class="label" data-i18n="calculators.investmentReturn.totalReturn">Total Return</div>
+                <div class="label">Total Return</div>
             </div>
 
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="profitLoss">$0</div>
-                    <div class="label" data-i18n="calculators.investmentReturn.profitLoss">Profit/Loss</div>
+                    <div class="label">Profit/Loss</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="annualizedReturn">0%</div>
-                    <div class="label" data-i18n="calculators.investmentReturn.annualizedReturn">Annualized Return (CAGR)</div>
+                    <div class="label">Annualized Return (CAGR)</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="simpleROI">0%</div>
-                    <div class="label" data-i18n="calculators.investmentReturn.simpleROI">Simple ROI</div>
+                    <div class="label">Simple ROI</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="doublingTime">-</div>
-                    <div class="label" data-i18n="calculators.investmentReturn.doublingTime">Doubling Time</div>
+                    <div class="label">Doubling Time</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="details" data-i18n="calculators.investmentReturn.detailsTab">Details</button>
-                <button class="calc-output-tab" data-tab="benchmarks" data-i18n="calculators.investmentReturn.benchmarksTab">Benchmarks</button>
+                <button class="calc-output-tab active" data-tab="details">Details</button>
+                <button class="calc-output-tab" data-tab="benchmarks">Benchmarks</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
@@ -145,15 +145,15 @@
                 <div class="calc-tab-content active" id="detailsContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.initialInvestment">Initial Investment</span>
+                            <span class="breakdown-label">Initial Investment</span>
                             <span class="breakdown-value" id="initialDisplay">$10,000</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.finalValue">Final Value</span>
+                            <span class="breakdown-label">Final Value</span>
                             <span class="breakdown-value" id="finalDisplay">$15,000</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.holdingPeriod">Holding Period</span>
+                            <span class="breakdown-label">Holding Period</span>
                             <span class="breakdown-value" id="periodDisplay">3 years</span>
                         </div>
                     </div>
@@ -163,15 +163,15 @@
                 <div class="calc-tab-content" id="benchmarksContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.sp500">S&P 500 (Historical)</span>
+                            <span class="breakdown-label">S&P 500 (Historical)</span>
                             <span class="breakdown-value">~10%/year</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.bonds">Bonds</span>
+                            <span class="breakdown-label">Bonds</span>
                             <span class="breakdown-value">~5-6%/year</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.investmentReturn.realEstate">Real Estate</span>
+                            <span class="breakdown-label">Real Estate</span>
                             <span class="breakdown-value">~8-12%/year</span>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.investmentReturn.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -271,11 +271,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">&copy; 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.investmentReturn.footerDisclaimer">Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.</p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -283,7 +283,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Investment Return Calculator -->

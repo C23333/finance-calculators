@@ -113,9 +113,9 @@
     <!-- Compact Header -->
     <header class="calc-header">
         <a href="../" class="logo">FinCalc</a>
-        <h1 class="calc-title" data-i18n="calculators.rentVsBuy.title">Rent vs Buy Calculator</h1>
+        <h1 class="calc-title">Rent vs Buy Calculator</h1>
         <nav class="calc-nav">
-            <a href="../#calculators" data-i18n="nav.calculators">All Calculators</a>
+            <a href="../#calculators">All Calculators</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -132,21 +132,21 @@
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span data-i18n="calculators.rentVsBuy.homePurchaseSection">Home Purchase</span>
+                    <span>Home Purchase</span>
                 </div>
             </div>
             <div class="calc-panel-body">
                 <form id="rentVsBuyForm" class="calc-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="homePrice" data-i18n="calculators.rentVsBuy.homePrice">Home Price</label>
+                            <label for="homePrice">Home Price</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="homePrice" value="400000" min="0" step="5000" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="downPayment" data-i18n="calculators.rentVsBuy.downPaymentPercent">Down Payment (%)</label>
+                            <label for="downPayment">Down Payment (%)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="downPayment" value="20" min="0" max="100" step="1" required>
@@ -155,14 +155,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="mortgageRate" data-i18n="calculators.rentVsBuy.mortgageRate">Mortgage Rate</label>
+                            <label for="mortgageRate">Mortgage Rate</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="mortgageRate" value="6.5" min="0" max="15" step="0.125" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="propertyTax" data-i18n="calculators.rentVsBuy.propertyTaxAnnual">Property Tax (Annual %)</label>
+                            <label for="propertyTax">Property Tax (Annual %)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="propertyTax" value="1.2" min="0" max="5" step="0.1">
@@ -171,14 +171,14 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="homeInsurance" data-i18n="calculators.rentVsBuy.homeInsurance">Home Insurance (Annual)</label>
+                            <label for="homeInsurance">Home Insurance (Annual)</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="homeInsurance" value="1500" min="0" step="100">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="maintenance" data-i18n="calculators.rentVsBuy.maintenance">Maintenance (Annual %)</label>
+                            <label for="maintenance">Maintenance (Annual %)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="maintenance" value="1" min="0" max="5" step="0.1">
@@ -187,19 +187,19 @@
                     </div>
 
                     <div class="calc-panel-divider">
-                        <span data-i18n="calculators.rentVsBuy.rentingSection">Renting</span>
+                        <span>Renting</span>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="monthlyRent" data-i18n="calculators.rentVsBuy.monthlyRent">Monthly Rent</label>
+                            <label for="monthlyRent">Monthly Rent</label>
                             <div class="input-group">
                                 <span>$</span>
                                 <input type="number" id="monthlyRent" value="2000" min="0" step="50" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="rentIncrease" data-i18n="calculators.rentVsBuy.rentIncrease">Annual Rent Increase</label>
+                            <label for="rentIncrease">Annual Rent Increase</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="rentIncrease" value="3" min="0" max="10" step="0.5">
@@ -208,16 +208,16 @@
                     </div>
 
                     <div class="calc-panel-divider">
-                        <span data-i18n="calculators.rentVsBuy.assumptionsSection">Assumptions</span>
+                        <span>Assumptions</span>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="yearsToStay" data-i18n="calculators.rentVsBuy.yearsToStay">Years You'll Stay</label>
+                            <label for="yearsToStay">Years You'll Stay</label>
                             <input type="number" id="yearsToStay" value="7" min="1" max="30" required>
                         </div>
                         <div class="form-group">
-                            <label for="homeAppreciation" data-i18n="calculators.rentVsBuy.homeAppreciation">Home Appreciation (Annual)</label>
+                            <label for="homeAppreciation">Home Appreciation (Annual)</label>
                             <div class="input-group">
                                 <span>%</span>
                                 <input type="number" id="homeAppreciation" value="3" min="-5" max="10" step="0.5">
@@ -225,16 +225,16 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn" data-i18n="calculators.rentVsBuy.calculate">Compare Costs</button>
+                    <button type="submit" class="btn">Compare Costs</button>
                 </form>
             </div>
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="mortgage.html" class="calc-quick-link">🏠 <span data-i18n="calculators.mortgage.title">Mortgage</span></a>
-                <a href="home-affordability.html" class="calc-quick-link">💵 <span data-i18n="calculators.homeAffordability.title">Affordability</span></a>
-                <a href="refinance.html" class="calc-quick-link">🔄 <span data-i18n="calculators.refinance.title">Refinance</span></a>
-                <a href="savings-goal.html" class="calc-quick-link">🎯 <span data-i18n="calculators.savingsGoal.title">Savings Goal</span></a>
+                <a href="mortgage.html" class="calc-quick-link">🏠 <span>Mortgage</span></a>
+                <a href="home-affordability.html" class="calc-quick-link">💵 <span>Affordability</span></a>
+                <a href="refinance.html" class="calc-quick-link">🔄 <span>Refinance</span></a>
+                <a href="savings-goal.html" class="calc-quick-link">🎯 <span>Savings Goal</span></a>
             </div>
         </div>
 
@@ -248,54 +248,54 @@
             <div class="calc-result-grid">
                 <div class="calc-result-item">
                     <div class="value" id="totalBuyCost">$0</div>
-                    <div class="label" data-i18n="calculators.rentVsBuy.totalBuyCost">Total Cost to Buy</div>
+                    <div class="label">Total Cost to Buy</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="totalRentCost">$0</div>
-                    <div class="label" data-i18n="calculators.rentVsBuy.totalRentCost">Total Cost to Rent</div>
+                    <div class="label">Total Cost to Rent</div>
                 </div>
                 <div class="calc-result-item success">
                     <div class="value" id="equityBuilt">$0</div>
-                    <div class="label" data-i18n="calculators.rentVsBuy.equityBuilt">Home Equity Built</div>
+                    <div class="label">Home Equity Built</div>
                 </div>
                 <div class="calc-result-item">
                     <div class="value" id="monthlyMortgage">$0</div>
-                    <div class="label" data-i18n="calculators.rentVsBuy.monthlyMortgage">Monthly Mortgage</div>
+                    <div class="label">Monthly Mortgage</div>
                 </div>
             </div>
 
             <!-- Output Tabs -->
             <div class="calc-output-tabs">
-                <button class="calc-output-tab active" data-tab="breakdown" data-i18n="calculators.rentVsBuy.breakdown">Breakdown</button>
-                <button class="calc-output-tab" data-tab="details" data-i18n="calculators.rentVsBuy.details">Details</button>
+                <button class="calc-output-tab active" data-tab="breakdown">Breakdown</button>
+                <button class="calc-output-tab" data-tab="details">Details</button>
             </div>
 
             <div class="calc-output-content" id="outputContent">
                 <!-- Breakdown Tab -->
                 <div class="calc-tab-content active" id="breakdownContent">
                     <div class="calc-breakdown">
-                        <h4 data-i18n="calculators.rentVsBuy.buyingCosts">Buying Costs</h4>
+                        <h4>Buying Costs</h4>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.downPaymentAmount">Down Payment</span>
+                            <span class="breakdown-label">Down Payment</span>
                             <span class="breakdown-value" id="downPaymentAmount">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.totalMortgagePayments">Total Mortgage Payments</span>
+                            <span class="breakdown-label">Total Mortgage Payments</span>
                             <span class="breakdown-value" id="totalMortgagePayments">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.totalTaxInsurance">Taxes & Insurance</span>
+                            <span class="breakdown-label">Taxes & Insurance</span>
                             <span class="breakdown-value" id="totalTaxInsurance">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.totalMaintenance">Maintenance</span>
+                            <span class="breakdown-label">Maintenance</span>
                             <span class="breakdown-value" id="totalMaintenance">$0</span>
                         </div>
                     </div>
                     <div class="calc-breakdown" style="margin-top: 1rem;">
-                        <h4 data-i18n="calculators.rentVsBuy.rentingCosts">Renting Costs</h4>
+                        <h4>Renting Costs</h4>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.totalRentPaid">Total Rent Paid</span>
+                            <span class="breakdown-label">Total Rent Paid</span>
                             <span class="breakdown-value" id="totalRentPaid">$0</span>
                         </div>
                     </div>
@@ -305,19 +305,19 @@
                 <div class="calc-tab-content" id="detailsContent">
                     <div class="calc-breakdown">
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.futureHomeValue">Future Home Value</span>
+                            <span class="breakdown-label">Future Home Value</span>
                             <span class="breakdown-value" id="futureHomeValue">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.remainingMortgage">Remaining Mortgage</span>
+                            <span class="breakdown-label">Remaining Mortgage</span>
                             <span class="breakdown-value" id="remainingMortgage">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.netEquity">Net Equity</span>
+                            <span class="breakdown-label">Net Equity</span>
                             <span class="breakdown-value" id="netEquity">$0</span>
                         </div>
                         <div class="breakdown-item total">
-                            <span class="breakdown-label" data-i18n="calculators.rentVsBuy.netCostDifference">Net Cost Difference</span>
+                            <span class="breakdown-label">Net Cost Difference</span>
                             <span class="breakdown-value" id="netCostDifference">$0</span>
                         </div>
                     </div>
@@ -329,7 +329,7 @@
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
-            <h2 data-i18n="calculators.rentVsBuy.aboutCalculator">About This Calculator</h2>
+            <h2>About This Calculator</h2>
             <button class="info-sidebar-close" aria-label="Close">×</button>
         </div>
         <div class="info-sidebar-content">
@@ -437,11 +437,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2026 FinCalc. All rights reserved.</p>
-            <p class="disclaimer" data-i18n="calculators.rentVsBuy.disclaimer">Disclaimer: This calculator provides estimates only. Actual costs depend on many factors including location, market conditions, and personal circumstances.</p>
+            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual costs depend on many factors including location, market conditions, and personal circumstances.</p>
             <div class="friend-links">
-                <span data-i18n="footer.friendLinks">Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener" data-i18n="footer.qrmaker">QR Code Generator</a>
+                <span>Friend Links:</span>
+                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
         </div>
     </footer>
@@ -449,7 +449,7 @@
     <!-- Theme Manager -->
     <script src="../js/theme.js"></script>
     <!-- Internationalization -->
-    <script src="../js/i18n.js"></script>
+    
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Rent vs Buy Calculator -->
