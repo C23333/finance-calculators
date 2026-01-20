@@ -1,0 +1,272 @@
+{
+    "topicMapping": {
+        "mortgage": {
+            "calculators": [
+                {
+                    "name": "Mortgage Calculator",
+                    "path": "/calculators/mortgage.html",
+                    "description": "Calculate your monthly mortgage payment"
+                },
+                {
+                    "name": "Home Affordability Calculator",
+                    "path": "/calculators/home-affordability.html",
+                    "description": "See how much house you can afford"
+                },
+                {
+                    "name": "Rent vs Buy Calculator",
+                    "path": "/calculators/rent-vs-buy.html",
+                    "description": "Compare renting vs buying costs"
+                },
+                {
+                    "name": "Refinance Calculator",
+                    "path": "/calculators/refinance.html",
+                    "description": "See if refinancing saves you money"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "Compare Mortgage Rates",
+                    "description": "Find the best mortgage rates from top lenders in your area",
+                    "cta": "Compare Rates",
+                    "type": "service"
+                }
+            ]
+        },
+        "investing": {
+            "calculators": [
+                {
+                    "name": "Compound Interest Calculator",
+                    "path": "/calculators/compound-interest.html",
+                    "description": "See how your investments can grow"
+                },
+                {
+                    "name": "Investment Return Calculator",
+                    "path": "/calculators/investment-return.html",
+                    "description": "Calculate your investment returns"
+                },
+                {
+                    "name": "401(k) Calculator",
+                    "path": "/calculators/401k.html",
+                    "description": "Plan your 401(k) contributions"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "Start Investing Today",
+                    "description": "Open a brokerage account and start building wealth",
+                    "cta": "Get Started",
+                    "type": "service"
+                }
+            ]
+        },
+        "retirement": {
+            "calculators": [
+                {
+                    "name": "Retirement Calculator",
+                    "path": "/calculators/retirement.html",
+                    "description": "Plan your retirement savings"
+                },
+                {
+                    "name": "401(k) Calculator",
+                    "path": "/calculators/401k.html",
+                    "description": "Optimize your 401(k) contributions"
+                },
+                {
+                    "name": "Roth vs Traditional Calculator",
+                    "path": "/calculators/roth-vs-traditional.html",
+                    "description": "Compare Roth vs Traditional IRA"
+                },
+                {
+                    "name": "Social Security Calculator",
+                    "path": "/calculators/social-security.html",
+                    "description": "Estimate your Social Security benefits"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "Free Retirement Planning",
+                    "description": "Get personalized retirement advice from financial experts",
+                    "cta": "Get Started",
+                    "type": "service"
+                }
+            ]
+        },
+        "debt": {
+            "calculators": [
+                {
+                    "name": "Debt Payoff Calculator",
+                    "path": "/calculators/debt-payoff.html",
+                    "description": "Create a debt payoff plan"
+                },
+                {
+                    "name": "Loan Payoff Calculator",
+                    "path": "/calculators/loan-payoff.html",
+                    "description": "See how fast you can pay off loans"
+                },
+                {
+                    "name": "Student Loan Calculator",
+                    "path": "/calculators/student-loan.html",
+                    "description": "Plan your student loan repayment"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "Balance Transfer Cards",
+                    "description": "Find 0% APR balance transfer credit cards to pay off debt faster",
+                    "cta": "Compare Cards",
+                    "type": "service"
+                }
+            ]
+        },
+        "savings": {
+            "calculators": [
+                {
+                    "name": "Savings Goal Calculator",
+                    "path": "/calculators/savings-goal.html",
+                    "description": "Plan your savings goals"
+                },
+                {
+                    "name": "Emergency Fund Calculator",
+                    "path": "/calculators/emergency-fund.html",
+                    "description": "Build your emergency fund"
+                },
+                {
+                    "name": "Compound Interest Calculator",
+                    "path": "/calculators/compound-interest.html",
+                    "description": "See how your savings grow"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "High-Yield Savings Accounts",
+                    "description": "Compare the best high-yield savings account rates",
+                    "cta": "Compare Rates",
+                    "type": "service"
+                }
+            ]
+        },
+        "taxes": {
+            "calculators": [
+                {
+                    "name": "Take-Home Pay Calculator",
+                    "path": "/calculators/take-home-pay.html",
+                    "description": "Calculate your after-tax income"
+                },
+                {
+                    "name": "Self-Employment Tax Calculator",
+                    "path": "/calculators/self-employment-tax.html",
+                    "description": "Calculate self-employment taxes"
+                },
+                {
+                    "name": "Salary Calculator",
+                    "path": "/calculators/salary.html",
+                    "description": "Convert between salary types"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "File Taxes Online",
+                    "description": "File your taxes easily with top-rated tax software",
+                    "cta": "Start Filing",
+                    "type": "service"
+                }
+            ]
+        },
+        "creditScore": {
+            "calculators": [
+                {
+                    "name": "Debt Payoff Calculator",
+                    "path": "/calculators/debt-payoff.html",
+                    "description": "Pay off debt to improve your score"
+                },
+                {
+                    "name": "Loan Payoff Calculator",
+                    "path": "/calculators/loan-payoff.html",
+                    "description": "Reduce debt faster"
+                }
+            ],
+            "affiliates": [
+                {
+                    "name": "Free Credit Score",
+                    "description": "Check your credit score for free with no impact to your score",
+                    "cta": "Check Score",
+                    "type": "service"
+                }
+            ]
+        },
+        "economy": {
+            "calculators": [
+                {
+                    "name": "Inflation Calculator",
+                    "path": "/calculators/inflation.html",
+                    "description": "See how inflation affects purchasing power"
+                },
+                {
+                    "name": "Compound Interest Calculator",
+                    "path": "/calculators/compound-interest.html",
+                    "description": "Calculate investment growth"
+                },
+                {
+                    "name": "Mortgage Calculator",
+                    "path": "/calculators/mortgage.html",
+                    "description": "See how rates affect your payment"
+                }
+            ],
+            "affiliates": []
+        },
+        "general": {
+            "calculators": [
+                {
+                    "name": "Mortgage Calculator",
+                    "path": "/calculators/mortgage.html",
+                    "description": "Calculate your monthly mortgage payment"
+                },
+                {
+                    "name": "Compound Interest Calculator",
+                    "path": "/calculators/compound-interest.html",
+                    "description": "See how your money grows over time"
+                },
+                {
+                    "name": "Retirement Calculator",
+                    "path": "/calculators/retirement.html",
+                    "description": "Plan for your retirement"
+                }
+            ],
+            "affiliates": []
+        }
+    },
+    "ctaTemplates": {
+        "calculatorSection": {
+            "title": "Related Calculators",
+            "icon": "calculator"
+        },
+        "affiliateSection": {
+            "title": "Recommended Services",
+            "icon": "star",
+            "disclosure": "We may earn a commission when you click on links. This doesn't affect our editorial independence."
+        }
+    },
+    "relatedArticles": {
+        "mortgage": [
+            "first-time-homebuyer-mortgage-guide.html",
+            "how-much-house-can-i-afford-80k-salary.html"
+        ],
+        "investing": [
+            "401k-contribution-calculator-2025.html"
+        ],
+        "retirement": [
+            "401k-contribution-calculator-2025.html",
+            "retirement-calculator-teachers.html"
+        ],
+        "debt": [
+            "debt-snowball-vs-avalanche.html",
+            "how-to-pay-off-50000-student-loans.html"
+        ],
+        "savings": [
+            "emergency-fund-3-vs-6-months.html"
+        ],
+        "taxes": [
+            "freelancer-self-employment-tax-guide.html"
+        ]
+    }
+}

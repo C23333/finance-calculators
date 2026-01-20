@@ -1,0 +1,426 @@
+{
+  "fetchedAt": "2026-01-20T07:08:47.686Z",
+  "totalFetched": 167,
+  "totalUnique": 166,
+  "totalSelected": 20,
+  "byTopic": {
+    "mortgage": [
+      {
+        "title": "Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-sunday-january-18-2026-110007049.html",
+        "pubDate": "2026-01-18T11:00:07.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 40,
+        "topic": "mortgage"
+      },
+      {
+        "title": "&#x2018;I still have a mortgage&#x2019;: I&#x2019;m no longer confident that my costs will actually fall in retirement. What can I do?",
+        "description": "&#x201c;I think my withdrawals from my 401(k) and IRA may need to be larger than my current take-home pay.&#x201d;",
+        "link": "https://www.marketwatch.com/story/i-still-have-a-mortgage-im-no-longer-confident-that-my-costs-will-actually-fall-in-retirement-what-can-i-do-ff9164a5?mod=mw_rss_topstories",
+        "pubDate": "2026-01-19T18:45:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "categories": [],
+        "score": 40,
+        "topic": "mortgage"
+      },
+      {
+        "title": "&#x2018;I have no mortgage&#x2019;: Is it reckless to cancel my homeowner&#x2019;s insurance? I can&#x2019;t justify $4K a year anymore.",
+        "description": "&#x201c;My deductible is $5,000.&#x201d;",
+        "link": "https://www.marketwatch.com/story/i-have-no-mortgage-is-it-reckless-to-cancel-my-homeowners-insurance-i-cant-justify-4k-a-year-anymore-d1a03452?mod=mw_rss_topstories",
+        "pubDate": "2026-01-19T17:37:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "categories": [],
+        "score": 15,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Here&apos;s what Trump&apos;s push into mortgage bonds could mean for income investors",
+        "description": "The president recently directed Fannie Mae and Freddie Mac purchase $200 billion in agency mortgage-backed securities. Investors bought on the news.",
+        "link": "https://www.cnbc.com/2026/01/19/what-trumps-push-into-mortgage-bonds-could-mean-for-income-investors.html",
+        "pubDate": "2026-01-19T13:47:59.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 15,
+        "topic": "mortgage"
+      }
+    ],
+    "debt": [
+      {
+        "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+        "description": "One missed payment could ding a credit score by about 80 points, on average, according to a new report by LendingTree.",
+        "link": "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html",
+        "pubDate": "2026-01-14T20:20:07.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 40,
+        "topic": "debt"
+      },
+      {
+        "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+        "description": "More than 800,000 federal student loan holders remain stuck in a backlog of applications for an affordable repayment plan or debt forgiveness.",
+        "link": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+        "pubDate": "2026-01-15T17:26:14.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 35,
+        "topic": "debt"
+      },
+      {
+        "title": "Trump floats 1-year, 10% credit card interest rate cap — what that could mean for your money",
+        "description": "President Donald Trump called for a 10% cap on credit card interest rates. Here's what experts say that could mean for cardholders, if implemented.",
+        "link": "https://www.cnbc.com/2026/01/12/trump-credit-card-interest-rate-cap.html",
+        "pubDate": "2026-01-12T22:12:54.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "debt"
+      }
+    ],
+    "investing": [
+      {
+        "title": "Building a tax efficient portfolio",
+        "description": "CNBC's senior personal finance correspondent Sharon Epperson joins Power Lunch to discuss how tax changes fit into investment planning for 2026.",
+        "link": "https://www.cnbc.com/video/2026/01/09/building-a-tax-efficient-portfolio.html",
+        "pubDate": "2026-01-09T14:56:40.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 30,
+        "topic": "investing"
+      },
+      {
+        "title": "How tax-efficient investing could boost your portfolio returns in 2026 and beyond",
+        "description": "Now is the time to consider how changes in tax law, along with tax-efficient investing strategies, can boost your portfolio.",
+        "link": "https://www.cnbc.com/2026/01/12/tax-efficient-investing.html",
+        "pubDate": "2026-01-12T22:36:08.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "investing"
+      },
+      {
+        "title": "China&apos;s stock market &apos;overheats&apos; amid record high turnover — and regulators are getting worried",
+        "description": "China's stock market rally is drawing closer regulatory scrutiny after trading activity surged to unprecedented levels.",
+        "link": "https://www.cnbc.com/2026/01/20/chinas-stock-market-overheats-amid-record-high-turnover.html",
+        "pubDate": "2026-01-20T00:36:40.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 20,
+        "topic": "investing"
+      }
+    ],
+    "savings": [
+      {
+        "title": "Best high-yield savings interest rates today, January 18, 2026 (Earn up to 4% APY)",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/article/best-high-yield-savings-interest-rates-today-sunday-january-18-2026-110043630.html",
+        "pubDate": "2026-01-18T11:00:43.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "savings"
+      }
+    ],
+    "retirement": [
+      {
+        "title": "Trump says you should be able to use a 401(k) to buy a home. 2 ways to bolster a down payment without tapping your retirement",
+        "description": "Withdrawing from your 401(k) before retirement can come with some downsides. Here are two safer ways to grow your savings for a down payment.",
+        "link": "https://www.cnbc.com/select/how-to-boost-your-savings-for-a-down-payment/",
+        "pubDate": "2026-01-16T21:14:09.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 25,
+        "topic": "retirement"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "Student loan borrowers in default may miss out on Trump&apos;s &apos;largest tax refund season of all time&apos;",
+        "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
+        "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
+        "pubDate": "2026-01-14T18:35:12.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "taxes"
+      },
+      {
+        "title": "Republicans want to end the ‘marriage penalty’ for this childcare tax credit",
+        "description": "The Republican framework for \"Reconciliation 2.0\" includes an expansion for the child and dependent care tax credit. Here's what families need to know.",
+        "link": "https://www.cnbc.com/2026/01/16/child-and-dependent-care-tax-credit.html",
+        "pubDate": "2026-01-16T21:23:53.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 20,
+        "topic": "taxes"
+      },
+      {
+        "title": "Bigger tax refunds are coming for 2026 — what it could mean for the economy",
+        "description": "Bigger tax refunds could be coming in 2026 due to changes enacted in President Donald Trump's \"big beautiful bill.\" Here's how it could impact the economy.",
+        "link": "https://www.cnbc.com/2026/01/13/bigger-tax-refunds-2026.html",
+        "pubDate": "2026-01-13T17:55:20.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 20,
+        "topic": "taxes"
+      }
+    ],
+    "general": [
+      {
+        "title": "HELOC and home equity loan rates Sunday, January 18, 2026: Significant decreases since last year",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/heloc-home-equity-loan-interest-rates-today-sunday-january-18-2026-110039798.html",
+        "pubDate": "2026-01-18T11:00:39.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 15,
+        "topic": "general"
+      },
+      {
+        "title": "China keeps benchmark lending rates unchanged despite slowing economic growth",
+        "description": "The People's Bank of China held its 1-year and 5-year loan prime rates at 3% and 3.5%, respectively, keeping them unchanged for an eighth straight month.",
+        "link": "https://www.cnbc.com/2026/01/20/china-lending-rates-lpr-slowing-economic-growth.html",
+        "pubDate": "2026-01-20T03:54:19.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 15,
+        "topic": "general"
+      },
+      {
+        "title": "Education Department to delay collections on defaulted student loans",
+        "description": "The Education Department has announced it will delay the implementation of wage garnishment and other collections efforts for defaulted student loans.",
+        "link": "https://www.cnbc.com/2026/01/16/student-loan-collections-paused.html",
+        "pubDate": "2026-01-16T22:27:20.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 15,
+        "topic": "general"
+      }
+    ],
+    "economy": [
+      {
+        "title": "Jerome Powell will attend Supreme Court hearing on Lisa Cook&#x2019;s firing",
+        "description": "Federal Reserve Chair Jerome Powell, who has been a target of the Trump administration, is showing a sign of unity with another central-bank member.",
+        "link": "https://www.marketwatch.com/story/jerome-powell-will-attend-supreme-court-hearing-on-lisa-cooks-firing-23e75828?mod=mw_rss_topstories",
+        "pubDate": "2026-01-19T19:57:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "categories": [],
+        "score": 15,
+        "topic": "economy"
+      },
+      {
+        "title": "Fed chief Powell to attend Supreme Court arguments on Trump bid to fire Lisa Cook",
+        "description": "Federal Reserve Chairman Jerome Powell's planned attendance comes as he faces a federal criminal probe about the central bank's costly renovation project.",
+        "link": "https://www.cnbc.com/2026/01/19/fed-powell-supreme-court-trump-lisa-cook.html",
+        "pubDate": "2026-01-19T19:57:37.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 15,
+        "topic": "economy"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-sunday-january-18-2026-110007049.html",
+      "pubDate": "2026-01-18T11:00:07.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 40,
+      "topic": "mortgage"
+    },
+    {
+      "title": "&#x2018;I still have a mortgage&#x2019;: I&#x2019;m no longer confident that my costs will actually fall in retirement. What can I do?",
+      "description": "&#x201c;I think my withdrawals from my 401(k) and IRA may need to be larger than my current take-home pay.&#x201d;",
+      "link": "https://www.marketwatch.com/story/i-still-have-a-mortgage-im-no-longer-confident-that-my-costs-will-actually-fall-in-retirement-what-can-i-do-ff9164a5?mod=mw_rss_topstories",
+      "pubDate": "2026-01-19T18:45:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "categories": [],
+      "score": 40,
+      "topic": "mortgage"
+    },
+    {
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "description": "One missed payment could ding a credit score by about 80 points, on average, according to a new report by LendingTree.",
+      "link": "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html",
+      "pubDate": "2026-01-14T20:20:07.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 40,
+      "topic": "debt"
+    },
+    {
+      "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+      "description": "More than 800,000 federal student loan holders remain stuck in a backlog of applications for an affordable repayment plan or debt forgiveness.",
+      "link": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+      "pubDate": "2026-01-15T17:26:14.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 35,
+      "topic": "debt"
+    },
+    {
+      "title": "Building a tax efficient portfolio",
+      "description": "CNBC's senior personal finance correspondent Sharon Epperson joins Power Lunch to discuss how tax changes fit into investment planning for 2026.",
+      "link": "https://www.cnbc.com/video/2026/01/09/building-a-tax-efficient-portfolio.html",
+      "pubDate": "2026-01-09T14:56:40.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 30,
+      "topic": "investing"
+    },
+    {
+      "title": "Best high-yield savings interest rates today, January 18, 2026 (Earn up to 4% APY)",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/article/best-high-yield-savings-interest-rates-today-sunday-january-18-2026-110043630.html",
+      "pubDate": "2026-01-18T11:00:43.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "savings"
+    },
+    {
+      "title": "Trump says you should be able to use a 401(k) to buy a home. 2 ways to bolster a down payment without tapping your retirement",
+      "description": "Withdrawing from your 401(k) before retirement can come with some downsides. Here are two safer ways to grow your savings for a down payment.",
+      "link": "https://www.cnbc.com/select/how-to-boost-your-savings-for-a-down-payment/",
+      "pubDate": "2026-01-16T21:14:09.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 25,
+      "topic": "retirement"
+    },
+    {
+      "title": "Student loan borrowers in default may miss out on Trump&apos;s &apos;largest tax refund season of all time&apos;",
+      "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
+      "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
+      "pubDate": "2026-01-14T18:35:12.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "taxes"
+    },
+    {
+      "title": "Trump floats 1-year, 10% credit card interest rate cap — what that could mean for your money",
+      "description": "President Donald Trump called for a 10% cap on credit card interest rates. Here's what experts say that could mean for cardholders, if implemented.",
+      "link": "https://www.cnbc.com/2026/01/12/trump-credit-card-interest-rate-cap.html",
+      "pubDate": "2026-01-12T22:12:54.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "debt"
+    },
+    {
+      "title": "How tax-efficient investing could boost your portfolio returns in 2026 and beyond",
+      "description": "Now is the time to consider how changes in tax law, along with tax-efficient investing strategies, can boost your portfolio.",
+      "link": "https://www.cnbc.com/2026/01/12/tax-efficient-investing.html",
+      "pubDate": "2026-01-12T22:36:08.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "investing"
+    },
+    {
+      "title": "China&apos;s stock market &apos;overheats&apos; amid record high turnover — and regulators are getting worried",
+      "description": "China's stock market rally is drawing closer regulatory scrutiny after trading activity surged to unprecedented levels.",
+      "link": "https://www.cnbc.com/2026/01/20/chinas-stock-market-overheats-amid-record-high-turnover.html",
+      "pubDate": "2026-01-20T00:36:40.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Republicans want to end the ‘marriage penalty’ for this childcare tax credit",
+      "description": "The Republican framework for \"Reconciliation 2.0\" includes an expansion for the child and dependent care tax credit. Here's what families need to know.",
+      "link": "https://www.cnbc.com/2026/01/16/child-and-dependent-care-tax-credit.html",
+      "pubDate": "2026-01-16T21:23:53.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 20,
+      "topic": "taxes"
+    },
+    {
+      "title": "Bigger tax refunds are coming for 2026 — what it could mean for the economy",
+      "description": "Bigger tax refunds could be coming in 2026 due to changes enacted in President Donald Trump's \"big beautiful bill.\" Here's how it could impact the economy.",
+      "link": "https://www.cnbc.com/2026/01/13/bigger-tax-refunds-2026.html",
+      "pubDate": "2026-01-13T17:55:20.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 20,
+      "topic": "taxes"
+    },
+    {
+      "title": "HELOC and home equity loan rates Sunday, January 18, 2026: Significant decreases since last year",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/heloc-home-equity-loan-interest-rates-today-sunday-january-18-2026-110039798.html",
+      "pubDate": "2026-01-18T11:00:39.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 15,
+      "topic": "general"
+    },
+    {
+      "title": "Jerome Powell will attend Supreme Court hearing on Lisa Cook&#x2019;s firing",
+      "description": "Federal Reserve Chair Jerome Powell, who has been a target of the Trump administration, is showing a sign of unity with another central-bank member.",
+      "link": "https://www.marketwatch.com/story/jerome-powell-will-attend-supreme-court-hearing-on-lisa-cooks-firing-23e75828?mod=mw_rss_topstories",
+      "pubDate": "2026-01-19T19:57:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "categories": [],
+      "score": 15,
+      "topic": "economy"
+    },
+    {
+      "title": "&#x2018;I have no mortgage&#x2019;: Is it reckless to cancel my homeowner&#x2019;s insurance? I can&#x2019;t justify $4K a year anymore.",
+      "description": "&#x201c;My deductible is $5,000.&#x201d;",
+      "link": "https://www.marketwatch.com/story/i-have-no-mortgage-is-it-reckless-to-cancel-my-homeowners-insurance-i-cant-justify-4k-a-year-anymore-d1a03452?mod=mw_rss_topstories",
+      "pubDate": "2026-01-19T17:37:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "categories": [],
+      "score": 15,
+      "topic": "mortgage"
+    },
+    {
+      "title": "China keeps benchmark lending rates unchanged despite slowing economic growth",
+      "description": "The People's Bank of China held its 1-year and 5-year loan prime rates at 3% and 3.5%, respectively, keeping them unchanged for an eighth straight month.",
+      "link": "https://www.cnbc.com/2026/01/20/china-lending-rates-lpr-slowing-economic-growth.html",
+      "pubDate": "2026-01-20T03:54:19.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 15,
+      "topic": "general"
+    },
+    {
+      "title": "Fed chief Powell to attend Supreme Court arguments on Trump bid to fire Lisa Cook",
+      "description": "Federal Reserve Chairman Jerome Powell's planned attendance comes as he faces a federal criminal probe about the central bank's costly renovation project.",
+      "link": "https://www.cnbc.com/2026/01/19/fed-powell-supreme-court-trump-lisa-cook.html",
+      "pubDate": "2026-01-19T19:57:37.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 15,
+      "topic": "economy"
+    },
+    {
+      "title": "Here&apos;s what Trump&apos;s push into mortgage bonds could mean for income investors",
+      "description": "The president recently directed Fannie Mae and Freddie Mac purchase $200 billion in agency mortgage-backed securities. Investors bought on the news.",
+      "link": "https://www.cnbc.com/2026/01/19/what-trumps-push-into-mortgage-bonds-could-mean-for-income-investors.html",
+      "pubDate": "2026-01-19T13:47:59.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 15,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Education Department to delay collections on defaulted student loans",
+      "description": "The Education Department has announced it will delay the implementation of wage garnishment and other collections efforts for defaulted student loans.",
+      "link": "https://www.cnbc.com/2026/01/16/student-loan-collections-paused.html",
+      "pubDate": "2026-01-16T22:27:20.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 15,
+      "topic": "general"
+    }
+  ]
+}

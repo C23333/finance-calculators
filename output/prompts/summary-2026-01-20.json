@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-01-20T07:09:26.115Z",
+  "newsFile": "news-2026-01-20.json",
+  "articleCount": 3,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-01-20",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-01-20.md",
+  "articles": [
+    {
+      "title": "Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points",
+      "topic": "mortgage",
+      "slug": "mortgage-and-refinance-interest-rates-today-january-18-2026",
+      "calculator": "Mortgage Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20\\step1-draft-mortgage-and-refinance-interest-rates-today-january-18-2026.md"
+    },
+    {
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "topic": "debt",
+      "slug": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20\\step1-draft-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.md"
+    },
+    {
+      "title": "Building a tax efficient portfolio",
+      "topic": "investing",
+      "slug": "building-a-tax-efficient-portfolio",
+      "calculator": "Compound Interest Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20\\step1-draft-building-a-tax-efficient-portfolio.md"
+    }
+  ]
+}
