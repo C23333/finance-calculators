@@ -1,10 +1,10 @@
 # STEP1-DRAFT Prompt
 
 ## Article Information
-- **Title**: Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points
+- **Title**: Best high-yield savings interest rates today, January 18, 2026 (Earn up to 4% APY)
 - **Source**: Yahoo Finance
-- **Topic**: mortgage
-- **Generated**: 2026-01-20T08:28:22.773Z
+- **Topic**: savings
+- **Generated**: 2026-01-20T08:28:22.776Z
 
 ---
 
@@ -17,15 +17,15 @@ Write an informative, SEO-optimized article based on the following news summary.
 
 ## News Summary
 
-**Title**: Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points
+**Title**: Best high-yield savings interest rates today, January 18, 2026 (Earn up to 4% APY)
 **Source**: Yahoo Finance
-**Published**: 2026-01-18T11:00:07.000Z
-**Category**: mortgage
+**Published**: 2026-01-18T11:00:43.000Z
+**Category**: savings
 
 **Summary**:
 
 
-**Original Link**: https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-sunday-january-18-2026-110007049.html
+**Original Link**: https://finance.yahoo.com/personal-finance/article/best-high-yield-savings-interest-rates-today-sunday-january-18-2026-110043630.html
 
 
 ## Article Requirements
@@ -134,8 +134,8 @@ Write an informative, SEO-optimized article based on the following news summary.
 - [SOURCE: description and suggested verification]
 ```
 
-## Topic: mortgage
-## Target Calculator: Mortgage Calculator
+## Topic: savings
+## Target Calculator: Savings Goal Calculator
 
 Now write the article draft:
 

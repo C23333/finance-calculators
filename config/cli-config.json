@@ -1,0 +1,7 @@
+{
+    "cliCommand": "claude",
+    "promptMode": "stdin",
+    "extraArgs": ["--print"],
+    "timeout": 600000,
+    "delay": 3000
+}

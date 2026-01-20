@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-01-20T07:09:26.115Z",
+  "generatedAt": "2026-01-20T08:28:22.778Z",
   "newsFile": "news-2026-01-20.json",
-  "articleCount": 3,
+  "articleCount": 5,
   "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20",
   "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-01-20",
   "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-01-20.md",
@@ -26,6 +26,20 @@
       "slug": "building-a-tax-efficient-portfolio",
       "calculator": "Compound Interest Calculator",
       "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20\\step1-draft-building-a-tax-efficient-portfolio.md"
+    },
+    {
+      "title": "Best high-yield savings interest rates today, January 18, 2026 (Earn up to 4% APY)",
+      "topic": "savings",
+      "slug": "best-high-yield-savings-interest-rates-today-january-18-2026",
+      "calculator": "Savings Goal Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20\\step1-draft-best-high-yield-savings-interest-rates-today-january-18-2026.md"
+    },
+    {
+      "title": "Trump says you should be able to use a 401(k) to buy a home. 2 ways to bolster a down payment without tapping your retirement",
+      "topic": "retirement",
+      "slug": "trump-says-you-should-be-able-to-use-a-401k-to-buy-a-home-2",
+      "calculator": "Retirement Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-20\\step1-draft-trump-says-you-should-be-able-to-use-a-401k-to-buy-a-home-2.md"
     }
   ]
 }

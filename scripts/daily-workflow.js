@@ -106,27 +106,21 @@ async function main() {
         console.log('\nSkipping prompt generation (--skip-prompts)');
     }
 
-    // Step 3: Manual AI Processing
-    stepHeader(3, 'AI Article Generation (Manual Step)');
-    console.log(`
-This step requires manual interaction with AI CLI tools.
+    // Step 3: AI Article Generation (自动调用 CLI)
+    stepHeader(3, 'AI Article Generation');
+    console.log('正在调用 Claude CLI 自动生成文章...\n');
 
-For each article:
-  1. Open the prompt file from output/prompts/
-  2. Run Claude CLI with Step 1 prompt (draft generation)
-  3. Save output to output/drafts/
-  4. Run CodeX CLI with Step 2 prompt (review)
-  5. Run Claude CLI with Step 3 prompt (final polish)
-  6. Save final JSON to output/articles/
+    const genResult = runScript('article-generator.js', [
+        new Date().toISOString().split('T')[0],
+        articleCount.toString()
+    ]);
 
-Prompt files location:
-  ${path.join(OUTPUT_DIR, 'prompts')}
-
-After completing AI generation, press Enter to continue...
-`);
-
-    if (!autoMode) {
-        await prompt('Press Enter when ready to continue...');
+    if (!genResult.success) {
+        console.error('文章生成失败。');
+        if (!autoMode) {
+            const cont = await prompt('继续下一步？(y/n): ');
+            if (cont !== 'y') process.exit(1);
+        }
     }
 
     // Step 4: Build HTML

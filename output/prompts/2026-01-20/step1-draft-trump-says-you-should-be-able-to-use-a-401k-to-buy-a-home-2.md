@@ -1,10 +1,10 @@
 # STEP1-DRAFT Prompt
 
 ## Article Information
-- **Title**: Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points
-- **Source**: Yahoo Finance
-- **Topic**: mortgage
-- **Generated**: 2026-01-20T08:28:22.773Z
+- **Title**: Trump says you should be able to use a 401(k) to buy a home. 2 ways to bolster a down payment without tapping your retirement
+- **Source**: CNBC Top News
+- **Topic**: retirement
+- **Generated**: 2026-01-20T08:28:22.777Z
 
 ---
 
@@ -17,15 +17,15 @@ Write an informative, SEO-optimized article based on the following news summary.
 
 ## News Summary
 
-**Title**: Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points
-**Source**: Yahoo Finance
-**Published**: 2026-01-18T11:00:07.000Z
-**Category**: mortgage
+**Title**: Trump says you should be able to use a 401(k) to buy a home. 2 ways to bolster a down payment without tapping your retirement
+**Source**: CNBC Top News
+**Published**: 2026-01-16T21:14:09.000Z
+**Category**: retirement
 
 **Summary**:
+Withdrawing from your 401(k) before retirement can come with some downsides. Here are two safer ways to grow your savings for a down payment.
 
-
-**Original Link**: https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-sunday-january-18-2026-110007049.html
+**Original Link**: https://www.cnbc.com/select/how-to-boost-your-savings-for-a-down-payment/
 
 
 ## Article Requirements
@@ -134,8 +134,8 @@ Write an informative, SEO-optimized article based on the following news summary.
 - [SOURCE: description and suggested verification]
 ```
 
-## Topic: mortgage
-## Target Calculator: Mortgage Calculator
+## Topic: retirement
+## Target Calculator: Retirement Calculator
 
 Now write the article draft:
 

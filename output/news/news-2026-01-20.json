@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-01-20T07:08:47.686Z",
+  "fetchedAt": "2026-01-20T08:28:10.307Z",
   "totalFetched": 167,
   "totalUnique": 166,
   "totalSelected": 20,
@@ -23,6 +23,21 @@
         "source": "MarketWatch Top Stories",
         "categories": [],
         "score": 40,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Is 2026 the Year to Buy UWM Holdings?",
+        "description": "Macroeconomic changes and a pending merger could spur a further comeback for this mortgage stock.",
+        "link": "https://www.fool.com/investing/2026/01/20/is-2026-the-year-to-buy-financial-stock/?source=iedfolrf0000001",
+        "pubDate": "2026-01-20T07:00:00.000Z",
+        "source": "The Motley Fool",
+        "categories": [
+          "UWMC",
+          "090549b4-af37-413c-83ac-dc2403b7ffb7",
+          "investing",
+          "Financials"
+        ],
+        "score": 20,
         "topic": "mortgage"
       },
       {
@@ -108,6 +123,28 @@
         "categories": [],
         "score": 20,
         "topic": "investing"
+      },
+      {
+        "title": "Why Tuesday Morning Could be a Rollercoaster for Investors",
+        "description": "Global tensions will add volatility to the stock market this week.",
+        "link": "https://www.fool.com/investing/2026/01/20/why-tuesday-morning-could-be-a-rollercoaster-for-i/?source=iedfolrf0000001",
+        "pubDate": "2026-01-20T07:45:00.000Z",
+        "source": "The Motley Fool",
+        "categories": [
+          "ASML",
+          "MSFT",
+          "AMZN",
+          "NVDA",
+          "ADBE",
+          "META",
+          "IREN",
+          "CRWV",
+          "fdbd83db-0a79-4027-9520-4f6d43b8045a",
+          "investing",
+          "Technology and Telecom"
+        ],
+        "score": 20,
+        "topic": "investing"
       }
     ],
     "savings": [
@@ -186,16 +223,6 @@
         "categories": [],
         "score": 15,
         "topic": "general"
-      },
-      {
-        "title": "Education Department to delay collections on defaulted student loans",
-        "description": "The Education Department has announced it will delay the implementation of wage garnishment and other collections efforts for defaulted student loans.",
-        "link": "https://www.cnbc.com/2026/01/16/student-loan-collections-paused.html",
-        "pubDate": "2026-01-16T22:27:20.000Z",
-        "source": "CNBC Personal Finance",
-        "categories": [],
-        "score": 15,
-        "topic": "general"
       }
     ],
     "economy": [
@@ -205,16 +232,6 @@
         "link": "https://www.marketwatch.com/story/jerome-powell-will-attend-supreme-court-hearing-on-lisa-cooks-firing-23e75828?mod=mw_rss_topstories",
         "pubDate": "2026-01-19T19:57:00.000Z",
         "source": "MarketWatch Top Stories",
-        "categories": [],
-        "score": 15,
-        "topic": "economy"
-      },
-      {
-        "title": "Fed chief Powell to attend Supreme Court arguments on Trump bid to fire Lisa Cook",
-        "description": "Federal Reserve Chairman Jerome Powell's planned attendance comes as he faces a federal criminal probe about the central bank's costly renovation project.",
-        "link": "https://www.cnbc.com/2026/01/19/fed-powell-supreme-court-trump-lisa-cook.html",
-        "pubDate": "2026-01-19T19:57:37.000Z",
-        "source": "CNBC Top News",
         "categories": [],
         "score": 15,
         "topic": "economy"
@@ -353,6 +370,43 @@
       "topic": "taxes"
     },
     {
+      "title": "Why Tuesday Morning Could be a Rollercoaster for Investors",
+      "description": "Global tensions will add volatility to the stock market this week.",
+      "link": "https://www.fool.com/investing/2026/01/20/why-tuesday-morning-could-be-a-rollercoaster-for-i/?source=iedfolrf0000001",
+      "pubDate": "2026-01-20T07:45:00.000Z",
+      "source": "The Motley Fool",
+      "categories": [
+        "ASML",
+        "MSFT",
+        "AMZN",
+        "NVDA",
+        "ADBE",
+        "META",
+        "IREN",
+        "CRWV",
+        "fdbd83db-0a79-4027-9520-4f6d43b8045a",
+        "investing",
+        "Technology and Telecom"
+      ],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Is 2026 the Year to Buy UWM Holdings?",
+      "description": "Macroeconomic changes and a pending merger could spur a further comeback for this mortgage stock.",
+      "link": "https://www.fool.com/investing/2026/01/20/is-2026-the-year-to-buy-financial-stock/?source=iedfolrf0000001",
+      "pubDate": "2026-01-20T07:00:00.000Z",
+      "source": "The Motley Fool",
+      "categories": [
+        "UWMC",
+        "090549b4-af37-413c-83ac-dc2403b7ffb7",
+        "investing",
+        "Financials"
+      ],
+      "score": 20,
+      "topic": "mortgage"
+    },
+    {
       "title": "HELOC and home equity loan rates Sunday, January 18, 2026: Significant decreases since last year",
       "description": "",
       "link": "https://finance.yahoo.com/personal-finance/mortgages/article/heloc-home-equity-loan-interest-rates-today-sunday-january-18-2026-110039798.html",
@@ -393,16 +447,6 @@
       "topic": "general"
     },
     {
-      "title": "Fed chief Powell to attend Supreme Court arguments on Trump bid to fire Lisa Cook",
-      "description": "Federal Reserve Chairman Jerome Powell's planned attendance comes as he faces a federal criminal probe about the central bank's costly renovation project.",
-      "link": "https://www.cnbc.com/2026/01/19/fed-powell-supreme-court-trump-lisa-cook.html",
-      "pubDate": "2026-01-19T19:57:37.000Z",
-      "source": "CNBC Top News",
-      "categories": [],
-      "score": 15,
-      "topic": "economy"
-    },
-    {
       "title": "Here&apos;s what Trump&apos;s push into mortgage bonds could mean for income investors",
       "description": "The president recently directed Fannie Mae and Freddie Mac purchase $200 billion in agency mortgage-backed securities. Investors bought on the news.",
       "link": "https://www.cnbc.com/2026/01/19/what-trumps-push-into-mortgage-bonds-could-mean-for-income-investors.html",
@@ -411,16 +455,6 @@
       "categories": [],
       "score": 15,
       "topic": "mortgage"
-    },
-    {
-      "title": "Education Department to delay collections on defaulted student loans",
-      "description": "The Education Department has announced it will delay the implementation of wage garnishment and other collections efforts for defaulted student loans.",
-      "link": "https://www.cnbc.com/2026/01/16/student-loan-collections-paused.html",
-      "pubDate": "2026-01-16T22:27:20.000Z",
-      "source": "CNBC Personal Finance",
-      "categories": [],
-      "score": 15,
-      "topic": "general"
     }
   ]
 }
