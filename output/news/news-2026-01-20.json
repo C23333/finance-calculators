@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-01-20T08:28:10.307Z",
+  "fetchedAt": "2026-01-20T08:45:27.907Z",
   "totalFetched": 167,
   "totalUnique": 166,
   "totalSelected": 20,
@@ -16,8 +16,8 @@
         "topic": "mortgage"
       },
       {
-        "title": "&#x2018;I still have a mortgage&#x2019;: I&#x2019;m no longer confident that my costs will actually fall in retirement. What can I do?",
-        "description": "&#x201c;I think my withdrawals from my 401(k) and IRA may need to be larger than my current take-home pay.&#x201d;",
+        "title": "‘I still have a mortgage’: I’m no longer confident that my costs will actually fall in retirement. What can I do?",
+        "description": "“I think my withdrawals from my 401(k) and IRA may need to be larger than my current take-home pay.”",
         "link": "https://www.marketwatch.com/story/i-still-have-a-mortgage-im-no-longer-confident-that-my-costs-will-actually-fall-in-retirement-what-can-i-do-ff9164a5?mod=mw_rss_topstories",
         "pubDate": "2026-01-19T18:45:00.000Z",
         "source": "MarketWatch Top Stories",
@@ -41,8 +41,8 @@
         "topic": "mortgage"
       },
       {
-        "title": "&#x2018;I have no mortgage&#x2019;: Is it reckless to cancel my homeowner&#x2019;s insurance? I can&#x2019;t justify $4K a year anymore.",
-        "description": "&#x201c;My deductible is $5,000.&#x201d;",
+        "title": "‘I have no mortgage’: Is it reckless to cancel my homeowner’s insurance? I can’t justify $4K a year anymore.",
+        "description": "“My deductible is $5,000.”",
         "link": "https://www.marketwatch.com/story/i-have-no-mortgage-is-it-reckless-to-cancel-my-homeowners-insurance-i-cant-justify-4k-a-year-anymore-d1a03452?mod=mw_rss_topstories",
         "pubDate": "2026-01-19T17:37:00.000Z",
         "source": "MarketWatch Top Stories",
@@ -51,7 +51,7 @@
         "topic": "mortgage"
       },
       {
-        "title": "Here&apos;s what Trump&apos;s push into mortgage bonds could mean for income investors",
+        "title": "Here's what Trump's push into mortgage bonds could mean for income investors",
         "description": "The president recently directed Fannie Mae and Freddie Mac purchase $200 billion in agency mortgage-backed securities. Investors bought on the news.",
         "link": "https://www.cnbc.com/2026/01/19/what-trumps-push-into-mortgage-bonds-could-mean-for-income-investors.html",
         "pubDate": "2026-01-19T13:47:59.000Z",
@@ -115,7 +115,7 @@
         "topic": "investing"
       },
       {
-        "title": "China&apos;s stock market &apos;overheats&apos; amid record high turnover — and regulators are getting worried",
+        "title": "China's stock market 'overheats' amid record high turnover — and regulators are getting worried",
         "description": "China's stock market rally is drawing closer regulatory scrutiny after trading activity surged to unprecedented levels.",
         "link": "https://www.cnbc.com/2026/01/20/chinas-stock-market-overheats-amid-record-high-turnover.html",
         "pubDate": "2026-01-20T00:36:40.000Z",
@@ -173,7 +173,7 @@
     ],
     "taxes": [
       {
-        "title": "Student loan borrowers in default may miss out on Trump&apos;s &apos;largest tax refund season of all time&apos;",
+        "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
         "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
         "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
         "pubDate": "2026-01-14T18:35:12.000Z",
@@ -227,7 +227,7 @@
     ],
     "economy": [
       {
-        "title": "Jerome Powell will attend Supreme Court hearing on Lisa Cook&#x2019;s firing",
+        "title": "Jerome Powell will attend Supreme Court hearing on Lisa Cook’s firing",
         "description": "Federal Reserve Chair Jerome Powell, who has been a target of the Trump administration, is showing a sign of unity with another central-bank member.",
         "link": "https://www.marketwatch.com/story/jerome-powell-will-attend-supreme-court-hearing-on-lisa-cooks-firing-23e75828?mod=mw_rss_topstories",
         "pubDate": "2026-01-19T19:57:00.000Z",
@@ -250,8 +250,8 @@
       "topic": "mortgage"
     },
     {
-      "title": "&#x2018;I still have a mortgage&#x2019;: I&#x2019;m no longer confident that my costs will actually fall in retirement. What can I do?",
-      "description": "&#x201c;I think my withdrawals from my 401(k) and IRA may need to be larger than my current take-home pay.&#x201d;",
+      "title": "‘I still have a mortgage’: I’m no longer confident that my costs will actually fall in retirement. What can I do?",
+      "description": "“I think my withdrawals from my 401(k) and IRA may need to be larger than my current take-home pay.”",
       "link": "https://www.marketwatch.com/story/i-still-have-a-mortgage-im-no-longer-confident-that-my-costs-will-actually-fall-in-retirement-what-can-i-do-ff9164a5?mod=mw_rss_topstories",
       "pubDate": "2026-01-19T18:45:00.000Z",
       "source": "MarketWatch Top Stories",
@@ -310,7 +310,7 @@
       "topic": "retirement"
     },
     {
-      "title": "Student loan borrowers in default may miss out on Trump&apos;s &apos;largest tax refund season of all time&apos;",
+      "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
       "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
       "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
       "pubDate": "2026-01-14T18:35:12.000Z",
@@ -340,7 +340,7 @@
       "topic": "investing"
     },
     {
-      "title": "China&apos;s stock market &apos;overheats&apos; amid record high turnover — and regulators are getting worried",
+      "title": "China's stock market 'overheats' amid record high turnover — and regulators are getting worried",
       "description": "China's stock market rally is drawing closer regulatory scrutiny after trading activity surged to unprecedented levels.",
       "link": "https://www.cnbc.com/2026/01/20/chinas-stock-market-overheats-amid-record-high-turnover.html",
       "pubDate": "2026-01-20T00:36:40.000Z",
@@ -417,7 +417,7 @@
       "topic": "general"
     },
     {
-      "title": "Jerome Powell will attend Supreme Court hearing on Lisa Cook&#x2019;s firing",
+      "title": "Jerome Powell will attend Supreme Court hearing on Lisa Cook’s firing",
       "description": "Federal Reserve Chair Jerome Powell, who has been a target of the Trump administration, is showing a sign of unity with another central-bank member.",
       "link": "https://www.marketwatch.com/story/jerome-powell-will-attend-supreme-court-hearing-on-lisa-cooks-firing-23e75828?mod=mw_rss_topstories",
       "pubDate": "2026-01-19T19:57:00.000Z",
@@ -427,8 +427,8 @@
       "topic": "economy"
     },
     {
-      "title": "&#x2018;I have no mortgage&#x2019;: Is it reckless to cancel my homeowner&#x2019;s insurance? I can&#x2019;t justify $4K a year anymore.",
-      "description": "&#x201c;My deductible is $5,000.&#x201d;",
+      "title": "‘I have no mortgage’: Is it reckless to cancel my homeowner’s insurance? I can’t justify $4K a year anymore.",
+      "description": "“My deductible is $5,000.”",
       "link": "https://www.marketwatch.com/story/i-have-no-mortgage-is-it-reckless-to-cancel-my-homeowners-insurance-i-cant-justify-4k-a-year-anymore-d1a03452?mod=mw_rss_topstories",
       "pubDate": "2026-01-19T17:37:00.000Z",
       "source": "MarketWatch Top Stories",
@@ -447,7 +447,7 @@
       "topic": "general"
     },
     {
-      "title": "Here&apos;s what Trump&apos;s push into mortgage bonds could mean for income investors",
+      "title": "Here's what Trump's push into mortgage bonds could mean for income investors",
       "description": "The president recently directed Fannie Mae and Freddie Mac purchase $200 billion in agency mortgage-backed securities. Investors bought on the news.",
       "link": "https://www.cnbc.com/2026/01/19/what-trumps-push-into-mortgage-bonds-could-mean-for-income-investors.html",
       "pubDate": "2026-01-19T13:47:59.000Z",

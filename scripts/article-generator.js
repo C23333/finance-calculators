@@ -6,7 +6,7 @@
  *   - 或通过环境变量 AI_CLI_COMMAND 设置
  */
 
-const { execSync, spawnSync } = require('child_process');
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -48,54 +48,27 @@ function loadConfig() {
  * 调用 AI CLI 生成内容
  */
 function callAICLI(prompt, config) {
-    const { cliCommand, promptMode, extraArgs, timeout } = config;
+    const { cliCommand, timeout } = config;
 
     console.log(`📤 调用: ${cliCommand}`);
 
-    let result;
-
     try {
-        if (promptMode === 'stdin') {
-            // 通过 stdin 传递 prompt
-            result = spawnSync(cliCommand, extraArgs, {
-                input: prompt,
-                encoding: 'utf-8',
-                timeout: timeout,
-                maxBuffer: 50 * 1024 * 1024,
-                shell: true
-            });
-        } else if (promptMode === 'arg') {
-            // 通过命令行参数传递
-            const args = [...extraArgs, '-p', prompt];
-            result = spawnSync(cliCommand, args, {
-                encoding: 'utf-8',
-                timeout: timeout,
-                maxBuffer: 50 * 1024 * 1024,
-                shell: true
-            });
-        } else if (promptMode === 'file') {
-            // 通过临时文件传递
-            const tempFile = path.join(OUTPUT_DIR, 'temp-prompt.md');
-            fs.writeFileSync(tempFile, prompt);
-            const args = [...extraArgs, tempFile];
-            result = spawnSync(cliCommand, args, {
-                encoding: 'utf-8',
-                timeout: timeout,
-                maxBuffer: 50 * 1024 * 1024,
-                shell: true
-            });
-        }
+        // 将 prompt 写入临时文件，避免命令行长度限制和转义问题
+        const tempFile = path.join(OUTPUT_DIR, 'temp-prompt.txt');
+        fs.writeFileSync(tempFile, prompt, 'utf-8');
 
-        if (result.error) {
-            throw result.error;
-        }
+        // 使用 execSync 通过 shell 执行，读取临时文件
+        const cmd = `${cliCommand} --print < "${tempFile}"`;
 
-        if (result.status !== 0) {
-            console.error('CLI stderr:', result.stderr);
-            throw new Error(`CLI 返回非零状态码: ${result.status}`);
-        }
+        const result = execSync(cmd, {
+            encoding: 'utf-8',
+            timeout: timeout,
+            maxBuffer: 50 * 1024 * 1024,
+            windowsHide: true,
+            shell: true
+        });
 
-        return result.stdout;
+        return result;
 
     } catch (error) {
         console.error(`❌ CLI 调用失败: ${error.message}`);

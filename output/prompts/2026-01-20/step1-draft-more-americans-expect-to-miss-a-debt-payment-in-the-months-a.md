@@ -4,7 +4,7 @@
 - **Title**: More Americans expect to miss a debt payment in the months ahead: What that does to your credit score
 - **Source**: CNBC Personal Finance
 - **Topic**: debt
-- **Generated**: 2026-01-20T08:28:22.775Z
+- **Generated**: 2026-01-20T08:45:40.463Z
 
 ---
 

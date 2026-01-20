@@ -4,7 +4,7 @@
 - **Title**: Best high-yield savings interest rates today, January 18, 2026 (Earn up to 4% APY)
 - **Source**: Yahoo Finance
 - **Topic**: savings
-- **Generated**: 2026-01-20T08:28:22.776Z
+- **Generated**: 2026-01-20T08:45:40.464Z
 
 ---
 

@@ -4,7 +4,7 @@
 - **Title**: Trump says you should be able to use a 401(k) to buy a home. 2 ways to bolster a down payment without tapping your retirement
 - **Source**: CNBC Top News
 - **Topic**: retirement
-- **Generated**: 2026-01-20T08:28:22.777Z
+- **Generated**: 2026-01-20T08:45:40.465Z
 
 ---
 

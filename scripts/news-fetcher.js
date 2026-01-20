@@ -136,13 +136,28 @@ function parseRssFeed(xml, sourceName) {
  */
 function cleanHtml(text) {
     return text
+        // 移除 HTML 标签
         .replace(/<[^>]+>/g, '')
+        // 处理十六进制 HTML 实体 (&#x2018; -> ')
+        .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+        // 处理十进制 HTML 实体 (&#8216; -> ')
+        .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(parseInt(dec, 10)))
+        // 常见命名实体
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&amp;/g, '&')
         .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'")
         .replace(/&#039;/g, "'")
         .replace(/&nbsp;/g, ' ')
+        .replace(/&ldquo;/g, '"')
+        .replace(/&rdquo;/g, '"')
+        .replace(/&lsquo;/g, "'")
+        .replace(/&rsquo;/g, "'")
+        .replace(/&mdash;/g, '—')
+        .replace(/&ndash;/g, '–')
+        .replace(/&hellip;/g, '...')
+        // 清理多余空格
         .replace(/\s+/g, ' ')
         .trim();
 }

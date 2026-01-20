@@ -4,7 +4,7 @@
 - **Title**: Mortgage and refinance interest rates today, January 18, 2026: Weekly rates drop by 19 basis points
 - **Source**: Yahoo Finance
 - **Topic**: mortgage
-- **Generated**: 2026-01-20T08:28:22.773Z
+- **Generated**: 2026-01-20T08:45:40.462Z
 
 ---
 
