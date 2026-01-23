@@ -24,7 +24,8 @@
       "WebFetch(domain:www.bankrate.com)",
       "WebFetch(domain:www.investopedia.com)",
       "WebFetch(domain:medium.com)",
-      "WebFetch(domain:www.smashingmagazine.com)"
+      "WebFetch(domain:www.smashingmagazine.com)",
+      "Bash(node scripts/html-builder.js:*)"
     ]
   }
 }
