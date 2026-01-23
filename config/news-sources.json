@@ -4,59 +4,83 @@
             "name": "Yahoo Finance",
             "url": "https://finance.yahoo.com/news/rssindex",
             "category": "general",
-            "enabled": true
+            "enabled": true,
+            "reliability": "high"
         },
         {
             "name": "MarketWatch Top Stories",
             "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
             "category": "markets",
-            "enabled": true
+            "enabled": true,
+            "reliability": "high"
         },
         {
             "name": "MarketWatch Personal Finance",
             "url": "https://feeds.marketwatch.com/marketwatch/pf/",
             "category": "personal-finance",
-            "enabled": true
+            "enabled": true,
+            "reliability": "high"
         },
         {
-            "name": "CNBC Top News",
-            "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
-            "category": "business",
-            "enabled": true
+            "name": "NPR Economy",
+            "url": "https://feeds.npr.org/1006/rss.xml",
+            "category": "economy",
+            "enabled": true,
+            "reliability": "high"
         },
         {
-            "name": "CNBC Personal Finance",
-            "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=21324812",
-            "category": "personal-finance",
-            "enabled": true
-        },
-        {
-            "name": "Reuters Business",
-            "url": "https://feeds.reuters.com/reuters/businessNews",
-            "category": "business",
-            "enabled": true
-        },
-        {
-            "name": "Investopedia",
-            "url": "https://www.investopedia.com/feedbuilder/feed/getfeed?feedName=rss_headline",
-            "category": "education",
-            "enabled": true
+            "name": "Federal Reserve Press Releases",
+            "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+            "category": "economy",
+            "enabled": true,
+            "reliability": "high"
         },
         {
             "name": "The Motley Fool",
             "url": "https://www.fool.com/feeds/index.aspx",
             "category": "investing",
-            "enabled": true
+            "enabled": true,
+            "reliability": "high"
+        },
+        {
+            "name": "CNBC Top News",
+            "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+            "category": "business",
+            "enabled": true,
+            "reliability": "medium"
+        },
+        {
+            "name": "CNBC Personal Finance",
+            "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=21324812",
+            "category": "personal-finance",
+            "enabled": true,
+            "reliability": "medium"
+        },
+        {
+            "name": "Reuters Business",
+            "url": "https://feeds.reuters.com/reuters/businessNews",
+            "category": "business",
+            "enabled": false,
+            "reliability": "low",
+            "note": "Reuters closed free RSS feeds"
+        },
+        {
+            "name": "Investopedia",
+            "url": "https://www.investopedia.com/feedbuilder/feed/getfeed?feedName=rss_headline",
+            "category": "education",
+            "enabled": true,
+            "reliability": "medium"
         },
         {
             "name": "Bankrate",
             "url": "https://www.bankrate.com/arc/outboundfeeds/rss/",
             "category": "personal-finance",
-            "enabled": true
+            "enabled": true,
+            "reliability": "medium"
         }
     ],
     "newsApiKey": "",
-    "newsApiEnabled": false,
+    "newsApiEnabled": true,
     "maxArticlesPerSource": 10,
     "maxTotalArticles": 20,
     "keywords": [

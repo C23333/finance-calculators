@@ -10,6 +10,15 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+// Import article history module for versioned generation
+let articleHistory;
+try {
+    articleHistory = require('./article-history');
+} catch (e) {
+    articleHistory = null;
+    console.log('Note: article-history module not available, version tracking disabled');
+}
+
 const PROJECT_ROOT = path.join(__dirname, '..');
 const OUTPUT_DIR = path.join(PROJECT_ROOT, 'output');
 const CONFIG_DIR = path.join(PROJECT_ROOT, 'config');
@@ -232,6 +241,24 @@ async function generateArticles(date, limit = 3) {
         console.log(`\n[${i + 1}/${articles.length}] ${shortTitle}...`);
         console.log('-'.repeat(60));
 
+        // Generate slug first to check for existing versions
+        const slug = generateSlug(newsItem.title);
+        const filename = `final-${slug}.json`;
+        const filepath = path.join(articlesDir, filename);
+
+        // Check for existing version and archive if needed
+        let versionInfo = null;
+        if (articleHistory) {
+            if (articleHistory.isSlugUsed(slug)) {
+                const currentVersion = articleHistory.getCurrentVersion(slug);
+                console.log(`  [版本更新] 检测到已有文章: ${slug} (v${currentVersion})`);
+
+                // Archive old version
+                articleHistory.archiveVersion(slug);
+                console.log(`    → 旧版本已存档`);
+            }
+        }
+
         // 构建 prompt
         const prompt = buildPrompt(newsItem);
 
@@ -242,18 +269,28 @@ async function generateArticles(date, limit = 3) {
             // 解析输出
             const articleData = parseOutput(output);
 
-            // 生成文件名和保存
-            const slug = generateSlug(newsItem.title);
-            const filename = `final-${slug}.json`;
-            const filepath = path.join(articlesDir, filename);
-
+            // Save the article
             fs.writeFileSync(filepath, JSON.stringify(articleData, null, 2), 'utf-8');
-            console.log(`✅ 已保存: ${filename}`);
+
+            // Record in history
+            if (articleHistory) {
+                const recorded = articleHistory.recordArticle({
+                    slug,
+                    sourceUrl: newsItem.link,
+                    title: newsItem.title,
+                    generatedAt: new Date().toISOString()
+                });
+                const version = recorded ? recorded.currentVersion : 1;
+                console.log(`✅ 已保存: ${filename} (v${version})`);
+            } else {
+                console.log(`✅ 已保存: ${filename}`);
+            }
 
             results.push({
                 success: true,
                 filename,
-                title: newsItem.title
+                title: newsItem.title,
+                slug
             });
         } else {
             console.log(`❌ 生成失败`);

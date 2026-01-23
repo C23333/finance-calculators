@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "createdAt": "2026-01-23T00:00:00.000Z",
+  "lastUpdated": "2026-01-23T05:22:53.593Z",
+  "statistics": {
+    "totalArticles": 8,
+    "totalVersions": 8,
+    "archivedVersions": 0
+  },
+  "bySlug": {
+    "building-tax-efficient-portfolio-2026": {
+      "slug": "building-tax-efficient-portfolio-2026",
+      "title": "Building a Tax-Efficient Portfolio: Strategies for 2026",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-20",
+      "lastUpdated": "2026-01-20",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-20",
+          "archived": false,
+          "currentPath": "output/articles/final-building-tax-efficient-portfolio-2026.json"
+        }
+      ]
+    },
+    "mortgage-in-retirement-managing-costs": {
+      "slug": "mortgage-in-retirement-managing-costs",
+      "title": "Mortgage in Retirement? How to Manage Costs When Income Drops",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-20",
+      "lastUpdated": "2026-01-20",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-20",
+          "archived": false,
+          "currentPath": "output/articles/final-mortgage-in-retirement-managing-costs.json"
+        }
+      ]
+    },
+    "mortgage-rates-drop-19-basis-points-january-2026": {
+      "slug": "mortgage-rates-drop-19-basis-points-january-2026",
+      "title": "Mortgage Rates Drop 19 Basis Points This Week (January 2026)",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-20",
+      "lastUpdated": "2026-01-20",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-20",
+          "archived": false,
+          "currentPath": "output/articles/final-mortgage-rates-drop-19-basis-points-january-2026.json"
+        }
+      ]
+    },
+    "pce-inflation-november-2026-fed-target": {
+      "slug": "pce-inflation-november-2026-fed-target",
+      "title": "PCE Inflation Hits 2.8% in November 2026: What It Means for Your Wallet",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-23",
+      "lastUpdated": "2026-01-23",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-23",
+          "archived": false,
+          "currentPath": "output/articles/final-pce-inflation-november-2026-fed-target.json"
+        }
+      ]
+    },
+    "loandepot-mortgage-review-2026": {
+      "slug": "loandepot-mortgage-review-2026",
+      "title": "loanDepot Mortgage Review 2026: Rates, Fees & Pros and Cons",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-23",
+      "lastUpdated": "2026-01-23",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-23",
+          "archived": false,
+          "currentPath": "output/articles/final-loandepot-mortgage-review-2026.json"
+        }
+      ]
+    },
+    "missed-payment-credit-score-impact": {
+      "slug": "missed-payment-credit-score-impact",
+      "title": "Missed Debt Payment Credit Score Impact: What to Know in 2026",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-23",
+      "lastUpdated": "2026-01-23",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-23",
+          "archived": false,
+          "currentPath": "output/articles/final-missed-payment-credit-score-impact.json"
+        }
+      ]
+    },
+    "student-loan-forgiveness-backlog-2026": {
+      "slug": "student-loan-forgiveness-backlog-2026",
+      "title": "800,000+ Student Loan Borrowers Stuck in Forgiveness Backlog",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-23",
+      "lastUpdated": "2026-01-23",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-23",
+          "archived": false,
+          "currentPath": "output/articles/final-student-loan-forgiveness-backlog-2026.json"
+        }
+      ]
+    },
+    "best-time-improve-credit-score-2026": {
+      "slug": "best-time-improve-credit-score-2026",
+      "title": "Why Now Is the Best Time to Improve Your Credit Score in 2026",
+      "sourceUrl": null,
+      "currentVersion": 1,
+      "createdAt": "2026-01-23",
+      "lastUpdated": "2026-01-23",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-23",
+          "archived": false,
+          "currentPath": "output/articles/final-best-time-improve-credit-score-2026.json"
+        }
+      ]
+    }
+  },
+  "bySourceUrl": {}
+}

@@ -2,6 +2,15 @@
 /**
  * Daily Workflow Orchestrator
  * Coordinates the entire article generation pipeline
+ *
+ * Steps:
+ * 0. RSS Source Health Check (new)
+ * 1. Fetch News
+ * 2. Generate Prompts
+ * 3. AI Article Generation
+ * 4. Build HTML (with OG images & internal links)
+ * 5. Update Sitemap
+ * 6. Review & Publish
  */
 
 const { execSync, spawn } = require('child_process');
@@ -67,6 +76,7 @@ async function main() {
     const args = process.argv.slice(2);
     const skipFetch = args.includes('--skip-fetch');
     const skipPrompts = args.includes('--skip-prompts');
+    const skipHealthCheck = args.includes('--skip-health');
     const autoMode = args.includes('--auto');
     const articleCount = parseInt(args.find(a => /^\d+$/.test(a))) || 5;
 
@@ -76,6 +86,22 @@ async function main() {
     console.log(`\nDate: ${new Date().toISOString().split('T')[0]}`);
     console.log(`Article target: ${articleCount}`);
     console.log();
+
+    // Step 0: RSS Source Health Check
+    if (!skipHealthCheck && !skipFetch) {
+        stepHeader(0, 'RSS Source Health Check');
+        const healthResult = runScript('source-health-check.js');
+
+        if (!healthResult.success) {
+            console.error('Health check failed. Some RSS sources may be unavailable.');
+            if (!autoMode) {
+                const cont = await prompt('Continue with available sources? (y/n): ');
+                if (cont !== 'y') process.exit(1);
+            }
+        }
+    } else if (skipHealthCheck) {
+        console.log('\nSkipping health check (--skip-health)');
+    }
 
     // Step 1: Fetch News
     if (!skipFetch) {
@@ -173,16 +199,19 @@ async function main() {
 
     console.log(`
 Summary:
+  - Health check: ${skipHealthCheck || skipFetch ? 'Skipped' : 'Yes'}
   - News fetched: ${skipFetch ? 'Skipped' : 'Yes'}
   - Prompts generated: ${skipPrompts ? 'Skipped' : 'Yes'}
-  - HTML built: ${buildResult?.success ? 'Yes' : 'Check errors'}
+  - HTML built: ${buildResult?.success ? 'Yes (with OG images & internal links)' : 'Check errors'}
   - Sitemap updated: ${sitemapResult?.success ? 'Yes' : 'Check errors'}
 
 Output locations:
+  - Health report: output/health-report.json
   - News data: output/news/
   - AI prompts: output/prompts/
   - Article drafts: output/drafts/
   - Final articles: output/articles/
+  - OG images: blog/images/og/
   - Published HTML: blog/
 `);
 }
@@ -195,19 +224,34 @@ Daily Workflow Orchestrator
 Usage: node daily-workflow.js [options] [article-count]
 
 Options:
-  --skip-fetch    Skip news fetching step
+  --skip-fetch    Skip news fetching step (also skips health check)
   --skip-prompts  Skip prompt generation step
+  --skip-health   Skip RSS source health check step
   --auto          Run in non-interactive mode
   --help, -h      Show this help message
 
 Arguments:
   article-count   Number of articles to generate (default: 5)
 
+Workflow Steps:
+  0. RSS Source Health Check - Validates all RSS feeds
+  1. Fetch News - Retrieves articles from healthy sources
+  2. Generate Prompts - Creates AI prompts from news
+  3. AI Article Generation - Generates articles using Claude
+  4. Build HTML - Creates HTML with OG images & internal links
+  5. Update Sitemap - Updates sitemap.xml and blog index
+  6. Review & Publish - Optional manual review and publish
+
 Examples:
   node daily-workflow.js              # Full workflow, 5 articles
   node daily-workflow.js 3            # Generate 3 articles
   node daily-workflow.js --skip-fetch # Skip news fetch, use existing data
+  node daily-workflow.js --skip-health # Skip health check
   node daily-workflow.js --auto       # Non-interactive mode
+
+Individual Scripts:
+  node scripts/source-health-check.js  # Run health check only
+  node scripts/og-image-generator.js --test "Title"  # Test OG image
 `);
     process.exit(0);
 }

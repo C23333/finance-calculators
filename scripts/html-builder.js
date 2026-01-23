@@ -3,6 +3,7 @@
  * HTML Builder Module (Enhanced)
  * Converts AI-generated JSON articles into HTML pages
  * Includes: Sources, Recommended Reading, Suggested Searches, Interactive Tools
+ * Enhanced: OG Images, Auto Internal Links, NewsArticle Schema
  */
 
 const fs = require('fs');
@@ -22,6 +23,49 @@ try {
 } catch (e) {
     toolGenerator = null;
 }
+
+// Import OG image generator
+let ogImageGenerator;
+try {
+    ogImageGenerator = require('./og-image-generator');
+} catch (e) {
+    ogImageGenerator = null;
+}
+
+// Keyword to calculator internal links
+const KEYWORD_LINKS = {
+    'mortgage calculator': '/calculators/mortgage.html',
+    'mortgage payment': '/calculators/mortgage.html',
+    'calculate your mortgage': '/calculators/mortgage.html',
+    'refinance calculator': '/calculators/refinance.html',
+    'refinance': '/calculators/refinance.html',
+    '401k calculator': '/calculators/401k.html',
+    '401k': '/calculators/401k.html',
+    '401(k)': '/calculators/401k.html',
+    'retirement calculator': '/calculators/retirement.html',
+    'retirement savings': '/calculators/retirement.html',
+    'compound interest calculator': '/calculators/compound-interest.html',
+    'compound interest': '/calculators/compound-interest.html',
+    'loan calculator': '/calculators/loan.html',
+    'loan payment': '/calculators/loan.html',
+    'amortization calculator': '/calculators/amortization.html',
+    'amortization schedule': '/calculators/amortization.html',
+    'amortization': '/calculators/amortization.html',
+    'debt payoff calculator': '/calculators/debt-payoff.html',
+    'debt payoff': '/calculators/debt-payoff.html',
+    'pay off debt': '/calculators/debt-payoff.html',
+    'home affordability calculator': '/calculators/affordability.html',
+    'home affordability': '/calculators/affordability.html',
+    'how much house can i afford': '/calculators/affordability.html',
+    'savings calculator': '/calculators/savings.html',
+    'savings goal': '/calculators/savings.html',
+    'investment calculator': '/calculators/investment.html',
+    'investment returns': '/calculators/investment.html',
+    'auto loan calculator': '/calculators/auto-loan.html',
+    'car payment': '/calculators/auto-loan.html',
+    'credit card payoff': '/calculators/credit-card-payoff.html',
+    'credit card calculator': '/calculators/credit-card-payoff.html'
+};
 
 /**
  * Load HTML template
@@ -569,11 +613,152 @@ function escapeHtml(text) {
 }
 
 /**
+ * Add internal links to content based on keywords
+ * Rules:
+ * - Each keyword is linked only once (first occurrence)
+ * - Don't replace inside existing links or headings
+ * - Add title attribute for SEO
+ */
+function addInternalLinks(html) {
+    const linkedKeywords = new Set();
+
+    // Sort keywords by length (longer first) to match longer phrases first
+    const sortedKeywords = Object.keys(KEYWORD_LINKS).sort((a, b) => b.length - a.length);
+
+    for (const keyword of sortedKeywords) {
+        if (linkedKeywords.has(keyword.toLowerCase())) continue;
+
+        const url = KEYWORD_LINKS[keyword];
+        const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+        // Match keyword not inside HTML tags or existing links
+        // Negative lookbehind for <a...> and negative lookahead for </a>
+        const regex = new RegExp(
+            `(?<!<[^>]*)\\b(${escapedKeyword})\\b(?![^<]*<\\/a>)(?![^<]*<\\/h[1-6]>)`,
+            'i'
+        );
+
+        const match = html.match(regex);
+        if (match) {
+            const originalText = match[1];
+            const link = `<a href="${url}" title="Use our ${originalText} tool" class="internal-link">${originalText}</a>`;
+            html = html.replace(regex, link);
+            linkedKeywords.add(keyword.toLowerCase());
+        }
+    }
+
+    return html;
+}
+
+/**
+ * Generate NewsArticle schema (more appropriate for timely content)
+ */
+function generateNewsArticleSchema(articleData) {
+    const { metadata, content } = articleData;
+    const ogImagePath = `/blog/images/og/${metadata.slug}.svg`;
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": metadata.title || content.headline,
+        "description": metadata.metaDescription,
+        "image": [
+            `https://financecalc.cc${ogImagePath}`
+        ],
+        "datePublished": metadata.publishDate,
+        "dateModified": metadata.modifiedDate || metadata.publishDate,
+        "author": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FinCalc",
+            "url": "https://financecalc.cc",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://financecalc.cc/favicon.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://financecalc.cc/blog/${metadata.slug}.html`
+        }
+    };
+
+    // Add speakable specification for voice assistants
+    schema.speakable = {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".article-intro", ".key-takeaways"]
+    };
+
+    return schema;
+}
+
+/**
  * Format date for display
  */
 function formatDateDisplay(dateStr) {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+/**
+ * Format date for short display (Jan 20, 2026)
+ */
+function formatDateShort(dateStr) {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+/**
+ * Calculate word count from article sections
+ */
+function calculateWordCount(sections) {
+    if (!sections || sections.length === 0) return 0;
+
+    let totalWords = 0;
+    sections.forEach(section => {
+        // Count words in heading
+        if (section.heading) {
+            totalWords += section.heading.split(/\s+/).length;
+        }
+        // Count words in content (strip HTML tags first)
+        if (section.content) {
+            const textContent = section.content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+            totalWords += textContent.split(/\s+/).length;
+        }
+    });
+
+    return totalWords;
+}
+
+/**
+ * Format word count for display
+ */
+function formatWordCount(count) {
+    if (count >= 1000) {
+        return (count / 1000).toFixed(1) + 'k';
+    }
+    return count.toString();
+}
+
+/**
+ * Generate category slug from category name
+ */
+function generateCategorySlug(category) {
+    return category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+/**
+ * Get author avatar (emoji or initials)
+ */
+function getAuthorAvatar(authorName) {
+    if (!authorName) return '👤';
+    // Return first letter of each word
+    const initials = authorName.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+    return initials || '👤';
 }
 
 /**
@@ -667,12 +852,43 @@ function buildEngagementSections(articleData) {
 /**
  * Build complete HTML from article data
  */
-function buildHtml(articleData, template) {
+async function buildHtml(articleData, template) {
     const { metadata, content, seo, relatedArticles } = articleData;
 
     const contentResult = buildContentHtml(articleData);
     const engagementHtml = buildEngagementSections(articleData);
     const sidebarResult = buildSidebarTools(articleData);
+
+    // Generate OG image
+    let ogImagePath = `/blog/images/og/${metadata.slug}.svg`;
+    if (ogImageGenerator) {
+        try {
+            const ogResult = await ogImageGenerator.generateOgImage(articleData, { useGemini: false });
+            if (ogResult.success) {
+                ogImagePath = ogResult.relativePath;
+            }
+        } catch (err) {
+            console.log(`    OG image generation skipped: ${err.message}`);
+        }
+    }
+
+    // Add internal links to content
+    const contentWithLinks = addInternalLinks(contentResult.html);
+
+    // Generate NewsArticle schema
+    const newsArticleSchema = generateNewsArticleSchema(articleData);
+
+    // Calculate word count
+    const wordCount = calculateWordCount(content.sections);
+
+    // Author info
+    const authorName = metadata.author || 'FinCalc Editorial Team';
+    const authorAvatar = getAuthorAvatar(authorName);
+
+    // Modified date display
+    const modifiedDateDisplay = metadata.modifiedDate && metadata.modifiedDate !== metadata.publishDate
+        ? `<span class="update-date">Updated: ${formatDateShort(metadata.modifiedDate)}</span>`
+        : '';
 
     const replacements = {
         'TITLE': metadata.title || content.headline,
@@ -682,17 +898,27 @@ function buildHtml(articleData, template) {
         'PUBLISH_DATE': metadata.publishDate,
         'MODIFIED_DATE': metadata.modifiedDate || metadata.publishDate,
         'PUBLISH_DATE_DISPLAY': formatDateDisplay(metadata.publishDate),
+        'PUBLISH_DATE_SHORT': formatDateShort(metadata.publishDate),
+        'MODIFIED_DATE_DISPLAY': modifiedDateDisplay,
         'CATEGORY': metadata.category,
+        'CATEGORY_SLUG': generateCategorySlug(metadata.category),
         'READING_TIME': metadata.readingTime,
+        'WORD_COUNT': formatWordCount(wordCount),
+        'WORD_COUNT_RAW': wordCount.toString(),
         'HEADLINE': content.headline,
         'BREADCRUMB_TITLE': metadata.title.substring(0, 30) + (metadata.title.length > 30 ? '...' : ''),
         'INTRO': content.intro ? content.intro.replace(/<\/?p>/g, '') : '',
-        'CONTENT': contentResult.html,
+        'CONTENT': contentWithLinks,
+        'AUTHOR_NAME': authorName,
+        'AUTHOR_AVATAR': authorAvatar,
         'FAQ_SCHEMA': seo && seo.faqSchema ? generateFaqSchema(seo.faqSchema) : '',
+        'NEWS_ARTICLE_SCHEMA': `<script type="application/ld+json">${JSON.stringify(newsArticleSchema)}</script>`,
         'ENGAGEMENT_SECTIONS': engagementHtml,
         'RELATED_ARTICLES': generateRelatedArticlesHtml(relatedArticles),
         'SIDEBAR_TOOLS': sidebarResult.html,
-        'TOOL_SCRIPTS': contentResult.toolScripts + sidebarResult.toolScripts
+        'TOOL_SCRIPTS': contentResult.toolScripts + sidebarResult.toolScripts,
+        'OG_IMAGE': `https://financecalc.cc${ogImagePath}`,
+        'OG_IMAGE_PATH': ogImagePath
     };
 
     let html = template;
@@ -707,12 +933,12 @@ function buildHtml(articleData, template) {
 /**
  * Process a single article JSON file
  */
-function processArticleFile(filePath, template, outputDir) {
+async function processArticleFile(filePath, template, outputDir) {
     console.log(`Processing: ${path.basename(filePath)}`);
 
     try {
         const articleData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        const html = buildHtml(articleData, template);
+        const html = await buildHtml(articleData, template);
 
         const outputPath = path.join(outputDir, `${articleData.metadata.slug}.html`);
         fs.writeFileSync(outputPath, html);
@@ -768,7 +994,13 @@ async function main() {
         return;
     }
 
-    const results = jsonFiles.map(file => processArticleFile(file, template, BLOG_DIR));
+    // Process articles sequentially to avoid OG image generation conflicts
+    const results = [];
+    for (const file of jsonFiles) {
+        const result = await processArticleFile(file, template, BLOG_DIR);
+        results.push(result);
+    }
+
     const successful = results.filter(r => r.success);
     const failed = results.filter(r => !r.success);
 
@@ -789,7 +1021,10 @@ module.exports = {
     main, buildHtml, processArticleFile, loadTemplate,
     generateFaqSchema, generateRelatedArticlesHtml,
     generateSourcesHtml, generateRecommendedReadingHtml,
-    generateSuggestedSearchesHtml, generateInteractiveToolHtml
+    generateSuggestedSearchesHtml, generateInteractiveToolHtml,
+    addInternalLinks, generateNewsArticleSchema, KEYWORD_LINKS,
+    calculateWordCount, formatWordCount, formatDateShort,
+    generateCategorySlug, getAuthorAvatar
 };
 
 if (require.main === module) {

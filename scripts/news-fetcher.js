@@ -3,6 +3,11 @@
  * News Fetcher Module
  * Fetches financial news from RSS feeds and NewsAPI
  * Outputs JSON files for AI article generation
+ *
+ * Features:
+ * - Retry mechanism with exponential backoff
+ * - Health check integration
+ * - Detailed logging
  */
 
 const https = require('https');
@@ -11,9 +16,23 @@ const { URL } = require('url');
 const fs = require('fs');
 const path = require('path');
 
+// Import article history module for cross-day deduplication
+let articleHistory;
+try {
+    articleHistory = require('./article-history');
+} catch (e) {
+    articleHistory = null;
+    console.log('Note: article-history module not available, skipping cross-day deduplication');
+}
+
 // Configuration
 const CONFIG_PATH = path.join(__dirname, '..', 'config', 'news-sources.json');
 const OUTPUT_DIR = path.join(__dirname, '..', 'output', 'news');
+const HEALTH_REPORT_PATH = path.join(__dirname, '..', 'output', 'health-report.json');
+
+// Retry configuration
+const MAX_RETRIES = 3;
+const INITIAL_RETRY_DELAY = 1000; // 1 second
 
 /**
  * Load news sources configuration
@@ -36,6 +55,50 @@ function loadConfig() {
             keywords: ['finance', 'investing', 'mortgage', 'retirement', '401k', 'credit', 'debt', 'savings', 'stock market', 'economy']
         };
     }
+}
+
+/**
+ * Load health report to check feed status
+ */
+function loadHealthReport() {
+    try {
+        if (fs.existsSync(HEALTH_REPORT_PATH)) {
+            return JSON.parse(fs.readFileSync(HEALTH_REPORT_PATH, 'utf8'));
+        }
+    } catch (err) {
+        // Ignore
+    }
+    return null;
+}
+
+/**
+ * Filter feeds based on health status
+ */
+function getHealthyFeeds(feeds) {
+    const report = loadHealthReport();
+
+    if (!report || !report.details) {
+        // No health report available, return all enabled feeds
+        return feeds.filter(f => f.enabled !== false);
+    }
+
+    return feeds.filter(feed => {
+        if (feed.enabled === false) return false;
+
+        const healthCheck = report.details.find(r => r.url === feed.url);
+        if (healthCheck && !healthCheck.healthy) {
+            console.log(`  [SKIP] ${feed.name} - marked unhealthy`);
+            return false;
+        }
+        return true;
+    });
+}
+
+/**
+ * Sleep helper for retry delays
+ */
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 /**
@@ -79,6 +142,23 @@ function fetchUrl(url, options = {}) {
         });
         req.end();
     });
+}
+
+/**
+ * Fetch URL with retry logic and exponential backoff
+ */
+async function fetchUrlWithRetry(url, options = {}, retryCount = 0) {
+    try {
+        return await fetchUrl(url, options);
+    } catch (err) {
+        if (retryCount < MAX_RETRIES) {
+            const delay = INITIAL_RETRY_DELAY * Math.pow(2, retryCount);
+            console.log(`    Retry ${retryCount + 1}/${MAX_RETRIES} after ${delay}ms...`);
+            await sleep(delay);
+            return fetchUrlWithRetry(url, options, retryCount + 1);
+        }
+        throw err;
+    }
 }
 
 /**
@@ -258,6 +338,49 @@ function deduplicateArticles(articles) {
 }
 
 /**
+ * Filter out articles that have already been generated (cross-day deduplication)
+ * Uses article history to check source URLs and similar titles
+ */
+function filterAlreadyGenerated(articles) {
+    if (!articleHistory) {
+        return { newArticles: articles, skipped: [] };
+    }
+
+    const history = articleHistory.loadHistory();
+    const newArticles = [];
+    const skipped = [];
+
+    for (const article of articles) {
+        // Check if source URL was already used
+        if (articleHistory.isArticleGenerated(article.link, history)) {
+            const existingSlug = history.bySourceUrl[article.link];
+            skipped.push({
+                reason: 'already_generated',
+                existingSlug,
+                article
+            });
+            continue;
+        }
+
+        // Check for similar titles
+        const similar = articleHistory.findSimilarTitle(article.title, history);
+        if (similar) {
+            skipped.push({
+                reason: 'similar_title',
+                existingSlug: similar.slug,
+                similarity: similar.similarity,
+                article
+            });
+            continue;
+        }
+
+        newArticles.push(article);
+    }
+
+    return { newArticles, skipped };
+}
+
+/**
  * Categorize article by topic
  */
 function categorizeArticle(article) {
@@ -297,38 +420,72 @@ async function main() {
 
     const config = loadConfig();
     let allArticles = [];
+    let fetchStats = { success: 0, failed: 0, skipped: 0 };
+
+    // Filter feeds based on health check
+    const healthyFeeds = getHealthyFeeds(config.rssFeeds);
+    const skippedCount = config.rssFeeds.filter(f => f.enabled !== false).length - healthyFeeds.length;
+
+    if (skippedCount > 0) {
+        fetchStats.skipped = skippedCount;
+        console.log(`Skipped ${skippedCount} unhealthy feeds based on health report\n`);
+    }
 
     // Fetch from RSS feeds
-    console.log('Fetching RSS feeds...');
-    for (const feed of config.rssFeeds) {
+    console.log(`Fetching from ${healthyFeeds.length} RSS feeds...`);
+    for (const feed of healthyFeeds) {
         try {
             console.log(`  - ${feed.name}...`);
-            const response = await fetchUrl(feed.url);
+            const response = await fetchUrlWithRetry(feed.url);
             if (response.statusCode === 200) {
                 const articles = parseRssFeed(response.data, feed.name);
-                console.log(`    Found ${articles.length} articles`);
+                console.log(`    ✓ Found ${articles.length} articles`);
                 allArticles = allArticles.concat(articles);
+                fetchStats.success++;
             } else {
-                console.log(`    Failed: HTTP ${response.statusCode}`);
+                console.log(`    ✗ Failed: HTTP ${response.statusCode}`);
+                fetchStats.failed++;
             }
         } catch (err) {
-            console.log(`    Error: ${err.message}`);
+            console.log(`    ✗ Error: ${err.message}`);
+            fetchStats.failed++;
         }
     }
 
-    // Fetch from NewsAPI
-    console.log('\nFetching from NewsAPI...');
-    const newsApiArticles = await fetchNewsApi(config.newsApiKey, config.keywords);
-    console.log(`  Found ${newsApiArticles.length} articles`);
-    allArticles = allArticles.concat(newsApiArticles);
+    // Fetch from NewsAPI if enabled
+    if (config.newsApiEnabled) {
+        console.log('\nFetching from NewsAPI...');
+        const newsApiArticles = await fetchNewsApi(config.newsApiKey, config.keywords);
+        console.log(`  Found ${newsApiArticles.length} articles`);
+        allArticles = allArticles.concat(newsApiArticles);
+    } else {
+        console.log('\nNewsAPI disabled, skipping...');
+    }
 
     // Deduplicate
     console.log('\nProcessing articles...');
     const uniqueArticles = deduplicateArticles(allArticles);
-    console.log(`  Unique articles: ${uniqueArticles.length}`);
+    console.log(`  Unique articles (today): ${uniqueArticles.length}`);
+
+    // Filter out already generated articles (cross-day deduplication)
+    const { newArticles: filteredArticles, skipped: historySkipped } = filterAlreadyGenerated(uniqueArticles);
+    if (historySkipped.length > 0) {
+        console.log(`  History filter: ${historySkipped.length} skipped (already generated)`);
+        // Log details of skipped articles
+        historySkipped.slice(0, 3).forEach(item => {
+            const reason = item.reason === 'similar_title'
+                ? `similar to "${item.existingSlug}" (${item.similarity}%)`
+                : `URL exists as "${item.existingSlug}"`;
+            console.log(`    - Skipped: ${item.article.title.substring(0, 40)}... (${reason})`);
+        });
+        if (historySkipped.length > 3) {
+            console.log(`    ... and ${historySkipped.length - 3} more`);
+        }
+    }
+    console.log(`  New articles for processing: ${filteredArticles.length}`);
 
     // Score and categorize
-    const scoredArticles = uniqueArticles.map(article => ({
+    const scoredArticles = filteredArticles.map(article => ({
         ...article,
         score: scoreArticle(article, config.keywords),
         topic: categorizeArticle(article)
@@ -367,11 +524,19 @@ async function main() {
     // Save to JSON
     const output = {
         fetchedAt: new Date().toISOString(),
+        fetchStats,
         totalFetched: allArticles.length,
         totalUnique: uniqueArticles.length,
+        historyFiltered: historySkipped.length,
         totalSelected: topArticles.length,
         byTopic,
-        articles: topArticles
+        articles: topArticles,
+        skippedByHistory: historySkipped.map(item => ({
+            reason: item.reason,
+            existingSlug: item.existingSlug,
+            title: item.article.title,
+            link: item.article.link
+        }))
     };
 
     fs.writeFileSync(outputFile, JSON.stringify(output, null, 2));
