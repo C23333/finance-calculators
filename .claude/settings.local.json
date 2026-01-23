@@ -25,7 +25,9 @@
       "WebFetch(domain:www.investopedia.com)",
       "WebFetch(domain:medium.com)",
       "WebFetch(domain:www.smashingmagazine.com)",
-      "Bash(node scripts/html-builder.js:*)"
+      "Bash(node scripts/html-builder.js:*)",
+      "Bash(node -e:*)",
+      "Bash(dir /b D:Prjoutsidefinance-calculatorsblog*.html)"
     ]
   }
 }

@@ -1748,12 +1748,203 @@
 }
 
 /* ============================================
+   Article Sources Section
+   ============================================ */
+
+.article-sources {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--bg-soft);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.article-sources h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 16px 0;
+}
+
+.sources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.source-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.source-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.source-item a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.source-item a:hover {
+    text-decoration: underline;
+}
+
+.source-publisher {
+    color: var(--text-secondary);
+}
+
+.source-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   Recommended Reading Section
+   ============================================ */
+
+.recommended-reading {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--bg-soft);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.recommended-reading h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 20px 0;
+}
+
+.reading-section {
+    margin-bottom: 20px;
+}
+
+.reading-section:last-child {
+    margin-bottom: 0;
+}
+
+.reading-section h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reading-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reading-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.reading-section li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.reading-section a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.reading-section a:hover {
+    text-decoration: underline;
+}
+
+.reading-reason,
+.reading-source {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   Suggested Searches Section
+   ============================================ */
+
+.suggested-searches {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--bg-soft);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.suggested-searches h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 8px 0;
+}
+
+.suggested-searches > p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 20px 0;
+}
+
+.search-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.search-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.search-chip:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+    display: none;
+}
+
+.search-query {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.search-intent {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* ============================================
    Enhanced Related Articles
    ============================================ */
 
 .related-articles {
-    margin-top: 64px;
+    margin-top: 48px;
     padding-top: 48px;
+    border-top: 1px solid var(--border-light);
 }
 
 .related-grid {

@@ -534,11 +534,20 @@ function generateToolScript(tool, toolId) {
 
 /**
  * Generate related articles HTML
+ * Only includes articles that actually exist
  */
 function generateRelatedArticlesHtml(relatedArticles) {
     if (!relatedArticles || relatedArticles.length === 0) return '';
 
-    const articlesHtml = relatedArticles.map(article => `
+    // Filter to only include articles that exist
+    const existingArticles = relatedArticles.filter(article => {
+        const articlePath = path.join(BLOG_DIR, path.basename(article.path));
+        return fs.existsSync(articlePath);
+    });
+
+    if (existingArticles.length === 0) return '';
+
+    const articlesHtml = existingArticles.map(article => `
         <a href="${article.path}" class="related-card">
             <h4>${escapeHtml(article.title)}</h4>
             <p>${escapeHtml(article.description)}</p>
