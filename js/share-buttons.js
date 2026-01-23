@@ -240,7 +240,7 @@
     /**
      * Insert share buttons into a container
      */
-    function insertShareButtons(container, options = ) {
+    function insertShareButtons(container, options = {}) {
         if (typeof container === 'string') {
             container = document.querySelector(container);
         }

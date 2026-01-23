@@ -1806,25 +1806,25 @@
    ============================================ */
 
 .article-with-toc {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 48px;
-    max-width: 1100px;
+    display: block;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 24px;
-    align-items: start;
+    position: relative;
 }
 
 .article-main-content {
-    min-width: 0;
-    max-width: 100%;
+    max-width: var(--article-max-width);
+    margin: 0 auto;
 }
 
 .article-toc-sidebar {
-    position: sticky;
-    top: 80px;
-    height: fit-content;
-    max-height: calc(100vh - 100px);
+    position: fixed;
+    right: max(24px, calc((100vw - 1200px) / 2 - 40px));
+    top: 100px;
+    width: 260px;
+    max-height: calc(100vh - 140px);
+    z-index: 50;
 }
 
 /* ============================================
@@ -1843,6 +1843,10 @@
     }
 
     .article-toc-sidebar {
+        display: none;
+    }
+
+    .share-sidebar {
         display: none;
     }
 
