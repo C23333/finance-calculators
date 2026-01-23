@@ -166,6 +166,30 @@
     background: var(--bg);
 }
 
+/* Two-column layout for article with sidebar tools */
+.article-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.article-main {
+    min-width: 0;
+    max-width: var(--article-max-width);
+}
+
+.article-sidebar {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* Fallback single-column container */
 .article-container {
     max-width: var(--article-max-width);
     margin: 0 auto;
@@ -174,7 +198,7 @@
 
 /* Breadcrumb - Minimal */
 .breadcrumb {
-    padding: 20px 0;
+    padding: 16px 0;
     font-size: 0.8rem;
     color: var(--text-light);
 }
@@ -194,11 +218,16 @@
     opacity: 0.4;
 }
 
-/* Article Header - Clean */
+/* Article Header - NOT sticky, compact */
 .article-header {
-    padding: 24px 0 40px;
+    position: static !important;
+    top: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    z-index: auto !important;
+    padding: 16px 0 32px;
     border-bottom: 1px solid var(--border-light);
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .article-meta {
@@ -206,7 +235,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
@@ -223,18 +252,18 @@
 }
 
 .article-header h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
     line-height: 1.25;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     letter-spacing: -0.5px;
     font-weight: 700;
     color: var(--text);
 }
 
 .article-intro {
-    font-size: 1.125rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.65;
     font-weight: 400;
 }
 
@@ -731,6 +760,19 @@
    Responsive Design
    ============================================ */
 
+@media (max-width: 1024px) {
+    /* Stack layout on tablet/mobile */
+    .article-layout {
+        display: block;
+    }
+
+    .article-sidebar {
+        position: static;
+        max-height: none;
+        margin-top: 40px;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --article-font-size: 1rem;
@@ -762,20 +804,21 @@
         padding: 20px;
     }
 
-    .article-container {
+    .article-container,
+    .article-layout {
         padding: 0 16px;
     }
 
     .article-header {
-        padding: 16px 0 28px;
+        padding: 12px 0 24px;
     }
 
     .article-header h1 {
-        font-size: 1.65rem;
+        font-size: 1.5rem;
     }
 
     .article-intro {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .article-content h2 {

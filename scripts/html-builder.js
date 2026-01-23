@@ -114,22 +114,29 @@ function getDefaultTemplate() {
             <nav class="breadcrumb">
                 <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>{{BREADCRUMB_TITLE}}</span>
             </nav>
-            <article>
-                <header class="article-header">
-                    <div class="article-meta">
-                        <span class="article-category">{{CATEGORY}}</span>
-                        <span>{{PUBLISH_DATE_DISPLAY}}</span>
-                        <span>{{READING_TIME}}</span>
+        </div>
+        <div class="article-layout">
+            <div class="article-main">
+                <article>
+                    <header class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">{{CATEGORY}}</span>
+                            <span>{{PUBLISH_DATE_DISPLAY}}</span>
+                            <span>{{READING_TIME}}</span>
+                        </div>
+                        <h1>{{HEADLINE}}</h1>
+                        <p class="article-intro">{{INTRO}}</p>
+                    </header>
+                    <div class="article-content">
+                        {{CONTENT}}
                     </div>
-                    <h1>{{HEADLINE}}</h1>
-                    <p class="article-intro">{{INTRO}}</p>
-                </header>
-                <div class="article-content">
-                    {{CONTENT}}
-                </div>
-            </article>
-            {{ENGAGEMENT_SECTIONS}}
-            {{RELATED_ARTICLES}}
+                </article>
+                {{ENGAGEMENT_SECTIONS}}
+                {{RELATED_ARTICLES}}
+            </div>
+            <aside class="article-sidebar">
+                {{SIDEBAR_TOOLS}}
+            </aside>
         </div>
     </main>
     <footer>
@@ -571,9 +578,10 @@ function formatDateDisplay(dateStr) {
 
 /**
  * Build article content HTML from sections
+ * Note: Interactive tools are now placed in sidebar, not in content
  */
 function buildContentHtml(articleData) {
-    const { content, cta, interactiveTools } = articleData;
+    const { content, cta } = articleData;
     let html = '';
     let toolScripts = '';
 
@@ -589,14 +597,6 @@ function buildContentHtml(articleData) {
                         html += generateCalculatorCtaHtml(calc);
                     }
                 });
-            }
-
-            // Insert interactive tool after first major section
-            if (index === 0 && interactiveTools && interactiveTools.length > 0) {
-                const mainTool = interactiveTools[0];
-                const toolId = `tool-${articleData.metadata.slug}-main`;
-                html += generateInteractiveToolHtml({ ...mainTool, id: toolId });
-                toolScripts += generateToolScript(mainTool, toolId);
             }
         });
     }
@@ -620,22 +620,35 @@ function buildContentHtml(articleData) {
 }
 
 /**
- * Build engagement sections (sources, reading, searches, secondary tools)
+ * Build sidebar tools HTML
+ */
+function buildSidebarTools(articleData) {
+    const { interactiveTools, metadata } = articleData;
+    let html = '';
+    let toolScripts = '';
+
+    if (interactiveTools && interactiveTools.length > 0) {
+        interactiveTools.forEach((tool, index) => {
+            const toolId = `tool-${metadata.slug}-${index}`;
+            html += generateInteractiveToolHtml({ ...tool, id: toolId, placement: 'sidebar' });
+            toolScripts += generateToolScript(tool, toolId);
+        });
+    }
+
+    return { html, toolScripts };
+}
+
+/**
+ * Build engagement sections (sources, reading, searches)
+ * Note: Interactive tools now go in sidebar
  */
 function buildEngagementSections(articleData) {
-    const { sources, recommendedReading, suggestedSearches, interactiveTools } = articleData;
+    const { sources, recommendedReading, suggestedSearches } = articleData;
     let html = '';
 
     // Sources section
     if (sources) {
         html += generateSourcesHtml(sources);
-    }
-
-    // Secondary interactive tool (if more than one)
-    if (interactiveTools && interactiveTools.length > 1) {
-        const secondaryTool = interactiveTools[1];
-        const toolId = `tool-${articleData.metadata.slug}-secondary`;
-        html += generateInteractiveToolHtml({ ...secondaryTool, id: toolId });
     }
 
     // Recommended reading
@@ -659,6 +672,7 @@ function buildHtml(articleData, template) {
 
     const contentResult = buildContentHtml(articleData);
     const engagementHtml = buildEngagementSections(articleData);
+    const sidebarResult = buildSidebarTools(articleData);
 
     const replacements = {
         'TITLE': metadata.title || content.headline,
@@ -677,7 +691,8 @@ function buildHtml(articleData, template) {
         'FAQ_SCHEMA': seo && seo.faqSchema ? generateFaqSchema(seo.faqSchema) : '',
         'ENGAGEMENT_SECTIONS': engagementHtml,
         'RELATED_ARTICLES': generateRelatedArticlesHtml(relatedArticles),
-        'TOOL_SCRIPTS': contentResult.toolScripts
+        'SIDEBAR_TOOLS': sidebarResult.html,
+        'TOOL_SCRIPTS': contentResult.toolScripts + sidebarResult.toolScripts
     };
 
     let html = template;

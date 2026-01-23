@@ -13,7 +13,11 @@
       "Bash(ls \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\"\" 2>nul || echo \"Directory does not exist \")",
       "Bash(if not exist \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\" mkdir \"D:\\\\Prj\\\\outside\\\\finance-calculators\\\\blog\\\\zh\")",
       "Bash(ls:*)",
-      "mcp__chrome-devtools__take_snapshot"
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__evaluate_script"
     ]
   }
 }
