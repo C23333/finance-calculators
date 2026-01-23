@@ -99,6 +99,7 @@
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <div class="reading-progress" id="reading-progress"></div>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
@@ -140,7 +141,7 @@
                     <h2>Why Tax Efficiency Matters More Than Ever in 2026</h2>
 <p>Tax efficiency refers to structuring your investments to minimize the taxes you pay on returns. This doesn't mean avoiding taxes illegally—it means being strategic about <em>where</em> you hold different types of investments and <em>when</em> you realize gains or losses.</p><p>Several factors make 2026 a pivotal year for tax-conscious investors:</p><ul><li><strong>TCJA provisions set to expire:</strong> Without Congressional action, individual tax rates will revert to higher pre-2018 levels in 2026</li><li><strong>Capital gains rates under scrutiny:</strong> Potential changes to how investment income is taxed are part of ongoing policy debates</li><li><strong>State tax changes:</strong> Many states are adjusting their tax codes, affecting overall tax burdens</li></ul><p>Understanding your current and projected tax situation is the foundation of any tax-efficient strategy. Are you in a higher tax bracket now than you expect to be in retirement? Or vice versa? Your answer shapes which accounts deserve your attention.</p>
 
-        <div class="interactive-tool" id="tool-1768899223199-6kc6f8uh7" data-tool-type="savings-estimator">
+        <div class="interactive-tool" id="tool-1769136311448-finppistn" data-tool-type="savings-estimator">
             <div class="tool-header">
                 <div class="tool-badge">🧮 Interactive Tool</div>
                 <h3>Tax-Efficient Investing Savings Calculator</h3>
@@ -150,9 +151,9 @@
                 <form class="tool-form" onsubmit="return false;">
                     
                     <div class="tool-input-group">
-                        <label for="tool-1768899223199-6kc6f8uh7-currentPortfolio">Current Portfolio Value</label>
+                        <label for="tool-1769136311448-finppistn-currentPortfolio">Current Portfolio Value</label>
                         <input type="number"
-                               id="tool-1768899223199-6kc6f8uh7-currentPortfolio"
+                               id="tool-1769136311448-finppistn-currentPortfolio"
                                name="currentPortfolio"
                                value="250000"
                                min="10000"
@@ -163,9 +164,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223199-6kc6f8uh7-annualContribution">Annual Contribution</label>
+                        <label for="tool-1769136311448-finppistn-annualContribution">Annual Contribution</label>
                         <input type="number"
-                               id="tool-1768899223199-6kc6f8uh7-annualContribution"
+                               id="tool-1769136311448-finppistn-annualContribution"
                                name="annualContribution"
                                value="20000"
                                min="0"
@@ -176,9 +177,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223199-6kc6f8uh7-expectedReturn">Expected Annual Return (%)</label>
+                        <label for="tool-1769136311448-finppistn-expectedReturn">Expected Annual Return (%)</label>
                         <input type="number"
-                               id="tool-1768899223199-6kc6f8uh7-expectedReturn"
+                               id="tool-1769136311448-finppistn-expectedReturn"
                                name="expectedReturn"
                                value="7"
                                min="1"
@@ -189,56 +190,56 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223199-6kc6f8uh7-taxBracket">Marginal Tax Bracket</label>
-                        <select id="tool-1768899223199-6kc6f8uh7-taxBracket" name="taxBracket"><option value="12%" >12%</option><option value="22%" >22%</option><option value="24%" selected>24%</option><option value="32%" >32%</option><option value="35%" >35%</option><option value="37%" >37%</option></select>
+                        <label for="tool-1769136311448-finppistn-taxBracket">Marginal Tax Bracket</label>
+                        <select id="tool-1769136311448-finppistn-taxBracket" name="taxBracket"><option value="12%" >12%</option><option value="22%" >22%</option><option value="24%" selected>24%</option><option value="32%" >32%</option><option value="35%" >35%</option><option value="37%" >37%</option></select>
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223199-6kc6f8uh7-investmentHorizon">
+                        <label for="tool-1769136311448-finppistn-investmentHorizon">
                             Investment Time Horizon (Years):
-                            <span id="tool-1768899223199-6kc6f8uh7-investmentHorizon-value">20</span>
+                            <span id="tool-1769136311448-finppistn-investmentHorizon-value">20</span>
                         </label>
                         <input type="range"
-                               id="tool-1768899223199-6kc6f8uh7-investmentHorizon"
+                               id="tool-1769136311448-finppistn-investmentHorizon"
                                name="investmentHorizon"
                                min="5"
                                max="40"
                                step="1"
                                value="20"
-                               oninput="document.getElementById('tool-1768899223199-6kc6f8uh7-investmentHorizon-value').textContent = this.value">
+                               oninput="document.getElementById('tool-1769136311448-finppistn-investmentHorizon-value').textContent = this.value">
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223199-6kc6f8uh7-taxEfficiencyBoost">Tax Efficiency Improvement</label>
-                        <select id="tool-1768899223199-6kc6f8uh7-taxEfficiencyBoost" name="taxEfficiencyBoost"><option value="Conservative (0.25%)" >Conservative (0.25%)</option><option value="Moderate (0.50%)" selected>Moderate (0.50%)</option><option value="Aggressive (0.75%)" >Aggressive (0.75%)</option></select>
+                        <label for="tool-1769136311448-finppistn-taxEfficiencyBoost">Tax Efficiency Improvement</label>
+                        <select id="tool-1769136311448-finppistn-taxEfficiencyBoost" name="taxEfficiencyBoost"><option value="Conservative (0.25%)" >Conservative (0.25%)</option><option value="Moderate (0.50%)" selected>Moderate (0.50%)</option><option value="Aggressive (0.75%)" >Aggressive (0.75%)</option></select>
                     </div>
-                    <button type="button" class="tool-calculate-btn" onclick="calculateTool('tool-1768899223199-6kc6f8uh7')">
+                    <button type="button" class="tool-calculate-btn" onclick="calculateTool('tool-1769136311448-finppistn')">
                         Calculate My Results →
                     </button>
                 </form>
-                <div class="tool-results" id="tool-1768899223199-6kc6f8uh7-results" style="display: none;">
+                <div class="tool-results" id="tool-1769136311448-finppistn-results" style="display: none;">
                     <h4>📊 Your Personalized Results</h4>
                     <div class="results-grid">
                         
-        <div class="tool-output-item " id="tool-1768899223199-6kc6f8uh7-output-standardGrowth">
+        <div class="tool-output-item " id="tool-1769136311448-finppistn-output-standardGrowth">
             <span class="output-label">Portfolio Without Tax Optimization</span>
             <span class="output-value" data-format="currency">--</span>
         </div>
     
 
-        <div class="tool-output-item " id="tool-1768899223199-6kc6f8uh7-output-taxEfficientGrowth">
+        <div class="tool-output-item " id="tool-1769136311448-finppistn-output-taxEfficientGrowth">
             <span class="output-label">Portfolio With Tax Optimization</span>
             <span class="output-value" data-format="currency">--</span>
         </div>
     
 
-        <div class="tool-output-item highlighted" id="tool-1768899223199-6kc6f8uh7-output-additionalWealth">
+        <div class="tool-output-item highlighted" id="tool-1769136311448-finppistn-output-additionalWealth">
             <span class="output-label">Extra Wealth From Tax Efficiency</span>
             <span class="output-value" data-format="currency">--</span>
         </div>
     
 
-        <div class="tool-output-item " id="tool-1768899223199-6kc6f8uh7-output-percentageGain">
+        <div class="tool-output-item " id="tool-1769136311448-finppistn-output-percentageGain">
             <span class="output-label">Percentage Improvement</span>
             <span class="output-value" data-format="percentage">--</span>
         </div>
@@ -353,6 +354,30 @@
             this.setAttribute('aria-expanded', this.classList.contains('active'));
             document.querySelector('.nav-links')?.classList.toggle('open');
         });
+
+        // Reading progress bar
+        (function() {
+            const progressBar = document.getElementById('reading-progress');
+            const article = document.querySelector('.article-content');
+            if (!progressBar || !article) return;
+
+            function updateProgress() {
+                const articleRect = article.getBoundingClientRect();
+                const articleTop = articleRect.top + window.scrollY;
+                const articleHeight = article.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrolled = window.scrollY;
+
+                const start = articleTop - windowHeight;
+                const end = articleTop + articleHeight - windowHeight;
+                const progress = Math.min(100, Math.max(0, ((scrolled - start) / (end - start)) * 100));
+
+                progressBar.style.width = progress + '%';
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        })();
     </script>
 </body>
 </html>

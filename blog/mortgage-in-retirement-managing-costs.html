@@ -99,6 +99,7 @@
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
+    <div class="reading-progress" id="reading-progress"></div>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="container">
@@ -140,7 +141,7 @@
                     <h2>The Reality: Retirement Costs Don&#039;t Always Drop</h2>
 <p>For years, financial planners told us to expect our expenses to fall by 20-30% in retirement. The logic seemed sound: no more commuting costs, work clothes, or lunches out. Your mortgage would be paid off, and life would simply cost less.</p><p>But today's retirees are discovering a different reality. According to the Employee Benefit Research Institute, nearly half of households headed by someone 65 or older still carry debt, with mortgages representing the largest share. Healthcare costs continue to rise, property taxes increase, and inflation has pushed everyday expenses higher than many anticipated.</p><p>When your fixed income from Social Security and pension (if you have one) doesn't cover your basic needs, your 401(k) and IRA become the backup plan. And if your withdrawals need to be larger than your current paycheck, your retirement timeline and lifestyle may require some serious recalculation.</p>
 
-        <div class="interactive-tool" id="tool-1768899223227-os67ci57u" data-tool-type="impact-calculator">
+        <div class="interactive-tool" id="tool-1769136311495-h73gltt8x" data-tool-type="impact-calculator">
             <div class="tool-header">
                 <div class="tool-badge">🧮 Interactive Tool</div>
                 <h3>Retirement Mortgage Affordability Analyzer</h3>
@@ -150,9 +151,9 @@
                 <form class="tool-form" onsubmit="return false;">
                     
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-monthlyMortgage">Monthly Mortgage Payment</label>
+                        <label for="tool-1769136311495-h73gltt8x-monthlyMortgage">Monthly Mortgage Payment</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-monthlyMortgage"
+                               id="tool-1769136311495-h73gltt8x-monthlyMortgage"
                                name="monthlyMortgage"
                                value="2000"
                                min="0"
@@ -163,9 +164,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-otherMonthlyExpenses">Other Monthly Expenses</label>
+                        <label for="tool-1769136311495-h73gltt8x-otherMonthlyExpenses">Other Monthly Expenses</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-otherMonthlyExpenses"
+                               id="tool-1769136311495-h73gltt8x-otherMonthlyExpenses"
                                name="otherMonthlyExpenses"
                                value="3500"
                                min="0"
@@ -176,9 +177,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-socialSecurityMonthly">Expected Social Security (Monthly)</label>
+                        <label for="tool-1769136311495-h73gltt8x-socialSecurityMonthly">Expected Social Security (Monthly)</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-socialSecurityMonthly"
+                               id="tool-1769136311495-h73gltt8x-socialSecurityMonthly"
                                name="socialSecurityMonthly"
                                value="2000"
                                min="0"
@@ -189,9 +190,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-pensionMonthly">Pension or Other Guaranteed Income (Monthly)</label>
+                        <label for="tool-1769136311495-h73gltt8x-pensionMonthly">Pension or Other Guaranteed Income (Monthly)</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-pensionMonthly"
+                               id="tool-1769136311495-h73gltt8x-pensionMonthly"
                                name="pensionMonthly"
                                value=""
                                min="0"
@@ -202,9 +203,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-totalRetirementSavings">Total Retirement Savings (401k + IRA)</label>
+                        <label for="tool-1769136311495-h73gltt8x-totalRetirementSavings">Total Retirement Savings (401k + IRA)</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-totalRetirementSavings"
+                               id="tool-1769136311495-h73gltt8x-totalRetirementSavings"
                                name="totalRetirementSavings"
                                value="500000"
                                min="0"
@@ -215,9 +216,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-currentTakeHomePay">Current Monthly Take-Home Pay</label>
+                        <label for="tool-1769136311495-h73gltt8x-currentTakeHomePay">Current Monthly Take-Home Pay</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-currentTakeHomePay"
+                               id="tool-1769136311495-h73gltt8x-currentTakeHomePay"
                                name="currentTakeHomePay"
                                value="5000"
                                min="0"
@@ -228,9 +229,9 @@
                     </div>
 
                     <div class="tool-input-group">
-                        <label for="tool-1768899223227-os67ci57u-yearsRemaining">Years of Mortgage Remaining</label>
+                        <label for="tool-1769136311495-h73gltt8x-yearsRemaining">Years of Mortgage Remaining</label>
                         <input type="number"
-                               id="tool-1768899223227-os67ci57u-yearsRemaining"
+                               id="tool-1769136311495-h73gltt8x-yearsRemaining"
                                name="yearsRemaining"
                                value="15"
                                min="1"
@@ -239,45 +240,45 @@
                                placeholder="15">
                         <small class="input-help">How many years until your mortgage is paid off</small>
                     </div>
-                    <button type="button" class="tool-calculate-btn" onclick="calculateTool('tool-1768899223227-os67ci57u')">
+                    <button type="button" class="tool-calculate-btn" onclick="calculateTool('tool-1769136311495-h73gltt8x')">
                         Calculate My Results →
                     </button>
                 </form>
-                <div class="tool-results" id="tool-1768899223227-os67ci57u-results" style="display: none;">
+                <div class="tool-results" id="tool-1769136311495-h73gltt8x-results" style="display: none;">
                     <h4>📊 Your Personalized Results</h4>
                     <div class="results-grid">
                         
-        <div class="tool-output-item " id="tool-1768899223227-os67ci57u-output-totalMonthlyNeeds">
+        <div class="tool-output-item " id="tool-1769136311495-h73gltt8x-output-totalMonthlyNeeds">
             <span class="output-label">Total Monthly Expenses in Retirement</span>
             <span class="output-value" data-format="currency">--</span>
         </div>
     
 
-        <div class="tool-output-item highlighted" id="tool-1768899223227-os67ci57u-output-monthlyGap">
+        <div class="tool-output-item highlighted" id="tool-1769136311495-h73gltt8x-output-monthlyGap">
             <span class="output-label">Monthly Gap (Must Come from Savings)</span>
             <span class="output-value" data-format="currency">--</span>
         </div>
     
 
-        <div class="tool-output-item " id="tool-1768899223227-os67ci57u-output-annualWithdrawalNeeded">
+        <div class="tool-output-item " id="tool-1769136311495-h73gltt8x-output-annualWithdrawalNeeded">
             <span class="output-label">Annual Withdrawal Required</span>
             <span class="output-value" data-format="currency">--</span>
         </div>
     
 
-        <div class="tool-output-item highlighted" id="tool-1768899223227-os67ci57u-output-withdrawalRate">
+        <div class="tool-output-item highlighted" id="tool-1769136311495-h73gltt8x-output-withdrawalRate">
             <span class="output-label">Withdrawal Rate from Savings</span>
             <span class="output-value" data-format="percentage">--</span>
         </div>
     
 
-        <div class="tool-output-item highlighted" id="tool-1768899223227-os67ci57u-output-yearsUntilDepleted">
+        <div class="tool-output-item highlighted" id="tool-1769136311495-h73gltt8x-output-yearsUntilDepleted">
             <span class="output-label">Years Until Savings Depleted (Simplified)</span>
             <span class="output-value" data-format="text">--</span>
         </div>
     
 
-        <div class="tool-output-item " id="tool-1768899223227-os67ci57u-output-comparisonToCurrentPay">
+        <div class="tool-output-item " id="tool-1769136311495-h73gltt8x-output-comparisonToCurrentPay">
             <span class="output-label">Required Withdrawal vs. Current Take-Home</span>
             <span class="output-value" data-format="percentage">--</span>
         </div>
@@ -393,6 +394,30 @@
             this.setAttribute('aria-expanded', this.classList.contains('active'));
             document.querySelector('.nav-links')?.classList.toggle('open');
         });
+
+        // Reading progress bar
+        (function() {
+            const progressBar = document.getElementById('reading-progress');
+            const article = document.querySelector('.article-content');
+            if (!progressBar || !article) return;
+
+            function updateProgress() {
+                const articleRect = article.getBoundingClientRect();
+                const articleTop = articleRect.top + window.scrollY;
+                const articleHeight = article.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrolled = window.scrollY;
+
+                const start = articleTop - windowHeight;
+                const end = articleTop + articleHeight - windowHeight;
+                const progress = Math.min(100, Math.max(0, ((scrolled - start) / (end - start)) * 100));
+
+                progressBar.style.width = progress + '%';
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        })();
     </script>
 </body>
 </html>

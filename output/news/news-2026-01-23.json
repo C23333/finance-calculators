@@ -1,0 +1,482 @@
+{
+  "fetchedAt": "2026-01-23T02:36:20.469Z",
+  "totalFetched": 166,
+  "totalUnique": 166,
+  "totalSelected": 20,
+  "byTopic": {
+    "debt": [
+      {
+        "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+        "description": "One missed payment could ding a credit score by about 80 points, on average, according to a new report by LendingTree.",
+        "link": "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html",
+        "pubDate": "2026-01-14T20:20:07.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 40,
+        "topic": "debt"
+      },
+      {
+        "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+        "description": "More than 800,000 federal student loan holders remain stuck in a backlog of applications for an affordable repayment plan or debt forgiveness.",
+        "link": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+        "pubDate": "2026-01-15T17:26:14.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 35,
+        "topic": "debt"
+      },
+      {
+        "title": "With Trump taking aim at credit card rates, now is the best time to improve your credit score",
+        "description": "Regardless of what happens to the proposed credit card interest rate cap, a better credit score gets you access to better rates.",
+        "link": "https://www.cnbc.com/select/why-now-is-the-best-time-to-work-on-your-credit-score/",
+        "pubDate": "2026-01-21T20:12:47.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 30,
+        "topic": "debt"
+      },
+      {
+        "title": "Trump floats 1-year, 10% credit card interest rate cap — what that could mean for your money",
+        "description": "President Donald Trump called for a 10% cap on credit card interest rates. Here's what experts say that could mean for cardholders, if implemented.",
+        "link": "https://www.cnbc.com/2026/01/12/trump-credit-card-interest-rate-cap.html",
+        "pubDate": "2026-01-12T22:12:54.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "debt"
+      }
+    ],
+    "mortgage": [
+      {
+        "title": "loanDepot mortgage review 2026",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/review/loandepot-mortgage-review-210844437.html",
+        "pubDate": "2024-06-20T21:08:44.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 30,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Mortgage lenders with the best rates this week, Jan. 20-25, 2026",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-lenders-with-the-best-rates-this-week-jan-20-25-2026-170834608.html",
+        "pubDate": "2025-11-03T17:08:34.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 15,
+        "topic": "mortgage"
+      },
+      {
+        "title": "This map shows the average mortgage rate by state",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-rates-by-state-205703625.html",
+        "pubDate": "2025-07-07T20:57:03.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 15,
+        "topic": "mortgage"
+      }
+    ],
+    "economy": [
+      {
+        "title": "Fed's main gauge shows inflation at 2.8% in November, edging further away from target",
+        "description": "Inflation drifted slightly further from the Federal Reserve's target in November though in line with expectations.",
+        "link": "https://www.cnbc.com/2026/01/22/pce-inflation-november-2026.html",
+        "pubDate": "2026-01-22T18:59:35.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 30,
+        "topic": "economy"
+      },
+      {
+        "title": "Trump says inflation was 'defeated.' Some economists disagree",
+        "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+        "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+        "pubDate": "2026-01-21T20:56:02.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 20,
+        "topic": "economy"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
+        "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
+        "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
+        "pubDate": "2026-01-14T18:35:12.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "taxes"
+      },
+      {
+        "title": "Republicans want to end the ‘marriage penalty’ for this childcare tax credit",
+        "description": "The Republican framework for \"Reconciliation 2.0\" includes an expansion for the child and dependent care tax credit. Here's what families need to know.",
+        "link": "https://www.cnbc.com/2026/01/16/child-and-dependent-care-tax-credit.html",
+        "pubDate": "2026-01-16T21:23:53.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 20,
+        "topic": "taxes"
+      },
+      {
+        "title": "Bigger tax refunds are coming for 2026 — what it could mean for the economy",
+        "description": "Bigger tax refunds could be coming in 2026 due to changes enacted in President Donald Trump's \"big beautiful bill.\" Here's how it could impact the economy.",
+        "link": "https://www.cnbc.com/2026/01/13/bigger-tax-refunds-2026.html",
+        "pubDate": "2026-01-13T17:55:20.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 20,
+        "topic": "taxes"
+      }
+    ],
+    "investing": [
+      {
+        "title": "How tax-efficient investing could boost your portfolio returns in 2026 and beyond",
+        "description": "Now is the time to consider how changes in tax law, along with tax-efficient investing strategies, can boost your portfolio.",
+        "link": "https://www.cnbc.com/2026/01/12/tax-efficient-investing.html",
+        "pubDate": "2026-01-12T22:36:08.000Z",
+        "source": "CNBC Personal Finance",
+        "categories": [],
+        "score": 25,
+        "topic": "investing"
+      },
+      {
+        "title": "Retail traders keep their hot streak going, buying Tuesday’s dip while Wall Street drove ‘Sell America’ trade",
+        "description": "Individual traders boosted the stock market by continuing to buy the latest selloff — the same strategy that helped power relentless gains in 2025, data shows.",
+        "link": "https://www.cnbc.com/2026/01/22/retail-traders-dip-buy-trump-greenland.html",
+        "pubDate": "2026-01-22T20:13:34.000Z",
+        "source": "CNBC Top News",
+        "categories": [],
+        "score": 20,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 22: Markets Surge Again Today After Greenland Tariffs Are Dropped",
+        "description": "Tariff relief on Greenland-linked trade sparked a broad rebound in clean-energy names and tech-heavy benchmarks, today, Jan. 22, 2026.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-markets-surge-again-today-after-greenland-tariffs-are-dropped/?source=iedfolrf0000001",
+        "pubDate": "2026-01-22T22:52:53.000Z",
+        "source": "The Motley Fool",
+        "categories": [
+          "^GSPC",
+          "^IXIC",
+          "^DJI",
+          "FCEL",
+          "ENPH",
+          "META",
+          "TSLA",
+          "79f5da81-b971-4ae3-abbe-a598519b3be7",
+          "coveragestock-market-today",
+          "Markets"
+        ],
+        "score": 20,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 22: Huntington Bancshares Falls After Missing Revenue and EPS Estimates",
+        "description": "On Jan. 22, 2026, investors weigh Huntington’s earnings miss against rising net interest income and its high-profile Southern U.S. expansion plans.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-huntington-bancshares-falls-after-missing-revenue-and-eps-estimates/?source=iedfolrf0000001",
+        "pubDate": "2026-01-22T22:11:16.000Z",
+        "source": "The Motley Fool",
+        "categories": [
+          "HBAN",
+          "eace3a48-10df-4d43-b803-061d4d09c584",
+          "coveragestock-market-today",
+          "Financials"
+        ],
+        "score": 20,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 22: Plug Power Jumps on CEO Reddit Q&A Addressing Funding and Walmart Agreement Update",
+        "description": "Retail traders parse fresh funding talk, a Walmart pact, and a cautious Wall Street reset for this hydrogen player, today, Jan. 22, 2026.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-plug-power-jumps-on-ceo-reddit-q-and-a-addressing-funding-and-walmart-agreement-update/?source=iedfolrf0000001",
+        "pubDate": "2026-01-22T22:07:51.000Z",
+        "source": "The Motley Fool",
+        "categories": [
+          "PLUG",
+          "BE",
+          "BLDP",
+          "e114ceae-2015-46ff-aec0-4e911f1a0c33",
+          "coveragestock-market-today",
+          "Energy, Materials, and Utilities"
+        ],
+        "score": 20,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 22: Netflix Drops as Guidance Tempers Strong Q4 Results",
+        "description": "Today, Jan. 22, 2026, investors are weighing blockbuster subscriber and revenue growth against cautious guidance and a massive Warner bid.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-netflix-drops-as-guidance-tempers-strong-q4-results/?source=iedfolrf0000001",
+        "pubDate": "2026-01-22T22:05:49.000Z",
+        "source": "The Motley Fool",
+        "categories": [
+          "NFLX",
+          "DIS",
+          "CMCSA",
+          "61e0ef00-42ee-4db5-aba7-c57859c28af3",
+          "coveragestock-market-today",
+          "Technology and Telecom"
+        ],
+        "score": 20,
+        "topic": "investing"
+      }
+    ],
+    "general": [
+      {
+        "title": "How to get student loans out of default as Education Department suspends wage garnishment",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/student-loans/article/how-to-get-student-loans-out-of-default-150010683.html",
+        "pubDate": "2026-01-14T15:00:10.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 15,
+        "topic": "general"
+      },
+      {
+        "title": "Is a home equity loan a good idea? Here are the pros and cons.",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/is-a-home-equity-loan-a-good-idea-191220924.html",
+        "pubDate": "2026-01-21T19:12:20.000Z",
+        "source": "Yahoo Finance",
+        "categories": [],
+        "score": 15,
+        "topic": "general"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "description": "One missed payment could ding a credit score by about 80 points, on average, according to a new report by LendingTree.",
+      "link": "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html",
+      "pubDate": "2026-01-14T20:20:07.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 40,
+      "topic": "debt"
+    },
+    {
+      "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+      "description": "More than 800,000 federal student loan holders remain stuck in a backlog of applications for an affordable repayment plan or debt forgiveness.",
+      "link": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+      "pubDate": "2026-01-15T17:26:14.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 35,
+      "topic": "debt"
+    },
+    {
+      "title": "loanDepot mortgage review 2026",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/review/loandepot-mortgage-review-210844437.html",
+      "pubDate": "2024-06-20T21:08:44.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 30,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Fed's main gauge shows inflation at 2.8% in November, edging further away from target",
+      "description": "Inflation drifted slightly further from the Federal Reserve's target in November though in line with expectations.",
+      "link": "https://www.cnbc.com/2026/01/22/pce-inflation-november-2026.html",
+      "pubDate": "2026-01-22T18:59:35.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 30,
+      "topic": "economy"
+    },
+    {
+      "title": "With Trump taking aim at credit card rates, now is the best time to improve your credit score",
+      "description": "Regardless of what happens to the proposed credit card interest rate cap, a better credit score gets you access to better rates.",
+      "link": "https://www.cnbc.com/select/why-now-is-the-best-time-to-work-on-your-credit-score/",
+      "pubDate": "2026-01-21T20:12:47.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 30,
+      "topic": "debt"
+    },
+    {
+      "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
+      "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
+      "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
+      "pubDate": "2026-01-14T18:35:12.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "taxes"
+    },
+    {
+      "title": "Trump floats 1-year, 10% credit card interest rate cap — what that could mean for your money",
+      "description": "President Donald Trump called for a 10% cap on credit card interest rates. Here's what experts say that could mean for cardholders, if implemented.",
+      "link": "https://www.cnbc.com/2026/01/12/trump-credit-card-interest-rate-cap.html",
+      "pubDate": "2026-01-12T22:12:54.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "debt"
+    },
+    {
+      "title": "How tax-efficient investing could boost your portfolio returns in 2026 and beyond",
+      "description": "Now is the time to consider how changes in tax law, along with tax-efficient investing strategies, can boost your portfolio.",
+      "link": "https://www.cnbc.com/2026/01/12/tax-efficient-investing.html",
+      "pubDate": "2026-01-12T22:36:08.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 25,
+      "topic": "investing"
+    },
+    {
+      "title": "Retail traders keep their hot streak going, buying Tuesday’s dip while Wall Street drove ‘Sell America’ trade",
+      "description": "Individual traders boosted the stock market by continuing to buy the latest selloff — the same strategy that helped power relentless gains in 2025, data shows.",
+      "link": "https://www.cnbc.com/2026/01/22/retail-traders-dip-buy-trump-greenland.html",
+      "pubDate": "2026-01-22T20:13:34.000Z",
+      "source": "CNBC Top News",
+      "categories": [],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Trump says inflation was 'defeated.' Some economists disagree",
+      "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+      "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+      "pubDate": "2026-01-21T20:56:02.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 20,
+      "topic": "economy"
+    },
+    {
+      "title": "Republicans want to end the ‘marriage penalty’ for this childcare tax credit",
+      "description": "The Republican framework for \"Reconciliation 2.0\" includes an expansion for the child and dependent care tax credit. Here's what families need to know.",
+      "link": "https://www.cnbc.com/2026/01/16/child-and-dependent-care-tax-credit.html",
+      "pubDate": "2026-01-16T21:23:53.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 20,
+      "topic": "taxes"
+    },
+    {
+      "title": "Bigger tax refunds are coming for 2026 — what it could mean for the economy",
+      "description": "Bigger tax refunds could be coming in 2026 due to changes enacted in President Donald Trump's \"big beautiful bill.\" Here's how it could impact the economy.",
+      "link": "https://www.cnbc.com/2026/01/13/bigger-tax-refunds-2026.html",
+      "pubDate": "2026-01-13T17:55:20.000Z",
+      "source": "CNBC Personal Finance",
+      "categories": [],
+      "score": 20,
+      "topic": "taxes"
+    },
+    {
+      "title": "Stock Market Today, Jan. 22: Markets Surge Again Today After Greenland Tariffs Are Dropped",
+      "description": "Tariff relief on Greenland-linked trade sparked a broad rebound in clean-energy names and tech-heavy benchmarks, today, Jan. 22, 2026.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-markets-surge-again-today-after-greenland-tariffs-are-dropped/?source=iedfolrf0000001",
+      "pubDate": "2026-01-22T22:52:53.000Z",
+      "source": "The Motley Fool",
+      "categories": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "FCEL",
+        "ENPH",
+        "META",
+        "TSLA",
+        "79f5da81-b971-4ae3-abbe-a598519b3be7",
+        "coveragestock-market-today",
+        "Markets"
+      ],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 22: Huntington Bancshares Falls After Missing Revenue and EPS Estimates",
+      "description": "On Jan. 22, 2026, investors weigh Huntington’s earnings miss against rising net interest income and its high-profile Southern U.S. expansion plans.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-huntington-bancshares-falls-after-missing-revenue-and-eps-estimates/?source=iedfolrf0000001",
+      "pubDate": "2026-01-22T22:11:16.000Z",
+      "source": "The Motley Fool",
+      "categories": [
+        "HBAN",
+        "eace3a48-10df-4d43-b803-061d4d09c584",
+        "coveragestock-market-today",
+        "Financials"
+      ],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 22: Plug Power Jumps on CEO Reddit Q&A Addressing Funding and Walmart Agreement Update",
+      "description": "Retail traders parse fresh funding talk, a Walmart pact, and a cautious Wall Street reset for this hydrogen player, today, Jan. 22, 2026.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-plug-power-jumps-on-ceo-reddit-q-and-a-addressing-funding-and-walmart-agreement-update/?source=iedfolrf0000001",
+      "pubDate": "2026-01-22T22:07:51.000Z",
+      "source": "The Motley Fool",
+      "categories": [
+        "PLUG",
+        "BE",
+        "BLDP",
+        "e114ceae-2015-46ff-aec0-4e911f1a0c33",
+        "coveragestock-market-today",
+        "Energy, Materials, and Utilities"
+      ],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 22: Netflix Drops as Guidance Tempers Strong Q4 Results",
+      "description": "Today, Jan. 22, 2026, investors are weighing blockbuster subscriber and revenue growth against cautious guidance and a massive Warner bid.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/22/stock-market-today-jan-22-netflix-drops-as-guidance-tempers-strong-q4-results/?source=iedfolrf0000001",
+      "pubDate": "2026-01-22T22:05:49.000Z",
+      "source": "The Motley Fool",
+      "categories": [
+        "NFLX",
+        "DIS",
+        "CMCSA",
+        "61e0ef00-42ee-4db5-aba7-c57859c28af3",
+        "coveragestock-market-today",
+        "Technology and Telecom"
+      ],
+      "score": 20,
+      "topic": "investing"
+    },
+    {
+      "title": "Mortgage lenders with the best rates this week, Jan. 20-25, 2026",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-lenders-with-the-best-rates-this-week-jan-20-25-2026-170834608.html",
+      "pubDate": "2025-11-03T17:08:34.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 15,
+      "topic": "mortgage"
+    },
+    {
+      "title": "How to get student loans out of default as Education Department suspends wage garnishment",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/student-loans/article/how-to-get-student-loans-out-of-default-150010683.html",
+      "pubDate": "2026-01-14T15:00:10.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 15,
+      "topic": "general"
+    },
+    {
+      "title": "This map shows the average mortgage rate by state",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-rates-by-state-205703625.html",
+      "pubDate": "2025-07-07T20:57:03.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 15,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Is a home equity loan a good idea? Here are the pros and cons.",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/is-a-home-equity-loan-a-good-idea-191220924.html",
+      "pubDate": "2026-01-21T19:12:20.000Z",
+      "source": "Yahoo Finance",
+      "categories": [],
+      "score": 15,
+      "topic": "general"
+    }
+  ]
+}

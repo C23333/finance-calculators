@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-01-23T02:36:32.329Z",
+  "newsFile": "news-2026-01-23.json",
+  "articleCount": 5,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-23",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-01-23",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-01-23.md",
+  "articles": [
+    {
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "topic": "debt",
+      "slug": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-23\\step1-draft-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.md"
+    },
+    {
+      "title": "loanDepot mortgage review 2026",
+      "topic": "mortgage",
+      "slug": "loandepot-mortgage-review-2026",
+      "calculator": "Mortgage Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-23\\step1-draft-loandepot-mortgage-review-2026.md"
+    },
+    {
+      "title": "Fed's main gauge shows inflation at 2.8% in November, edging further away from target",
+      "topic": "economy",
+      "slug": "feds-main-gauge-shows-inflation-at-28-in-november-edging-fur",
+      "calculator": "Inflation Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-23\\step1-draft-feds-main-gauge-shows-inflation-at-28-in-november-edging-fur.md"
+    },
+    {
+      "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
+      "topic": "taxes",
+      "slug": "student-loan-borrowers-in-default-may-miss-out-on-trumps-lar",
+      "calculator": "Take-Home Pay Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-23\\step1-draft-student-loan-borrowers-in-default-may-miss-out-on-trumps-lar.md"
+    },
+    {
+      "title": "How tax-efficient investing could boost your portfolio returns in 2026 and beyond",
+      "topic": "investing",
+      "slug": "how-tax-efficient-investing-could-boost-your-portfolio-retur",
+      "calculator": "Compound Interest Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-23\\step1-draft-how-tax-efficient-investing-could-boost-your-portfolio-retur.md"
+    }
+  ]
+}

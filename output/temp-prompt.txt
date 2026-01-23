@@ -6,11 +6,11 @@ You are finalizing a financial article for publication on FinCalc (financecalc.c
 
 ## 新闻信息
 
-**标题**: Building a tax efficient portfolio
-**来源**: CNBC Personal Finance
-**链接**: https://www.cnbc.com/video/2026/01/09/building-a-tax-efficient-portfolio.html
-**发布时间**: 2026-01-09T14:56:40.000Z
-**摘要**: CNBC's senior personal finance correspondent Sharon Epperson joins Power Lunch to discuss how tax changes fit into investment planning for 2026.
+**标题**: With Trump taking aim at credit card rates, now is the best time to improve your credit score
+**来源**: CNBC Top News
+**链接**: https://www.cnbc.com/select/why-now-is-the-best-time-to-work-on-your-credit-score/
+**发布时间**: 2026-01-21T20:12:47.000Z
+**摘要**: Regardless of what happens to the proposed credit card interest rate cap, a better credit score gets you access to better rates.
 
 ## 分类信息
 
@@ -20,11 +20,11 @@ You are finalizing a financial article for publication on FinCalc (financecalc.c
 
 
 ## Article Metadata
-- **Topic**: Building a tax efficient portfolio
+- **Topic**: With Trump taking aim at credit card rates, now is the best time to improve your credit score
 - **Category**: Finance
 - **Target Calculator**: mortgage
 - **Related Calculators**: 
-- **Publish Date**: 2026-01-20
+- **Publish Date**: 2026-01-23
 
 ## Final Polish Tasks
 
