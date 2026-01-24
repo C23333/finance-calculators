@@ -99,12 +99,21 @@ function checkArticle(article, filePath) {
 
   const sources = Array.isArray(article.sources) ? article.sources : [];
   if (sources.length < 1) errors.push('sources missing');
+  if (sources.length > 0 && sources.length < 2) warnings.push('sources fewer than 2');
   sources.forEach((source, idx) => {
     if (!hasText(source.title)) errors.push(`sources[${idx}].title missing`);
     if (!hasText(source.publisher)) errors.push(`sources[${idx}].publisher missing`);
     if (!hasText(source.url)) errors.push(`sources[${idx}].url missing`);
     if (!hasText(source.accessDate)) warnings.push(`sources[${idx}].accessDate missing`);
   });
+
+  if (hasText(metadata.disclosure) && !metadata.disclosure.toLowerCase().includes('ai')) {
+    warnings.push('metadata.disclosure missing AI mention');
+  }
+
+  if (hasText(metadata.methodology) && metadata.methodology.length < 60) {
+    warnings.push('metadata.methodology looks too short');
+  }
 
   const contentBlob = JSON.stringify(article).toLowerCase();
   const bannedPhrases = ['as an ai', 'i am an ai', 'language model', 'lorem ipsum', 'todo'];
