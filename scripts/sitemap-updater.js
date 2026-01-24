@@ -13,6 +13,9 @@ const PROJECT_ROOT = path.join(__dirname, '..');
 const SITEMAP_PATH = path.join(PROJECT_ROOT, 'sitemap.xml');
 const BLOG_INDEX_PATH = path.join(PROJECT_ROOT, 'blog', 'index.html');
 const BLOG_DIR = path.join(PROJECT_ROOT, 'blog');
+const CALC_DIR = path.join(PROJECT_ROOT, 'calculators');
+const GUIDES_DIR = path.join(PROJECT_ROOT, 'guides');
+const TRUST_PAGES = ['editorial.html', 'methodology.html', 'privacy.html', 'terms.html'];
 
 /**
  * Parse existing sitemap
@@ -119,6 +122,33 @@ function getBlogFiles() {
 }
 
 /**
+ * Get HTML files from a directory
+ */
+function getHtmlFiles(dir, options = {}) {
+    const files = [];
+    const { skipIndex = false } = options;
+
+    if (!fs.existsSync(dir)) {
+        return files;
+    }
+
+    const items = fs.readdirSync(dir);
+    items.forEach(item => {
+        if (!item.endsWith('.html')) return;
+        if (skipIndex && item === 'index.html') return;
+        const fullPath = path.join(dir, item);
+        const stat = fs.statSync(fullPath);
+        files.push({
+            filename: item,
+            path: fullPath,
+            mtime: stat.mtime
+        });
+    });
+
+    return files;
+}
+
+/**
  * Extract title from HTML file
  */
 function extractTitle(htmlContent) {
@@ -191,36 +221,70 @@ function updateSitemap(blogFiles) {
         urlMap.set(url.loc, url);
     });
 
-    // Add/update blog article URLs
+    // Add/update URLs
     const today = new Date().toISOString().split('T')[0];
     let addedCount = 0;
     let updatedCount = 0;
 
+    const upsertUrl = (url, lastmod, changefreq, priority) => {
+        if (urlMap.has(url)) {
+            const existing = urlMap.get(url);
+            existing.lastmod = lastmod;
+            if (changefreq) existing.changefreq = changefreq;
+            if (priority) existing.priority = priority;
+            updatedCount += 1;
+            return;
+        }
+
+        urlMap.set(url, {
+            loc: url,
+            lastmod,
+            changefreq: changefreq || 'monthly',
+            priority: priority || '0.5'
+        });
+        addedCount += 1;
+    };
+
+    // Blog articles
     blogFiles.forEach(file => {
         const url = `https://financecalc.cc/blog/${file.filename}`;
-        const existingEntry = urlMap.get(url);
-
-        if (existingEntry) {
-            // Update lastmod if file was modified
-            existingEntry.lastmod = today;
-            updatedCount++;
-        } else {
-            // Add new entry
-            urlMap.set(url, {
-                loc: url,
-                lastmod: today,
-                changefreq: 'monthly',
-                priority: '0.8'
-            });
-            addedCount++;
-        }
+        const lastmod = file.mtime.toISOString().split('T')[0];
+        upsertUrl(url, lastmod, 'monthly', '0.8');
     });
 
-    // Update blog index lastmod
+    // Blog index
     const blogIndexUrl = 'https://financecalc.cc/blog/';
-    if (urlMap.has(blogIndexUrl)) {
-        urlMap.get(blogIndexUrl).lastmod = today;
+    upsertUrl(blogIndexUrl, today, 'weekly', '0.8');
+
+    // Calculators
+    const calcFiles = getHtmlFiles(CALC_DIR, { skipIndex: true });
+    calcFiles.forEach(file => {
+        const url = `https://financecalc.cc/calculators/${file.filename}`;
+        const lastmod = file.mtime.toISOString().split('T')[0];
+        upsertUrl(url, lastmod, 'monthly', '0.8');
+    });
+
+    // Guides
+    const guidesIndexPath = path.join(GUIDES_DIR, 'index.html');
+    if (fs.existsSync(guidesIndexPath)) {
+        const stat = fs.statSync(guidesIndexPath);
+        upsertUrl('https://financecalc.cc/guides/', stat.mtime.toISOString().split('T')[0], 'monthly', '0.8');
     }
+    const guideFiles = getHtmlFiles(GUIDES_DIR, { skipIndex: true });
+    guideFiles.forEach(file => {
+        const url = `https://financecalc.cc/guides/${file.filename}`;
+        const lastmod = file.mtime.toISOString().split('T')[0];
+        upsertUrl(url, lastmod, 'monthly', '0.7');
+    });
+
+    // Trust pages
+    TRUST_PAGES.forEach(page => {
+        const fullPath = path.join(PROJECT_ROOT, page);
+        if (!fs.existsSync(fullPath)) return;
+        const stat = fs.statSync(fullPath);
+        const url = `https://financecalc.cc/${page}`;
+        upsertUrl(url, stat.mtime.toISOString().split('T')[0], 'monthly', '0.6');
+    });
 
     // Generate new sitemap
     const urls = Array.from(urlMap.values());
