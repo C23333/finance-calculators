@@ -1,5 +1,5 @@
 # https://financecalc.cc robots.txt
-# Optimized for SEO - January 2025
+# Optimized for SEO - January 2026
 
 User-agent: *
 Allow: /
