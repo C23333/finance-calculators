@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * HTML Builder Module (Enhanced)
  * Converts AI-generated JSON articles into HTML pages
@@ -438,7 +438,7 @@ function generateInteractiveToolHtml(tool) {
     // CTA
     const ctaHtml = tool.callToAction ? `
         <a href="${escapeHtml(tool.callToAction.link)}" class="tool-cta-btn">
-            ${escapeHtml(tool.callToAction.text)} →
+            ${escapeHtml(tool.callToAction.text)} ->
         </a>
     ` : '';
 
@@ -453,7 +453,7 @@ function generateInteractiveToolHtml(tool) {
                 <form class="tool-form" onsubmit="return false;">
                     ${inputsHtml}
                     <button type="button" class="tool-calculate-btn" onclick="calculateTool('${toolId}')">
-                        Calculate My Results →
+                        Calculate My Results ->
                     </button>
                 </form>
                 <div class="tool-results" id="${toolId}-results" style="display: none;">
@@ -610,7 +610,7 @@ function generateCalculatorCtaHtml(calculator) {
         <div class="calculator-cta">
             <h3>Calculate Your ${escapeHtml(calculator.name.replace(' Calculator', ''))}</h3>
             <p>${escapeHtml(calculator.description)}</p>
-            <a href="${calculator.path}" class="cta-btn">${escapeHtml(calculator.name)} →</a>
+            <a href="${calculator.path}" class="cta-btn">${escapeHtml(calculator.name)} -></a>
         </div>
     `;
 }
@@ -1083,3 +1083,4 @@ module.exports = {
 if (require.main === module) {
     main().catch(err => { console.error('Error:', err); process.exit(1); });
 }
+
