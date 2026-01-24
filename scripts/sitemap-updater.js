@@ -314,7 +314,7 @@ function updateBlogIndex(blogFiles) {
     const cardsHtml = articles.map(article => generateBlogCardHtml(article)).join('\n');
 
     // Find and replace the blog posts section
-    const postsRegex = /(<div class="blog-posts">)([\s\S]*?)(<\/div>\s*<\/div>\s*<\/section>)/;
+    const postsRegex = /(<div class="blog-posts[^"]*">)([\s\S]*?)(<\/div>\s*<\/div>\s*<\/section>)/;
     const match = postsRegex.exec(indexContent);
 
     if (match) {
