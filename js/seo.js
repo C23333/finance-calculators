@@ -187,6 +187,29 @@
         document.head.appendChild(script);
     }
 
+    function getWebSiteSchema() {
+        const currentLang = getCurrentLanguage();
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "FinCalc",
+            "url": BASE_URL + '/'
+        };
+
+        if (currentLang !== DEFAULT_LANG) {
+            schema.inLanguage = currentLang;
+        }
+
+        return schema;
+    }
+
+    function injectWebSiteSchema() {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(getWebSiteSchema());
+        document.head.appendChild(script);
+    }
+
     // Generate Breadcrumb Schema based on current URL (with language support)
     function generateBreadcrumbSchema() {
         const path = window.location.pathname;
@@ -476,6 +499,7 @@
     // Initialize all SEO enhancements
     function init() {
         injectOrganizationSchema();
+        injectWebSiteSchema();
         generateBreadcrumbSchema();
         injectHreflangTags();
         updateCanonicalUrl();
