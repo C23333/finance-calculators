@@ -164,8 +164,10 @@ async function fetchUrlWithRetry(url, options = {}, retryCount = 0) {
 /**
  * Parse RSS/XML feed
  */
-function parseRssFeed(xml, sourceName) {
+function parseRssFeed(xml, feed) {
     const articles = [];
+    const sourceName = typeof feed === 'string' ? feed : feed.name;
+    const reliability = typeof feed === 'string' ? 'medium' : (feed.reliability || 'medium');
 
     // Simple XML parsing for RSS items
     const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
@@ -203,6 +205,7 @@ function parseRssFeed(xml, sourceName) {
                 link,
                 pubDate,
                 source: sourceName,
+                sourceReliability: reliability,
                 categories
             });
         }
@@ -271,6 +274,7 @@ async function fetchNewsApi(apiKey, keywords) {
                         link: article.url,
                         pubDate: article.publishedAt,
                         source: article.source?.name || 'NewsAPI',
+                        sourceReliability: 'medium',
                         categories: ['news']
                     });
                 });
@@ -311,6 +315,10 @@ function scoreArticle(article, keywords) {
             score -= 20;
         }
     });
+
+    // Boost trustworthy sources
+    const reliabilityBoost = { high: 6, medium: 3, low: -5 };
+    score += reliabilityBoost[article.sourceReliability] || 0;
 
     return score;
 }
@@ -438,7 +446,7 @@ async function main() {
             console.log(`  - ${feed.name}...`);
             const response = await fetchUrlWithRetry(feed.url);
             if (response.statusCode === 200) {
-                const articles = parseRssFeed(response.data, feed.name);
+                const articles = parseRssFeed(response.data, feed);
                 console.log(`    ✓ Found ${articles.length} articles`);
                 allArticles = allArticles.concat(articles);
                 fetchStats.success++;
