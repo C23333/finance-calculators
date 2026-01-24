@@ -299,6 +299,11 @@
     text-decoration: none;
 }
 
+.article-disclosure .disclosure-sep {
+    margin: 0 8px;
+    color: var(--text-muted);
+}
+
 /* ============================================
    Article Content - Typography Focused
    ============================================ */

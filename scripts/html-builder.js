@@ -281,7 +281,11 @@ function generateDisclosureHtml(metadata) {
             ${disclosure ? `<p>${escapeHtml(disclosure)}</p>` : ''}
             ${methodology ? `<p class="disclosure-methodology">${escapeHtml(methodology)}</p>` : ''}
             ${reviewedBy ? `<p class="disclosure-review">Reviewed by: ${escapeHtml(reviewedBy)}</p>` : ''}
-            <p class="disclosure-link"><a href="/editorial.html">Read our Editorial Policy</a></p>
+            <p class="disclosure-link">
+                <a href="/editorial.html">Read our Editorial Policy</a>
+                <span class="disclosure-sep">|</span>
+                <a href="/methodology.html">Methodology</a>
+            </p>
         </div>
     `;
 }
