@@ -1,9 +1,18 @@
 document.getElementById('socialSecurityForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    calculateSocialSecurity(true);
+    calculateSocialSecurity(true).catch((error) => {
+        console.warn('[SocialSecurity] Calculation failed.', error);
+    });
 });
 
-function calculateSocialSecurity(shouldScroll = false) {
+async function calculateSocialSecurity(shouldScroll = false) {
+    const params = await TaxParams.load();
+    const ssParams = params.socialSecurity || {};
+    const wageBase = ssParams.taxableEarningsCap || 168600;
+    const bendPoints = ssParams.bendPoints || {};
+    const bendPoint1 = bendPoints.first || 1174;
+    const bendPoint2 = bendPoints.second || 7078;
+
     const currentAge = parseInt(document.getElementById('currentAge').value);
     const birthYear = parseInt(document.getElementById('birthYear').value);
     const retirementAge = parseInt(document.getElementById('retirementAge').value);
@@ -36,7 +45,7 @@ function calculateSocialSecurity(shouldScroll = false) {
         let futureEarningsSum = 0;
         let earnings = currentEarnings;
         for (let i = 0; i < yearsToRetirement; i++) {
-            futureEarningsSum += Math.min(earnings, 168600); // Cap at max taxable
+            futureEarningsSum += Math.min(earnings, wageBase); // Cap at max taxable
             earnings *= (1 + expectedRaise);
         }
         const futureAverage = futureEarningsSum / yearsToRetirement;
@@ -47,12 +56,9 @@ function calculateSocialSecurity(shouldScroll = false) {
     }
 
     // Calculate AIME (Average Indexed Monthly Earnings)
-    const aime = Math.min(projectedEarnings, 168600) / 12;
+    const aime = Math.min(projectedEarnings, wageBase) / 12;
 
-    // Calculate PIA (Primary Insurance Amount) using 2024 bend points
-    const bendPoint1 = 1174;
-    const bendPoint2 = 7078;
-
+    // Calculate PIA (Primary Insurance Amount) using configured bend points
     let pia = 0;
     if (aime <= bendPoint1) {
         pia = aime * 0.90;
@@ -161,11 +167,15 @@ function formatAge(age) {
 document.addEventListener('languageChange', function() {
     // Recalculate to update currency formatting
     if (document.getElementById('results').style.display !== 'none') {
-        calculateSocialSecurity(false);
+        calculateSocialSecurity(false).catch((error) => {
+            console.warn('[SocialSecurity] Calculation failed.', error);
+        });
     }
 });
 
 // Calculate on page load with default values
 document.addEventListener('DOMContentLoaded', function() {
-    calculateSocialSecurity(false);
+    calculateSocialSecurity(false).catch((error) => {
+        console.warn('[SocialSecurity] Calculation failed.', error);
+    });
 });

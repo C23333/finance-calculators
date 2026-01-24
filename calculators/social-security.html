@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,59 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Social Security Calculator",
+        "description": "Estimate Social Security benefits based on earnings history and claiming age assumptions",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "When should I claim Social Security?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best claiming age depends on health, other income sources, and expected longevity. Claiming earlier reduces monthly benefits, while delaying can increase them."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I work while receiving benefits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, but claiming before full retirement age can reduce benefits if earnings exceed annual limits. Rules and thresholds change over time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are Social Security benefits taxed?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Benefits may be taxable depending on your total income and filing status. Tax rules can change, so verify current guidance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is this calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator uses simplified assumptions. For official estimates, use your Social Security statement or SSA tools."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -45,6 +98,7 @@
         <h1 class="calc-title">Social Security Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -56,7 +110,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our retirement planning guide for assumptions and strategy.</p>
+            <a href="/guides/retirement.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -113,15 +171,15 @@
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="retirement.html" class="calc-quick-link">🎯 <span>Retirement</span></a>
-                <a href="401k.html" class="calc-quick-link">🏦 <span>401(k)</span></a>
-                <a href="salary.html" class="calc-quick-link">💰 <span>Salary</span></a>
-                <a href="take-home-pay.html" class="calc-quick-link">💵 <span>Take-Home Pay</span></a>
+                <a href="retirement.html" class="calc-quick-link">馃幆 <span>Retirement</span></a>
+                <a href="401k.html" class="calc-quick-link">馃彟 <span>401(k)</span></a>
+                <a href="salary.html" class="calc-quick-link">馃挵 <span>Salary</span></a>
+                <a href="take-home-pay.html" class="calc-quick-link">馃挼 <span>Take-Home Pay</span></a>
             </div>
         </div>
 
         <!-- Output Panel -->
-        <div class="calc-output-panel">
+        <div class="calc-output-panel" id="results">
             <div class="calc-result-main">
                 <div class="big-number" id="monthlyBenefit">$0</div>
                 <div class="label">Monthly Benefit at Retirement</div>
@@ -218,15 +276,90 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="social-security-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Social Security claiming guide</h2>
+                    <p>This calculator provides a simplified estimate based on the inputs you provide. Use it to compare claiming ages and to understand how earnings history affects benefits.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Claiming age</h4>
+                        <p>Claiming earlier reduces monthly benefits, while delaying can increase them up to age 70.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Earnings history</h4>
+                        <p>Benefits are based on your highest 35 years of earnings, indexed for wage growth.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Break-even point</h4>
+                        <p>Compare lifetime benefits at different ages to see when delaying could pay off.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How benefits are estimated</h3>
+                    <ul>
+                        <li>Average Indexed Monthly Earnings (AIME) uses your top 35 years of earnings.</li>
+                        <li>Your Primary Insurance Amount (PIA) is calculated with tiered bend points that update annually.</li>
+                        <li>Claiming before full retirement age reduces benefits; delaying increases them.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Claiming age trade-offs</h3>
+                    <ul>
+                        <li>Early claiming provides income sooner but lowers the monthly amount.</li>
+                        <li>Delaying can increase monthly benefits, which may help longevity planning.</li>
+                        <li>Working while claiming before full retirement age can reduce benefits temporarily.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Ways to improve your estimate</h3>
+                    <ul>
+                        <li>Review your SSA earnings record for missing or incorrect years.</li>
+                        <li>Compare multiple scenarios with different retirement ages and wage growth.</li>
+                        <li>Coordinate with a spouse if you are eligible for spousal or survivor benefits.</li>
+                        <li>Confirm current-year bend points and wage base assumptions with SSA sources.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">For an official estimate, use your Social Security statement or SSA calculators.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Social Security calculator FAQ</h3>
+                    <details>
+                        <summary>When should I claim Social Security?</summary>
+                        <p>The best claiming age depends on health, other income sources, and expected longevity. Claiming earlier reduces monthly benefits, while delaying can increase them.</p>
+                    </details>
+                    <details>
+                        <summary>Can I work while receiving benefits?</summary>
+                        <p>Yes, but claiming before full retirement age can reduce benefits if earnings exceed annual limits. Rules and thresholds change over time.</p>
+                    </details>
+                    <details>
+                        <summary>Are Social Security benefits taxed?</summary>
+                        <p>Benefits may be taxable depending on your total income and filing status. Tax rules can change, so verify current guidance.</p>
+                    </details>
+                    <details>
+                        <summary>How accurate is this calculator?</summary>
+                        <p>This calculator uses simplified assumptions. For official estimates, use your Social Security statement or SSA tools.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
             <h2>About This Calculator</h2>
-            <button class="info-sidebar-close" aria-label="Close">×</button>
+            <button class="info-sidebar-close" aria-label="Close">脳</button>
         </div>
         <div class="info-sidebar-content">
+            <p class="info-note">Assumptions: SSA parameters for <span data-tax-param="year">--</span>. Updated <span data-tax-param="updated">--</span>.</p>
             <!-- How to Use Section -->
             <section class="info-section">
                 <h3>
@@ -250,17 +383,17 @@
                 </ul>
             </section>
 
-            <!-- 2024 Facts Section -->
+            <!-- Key Parameters Section -->
             <section class="info-section">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-                    2024 Social Security Facts
+                    Key Parameters Updated Annually
                 </h3>
                 <ul>
-                    <li>Maximum benefit at FRA: $3,822/month</li>
-                    <li>Maximum taxable earnings: $168,600</li>
-                    <li>COLA adjustment: 3.2%</li>
-                    <li>Social Security tax rate: 6.2%</li>
+                    <li>Maximum benefit depends on earnings history and claiming age.</li>
+                    <li>The wage base (maximum taxable earnings) is updated each year.</li>
+                    <li>COLA adjustments are tied to inflation and vary over time.</li>
+                    <li>Earnings test limits apply before full retirement age and change annually.</li>
                 </ul>
             </section>
 
@@ -268,13 +401,14 @@
             <section class="info-section">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    The PIA Formula (2024)
+                    The PIA Formula (Overview)
                 </h3>
                 <p>Your Primary Insurance Amount (PIA) is calculated from your AIME:</p>
                 <ul>
-                    <li>90% of the first $1,174 of AIME</li>
-                    <li>32% of AIME between $1,174 and $7,078</li>
-                    <li>15% of AIME above $7,078</li>
+                    <li>90% of the first bend point</li>
+                    <li>32% of AIME between the first and second bend points</li>
+                    <li>15% of AIME above the second bend point</li>
+                    <li>Bend points are adjusted annually.</li>
                 </ul>
             </section>
 
@@ -338,8 +472,8 @@
                     <a href="https://www.google.com/search?q=social+security+retirement+benefits+eligibility" target="_blank" rel="noopener">Eligibility Requirements</a>
                     <a href="https://www.google.com/search?q=social+security+spousal+benefits" target="_blank" rel="noopener">Spousal Benefits</a>
                     <a href="https://www.google.com/search?q=social+security+survivor+benefits" target="_blank" rel="noopener">Survivor Benefits</a>
-                    <a href="https://www.google.com/search?q=social+security+COLA+2024" target="_blank" rel="noopener">COLA Adjustments</a>
-                    <a href="https://www.google.com/search?q=social+security+earnings+limit" target="_blank" rel="noopener">Earnings Limits</a>
+                    <a href="https://www.google.com/search?q=social+security+COLA" target="_blank" rel="noopener">COLA Adjustments</a>
+                    <a href="https://www.google.com/search?q=social+security+earnings+test+limits" target="_blank" rel="noopener">Earnings Test Limits</a>
                 </div>
             </section>
         </div>
@@ -348,13 +482,14 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">For educational purposes only. Consult the SSA for official benefit estimates.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -364,6 +499,7 @@
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Social Security Calculator -->
+    <script src="../js/tax-params.js"></script>
     <script src="../js/social-security.js"></script>
     <!-- Monetization -->
     <script src="../js/monetization.js"></script>
@@ -371,3 +507,6 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+

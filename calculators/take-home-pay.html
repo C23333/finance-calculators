@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="auto">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,47 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is my net pay different from the calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Paychecks can differ due to withholding updates, benefit changes, bonuses, or local taxes. Use a recent pay stub to adjust inputs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do pre-tax deductions reduce taxes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Pre-tax deductions lower your taxable income, which can reduce federal and state taxes depending on the deduction type."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do bonuses affect take-home pay?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bonuses are often withheld at different rates than regular pay, so the net amount may be higher or lower than a typical paycheck."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I change my W-4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you consistently owe taxes or receive large refunds, review your W-4 withholdings. Consider professional guidance for complex situations."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -45,6 +86,7 @@
         <h1 class="calc-title">Take-Home Pay Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -56,7 +98,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our income and taxes guide for assumptions and strategy.</p>
+            <a href="/guides/income-taxes.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -192,15 +238,15 @@
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="salary.html" class="calc-quick-link">💵 <span>Salary</span></a>
-                <a href="self-employment-tax.html" class="calc-quick-link">📋 <span>Self-Employment</span></a>
-                <a href="401k.html" class="calc-quick-link">🏦 <span>401(k)</span></a>
-                <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span>Roth vs Traditional</span></a>
+                <a href="salary.html" class="calc-quick-link">馃挼 <span>Salary</span></a>
+                <a href="self-employment-tax.html" class="calc-quick-link">馃搵 <span>Self-Employment</span></a>
+                <a href="401k.html" class="calc-quick-link">馃彟 <span>401(k)</span></a>
+                <a href="roth-vs-traditional.html" class="calc-quick-link">鈿栵笍 <span>Roth vs Traditional</span></a>
             </div>
         </div>
 
         <!-- Output Panel -->
-        <div class="calc-output-panel">
+        <div class="calc-output-panel" id="results">
             <div class="calc-result-main">
                 <div class="big-number" id="netPay">$0</div>
                 <div class="label">Net Pay (Take Home)</div>
@@ -270,15 +316,89 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="take-home-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Take-home pay guide</h2>
+                    <p>Estimate your net paycheck after taxes and pre-tax deductions. Results are simplified and should be validated against your latest pay stub.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Pre-tax deductions</h4>
+                        <p>401(k), HSA, and insurance premiums can lower taxable income and reduce withholding.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Filing status and state</h4>
+                        <p>Federal and state withholding depend on your filing status, state rules, and local taxes.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Pay frequency</h4>
+                        <p>Weekly, biweekly, and monthly schedules change the per-paycheck amount even if annual pay is the same.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>What this calculator includes</h3>
+                    <ul>
+                        <li>Federal, state, and payroll tax estimates.</li>
+                        <li>Common pre-tax deductions you enter.</li>
+                        <li>Breakdowns by pay period and annual totals.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>What it does not include</h3>
+                    <ul>
+                        <li>Local taxes, bonuses, commissions, or overtime.</li>
+                        <li>Special tax credits or itemized deductions.</li>
+                        <li>Employer-specific benefits not listed in the form.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Improve accuracy</h3>
+                    <ul>
+                        <li>Match inputs to your latest pay stub and benefits elections.</li>
+                        <li>Update your filing status and withholdings when life changes.</li>
+                        <li>Review the results annually since tax rules change over time.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">Take-home pay is an estimate. Tax rules and withholding settings vary by employer and year.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Take-home pay calculator FAQ</h3>
+                    <details>
+                        <summary>Why is my net pay different from the calculator?</summary>
+                        <p>Paychecks can differ due to withholding updates, benefit changes, bonuses, or local taxes. Use a recent pay stub to adjust inputs.</p>
+                    </details>
+                    <details>
+                        <summary>Do pre-tax deductions reduce taxes?</summary>
+                        <p>Yes. Pre-tax deductions lower your taxable income, which can reduce federal and state taxes depending on the deduction type.</p>
+                    </details>
+                    <details>
+                        <summary>How do bonuses affect take-home pay?</summary>
+                        <p>Bonuses are often withheld at different rates than regular pay, so the net amount may be higher or lower than a typical paycheck.</p>
+                    </details>
+                    <details>
+                        <summary>Should I change my W-4?</summary>
+                        <p>If you consistently owe taxes or receive large refunds, review your W-4 withholdings. Consider professional guidance for complex situations.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
     <aside class="info-sidebar" id="infoSidebar" aria-hidden="true">
         <div class="info-sidebar-header">
             <h2>About This Calculator</h2>
-            <button class="info-sidebar-close" aria-label="Close">×</button>
+            <button class="info-sidebar-close" aria-label="Close">脳</button>
         </div>
         <div class="info-sidebar-content">
+            <p class="info-note">Assumptions: Tax parameters for <span data-tax-param="year">--</span>. Updated <span data-tax-param="updated">--</span>.</p>
             <!-- How to Use Section -->
             <section class="info-section">
                 <h3>
@@ -295,10 +415,9 @@
                     Tax Withholdings
                 </h3>
                 <ul>
-                    <li><strong>Federal Tax:</strong> Based on W-4 and tax brackets</li>
-                    <li><strong>Social Security:</strong> 6.2% up to $168,600</li>
-                    <li><strong>Medicare:</strong> 1.45% (+ 0.9% over $200k)</li>
-                    <li><strong>State Tax:</strong> Varies by state (0-13%)</li>
+                    <li><strong>Federal Tax:</strong> Based on W-4 settings and taxable income</li>
+                    <li><strong>Payroll Taxes:</strong> Social Security and Medicare withholding</li>
+                    <li><strong>State Tax:</strong> Varies by state and local rules</li>
                 </ul>
             </section>
 
@@ -308,18 +427,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
                     States With No Income Tax
                 </h3>
-                <ul>
-                    <li>Alaska</li>
-                    <li>Florida</li>
-                    <li>Nevada</li>
-                    <li>New Hampshire*</li>
-                    <li>South Dakota</li>
-                    <li>Tennessee*</li>
-                    <li>Texas</li>
-                    <li>Washington</li>
-                    <li>Wyoming</li>
-                </ul>
-                <small>*No tax on wages; may tax investment income</small>
+                <p>State income tax rules vary widely. Some states do not tax wage income, while others have progressive rates or local taxes. Check current rules for your state.</p>
             </section>
 
             <!-- Tips Section -->
@@ -345,7 +453,7 @@
                 </h3>
                 <div class="faq-item">
                     <h4>What is FICA tax?</h4>
-                    <p>FICA (Federal Insurance Contributions Act) taxes fund Social Security and Medicare. Employees pay 6.2% for Social Security (up to $168,600) and 1.45% for Medicare.</p>
+                    <p>FICA (Federal Insurance Contributions Act) taxes fund Social Security and Medicare. Rates and wage bases change over time.</p>
                 </div>
                 <div class="faq-item">
                     <h4>How do pre-tax deductions help?</h4>
@@ -353,7 +461,7 @@
                 </div>
                 <div class="faq-item">
                     <h4>What's the Additional Medicare Tax?</h4>
-                    <p>An extra 0.9% Medicare tax applies to wages over $200,000 (single) or $250,000 (married filing jointly).</p>
+                    <p>Higher-income earners may owe an additional Medicare tax. Thresholds and rules can change, so verify current guidance.</p>
                 </div>
             </section>
 
@@ -393,8 +501,8 @@
                 </h3>
                 <p>Learn more about payroll taxes:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=IRS+W-4+form+2024" target="_blank" rel="noopener">W-4 Form Guide</a>
-                    <a href="https://www.google.com/search?q=federal+income+tax+brackets+2024" target="_blank" rel="noopener">Federal Tax Brackets</a>
+                    <a href="https://www.google.com/search?q=IRS+W-4+form+guide" target="_blank" rel="noopener">W-4 Form Guide</a>
+                    <a href="https://www.google.com/search?q=federal+income+tax+brackets" target="_blank" rel="noopener">Federal Tax Brackets</a>
                     <a href="https://www.google.com/search?q=state+income+tax+rates+by+state" target="_blank" rel="noopener">State Tax Rates</a>
                     <a href="https://www.google.com/search?q=FICA+taxes+explained" target="_blank" rel="noopener">FICA Taxes Explained</a>
                 </div>
@@ -405,13 +513,14 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">For educational purposes only. Actual paycheck may vary based on additional factors.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -421,6 +530,7 @@
     <!-- Info Sidebar -->
     <script src="../js/info-sidebar.js"></script>
     <!-- Take Home Pay Calculator -->
+    <script src="../js/tax-params.js"></script>
     <script src="../js/take-home-pay.js"></script>
     <!-- Monetization -->
     <script src="../js/monetization.js"></script>
@@ -428,3 +538,6 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
