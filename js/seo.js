@@ -292,6 +292,14 @@
                     "item": "https://financecalc.cc" + path
                 });
             }
+        } else if (['/editorial.html', '/methodology.html', '/privacy.html', '/terms.html'].includes(path)) {
+            const title = document.title.split(' | ')[0] || 'Page';
+            breadcrumbs.itemListElement.push({
+                "@type": "ListItem",
+                "position": 2,
+                "name": title,
+                "item": "https://financecalc.cc" + path
+            });
         }
 
         if (breadcrumbs.itemListElement.length > 1) {
