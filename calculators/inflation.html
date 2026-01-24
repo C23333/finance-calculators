@@ -34,6 +34,59 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Inflation Calculator",
+        "description": "Estimate future costs and purchasing power based on an assumed inflation rate",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What inflation rate should I use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use a conservative long-term estimate and test multiple scenarios. Inflation varies by year and by category of spending."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does inflation affect retirement planning?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Inflation reduces purchasing power over time, so retirement plans should account for higher future costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the CPI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Consumer Price Index (CPI) measures the average change in prices paid by consumers for a basket of goods and services."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does inflation affect all expenses equally?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Different categories like housing, healthcare, and energy can move at different rates over time."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -45,6 +98,7 @@
         <h1 class="calc-title">Inflation Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -56,7 +110,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our investing and compounding guide for assumptions and strategy.</p>
+            <a href="/guides/investing.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -92,10 +150,10 @@
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="retirement.html" class="calc-quick-link">🏖️ <span>Retirement</span></a>
+                <a href="retirement.html" class="calc-quick-link">🏖�?<span>Retirement</span></a>
                 <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
                 <a href="investment-return.html" class="calc-quick-link">💹 <span>Investment Return</span></a>
-                <a href="social-security.html" class="calc-quick-link">🏛️ <span>Social Security</span></a>
+                <a href="social-security.html" class="calc-quick-link">🏛�?<span>Social Security</span></a>
             </div>
         </div>
 
@@ -174,6 +232,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="inflation-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Inflation planning guide</h2>
+                    <p>Use this calculator to estimate how inflation changes the future cost of goods and services. The results depend on the inflation rate you assume.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Purchasing power</h4>
+                        <p>Inflation reduces how much a fixed amount of money can buy over time.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Rate assumptions</h4>
+                        <p>Small changes in the inflation rate can meaningfully affect long-term costs.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Category differences</h4>
+                        <p>Some expenses rise faster than others, so use realistic assumptions for your situation.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to choose a rate</h3>
+                    <ul>
+                        <li>Use a conservative long-term estimate for planning.</li>
+                        <li>Model multiple scenarios to understand a range of outcomes.</li>
+                        <li>Update assumptions if the economic environment shifts.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Inflation and savings</h3>
+                    <ul>
+                        <li>Savings that do not keep pace with inflation lose real value.</li>
+                        <li>Long-term plans should consider after-inflation returns.</li>
+                        <li>Use inflation-aware tools for retirement and education planning.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Where inflation matters most</h3>
+                    <ul>
+                        <li>Housing, healthcare, and education often drive higher cost growth.</li>
+                        <li>Short-term expenses may fluctuate more than long-term averages.</li>
+                        <li>Local inflation can differ from national averages.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool uses a constant inflation rate. Actual inflation can vary year to year and by category.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Inflation calculator FAQ</h3>
+                    <details>
+                        <summary>What inflation rate should I use?</summary>
+                        <p>Use a conservative long-term estimate and test multiple scenarios. Inflation varies by year and by category of spending.</p>
+                    </details>
+                    <details>
+                        <summary>How does inflation affect retirement planning?</summary>
+                        <p>Inflation reduces purchasing power over time, so retirement plans should account for higher future costs.</p>
+                    </details>
+                    <details>
+                        <summary>What is the CPI?</summary>
+                        <p>The Consumer Price Index (CPI) measures the average change in prices paid by consumers for a basket of goods and services.</p>
+                    </details>
+                    <details>
+                        <summary>Does inflation affect all expenses equally?</summary>
+                        <p>No. Different categories like housing, healthcare, and energy can move at different rates over time.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -198,7 +329,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     Understanding Inflation
                 </h3>
-                <p>Inflation is the rate at which the general level of prices for goods and services rises, causing purchasing power to fall. The Federal Reserve targets 2% annual inflation as healthy for the economy.</p>
+                <p>Inflation is the rate at which the general level of prices for goods and services rises, causing purchasing power to fall. Central banks often aim for low and stable inflation, but actual results vary.</p>
             </section>
 
             <!-- Historical Inflation Section -->
@@ -208,9 +339,9 @@
                     Historical US Inflation
                 </h3>
                 <ul>
-                    <li><strong>Long-term average:</strong> ~3% per year</li>
-                    <li><strong>2020-2023:</strong> Higher than average due to pandemic effects</li>
-                    <li><strong>Fed target:</strong> 2% annual inflation</li>
+                    <li><strong>Long-term trends:</strong> Inflation varies by decade</li>
+                    <li><strong>Short-term swings:</strong> Energy and supply shocks can cause spikes</li>
+                    <li><strong>Policy impact:</strong> Interest rates and fiscal policy influence inflation</li>
                 </ul>
             </section>
 
@@ -236,11 +367,11 @@
                 </h3>
                 <div class="faq-item">
                     <h4>What inflation rate should I use?</h4>
-                    <p>For long-term planning, 3% is a reasonable estimate based on historical averages. For conservative planning, use 4-5%.</p>
+                    <p>Use a conservative long-term estimate and test multiple scenarios. Inflation varies by year and by category of spending.</p>
                 </div>
                 <div class="faq-item">
                     <h4>How does inflation affect retirement?</h4>
-                    <p>Inflation erodes purchasing power over time. A $1 million retirement fund today may only buy $500,000 worth of goods in 25 years at 3% inflation.</p>
+                    <p>Inflation erodes purchasing power over time, so retirement plans should account for higher future costs.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What is the CPI?</h4>
@@ -288,7 +419,7 @@
                     <a href="https://www.google.com/search?q=Federal+Reserve+interest+rate+decision" target="_blank" rel="noopener">Fed Interest Rate</a>
                     <a href="https://www.google.com/search?q=I+bonds+inflation+protected+savings" target="_blank" rel="noopener">I Bonds (Inflation Protected)</a>
                     <a href="https://www.google.com/search?q=TIPS+treasury+inflation+protected+securities" target="_blank" rel="noopener">TIPS Securities</a>
-                    <a href="https://www.google.com/search?q=social+security+COLA+adjustment+2026" target="_blank" rel="noopener">Social Security COLA</a>
+                    <a href="https://www.google.com/search?q=social+security+COLA+adjustment" target="_blank" rel="noopener">Social Security COLA</a>
                     <a href="https://www.google.com/search?q=historical+inflation+rates+by+year" target="_blank" rel="noopener">Historical Inflation Rates</a>
                 </div>
             </section>
@@ -298,13 +429,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator uses a constant inflation rate. Actual inflation varies year to year.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -321,3 +455,6 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+

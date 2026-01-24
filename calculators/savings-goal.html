@@ -34,6 +34,59 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Savings Goal Calculator",
+        "description": "Estimate monthly savings needed to reach a financial goal within a chosen timeframe",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Should I include interest in my savings goal?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you plan to keep savings in a yield-bearing account, include a conservative rate. For short timeframes, interest will have a smaller impact."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I miss a month of savings?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Missing a month reduces progress. You can extend the timeline or increase future contributions to catch up."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I invest for long-term goals?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Long-term goals may benefit from investing, but short-term goals are usually better kept in low-risk savings products."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I choose a realistic goal?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with a target amount, decide on a timeframe, and test whether the required monthly savings fits your budget."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -45,6 +98,7 @@
         <h1 class="calc-title">Savings Goal Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -56,7 +110,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our savings and emergency fund guide for assumptions and strategy.</p>
+            <a href="/guides/savings.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -101,9 +159,9 @@
 
             <!-- Quick Links -->
             <div class="calc-quick-links">
-                <a href="emergency-fund.html" class="calc-quick-link">🛡️ <span>Emergency Fund</span></a>
+                <a href="emergency-fund.html" class="calc-quick-link">🛡�?<span>Emergency Fund</span></a>
                 <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
-                <a href="retirement.html" class="calc-quick-link">🏖️ <span>Retirement</span></a>
+                <a href="retirement.html" class="calc-quick-link">🏖�?<span>Retirement</span></a>
                 <a href="investment-return.html" class="calc-quick-link">💹 <span>Investment Return</span></a>
             </div>
         </div>
@@ -188,6 +246,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="savings-goal-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Savings goal planning guide</h2>
+                    <p>Use this calculator to translate a goal and timeframe into a monthly savings target. Adjust the interest rate to reflect where you plan to keep your savings.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Goal amount</h4>
+                        <p>Start with a specific target and include any taxes, fees, or buffer you expect to need.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Timeframe</h4>
+                        <p>Shorter timelines require higher monthly savings. Extend the timeline if the payment is too high.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Interest assumptions</h4>
+                        <p>Use conservative rates for short-term savings and revisit assumptions if rates change.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to set a realistic plan</h3>
+                    <ul>
+                        <li>Base the monthly savings target on your actual budget.</li>
+                        <li>Use automatic transfers to stay consistent.</li>
+                        <li>Revisit the plan every few months to stay on track.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Common goal types</h3>
+                    <ul>
+                        <li>Short-term goals: travel, car repairs, or appliances.</li>
+                        <li>Mid-term goals: home down payment or tuition.</li>
+                        <li>Long-term goals: major lifestyle changes or large purchases.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Where to keep the money</h3>
+                    <ul>
+                        <li>High-yield savings for most short-term goals.</li>
+                        <li>CDs for funds you will not need immediately.</li>
+                        <li>Investment accounts for long-term horizons with higher risk tolerance.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides estimates only. Actual results depend on rate changes and your ability to save consistently.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Savings goal calculator FAQ</h3>
+                    <details>
+                        <summary>Should I include interest in my savings goal?</summary>
+                        <p>If you plan to keep savings in a yield-bearing account, include a conservative rate. For short timeframes, interest will have a smaller impact.</p>
+                    </details>
+                    <details>
+                        <summary>What if I miss a month of savings?</summary>
+                        <p>Missing a month reduces progress. You can extend the timeline or increase future contributions to catch up.</p>
+                    </details>
+                    <details>
+                        <summary>Should I invest for long-term goals?</summary>
+                        <p>Long-term goals may benefit from investing, but short-term goals are usually better kept in low-risk savings products.</p>
+                    </details>
+                    <details>
+                        <summary>How do I choose a realistic goal?</summary>
+                        <p>Start with a target amount, decide on a timeframe, and test whether the required monthly savings fits your budget.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -222,11 +353,11 @@
                     Common Savings Goals
                 </h3>
                 <ul>
-                    <li><strong>Emergency Fund:</strong> 3-6 months of expenses</li>
-                    <li><strong>Down Payment:</strong> 20% of home price</li>
+                    <li><strong>Emergency Fund:</strong> Several months of essential expenses</li>
+                    <li><strong>Down Payment:</strong> Varies by loan program and budget</li>
                     <li><strong>Vacation:</strong> Varies by destination</li>
-                    <li><strong>New Car:</strong> 10-20% down payment</li>
-                    <li><strong>Wedding:</strong> Average $30,000 in the US</li>
+                    <li><strong>New Car:</strong> Down payment based on affordability</li>
+                    <li><strong>Wedding:</strong> Set a target based on your priorities</li>
                 </ul>
             </section>
 
@@ -251,11 +382,11 @@
                 </h3>
                 <div class="faq-item">
                     <h4>What interest rate should I use?</h4>
-                    <p>High-yield savings accounts currently offer 4-5% APY. CDs may offer slightly higher rates for longer terms.</p>
+                    <p>Use a conservative rate based on the account you plan to use. Rates change over time, so update your assumptions when needed.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Should I invest my savings instead?</h4>
-                    <p>For short-term goals (under 5 years), keep money in savings. For long-term goals, consider investing for potentially higher returns.</p>
+                    <p>For short-term goals, keep money in low-risk savings. For long-term goals, investing may be appropriate if you can tolerate volatility.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What if I can't save the full amount?</h4>
@@ -299,10 +430,10 @@
                 </h3>
                 <p>Find the best places to grow your savings:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=best+high+yield+savings+accounts+2026" target="_blank" rel="noopener">Best High-Yield Savings</a>
-                    <a href="https://www.google.com/search?q=CD+rates+comparison+2026" target="_blank" rel="noopener">Best CD Rates</a>
+                    <a href="https://www.google.com/search?q=best+high+yield+savings+accounts" target="_blank" rel="noopener">Best High-Yield Savings</a>
+                    <a href="https://www.google.com/search?q=CD+rates+comparison" target="_blank" rel="noopener">Best CD Rates</a>
                     <a href="https://www.google.com/search?q=money+market+accounts+best+rates" target="_blank" rel="noopener">Money Market Accounts</a>
-                    <a href="https://www.google.com/search?q=FDIC+insurance+limits+2026" target="_blank" rel="noopener">FDIC Insurance Limits</a>
+                    <a href="https://www.google.com/search?q=FDIC+insurance+limits" target="_blank" rel="noopener">FDIC Insurance Limits</a>
                 </div>
             </section>
         </div>
@@ -311,13 +442,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates based on constant interest rates. Actual results may vary.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -334,3 +468,6 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+

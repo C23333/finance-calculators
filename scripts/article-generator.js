@@ -1,9 +1,6 @@
 /**
- * Article Generator - 使用本地 Claude/Codex CLI 自动生成文章
- *
- * 配置说明:
- *   - 在 config/cli-config.json 中配置你的 CLI 命令
- *   - 或通过环境变量 AI_CLI_COMMAND 设置
+ * Article Generator - Multi-stage AI pipeline (draft -> review -> polish)
+ * Uses local CLI tools configured in config/ai-pipeline.json
  */
 
 const { execSync } = require('child_process');
@@ -13,329 +10,324 @@ const path = require('path');
 // Import article history module for versioned generation
 let articleHistory;
 try {
-    articleHistory = require('./article-history');
+  articleHistory = require('./article-history');
 } catch (e) {
-    articleHistory = null;
-    console.log('Note: article-history module not available, version tracking disabled');
+  articleHistory = null;
+  console.log('Note: article-history module not available, version tracking disabled');
 }
 
 const PROJECT_ROOT = path.join(__dirname, '..');
 const OUTPUT_DIR = path.join(PROJECT_ROOT, 'output');
 const CONFIG_DIR = path.join(PROJECT_ROOT, 'config');
 
-// 默认配置
-const DEFAULT_CONFIG = {
-    // CLI 命令，可以是 'claude', 'codex', 或完整路径
-    cliCommand: process.env.AI_CLI_COMMAND || 'claude',
-    // 传递 prompt 的方式: 'file', 'stdin', 'arg'
-    promptMode: 'stdin',
-    // 额外参数
-    extraArgs: ['--print'],
-    // 超时 (毫秒)
-    timeout: 600000,  // 10 分钟
-    // 每篇文章之间的延迟 (毫秒)
-    delay: 3000
+const DEFAULT_STAGE_CONFIG = {
+  cliCommand: process.env.AI_CLI_COMMAND || 'claude',
+  promptMode: 'stdin',
+  extraArgs: ['--print'],
+  timeout: 600000,
+  delay: 3000
 };
 
-/**
- * 加载配置
- */
-function loadConfig() {
-    const configPath = path.join(CONFIG_DIR, 'cli-config.json');
-    if (fs.existsSync(configPath)) {
-        try {
-            const userConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-            return { ...DEFAULT_CONFIG, ...userConfig };
-        } catch (e) {
-            console.warn('⚠️ 配置文件解析失败，使用默认配置');
-        }
-    }
-    return DEFAULT_CONFIG;
-}
-
-/**
- * 调用 AI CLI 生成内容
- */
-function callAICLI(prompt, config) {
-    const { cliCommand, timeout } = config;
-
-    console.log(`📤 调用: ${cliCommand}`);
-
+function loadPipelineConfig() {
+  const pipelinePath = path.join(CONFIG_DIR, 'ai-pipeline.json');
+  if (fs.existsSync(pipelinePath)) {
     try {
-        // 将 prompt 写入临时文件，避免命令行长度限制和转义问题
-        const tempFile = path.join(OUTPUT_DIR, 'temp-prompt.txt');
-        fs.writeFileSync(tempFile, prompt, 'utf-8');
-
-        // 使用 execSync 通过 shell 执行，读取临时文件
-        const cmd = `${cliCommand} --print < "${tempFile}"`;
-
-        const result = execSync(cmd, {
-            encoding: 'utf-8',
-            timeout: timeout,
-            maxBuffer: 50 * 1024 * 1024,
-            windowsHide: true,
-            shell: true
-        });
-
-        return result;
-
-    } catch (error) {
-        console.error(`❌ CLI 调用失败: ${error.message}`);
-        return null;
-    }
-}
-
-/**
- * 构建完整的 prompt
- */
-function buildPrompt(newsItem) {
-    const templatePath = path.join(CONFIG_DIR, 'prompts', 'step3-polish.md');
-    let template = fs.readFileSync(templatePath, 'utf-8');
-
-    const articleContent = `
-## 新闻信息
-
-**标题**: ${newsItem.title}
-**来源**: ${newsItem.source}
-**链接**: ${newsItem.link}
-**发布时间**: ${newsItem.pubDate || 'N/A'}
-**摘要**: ${newsItem.description || '无摘要'}
-
-## 分类信息
-
-**类别**: ${newsItem.category || 'general'}
-**相关计算器**: ${newsItem.relatedCalculators ? newsItem.relatedCalculators.join(', ') : '无'}
-**关键词**: ${newsItem.keywords ? newsItem.keywords.join(', ') : '无'}
-`;
-
-    // 替换模板变量
-    template = template
-        .replace('{REVIEWED_ARTICLE}', articleContent)
-        .replace('{TOPIC}', newsItem.title)
-        .replace('{CATEGORY}', newsItem.category || 'Finance')
-        .replace('{CALCULATOR}', newsItem.relatedCalculators?.[0] || 'mortgage')
-        .replace('{RELATED_CALCULATORS}', (newsItem.relatedCalculators || []).join(', '))
-        .replace('{DATE}', new Date().toISOString().split('T')[0]);
-
-    // 添加 JSON 输出指令
-    template += `
-
----
-
-**重要输出要求**:
-1. 输出必须是有效的 JSON 格式
-2. 不要添加任何 markdown 代码块标记 (\`\`\`)
-3. 必须包含 interactiveTools 互动工具
-4. 必须包含 sources 资料来源
-5. 必须包含 recommendedReading 推荐阅读
-6. 必须包含 suggestedSearches 推荐搜索
-
-请直接输出 JSON:
-`;
-
-    return template;
-}
-
-/**
- * 解析 AI 输出为 JSON
- */
-function parseOutput(output) {
-    if (!output) return null;
-
-    let content = output.trim();
-
-    // 移除可能的 markdown 代码块
-    if (content.startsWith('```json')) {
-        content = content.slice(7);
-    }
-    if (content.startsWith('```')) {
-        content = content.slice(3);
-    }
-    if (content.endsWith('```')) {
-        content = content.slice(0, -3);
-    }
-
-    // 尝试找到 JSON 对象的开始和结束
-    const jsonStart = content.indexOf('{');
-    const jsonEnd = content.lastIndexOf('}');
-
-    if (jsonStart !== -1 && jsonEnd !== -1) {
-        content = content.slice(jsonStart, jsonEnd + 1);
-    }
-
-    try {
-        return JSON.parse(content);
+      return JSON.parse(fs.readFileSync(pipelinePath, 'utf-8'));
     } catch (e) {
-        console.error('⚠️ JSON 解析失败:', e.message);
-        // 返回原始内容以便调试
-        return { raw: output, parseError: e.message };
+      console.warn('Failed to parse ai-pipeline.json, using defaults');
     }
+  }
+  return {
+    draft: { ...DEFAULT_STAGE_CONFIG },
+    review: { ...DEFAULT_STAGE_CONFIG },
+    polish: { ...DEFAULT_STAGE_CONFIG },
+    fallback: { ...DEFAULT_STAGE_CONFIG }
+  };
 }
 
-/**
- * 生成 URL 友好的 slug
- */
+function loadPromptTemplate(fileName) {
+  const filePath = path.join(CONFIG_DIR, 'prompts', fileName);
+  return fs.readFileSync(filePath, 'utf-8');
+}
+
+function loadAffiliateConfig() {
+  const configPath = path.join(CONFIG_DIR, 'affiliate-products.json');
+  try {
+    return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  } catch (err) {
+    console.warn('Failed to load affiliate config:', err.message);
+    return { topicMapping: {} };
+  }
+}
+
+function getCalculatorForTopic(topic, affiliateConfig) {
+  const mapping = affiliateConfig.topicMapping || {};
+  const topicData = mapping[topic] || mapping.general || {};
+  const calculators = topicData.calculators || [];
+  return calculators.length > 0 ? calculators[0] : {
+    name: 'Financial Calculator',
+    path: '/calculators/',
+    description: 'Explore our financial calculators'
+  };
+}
+
+function getRelatedCalculators(topic, affiliateConfig) {
+  const mapping = affiliateConfig.topicMapping || {};
+  const topicData = mapping[topic] || mapping.general || {};
+  return topicData.calculators || [];
+}
+
+function callAICLI(prompt, config) {
+  const cliCommand = config.cliCommand || DEFAULT_STAGE_CONFIG.cliCommand;
+  const extraArgs = Array.isArray(config.extraArgs) ? config.extraArgs : [];
+  const timeout = config.timeout || DEFAULT_STAGE_CONFIG.timeout;
+  const promptMode = config.promptMode || 'stdin';
+
+  console.log(`  -> CLI: ${cliCommand}`);
+
+  const tempFile = path.join(OUTPUT_DIR, 'temp-prompt.txt');
+  fs.writeFileSync(tempFile, prompt, 'utf-8');
+
+  let cmd = '';
+  if (promptMode === 'file') {
+    cmd = `${cliCommand} ${extraArgs.join(' ')} "${tempFile}"`;
+  } else if (promptMode === 'arg') {
+    const safePrompt = prompt.replace(/"/g, '\\"');
+    cmd = `${cliCommand} ${extraArgs.join(' ')} "${safePrompt}"`;
+  } else {
+    cmd = `${cliCommand} ${extraArgs.join(' ')} < "${tempFile}"`;
+  }
+
+  try {
+    const result = execSync(cmd, {
+      encoding: 'utf-8',
+      timeout: timeout,
+      maxBuffer: 50 * 1024 * 1024,
+      windowsHide: true,
+      shell: true
+    });
+
+    return result;
+  } catch (error) {
+    console.error(`  CLI failed: ${error.message}`);
+    return null;
+  }
+}
+
+function buildStep1Prompt(article, template, calculator) {
+  const newsSummary = `
+**Title**: ${article.title}
+**Source**: ${article.source}
+**Published**: ${article.pubDate}
+**Category**: ${article.topic}
+
+**Summary**:
+${article.description}
+
+**Original Link**: ${article.link}
+`;
+
+  return template
+    .replace('{NEWS_SUMMARY}', newsSummary)
+    .replace('{TOPIC}', article.topic)
+    .replace('{CALCULATOR}', calculator.name);
+}
+
+function buildStep2Prompt(draftContent, template) {
+  return template.replace('{ARTICLE_DRAFT}', draftContent);
+}
+
+function buildStep3Prompt(reviewedContent, article, template, calculator, relatedCalculators) {
+  const dateStr = new Date().toISOString().split('T')[0];
+  return template
+    .replace('{REVIEWED_ARTICLE}', reviewedContent)
+    .replace('{TOPIC}', article.topic)
+    .replace('{CATEGORY}', capitalizeFirst(article.topic || 'Finance'))
+    .replace('{CALCULATOR}', calculator.name)
+    .replace('{RELATED_CALCULATORS}', relatedCalculators.map(c => c.name).join(', '))
+    .replace('{DATE}', dateStr)
+    .replace('{SOURCE_TITLE}', article.title)
+    .replace('{SOURCE_PUBLISHER}', article.source)
+    .replace('{SOURCE_URL}', article.link)
+    .replace('{SOURCE_DATE}', article.pubDate || dateStr);
+}
+
+function parseOutput(output) {
+  if (!output) return null;
+  let content = output.trim();
+
+  if (content.startsWith('```json')) content = content.slice(7);
+  if (content.startsWith('```')) content = content.slice(3);
+  if (content.endsWith('```')) content = content.slice(0, -3);
+
+  const jsonStart = content.indexOf('{');
+  const jsonEnd = content.lastIndexOf('}');
+  if (jsonStart !== -1 && jsonEnd !== -1) {
+    content = content.slice(jsonStart, jsonEnd + 1);
+  }
+
+  try {
+    return JSON.parse(content);
+  } catch (e) {
+    console.error('  JSON parse failed:', e.message);
+    return { raw: output, parseError: e.message };
+  }
+}
+
 function generateSlug(title) {
-    return title
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .substring(0, 50)
-        .replace(/-$/, '');
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .substring(0, 60)
+    .replace(/-$/, '');
 }
 
-/**
- * 睡眠
- */
+function capitalizeFirst(str) {
+  if (!str) return 'Finance';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/**
- * 主函数：批量生成文章
- */
 async function generateArticles(date, limit = 3) {
-    const config = loadConfig();
+  const pipeline = loadPipelineConfig();
+  const affiliateConfig = loadAffiliateConfig();
 
-    console.log('╔════════════════════════════════════════════════════════════╗');
-    console.log('║          文章生成器 - Article Generator                     ║');
-    console.log('╚════════════════════════════════════════════════════════════╝');
-    console.log(`📅 日期: ${date}`);
-    console.log(`📝 数量: ${limit} 篇`);
-    console.log(`🔧 CLI: ${config.cliCommand}`);
-    console.log();
+  const templates = {
+    step1: loadPromptTemplate('step1-draft.md'),
+    step2: loadPromptTemplate('step2-review.md'),
+    step3: loadPromptTemplate('step3-polish.md')
+  };
 
-    // 读取新闻数据
-    const newsPath = path.join(OUTPUT_DIR, 'news', `news-${date}.json`);
-    if (!fs.existsSync(newsPath)) {
-        console.error(`❌ 新闻文件不存在: ${newsPath}`);
-        console.log('请先运行 news-fetcher.js');
-        return [];
+  console.log('============================================================');
+  console.log('Article Generator - Multi-stage Pipeline');
+  console.log('============================================================');
+  console.log(`Date: ${date}`);
+  console.log(`Count: ${limit}`);
+  console.log();
+
+  const newsPath = path.join(OUTPUT_DIR, 'news', `news-${date}.json`);
+  if (!fs.existsSync(newsPath)) {
+    console.error(`News file not found: ${newsPath}`);
+    console.log('Run scripts/news-fetcher.js first.');
+    return [];
+  }
+
+  const newsData = JSON.parse(fs.readFileSync(newsPath, 'utf-8'));
+  const articles = (newsData.articles || [])
+    .sort((a, b) => (b.score || 0) - (a.score || 0))
+    .slice(0, limit);
+
+  if (articles.length === 0) {
+    console.log('No articles found for generation');
+    return [];
+  }
+
+  const articlesDir = path.join(OUTPUT_DIR, 'articles');
+  const draftsDir = path.join(OUTPUT_DIR, 'drafts', date);
+  [articlesDir, draftsDir].forEach(dir => {
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  });
+
+  const results = [];
+
+  for (let i = 0; i < articles.length; i++) {
+    const newsItem = articles[i];
+    const slug = generateSlug(newsItem.title);
+    const filename = `final-${slug}.json`;
+    const filepath = path.join(articlesDir, filename);
+
+    console.log(`\n[${i + 1}/${articles.length}] ${newsItem.title.substring(0, 80)}...`);
+    console.log('-'.repeat(60));
+
+    if (articleHistory && articleHistory.isSlugUsed(slug)) {
+      const currentVersion = articleHistory.getCurrentVersion(slug);
+      console.log(`  Existing article detected: ${slug} (v${currentVersion})`);
+      articleHistory.archiveVersion(slug);
+      console.log('  Archived previous version');
     }
 
-    const newsData = JSON.parse(fs.readFileSync(newsPath, 'utf-8'));
-    const articles = (newsData.articles || [])
-        .sort((a, b) => (b.score || 0) - (a.score || 0))
-        .slice(0, limit);
+    const calculator = getCalculatorForTopic(newsItem.topic || 'general', affiliateConfig);
+    const relatedCalculators = getRelatedCalculators(newsItem.topic || 'general', affiliateConfig);
 
-    if (articles.length === 0) {
-        console.log('⚠️ 没有找到新闻文章');
-        return [];
+    // Step 1: Draft
+    console.log('Step 1: Draft');
+    const step1Prompt = buildStep1Prompt(newsItem, templates.step1, calculator);
+    const draftOutput = callAICLI(step1Prompt, pipeline.draft || pipeline.fallback || DEFAULT_STAGE_CONFIG);
+    if (!draftOutput) {
+      results.push({ success: false, title: newsItem.title, error: 'Draft failed' });
+      continue;
+    }
+    fs.writeFileSync(path.join(draftsDir, `draft-${slug}.md`), draftOutput, 'utf-8');
+
+    // Step 2: Review
+    console.log('Step 2: Review');
+    const step2Prompt = buildStep2Prompt(draftOutput, templates.step2);
+    const reviewOutput = callAICLI(step2Prompt, pipeline.review || pipeline.fallback || DEFAULT_STAGE_CONFIG);
+    if (!reviewOutput) {
+      results.push({ success: false, title: newsItem.title, error: 'Review failed' });
+      continue;
+    }
+    fs.writeFileSync(path.join(draftsDir, `review-${slug}.md`), reviewOutput, 'utf-8');
+
+    // Step 3: Final JSON
+    console.log('Step 3: Final JSON');
+    const step3Prompt = buildStep3Prompt(reviewOutput, newsItem, templates.step3, calculator, relatedCalculators);
+    const finalOutput = callAICLI(step3Prompt, pipeline.polish || pipeline.fallback || DEFAULT_STAGE_CONFIG);
+    if (!finalOutput) {
+      results.push({ success: false, title: newsItem.title, error: 'Polish failed' });
+      continue;
     }
 
-    console.log(`📰 选中 ${articles.length} 篇新闻进行处理\n`);
+    const articleData = parseOutput(finalOutput);
+    fs.writeFileSync(filepath, JSON.stringify(articleData, null, 2), 'utf-8');
 
-    // 确保输出目录存在
-    const articlesDir = path.join(OUTPUT_DIR, 'articles');
-    if (!fs.existsSync(articlesDir)) {
-        fs.mkdirSync(articlesDir, { recursive: true });
+    if (articleHistory) {
+      articleHistory.recordArticle({
+        slug,
+        sourceUrl: newsItem.link,
+        title: newsItem.title,
+        generatedAt: new Date().toISOString()
+      });
     }
 
-    const results = [];
+    console.log(`  Saved: ${filename}`);
+    results.push({ success: true, filename, title: newsItem.title, slug });
 
-    for (let i = 0; i < articles.length; i++) {
-        const newsItem = articles[i];
-        const shortTitle = newsItem.title.substring(0, 50);
-
-        console.log(`\n[${i + 1}/${articles.length}] ${shortTitle}...`);
-        console.log('-'.repeat(60));
-
-        // Generate slug first to check for existing versions
-        const slug = generateSlug(newsItem.title);
-        const filename = `final-${slug}.json`;
-        const filepath = path.join(articlesDir, filename);
-
-        // Check for existing version and archive if needed
-        let versionInfo = null;
-        if (articleHistory) {
-            if (articleHistory.isSlugUsed(slug)) {
-                const currentVersion = articleHistory.getCurrentVersion(slug);
-                console.log(`  [版本更新] 检测到已有文章: ${slug} (v${currentVersion})`);
-
-                // Archive old version
-                articleHistory.archiveVersion(slug);
-                console.log(`    → 旧版本已存档`);
-            }
-        }
-
-        // 构建 prompt
-        const prompt = buildPrompt(newsItem);
-
-        // 调用 AI CLI
-        const output = callAICLI(prompt, config);
-
-        if (output) {
-            // 解析输出
-            const articleData = parseOutput(output);
-
-            // Save the article
-            fs.writeFileSync(filepath, JSON.stringify(articleData, null, 2), 'utf-8');
-
-            // Record in history
-            if (articleHistory) {
-                const recorded = articleHistory.recordArticle({
-                    slug,
-                    sourceUrl: newsItem.link,
-                    title: newsItem.title,
-                    generatedAt: new Date().toISOString()
-                });
-                const version = recorded ? recorded.currentVersion : 1;
-                console.log(`✅ 已保存: ${filename} (v${version})`);
-            } else {
-                console.log(`✅ 已保存: ${filename}`);
-            }
-
-            results.push({
-                success: true,
-                filename,
-                title: newsItem.title,
-                slug
-            });
-        } else {
-            console.log(`❌ 生成失败`);
-            results.push({
-                success: false,
-                title: newsItem.title,
-                error: '无输出'
-            });
-        }
-
-        // 延迟
-        if (i < articles.length - 1 && config.delay > 0) {
-            console.log(`⏳ 等待 ${config.delay / 1000} 秒...`);
-            await sleep(config.delay);
-        }
+    if (i < articles.length - 1 && DEFAULT_STAGE_CONFIG.delay > 0) {
+      console.log(`Waiting ${DEFAULT_STAGE_CONFIG.delay / 1000}s...`);
+      await sleep(DEFAULT_STAGE_CONFIG.delay);
     }
+  }
 
-    // 输出摘要
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 生成摘要:');
-    const successCount = results.filter(r => r.success).length;
-    const failCount = results.filter(r => !r.success).length;
-    console.log(`  ✅ 成功: ${successCount}`);
-    console.log(`  ❌ 失败: ${failCount}`);
-    console.log('='.repeat(60));
+  console.log('\n============================================================');
+  console.log('Generation Summary');
+  const successCount = results.filter(r => r.success).length;
+  const failCount = results.filter(r => !r.success).length;
+  console.log(`  Success: ${successCount}`);
+  console.log(`  Failed: ${failCount}`);
+  console.log('============================================================');
 
-    return results;
+  return results;
 }
 
-// CLI 运行
 if (require.main === module) {
-    const args = process.argv.slice(2);
-    const date = args[0] || new Date().toISOString().split('T')[0];
-    const limit = parseInt(args[1]) || 3;
+  const args = process.argv.slice(2);
+  const date = args[0] || new Date().toISOString().split('T')[0];
+  const limit = parseInt(args[1], 10) || 3;
 
-    generateArticles(date, limit)
-        .then(results => {
-            if (results.filter(r => r.success).length === 0) {
-                process.exit(1);
-            }
-        })
-        .catch(err => {
-            console.error('错误:', err.message);
-            process.exit(1);
-        });
+  generateArticles(date, limit)
+    .then(results => {
+      if (results.filter(r => r.success).length === 0) process.exit(1);
+    })
+    .catch(err => {
+      console.error('Error:', err.message);
+      process.exit(1);
+    });
 }
 
-module.exports = { generateArticles, buildPrompt, parseOutput };
+module.exports = { generateArticles, parseOutput };

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Policy | FinCalc</title>
+    <meta name="description" content="FinCalc editorial standards, AI-assistance disclosure, and correction policy.">
+    <link rel="canonical" href="https://financecalc.cc/editorial.html">
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculators</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/editorial.html" class="active">Editorial</a></li>
+                <li><a href="/methodology.html">Methodology</a></li>
+                <li><a href="/#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="about">
+            <div class="container" style="max-width: 820px;">
+                <h2>Editorial Policy</h2>
+                <p>FinCalc publishes calculators and educational articles to help readers understand personal finance topics. This policy explains how content is created, reviewed, and updated.</p>
+
+                <h3>1) Content Principles</h3>
+                <ul>
+                    <li>Clarity over jargon. We explain concepts in plain English.</li>
+                    <li>Accuracy over speed. If data is uncertain, we say so.</li>
+                    <li>Actionable guidance without personalized advice.</li>
+                </ul>
+
+                <h3>2) AI Assistance Disclosure</h3>
+                <p>Some articles are produced with AI assistance. Drafts pass automated checks for structure and required fields, and are reviewed by a human when possible. We do not claim human authorship for AI-generated text.</p>
+
+                <h3>3) Sources and Citations</h3>
+                <p>Articles list sources used in writing. We prioritize primary sources (government agencies, regulators, official releases) and reputable financial publications. If a claim cannot be supported, it is removed or clearly labeled as a scenario or estimate.</p>
+
+                <h3>4) Corrections</h3>
+                <p>If you find a factual error, please contact us. We will review and update the article, and note the update date on the page.</p>
+
+                <h3>5) Updates</h3>
+                <p>Some topics change frequently (rates, limits, rules). We aim to review high-impact articles regularly and update them when new information is available.</p>
+
+                <h3>6) Contact</h3>
+                <p>For corrections or questions, email: <strong>contact@financecalc.cc</strong></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">(Please update this email if you use a different address.)</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                
+                <a href="methodology.html">Methodology</a>
+                <a href="editorial.html">Editorial Policy</a>
+            </p>
+            <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

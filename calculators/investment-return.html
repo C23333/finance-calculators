@@ -43,6 +43,47 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the difference between total return and CAGR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Total return measures the overall gain or loss. CAGR shows the annualized growth rate over the holding period."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator include dividends or fees?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Enter a final value that already reflects dividends, fees, or taxes if you want those effects included."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does the annualized return differ from the simple return?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Annualized return accounts for the time period and compounding, while simple return is just the total change."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How should I choose benchmark comparisons?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use benchmarks that match your asset mix, risk level, and timeframe. Historical averages vary and should be used cautiously."
+                }
+            }
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
@@ -56,6 +97,7 @@
         <h1 class="calc-title">Investment Return Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -67,7 +109,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our investing and compounding guide for assumptions and strategy.</p>
+            <a href="/guides/investing.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -161,23 +207,96 @@
 
                 <!-- Benchmarks Tab -->
                 <div class="calc-tab-content" id="benchmarksContent">
-                    <div class="calc-breakdown">
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">S&P 500 (Historical)</span>
-                            <span class="breakdown-value">~10%/year</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">Bonds</span>
-                            <span class="breakdown-value">~5-6%/year</span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">Real Estate</span>
-                            <span class="breakdown-value">~8-12%/year</span>
-                        </div>
+                <div class="calc-breakdown">
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">S&P 500 (Historical)</span>
+                        <span class="breakdown-value">Varies by period</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Bonds</span>
+                        <span class="breakdown-value">Varies by rate environment</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Real Estate</span>
+                        <span class="breakdown-value">Varies by market</span>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+
+        <section class="calc-longform" id="investment-return-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Investment return analysis guide</h2>
+                    <p>Use this calculator to measure total return and annualized return (CAGR). It is best for comparing investments held over different time periods.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Total vs annualized</h4>
+                        <p>Total return shows the overall gain, while CAGR normalizes growth per year.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Time matters</h4>
+                        <p>Two investments with the same total return can have very different annualized returns.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Include real costs</h4>
+                        <p>Use final values that reflect dividends, fees, and taxes if you want a realistic net return.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to interpret the results</h3>
+                    <ul>
+                        <li>Compare CAGR for investments with different holding periods.</li>
+                        <li>Use the simple ROI for a quick sense of total gain.</li>
+                        <li>Remember that past returns are not guarantees.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Common analysis mistakes</h3>
+                    <ul>
+                        <li>Ignoring fees, taxes, or reinvested dividends.</li>
+                        <li>Comparing returns across different risk profiles.</li>
+                        <li>Assuming a single period represents long-term results.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Choosing benchmarks</h3>
+                    <ul>
+                        <li>Pick benchmarks that match your asset mix.</li>
+                        <li>Compare over similar time periods.</li>
+                        <li>Use multiple benchmarks if your portfolio is diversified.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides estimates only. Always consider risk, volatility, and diversification when evaluating returns.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Investment return calculator FAQ</h3>
+                    <details>
+                        <summary>What is the difference between total return and CAGR?</summary>
+                        <p>Total return measures the overall gain or loss. CAGR shows the annualized growth rate over the holding period.</p>
+                    </details>
+                    <details>
+                        <summary>Does this calculator include dividends or fees?</summary>
+                        <p>No. Enter a final value that already reflects dividends, fees, or taxes if you want those effects included.</p>
+                    </details>
+                    <details>
+                        <summary>Why does the annualized return differ from the simple return?</summary>
+                        <p>Annualized return accounts for the time period and compounding, while simple return is just the total change.</p>
+                    </details>
+                    <details>
+                        <summary>How should I choose benchmark comparisons?</summary>
+                        <p>Use benchmarks that match your asset mix, risk level, and timeframe. Historical averages vary and should be used cautiously.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -222,10 +341,10 @@
                     Historical Average Returns
                 </h3>
                 <ul>
-                    <li><strong>S&P 500:</strong> ~10% annually (before inflation)</li>
-                    <li><strong>Bonds:</strong> ~5-6% annually</li>
-                    <li><strong>Savings Account:</strong> ~0.5-5% (varies by rate environment)</li>
-                    <li><strong>Real Estate:</strong> ~8-12% annually (including appreciation and rental income)</li>
+                    <li><strong>Equity indexes:</strong> Long-term averages vary by decade</li>
+                    <li><strong>Bonds:</strong> Returns depend on interest rate cycles</li>
+                    <li><strong>Savings accounts:</strong> Rates change with the market</li>
+                    <li><strong>Real estate:</strong> Returns vary by location and leverage</li>
                 </ul>
             </section>
 
@@ -260,8 +379,8 @@
                 <p>Learn more about investing:</p>
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=S%26P+500+historical+returns" target="_blank" rel="noopener">S&P 500 Returns</a>
-                    <a href="https://www.google.com/search?q=best+index+funds+2026" target="_blank" rel="noopener">Best Index Funds</a>
-                    <a href="https://www.google.com/search?q=capital+gains+tax+rates+2026" target="_blank" rel="noopener">Capital Gains Tax</a>
+                    <a href="https://www.google.com/search?q=best+index+funds" target="_blank" rel="noopener">Best Index Funds</a>
+                    <a href="https://www.google.com/search?q=capital+gains+tax+rates" target="_blank" rel="noopener">Capital Gains Tax</a>
                     <a href="https://www.google.com/search?q=diversification+investment+strategy" target="_blank" rel="noopener">Diversification Strategy</a>
                 </div>
             </section>
@@ -271,13 +390,16 @@
 
     <footer>
         <div class="container">
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
             <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: Past performance does not guarantee future results. This calculator is for educational purposes only.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -294,3 +416,7 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+

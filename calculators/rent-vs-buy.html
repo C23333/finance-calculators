@@ -77,7 +77,7 @@
                 "name": "Is it better to rent or buy a home?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The answer depends on your financial situation, how long you plan to stay, local market conditions, and personal preferences. Generally, buying makes more sense if you plan to stay 5+ years and can afford the upfront costs. Renting offers more flexibility and lower initial costs."
+                    "text": "The answer depends on your financial situation, how long you plan to stay, local market conditions, and personal preferences. Renting offers flexibility, while buying can build equity over time."
                 }
             },
             {
@@ -85,7 +85,7 @@
                 "name": "How long should I plan to stay to make buying worthwhile?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Most financial experts suggest staying at least 5-7 years to make buying worthwhile. This allows you to build equity, offset closing costs, and benefit from potential home appreciation. Use our calculator to find your specific break-even point."
+                    "text": "The break-even point depends on your costs, loan terms, and expected appreciation. Use this calculator to compare scenarios based on your time horizon."
                 }
             },
             {
@@ -93,7 +93,7 @@
                 "name": "What costs are included in home ownership?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Home ownership costs include mortgage payments (principal and interest), property taxes, homeowners insurance, maintenance and repairs (typically 1-2% of home value annually), HOA fees if applicable, and utilities. Don't forget closing costs when buying and selling."
+                    "text": "Home ownership costs include mortgage payments, property taxes, homeowners insurance, maintenance, HOA fees if applicable, and closing costs when buying or selling."
                 }
             }
         ]
@@ -116,6 +116,7 @@
         <h1 class="calc-title">Rent vs Buy Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -127,7 +128,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our mortgage and home buying guide for assumptions and strategy.</p>
+            <a href="/guides/mortgage.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -324,6 +329,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="rent-buy-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Rent vs buy decision guide</h2>
+                    <p>This calculator compares renting and buying over your chosen time horizon. The result depends on local prices, loan terms, rent growth, and how long you plan to stay.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Time horizon</h4>
+                        <p>Shorter stays tend to favor renting, while longer stays can favor buying if equity builds.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Upfront costs</h4>
+                        <p>Buying includes down payment and closing costs that renting typically avoids.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Ongoing costs</h4>
+                        <p>Property taxes, insurance, and maintenance are ongoing for owners and should be modeled realistically.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>What the calculator includes</h3>
+                    <ul>
+                        <li>Mortgage payments, taxes, insurance, and maintenance for ownership.</li>
+                        <li>Rent payments and annual rent increases.</li>
+                        <li>Home appreciation and remaining mortgage balance.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Factors outside the model</h3>
+                    <ul>
+                        <li>Tax impacts and deductions vary by household.</li>
+                        <li>Opportunity cost of the down payment depends on investment returns.</li>
+                        <li>Personal lifestyle preferences can outweigh math-only results.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to use the results</h3>
+                    <ul>
+                        <li>Run a conservative case and an optimistic case to see the range.</li>
+                        <li>Adjust appreciation and rent growth to reflect local conditions.</li>
+                        <li>Compare the break-even year, not just the final total.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">Results are estimates. Local market conditions and personal preferences can change the right decision.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Rent vs buy calculator FAQ</h3>
+                    <details>
+                        <summary>Is it better to rent or buy a home?</summary>
+                        <p>The answer depends on your financial situation, how long you plan to stay, local market conditions, and personal preferences. Renting offers flexibility, while buying can build equity over time.</p>
+                    </details>
+                    <details>
+                        <summary>How long should I plan to stay to make buying worthwhile?</summary>
+                        <p>The break-even point depends on your costs, loan terms, and expected appreciation. Use this calculator to compare scenarios based on your time horizon.</p>
+                    </details>
+                    <details>
+                        <summary>What costs are included in home ownership?</summary>
+                        <p>Home ownership costs include mortgage payments, property taxes, homeowners insurance, maintenance, HOA fees if applicable, and closing costs when buying or selling.</p>
+                    </details>
+                    <details>
+                        <summary>Why do results change so much?</summary>
+                        <p>Small changes in appreciation, rent growth, and time horizon can materially affect the outcome. Use multiple scenarios to understand the range.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -377,15 +455,15 @@
                 </h3>
                 <div class="faq-item">
                     <h4>Is it better to rent or buy a home?</h4>
-                    <p>The answer depends on your financial situation, how long you plan to stay, local market conditions, and personal preferences. Generally, buying makes more sense if you plan to stay 5+ years.</p>
+                    <p>The answer depends on your financial situation, how long you plan to stay, local market conditions, and personal preferences. Renting offers flexibility, while buying can build equity over time.</p>
                 </div>
                 <div class="faq-item">
                     <h4>How long should I plan to stay to make buying worthwhile?</h4>
-                    <p>Most financial experts suggest staying at least 5-7 years to make buying worthwhile. This allows you to build equity, offset closing costs, and benefit from potential home appreciation.</p>
+                    <p>The break-even point depends on your costs, loan terms, and expected appreciation. Use this calculator to compare scenarios based on your time horizon.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What costs are included in home ownership?</h4>
-                    <p>Home ownership costs include mortgage payments, property taxes, homeowners insurance, maintenance and repairs (typically 1-2% of home value annually), and HOA fees if applicable.</p>
+                    <p>Home ownership costs include mortgage payments, property taxes, homeowners insurance, maintenance, HOA fees if applicable, and closing costs when buying or selling.</p>
                 </div>
             </section>
 
@@ -425,10 +503,10 @@
                 </h3>
                 <p>Explore programs and resources for housing decisions:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs+2026" target="_blank" rel="noopener">First-Time Buyer</a>
+                    <a href="https://www.google.com/search?q=first+time+home+buyer+programs" target="_blank" rel="noopener">First-Time Buyer</a>
                     <a href="https://www.google.com/search?q=rent+control+laws+by+state" target="_blank" rel="noopener">Rent Control Laws</a>
                     <a href="https://www.google.com/search?q=property+tax+rates+by+state" target="_blank" rel="noopener">Property Tax Rates</a>
-                    <a href="https://www.google.com/search?q=housing+market+forecast+2026" target="_blank" rel="noopener">Market Forecast</a>
+                    <a href="https://www.google.com/search?q=housing+market+forecast" target="_blank" rel="noopener">Market Forecast</a>
                 </div>
             </section>
         </div>
@@ -437,13 +515,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual costs depend on many factors including location, market conditions, and personal circumstances.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -460,3 +541,7 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+

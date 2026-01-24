@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology & Assumptions | FinCalc</title>
+    <meta name="description" content="How FinCalc calculators and articles are built, including assumptions, data sources, and update cadence.">
+    <link rel="canonical" href="https://financecalc.cc/methodology.html">
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculators</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/editorial.html">Editorial</a></li>
+                <li><a href="/methodology.html" class="active">Methodology</a></li>
+                <li><a href="/#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="about">
+            <div class="container" style="max-width: 860px;">
+                <h2>Methodology & Assumptions</h2>
+                <p>FinCalc calculators and articles are built to help you understand financial scenarios. This page explains what we include, what we do not include, and how we keep data current.</p>
+
+                <h3>1) Calculator scope</h3>
+                <ul>
+                    <li>Outputs are estimates based on the inputs you provide.</li>
+                    <li>We model common rules and simplified assumptions rather than every edge case.</li>
+                    <li>Results are for education only and are not personalized advice.</li>
+                </ul>
+
+                <h3>2) Data sources</h3>
+                <p>We use publicly available guidance from government and regulator sources (for example, IRS and SSA rules), and reputable financial publications. When a source changes, we update the assumptions and note the effective year.</p>
+
+                <h3>3) Update cadence</h3>
+                <ul>
+                    <li>Tax brackets, wage bases, and benefit parameters are reviewed annually.</li>
+                    <li>Each relevant calculator shows the parameter year and last updated date.</li>
+                    <li>High-change topics (rates, limits) are refreshed more frequently.</li>
+                </ul>
+
+                <h3>4) Article workflow</h3>
+                <ul>
+                    <li>Articles can be drafted with AI assistance and then reviewed for structure, clarity, and sourcing.</li>
+                    <li>We remove or label claims that cannot be supported by sources.</li>
+                    <li>We do not claim human authorship for AI-generated text.</li>
+                </ul>
+
+                <h3>5) Advertising and monetization</h3>
+                <p>We may display ads or affiliate links to support the site. Sponsored placements never change calculator outputs. We prioritize clarity and user trust over ad density.</p>
+
+                <h3>6) Contact</h3>
+                <p>Questions or corrections: <strong>contact@financecalc.cc</strong></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">(Please update this email if you use a different address.)</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="editorial.html">Editorial Policy</a>
+            </p>
+            <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

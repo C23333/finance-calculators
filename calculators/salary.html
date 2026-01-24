@@ -34,6 +34,59 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Salary Calculator",
+        "description": "Convert pay between hourly, weekly, monthly, and annual amounts",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I convert hourly to annual salary?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multiply your hourly rate by hours per week and weeks per year. Adjust hours or weeks for your actual schedule."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between bi-weekly and semi-monthly pay?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bi-weekly pay occurs every two weeks, while semi-monthly pay happens twice per month on set dates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator include taxes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. It shows gross pay before taxes and deductions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I adjust hours or weeks worked?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Update hours per week and weeks per year to reflect your actual schedule."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -45,6 +98,7 @@
         <h1 class="calc-title">Salary Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -56,7 +110,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our income and taxes guide for assumptions and strategy.</p>
+            <a href="/guides/income-taxes.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -209,6 +267,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="salary-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Salary conversion guide</h2>
+                    <p>Use this calculator to convert pay across different time periods. Adjust hours per week and weeks per year to match your real schedule.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Hours and weeks</h4>
+                        <p>Small changes in hours or weeks worked materially affect annual totals.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Pay periods</h4>
+                        <p>Bi-weekly and semi-monthly pay schedules produce different paycheck counts.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Gross vs net</h4>
+                        <p>This calculator shows gross pay. Taxes and benefits reduce take-home pay.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How conversions work</h3>
+                    <ul>
+                        <li>Hourly to annual: hourly rate ¡Á hours per week ¡Á weeks per year.</li>
+                        <li>Annual to monthly: annual salary ¡Â 12.</li>
+                        <li>Annual to bi-weekly: annual salary ¡Â 26 (typical schedule).</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>When to adjust inputs</h3>
+                    <ul>
+                        <li>Part-time or seasonal schedules.</li>
+                        <li>Unpaid time off or variable shifts.</li>
+                        <li>Overtime or extra hours not included in base pay.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Using the results</h3>
+                    <ul>
+                        <li>Compare offers on an annual basis for consistency.</li>
+                        <li>Use take-home pay calculators for net estimates.</li>
+                        <li>Consider benefits and bonuses alongside base pay.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides gross pay estimates only. Actual take-home pay depends on taxes and deductions.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Salary calculator FAQ</h3>
+                    <details>
+                        <summary>How do I convert hourly to annual salary?</summary>
+                        <p>Multiply your hourly rate by hours per week and weeks per year. Adjust hours or weeks for your actual schedule.</p>
+                    </details>
+                    <details>
+                        <summary>What is the difference between bi-weekly and semi-monthly pay?</summary>
+                        <p>Bi-weekly pay occurs every two weeks, while semi-monthly pay happens twice per month on set dates.</p>
+                    </details>
+                    <details>
+                        <summary>Does this calculator include taxes?</summary>
+                        <p>No. It shows gross pay before taxes and deductions.</p>
+                    </details>
+                    <details>
+                        <summary>Can I adjust hours or weeks worked?</summary>
+                        <p>Yes. Update hours per week and weeks per year to reflect your actual schedule.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -247,10 +378,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
                     Salary vs Hourly
                 </h3>
-                <p>Salaried employees typically receive the same pay regardless of hours worked, while hourly employees are paid for actual hours worked and may receive overtime pay for hours over 40 per week.</p>
+                <p>Salaried employees typically receive the same pay regardless of hours worked, while hourly employees are paid for actual hours worked and may receive overtime pay depending on local rules.</p>
                 <ul>
                     <li>Salaried positions often include benefits like health insurance and retirement plans</li>
-                    <li>Hourly workers may earn overtime (1.5x pay) for hours over 40/week</li>
+                    <li>Overtime rules vary by location and job classification</li>
                     <li>Consider total compensation, not just base salary</li>
                 </ul>
             </section>
@@ -263,7 +394,7 @@
                 </h3>
                 <div class="faq-item">
                     <h4>How do I convert hourly to annual salary?</h4>
-                    <p>Multiply your hourly rate by hours per week, then by weeks per year. For example: $25/hour Ã— 40 hours Ã— 52 weeks = $52,000 annual salary.</p>
+                    <p>Multiply your hourly rate by hours per week, then by weeks per year. Adjust hours or weeks to match your schedule.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What's the difference between bi-weekly and semi-monthly?</h4>
@@ -311,11 +442,11 @@
                 </h3>
                 <p>Learn about minimum wage laws and employment rights:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=federal+minimum+wage+2026" target="_blank" rel="noopener">Federal Minimum Wage</a>
-                    <a href="https://www.google.com/search?q=minimum+wage+by+state+2026" target="_blank" rel="noopener">State Minimum Wages</a>
+                    <a href="https://www.google.com/search?q=federal+minimum+wage" target="_blank" rel="noopener">Federal Minimum Wage</a>
+                    <a href="https://www.google.com/search?q=minimum+wage+by+state" target="_blank" rel="noopener">State Minimum Wages</a>
                     <a href="https://www.google.com/search?q=overtime+pay+laws+FLSA" target="_blank" rel="noopener">Overtime Pay Laws</a>
                     <a href="https://www.google.com/search?q=salary+vs+hourly+exempt+non+exempt" target="_blank" rel="noopener">Exempt vs Non-Exempt</a>
-                    <a href="https://www.google.com/search?q=average+salary+by+profession+2026" target="_blank" rel="noopener">Average Salaries by Job</a>
+                    <a href="https://www.google.com/search?q=average+salary+by+profession" target="_blank" rel="noopener">Average Salaries by Job</a>
                     <a href="https://www.google.com/search?q=cost+of+living+calculator+by+city" target="_blank" rel="noopener">Cost of Living by City</a>
                 </div>
             </section>
@@ -325,13 +456,16 @@
 
     <footer>
         <div class="container">
-            <p>Â© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator shows gross pay before taxes and deductions. Actual take-home pay will be lower.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -348,3 +482,7 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+

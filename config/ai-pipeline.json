@@ -1,0 +1,26 @@
+{
+  "draft": {
+    "cliCommand": "gemini",
+    "promptMode": "stdin",
+    "extraArgs": [],
+    "timeout": 600000
+  },
+  "review": {
+    "cliCommand": "codex",
+    "promptMode": "stdin",
+    "extraArgs": [],
+    "timeout": 600000
+  },
+  "polish": {
+    "cliCommand": "claude",
+    "promptMode": "stdin",
+    "extraArgs": ["--print"],
+    "timeout": 600000
+  },
+  "fallback": {
+    "cliCommand": "claude",
+    "promptMode": "stdin",
+    "extraArgs": ["--print"],
+    "timeout": 600000
+  }
+}

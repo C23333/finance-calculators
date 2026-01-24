@@ -62,13 +62,7 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "1250"
-        }
-    }
+        }}
     </script>
 
     <!-- Structured Data - HowTo -->
@@ -125,7 +119,7 @@
                 "name": "How is a mortgage payment calculated?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "A mortgage payment is calculated using the loan amount, interest rate, and loan term. The formula accounts for principal and interest. Your total monthly payment also includes property taxes, homeowners insurance, and PMI if applicable (PITI)."
+                    "text": "The payment is calculated with a standard amortization formula using loan amount, interest rate, and term. The full housing payment can also include property taxes, homeowners insurance, and mortgage insurance."
                 }
             },
             {
@@ -133,7 +127,7 @@
                 "name": "What is a good mortgage interest rate?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "A good mortgage rate depends on current market conditions and your credit score. Generally, rates below the national average are considered good. Borrowers with credit scores of 740+ typically qualify for the best rates."
+                    "text": "A good rate is one that is below the average available to borrowers with similar credit, down payment, and loan type. Rates move daily, so compare multiple lenders on the same day."
                 }
             },
             {
@@ -141,7 +135,7 @@
                 "name": "Should I choose a 15-year or 30-year mortgage?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "A 15-year mortgage has higher monthly payments but saves significantly on total interest. A 30-year mortgage has lower monthly payments but costs more in total interest. Choose based on your budget and financial goals."
+                    "text": "A 15-year loan usually has a lower rate and less total interest but higher monthly payments. A 30-year loan lowers the monthly payment and improves cash flow but costs more interest over time."
                 }
             },
             {
@@ -149,7 +143,7 @@
                 "name": "What is PMI and when is it required?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home price. It protects the lender if you default. PMI typically costs 0.5-1% of the loan amount annually and can be removed once you reach 20% equity."
+                    "text": "Private mortgage insurance is typically required on conventional loans when the down payment is below 20% or equity is under 20%. It may be removable after you reach the required equity, depending on your loan."
                 }
             }
         ]
@@ -172,6 +166,7 @@
         <h1 class="calc-title">Mortgage Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -183,7 +178,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our mortgage and home buying guide for assumptions and strategy.</p>
+            <a href="/guides/mortgage.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -235,7 +234,7 @@
             <div class="calc-quick-links">
                 <a href="refinance.html" class="calc-quick-link">🔄 <span>Refinance</span></a>
                 <a href="home-affordability.html" class="calc-quick-link">💵 <span>Affordability</span></a>
-                <a href="rent-vs-buy.html" class="calc-quick-link">🏘️ <span>Rent vs Buy</span></a>
+                <a href="rent-vs-buy.html" class="calc-quick-link">🏘�?<span>Rent vs Buy</span></a>
                 <a href="loan-payoff.html" class="calc-quick-link">💳 <span>Loan Payoff</span></a>
             </div>
         </div>
@@ -320,6 +319,80 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="mortgage-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Mortgage payment guide</h2>
+                    <p>Use this calculator to estimate principal and interest and see how your balance changes over time. To build a full housing budget, include taxes, insurance, and any HOA dues.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Inputs that move the needle</h4>
+                        <p>Interest rate, loan term, and down payment drive most of the difference in payment size and total interest.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Full housing payment</h4>
+                        <p>Many borrowers pay more than principal and interest. Taxes, insurance, and mortgage insurance can change your real monthly cost.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Compare offers correctly</h4>
+                        <p>Shop lenders on the same day and compare both rate and closing costs for a true apples-to-apples view.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How this calculator works</h3>
+                    <ul>
+                        <li>Uses a standard amortization formula based on the loan amount, interest rate, and term.</li>
+                        <li>Builds a yearly amortization schedule showing how payments split between principal and interest.</li>
+                        <li>Total interest reflects the sum of interest over the life of the loan.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Ways to reduce total cost</h3>
+                    <ul>
+                        <li>Increase the down payment to reduce the loan size and potential mortgage insurance.</li>
+                        <li>Choose a shorter term if the higher monthly payment fits your budget.</li>
+                        <li>Make extra principal payments when possible to shorten the schedule.</li>
+                        <li>Compare multiple lenders and understand all fees before committing.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Before you lock a rate</h3>
+                    <ul>
+                        <li>Estimate property taxes, homeowners insurance, and HOA dues.</li>
+                        <li>Review the loan estimate for points, origination charges, and other fees.</li>
+                        <li>Confirm whether the rate is fixed or adjustable and how resets work.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This calculator estimates principal and interest only. Taxes, insurance, HOA fees, and loan programs can change the full monthly payment.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Mortgage calculator FAQ</h3>
+                    <details>
+                        <summary>How is a mortgage payment calculated?</summary>
+                        <p>The payment is calculated with a standard amortization formula using loan amount, interest rate, and term. The full housing payment can also include property taxes, homeowners insurance, and mortgage insurance.</p>
+                    </details>
+                    <details>
+                        <summary>What is a good mortgage interest rate?</summary>
+                        <p>A good rate is one that is below the average available to borrowers with similar credit, down payment, and loan type. Rates move daily, so compare multiple lenders on the same day.</p>
+                    </details>
+                    <details>
+                        <summary>Should I choose a 15-year or 30-year mortgage?</summary>
+                        <p>A 15-year loan usually has a lower rate and less total interest but higher monthly payments. A 30-year loan lowers the monthly payment and improves cash flow but costs more interest over time.</p>
+                    </details>
+                    <details>
+                        <summary>What is PMI and when is it required?</summary>
+                        <p>Private mortgage insurance is typically required on conventional loans when the down payment is below 20% or equity is under 20%. It may be removable after you reach the required equity, depending on your loan.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -358,11 +431,11 @@
                     Tips for Getting a Better Mortgage Rate
                 </h3>
                 <ul>
-                    <li>Improve your credit score before applying (aim for 740+)</li>
-                    <li>Save for a larger down payment (20% or more to avoid PMI)</li>
-                    <li>Compare rates from at least 3-5 different lenders</li>
-                    <li>Consider a shorter loan term for lower interest rates</li>
-                    <li>Lock in your rate when you find a good deal</li>
+                    <li>Improve your credit profile before applying</li>
+                    <li>Save for a larger down payment to reduce risk and insurance costs</li>
+                    <li>Compare rates and fees across several lenders</li>
+                    <li>Consider a shorter loan term if the payment is affordable</li>
+                    <li>Lock in your rate once the numbers work for you</li>
                 </ul>
             </section>
 
@@ -374,19 +447,19 @@
                 </h3>
                 <div class="faq-item">
                     <h4>How is a mortgage payment calculated?</h4>
-                    <p>A mortgage payment is calculated using the loan amount, interest rate, and loan term. The formula accounts for principal and interest. Your total monthly payment also includes property taxes, homeowners insurance, and PMI if applicable (PITI).</p>
+                    <p>The payment is calculated with a standard amortization formula using loan amount, interest rate, and term. The full housing payment can also include property taxes, homeowners insurance, and mortgage insurance.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What is a good mortgage interest rate?</h4>
-                    <p>A good mortgage rate depends on current market conditions and your credit score. Generally, rates below the national average are considered good. Borrowers with credit scores of 740+ typically qualify for the best rates.</p>
+                    <p>A good rate is one that is below the average available to borrowers with similar credit, down payment, and loan type. Rates move daily, so compare multiple lenders on the same day.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Should I choose a 15-year or 30-year mortgage?</h4>
-                    <p>A 15-year mortgage has higher monthly payments but saves significantly on total interest. A 30-year mortgage has lower monthly payments but costs more in total interest. Choose based on your budget and financial goals.</p>
+                    <p>A 15-year loan usually has a lower rate and less total interest but higher monthly payments. A 30-year loan lowers the monthly payment and improves cash flow but costs more interest over time.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What is PMI and when is it required?</h4>
-                    <p>PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home price. It protects the lender if you default. PMI typically costs 0.5-1% of the loan amount annually and can be removed once you reach 20% equity.</p>
+                    <p>Private mortgage insurance is typically required on conventional loans when the down payment is below 20% or equity is under 20%. It may be removable after you reach the required equity, depending on your loan.</p>
                 </div>
             </section>
 
@@ -440,13 +513,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on taxes, insurance, PMI, and other factors. Consult a mortgage professional for accurate quotes.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -463,3 +539,8 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+
+

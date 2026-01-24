@@ -34,6 +34,59 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Emergency Fund Calculator",
+        "description": "Estimate how much you need in an emergency fund based on essential monthly expenses",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many months should my emergency fund cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many people target several months of essential expenses, but the right amount depends on income stability, household size, and obligations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I pay off debt or build an emergency fund first?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many people build a small starter buffer first, then focus on high-interest debt, and later expand the emergency fund."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where should I keep an emergency fund?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Keep it in a liquid, low-risk account such as a high-yield savings or money market account so funds are available quickly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What counts as an emergency?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Unexpected essential expenses like job loss, medical bills, or urgent repairs typically qualify. Planned purchases generally do not."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -45,6 +98,7 @@
         <h1 class="calc-title">Emergency Fund Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -56,7 +110,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our savings and emergency fund guide for assumptions and strategy.</p>
+            <a href="/guides/savings.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -148,7 +206,7 @@
                 <a href="savings-goal.html" class="calc-quick-link">🎯 <span>Savings Goal</span></a>
                 <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
                 <a href="debt-payoff.html" class="calc-quick-link">💳 <span>Debt Payoff</span></a>
-                <a href="retirement.html" class="calc-quick-link">🏖️ <span>Retirement</span></a>
+                <a href="retirement.html" class="calc-quick-link">🏖�?<span>Retirement</span></a>
             </div>
         </div>
 
@@ -246,6 +304,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="emergency-fund-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Emergency fund planning guide</h2>
+                    <p>Use this calculator to estimate a target based on essential monthly expenses. The right fund size depends on income stability, household size, and how quickly you could replace income.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Income stability</h4>
+                        <p>More variable income usually calls for a larger cash buffer.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Essential expenses</h4>
+                        <p>Focus on housing, utilities, food, insurance, and minimum debt payments.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Access to cash</h4>
+                        <p>Keep emergency savings liquid and separate from long-term investments.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to choose a target</h3>
+                    <ul>
+                        <li>Start with a range of months of essential expenses.</li>
+                        <li>Adjust higher for single-income households or unstable income.</li>
+                        <li>Adjust lower if you have strong backup resources.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to build the fund</h3>
+                    <ul>
+                        <li>Automate contributions after each paycheck.</li>
+                        <li>Use windfalls or bonuses to accelerate progress.</li>
+                        <li>Keep the fund separate so it is not spent casually.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Where to keep it</h3>
+                    <ul>
+                        <li>High-yield savings or money market accounts work well.</li>
+                        <li>Avoid market risk for emergency savings.</li>
+                        <li>Prioritize liquidity and safety over maximum returns.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides estimates only. Your personal risk tolerance and obligations should drive the final target.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Emergency fund calculator FAQ</h3>
+                    <details>
+                        <summary>How many months should my emergency fund cover?</summary>
+                        <p>Many people target several months of essential expenses, but the right amount depends on income stability, household size, and obligations.</p>
+                    </details>
+                    <details>
+                        <summary>Should I pay off debt or build an emergency fund first?</summary>
+                        <p>Many people build a small starter buffer first, then focus on high-interest debt, and later expand the emergency fund.</p>
+                    </details>
+                    <details>
+                        <summary>Where should I keep an emergency fund?</summary>
+                        <p>Keep it in a liquid, low-risk account such as a high-yield savings or money market account so funds are available quickly.</p>
+                    </details>
+                    <details>
+                        <summary>What counts as an emergency?</summary>
+                        <p>Unexpected essential expenses like job loss, medical bills, or urgent repairs typically qualify. Planned purchases generally do not.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -261,7 +392,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     How to Use This Calculator
                 </h3>
-                <p>Enter your monthly essential expenses in each category. Select how many months of coverage you want (3-12 months), and enter your current emergency savings. The calculator will show your target fund amount and how much more you need to save.</p>
+                <p>Enter your monthly essential expenses in each category. Select how many months of coverage you want and enter your current emergency savings. The calculator will show your target fund amount and how much more you need to save.</p>
             </section>
 
             <!-- Why Emergency Fund Section -->
@@ -280,9 +411,9 @@
                     How Much Should You Save?
                 </h3>
                 <ul>
-                    <li><strong>3 months:</strong> Minimum for stable income, dual-income households</li>
-                    <li><strong>6 months:</strong> Recommended for most people</li>
-                    <li><strong>9-12 months:</strong> Self-employed, single income, or volatile industry</li>
+                    <li><strong>3 months:</strong> Common starting point for stable income</li>
+                    <li><strong>6 months:</strong> Often used for broader security</li>
+                    <li><strong>9-12 months:</strong> Consider for single-income or variable income</li>
                 </ul>
             </section>
 
@@ -307,7 +438,7 @@
                 </h3>
                 <div class="faq-item">
                     <h4>Should I pay off debt or build an emergency fund first?</h4>
-                    <p>Start with a small emergency fund ($1,000-$2,000), then focus on high-interest debt, then build your full emergency fund.</p>
+                    <p>Start with a small starter buffer, then focus on high-interest debt, then build your full emergency fund.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What counts as an emergency?</h4>
@@ -355,7 +486,7 @@
                 </h3>
                 <p>Find the best places to keep your emergency fund:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=best+high+yield+savings+accounts+2026" target="_blank" rel="noopener">Best Savings Accounts</a>
+                    <a href="https://www.google.com/search?q=best+high+yield+savings+accounts" target="_blank" rel="noopener">Best Savings Accounts</a>
                     <a href="https://www.google.com/search?q=money+market+accounts+rates" target="_blank" rel="noopener">Money Market Rates</a>
                     <a href="https://www.google.com/search?q=FDIC+insurance+limits" target="_blank" rel="noopener">FDIC Insurance</a>
                     <a href="https://www.google.com/search?q=automate+savings+tips" target="_blank" rel="noopener">Automate Savings</a>
@@ -367,13 +498,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates. Your actual needs may vary based on your situation.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -390,3 +524,6 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+

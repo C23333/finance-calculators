@@ -43,6 +43,47 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does this retirement calculator estimate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It projects future savings based on your current balance, monthly contributions, and expected return, then compares that projection to a target derived from the 4% rule."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the 4% rule guaranteed?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. It is a planning guideline based on historical studies and does not guarantee future outcomes. Market returns and spending needs can vary."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this include Social Security or pensions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. This calculator focuses on personal savings. Add Social Security, pensions, or other income sources separately when planning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How should I choose an expected return?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use a conservative long-term estimate aligned with your asset mix and fees, and revisit it as your allocation changes."
+                }
+            }
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
@@ -56,6 +97,7 @@
         <h1 class="calc-title">Retirement Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -67,7 +109,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our retirement planning guide for assumptions and strategy.</p>
+            <a href="/guides/retirement.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -127,7 +173,7 @@
             <div class="calc-quick-links">
                 <a href="401k.html" class="calc-quick-link">💼 <span>401(k)</span></a>
                 <a href="roth-vs-traditional.html" class="calc-quick-link">⚖️ <span>Roth vs Traditional</span></a>
-                <a href="social-security.html" class="calc-quick-link">🏛️ <span>Social Security</span></a>
+                <a href="social-security.html" class="calc-quick-link">🏛�?<span>Social Security</span></a>
                 <a href="compound-interest.html" class="calc-quick-link">📈 <span>Compound Interest</span></a>
             </div>
         </div>
@@ -194,6 +240,80 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="retirement-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Retirement planning guide</h2>
+                    <p>This calculator projects a savings balance based on your inputs and compares it to a target from the 4% rule. Treat the output as a planning range, not a guarantee.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Time horizon</h4>
+                        <p>Years until retirement amplify the impact of contributions and investment returns.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Contribution rate</h4>
+                        <p>Small increases can create large differences over long periods due to compounding.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Return assumptions</h4>
+                        <p>Use a conservative long-term estimate and remember that yearly returns can vary.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>What this calculator includes</h3>
+                    <ul>
+                        <li>Growth of your current savings at the expected return you enter.</li>
+                        <li>Monthly contributions compounded over time.</li>
+                        <li>A retirement savings target based on the 4% rule.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>What it does not include</h3>
+                    <ul>
+                        <li>Taxes, inflation, investment fees, or sequence-of-returns risk.</li>
+                        <li>Social Security, pensions, or other income sources.</li>
+                        <li>Changes in spending over time or healthcare costs.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Ways to improve your plan</h3>
+                    <ul>
+                        <li>Increase contributions over time, especially after raises.</li>
+                        <li>Capture employer matching in workplace retirement plans.</li>
+                        <li>Keep investment costs low and rebalance periodically.</li>
+                        <li>Update assumptions annually as your goals evolve.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides estimates for planning. Consider a more detailed plan for major life changes or retirement income strategies.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Retirement calculator FAQ</h3>
+                    <details>
+                        <summary>What does this retirement calculator estimate?</summary>
+                        <p>It projects future savings based on your current balance, monthly contributions, and expected return, then compares that projection to a target derived from the 4% rule.</p>
+                    </details>
+                    <details>
+                        <summary>Is the 4% rule guaranteed?</summary>
+                        <p>No. It is a planning guideline based on historical studies and does not guarantee future outcomes. Market returns and spending needs can vary.</p>
+                    </details>
+                    <details>
+                        <summary>Does this include Social Security or pensions?</summary>
+                        <p>No. This calculator focuses on personal savings. Add Social Security, pensions, or other income sources separately when planning.</p>
+                    </details>
+                    <details>
+                        <summary>How should I choose an expected return?</summary>
+                        <p>Use a conservative long-term estimate aligned with your asset mix and fees, and revisit it as your allocation changes.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -218,7 +338,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     The 4% Rule
                 </h3>
-                <p>The 4% rule suggests you can withdraw 4% of your retirement savings annually without running out of money over a 30-year retirement. To find how much you need, multiply your desired annual income by 25.</p>
+                <p>The 4% rule is a common planning guideline that estimates sustainable withdrawals over a long retirement. It is not guaranteed. To estimate a target, multiply your desired annual income by 25.</p>
             </section>
 
             <!-- Key Factors Section -->
@@ -229,8 +349,8 @@
                 </h3>
                 <ul>
                     <li><strong>Time:</strong> The earlier you start, the more compound interest works in your favor</li>
-                    <li><strong>Contribution Rate:</strong> Aim to save 15-20% of your income for retirement</li>
-                    <li><strong>Investment Returns:</strong> A diversified portfolio historically returns 6-8% after inflation</li>
+                    <li><strong>Contribution Rate:</strong> Increase savings over time as your income grows</li>
+                    <li><strong>Investment Returns:</strong> Long-term results vary by asset mix, fees, and market conditions</li>
                     <li><strong>Social Security:</strong> This calculator doesn't include Social Security benefits, which can supplement your savings</li>
                 </ul>
             </section>
@@ -297,13 +417,16 @@
 
     <footer>
         <div class="container">
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
             <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Consult a financial advisor for personalized retirement planning.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -320,3 +443,7 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+

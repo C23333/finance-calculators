@@ -519,6 +519,33 @@ header nav {
     font-size: 0.95rem;
 }
 
+.editorial-highlight {
+    margin: 48px auto 0;
+    max-width: 720px;
+    text-align: center;
+    padding: 24px 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    background: var(--bg-soft);
+}
+
+.editorial-highlight h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.editorial-highlight p {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.editorial-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
 /* Footer */
 footer {
     background: var(--footer-bg);

@@ -62,12 +62,47 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "ratingCount": "890"
-        }
+        }}
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What affects my auto loan payment the most?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your loan amount, interest rate, and term have the biggest impact. Down payment, trade-in value, and sales tax also change the financed balance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is a longer loan term a good idea?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Longer terms reduce the monthly payment but increase total interest and can keep you in negative equity longer. Choose the shortest term that fits your budget."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much down payment should I make?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A larger down payment reduces the loan balance, interest cost, and risk of being underwater. Use what fits your budget while keeping an emergency fund."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When is GAP insurance useful?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GAP insurance can help if your loan balance exceeds your car's value early in the loan. It is most relevant with small down payments or long terms."
+                }
+            }
+        ]
     }
     </script>
 
@@ -87,6 +122,7 @@
         <h1 class="calc-title">Auto Loan Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -98,7 +134,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our debt and loan payoff guide for assumptions and strategy.</p>
+            <a href="/guides/debt.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -256,6 +296,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="auto-loan-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Auto loan planning guide</h2>
+                    <p>Estimate a car payment and compare loan terms. The calculator assumes a fixed rate and steady monthly payments.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Loan amount</h4>
+                        <p>Vehicle price, taxes, fees, down payment, and trade-in value determine how much you finance.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Interest rate</h4>
+                        <p>Rates vary by credit profile, lender, and vehicle type. Small changes affect total cost.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Term length</h4>
+                        <p>Longer terms lower the payment but increase total interest and depreciation risk.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>What this calculator includes</h3>
+                    <ul>
+                        <li>Sales tax based on the rate you enter.</li>
+                        <li>Down payment and trade-in value applied to the loan balance.</li>
+                        <li>Monthly payment and total interest for the selected term.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Tips for smarter financing</h3>
+                    <ul>
+                        <li>Shop lenders and compare the full cost, not just the monthly payment.</li>
+                        <li>Make a larger down payment to reduce interest and negative equity risk.</li>
+                        <li>Consider pre-approval before negotiating the vehicle price.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Questions to ask the lender</h3>
+                    <ul>
+                        <li>Are there origination fees or prepayment penalties?</li>
+                        <li>Is the rate fixed for the full term?</li>
+                        <li>Can I refinance later if rates drop?</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides estimates only. Actual terms and fees vary by lender and location.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Auto loan calculator FAQ</h3>
+                    <details>
+                        <summary>What affects my auto loan payment the most?</summary>
+                        <p>Your loan amount, interest rate, and term have the biggest impact. Down payment, trade-in value, and sales tax also change the financed balance.</p>
+                    </details>
+                    <details>
+                        <summary>Is a longer loan term a good idea?</summary>
+                        <p>Longer terms reduce the monthly payment but increase total interest and can keep you in negative equity longer. Choose the shortest term that fits your budget.</p>
+                    </details>
+                    <details>
+                        <summary>How much down payment should I make?</summary>
+                        <p>A larger down payment reduces the loan balance, interest cost, and risk of being underwater. Use what fits your budget while keeping an emergency fund.</p>
+                    </details>
+                    <details>
+                        <summary>When is GAP insurance useful?</summary>
+                        <p>GAP insurance can help if your loan balance exceeds your car's value early in the loan. It is most relevant with small down payments or long terms.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -295,10 +408,10 @@
                     Tips for Getting a Better Auto Loan
                 </h3>
                 <ul>
-                    <li>Improve your credit score before applying (aim for 700+)</li>
-                    <li>Make a larger down payment (20% is ideal to avoid being "underwater")</li>
+                    <li>Improve your credit profile before applying</li>
+                    <li>Make a larger down payment to reduce negative equity risk</li>
                     <li>Choose a shorter loan term to save on interest</li>
-                    <li>Shop around - compare rates from banks, credit unions, and online lenders</li>
+                    <li>Shop around and compare rates from banks, credit unions, and online lenders</li>
                     <li>Get pre-approved before visiting the dealership</li>
                     <li>Consider certified pre-owned vehicles for better value</li>
                 </ul>
@@ -312,15 +425,15 @@
                 </h3>
                 <div class="faq-item">
                     <h4>What is a good auto loan interest rate?</h4>
-                    <p>A good auto loan rate depends on your credit score and market conditions. Generally, rates below 5% are excellent, 5-7% are good, and above 10% is considered high. Credit unions often offer the best rates.</p>
+                    <p>A good auto loan rate depends on your credit profile, loan term, and market conditions. Compare offers across lenders on the same day to see what is competitive.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Should I choose a longer loan term for lower payments?</h4>
-                    <p>While longer terms mean lower monthly payments, you'll pay significantly more in interest over time. A 72-month loan can cost thousands more than a 48-month loan. Choose the shortest term you can comfortably afford.</p>
+                    <p>Longer terms reduce the monthly payment but increase total interest and keep you in negative equity longer. Choose the shortest term that fits your budget.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Is it better to buy new or used?</h4>
-                    <p>Used cars typically offer better value since new cars depreciate 20-30% in the first year. However, new cars often have lower interest rates and come with warranties. Consider certified pre-owned for a balance of both.</p>
+                    <p>Used cars can offer better value, while new cars may have warranty advantages and promotional financing. Consider certified pre-owned for a balance of cost and reliability.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What is GAP insurance?</h4>
@@ -364,10 +477,10 @@
                 </h3>
                 <p>Learn about auto financing options and consumer protections:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=best+auto+loan+rates+2026" target="_blank" rel="noopener">Best Auto Loan Rates</a>
+                    <a href="https://www.google.com/search?q=best+auto+loan+rates" target="_blank" rel="noopener">Best Auto Loan Rates</a>
                     <a href="https://www.google.com/search?q=credit+union+auto+loans+benefits" target="_blank" rel="noopener">Credit Union Loans</a>
                     <a href="https://www.google.com/search?q=car+sales+tax+by+state" target="_blank" rel="noopener">Sales Tax by State</a>
-                    <a href="https://www.google.com/search?q=EV+tax+credit+electric+vehicle+2026" target="_blank" rel="noopener">EV Tax Credits</a>
+                    <a href="https://www.google.com/search?q=EV+tax+credit+electric+vehicle" target="_blank" rel="noopener">EV Tax Credits</a>
                     <a href="https://www.google.com/search?q=gap+insurance+worth+it" target="_blank" rel="noopener">GAP Insurance Guide</a>
                     <a href="https://www.google.com/search?q=refinance+auto+loan+when" target="_blank" rel="noopener">When to Refinance</a>
                 </div>
@@ -378,13 +491,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payments may vary based on fees, taxes, and lender terms.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -401,3 +517,8 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+
+

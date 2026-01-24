@@ -196,7 +196,11 @@ function generateStep3Prompt(reviewedContent, article, template, affiliateConfig
         .replace('{CATEGORY}', capitalizeFirst(article.topic))
         .replace('{CALCULATOR}', calculator.name)
         .replace('{RELATED_CALCULATORS}', relatedCalculators.map(c => c.name).join(', '))
-        .replace('{DATE}', dateStr);
+        .replace('{DATE}', dateStr)
+        .replace('{SOURCE_TITLE}', article.title)
+        .replace('{SOURCE_PUBLISHER}', article.source)
+        .replace('{SOURCE_URL}', article.link)
+        .replace('{SOURCE_DATE}', article.pubDate || dateStr);
 
     return {
         type: 'step3-polish',

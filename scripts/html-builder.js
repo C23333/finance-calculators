@@ -237,6 +237,7 @@ function generateSourcesHtml(sources) {
             </a>
             <span class="source-publisher">— ${escapeHtml(source.publisher)}</span>
             ${source.accessDate ? `<span class="source-date">(Accessed: ${source.accessDate})</span>` : ''}
+            ${source.description ? `<span class="source-desc">${escapeHtml(source.description)}</span>` : ''}
         </li>
     `).join('');
 
@@ -246,6 +247,29 @@ function generateSourcesHtml(sources) {
             <ul class="sources-list">
                 ${sourceItems}
             </ul>
+        </div>
+    `;
+}
+
+/**
+ * Generate disclosure / methodology block
+ */
+function generateDisclosureHtml(metadata) {
+    if (!metadata) return '';
+
+    const disclosure = metadata.disclosure || '';
+    const methodology = metadata.methodology || '';
+    const reviewedBy = metadata.reviewedBy || '';
+
+    if (!disclosure && !methodology && !reviewedBy) return '';
+
+    return `
+        <div class="article-disclosure">
+            <h3>Editorial Disclosure</h3>
+            ${disclosure ? `<p>${escapeHtml(disclosure)}</p>` : ''}
+            ${methodology ? `<p class="disclosure-methodology">${escapeHtml(methodology)}</p>` : ''}
+            ${reviewedBy ? `<p class="disclosure-review">Reviewed by: ${escapeHtml(reviewedBy)}</p>` : ''}
+            <p class="disclosure-link"><a href="/editorial.html">Read our Editorial Policy</a></p>
         </div>
     `;
 }
@@ -867,6 +891,7 @@ async function buildHtml(articleData, template) {
     const contentResult = buildContentHtml(articleData);
     const engagementHtml = buildEngagementSections(articleData);
     const sidebarResult = buildSidebarTools(articleData);
+    const disclosureHtml = generateDisclosureHtml(metadata);
 
     // Generate OG image
     let ogImagePath = `/blog/images/og/${metadata.slug}.svg`;
@@ -892,6 +917,7 @@ async function buildHtml(articleData, template) {
 
     // Author info
     const authorName = metadata.author || 'FinCalc Editorial Team';
+    const authorTitle = metadata.authorTitle || 'Editorial Desk';
     const authorAvatar = getAuthorAvatar(authorName);
 
     // Modified date display
@@ -919,7 +945,9 @@ async function buildHtml(articleData, template) {
         'INTRO': content.intro ? content.intro.replace(/<\/?p>/g, '') : '',
         'CONTENT': contentWithLinks,
         'AUTHOR_NAME': authorName,
+        'AUTHOR_TITLE': authorTitle,
         'AUTHOR_AVATAR': authorAvatar,
+        'DISCLOSURE': disclosureHtml,
         'FAQ_SCHEMA': seo && seo.faqSchema ? generateFaqSchema(seo.faqSchema) : '',
         'NEWS_ARTICLE_SCHEMA': `<script type="application/ld+json">${JSON.stringify(newsArticleSchema)}</script>`,
         'ENGAGEMENT_SECTIONS': engagementHtml,

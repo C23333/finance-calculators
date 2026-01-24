@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SEO Enhancement Script for FinanceCalc.cc
  * Handles dynamic schema injection, performance optimization, and analytics
  * Enhanced with multilingual SEO support
@@ -8,7 +8,7 @@
     'use strict';
 
     // Supported languages configuration
-    const SUPPORTED_LANGUAGES = {
+        const SUPPORTED_LANGUAGES = {
         en: { locale: 'en_US', name: 'English' },
         es: { locale: 'es_ES', name: 'Español' },
         zh: { locale: 'zh_CN', name: '中文' },
@@ -18,7 +18,8 @@
         ja: { locale: 'ja_JP', name: '日本語' },
         ko: { locale: 'ko_KR', name: '한국어' },
         ar: { locale: 'ar_SA', name: 'العربية' },
-        hi: { locale: 'hi_IN', name: 'हिन्दी' }
+        hi: { locale: 'hi_IN', name: 'हिन्दी' },
+        ru: { locale: 'ru_RU', name: 'Русский' }
     };
 
     const BASE_URL = 'https://financecalc.cc';
@@ -38,14 +39,16 @@
     }
 
     /**
-     * Inject hreflang tags for all supported languages
-     * Requirements: 3.2, 6.2, 6.3
+     * Inject hreflang tags for supported blog translations only
      */
     function injectHreflangTags() {
         // Remove existing hreflang tags to avoid duplicates
         document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
 
         const currentPath = window.location.pathname;
+        if (!currentPath.startsWith('/blog/')) {
+            return;
+        }
         const currentLang = getCurrentLanguage();
 
         // Generate hreflang for each language
@@ -84,7 +87,6 @@
     function updateCanonicalUrl() {
         const currentLang = getCurrentLanguage();
         const currentPath = window.location.pathname;
-
         let canonicalUrl;
         if (currentLang === DEFAULT_LANG) {
             canonicalUrl = BASE_URL + currentPath;
@@ -194,15 +196,18 @@
         let homeName = 'Home';
         let calculatorsName = 'Calculators';
         let blogName = 'Blog';
+        let guidesName = 'Guides';
 
         if (typeof I18n !== 'undefined' && I18n.t) {
             const homeTranslation = I18n.t('nav.home');
             const calcTranslation = I18n.t('nav.calculators');
             const blogTranslation = I18n.t('nav.blog');
+            const guidesTranslation = I18n.t('nav.guides');
 
             if (homeTranslation && homeTranslation !== 'nav.home') homeName = homeTranslation;
             if (calcTranslation && calcTranslation !== 'nav.calculators') calculatorsName = calcTranslation;
             if (blogTranslation && blogTranslation !== 'nav.blog') blogName = blogTranslation;
+            if (guidesTranslation && guidesTranslation !== 'nav.guides') guidesName = guidesTranslation;
         }
 
         const breadcrumbs = {
@@ -262,6 +267,24 @@
 
             if (path !== '/blog/' && path !== '/blog/index.html' && !path.match(/^\/blog\/[a-z]{2}\/$/)) {
                 const title = document.title.split(' | ')[0] || 'Article';
+                breadcrumbs.itemListElement.push({
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": title,
+                    "item": "https://financecalc.cc" + path
+                });
+            }
+        } else if (path.startsWith('/guides/')) {
+            const guidesUrl = "https://financecalc.cc/guides/";
+            breadcrumbs.itemListElement.push({
+                "@type": "ListItem",
+                "position": 2,
+                "name": guidesName,
+                "item": guidesUrl
+            });
+
+            if (path !== '/guides/' && path !== '/guides/index.html') {
+                const title = document.title.split(' | ')[0] || 'Guide';
                 breadcrumbs.itemListElement.push({
                     "@type": "ListItem",
                     "position": 3,
@@ -472,3 +495,5 @@
         init();
     }
 })();
+
+

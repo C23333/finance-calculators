@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Guides & Topic Hubs | FinCalc</title>
+    <meta name="description" content="Explore FinCalc topic hubs for retirement, mortgages, debt, savings, investing, and income taxes. Each guide includes calculators and practical explanations.">
+    <link rel="canonical" href="https://financecalc.cc/guides/">
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/guides.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculators</a></li>
+                <li><a href="/guides/" class="active">Guides</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/editorial.html">Editorial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="guides-hero">
+            <div class="container">
+                <h1>Financial Guides & Topic Hubs</h1>
+                <p>Use these hubs to learn the basics, run the right calculator, and read deeper explanations. Each guide connects calculators with practical decision frameworks.</p>
+                <div class="guides-grid">
+                    <a class="guide-card" href="/guides/retirement.html">
+                        <h3>Retirement Planning</h3>
+                        <p>401(k), Roth vs Traditional, Social Security, and retirement income planning.</p>
+                    </a>
+                    <a class="guide-card" href="/guides/mortgage.html">
+                        <h3>Mortgages & Home Buying</h3>
+                        <p>Affordability, refinance break-even, rent vs buy, and mortgage math.</p>
+                    </a>
+                    <a class="guide-card" href="/guides/debt.html">
+                        <h3>Debt & Loans</h3>
+                        <p>Payoff strategies for student loans, auto loans, and credit balances.</p>
+                    </a>
+                    <a class="guide-card" href="/guides/savings.html">
+                        <h3>Savings & Emergency Fund</h3>
+                        <p>Build a buffer and plan savings goals with realistic monthly targets.</p>
+                    </a>
+                    <a class="guide-card" href="/guides/investing.html">
+                        <h3>Investing & Compounding</h3>
+                        <p>Returns, inflation impact, and long-term compounding examples.</p>
+                    </a>
+                    <a class="guide-card" href="/guides/income-taxes.html">
+                        <h3>Income & Taxes</h3>
+                        <p>Take-home pay, self-employment taxes, and salary conversions.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="container">
+                <h2>How to use the guides</h2>
+                <p>Start with the guide that matches your decision. Each page includes calculators, key questions, and links to deeper articles so you can build a complete plan.</p>
+                <div class="guide-callout">
+                    <strong>Editorial note</strong>
+                    <p>Articles are AI-assisted and pass automated checks. Sources are listed on every article.</p>
+                    <a href="/editorial.html">Read our editorial policy</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/seo.js" defer></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

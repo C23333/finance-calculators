@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt & Loan Payoff Guide | FinCalc</title>
+    <meta name="description" content="A practical debt and loan payoff guide with calculators for student loans, auto loans, and payoff strategies.">
+    <link rel="canonical" href="https://financecalc.cc/guides/debt.html">
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('fincalc-theme') || 'auto';
+            const effective = theme === 'auto'
+                ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                : theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-effective-theme', effective);
+        })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/guides.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">FinCalc</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/#calculators">Calculators</a></li>
+                <li><a href="/guides/" class="active">Guides</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/editorial.html">Editorial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="guides-hero">
+            <div class="container">
+                <h1>Debt & Loan Payoff Guide</h1>
+                <p>Use these tools to understand payoff timelines, evaluate extra payment strategies, and compare loan options.</p>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="container">
+                <h2>Key questions to answer</h2>
+                <div class="guide-list">
+                    <div class="guide-callout">
+                        <strong>Which payoff method?</strong>
+                        <p>Compare snowball vs avalanche based on interest rates and motivation.</p>
+                    </div>
+                    <div class="guide-callout">
+                        <strong>Can extra payments help?</strong>
+                        <p>Small monthly changes can cut years off a loan.</p>
+                    </div>
+                    <div class="guide-callout">
+                        <strong>What is the true cost?</strong>
+                        <p>Total interest paid matters more than the monthly payment alone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section alt">
+            <div class="container">
+                <h2>Recommended calculators</h2>
+                <div class="guide-list">
+                    <a href="/calculators/debt-payoff.html">Debt Payoff Planner <span>Snowball vs avalanche</span></a>
+                    <a href="/calculators/loan-payoff.html">Loan Payoff Calculator <span>Extra payment impact</span></a>
+                    <a href="/calculators/student-loan.html">Student Loan Calculator <span>Repayment scenarios</span></a>
+                    <a href="/calculators/auto-loan.html">Auto Loan Calculator <span>Total cost of financing</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="container">
+                <h2>Related articles</h2>
+                <div class="guide-list">
+                    <a href="/blog/debt-snowball-vs-avalanche.html">Debt snowball vs avalanche <span>Strategy comparison</span></a>
+                    <a href="/blog/how-to-pay-off-50000-student-loans.html">How to pay off $50,000 student loans <span>Example plan</span></a>
+                    <a href="/blog/student-loan-forgiveness-backlog-2026.html">Student loan forgiveness backlog <span>Policy context</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p class="disclaimer">Disclaimer: This content is for informational purposes only. Consult a qualified financial advisor for personalized advice.</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/seo.js" defer></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links')?.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

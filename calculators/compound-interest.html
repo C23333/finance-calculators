@@ -39,6 +39,47 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is the interest rate guaranteed?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The rate you enter is an assumption. Actual investment returns can vary each year and may be higher or lower than expected."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What compounding frequency should I use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the frequency that matches your account terms. Many savings products compound monthly or daily, while some investments effectively compound as returns are reinvested."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator include taxes or inflation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The results are nominal and do not account for taxes, fees, or inflation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I contribute?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Consistent contributions are typically more important than frequency. Choose a schedule you can maintain, such as monthly or per paycheck."
+                }
+            }
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/calc-layout.css">
 </head>
@@ -52,6 +93,7 @@
         <h1 class="calc-title">Compound Interest Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -63,7 +105,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our investing and compounding guide for assumptions and strategy.</p>
+            <a href="/guides/investing.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -120,7 +166,7 @@
                 <a href="investment-return.html" class="calc-quick-link">💹 <span>Investment Return</span></a>
                 <a href="savings-goal.html" class="calc-quick-link">🎯 <span>Savings Goal</span></a>
                 <a href="401k.html" class="calc-quick-link">💼 <span>401(k)</span></a>
-                <a href="retirement.html" class="calc-quick-link">🏖️ <span>Retirement</span></a>
+                <a href="retirement.html" class="calc-quick-link">🏖�?<span>Retirement</span></a>
             </div>
         </div>
 
@@ -188,6 +234,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="compound-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Compound interest guide</h2>
+                    <p>Use this calculator to estimate how savings or investments grow with regular contributions. The projection assumes a constant rate and reinvested gains.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Time is powerful</h4>
+                        <p>Longer timelines allow interest to compound on itself, creating larger gains later.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Rate assumptions</h4>
+                        <p>Small differences in assumed return can lead to large differences in outcomes.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Consistent contributions</h4>
+                        <p>Adding money regularly often matters more than chasing short-term performance.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How compounding works</h3>
+                    <ul>
+                        <li>Interest is earned on both your original principal and previous interest.</li>
+                        <li>More frequent compounding produces slightly higher totals.</li>
+                        <li>Regular contributions increase the base that earns interest.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Real-world adjustments</h3>
+                    <ul>
+                        <li>Taxes, fees, and inflation can reduce real returns.</li>
+                        <li>Markets fluctuate, so actual returns may be uneven year to year.</li>
+                        <li>Revisit assumptions as your risk tolerance changes.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How to use the results</h3>
+                    <ul>
+                        <li>Compare different contribution levels and time horizons.</li>
+                        <li>Use conservative rates for planning and upside cases for sensitivity.</li>
+                        <li>Set milestones to track progress over time.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool provides estimates only. Actual investment outcomes will vary based on market performance and fees.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Compound interest calculator FAQ</h3>
+                    <details>
+                        <summary>Is the interest rate guaranteed?</summary>
+                        <p>No. The rate you enter is an assumption. Actual investment returns can vary each year and may be higher or lower than expected.</p>
+                    </details>
+                    <details>
+                        <summary>What compounding frequency should I use?</summary>
+                        <p>Use the frequency that matches your account terms. Many savings products compound monthly or daily, while some investments effectively compound as returns are reinvested.</p>
+                    </details>
+                    <details>
+                        <summary>Does this calculator include taxes or inflation?</summary>
+                        <p>No. The results are nominal and do not account for taxes, fees, or inflation.</p>
+                    </details>
+                    <details>
+                        <summary>How often should I contribute?</summary>
+                        <p>Consistent contributions are typically more important than frequency. Choose a schedule you can maintain, such as monthly or per paycheck.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -235,7 +354,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                     The Rule of 72
                 </h3>
-                <p>A quick way to estimate how long it takes to double your money: divide 72 by your interest rate. At 7% interest, your money doubles in approximately 10.3 years (72 / 7 = 10.3).</p>
+                <p>A quick way to estimate how long it takes to double your money: divide 72 by your interest rate. This is a simple approximation for planning.</p>
             </section>
 
             <!-- Related Articles Section -->
@@ -268,9 +387,9 @@
                 </h3>
                 <p>Learn more about investing and growing your wealth:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=best+index+funds+for+beginners+2026" target="_blank" rel="noopener">Best Index Funds</a>
-                    <a href="https://www.google.com/search?q=IRA+contribution+limits+2026" target="_blank" rel="noopener">IRA Contribution Limits</a>
-                    <a href="https://www.google.com/search?q=capital+gains+tax+rates+2026" target="_blank" rel="noopener">Capital Gains Tax Rates</a>
+                    <a href="https://www.google.com/search?q=best+index+funds+for+beginners" target="_blank" rel="noopener">Best Index Funds</a>
+                    <a href="https://www.google.com/search?q=IRA+contribution+limits" target="_blank" rel="noopener">IRA Contribution Limits</a>
+                    <a href="https://www.google.com/search?q=capital+gains+tax+rates" target="_blank" rel="noopener">Capital Gains Tax Rates</a>
                     <a href="https://www.google.com/search?q=S%26P+500+historical+returns" target="_blank" rel="noopener">S&P 500 Historical Returns</a>
                 </div>
             </section>
@@ -280,13 +399,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates based on constant interest rates. Actual investment returns will vary.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -303,3 +425,7 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+

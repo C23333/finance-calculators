@@ -76,16 +76,16 @@
                 "@type": "Question",
                 "name": "How much house can I afford?",
                 "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A general rule is that your monthly housing costs should not exceed 28% of your gross monthly income, and your total debt payments should not exceed 36%. Use our calculator to get a personalized estimate based on your income, debts, and down payment."
+                "@type": "Answer",
+                    "text": "Affordability depends on your income, debts, down payment, interest rate, and other costs. This calculator uses a common guideline to estimate a reasonable monthly payment."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What is the 28/36 rule for mortgages?",
+                "name": "What guideline does this calculator use?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The 28/36 rule states that your housing costs should not exceed 28% of your gross monthly income (front-end ratio), and your total debt payments including housing should not exceed 36% of your gross monthly income (back-end ratio)."
+                    "text": "The calculator uses a common front-end and back-end debt guideline to estimate a housing budget. Actual lender requirements can vary."
                 }
             },
             {
@@ -93,7 +93,7 @@
                 "name": "What is DTI ratio and why does it matter?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "DTI (Debt-to-Income) ratio is the percentage of your gross monthly income that goes toward paying debts. Lenders use this to determine how much you can borrow. Most lenders prefer a DTI of 43% or less for mortgage approval."
+                    "text": "DTI (Debt-to-Income) ratio is the share of your gross monthly income that goes to debt payments. Lenders use it to determine how much you can borrow, but limits vary by program."
                 }
             }
         ]
@@ -116,6 +116,7 @@
         <h1 class="calc-title">Home Affordability Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -127,7 +128,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our mortgage and home buying guide for assumptions and strategy.</p>
+            <a href="/guides/mortgage.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -205,7 +210,7 @@
             <div class="calc-quick-links">
                 <a href="mortgage.html" class="calc-quick-link">🏠 <span>Mortgage</span></a>
                 <a href="refinance.html" class="calc-quick-link">🔄 <span>Refinance</span></a>
-                <a href="rent-vs-buy.html" class="calc-quick-link">🏘️ <span>Rent vs Buy</span></a>
+                <a href="rent-vs-buy.html" class="calc-quick-link">🏘�?<span>Rent vs Buy</span></a>
                 <a href="debt-payoff.html" class="calc-quick-link">💳 <span>Debt Payoff</span></a>
             </div>
         </div>
@@ -273,11 +278,11 @@
                             <span class="breakdown-value" id="monthlyIncome">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label">Max Housing Payment (28%)</span>
+                        <span class="breakdown-label">Housing Budget (Guideline)</span>
                             <span class="breakdown-value" id="maxHousingPayment">$0</span>
                         </div>
                         <div class="breakdown-item">
-                            <span class="breakdown-label">Max Total Debt (36%)</span>
+                        <span class="breakdown-label">Total Debt Budget (Guideline)</span>
                             <span class="breakdown-value" id="maxTotalDebt">$0</span>
                         </div>
                         <div class="breakdown-item">
@@ -288,6 +293,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="affordability-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Home affordability guide</h2>
+                    <p>This calculator estimates a housing budget based on your income, debts, and down payment. It applies a common affordability guideline to help you set a reasonable target.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Income and debts</h4>
+                        <p>Monthly income and existing debts determine how much room you have for housing costs.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Down payment</h4>
+                        <p>A larger down payment reduces the loan amount and can improve loan terms.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Non-mortgage costs</h4>
+                        <p>Property taxes, insurance, and HOA fees can change affordability significantly.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How the guideline works</h3>
+                    <ul>
+                        <li>Uses a front-end and back-end debt ratio as a planning baseline.</li>
+                        <li>Compares the housing budget against your current monthly debts.</li>
+                        <li>Estimates a max price based on your interest rate and term.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Improve accuracy</h3>
+                    <ul>
+                        <li>Use realistic estimates for property taxes, insurance, and HOA fees.</li>
+                        <li>Consider your actual monthly budget, not just lender limits.</li>
+                        <li>Plan for maintenance, moving costs, and future repairs.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Questions to ask before buying</h3>
+                    <ul>
+                        <li>Would the payment feel comfortable if income changes?</li>
+                        <li>Do you have a cash buffer after the down payment?</li>
+                        <li>Are you prepared for annual tax and insurance increases?</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">This tool uses a common affordability guideline and provides estimates only. Actual lender requirements and personal comfort levels may differ.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Home affordability calculator FAQ</h3>
+                    <details>
+                        <summary>How much house can I afford?</summary>
+                        <p>Affordability depends on your income, debts, down payment, interest rate, and other costs. This calculator uses a common guideline to estimate a reasonable monthly payment.</p>
+                    </details>
+                    <details>
+                        <summary>What guideline does this calculator use?</summary>
+                        <p>The calculator uses a common front-end and back-end debt guideline to estimate a housing budget. Actual lender requirements can vary.</p>
+                    </details>
+                    <details>
+                        <summary>What is DTI ratio and why does it matter?</summary>
+                        <p>DTI (Debt-to-Income) ratio is the share of your gross monthly income that goes to debt payments. Lenders use it to determine how much you can borrow, but limits vary by program.</p>
+                    </details>
+                    <details>
+                        <summary>Should I put 20% down?</summary>
+                        <p>Larger down payments reduce the loan amount and can avoid mortgage insurance, but you should keep enough cash for emergencies and closing costs.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -303,18 +381,18 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     How to Use This Calculator
                 </h3>
-                <p>Enter your annual income, monthly debt payments, available down payment, and expected interest rate. The calculator uses the 28/36 rule to determine the maximum home price you can afford while maintaining healthy finances.</p>
+                <p>Enter your annual income, monthly debt payments, available down payment, and expected interest rate. The calculator uses a common affordability guideline to estimate a reasonable maximum home price.</p>
             </section>
 
-            <!-- The 28/36 Rule Section -->
+            <!-- Affordability Guideline Section -->
             <section class="info-section">
                 <h3>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                    The 28/36 Rule
+                    Affordability Guideline
                 </h3>
                 <ul>
-                    <li><strong>28% Rule:</strong> Your housing costs should not exceed 28% of gross monthly income</li>
-                    <li><strong>36% Rule:</strong> Total debt payments should not exceed 36% of gross monthly income</li>
+                    <li><strong>Front-end ratio:</strong> Guideline for housing costs vs. gross income</li>
+                    <li><strong>Back-end ratio:</strong> Guideline for total debt vs. gross income</li>
                 </ul>
             </section>
 
@@ -327,7 +405,7 @@
                 <ul>
                     <li>Don't max out your budget - leave room for unexpected expenses</li>
                     <li>Consider all costs: taxes, insurance, maintenance, HOA fees</li>
-                    <li>Save for a 20% down payment to avoid PMI</li>
+                    <li>Consider a larger down payment to reduce loan costs</li>
                     <li>Keep an emergency fund separate from your down payment</li>
                     <li>Factor in moving costs and initial home setup expenses</li>
                 </ul>
@@ -341,15 +419,15 @@
                 </h3>
                 <div class="faq-item">
                     <h4>How much house can I afford?</h4>
-                    <p>A general rule is that your monthly housing costs should not exceed 28% of your gross monthly income. Use this calculator to get a personalized estimate based on your specific financial situation.</p>
+                    <p>Affordability depends on your income, debts, down payment, interest rate, and other costs. This calculator uses a common guideline to estimate a reasonable monthly payment.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What is DTI ratio and why does it matter?</h4>
-                    <p>DTI (Debt-to-Income) ratio is the percentage of your gross monthly income that goes toward paying debts. Lenders use this to determine how much you can borrow. Most lenders prefer a DTI of 43% or less.</p>
+                    <p>DTI (Debt-to-Income) ratio is the share of your gross monthly income that goes to debt payments. Lenders use it to determine how much you can borrow, but limits vary by program.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Should I put 20% down?</h4>
-                    <p>A 20% down payment helps you avoid PMI (Private Mortgage Insurance) and gives you instant equity. However, many loan programs allow lower down payments if you're willing to pay PMI.</p>
+                    <p>Larger down payments reduce the loan amount and can avoid mortgage insurance, but you should keep enough cash for emergencies and closing costs.</p>
                 </div>
             </section>
 
@@ -389,7 +467,7 @@
                 </h3>
                 <p>Explore programs and resources for home buyers:</p>
                 <div class="policy-grid">
-                    <a href="https://www.google.com/search?q=FHA+loan+requirements+2026" target="_blank" rel="noopener">FHA Loans</a>
+                    <a href="https://www.google.com/search?q=FHA+loan+requirements" target="_blank" rel="noopener">FHA Loans</a>
                     <a href="https://www.google.com/search?q=DTI+ratio+requirements+mortgage" target="_blank" rel="noopener">DTI Requirements</a>
                     <a href="https://www.google.com/search?q=PMI+private+mortgage+insurance+cost" target="_blank" rel="noopener">PMI Costs</a>
                     <a href="https://www.google.com/search?q=credit+score+needed+for+mortgage" target="_blank" rel="noopener">Credit Score</a>
@@ -401,13 +479,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual affordability depends on many factors including credit score, debt obligations, and lender requirements.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -424,3 +505,7 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+

@@ -62,12 +62,47 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "980"
-        }
+        }}
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which payoff method saves the most interest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The avalanche method typically saves the most interest because it prioritizes the highest rates first. The snowball method can help with motivation by paying off smaller balances earlier."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I build an emergency fund before paying extra?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many people set aside a small cash buffer for unexpected expenses before accelerating debt payoff, so they do not rely on new debt when surprises occur."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do balance transfers or consolidation loans help?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "They can help if the effective rate and fees are lower than your current debt, and if the repayment terms fit your budget. Always compare total cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does my payoff time change?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Payoff time changes when you adjust extra payments, interest rates, or add new debts. The calculator assumes steady payments and rates."
+                }
+            }
+        ]
     }
     </script>
 
@@ -166,6 +201,7 @@
         <h1 class="calc-title">Debt Payoff Calculator</h1>
         <nav class="calc-nav">
             <a href="../#calculators">All Calculators</a>
+            <a href="/guides/">Guides</a>
             <button class="info-toggle" aria-label="Show information" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </button>
@@ -175,7 +211,11 @@
 
     <!-- Tool Layout -->
     <main id="main-content" class="calc-tool-layout">
-        <!-- Input Panel -->
+        
+        <section class="calc-guide-callout">
+            <p><strong>Need context?</strong> Read our debt and loan payoff guide for assumptions and strategy.</p>
+            <a href="/guides/debt.html">Read the guide</a>
+        </section><!-- Input Panel -->
         <div class="calc-input-panel">
             <div class="calc-panel-header">
                 <div class="calc-panel-title">
@@ -318,6 +358,79 @@
                 </div>
             </div>
         </div>
+
+        <section class="calc-longform" id="debt-payoff-guide">
+            <div class="calc-longform-inner">
+                <header class="calc-longform-header">
+                    <h2>Debt payoff strategy guide</h2>
+                    <p>Compare the avalanche and snowball methods and see how extra payments change your payoff timeline. The projection assumes steady payments and stable interest rates.</p>
+                </header>
+
+                <div class="calc-longform-grid">
+                    <div class="calc-longform-card">
+                        <h4>Method choice</h4>
+                        <p>Avalanche prioritizes high rates for maximum savings. Snowball prioritizes quick wins to build momentum.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Extra payments</h4>
+                        <p>Even small monthly extras can reduce total interest and shorten the payoff period.</p>
+                    </div>
+                    <div class="calc-longform-card">
+                        <h4>Minimum payments</h4>
+                        <p>Keep minimum payments current on every debt while focusing extra money on one target.</p>
+                    </div>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>How the calculator works</h3>
+                    <ul>
+                        <li>Calculates monthly interest on each balance.</li>
+                        <li>Applies minimum payments across all debts.</li>
+                        <li>Directs extra payments to the priority debt based on your chosen method.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Choosing a payoff method</h3>
+                    <ul>
+                        <li>Avalanche saves the most interest over time.</li>
+                        <li>Snowball can improve motivation by clearing small balances sooner.</li>
+                        <li>You can switch methods if your needs change.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-section">
+                    <h3>Before you accelerate payoff</h3>
+                    <ul>
+                        <li>Keep a basic cash buffer for unexpected expenses.</li>
+                        <li>Check for prepayment penalties or promotional terms.</li>
+                        <li>Avoid adding new high-interest debt while paying down balances.</li>
+                    </ul>
+                </div>
+
+                <div class="calc-longform-note">Results are estimates. Interest rates and minimum payments can change based on lender policies or promotional terms.</div>
+
+                <div class="calc-longform-section calc-faq">
+                    <h3>Debt payoff calculator FAQ</h3>
+                    <details>
+                        <summary>Which payoff method saves the most interest?</summary>
+                        <p>The avalanche method typically saves the most interest because it prioritizes the highest rates first. The snowball method can help with motivation by paying off smaller balances earlier.</p>
+                    </details>
+                    <details>
+                        <summary>Should I build an emergency fund before paying extra?</summary>
+                        <p>Many people set aside a small cash buffer for unexpected expenses before accelerating debt payoff, so they do not rely on new debt when surprises occur.</p>
+                    </details>
+                    <details>
+                        <summary>Do balance transfers or consolidation loans help?</summary>
+                        <p>They can help if the effective rate and fees are lower than your current debt, and if the repayment terms fit your budget. Always compare total cost.</p>
+                    </details>
+                    <details>
+                        <summary>Why does my payoff time change?</summary>
+                        <p>Payoff time changes when you adjust extra payments, interest rates, or add new debts. The calculator assumes steady payments and rates.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Info Sidebar -->
@@ -377,15 +490,15 @@
                 </div>
                 <div class="faq-item">
                     <h4>Should I save or pay off debt first?</h4>
-                    <p>Build a small emergency fund ($1,000) first, then focus on debt. This prevents you from going back into debt for unexpected expenses.</p>
+                    <p>Many people build a small cash buffer first, then focus on debt. This helps avoid new debt when unexpected expenses pop up.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What about balance transfer cards?</h4>
-                    <p>Balance transfer cards with 0% intro APR can save money, but watch for transfer fees (usually 3-5%) and make sure to pay off before the promotional period ends.</p>
+                    <p>Balance transfer offers can reduce interest, but watch for fees and the promotional end date. Always compare total cost and your payoff timeline.</p>
                 </div>
                 <div class="faq-item">
                     <h4>How much extra should I pay?</h4>
-                    <p>Pay as much extra as you can comfortably afford. Even $50-100 extra per month can save thousands in interest and years off your payoff time.</p>
+                    <p>Pay as much extra as you can comfortably afford. Even a modest extra payment can shorten your payoff timeline.</p>
                 </div>
             </section>
 
@@ -427,7 +540,7 @@
                 <div class="policy-grid">
                     <a href="https://www.google.com/search?q=debt+snowball+method+explained" target="_blank" rel="noopener">Snowball Method</a>
                     <a href="https://www.google.com/search?q=debt+avalanche+method+explained" target="_blank" rel="noopener">Avalanche Method</a>
-                    <a href="https://www.google.com/search?q=best+balance+transfer+cards+2026" target="_blank" rel="noopener">Balance Transfer Cards</a>
+                    <a href="https://www.google.com/search?q=best+balance+transfer+cards" target="_blank" rel="noopener">Balance Transfer Cards</a>
                     <a href="https://www.google.com/search?q=debt+consolidation+loan+pros+cons" target="_blank" rel="noopener">Debt Consolidation</a>
                     <a href="https://www.google.com/search?q=credit+counseling+services" target="_blank" rel="noopener">Credit Counseling</a>
                     <a href="https://www.google.com/search?q=debt+management+plan" target="_blank" rel="noopener">Debt Management Plans</a>
@@ -439,13 +552,16 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 FinCalc. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                
+                <a href="/methodology.html">Methodology</a>
+                <a href="/editorial.html">Editorial Policy</a>
+            </p>
+            <p>&copy; 2026 FinCalc. All rights reserved.</p>
             <p class="disclaimer">Disclaimer: This calculator provides estimates only. Actual payoff times may vary based on interest rate changes and payment timing.</p>
-            <div class="friend-links">
-                <span>Friend Links:</span>
-                <a href="https://qrmaker.life/" target="_blank" rel="noopener">QR Code Generator</a>
             </div>
-        </div>
     </footer>
 
     <!-- Theme Manager -->
@@ -462,3 +578,8 @@
     <script src="../js/affiliate-links.js"></script>
 </body>
 </html>
+
+
+
+
+
