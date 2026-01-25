@@ -1130,12 +1130,20 @@
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
+    min-height: 44px;
 }
 
 .category-pill:hover {
     color: var(--primary);
     background: var(--primary-bg);
     border-color: rgba(var(--primary-rgb), 0.25);
+}
+
+.category-pill:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
+    color: var(--text);
+    border-color: rgba(var(--primary-rgb), 0.4);
 }
 
 .category-pill.active {
