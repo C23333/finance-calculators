@@ -516,6 +516,7 @@
     text-decoration: none;
     transition: all 0.2s;
     font-weight: 500;
+    box-shadow: 0 6px 14px rgba(15, 61, 94, 0.08);
 }
 
 .calc-quick-link:hover {
@@ -523,7 +524,15 @@
     border-color: var(--primary);
     background: var(--primary-bg);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+    box-shadow: 0 10px 20px rgba(15, 61, 94, 0.16);
+}
+
+[data-effective-theme="dark"] .calc-quick-link {
+    box-shadow: 0 8px 18px rgba(3, 12, 20, 0.3);
+}
+
+[data-effective-theme="dark"] .calc-quick-link:hover {
+    box-shadow: 0 12px 24px rgba(3, 12, 20, 0.45);
 }
 
 /* Responsive - stack on mobile */
