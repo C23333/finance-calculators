@@ -1248,6 +1248,12 @@
     border-color: rgba(var(--primary-rgb), 0.2);
 }
 
+.blog-card:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.3);
+    border-color: rgba(var(--primary-rgb), 0.5);
+}
+
 [data-effective-theme="dark"] .blog-card:hover {
     box-shadow: 0 12px 30px rgba(3, 12, 20, 0.35);
 }
