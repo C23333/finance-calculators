@@ -130,7 +130,10 @@ async function main() {
 
   // Step 4: Quality Check
   stepHeader(4, 'Quality Check (Schema + Sources)');
-  const qualityResult = runScript('article-quality-check.js');
+  const qualityResult = runScript('article-quality-check.js', [
+    '--date',
+    new Date().toISOString().split('T')[0]
+  ]);
   if (!qualityResult.success) {
     console.error('Quality check failed. Fix issues before publishing.');
     if (!autoMode) {

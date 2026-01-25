@@ -14,8 +14,9 @@ const OUTPUT_DIR = path.join(PROJECT_ROOT, 'output');
 const DEFAULT_MIN_SECTIONS = 3;
 const DEFAULT_MIN_TAKEAWAYS = 3;
 const DEFAULT_MIN_WORDS = 800;
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 
-function listArticleFiles() {
+function listArticleFiles(targetDate) {
   if (!fs.existsSync(ARTICLES_DIR)) return [];
   const files = [];
   const walk = dir => {
@@ -23,7 +24,13 @@ function listArticleFiles() {
       const full = path.join(dir, item);
       const stat = fs.statSync(full);
       if (stat.isDirectory()) return walk(full);
-      if (item.startsWith('final-') && item.endsWith('.json')) files.push(full);
+      if (item.startsWith('final-') && item.endsWith('.json')) {
+        if (targetDate) {
+          const fileDate = stat.mtime.toISOString().split('T')[0];
+          if (fileDate !== targetDate) return;
+        }
+        files.push(full);
+      }
     });
   };
   walk(ARTICLES_DIR);
@@ -124,10 +131,32 @@ function checkArticle(article, filePath) {
   return { filePath, errors, warnings };
 }
 
+function parseArgs(args) {
+  const dateFlag = args.find(arg => arg.startsWith('--date='));
+  if (dateFlag) {
+    return { date: dateFlag.split('=')[1] };
+  }
+
+  const dateIndex = args.indexOf('--date');
+  if (dateIndex !== -1 && args[dateIndex + 1]) {
+    return { date: args[dateIndex + 1] };
+  }
+
+  return {};
+}
+
 function main() {
-  const files = listArticleFiles();
+  const { date } = parseArgs(process.argv.slice(2));
+  if (date && !DATE_REGEX.test(date)) {
+    console.error('Invalid date format. Use YYYY-MM-DD.');
+    process.exit(1);
+  }
+
+  const files = listArticleFiles(date);
   if (files.length === 0) {
-    console.log('No article files found for quality check.');
+    console.log(date
+      ? `No article files found for quality check on ${date}.`
+      : 'No article files found for quality check.');
     process.exit(1);
   }
 
@@ -137,6 +166,7 @@ function main() {
 
   const report = {
     checkedAt: new Date().toISOString(),
+    dateFilter: date || null,
     total: results.length,
     failed: failed.length,
     warnings: warnings.length,

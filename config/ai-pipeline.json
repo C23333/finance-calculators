@@ -1,26 +1,30 @@
 {
   "draft": {
-    "cliCommand": "gemini",
+    "cliCommand": "claude",
     "promptMode": "stdin",
-    "extraArgs": [],
+    "extraArgs": ["--print", "--output-format", "text"],
+    "outputMode": "stdout",
     "timeout": 600000
   },
   "review": {
-    "cliCommand": "codex",
+    "cliCommand": "claude",
     "promptMode": "stdin",
-    "extraArgs": [],
+    "extraArgs": ["--print", "--output-format", "text"],
+    "outputMode": "stdout",
     "timeout": 600000
   },
   "polish": {
     "cliCommand": "claude",
     "promptMode": "stdin",
-    "extraArgs": ["--print"],
+    "extraArgs": ["--print", "--output-format", "text"],
+    "outputMode": "stdout",
     "timeout": 600000
   },
   "fallback": {
     "cliCommand": "claude",
     "promptMode": "stdin",
-    "extraArgs": ["--print"],
+    "extraArgs": ["--print", "--output-format", "text"],
+    "outputMode": "stdout",
     "timeout": 600000
   }
 }

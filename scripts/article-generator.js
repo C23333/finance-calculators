@@ -24,6 +24,7 @@ const DEFAULT_STAGE_CONFIG = {
   cliCommand: process.env.AI_CLI_COMMAND || 'claude',
   promptMode: 'stdin',
   extraArgs: ['--print'],
+  outputMode: 'stdout',
   timeout: 600000,
   delay: 3000
 };
@@ -82,6 +83,14 @@ function callAICLI(prompt, config) {
   const extraArgs = Array.isArray(config.extraArgs) ? config.extraArgs : [];
   const timeout = config.timeout || DEFAULT_STAGE_CONFIG.timeout;
   const promptMode = config.promptMode || 'stdin';
+  const outputMode = config.outputMode || DEFAULT_STAGE_CONFIG.outputMode;
+
+  const outputFile = outputMode === 'lastMessage'
+    ? path.join(OUTPUT_DIR, 'temp-ai-output.txt')
+    : null;
+
+  const outputArgs = outputFile ? ['--output-last-message', `"${outputFile}"`] : [];
+  const mergedArgs = extraArgs.concat(outputArgs);
 
   console.log(`  -> CLI: ${cliCommand}`);
 
@@ -90,12 +99,12 @@ function callAICLI(prompt, config) {
 
   let cmd = '';
   if (promptMode === 'file') {
-    cmd = `${cliCommand} ${extraArgs.join(' ')} "${tempFile}"`;
+    cmd = `${cliCommand} ${mergedArgs.join(' ')} "${tempFile}"`;
   } else if (promptMode === 'arg') {
     const safePrompt = prompt.replace(/"/g, '\\"');
-    cmd = `${cliCommand} ${extraArgs.join(' ')} "${safePrompt}"`;
+    cmd = `${cliCommand} ${mergedArgs.join(' ')} "${safePrompt}"`;
   } else {
-    cmd = `${cliCommand} ${extraArgs.join(' ')} < "${tempFile}"`;
+    cmd = `${cliCommand} ${mergedArgs.join(' ')} < "${tempFile}"`;
   }
 
   try {
@@ -106,6 +115,14 @@ function callAICLI(prompt, config) {
       windowsHide: true,
       shell: true
     });
+
+    if (outputFile) {
+      if (!fs.existsSync(outputFile)) {
+        console.error('  CLI output file missing.');
+        return null;
+      }
+      return fs.readFileSync(outputFile, 'utf-8');
+    }
 
     return result;
   } catch (error) {
