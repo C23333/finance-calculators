@@ -328,6 +328,7 @@
     line-height: var(--heading-line-height);
     position: relative;
     padding-bottom: 8px;
+    scroll-margin-top: 96px;
 }
 
 .article-content h2::after {
@@ -351,6 +352,7 @@
     margin: 40px 0 16px;
     color: var(--text);
     line-height: var(--heading-line-height);
+    scroll-margin-top: 96px;
 }
 
 .article-content h4 {
@@ -358,6 +360,7 @@
     font-weight: 600;
     margin: 32px 0 12px;
     color: var(--text);
+    scroll-margin-top: 96px;
 }
 
 /* Paragraphs */
