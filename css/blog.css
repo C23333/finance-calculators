@@ -1551,6 +1551,11 @@
     border: 1px solid var(--border-light);
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 10px 24px rgba(15, 61, 94, 0.08);
+}
+
+[data-effective-theme="dark"] .table-of-contents {
+    box-shadow: 0 14px 28px rgba(3, 12, 20, 0.4);
 }
 
 .toc-nav {
