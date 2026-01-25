@@ -315,6 +315,12 @@
     box-shadow: 0 0 0 3px var(--primary-bg);
 }
 
+.calc-form input:focus-visible,
+.calc-form select:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
+}
+
 .calc-form .input-group {
     display: flex;
     align-items: stretch;
