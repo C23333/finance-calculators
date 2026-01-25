@@ -1033,12 +1033,19 @@
     position: sticky;
     top: 72px;
     z-index: 100;
-    background: var(--bg);
+    background: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid var(--border-light);
     padding: 16px 24px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(15, 61, 94, 0.08);
+}
+
+[data-effective-theme="dark"] .category-nav {
+    background: rgba(11, 18, 25, 0.92);
+    box-shadow: 0 12px 24px rgba(3, 12, 20, 0.4);
 }
 
 .category-nav::-webkit-scrollbar {
@@ -1078,8 +1085,9 @@
 
 .category-pill.active {
     color: white;
-    background: var(--primary);
-    border-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 }
 
 .category-count {
