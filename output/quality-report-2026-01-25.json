@@ -1,12 +1,33 @@
 {
-  "checkedAt": "2026-01-25T02:20:05.656Z",
+  "checkedAt": "2026-01-25T05:52:22.296Z",
   "dateFilter": "2026-01-25",
-  "total": 1,
+  "total": 4,
   "failed": 0,
-  "warnings": 1,
+  "warnings": 4,
   "results": [
     {
       "file": "output\\articles\\final-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-over-800000-student-loan-borrowers-remain-in-backlog-for-for.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-what-is-a-mortgage-loan-modification-and-how-do-you-get-one.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders.json",
       "errors": [],
       "warnings": [
         "sources fewer than 2"

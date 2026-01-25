@@ -1,10 +1,10 @@
 {
   "version": 1,
   "createdAt": "2026-01-23T00:00:00.000Z",
-  "lastUpdated": "2026-01-25T02:19:35.378Z",
+  "lastUpdated": "2026-01-25T05:52:04.405Z",
   "statistics": {
-    "totalArticles": 9,
-    "totalVersions": 9,
+    "totalArticles": 12,
+    "totalVersions": 12,
     "archivedVersions": 0
   },
   "bySlug": {
@@ -151,9 +151,60 @@
           "currentPath": "output/articles/final-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.json"
         }
       ]
+    },
+    "over-800000-student-loan-borrowers-remain-in-backlog-for-for": {
+      "slug": "over-800000-student-loan-borrowers-remain-in-backlog-for-for",
+      "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+      "sourceUrl": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-25T05:46:30.717Z",
+      "lastUpdated": "2026-01-25T05:46:30.717Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-25T05:46:30.717Z",
+          "archived": false,
+          "currentPath": "output/articles/final-over-800000-student-loan-borrowers-remain-in-backlog-for-for.json"
+        }
+      ]
+    },
+    "what-is-a-mortgage-loan-modification-and-how-do-you-get-one": {
+      "slug": "what-is-a-mortgage-loan-modification-and-how-do-you-get-one",
+      "title": "What is a mortgage loan modification, and how do you get one?",
+      "sourceUrl": "https://finance.yahoo.com/news/mortgage-loan-modification-one-165703150.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-25T05:49:28.035Z",
+      "lastUpdated": "2026-01-25T05:49:28.035Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-25T05:49:28.035Z",
+          "archived": false,
+          "currentPath": "output/articles/final-what-is-a-mortgage-loan-modification-and-how-do-you-get-one.json"
+        }
+      ]
+    },
+    "when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders": {
+      "slug": "when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders",
+      "title": "When will mortgage rates go down to 5%? Don't miss the lenders offering sub-6% loans now.",
+      "sourceUrl": "https://finance.yahoo.com/personal-finance/mortgages/article/when-will-mortgage-rates-go-down-to-5-201806162.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-25T05:52:04.403Z",
+      "lastUpdated": "2026-01-25T05:52:04.403Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-25T05:52:04.403Z",
+          "archived": false,
+          "currentPath": "output/articles/final-when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders.json"
+        }
+      ]
     }
   },
   "bySourceUrl": {
-    "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a"
+    "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
+    "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html": "over-800000-student-loan-borrowers-remain-in-backlog-for-for",
+    "https://finance.yahoo.com/news/mortgage-loan-modification-one-165703150.html": "what-is-a-mortgage-loan-modification-and-how-do-you-get-one",
+    "https://finance.yahoo.com/personal-finance/mortgages/article/when-will-mortgage-rates-go-down-to-5-201806162.html": "when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders"
   }
 }
