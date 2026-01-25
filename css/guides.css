@@ -80,6 +80,13 @@
     box-shadow: var(--shadow-md);
 }
 
+.guide-card:focus-visible {
+    outline: none;
+    transform: translateY(-1px);
+    border-color: rgba(var(--primary-rgb), 0.35);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25), var(--shadow-md);
+}
+
 .guide-card h3 {
     font-size: 1.1rem;
     margin-bottom: 8px;
