@@ -397,7 +397,8 @@ header nav {
 }
 
 .cta-btn:focus-visible {
-    outline: none;
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.35);
 }
 
