@@ -907,6 +907,11 @@ footer a:hover {
     text-decoration: underline;
 }
 
+footer a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+}
+
 .footer-links {
     margin-bottom: 0;
     display: flex;
