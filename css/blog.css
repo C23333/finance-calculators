@@ -4,7 +4,7 @@
 
 /* CSS Variables for Blog */
 :root {
-    --article-max-width: 720px;
+    --article-max-width: min(72ch, 760px);
     --article-font-size: 1.125rem;
     --article-line-height: 1.85;
     --article-paragraph-spacing: 1.5em;
