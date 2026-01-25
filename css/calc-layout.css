@@ -336,6 +336,12 @@
     border-radius: 0 8px 8px 0;
 }
 
+.calc-form .input-group:focus-within span {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-bg);
+}
+
 .calc-form .btn {
     width: 100%;
     padding: 14px;
