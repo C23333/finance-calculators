@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-01-25T02:20:05.656Z",
+  "dateFilter": "2026-01-25",
+  "total": 1,
+  "failed": 0,
+  "warnings": 1,
+  "results": [
+    {
+      "file": "output\\articles\\final-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    }
+  ]
+}

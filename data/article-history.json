@@ -1,10 +1,10 @@
 {
   "version": 1,
   "createdAt": "2026-01-23T00:00:00.000Z",
-  "lastUpdated": "2026-01-23T05:22:53.593Z",
+  "lastUpdated": "2026-01-25T02:19:35.378Z",
   "statistics": {
-    "totalArticles": 8,
-    "totalVersions": 8,
+    "totalArticles": 9,
+    "totalVersions": 9,
     "archivedVersions": 0
   },
   "bySlug": {
@@ -135,7 +135,25 @@
           "currentPath": "output/articles/final-best-time-improve-credit-score-2026.json"
         }
       ]
+    },
+    "more-americans-expect-to-miss-a-debt-payment-in-the-months-a": {
+      "slug": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "sourceUrl": "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-25T02:19:35.376Z",
+      "lastUpdated": "2026-01-25T02:19:35.376Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-25T02:19:35.376Z",
+          "archived": false,
+          "currentPath": "output/articles/final-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.json"
+        }
+      ]
     }
   },
-  "bySourceUrl": {}
+  "bySourceUrl": {
+    "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a"
+  }
 }

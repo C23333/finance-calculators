@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-01-25T01:49:37.761Z",
+  "newsFile": "news-2026-01-25.json",
+  "articleCount": 1,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-25",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-01-25",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-01-25.md",
+  "articles": [
+    {
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "topic": "debt",
+      "slug": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-25\\step1-draft-more-americans-expect-to-miss-a-debt-payment-in-the-months-a.md"
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "fetchedAt": "2026-01-25T02:20:44.862Z",
+  "fetchStats": {
+    "success": 6,
+    "failed": 4,
+    "skipped": 0
+  },
+  "totalFetched": 172,
+  "totalUnique": 170,
+  "historyFiltered": 1,
+  "totalSelected": 20,
+  "byTopic": {
+    "debt": [
+      {
+        "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+        "description": "More than 800,000 federal student loan holders remain stuck in a backlog of applications for an affordable repayment plan or debt forgiveness.",
+        "link": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+        "pubDate": "2026-01-15T17:26:14.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 38,
+        "topic": "debt"
+      }
+    ],
+    "mortgage": [
+      {
+        "title": "What is a mortgage loan modification, and how do you get one?",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/mortgage-loan-modification-one-165703150.html",
+        "pubDate": "2026-01-23T20:06:09.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 36,
+        "topic": "mortgage"
+      },
+      {
+        "title": "When will mortgage rates go down to 5%? Don't miss the lenders offering sub-6% loans now.",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/when-will-mortgage-rates-go-down-to-5-201806162.html",
+        "pubDate": "2025-06-04T20:18:06.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 36,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Will mortgage rates fall ahead of January's Fed meeting?",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/will-mortgage-rates-decrease-before-the-next-fed-meeting-174648246.html",
+        "pubDate": "2026-01-23T17:46:48.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 26,
+        "topic": "mortgage"
+      },
+      {
+        "title": "3 benefits to making 1 extra mortgage payment per year",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/one-extra-mortgage-payment-per-year-185030812.html",
+        "pubDate": "2024-06-11T18:50:30.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Carrington Mortgage Services review 2026",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/review/carrington-mortgage-services-review-230635460.html",
+        "pubDate": "2024-07-15T23:06:35.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "mortgage"
+      }
+    ],
+    "retirement": [
+      {
+        "title": "My Savings Tripled Over 25 Years—Is That Good Enough for Retirement?",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/savings-tripled-over-25-years-194638781.html",
+        "pubDate": "2026-01-23T19:46:38.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "5 ways to save on taxes in retirement",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/taxes/article/taxes-in-retirement-162008500.html",
+        "pubDate": "2024-01-20T16:20:08.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "Does the 4% Rule Make Sense for Your Retirement Savings? Ask These 3 Questions to Find Out.",
+        "description": "It's not a given that it's the best withdrawal strategy for your situation.",
+        "link": "https://www.fool.com/retirement/2026/01/24/does-the-4-rule-make-sense-for-your-retirement-sav/?source=iedfolrf0000001",
+        "pubDate": "2026-01-24T20:38:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "9b7fb34a-cc5f-4255-9eaa-4279221d178c",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "Pursuing early retirement led this financial coach to marriage counseling—here's how he changed his strategy",
+        "description": "Andy Hill encourages couples to define a shared set of dreams and work backward rather than charging toward a savings goal.",
+        "link": "https://www.cnbc.com/2026/01/24/pursuing-early-retirement-led-financial-coach-to-marriage-counseling.html",
+        "pubDate": "2026-01-24T15:00:01.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 28,
+        "topic": "retirement"
+      },
+      {
+        "title": "I need to spend $15K on my roof. Should I take it from my Roth IRA, 401(k), IRA or money-market account?",
+        "description": "“I’m 61 years old, single and still have a job.”",
+        "link": "https://www.marketwatch.com/story/i-need-to-spend-15k-on-my-roof-do-i-take-it-from-my-roth-ira-401-k-ira-or-money-market-account-170e36a9?mod=mw_rss_topstories",
+        "pubDate": "2026-01-24T23:45:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "Yes, you still need an emergency fund in retirement. Here’s how much you should have.",
+        "description": "Retirees can face larger spending shocks than workers, often driven by unpredictable costs such as healthcare.",
+        "link": "https://www.marketwatch.com/story/yes-you-still-need-an-emergency-fund-in-retirement-heres-how-much-you-should-have-3611fd2f?mod=mw_rss_topstories",
+        "pubDate": "2026-01-24T20:35:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "retirement"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
+        "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
+        "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
+        "pubDate": "2026-01-14T18:35:12.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 28,
+        "topic": "taxes"
+      },
+      {
+        "title": "Republicans want to end the ‘marriage penalty’ for this childcare tax credit",
+        "description": "The Republican framework for \"Reconciliation 2.0\" includes an expansion for the child and dependent care tax credit. Here's what families need to know.",
+        "link": "https://www.cnbc.com/2026/01/16/child-and-dependent-care-tax-credit.html",
+        "pubDate": "2026-01-16T21:23:53.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "taxes"
+      },
+      {
+        "title": "Bigger tax refunds are coming for 2026 — what it could mean for the economy",
+        "description": "Bigger tax refunds could be coming in 2026 due to changes enacted in President Donald Trump's \"big beautiful bill.\" Here's how it could impact the economy.",
+        "link": "https://www.cnbc.com/2026/01/13/bigger-tax-refunds-2026.html",
+        "pubDate": "2026-01-13T17:55:20.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "taxes"
+      }
+    ],
+    "investing": [
+      {
+        "title": "1 ETF Could Turn $500 Monthly Into a $800,000 Portfolio That Pays $24,000 in Annual Dividend Income",
+        "description": "The stock market tends to reward time and consistency.",
+        "link": "https://www.fool.com/investing/2026/01/24/1-etf-could-turn-500-monthly-into-a-800000-portfol/?source=iedfolrf0000001",
+        "pubDate": "2026-01-25T00:30:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "SCHD",
+          "b26e61bf-9f00-4522-8162-2cef1ce1f0fe",
+          "investing",
+          "Markets"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Should You Invest $1,000 in Netflix Stock Right Now?",
+        "description": "This longtime stock market winner is trading below its peak price.",
+        "link": "https://www.fool.com/investing/2026/01/24/should-you-invest-1000-in-netflix-stock-right-now/?source=iedfolrf0000001",
+        "pubDate": "2026-01-24T21:48:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "NFLX",
+          "46040616-a7bd-4cee-9aff-6b20c845556d",
+          "investing",
+          "Technology and Telecom"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Sandisk Stock Shows Why Investing Is Hard",
+        "description": "If investors could perfectly predict future cash flows, it would be so much easier.",
+        "link": "https://www.fool.com/investing/2026/01/24/sandisk-stock-shows-why-investing-is-hard/?source=iedfolrf0000001",
+        "pubDate": "2026-01-24T19:47:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "SNDK",
+          "8193aec1-0889-45c9-9faa-dfd01729126b",
+          "investing",
+          "Technology and Telecom"
+        ],
+        "score": 26,
+        "topic": "investing"
+      }
+    ],
+    "economy": [
+      {
+        "title": "Trump says inflation was 'defeated.' Some economists disagree",
+        "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+        "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+        "pubDate": "2026-01-21T20:56:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "economy"
+      },
+      {
+        "title": "Supreme Court doubtful of Trump claim he can fire Fed governors by fiat",
+        "description": "The Trump administration wants the authority to fire Lisa Cook, a Federal Reserve governor. Experts say that would undermine the independence of the central bank.",
+        "link": "https://www.npr.org/2026/01/21/nx-s1-5683968/supreme-court-federal-reserve-lisa-cook",
+        "pubDate": "2026-01-21T17:12:28.000Z",
+        "source": "NPR Economy",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "economy"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Over 800,000 student loan borrowers remain in backlog for forgiveness, affordable repayment plans",
+      "description": "More than 800,000 federal student loan holders remain stuck in a backlog of applications for an affordable repayment plan or debt forgiveness.",
+      "link": "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html",
+      "pubDate": "2026-01-15T17:26:14.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 38,
+      "topic": "debt"
+    },
+    {
+      "title": "What is a mortgage loan modification, and how do you get one?",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/mortgage-loan-modification-one-165703150.html",
+      "pubDate": "2026-01-23T20:06:09.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 36,
+      "topic": "mortgage"
+    },
+    {
+      "title": "When will mortgage rates go down to 5%? Don't miss the lenders offering sub-6% loans now.",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/when-will-mortgage-rates-go-down-to-5-201806162.html",
+      "pubDate": "2025-06-04T20:18:06.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 36,
+      "topic": "mortgage"
+    },
+    {
+      "title": "My Savings Tripled Over 25 Years—Is That Good Enough for Retirement?",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/savings-tripled-over-25-years-194638781.html",
+      "pubDate": "2026-01-23T19:46:38.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "5 ways to save on taxes in retirement",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/taxes/article/taxes-in-retirement-162008500.html",
+      "pubDate": "2024-01-20T16:20:08.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "Does the 4% Rule Make Sense for Your Retirement Savings? Ask These 3 Questions to Find Out.",
+      "description": "It's not a given that it's the best withdrawal strategy for your situation.",
+      "link": "https://www.fool.com/retirement/2026/01/24/does-the-4-rule-make-sense-for-your-retirement-sav/?source=iedfolrf0000001",
+      "pubDate": "2026-01-24T20:38:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "9b7fb34a-cc5f-4255-9eaa-4279221d178c",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "Pursuing early retirement led this financial coach to marriage counseling—here's how he changed his strategy",
+      "description": "Andy Hill encourages couples to define a shared set of dreams and work backward rather than charging toward a savings goal.",
+      "link": "https://www.cnbc.com/2026/01/24/pursuing-early-retirement-led-financial-coach-to-marriage-counseling.html",
+      "pubDate": "2026-01-24T15:00:01.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 28,
+      "topic": "retirement"
+    },
+    {
+      "title": "Student loan borrowers in default may miss out on Trump's 'largest tax refund season of all time'",
+      "description": "The Trump administration is predicting larger tax refunds for the 2026 tax season, but the millions of student loan borrowers in default may miss out.",
+      "link": "https://www.cnbc.com/2026/01/14/student-loans-default-tax-refunds-garnishment.html",
+      "pubDate": "2026-01-14T18:35:12.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 28,
+      "topic": "taxes"
+    },
+    {
+      "title": "Will mortgage rates fall ahead of January's Fed meeting?",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/will-mortgage-rates-decrease-before-the-next-fed-meeting-174648246.html",
+      "pubDate": "2026-01-23T17:46:48.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 26,
+      "topic": "mortgage"
+    },
+    {
+      "title": "1 ETF Could Turn $500 Monthly Into a $800,000 Portfolio That Pays $24,000 in Annual Dividend Income",
+      "description": "The stock market tends to reward time and consistency.",
+      "link": "https://www.fool.com/investing/2026/01/24/1-etf-could-turn-500-monthly-into-a-800000-portfol/?source=iedfolrf0000001",
+      "pubDate": "2026-01-25T00:30:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "SCHD",
+        "b26e61bf-9f00-4522-8162-2cef1ce1f0fe",
+        "investing",
+        "Markets"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Should You Invest $1,000 in Netflix Stock Right Now?",
+      "description": "This longtime stock market winner is trading below its peak price.",
+      "link": "https://www.fool.com/investing/2026/01/24/should-you-invest-1000-in-netflix-stock-right-now/?source=iedfolrf0000001",
+      "pubDate": "2026-01-24T21:48:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "NFLX",
+        "46040616-a7bd-4cee-9aff-6b20c845556d",
+        "investing",
+        "Technology and Telecom"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Sandisk Stock Shows Why Investing Is Hard",
+      "description": "If investors could perfectly predict future cash flows, it would be so much easier.",
+      "link": "https://www.fool.com/investing/2026/01/24/sandisk-stock-shows-why-investing-is-hard/?source=iedfolrf0000001",
+      "pubDate": "2026-01-24T19:47:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "SNDK",
+        "8193aec1-0889-45c9-9faa-dfd01729126b",
+        "investing",
+        "Technology and Telecom"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Trump says inflation was 'defeated.' Some economists disagree",
+      "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+      "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+      "pubDate": "2026-01-21T20:56:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "economy"
+    },
+    {
+      "title": "Republicans want to end the ‘marriage penalty’ for this childcare tax credit",
+      "description": "The Republican framework for \"Reconciliation 2.0\" includes an expansion for the child and dependent care tax credit. Here's what families need to know.",
+      "link": "https://www.cnbc.com/2026/01/16/child-and-dependent-care-tax-credit.html",
+      "pubDate": "2026-01-16T21:23:53.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "taxes"
+    },
+    {
+      "title": "Bigger tax refunds are coming for 2026 — what it could mean for the economy",
+      "description": "Bigger tax refunds could be coming in 2026 due to changes enacted in President Donald Trump's \"big beautiful bill.\" Here's how it could impact the economy.",
+      "link": "https://www.cnbc.com/2026/01/13/bigger-tax-refunds-2026.html",
+      "pubDate": "2026-01-13T17:55:20.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "taxes"
+    },
+    {
+      "title": "3 benefits to making 1 extra mortgage payment per year",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/one-extra-mortgage-payment-per-year-185030812.html",
+      "pubDate": "2024-06-11T18:50:30.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Carrington Mortgage Services review 2026",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/review/carrington-mortgage-services-review-230635460.html",
+      "pubDate": "2024-07-15T23:06:35.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "mortgage"
+    },
+    {
+      "title": "I need to spend $15K on my roof. Should I take it from my Roth IRA, 401(k), IRA or money-market account?",
+      "description": "“I’m 61 years old, single and still have a job.”",
+      "link": "https://www.marketwatch.com/story/i-need-to-spend-15k-on-my-roof-do-i-take-it-from-my-roth-ira-401-k-ira-or-money-market-account-170e36a9?mod=mw_rss_topstories",
+      "pubDate": "2026-01-24T23:45:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "Yes, you still need an emergency fund in retirement. Here’s how much you should have.",
+      "description": "Retirees can face larger spending shocks than workers, often driven by unpredictable costs such as healthcare.",
+      "link": "https://www.marketwatch.com/story/yes-you-still-need-an-emergency-fund-in-retirement-heres-how-much-you-should-have-3611fd2f?mod=mw_rss_topstories",
+      "pubDate": "2026-01-24T20:35:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "Supreme Court doubtful of Trump claim he can fire Fed governors by fiat",
+      "description": "The Trump administration wants the authority to fire Lisa Cook, a Federal Reserve governor. Experts say that would undermine the independence of the central bank.",
+      "link": "https://www.npr.org/2026/01/21/nx-s1-5683968/supreme-court-federal-reserve-lisa-cook",
+      "pubDate": "2026-01-21T17:12:28.000Z",
+      "source": "NPR Economy",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "economy"
+    }
+  ],
+  "skippedByHistory": [
+    {
+      "reason": "already_generated",
+      "existingSlug": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
+      "title": "More Americans expect to miss a debt payment in the months ahead: What that does to your credit score",
+      "link": "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html"
+    }
+  ]
+}
