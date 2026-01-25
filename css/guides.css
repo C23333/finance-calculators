@@ -6,6 +6,23 @@
     background: linear-gradient(135deg, rgba(15, 61, 94, 0.12), rgba(30, 96, 145, 0.08));
     border-bottom: 1px solid var(--border);
     padding: 72px 24px 56px;
+    position: relative;
+    overflow: hidden;
+}
+
+.guides-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 22%, rgba(15, 61, 94, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 82% 18%, rgba(30, 96, 145, 0.14) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.guides-hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .guides-hero h1 {
@@ -37,6 +54,24 @@
     text-decoration: none;
     color: var(--text);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(15, 61, 94, 0.08);
+}
+
+[data-effective-theme="dark"] .guide-card {
+    box-shadow: 0 14px 30px rgba(3, 12, 20, 0.35);
+}
+
+.guide-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    opacity: 0.5;
 }
 
 .guide-card:hover {
