@@ -915,6 +915,23 @@ footer a:hover {
     margin: 0 auto;
 }
 
+.legal-page .calc-container {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 28px 28px 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.legal-page .calc-container h1 {
+    font-size: 2rem;
+}
+
+.legal-page .content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
 .calc-container h1 {
     margin-bottom: 4px;
     color: var(--text);
