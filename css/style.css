@@ -251,6 +251,13 @@ header nav {
     background: var(--bg-muted);
 }
 
+.nav-links a:focus-visible {
+    outline: none;
+    color: var(--primary);
+    background: var(--primary-bg);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25);
+}
+
 .nav-links a::after {
     display: none;
 }
