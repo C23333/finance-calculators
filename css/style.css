@@ -278,6 +278,17 @@ header nav {
     opacity: 0.6;
 }
 
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(700px circle at 85% 12%, rgba(255, 255, 255, 0.12), transparent 50%),
+        radial-gradient(520px circle at 12% 78%, rgba(124, 196, 228, 0.18), transparent 55%);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
 .hero-grid {
     position: relative;
     z-index: 1;
