@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 480px 1fr;
     gap: 24px;
-    padding: 32px 24px;
+    padding: 32px 24px 48px;
     min-height: calc(100vh - 64px);
     background: var(--bg-soft);
     max-width: 1400px;
@@ -19,7 +19,7 @@
 .calc-longform {
     grid-column: 1 / -1;
     background: var(--bg);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 32px;
     box-shadow: var(--shadow-sm);
@@ -155,8 +155,8 @@
     justify-content: space-between;
     padding: 16px 24px;
     background: var(--bg);
-    border-bottom: 1px solid var(--border-light);
-    height: 64px;
+    border-bottom: 1px solid var(--border);
+    height: 72px;
 }
 
 .calc-header .logo {
@@ -166,15 +166,15 @@
 }
 
 .calc-header .calc-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--text-secondary);
     margin: 0;
 }
 
 .calc-header .calc-nav {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     align-items: center;
 }
 
@@ -182,11 +182,14 @@
     font-size: 0.95rem;
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: var(--transition);
+    padding: 6px 10px;
+    border-radius: 999px;
 }
 
 .calc-header .calc-nav a:hover {
     color: var(--primary);
+    background: var(--bg-muted);
 }
 
 /* Guide callout banner inside calculator pages */
@@ -228,7 +231,7 @@
 .calc-input-panel {
     background: var(--bg);
     border-radius: 12px;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
@@ -238,7 +241,7 @@
 
 .calc-panel-header {
     padding: 20px 24px;
-    background: var(--bg);
+    background: var(--bg-soft);
     border-bottom: 1px solid var(--border-light);
     display: flex;
     align-items: center;
@@ -333,7 +336,7 @@
     font-size: 1rem;
     font-weight: 600;
     margin-top: 8px;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: white;
     border: none;
     border-radius: 8px;
@@ -355,7 +358,7 @@
 .calc-output-panel {
     background: var(--bg);
     border-radius: 12px;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
@@ -366,7 +369,7 @@
 /* Result highlight - clean and prominent */
 .calc-result-main {
     padding: 32px 24px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
     color: white;
     text-align: center;
 }
@@ -588,7 +591,7 @@
     width: 40px;
     height: 40px;
     padding: 0;
-    background: var(--bg-soft);
+    background: var(--bg-muted);
     border: 1px solid var(--border);
     border-radius: 8px;
     color: var(--text-secondary);

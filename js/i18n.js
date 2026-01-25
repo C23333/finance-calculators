@@ -60,7 +60,7 @@ const I18n = {
 
     /**
      * Detect user's preferred language
-     * Priority: URL path > localStorage > browser > default
+     * Priority: URL path > localStorage > default
      */
     detectLanguage() {
         // 1. Check URL path (e.g., /es/, /zh/)
@@ -75,13 +75,7 @@ const I18n = {
             return stored;
         }
 
-        // 3. Check browser language
-        const browserLang = navigator.language?.split('-')[0];
-        if (browserLang && this.LANGUAGES[browserLang]) {
-            return browserLang;
-        }
-
-        // 4. Default
+        // 3. Default (keep root domain in English unless user explicitly chooses)
         return this.DEFAULT_LANG;
     },
 

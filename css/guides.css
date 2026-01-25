@@ -3,8 +3,8 @@
    ============================================ */
 
 .guides-hero {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(14, 116, 144, 0.08));
-    border-bottom: 1px solid var(--border-light);
+    background: linear-gradient(135deg, rgba(15, 61, 94, 0.12), rgba(30, 96, 145, 0.08));
+    border-bottom: 1px solid var(--border);
     padding: 72px 24px 56px;
 }
 
@@ -31,7 +31,7 @@
 
 .guide-card {
     background: var(--bg);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 22px;
     text-decoration: none;
@@ -41,7 +41,7 @@
 
 .guide-card:hover {
     transform: translateY(-2px);
-    border-color: var(--secondary);
+    border-color: rgba(var(--primary-rgb), 0.25);
     box-shadow: var(--shadow-md);
 }
 
@@ -85,7 +85,7 @@
     text-decoration: none;
     color: var(--text);
     background: var(--bg);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     padding: 12px 14px;
     border-radius: 10px;
     display: flex;
@@ -103,7 +103,7 @@
     padding: 16px 18px;
     border-radius: 12px;
     background: var(--bg-soft);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
 }
 
 .guide-callout strong {
@@ -114,7 +114,7 @@
 .calc-guide-callout {
     grid-column: 1 / -1;
     background: var(--bg);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 16px 20px;
     display: flex;
@@ -131,7 +131,7 @@
 .calc-guide-callout a {
     text-decoration: none;
     color: var(--text-inverse);
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     padding: 10px 16px;
     border-radius: 999px;
     font-weight: 600;

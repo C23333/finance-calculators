@@ -108,14 +108,15 @@
 }
 
 .blog-card-category {
-    background: var(--primary);
-    color: white;
+    background: var(--primary-bg);
+    color: var(--primary);
     padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 500;
+    border-radius: 999px;
+    font-weight: 600;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
+    border: 1px solid rgba(var(--primary-rgb), 0.25);
 }
 
 .blog-card h2 {
@@ -942,7 +943,7 @@
    ============================================ */
 
 .blog-hero {
-    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-soft) 100%);
+    background: linear-gradient(135deg, rgba(15, 61, 94, 0.08) 0%, rgba(30, 96, 145, 0.06) 45%, rgba(245, 247, 251, 1) 100%);
     padding: 80px 24px 60px;
     position: relative;
     overflow: hidden;
@@ -956,8 +957,8 @@
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 15% 20%, rgba(15, 61, 94, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(30, 96, 145, 0.1) 0%, transparent 55%);
     pointer-events: none;
 }
 
@@ -967,8 +968,8 @@
 }
 
 .blog-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
+    font-size: 2.4rem;
+    margin-bottom: 12px;
 }
 
 .blog-hero-stats {
@@ -1001,7 +1002,7 @@
 .blog-search-input {
     width: 100%;
     padding: 14px 20px 14px 48px;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border);
     border-radius: 50px;
     font-size: 1rem;
     background: var(--bg);
@@ -1012,7 +1013,7 @@
 .blog-search-input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
 }
 
 .blog-search-icon {
@@ -1030,7 +1031,7 @@
 
 .category-nav {
     position: sticky;
-    top: 60px;
+    top: 72px;
     z-index: 100;
     background: var(--bg);
     border-bottom: 1px solid var(--border-light);
@@ -1062,8 +1063,8 @@
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
-    background: var(--bg-soft);
-    border: 1px solid transparent;
+    background: var(--bg);
+    border: 1px solid var(--border);
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -1072,6 +1073,7 @@
 .category-pill:hover {
     color: var(--primary);
     background: var(--primary-bg);
+    border-color: rgba(var(--primary-rgb), 0.25);
 }
 
 .category-pill.active {
@@ -1171,24 +1173,30 @@
 .blog-card {
     position: relative;
     transition: all 0.3s ease;
+    border: 1px solid var(--border);
 }
 
 .blog-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(var(--primary-rgb), 0.2);
 }
 
 [data-effective-theme="dark"] .blog-card:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(3, 12, 20, 0.35);
 }
 
 /* Card with thumbnail */
 .blog-card-image {
-    display: block;
+    display: flex;
     width: 100%;
     height: 180px;
-    background: var(--bg-soft);
+    background: linear-gradient(135deg, rgba(15, 61, 94, 0.12), rgba(30, 96, 145, 0.18));
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    color: transparent;
 }
 
 .blog-card-image img {

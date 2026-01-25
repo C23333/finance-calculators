@@ -211,7 +211,7 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 24px;
+    padding: 16px 24px;
     max-width: 1200px;
     margin: 0 auto;
     gap: 16px;
@@ -232,7 +232,7 @@ header nav {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 16px;
 }
 
 .nav-links a {
@@ -242,26 +242,21 @@ header nav {
     font-size: 0.95rem;
     transition: var(--transition);
     position: relative;
+    padding: 8px 12px;
+    border-radius: var(--radius-full);
 }
 
 .nav-links a:hover {
     color: var(--primary);
+    background: var(--bg-muted);
 }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: var(--transition);
-    border-radius: 1px;
+    display: none;
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+    width: 0;
 }
 
 /* Hero */
