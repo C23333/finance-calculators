@@ -678,6 +678,12 @@
     box-shadow: 0 0 0 3px var(--primary-bg);
 }
 
+.info-toggle:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
 .info-toggle svg {
     width: 20px;
     height: 20px;
@@ -780,6 +786,12 @@
 .info-sidebar-close:focus {
     outline: none;
     box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.info-sidebar-close:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
+    box-shadow: none;
 }
 
 /* Sidebar content area */
