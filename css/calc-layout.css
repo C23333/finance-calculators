@@ -553,6 +553,14 @@
     transition: background 0.2s ease;
 }
 
+.calc-table tbody tr:nth-child(even) {
+    background: rgba(var(--primary-rgb), 0.03);
+}
+
+[data-effective-theme="dark"] .calc-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
 .calc-table tbody tr:hover {
     background: rgba(var(--primary-rgb), 0.06);
 }
