@@ -321,6 +321,19 @@
     color: var(--text);
     letter-spacing: -0.5px;
     line-height: var(--heading-line-height);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.article-content h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 46px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    opacity: 0.55;
 }
 
 .article-content h2:first-child {
@@ -614,6 +627,17 @@
     border-left: 4px solid var(--primary);
     border-radius: 0 12px 12px 0;
     font-style: italic;
+    position: relative;
+}
+
+.article-content blockquote::before {
+    content: \"\\201C\";
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    font-size: 2.2rem;
+    color: rgba(var(--primary-rgb), 0.3);
+    font-style: normal;
 }
 
 .article-content blockquote p {
