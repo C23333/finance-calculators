@@ -1004,7 +1004,7 @@ footer a:focus-visible {
 }
 
 .legal-page .content {
-    max-width: 720px;
+    max-width: min(72ch, 760px);
     margin: 0 auto;
 }
 
