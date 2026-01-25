@@ -799,6 +799,24 @@ footer {
     padding: 40px 24px;
     text-align: center;
     border-top: 1px solid var(--border);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(520px, 90%);
+    height: 2px;
+    background: linear-gradient(90deg, rgba(124, 196, 228, 0.6), rgba(159, 218, 241, 0.25));
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 footer p {
@@ -818,15 +836,26 @@ footer a:hover {
 }
 
 .footer-links {
-    margin-bottom: 8px;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
 }
 
 .footer-links a {
-    margin-right: 16px;
+    margin-right: 0;
 }
 
 .footer-links a:last-child {
     margin-right: 0;
+}
+
+.disclaimer {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    color: var(--footer-link);
 }
 
 /* Friend Links */
