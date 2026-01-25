@@ -249,6 +249,9 @@ header nav {
     position: relative;
     padding: 8px 12px;
     border-radius: var(--radius-full);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -1106,6 +1109,7 @@ footer a:focus-visible {
     transition: var(--transition);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
     margin-top: 8px;
+    min-height: 44px;
 }
 
 .btn:hover {
