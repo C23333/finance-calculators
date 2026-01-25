@@ -219,6 +219,12 @@
     color: var(--primary);
 }
 
+.breadcrumb a:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
+    color: var(--primary);
+}
+
 .breadcrumb span {
     margin: 0 6px;
     opacity: 0.4;
