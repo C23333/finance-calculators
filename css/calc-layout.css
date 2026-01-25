@@ -350,6 +350,11 @@
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
+.calc-form .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.35);
+}
+
 .calc-form .btn:active {
     transform: translateY(0);
 }
