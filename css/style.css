@@ -938,6 +938,13 @@ footer a:focus-visible {
     color: var(--footer-link);
 }
 
+/* Offset anchor targets for sticky header */
+.content h2,
+.content h3,
+.content h4 {
+    scroll-margin-top: 96px;
+}
+
 /* Friend Links */
 .friend-links {
     margin: 12px 0;
