@@ -1627,6 +1627,12 @@
     color: var(--text);
 }
 
+.toc-toggle:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.5);
+    outline-offset: 2px;
+    color: var(--text);
+}
+
 .table-of-contents.collapsed .toc-list,
 .table-of-contents.collapsed .toc-progress {
     display: none;
@@ -1664,6 +1670,14 @@
 .toc-link:hover {
     color: var(--text);
     background: var(--bg-soft);
+}
+
+.toc-link:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: -2px;
+    color: var(--text);
+    background: var(--bg-soft);
+    border-left-color: rgba(var(--primary-rgb), 0.4);
 }
 
 .toc-link.active {
