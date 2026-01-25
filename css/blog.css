@@ -1218,6 +1218,11 @@
     cursor: pointer;
     border-radius: 6px;
     transition: all 0.2s ease;
+    min-height: 40px;
+    min-width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .view-btn:hover {
@@ -1623,6 +1628,11 @@
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.2s ease;
+    min-height: 40px;
+    min-width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .toc-toggle:hover {

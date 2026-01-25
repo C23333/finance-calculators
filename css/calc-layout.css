@@ -484,6 +484,7 @@
     white-space: nowrap;
     transition: all 0.2s;
     border-bottom: 2px solid transparent;
+    min-height: 44px;
 }
 
 .calc-output-tab:hover {
@@ -770,8 +771,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     padding: 0;
     background: rgba(var(--primary-rgb), 0.08);
     border: 1px solid rgba(var(--primary-rgb), 0.2);
