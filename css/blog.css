@@ -1062,6 +1062,11 @@
     box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
 }
 
+.blog-search-input:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: 2px;
+}
+
 .blog-search-input::placeholder {
     color: var(--text-light);
 }
