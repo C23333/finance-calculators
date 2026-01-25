@@ -718,6 +718,13 @@ header nav {
     border-color: rgba(var(--primary-rgb), 0.2);
 }
 
+.calc-card:focus-visible {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.35), var(--shadow-md);
+    border-color: rgba(var(--primary-rgb), 0.3);
+}
+
 .calc-card:hover::before {
     opacity: 0.8;
 }
