@@ -126,11 +126,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .guide-list a span {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+.guide-list a:hover {
+    transform: translateY(-1px);
+    border-color: rgba(var(--primary-rgb), 0.25);
+    box-shadow: 0 10px 22px rgba(15, 61, 94, 0.12);
 }
 
 .guide-callout {
