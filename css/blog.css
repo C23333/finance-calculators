@@ -670,6 +670,12 @@
     border-radius: 12px;
     overflow-x: auto;
     margin: 32px 0;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 22px rgba(15, 61, 94, 0.08);
+}
+
+[data-effective-theme="dark"] .article-content pre {
+    box-shadow: 0 12px 26px rgba(3, 12, 20, 0.45);
 }
 
 .article-content pre code {
