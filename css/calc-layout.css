@@ -491,6 +491,13 @@
     border-bottom-color: var(--primary);
 }
 
+.calc-output-tab:focus-visible {
+    outline: 2px solid rgba(var(--primary-rgb), 0.45);
+    outline-offset: -2px;
+    color: var(--text);
+    background: rgba(var(--primary-rgb), 0.08);
+}
+
 /* Output content area */
 .calc-output-content {
     flex: 1;
