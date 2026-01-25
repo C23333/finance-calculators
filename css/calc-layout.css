@@ -403,6 +403,10 @@
     text-align: center;
 }
 
+.calc-result-item:nth-child(even) {
+    background: var(--bg-soft);
+}
+
 .calc-result-item .value {
     font-size: 1.4rem;
     font-weight: 600;
