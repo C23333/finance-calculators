@@ -382,6 +382,7 @@ header nav {
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
+    min-height: 44px;
 }
 
 .cta-btn.primary {
