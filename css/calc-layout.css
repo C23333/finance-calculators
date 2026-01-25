@@ -539,8 +539,12 @@
     text-align: left;
 }
 
+.calc-table tbody tr {
+    transition: background 0.2s ease;
+}
+
 .calc-table tbody tr:hover {
-    background: var(--bg-soft);
+    background: rgba(var(--primary-rgb), 0.06);
 }
 
 /* Quick links / Related calculators */
