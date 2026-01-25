@@ -404,7 +404,11 @@
 }
 
 .calc-result-item:nth-child(even) {
-    background: var(--bg-soft);
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+[data-effective-theme="dark"] .calc-result-item:nth-child(even) {
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .calc-result-item .value {
