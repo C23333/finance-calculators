@@ -303,6 +303,8 @@ const ClickTracker = {
 /**
  * Ad Manager with Performance Optimization
  */
+const isLocalhost = ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+
 const AdManager = {
     loadedAds: new Set(),
     observer: null,
@@ -312,6 +314,9 @@ const AdManager = {
      * Initialize AdSense with performance optimizations
      */
     init() {
+        if (isLocalhost) {
+            return;
+        }
         if (!MonetizationConfig.adsense.enabled) {
             console.log('AdSense is disabled.');
             return;

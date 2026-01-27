@@ -29,54 +29,53 @@
      * Get current language from I18n system or URL
      */
     function getCurrentLanguage() {
-        // Try to get from I18n system
-        if (typeof I18n !== 'undefined' && I18n.currentLang) {
+        const path = window.location.pathname;
+        const blogMatch = path.match(/^\/blog\/([a-z]{2})\//);
+        if (blogMatch && SUPPORTED_LANGUAGES[blogMatch[1]]) {
+            return blogMatch[1];
+        }
+
+        const pathMatch = path.match(/^\/([a-z]{2})\//);
+        if (pathMatch && SUPPORTED_LANGUAGES[pathMatch[1]]) {
+            return pathMatch[1];
+        }
+
+        if (typeof I18n !== 'undefined' && I18n.currentLang && SUPPORTED_LANGUAGES[I18n.currentLang]) {
             return I18n.currentLang;
         }
-        // Fallback to URL detection
-        const pathMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
-        return pathMatch ? pathMatch[1] : DEFAULT_LANG;
+
+        return DEFAULT_LANG;
     }
 
     /**
      * Inject hreflang tags for supported blog translations only
      */
     function injectHreflangTags() {
-        // Remove existing hreflang tags to avoid duplicates
-        document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/blog/')) {
+        const existing = document.querySelectorAll('link[rel="alternate"][hreflang]');
+        if (existing.length > 0) {
             return;
         }
-        const currentLang = getCurrentLanguage();
 
-        // Generate hreflang for each language
+        const currentPath = window.location.pathname;
+        const blogIndexMatch = currentPath.match(/^\/blog\/(?:([a-z]{2})\/)?(?:index\.html)?$/);
+        if (!blogIndexMatch) {
+            return;
+        }
+
         Object.keys(SUPPORTED_LANGUAGES).forEach(lang => {
             const link = document.createElement('link');
             link.rel = 'alternate';
             link.hreflang = lang;
-
-            // Build URL for this language
-            let url;
-            if (lang === DEFAULT_LANG) {
-                // English uses root path
-                url = BASE_URL + currentPath.replace(/^\/[a-z]{2}\//, '/');
-            } else {
-                // Other languages use language prefix
-                const cleanPath = currentPath.replace(/^\/[a-z]{2}\//, '/');
-                url = BASE_URL + '/' + lang + cleanPath;
-            }
-
-            link.href = url;
+            link.href = lang === DEFAULT_LANG
+                ? `${BASE_URL}/blog/`
+                : `${BASE_URL}/blog/${lang}/`;
             document.head.appendChild(link);
         });
 
-        // Add x-default pointing to English
         const xDefault = document.createElement('link');
         xDefault.rel = 'alternate';
         xDefault.hreflang = 'x-default';
-        xDefault.href = BASE_URL + currentPath.replace(/^\/[a-z]{2}\//, '/');
+        xDefault.href = `${BASE_URL}/blog/`;
         document.head.appendChild(xDefault);
     }
 
@@ -85,19 +84,8 @@
      * Requirements: 6.1, 6.4
      */
     function updateCanonicalUrl() {
-        const currentLang = getCurrentLanguage();
         const currentPath = window.location.pathname;
-        let canonicalUrl;
-        if (currentLang === DEFAULT_LANG) {
-            canonicalUrl = BASE_URL + currentPath;
-        } else {
-            // Ensure language prefix is in the canonical URL
-            if (!currentPath.startsWith('/' + currentLang + '/')) {
-                canonicalUrl = BASE_URL + '/' + currentLang + currentPath;
-            } else {
-                canonicalUrl = BASE_URL + currentPath;
-            }
-        }
+        const canonicalUrl = BASE_URL + currentPath;
 
         // Update or create canonical link
         let canonical = document.querySelector('link[rel="canonical"]');
@@ -121,7 +109,7 @@
         updateMetaTag('og:locale', langConfig.locale);
 
         // Try to get localized title and description from I18n
-        if (typeof I18n !== 'undefined' && I18n.t) {
+        if (typeof I18n !== 'undefined' && I18n.isLoaded && I18n.t) {
             const seoTitle = I18n.t('seo.home.title');
             const seoDesc = I18n.t('seo.home.description');
 
@@ -214,6 +202,8 @@
     function generateBreadcrumbSchema() {
         const path = window.location.pathname;
         const currentLang = getCurrentLanguage();
+        const rootLangMatch = path.match(/^\/([a-z]{2})\//);
+        const rootLang = rootLangMatch && SUPPORTED_LANGUAGES[rootLangMatch[1]] ? rootLangMatch[1] : null;
 
         // Get localized names
         let homeName = 'Home';
@@ -221,7 +211,7 @@
         let blogName = 'Blog';
         let guidesName = 'Guides';
 
-        if (typeof I18n !== 'undefined' && I18n.t) {
+        if (typeof I18n !== 'undefined' && I18n.isLoaded && I18n.t) {
             const homeTranslation = I18n.t('nav.home');
             const calcTranslation = I18n.t('nav.calculators');
             const blogTranslation = I18n.t('nav.blog');
@@ -245,9 +235,9 @@
         }
 
         // Home is always first
-        const homeUrl = currentLang === DEFAULT_LANG
-            ? "https://financecalc.cc/"
-            : `https://financecalc.cc/${currentLang}/`;
+        const homeUrl = rootLang
+            ? `https://financecalc.cc/${rootLang}/`
+            : "https://financecalc.cc/";
 
         breadcrumbs.itemListElement.push({
             "@type": "ListItem",
@@ -257,9 +247,9 @@
         });
 
         if (path.includes('/calculators/')) {
-            const calcUrl = currentLang === DEFAULT_LANG
-                ? "https://financecalc.cc/#calculators"
-                : `https://financecalc.cc/${currentLang}/#calculators`;
+            const calcUrl = rootLang
+                ? `https://financecalc.cc/${rootLang}/#calculators`
+                : "https://financecalc.cc/#calculators";
 
             breadcrumbs.itemListElement.push({
                 "@type": "ListItem",
@@ -277,9 +267,10 @@
                 "item": "https://financecalc.cc" + path
             });
         } else if (path.includes('/blog/')) {
-            const blogUrl = currentLang === DEFAULT_LANG
-                ? "https://financecalc.cc/blog/"
-                : `https://financecalc.cc/blog/${currentLang}/`;
+            const blogLangMatch = path.match(/^\/blog\/([a-z]{2})\//);
+            const blogUrl = blogLangMatch
+                ? `https://financecalc.cc/blog/${blogLangMatch[1]}/`
+                : "https://financecalc.cc/blog/";
 
             breadcrumbs.itemListElement.push({
                 "@type": "ListItem",
@@ -362,6 +353,10 @@
     // Preload critical resources
     function preloadCriticalResources() {
         // Preload fonts
+        const usesInter = document.querySelector('link[href*="fonts.googleapis.com"][href*="Inter"]');
+        if (!usesInter) {
+            return;
+        }
         const fontPreload = document.createElement('link');
         fontPreload.rel = 'preload';
         fontPreload.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';

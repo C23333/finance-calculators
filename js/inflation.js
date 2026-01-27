@@ -126,9 +126,8 @@ function generateInflationTable(amount, rate, years) {
 function getYearText(year) {
     // Check if I18n is available and has the translation
     if (typeof I18n !== 'undefined' && I18n.isLoaded) {
-        const yearXTemplate = I18n.t('calculators.inflation.yearX');
-        // If translation exists and contains {year} placeholder
-        if (yearXTemplate && yearXTemplate !== 'calculators.inflation.yearX') {
+        const yearXTemplate = I18n.translations?.calculators?.inflation?.yearX;
+        if (yearXTemplate) {
             return yearXTemplate.replace('{year}', year);
         }
     }

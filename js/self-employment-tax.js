@@ -5,6 +5,13 @@ document.getElementById('selfEmploymentForm').addEventListener('submit', functio
     });
 });
 
+function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.textContent = value;
+    }
+}
+
 async function calculateSelfEmploymentTax(shouldScroll = false) {
     const params = await TaxParams.load();
     const seParams = params.seTax || {};
@@ -73,19 +80,44 @@ async function calculateSelfEmploymentTax(shouldScroll = false) {
     const effectiveRate = (totalTax / (netSEIncome + otherIncome)) * 100;
 
     // Display results
-    document.getElementById('quarterlyPayment').textContent = I18n.formatCurrency(quarterlyPayment, { decimals: 0 });
-    document.getElementById('netIncome').textContent = I18n.formatCurrency(netSEIncome, { decimals: 0 });
-    document.getElementById('seTax').textContent = I18n.formatCurrency(totalSETax, { decimals: 0 });
-    document.getElementById('socialSecurityTax').textContent = I18n.formatCurrency(socialSecurityTax, { decimals: 0 });
-    document.getElementById('medicareTax').textContent = I18n.formatCurrency(medicareTax, { decimals: 0 });
-    document.getElementById('federalTax').textContent = I18n.formatCurrency(federalTax, { decimals: 0 });
-    document.getElementById('stateTax').textContent = I18n.formatCurrency(stateTax, { decimals: 0 });
-    document.getElementById('totalTax').textContent = I18n.formatCurrency(totalTax, { decimals: 0 });
-    document.getElementById('effectiveRate').textContent = effectiveRate.toFixed(1) + '%';
+    setText('quarterlyPayment', I18n.formatCurrency(quarterlyPayment, { decimals: 0 }));
+    setText('netIncome', I18n.formatCurrency(netSEIncome, { decimals: 0 }));
+    setText('seTax', I18n.formatCurrency(totalSETax, { decimals: 0 }));
+    setText('socialSecurityTax', I18n.formatCurrency(socialSecurityTax, { decimals: 0 }));
+    setText('medicareTax', I18n.formatCurrency(medicareTax, { decimals: 0 }));
+    setText('federalTax', I18n.formatCurrency(federalTax, { decimals: 0 }));
+    setText('stateTax', I18n.formatCurrency(stateTax, { decimals: 0 }));
+    setText('totalTax', I18n.formatCurrency(totalTax, { decimals: 0 }));
+    setText('effectiveRate', effectiveRate.toFixed(1) + '%');
+
+
+    const totalDeductions = businessExpenses + seDeduction + retirementContribution + healthInsurance;
+
+    const halfSeTaxDeductionEl = document.getElementById('halfSeTaxDeduction');
+    if (halfSeTaxDeductionEl) {
+        halfSeTaxDeductionEl.textContent = I18n.formatCurrency(seDeduction, { decimals: 0 });
+    }
+    const healthInsuranceDeductionEl = document.getElementById('healthInsuranceDeduction');
+    if (healthInsuranceDeductionEl) {
+        healthInsuranceDeductionEl.textContent = I18n.formatCurrency(healthInsurance, { decimals: 0 });
+    }
+    const retirementDeductionEl = document.getElementById('retirementDeduction');
+    if (retirementDeductionEl) {
+        retirementDeductionEl.textContent = I18n.formatCurrency(retirementContribution, { decimals: 0 });
+    }
+    const businessExpensesDeductionEl = document.getElementById('businessExpensesDeduction');
+    if (businessExpensesDeductionEl) {
+        businessExpensesDeductionEl.textContent = I18n.formatCurrency(businessExpenses, { decimals: 0 });
+    }
+    const totalDeductionsEl = document.getElementById('totalDeductions');
+    if (totalDeductionsEl) {
+        totalDeductionsEl.textContent = I18n.formatCurrency(totalDeductions, { decimals: 0 });
+    }
 
     // Build deductions table
     const deductionsBody = document.getElementById('deductionsBody');
-    deductionsBody.innerHTML = `
+    if (deductionsBody) {
+        deductionsBody.innerHTML = `
         <tr>
             <td data-i18n="calculators.selfEmploymentTax.businessExpensesLabel">${I18n.t('calculators.selfEmploymentTax.businessExpensesLabel')}</td>
             <td>${I18n.formatCurrency(businessExpenses, { decimals: 0 })}</td>
@@ -106,13 +138,15 @@ async function calculateSelfEmploymentTax(shouldScroll = false) {
         </tr>` : ''}
         <tr style="font-weight: bold; border-top: 2px solid #ddd;">
             <td data-i18n="calculators.selfEmploymentTax.totalDeductions">${I18n.t('calculators.selfEmploymentTax.totalDeductions')}</td>
-            <td>${I18n.formatCurrency(businessExpenses + seDeduction + retirementContribution + healthInsurance, { decimals: 0 })}</td>
+            <td>${I18n.formatCurrency(totalDeductions, { decimals: 0 })}</td>
         </tr>
     `;
+    }
 
     // Build breakdown table
     const breakdownBody = document.getElementById('breakdownBody');
-    breakdownBody.innerHTML = `
+    if (breakdownBody) {
+        breakdownBody.innerHTML = `
         <tr>
             <td data-i18n="calculators.selfEmploymentTax.socialSecurityTax">${I18n.t('calculators.selfEmploymentTax.socialSecurityTax')}</td>
             <td>${I18n.formatCurrency(socialSecurityTax, { decimals: 0 })}</td>
@@ -144,10 +178,14 @@ async function calculateSelfEmploymentTax(shouldScroll = false) {
             <td>${effectiveRate.toFixed(1)}% ${I18n.t('calculators.selfEmploymentTax.effective')}</td>
         </tr>
     `;
+    }
 
-    document.getElementById('results').style.display = 'block';
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    const results = document.getElementById('results');
+    if (results) {
+        results.style.display = 'block';
+        if (shouldScroll) {
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 
@@ -179,7 +217,8 @@ function calculateStateTax(income, state, stateParams) {
 // Listen for language changes and recalculate
 document.addEventListener('languageChange', function() {
     // Recalculate to update currency formatting
-    if (document.getElementById('results').style.display !== 'none') {
+    const results = document.getElementById('results');
+    if (results && results.style.display !== 'none') {
         calculateSelfEmploymentTax(false).catch((error) => {
             console.warn('[SelfEmploymentTax] Calculation failed.', error);
         });

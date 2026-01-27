@@ -458,6 +458,7 @@
       "priceIncrease": "Price Increase",
       "yearByYearBreakdown": "Year-by-Year Breakdown",
       "year": "Year",
+      "yearX": "Year {year}",
       "futureCost": "Future Cost",
       "buyingPowerOf100": "Buying Power of $100",
       "resourcesTitle": "Inflation Resources",

@@ -1,7 +1,9 @@
 // Site-wide initialization
 (function() {
+    const isLocal = ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+
     // Force HTTPS
-    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    if (location.protocol !== 'https:' && !isLocal) {
         location.replace('https:' + location.href.substring(location.protocol.length));
     }
 
@@ -15,7 +17,7 @@
     }
 
     // Add Google AdSense script if not present
-    if (!document.querySelector('script[src*="adsbygoogle"]')) {
+    if (!isLocal && !document.querySelector('script[src*="adsbygoogle"]')) {
         const adsense = document.createElement('script');
         adsense.async = true;
         adsense.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9483557811977052';
@@ -24,7 +26,7 @@
     }
 
     // Add Google Analytics 4 if not present
-    if (!document.querySelector('script[src*="googletagmanager"]')) {
+    if (!isLocal && !document.querySelector('script[src*="googletagmanager"]')) {
         const ga = document.createElement('script');
         ga.async = true;
         ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-QFTQMV9QP7';

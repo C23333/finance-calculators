@@ -4,6 +4,8 @@
  * Features: Auto-detection, URL-based routing, localStorage persistence, currency localization
  */
 
+const I18N_VERSION = '20260125-2';
+
 const I18n = {
     // Supported languages with metadata
     LANGUAGES: {
@@ -112,7 +114,8 @@ const I18n = {
         try {
             // Always try to load from JSON file first (it's more complete)
             const baseUrl = this.getBaseUrl();
-            const jsonPath = `${baseUrl}/js/i18n/${lang}.json`;
+            const versionSuffix = I18N_VERSION ? `?v=${I18N_VERSION}` : '';
+            const jsonPath = `${baseUrl}/js/i18n/${lang}.json${versionSuffix}`;
             
             console.log(`[i18n] Fetching translations from: ${jsonPath}`);
             
@@ -130,7 +133,7 @@ const I18n = {
         
         // Try alternative relative path
         try {
-            const altPath = this.getAlternativePath(lang);
+            const altPath = `${this.getAlternativePath(lang)}${versionSuffix}`;
             console.log(`[i18n] Trying alternative path: ${altPath}`);
             const altResponse = await fetch(altPath);
             if (altResponse.ok) {

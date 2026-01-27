@@ -5,6 +5,13 @@ document.getElementById('socialSecurityForm').addEventListener('submit', functio
     });
 });
 
+function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.textContent = value;
+    }
+}
+
 async function calculateSocialSecurity(shouldScroll = false) {
     const params = await TaxParams.load();
     const ssParams = params.socialSecurity || {};
@@ -120,14 +127,14 @@ async function calculateSocialSecurity(shouldScroll = false) {
     }
 
     // Display results
-    document.getElementById('monthlyBenefit').textContent = I18n.formatCurrency(monthlyBenefit, { decimals: 0 });
-    document.getElementById('annualBenefit').textContent = I18n.formatCurrency(monthlyBenefit * 12, { decimals: 0 });
-    document.getElementById('fullRetirementAge').textContent = formatAge(fra);
-    document.getElementById('benefitAt62').textContent = I18n.formatCurrency(benefitAt62, { decimals: 0 });
-    document.getElementById('benefitAtFRA').textContent = I18n.formatCurrency(benefitAtFRA, { decimals: 0 });
-    document.getElementById('benefitAt70').textContent = I18n.formatCurrency(benefitAt70, { decimals: 0 });
-    document.getElementById('lifetimeBenefits').textContent = I18n.formatCurrency(lifetimeBenefits, { decimals: 0 });
-    document.getElementById('breakEvenAge').textContent = breakEvenAge ? `Age ${breakEvenAge}` : 'N/A';
+    setText('monthlyBenefit', I18n.formatCurrency(monthlyBenefit, { decimals: 0 }));
+    setText('annualBenefit', I18n.formatCurrency(monthlyBenefit * 12, { decimals: 0 }));
+    setText('fullRetirementAge', formatAge(fra));
+    setText('benefitAt62', I18n.formatCurrency(benefitAt62, { decimals: 0 }));
+    setText('benefitAtFRA', I18n.formatCurrency(benefitAtFRA, { decimals: 0 }));
+    setText('benefitAt70', I18n.formatCurrency(benefitAt70, { decimals: 0 }));
+    setText('lifetimeBenefits', I18n.formatCurrency(lifetimeBenefits, { decimals: 0 }));
+    setText('breakEvenAge', breakEvenAge ? `Age ${breakEvenAge}` : 'N/A');
 
     // Build comparison table
     const comparisonBody = document.getElementById('comparisonBody');
@@ -137,22 +144,27 @@ async function calculateSocialSecurity(shouldScroll = false) {
         { age: 70, benefit: benefitAt70, label: '70 (Delayed)' }
     ];
 
-    comparisonBody.innerHTML = scenarios.map(s => {
-        const yearsRec = lifeExpectancy - s.age;
-        const lifetime = s.benefit * 12 * yearsRec;
-        return `
-            <tr>
-                <td>${s.label}</td>
-                <td>${I18n.formatCurrency(s.benefit, { decimals: 0 })}</td>
-                <td>${I18n.formatCurrency(s.benefit * 12, { decimals: 0 })}</td>
-                <td>${I18n.formatCurrency(lifetime, { decimals: 0 })}</td>
-            </tr>
-        `;
-    }).join('');
+    if (comparisonBody) {
+        comparisonBody.innerHTML = scenarios.map(s => {
+            const yearsRec = lifeExpectancy - s.age;
+            const lifetime = s.benefit * 12 * yearsRec;
+            return `
+                <tr>
+                    <td>${s.label}</td>
+                    <td>${I18n.formatCurrency(s.benefit, { decimals: 0 })}</td>
+                    <td>${I18n.formatCurrency(s.benefit * 12, { decimals: 0 })}</td>
+                    <td>${I18n.formatCurrency(lifetime, { decimals: 0 })}</td>
+                </tr>
+            `;
+        }).join('');
+    }
 
-    document.getElementById('results').style.display = 'block';
-    if (shouldScroll) {
-        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    const results = document.getElementById('results');
+    if (results) {
+        results.style.display = 'block';
+        if (shouldScroll) {
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 
@@ -166,7 +178,8 @@ function formatAge(age) {
 // Listen for language changes and recalculate
 document.addEventListener('languageChange', function() {
     // Recalculate to update currency formatting
-    if (document.getElementById('results').style.display !== 'none') {
+    const results = document.getElementById('results');
+    if (results && results.style.display !== 'none') {
         calculateSocialSecurity(false).catch((error) => {
             console.warn('[SocialSecurity] Calculation failed.', error);
         });
