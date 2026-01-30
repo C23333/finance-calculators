@@ -1,0 +1,539 @@
+{
+  "fetchedAt": "2026-01-30T04:04:42.965Z",
+  "fetchStats": {
+    "success": 6,
+    "failed": 4,
+    "skipped": 0
+  },
+  "totalFetched": 172,
+  "totalUnique": 172,
+  "historyFiltered": 0,
+  "totalSelected": 20,
+  "byTopic": {
+    "mortgage": [
+      {
+        "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+        "description": "From mortgage rates and auto loans to credit cards and savings accounts, here's a look at how the January Fed decision could affect your finances.",
+        "link": "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html",
+        "pubDate": "2026-01-28T19:03:37.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 83,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Fed is likely to hold interest rates steady, resisting Trump pressure. Here’s what that means for borrowers",
+        "description": "From mortgage rates to auto loans and credit cards, here’s a look at how the upcoming January Fed decision may affect your finances.",
+        "link": "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html",
+        "pubDate": "2026-01-26T19:51:37.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 73,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Mortgage and refinance interest rates today, January 28, 2026: Rates slip even further below 6%",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-wednesday-january-28-2026-110051877.html",
+        "pubDate": "2026-01-28T11:00:51.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 46,
+        "topic": "mortgage"
+      },
+      {
+        "title": "How to get the lowest mortgage rates possible in 8 steps",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/how-to-get-the-lowest-mortgage-rates-possible-in-8-steps-224601666.html",
+        "pubDate": "2024-01-26T22:46:01.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Rates are still under 6%: Mortgage lenders with the best rates this week, Jan. 26-31, 2026",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/rates-are-still-under-6-mortgage-lenders-with-the-best-rates-this-week-jan-26-31-2026-170834367.html",
+        "pubDate": "2025-11-03T17:08:34.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "mortgage"
+      }
+    ],
+    "economy": [
+      {
+        "title": "Fed holds interest rates steady, taking a pause from rate cuts to assess the economy",
+        "description": "The central bank cut rates at its three previous meetings in an effort to support the job market. But with inflation still elevated, the Fed is cautious about additional rate cuts.",
+        "link": "https://www.npr.org/2026/01/28/nx-s1-5690136/federal-reserve-interest-rates-jobs-labor-inflation",
+        "pubDate": "2026-01-28T19:06:11.000Z",
+        "source": "NPR Economy",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 56,
+        "topic": "economy"
+      },
+      {
+        "title": "Trump says he’ll announce his Fed pick Friday morning. Here’s who’s in the lead, according to prediction markets.",
+        "description": "President Donald Trump said he’ll announce his nominee to chair the Federal Reserve on Friday morning — and prediction markets have turned sharply toward a former Fed governor for the post.",
+        "link": "https://www.marketwatch.com/story/trump-says-hell-announce-his-fed-pick-next-week-heres-whos-in-the-lead-according-to-prediction-markets-ba80c732?mod=mw_rss_topstories",
+        "pubDate": "2026-01-30T02:03:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 26,
+        "topic": "economy"
+      },
+      {
+        "title": "Trump says inflation was 'defeated.' Some economists disagree",
+        "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+        "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+        "pubDate": "2026-01-21T20:56:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "economy"
+      }
+    ],
+    "investing": [
+      {
+        "title": "Gold rally stalls as prices drop 4% after a sharp run-up; Asia-Pacific stock markets trade mixed",
+        "description": "Asia-Pacific markets traded mixed after U.S. President Donald Trump said that he will announce his choice for the next Federal Reserve chair on Friday.",
+        "link": "https://www.cnbc.com/2026/01/30/asia-pacific-markets-today-friday-nikkei-225-kospi-jakarta-composite-index-us-shutdown-deal-trump.html",
+        "pubDate": "2026-01-30T03:27:45.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 38,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 29: Joby Aviation Falls After Announcing $1.2 Billion Stock and Convertible Note Offerings",
+        "description": "Today, Jan. 29, 2026, investors weigh massive new fundraising against mounting dilution risks in the race to launch eVTOL air taxis.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-joby-aviation-falls-after-announcing-usd1-2-billion-stock-and-convertible-note-offerings/?source=iedfolrf0000001",
+        "pubDate": "2026-01-29T22:45:14.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "JOBY",
+          "4da1c72e-19f9-4edc-baf5-cb78d943675d",
+          "coveragestock-market-today",
+          "Industrials"
+        ],
+        "score": 36,
+        "topic": "investing"
+      },
+      {
+        "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+        "description": "Five years after GameStop stock fueled a revolution among retail investors, their angst will likely continue to fuel speculative buying, experts said.",
+        "link": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html",
+        "pubDate": "2026-01-29T18:55:58.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 28,
+        "topic": "investing"
+      },
+      {
+        "title": "One Fund Just Bet $3 Million on an ETF Down 10% During a Bull Market",
+        "description": "This asset management firm targets long-term growth by investing in U.S. companies with strong management and reinvestment potential.",
+        "link": "https://www.fool.com/coverage/filings/2026/01/29/one-fund-just-bet-usd3-million-on-an-etf-down-10-during-a-bull-market/?source=iedfolrf0000001",
+        "pubDate": "2026-01-30T00:29:45.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "AKRE",
+          "27f1ff40-c903-49ab-8132-2d31e1096b0e",
+          "coveragefilings"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 29: AT&T Climbs as Earnings Confirm Cash Flow Strength",
+        "description": "AT&T rose after earnings confirmed steady cash generation amid a softer market backdrop.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-at-and-t-climbs-as-earnings-confirm-cash-flow-strength/?source=iedfolrf0000001",
+        "pubDate": "2026-01-29T22:58:06.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "T",
+          "VZ",
+          "TMUS",
+          "56a15203-9060-4866-9522-0a49d7fa9a9c",
+          "coveragestock-market-today",
+          "Technology and Telecom"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 29: Nio Advances as Autonomous EV Focus Lifts Shares",
+        "description": "Nio moved higher as autonomous EV interest resurfaced, standing out amid a mixed market and uneven trading across Chinese EV stocks.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-nio-advances-as-autonomous-ev-focus-lifts-shares/?source=iedfolrf0000001",
+        "pubDate": "2026-01-29T22:31:54.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "NIO",
+          "XPEV",
+          "LI",
+          "83fd8900-932f-45b2-a2e8-d0d4b3a089df",
+          "coveragestock-market-today",
+          "Industrials"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 29: Microsoft Slides and Meta Surges",
+        "description": "On Jan. 29, 2026, a rare post-earnings tumble in Microsoft rattled tech stocks even as the Dow hovered near records.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-microsoft-slides-and-meta-surges/?source=iedfolrf0000001",
+        "pubDate": "2026-01-29T22:21:35.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "^GSPC",
+          "^IXIC",
+          "^DJI",
+          "a5341da5-8510-4671-8fea-906183c2002a",
+          "coveragestock-market-today",
+          "Markets"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Jan. 29: Microsoft Falls After Azure Growth Slows and AI Spending Raises Investor Concerns",
+        "description": "Today, Jan. 29, 2026, investors are weighing slowing cloud momentum against surging AI infrastructure spend at a software giant.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-microsoft-falls-after-azure-growth-slows-and-ai-spending-raises-investor-concerns/?source=iedfolrf0000001",
+        "pubDate": "2026-01-29T22:08:13.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "MSFT",
+          "9f8cbfca-cbcf-4114-9ecd-de1298652337",
+          "coveragestock-market-today",
+          "Technology and Telecom"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "‘I’m worried about cash flow’: I’m 71 with a $2.7 million IRA and $470K in stocks. Why can’t I relax?",
+        "description": "“My home is paid for and has an estimated value of $700,000.”",
+        "link": "https://www.marketwatch.com/story/im-worried-about-cash-flow-im-71-with-a-2-7-million-ira-and-470k-in-stocks-why-cant-i-relax-9caaec66?mod=mw_rss_topstories",
+        "pubDate": "2026-01-30T01:58:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "investing"
+      }
+    ],
+    "debt": [
+      {
+        "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+        "description": "President Trump has called for a 10% cap on credit card interest rates. What to know to get a lender's best rates sooner.",
+        "link": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html",
+        "pubDate": "2026-01-26T13:58:39.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 33,
+        "topic": "debt"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+        "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+        "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+        "pubDate": "2026-01-29T13:39:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "taxes"
+      }
+    ],
+    "retirement": [
+      {
+        "title": "JPMorgan, Bank of America announce $1,000 Trump account match as corporate America support for retirement scheme deepens",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/jpmorgan-bank-of-america-announce-1000-trump-account-match-as-corporate-america-support-for-retirement-scheme-deepens-164045306.html",
+        "pubDate": "2026-01-28T16:40:45.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "retirement"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+      "description": "From mortgage rates and auto loans to credit cards and savings accounts, here's a look at how the January Fed decision could affect your finances.",
+      "link": "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html",
+      "pubDate": "2026-01-28T19:03:37.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 83,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Fed is likely to hold interest rates steady, resisting Trump pressure. Here’s what that means for borrowers",
+      "description": "From mortgage rates to auto loans and credit cards, here’s a look at how the upcoming January Fed decision may affect your finances.",
+      "link": "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html",
+      "pubDate": "2026-01-26T19:51:37.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 73,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Fed holds interest rates steady, taking a pause from rate cuts to assess the economy",
+      "description": "The central bank cut rates at its three previous meetings in an effort to support the job market. But with inflation still elevated, the Fed is cautious about additional rate cuts.",
+      "link": "https://www.npr.org/2026/01/28/nx-s1-5690136/federal-reserve-interest-rates-jobs-labor-inflation",
+      "pubDate": "2026-01-28T19:06:11.000Z",
+      "source": "NPR Economy",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 56,
+      "topic": "economy"
+    },
+    {
+      "title": "Mortgage and refinance interest rates today, January 28, 2026: Rates slip even further below 6%",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-wednesday-january-28-2026-110051877.html",
+      "pubDate": "2026-01-28T11:00:51.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 46,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Gold rally stalls as prices drop 4% after a sharp run-up; Asia-Pacific stock markets trade mixed",
+      "description": "Asia-Pacific markets traded mixed after U.S. President Donald Trump said that he will announce his choice for the next Federal Reserve chair on Friday.",
+      "link": "https://www.cnbc.com/2026/01/30/asia-pacific-markets-today-friday-nikkei-225-kospi-jakarta-composite-index-us-shutdown-deal-trump.html",
+      "pubDate": "2026-01-30T03:27:45.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 38,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 29: Joby Aviation Falls After Announcing $1.2 Billion Stock and Convertible Note Offerings",
+      "description": "Today, Jan. 29, 2026, investors weigh massive new fundraising against mounting dilution risks in the race to launch eVTOL air taxis.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-joby-aviation-falls-after-announcing-usd1-2-billion-stock-and-convertible-note-offerings/?source=iedfolrf0000001",
+      "pubDate": "2026-01-29T22:45:14.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "JOBY",
+        "4da1c72e-19f9-4edc-baf5-cb78d943675d",
+        "coveragestock-market-today",
+        "Industrials"
+      ],
+      "score": 36,
+      "topic": "investing"
+    },
+    {
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "description": "President Trump has called for a 10% cap on credit card interest rates. What to know to get a lender's best rates sooner.",
+      "link": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html",
+      "pubDate": "2026-01-26T13:58:39.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 33,
+      "topic": "debt"
+    },
+    {
+      "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+      "description": "Five years after GameStop stock fueled a revolution among retail investors, their angst will likely continue to fuel speculative buying, experts said.",
+      "link": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html",
+      "pubDate": "2026-01-29T18:55:58.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 28,
+      "topic": "investing"
+    },
+    {
+      "title": "Trump says he’ll announce his Fed pick Friday morning. Here’s who’s in the lead, according to prediction markets.",
+      "description": "President Donald Trump said he’ll announce his nominee to chair the Federal Reserve on Friday morning — and prediction markets have turned sharply toward a former Fed governor for the post.",
+      "link": "https://www.marketwatch.com/story/trump-says-hell-announce-his-fed-pick-next-week-heres-whos-in-the-lead-according-to-prediction-markets-ba80c732?mod=mw_rss_topstories",
+      "pubDate": "2026-01-30T02:03:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 26,
+      "topic": "economy"
+    },
+    {
+      "title": "One Fund Just Bet $3 Million on an ETF Down 10% During a Bull Market",
+      "description": "This asset management firm targets long-term growth by investing in U.S. companies with strong management and reinvestment potential.",
+      "link": "https://www.fool.com/coverage/filings/2026/01/29/one-fund-just-bet-usd3-million-on-an-etf-down-10-during-a-bull-market/?source=iedfolrf0000001",
+      "pubDate": "2026-01-30T00:29:45.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "AKRE",
+        "27f1ff40-c903-49ab-8132-2d31e1096b0e",
+        "coveragefilings"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 29: AT&T Climbs as Earnings Confirm Cash Flow Strength",
+      "description": "AT&T rose after earnings confirmed steady cash generation amid a softer market backdrop.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-at-and-t-climbs-as-earnings-confirm-cash-flow-strength/?source=iedfolrf0000001",
+      "pubDate": "2026-01-29T22:58:06.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "T",
+        "VZ",
+        "TMUS",
+        "56a15203-9060-4866-9522-0a49d7fa9a9c",
+        "coveragestock-market-today",
+        "Technology and Telecom"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 29: Nio Advances as Autonomous EV Focus Lifts Shares",
+      "description": "Nio moved higher as autonomous EV interest resurfaced, standing out amid a mixed market and uneven trading across Chinese EV stocks.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-nio-advances-as-autonomous-ev-focus-lifts-shares/?source=iedfolrf0000001",
+      "pubDate": "2026-01-29T22:31:54.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "NIO",
+        "XPEV",
+        "LI",
+        "83fd8900-932f-45b2-a2e8-d0d4b3a089df",
+        "coveragestock-market-today",
+        "Industrials"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 29: Microsoft Slides and Meta Surges",
+      "description": "On Jan. 29, 2026, a rare post-earnings tumble in Microsoft rattled tech stocks even as the Dow hovered near records.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-microsoft-slides-and-meta-surges/?source=iedfolrf0000001",
+      "pubDate": "2026-01-29T22:21:35.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "a5341da5-8510-4671-8fea-906183c2002a",
+        "coveragestock-market-today",
+        "Markets"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Jan. 29: Microsoft Falls After Azure Growth Slows and AI Spending Raises Investor Concerns",
+      "description": "Today, Jan. 29, 2026, investors are weighing slowing cloud momentum against surging AI infrastructure spend at a software giant.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/01/29/stock-market-today-jan-29-microsoft-falls-after-azure-growth-slows-and-ai-spending-raises-investor-concerns/?source=iedfolrf0000001",
+      "pubDate": "2026-01-29T22:08:13.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "MSFT",
+        "9f8cbfca-cbcf-4114-9ecd-de1298652337",
+        "coveragestock-market-today",
+        "Technology and Telecom"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+      "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+      "pubDate": "2026-01-29T13:39:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "taxes"
+    },
+    {
+      "title": "Trump says inflation was 'defeated.' Some economists disagree",
+      "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+      "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+      "pubDate": "2026-01-21T20:56:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "economy"
+    },
+    {
+      "title": "How to get the lowest mortgage rates possible in 8 steps",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/how-to-get-the-lowest-mortgage-rates-possible-in-8-steps-224601666.html",
+      "pubDate": "2024-01-26T22:46:01.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "mortgage"
+    },
+    {
+      "title": "JPMorgan, Bank of America announce $1,000 Trump account match as corporate America support for retirement scheme deepens",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/jpmorgan-bank-of-america-announce-1000-trump-account-match-as-corporate-america-support-for-retirement-scheme-deepens-164045306.html",
+      "pubDate": "2026-01-28T16:40:45.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "Rates are still under 6%: Mortgage lenders with the best rates this week, Jan. 26-31, 2026",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/rates-are-still-under-6-mortgage-lenders-with-the-best-rates-this-week-jan-26-31-2026-170834367.html",
+      "pubDate": "2025-11-03T17:08:34.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "mortgage"
+    },
+    {
+      "title": "‘I’m worried about cash flow’: I’m 71 with a $2.7 million IRA and $470K in stocks. Why can’t I relax?",
+      "description": "“My home is paid for and has an estimated value of $700,000.”",
+      "link": "https://www.marketwatch.com/story/im-worried-about-cash-flow-im-71-with-a-2-7-million-ira-and-470k-in-stocks-why-cant-i-relax-9caaec66?mod=mw_rss_topstories",
+      "pubDate": "2026-01-30T01:58:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "investing"
+    }
+  ],
+  "skippedByHistory": []
+}

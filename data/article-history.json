@@ -1,10 +1,10 @@
 {
   "version": 1,
   "createdAt": "2026-01-23T00:00:00.000Z",
-  "lastUpdated": "2026-01-25T05:52:04.405Z",
+  "lastUpdated": "2026-01-30T04:17:24.049Z",
   "statistics": {
-    "totalArticles": 12,
-    "totalVersions": 12,
+    "totalArticles": 17,
+    "totalVersions": 17,
     "archivedVersions": 0
   },
   "bySlug": {
@@ -199,12 +199,97 @@
           "currentPath": "output/articles/final-when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders.json"
         }
       ]
+    },
+    "fed-holds-interest-rates-steady-what-that-means-for-mortgage": {
+      "slug": "fed-holds-interest-rates-steady-what-that-means-for-mortgage",
+      "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+      "sourceUrl": "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-30T04:07:08.401Z",
+      "lastUpdated": "2026-01-30T04:07:08.401Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-30T04:07:08.401Z",
+          "archived": false,
+          "currentPath": "output/articles/final-fed-holds-interest-rates-steady-what-that-means-for-mortgage.json"
+        }
+      ]
+    },
+    "fed-is-likely-to-hold-interest-rates-steady-resisting-trump": {
+      "slug": "fed-is-likely-to-hold-interest-rates-steady-resisting-trump",
+      "title": "Fed is likely to hold interest rates steady, resisting Trump pressure. Here’s what that means for borrowers",
+      "sourceUrl": "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-30T04:09:19.159Z",
+      "lastUpdated": "2026-01-30T04:09:19.159Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-30T04:09:19.159Z",
+          "archived": false,
+          "currentPath": "output/articles/final-fed-is-likely-to-hold-interest-rates-steady-resisting-trump.json"
+        }
+      ]
+    },
+    "fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut": {
+      "slug": "fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut",
+      "title": "Fed holds interest rates steady, taking a pause from rate cuts to assess the economy",
+      "sourceUrl": "https://www.npr.org/2026/01/28/nx-s1-5690136/federal-reserve-interest-rates-jobs-labor-inflation",
+      "currentVersion": 1,
+      "createdAt": "2026-01-30T04:12:24.013Z",
+      "lastUpdated": "2026-01-30T04:12:24.013Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-30T04:12:24.013Z",
+          "archived": false,
+          "currentPath": "output/articles/final-fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut.json"
+        }
+      ]
+    },
+    "mortgage-and-refinance-interest-rates-today-january-28-2026": {
+      "slug": "mortgage-and-refinance-interest-rates-today-january-28-2026",
+      "title": "Mortgage and refinance interest rates today, January 28, 2026: Rates slip even further below 6%",
+      "sourceUrl": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-wednesday-january-28-2026-110051877.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-30T04:14:25.613Z",
+      "lastUpdated": "2026-01-30T04:14:25.613Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-30T04:14:25.613Z",
+          "archived": false,
+          "currentPath": "output/articles/final-mortgage-and-refinance-interest-rates-today-january-28-2026.json"
+        }
+      ]
+    },
+    "gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia": {
+      "slug": "gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia",
+      "title": "Gold rally stalls as prices drop 4% after a sharp run-up; Asia-Pacific stock markets trade mixed",
+      "sourceUrl": "https://www.cnbc.com/2026/01/30/asia-pacific-markets-today-friday-nikkei-225-kospi-jakarta-composite-index-us-shutdown-deal-trump.html",
+      "currentVersion": 1,
+      "createdAt": "2026-01-30T04:17:24.048Z",
+      "lastUpdated": "2026-01-30T04:17:24.048Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-01-30T04:17:24.048Z",
+          "archived": false,
+          "currentPath": "output/articles/final-gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia.json"
+        }
+      ]
     }
   },
   "bySourceUrl": {
     "https://www.cnbc.com/2026/01/14/what-a-missed-payment-does-to-your-credit-score.html": "more-americans-expect-to-miss-a-debt-payment-in-the-months-a",
     "https://www.cnbc.com/2026/01/15/student-loan-forgiveness-repayment-plan-backlog.html": "over-800000-student-loan-borrowers-remain-in-backlog-for-for",
     "https://finance.yahoo.com/news/mortgage-loan-modification-one-165703150.html": "what-is-a-mortgage-loan-modification-and-how-do-you-get-one",
-    "https://finance.yahoo.com/personal-finance/mortgages/article/when-will-mortgage-rates-go-down-to-5-201806162.html": "when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders"
+    "https://finance.yahoo.com/personal-finance/mortgages/article/when-will-mortgage-rates-go-down-to-5-201806162.html": "when-will-mortgage-rates-go-down-to-5-dont-miss-the-lenders",
+    "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html": "fed-holds-interest-rates-steady-what-that-means-for-mortgage",
+    "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html": "fed-is-likely-to-hold-interest-rates-steady-resisting-trump",
+    "https://www.npr.org/2026/01/28/nx-s1-5690136/federal-reserve-interest-rates-jobs-labor-inflation": "fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut",
+    "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-wednesday-january-28-2026-110051877.html": "mortgage-and-refinance-interest-rates-today-january-28-2026",
+    "https://www.cnbc.com/2026/01/30/asia-pacific-markets-today-friday-nikkei-225-kospi-jakarta-composite-index-us-shutdown-deal-trump.html": "gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia"
   }
 }

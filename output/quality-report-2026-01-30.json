@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-01-30T04:17:24.168Z",
+  "dateFilter": "2026-01-30",
+  "total": 5,
+  "failed": 0,
+  "warnings": 5,
+  "results": [
+    {
+      "file": "output\\articles\\final-fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut.json",
+      "errors": [],
+      "warnings": [
+        "word count low (676)",
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-fed-holds-interest-rates-steady-what-that-means-for-mortgage.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-fed-is-likely-to-hold-interest-rates-steady-resisting-trump.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia.json",
+      "errors": [],
+      "warnings": [
+        "word count low (779)",
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-mortgage-and-refinance-interest-rates-today-january-28-2026.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    }
+  ]
+}

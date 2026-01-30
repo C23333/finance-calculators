@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-01-30T04:04:51.670Z",
+  "newsFile": "news-2026-01-30.json",
+  "articleCount": 5,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-30",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-01-30",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-01-30.md",
+  "articles": [
+    {
+      "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+      "topic": "mortgage",
+      "slug": "fed-holds-interest-rates-steady-what-that-means-for-mortgage",
+      "calculator": "Mortgage Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-30\\step1-draft-fed-holds-interest-rates-steady-what-that-means-for-mortgage.md"
+    },
+    {
+      "title": "Fed holds interest rates steady, taking a pause from rate cuts to assess the economy",
+      "topic": "economy",
+      "slug": "fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut",
+      "calculator": "Inflation Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-30\\step1-draft-fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut.md"
+    },
+    {
+      "title": "Gold rally stalls as prices drop 4% after a sharp run-up; Asia-Pacific stock markets trade mixed",
+      "topic": "investing",
+      "slug": "gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia",
+      "calculator": "Compound Interest Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-30\\step1-draft-gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia.md"
+    },
+    {
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "topic": "debt",
+      "slug": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-30\\step1-draft-dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett.md"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "topic": "taxes",
+      "slug": "irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax",
+      "calculator": "Take-Home Pay Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-01-30\\step1-draft-irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax.md"
+    }
+  ]
+}
