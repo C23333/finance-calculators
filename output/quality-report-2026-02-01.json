@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-02-01T03:36:22.687Z",
+  "dateFilter": "2026-02-01",
+  "total": 5,
+  "failed": 2,
+  "warnings": 5,
+  "results": [
+    {
+      "file": "output\\articles\\final-dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-gamestop-mania-fed-off-investor-angst-experts-say-that-uneas.json",
+      "errors": [
+        "missing metadata.title",
+        "missing metadata.metaDescription",
+        "missing metadata.slug",
+        "missing metadata.category",
+        "missing metadata.primaryKeyword",
+        "missing metadata.readingTime",
+        "missing metadata.publishDate",
+        "missing metadata.modifiedDate",
+        "missing metadata.author",
+        "missing metadata.reviewedBy",
+        "metadata.aiAssisted must be true",
+        "missing metadata.disclosure",
+        "missing metadata.methodology",
+        "missing content.headline",
+        "missing content.intro",
+        "missing content.conclusion",
+        "content.sections < 3",
+        "content.keyTakeaways < 3",
+        "sources missing"
+      ],
+      "warnings": [
+        "word count low (0)"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-gen-z-investors-lessons-learned-since-2021-meme-stock-mania.json",
+      "errors": [
+        "missing metadata.title",
+        "missing metadata.metaDescription",
+        "missing metadata.slug",
+        "missing metadata.category",
+        "missing metadata.primaryKeyword",
+        "missing metadata.readingTime",
+        "missing metadata.publishDate",
+        "missing metadata.modifiedDate",
+        "missing metadata.author",
+        "missing metadata.reviewedBy",
+        "metadata.aiAssisted must be true",
+        "missing metadata.disclosure",
+        "missing metadata.methodology",
+        "missing content.headline",
+        "missing content.intro",
+        "missing content.conclusion",
+        "content.sections < 3",
+        "content.keyTakeaways < 3",
+        "sources missing"
+      ],
+      "warnings": [
+        "word count low (0)"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-this-single-mom-saved-1-million-in-15-years-to-retire-at-49.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-trump-taps-kevin-warsh-to-lead-the-federal-reserve.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "version": 1,
   "createdAt": "2026-01-23T00:00:00.000Z",
-  "lastUpdated": "2026-01-30T04:17:24.049Z",
+  "lastUpdated": "2026-02-01T03:36:22.468Z",
   "statistics": {
-    "totalArticles": 17,
-    "totalVersions": 17,
+    "totalArticles": 22,
+    "totalVersions": 22,
     "archivedVersions": 0
   },
   "bySlug": {
@@ -279,6 +279,86 @@
           "currentPath": "output/articles/final-gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia.json"
         }
       ]
+    },
+    "this-single-mom-saved-1-million-in-15-years-to-retire-at-49": {
+      "slug": "this-single-mom-saved-1-million-in-15-years-to-retire-at-49",
+      "title": "This single mom saved $1 million in 15 years to retire at 49. How to use her strategies to catch up on retirement savings.",
+      "sourceUrl": "https://www.marketwatch.com/story/this-single-mom-saved-1-million-in-15-years-to-retire-at-49-how-to-use-her-strategies-to-catch-up-on-retirement-savings-0953b686?mod=mw_rss_topstories",
+      "currentVersion": 1,
+      "createdAt": "2026-02-01T03:27:43.274Z",
+      "lastUpdated": "2026-02-01T03:27:43.274Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-01T03:27:43.274Z",
+          "archived": false,
+          "currentPath": "output/articles/final-this-single-mom-saved-1-million-in-15-years-to-retire-at-49.json"
+        }
+      ]
+    },
+    "trump-taps-kevin-warsh-to-lead-the-federal-reserve": {
+      "slug": "trump-taps-kevin-warsh-to-lead-the-federal-reserve",
+      "title": "Trump taps Kevin Warsh to lead the Federal Reserve",
+      "sourceUrl": "https://www.npr.org/2026/01/30/nx-s1-5645091/trump-kevin-warsh-federal-reserve-chair",
+      "currentVersion": 1,
+      "createdAt": "2026-02-01T03:29:57.507Z",
+      "lastUpdated": "2026-02-01T03:29:57.507Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-01T03:29:57.507Z",
+          "archived": false,
+          "currentPath": "output/articles/final-trump-taps-kevin-warsh-to-lead-the-federal-reserve.json"
+        }
+      ]
+    },
+    "gen-z-investors-lessons-learned-since-2021-meme-stock-mania": {
+      "slug": "gen-z-investors-lessons-learned-since-2021-meme-stock-mania",
+      "title": "Gen Z investors' lessons learned since 2021 meme stock mania",
+      "sourceUrl": "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-01T03:32:01.615Z",
+      "lastUpdated": "2026-02-01T03:32:01.615Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-01T03:32:01.615Z",
+          "archived": false,
+          "currentPath": "output/articles/final-gen-z-investors-lessons-learned-since-2021-meme-stock-mania.json"
+        }
+      ]
+    },
+    "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett": {
+      "slug": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "sourceUrl": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-01T03:34:17.627Z",
+      "lastUpdated": "2026-02-01T03:34:17.627Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-01T03:34:17.627Z",
+          "archived": false,
+          "currentPath": "output/articles/final-dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett.json"
+        }
+      ]
+    },
+    "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas": {
+      "slug": "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas",
+      "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+      "sourceUrl": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-01T03:36:22.467Z",
+      "lastUpdated": "2026-02-01T03:36:22.467Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-01T03:36:22.467Z",
+          "archived": false,
+          "currentPath": "output/articles/final-gamestop-mania-fed-off-investor-angst-experts-say-that-uneas.json"
+        }
+      ]
     }
   },
   "bySourceUrl": {
@@ -290,6 +370,11 @@
     "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html": "fed-is-likely-to-hold-interest-rates-steady-resisting-trump",
     "https://www.npr.org/2026/01/28/nx-s1-5690136/federal-reserve-interest-rates-jobs-labor-inflation": "fed-holds-interest-rates-steady-taking-a-pause-from-rate-cut",
     "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-wednesday-january-28-2026-110051877.html": "mortgage-and-refinance-interest-rates-today-january-28-2026",
-    "https://www.cnbc.com/2026/01/30/asia-pacific-markets-today-friday-nikkei-225-kospi-jakarta-composite-index-us-shutdown-deal-trump.html": "gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia"
+    "https://www.cnbc.com/2026/01/30/asia-pacific-markets-today-friday-nikkei-225-kospi-jakarta-composite-index-us-shutdown-deal-trump.html": "gold-rally-stalls-as-prices-drop-4-after-a-sharp-run-up-asia",
+    "https://www.marketwatch.com/story/this-single-mom-saved-1-million-in-15-years-to-retire-at-49-how-to-use-her-strategies-to-catch-up-on-retirement-savings-0953b686?mod=mw_rss_topstories": "this-single-mom-saved-1-million-in-15-years-to-retire-at-49",
+    "https://www.npr.org/2026/01/30/nx-s1-5645091/trump-kevin-warsh-federal-reserve-chair": "trump-taps-kevin-warsh-to-lead-the-federal-reserve",
+    "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html": "gen-z-investors-lessons-learned-since-2021-meme-stock-mania",
+    "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
+    "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html": "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas"
   }
 }

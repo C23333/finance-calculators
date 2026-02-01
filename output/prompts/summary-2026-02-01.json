@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-02-01T03:24:39.600Z",
+  "newsFile": "news-2026-02-01.json",
+  "articleCount": 5,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-01",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-02-01",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-02-01.md",
+  "articles": [
+    {
+      "title": "This single mom saved $1 million in 15 years to retire at 49. How to use her strategies to catch up on retirement savings.",
+      "topic": "retirement",
+      "slug": "this-single-mom-saved-1-million-in-15-years-to-retire-at-49",
+      "calculator": "Retirement Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-01\\step1-draft-this-single-mom-saved-1-million-in-15-years-to-retire-at-49.md"
+    },
+    {
+      "title": "Trump taps Kevin Warsh to lead the Federal Reserve",
+      "topic": "economy",
+      "slug": "trump-taps-kevin-warsh-to-lead-the-federal-reserve",
+      "calculator": "Inflation Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-01\\step1-draft-trump-taps-kevin-warsh-to-lead-the-federal-reserve.md"
+    },
+    {
+      "title": "Gen Z investors' lessons learned since 2021 meme stock mania",
+      "topic": "investing",
+      "slug": "gen-z-investors-lessons-learned-since-2021-meme-stock-mania",
+      "calculator": "Compound Interest Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-01\\step1-draft-gen-z-investors-lessons-learned-since-2021-meme-stock-mania.md"
+    },
+    {
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "topic": "debt",
+      "slug": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-01\\step1-draft-dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett.md"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "topic": "taxes",
+      "slug": "irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax",
+      "calculator": "Take-Home Pay Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-01\\step1-draft-irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax.md"
+    }
+  ]
+}

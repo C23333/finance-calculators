@@ -1,0 +1,534 @@
+{
+  "fetchedAt": "2026-02-01T03:24:33.743Z",
+  "fetchStats": {
+    "success": 6,
+    "failed": 4,
+    "skipped": 0
+  },
+  "totalFetched": 172,
+  "totalUnique": 171,
+  "historyFiltered": 2,
+  "totalSelected": 20,
+  "byTopic": {
+    "retirement": [
+      {
+        "title": "This single mom saved $1 million in 15 years to retire at 49. How to use her strategies to catch up on retirement savings.",
+        "description": "It’s not too late to fast-track your retirement savings, even if you’re 50 years old and have debt.",
+        "link": "https://www.marketwatch.com/story/this-single-mom-saved-1-million-in-15-years-to-retire-at-49-how-to-use-her-strategies-to-catch-up-on-retirement-savings-0953b686?mod=mw_rss_topstories",
+        "pubDate": "2026-01-31T20:20:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 46,
+        "topic": "retirement"
+      },
+      {
+        "title": "Gas leak caused blast in Iran's Bandar Abbas, Iranian media say",
+        "description": "An explosion that hit a building ‍in Bandar Abbas was ‍caused by a gas leak, according to a preliminary assessment, the local head of the fire department said.",
+        "link": "https://www.cnbc.com/2026/01/31/iranian-media-report-explosion-at-southern-port-of-bandar-abbas.html",
+        "pubDate": "2026-01-31T16:46:00.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 13,
+        "topic": "retirement"
+      }
+    ],
+    "economy": [
+      {
+        "title": "Trump taps Kevin Warsh to lead the Federal Reserve",
+        "description": "Trump plans to nominate Kevin Warsh to be the next chair of the Federal Reserve, when Jerome Powell's term expires in May. The president has been pushing the central bank to slash interest rates.",
+        "link": "https://www.npr.org/2026/01/30/nx-s1-5645091/trump-kevin-warsh-federal-reserve-chair",
+        "pubDate": "2026-01-30T12:02:15.000Z",
+        "source": "NPR Economy",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 36,
+        "topic": "economy"
+      },
+      {
+        "title": "Trump says inflation was 'defeated.' Some economists disagree",
+        "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+        "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+        "pubDate": "2026-01-21T20:56:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "economy"
+      },
+      {
+        "title": "Kalshi in court over 19 federal lawsuits. What's the future of prediction markets?",
+        "description": "Apps that let people wager on current events have experienced explosive growth in Trump's second term. But one of the leading markets is tied up in lawsuits that cloud the industry's future.",
+        "link": "https://www.npr.org/2026/01/30/nx-s1-5691837/lawsets-prediction-market-kalshi",
+        "pubDate": "2026-01-30T10:00:00.000Z",
+        "source": "NPR Economy",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 16,
+        "topic": "economy"
+      },
+      {
+        "title": "Bitcoin dips below $79,000 as market digests silver sell-off, Trump's Fed chair pick",
+        "description": "Bitcoin and Ethereum plunged following wide swings in the commodities market.",
+        "link": "https://www.cnbc.com/2026/01/31/bitcoin-dips-below-78000-after-silver-selloff.html",
+        "pubDate": "2026-02-01T00:03:19.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 13,
+        "topic": "economy"
+      }
+    ],
+    "investing": [
+      {
+        "title": "Gen Z investors' lessons learned since 2021 meme stock mania",
+        "description": "Many Gen Z investors first learned about stocks at the peak of the meme stock craze in early 2021. Five years later, they’re taking a more disciplined approach to investing. Sharon Epperson explains how finance education in high school helped.",
+        "link": "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html",
+        "pubDate": "2026-01-30T18:08:38.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 33,
+        "topic": "investing"
+      },
+      {
+        "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+        "description": "Five years after GameStop stock fueled a revolution among retail investors, their angst will likely continue to fuel speculative buying, experts said.",
+        "link": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html",
+        "pubDate": "2026-01-30T20:42:49.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 28,
+        "topic": "investing"
+      },
+      {
+        "title": "Loading up on your employer’s stock is tempting in a bull market. But how much is too much?",
+        "description": "Employees face “double jeopardy” in the stock’s decline portfolio and increased job risk.",
+        "link": "https://www.marketwatch.com/story/loading-up-on-your-employers-stock-is-tempting-in-a-bull-market-but-how-much-is-too-much-ec90fec9?mod=mw_rss_topstories",
+        "pubDate": "2026-01-31T19:42:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 16,
+        "topic": "investing"
+      },
+      {
+        "title": "The Fed Paused Rate Cuts. That's Great News for These 2 Financial Stocks",
+        "description": "Some financial stocks would probably not mind rates staying the same or rising.",
+        "link": "https://www.fool.com/investing/2026/01/31/the-fed-paused-rate-cuts-thats-great-news-for-thes/?source=iedfolrf0000001",
+        "pubDate": "2026-02-01T00:05:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "BK",
+          "CME",
+          "STT",
+          "523bb184-9550-4b4f-8ef9-1b1b1035307d",
+          "investing",
+          "Financials"
+        ],
+        "score": 16,
+        "topic": "investing"
+      },
+      {
+        "title": "Can MP Materials Stock Beat the Market in 2026?",
+        "description": "MP Materials has surged almost 200% since last year. Can it beat the market in 2026?",
+        "link": "https://www.fool.com/investing/2026/01/31/can-mp-stock-beat-the-market/?source=iedfolrf0000001",
+        "pubDate": "2026-01-31T21:05:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "MP",
+          "^GSPC",
+          "AAPL",
+          "25578b8e-68f5-4f7e-bc44-b454b83dc858",
+          "investing",
+          "Industrials"
+        ],
+        "score": 16,
+        "topic": "investing"
+      },
+      {
+        "title": "The Smartest Growth Stock to Buy With $1,000 Right Now",
+        "description": "The market's focusing on the wrong details of this bold but admittedly expensive acquisition effort.",
+        "link": "https://www.fool.com/investing/2026/01/31/the-smartest-growth-stock-to-buy-with-1000-right/?source=iedfolrf0000001",
+        "pubDate": "2026-01-31T21:03:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "NFLX",
+          "WBD",
+          "PSKY",
+          "9d6ee89c-c14d-4402-b7c4-5e4b50e752e6",
+          "investing",
+          "Technology and Telecom"
+        ],
+        "score": 16,
+        "topic": "investing"
+      },
+      {
+        "title": "Why a $6.5 Million Sale Might Suggest Less Appetite for Long-Duration Credit",
+        "description": "The Vanguard Total Corporate Bond ETF tracks investment-grade U.S. corporate bonds with a low-cost, index-based approach.",
+        "link": "https://www.fool.com/coverage/filings/2026/01/31/why-a-usd6-5-million-sale-might-suggest-less-appetite-for-long-duration-credit/?source=iedfolrf0000001",
+        "pubDate": "2026-01-31T20:30:03.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "VTC",
+          "ffeba515-174d-485e-a5a8-9c268c43f919",
+          "coveragefilings"
+        ],
+        "score": 16,
+        "topic": "investing"
+      }
+    ],
+    "debt": [
+      {
+        "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+        "description": "President Trump has called for a 10% cap on credit card interest rates. What to know to get a lender's best rates sooner.",
+        "link": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html",
+        "pubDate": "2026-01-26T13:58:39.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 33,
+        "topic": "debt"
+      },
+      {
+        "title": "Use up your credit card points now, expert says—no matter if a 10% interest rate cap is enacted",
+        "description": "You may want to spend your credit card points now, expert says — but not because of the potential for a 10% interest rate cap.",
+        "link": "https://www.cnbc.com/2026/01/31/use-up-your-credit-card-points-now-expert-says.html",
+        "pubDate": "2026-01-31T14:00:01.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 18,
+        "topic": "debt"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+        "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+        "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+        "pubDate": "2026-01-29T13:39:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "taxes"
+      },
+      {
+        "title": "‘They upset me every time I see them’: How long do I keep my mother’s IRS and medical records? She died 4 years ago.",
+        "description": "“Her low income did not require her to file taxes, and once she moved to the care facility, I got her on Medi-Cal.”",
+        "link": "https://www.marketwatch.com/story/they-upset-me-every-time-i-see-them-how-long-do-i-keep-my-mothers-irs-and-medical-records-she-died-4-years-ago-22a436fc?mod=mw_rss_topstories",
+        "pubDate": "2026-01-31T21:33:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 16,
+        "topic": "taxes"
+      }
+    ],
+    "savings": [
+      {
+        "title": "What Trump Fed chair pick Kevin Warsh may mean for consumers",
+        "description": "Trump's choice for Fed chair could have far-reaching consequences for almost all consumer borrowing costs and savings rates.",
+        "link": "https://www.cnbc.com/2026/01/30/trump-fed-chair-pick-kevin-warsh.html",
+        "pubDate": "2026-01-30T17:44:58.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 18,
+        "topic": "savings"
+      }
+    ],
+    "general": [
+      {
+        "title": "Trump thinks a weaker dollar is great for America. Is he right?",
+        "description": "The president said this week that the value of the dollar is \"great\" despite a sharp tumble since last year. That may be true for certain parts of the economy — but not others.",
+        "link": "https://www.npr.org/2026/01/30/nx-s1-5693025/trump-dollar-economy-markets",
+        "pubDate": "2026-01-30T10:00:00.000Z",
+        "source": "NPR Economy",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 16,
+        "topic": "general"
+      },
+      {
+        "title": "Wealth inequality and the 'K-shaped' economy are more striking than ever, data shows",
+        "description": "The K-shaped economy is as apparent as ever and isn't going away anytime soon, economists say.",
+        "link": "https://www.cnbc.com/2026/01/30/wealth-inequality-k-shaped-economy-united-states-consumer-spending-trump.html",
+        "pubDate": "2026-01-30T20:08:17.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 13,
+        "topic": "general"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "This single mom saved $1 million in 15 years to retire at 49. How to use her strategies to catch up on retirement savings.",
+      "description": "It’s not too late to fast-track your retirement savings, even if you’re 50 years old and have debt.",
+      "link": "https://www.marketwatch.com/story/this-single-mom-saved-1-million-in-15-years-to-retire-at-49-how-to-use-her-strategies-to-catch-up-on-retirement-savings-0953b686?mod=mw_rss_topstories",
+      "pubDate": "2026-01-31T20:20:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 46,
+      "topic": "retirement"
+    },
+    {
+      "title": "Trump taps Kevin Warsh to lead the Federal Reserve",
+      "description": "Trump plans to nominate Kevin Warsh to be the next chair of the Federal Reserve, when Jerome Powell's term expires in May. The president has been pushing the central bank to slash interest rates.",
+      "link": "https://www.npr.org/2026/01/30/nx-s1-5645091/trump-kevin-warsh-federal-reserve-chair",
+      "pubDate": "2026-01-30T12:02:15.000Z",
+      "source": "NPR Economy",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 36,
+      "topic": "economy"
+    },
+    {
+      "title": "Gen Z investors' lessons learned since 2021 meme stock mania",
+      "description": "Many Gen Z investors first learned about stocks at the peak of the meme stock craze in early 2021. Five years later, they’re taking a more disciplined approach to investing. Sharon Epperson explains how finance education in high school helped.",
+      "link": "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html",
+      "pubDate": "2026-01-30T18:08:38.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 33,
+      "topic": "investing"
+    },
+    {
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "description": "President Trump has called for a 10% cap on credit card interest rates. What to know to get a lender's best rates sooner.",
+      "link": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html",
+      "pubDate": "2026-01-26T13:58:39.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 33,
+      "topic": "debt"
+    },
+    {
+      "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+      "description": "Five years after GameStop stock fueled a revolution among retail investors, their angst will likely continue to fuel speculative buying, experts said.",
+      "link": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html",
+      "pubDate": "2026-01-30T20:42:49.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 28,
+      "topic": "investing"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+      "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+      "pubDate": "2026-01-29T13:39:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "taxes"
+    },
+    {
+      "title": "Trump says inflation was 'defeated.' Some economists disagree",
+      "description": "President Donald Trump said the U.S. \"defeated\" inflation and reined in consumer prices over the past year. Federal data suggests otherwise.",
+      "link": "https://www.cnbc.com/2026/01/21/trump-inflation-defeated.html",
+      "pubDate": "2026-01-21T20:56:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "economy"
+    },
+    {
+      "title": "Use up your credit card points now, expert says—no matter if a 10% interest rate cap is enacted",
+      "description": "You may want to spend your credit card points now, expert says — but not because of the potential for a 10% interest rate cap.",
+      "link": "https://www.cnbc.com/2026/01/31/use-up-your-credit-card-points-now-expert-says.html",
+      "pubDate": "2026-01-31T14:00:01.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 18,
+      "topic": "debt"
+    },
+    {
+      "title": "What Trump Fed chair pick Kevin Warsh may mean for consumers",
+      "description": "Trump's choice for Fed chair could have far-reaching consequences for almost all consumer borrowing costs and savings rates.",
+      "link": "https://www.cnbc.com/2026/01/30/trump-fed-chair-pick-kevin-warsh.html",
+      "pubDate": "2026-01-30T17:44:58.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 18,
+      "topic": "savings"
+    },
+    {
+      "title": "‘They upset me every time I see them’: How long do I keep my mother’s IRS and medical records? She died 4 years ago.",
+      "description": "“Her low income did not require her to file taxes, and once she moved to the care facility, I got her on Medi-Cal.”",
+      "link": "https://www.marketwatch.com/story/they-upset-me-every-time-i-see-them-how-long-do-i-keep-my-mothers-irs-and-medical-records-she-died-4-years-ago-22a436fc?mod=mw_rss_topstories",
+      "pubDate": "2026-01-31T21:33:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 16,
+      "topic": "taxes"
+    },
+    {
+      "title": "Loading up on your employer’s stock is tempting in a bull market. But how much is too much?",
+      "description": "Employees face “double jeopardy” in the stock’s decline portfolio and increased job risk.",
+      "link": "https://www.marketwatch.com/story/loading-up-on-your-employers-stock-is-tempting-in-a-bull-market-but-how-much-is-too-much-ec90fec9?mod=mw_rss_topstories",
+      "pubDate": "2026-01-31T19:42:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 16,
+      "topic": "investing"
+    },
+    {
+      "title": "Trump thinks a weaker dollar is great for America. Is he right?",
+      "description": "The president said this week that the value of the dollar is \"great\" despite a sharp tumble since last year. That may be true for certain parts of the economy — but not others.",
+      "link": "https://www.npr.org/2026/01/30/nx-s1-5693025/trump-dollar-economy-markets",
+      "pubDate": "2026-01-30T10:00:00.000Z",
+      "source": "NPR Economy",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 16,
+      "topic": "general"
+    },
+    {
+      "title": "Kalshi in court over 19 federal lawsuits. What's the future of prediction markets?",
+      "description": "Apps that let people wager on current events have experienced explosive growth in Trump's second term. But one of the leading markets is tied up in lawsuits that cloud the industry's future.",
+      "link": "https://www.npr.org/2026/01/30/nx-s1-5691837/lawsets-prediction-market-kalshi",
+      "pubDate": "2026-01-30T10:00:00.000Z",
+      "source": "NPR Economy",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 16,
+      "topic": "economy"
+    },
+    {
+      "title": "The Fed Paused Rate Cuts. That's Great News for These 2 Financial Stocks",
+      "description": "Some financial stocks would probably not mind rates staying the same or rising.",
+      "link": "https://www.fool.com/investing/2026/01/31/the-fed-paused-rate-cuts-thats-great-news-for-thes/?source=iedfolrf0000001",
+      "pubDate": "2026-02-01T00:05:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "BK",
+        "CME",
+        "STT",
+        "523bb184-9550-4b4f-8ef9-1b1b1035307d",
+        "investing",
+        "Financials"
+      ],
+      "score": 16,
+      "topic": "investing"
+    },
+    {
+      "title": "Can MP Materials Stock Beat the Market in 2026?",
+      "description": "MP Materials has surged almost 200% since last year. Can it beat the market in 2026?",
+      "link": "https://www.fool.com/investing/2026/01/31/can-mp-stock-beat-the-market/?source=iedfolrf0000001",
+      "pubDate": "2026-01-31T21:05:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "MP",
+        "^GSPC",
+        "AAPL",
+        "25578b8e-68f5-4f7e-bc44-b454b83dc858",
+        "investing",
+        "Industrials"
+      ],
+      "score": 16,
+      "topic": "investing"
+    },
+    {
+      "title": "The Smartest Growth Stock to Buy With $1,000 Right Now",
+      "description": "The market's focusing on the wrong details of this bold but admittedly expensive acquisition effort.",
+      "link": "https://www.fool.com/investing/2026/01/31/the-smartest-growth-stock-to-buy-with-1000-right/?source=iedfolrf0000001",
+      "pubDate": "2026-01-31T21:03:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "NFLX",
+        "WBD",
+        "PSKY",
+        "9d6ee89c-c14d-4402-b7c4-5e4b50e752e6",
+        "investing",
+        "Technology and Telecom"
+      ],
+      "score": 16,
+      "topic": "investing"
+    },
+    {
+      "title": "Why a $6.5 Million Sale Might Suggest Less Appetite for Long-Duration Credit",
+      "description": "The Vanguard Total Corporate Bond ETF tracks investment-grade U.S. corporate bonds with a low-cost, index-based approach.",
+      "link": "https://www.fool.com/coverage/filings/2026/01/31/why-a-usd6-5-million-sale-might-suggest-less-appetite-for-long-duration-credit/?source=iedfolrf0000001",
+      "pubDate": "2026-01-31T20:30:03.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "VTC",
+        "ffeba515-174d-485e-a5a8-9c268c43f919",
+        "coveragefilings"
+      ],
+      "score": 16,
+      "topic": "investing"
+    },
+    {
+      "title": "Bitcoin dips below $79,000 as market digests silver sell-off, Trump's Fed chair pick",
+      "description": "Bitcoin and Ethereum plunged following wide swings in the commodities market.",
+      "link": "https://www.cnbc.com/2026/01/31/bitcoin-dips-below-78000-after-silver-selloff.html",
+      "pubDate": "2026-02-01T00:03:19.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 13,
+      "topic": "economy"
+    },
+    {
+      "title": "Wealth inequality and the 'K-shaped' economy are more striking than ever, data shows",
+      "description": "The K-shaped economy is as apparent as ever and isn't going away anytime soon, economists say.",
+      "link": "https://www.cnbc.com/2026/01/30/wealth-inequality-k-shaped-economy-united-states-consumer-spending-trump.html",
+      "pubDate": "2026-01-30T20:08:17.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 13,
+      "topic": "general"
+    },
+    {
+      "title": "Gas leak caused blast in Iran's Bandar Abbas, Iranian media say",
+      "description": "An explosion that hit a building ‍in Bandar Abbas was ‍caused by a gas leak, according to a preliminary assessment, the local head of the fire department said.",
+      "link": "https://www.cnbc.com/2026/01/31/iranian-media-report-explosion-at-southern-port-of-bandar-abbas.html",
+      "pubDate": "2026-01-31T16:46:00.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 13,
+      "topic": "retirement"
+    }
+  ],
+  "skippedByHistory": [
+    {
+      "reason": "already_generated",
+      "existingSlug": "fed-holds-interest-rates-steady-what-that-means-for-mortgage",
+      "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+      "link": "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "fed-is-likely-to-hold-interest-rates-steady-resisting-trump",
+      "title": "Fed is likely to hold interest rates steady, resisting Trump pressure. Here’s what that means for borrowers",
+      "link": "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html"
+    }
+  ]
+}
