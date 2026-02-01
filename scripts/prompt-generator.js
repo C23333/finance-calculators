@@ -47,6 +47,43 @@ function loadAffiliateConfig() {
 }
 
 /**
+ * Load keywords config and get suggested keywords for topic
+ */
+function loadKeywordsConfig() {
+    const configPath = path.join(CONFIG_DIR, 'keywords.json');
+    try {
+        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    } catch (err) {
+        return { topicKeywords: {}, longTailKeywords: [] };
+    }
+}
+
+/**
+ * Get suggested keywords for a topic
+ */
+function getSuggestedKeywords(topic, keywordsConfig) {
+    const topicKeywords = keywordsConfig.topicKeywords || {};
+    const longTail = keywordsConfig.longTailKeywords || [];
+    const normalizedTopic = (topic || '').toLowerCase().replace(/\s+/g, '');
+
+    const topicKeyMap = {
+        creditScore: 'credit',
+        creditscore: 'credit',
+        'studentloans': 'student loans',
+        personalfinance: 'general'
+    };
+    const lookupKey = topicKeyMap[normalizedTopic] || (topic || '').toLowerCase();
+
+    const topicKws = topicKeywords[lookupKey] || topicKeywords[topic] || [];
+    const related = Object.entries(topicKeywords)
+        .filter(([t]) => (t && lookupKey && (t.includes(lookupKey) || lookupKey.includes(t))))
+        .flatMap(([, kws]) => kws || []);
+
+    const all = [...new Set([...topicKws, ...related, ...longTail.slice(0, 5)])];
+    return all.slice(0, 8).join(', ') || 'Use relevant long-tail phrases for the topic';
+}
+
+/**
  * Get the most recent news file
  */
 function getLatestNewsFile() {
@@ -139,8 +176,9 @@ function generateSlug(title) {
 /**
  * Generate Step 1 prompt (Claude draft)
  */
-function generateStep1Prompt(article, template, affiliateConfig) {
+function generateStep1Prompt(article, template, affiliateConfig, keywordsConfig = {}) {
     const calculator = getCalculatorForTopic(article.topic, affiliateConfig);
+    const suggestedKeywords = getSuggestedKeywords(article.topic, keywordsConfig);
 
     const newsSummary = `
 **Title**: ${article.title}
@@ -157,7 +195,8 @@ ${article.description}
     let prompt = template
         .replace('{NEWS_SUMMARY}', newsSummary)
         .replace('{TOPIC}', article.topic)
-        .replace('{CALCULATOR}', calculator.name);
+        .replace('{CALCULATOR}', calculator.name)
+        .replace('{SUGGESTED_KEYWORDS}', suggestedKeywords || 'Use relevant long-tail phrases for the topic');
 
     return {
         type: 'step1-draft',
@@ -317,6 +356,9 @@ async function main() {
     // Load affiliate config
     const affiliateConfig = loadAffiliateConfig();
 
+    // Load keywords config
+    const keywordsConfig = loadKeywordsConfig();
+
     // Get latest news
     const newsFile = getLatestNewsFile();
     if (!newsFile) {
@@ -352,7 +394,7 @@ async function main() {
         console.log(`\n${index + 1}. ${article.title.substring(0, 50)}...`);
 
         // Generate Step 1 prompt
-        const step1 = generateStep1Prompt(article, templates['step1-draft'], affiliateConfig);
+        const step1 = generateStep1Prompt(article, templates['step1-draft'], affiliateConfig, keywordsConfig);
         const step1Path = savePrompt(step1, promptsDir);
         console.log(`   Step 1: ${path.basename(step1Path)}`);
 

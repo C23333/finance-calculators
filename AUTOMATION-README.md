@@ -15,6 +15,7 @@ node scripts/article-quality-check.js
 node scripts/html-builder.js
 node scripts/sitemap-updater.js
 node scripts/publish.js
+node scripts/social-media-poster.js 3   # Generate posts for 3 latest articles
 ```
 
 ## Pipeline Steps
@@ -63,6 +64,17 @@ Each final article must include:
 - `content`: headline, intro, sections[], keyTakeaways[], conclusion
 - `sources`: array with title, publisher, url, accessDate
 - `seo`, `recommendedReading`, `suggestedSearches`, `interactiveTools`, `cta`, `relatedArticles`
+
+### `config/keywords.json`
+Long-tail keywords and topic mappings for SEO. Used by article-generator and prompt-generator.
+
+### `config/backlink-directories.md`
+Directory submission checklist for backlink building.
+
+## Traffic & Promotion
+
+- **Social media posts**: `node scripts/social-media-poster.js [count]` - Generates Twitter, Reddit, LinkedIn copy
+- **GA4 events**: See `config/ga4-events.md` for conversion setup
 
 ## Quality Guardrails
 

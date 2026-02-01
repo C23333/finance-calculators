@@ -1,0 +1,80 @@
+{
+  "longTailKeywords": [
+    "how much house can i afford on 80k salary",
+    "401k contribution limit 2026 calculator",
+    "debt snowball vs avalanche method calculator",
+    "self employment tax calculator freelancer",
+    "how much car can i afford 60k salary",
+    "emergency fund 3 vs 6 months of expenses",
+    "mortgage payment calculator 2026",
+    "student loan payoff calculator 50000",
+    "retirement savings catch up after 50",
+    "compound interest calculator monthly",
+    "home affordability calculator by salary",
+    "refinance calculator break even",
+    "first time homebuyer mortgage guide 2026",
+    "credit score impact of missed payment",
+    "roth vs traditional ira calculator 2026"
+  ],
+  "topicKeywords": {
+    "mortgage": [
+      "mortgage calculator",
+      "how much house can i afford",
+      "mortgage rates 2026",
+      "first time homebuyer",
+      "refinance calculator"
+    ],
+    "retirement": [
+      "401k contribution calculator 2026",
+      "retirement calculator",
+      "catch up retirement savings",
+      "roth vs traditional ira"
+    ],
+    "debt": [
+      "debt payoff calculator",
+      "debt snowball vs avalanche",
+      "credit card payoff calculator",
+      "student loan calculator"
+    ],
+    "investing": [
+      "compound interest calculator",
+      "investment return calculator",
+      "tax efficient portfolio"
+    ],
+    "savings": [
+      "emergency fund calculator",
+      "savings goal calculator",
+      "how much to save"
+    ],
+    "taxes": [
+      "self employment tax calculator",
+      "take home pay calculator",
+      "freelancer tax guide"
+    ],
+    "credit": [
+      "credit score improvement",
+      "credit card interest rate",
+      "missed payment credit impact"
+    ],
+    "student loans": [
+      "student loan payoff calculator",
+      "student loan forgiveness",
+      "pay off 50000 student loans"
+    ],
+    "auto": [
+      "car affordability calculator",
+      "auto loan calculator",
+      "how much car can i afford"
+    ]
+  },
+  "metaDescriptionGuidelines": {
+    "minLength": 120,
+    "maxLength": 160,
+    "includePrimaryKeyword": true
+  },
+  "titleGuidelines": {
+    "minLength": 40,
+    "maxLength": 60,
+    "includePrimaryKeyword": true
+  }
+}

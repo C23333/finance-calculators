@@ -18,7 +18,7 @@ Write a **draft** article based only on the news summary below. This draft is th
 ## Article Requirements
 
 ### Format
-- **Word count**: 900–1500 words
+- **Word count**: 1200–1800 words (minimum 1500 for comprehensive guides)
 - **Tone**: analytical, reader-friendly, explains trade-offs
 - **Audience**: U.S. adults making financial decisions
 - **Style**: educational, practical, grounded
@@ -27,15 +27,20 @@ Write a **draft** article based only on the news summary below. This draft is th
 1. **Headline (H1)** — SEO-friendly, benefit/answer framing
 2. **Meta Description** — 150–160 chars
 3. **Intro** — 1–2 short paragraphs
-4. **Main Sections (3–5 H2s)** — plain English, include scenarios/examples
+4. **Main Sections (4–6 H2s)** — plain English, include scenarios, concrete examples, and data/numbers where applicable
 5. **Key Takeaways** — 3–5 action bullets
-6. **Conclusion** — 1 paragraph, clear next step
+6. **Conclusion** — 1 paragraph with clear CTA (call-to-action) to use our calculators
 
 ### SEO Guidelines
+- **Focus on long-tail keywords** (3-5 word phrases) for better discoverability
 - Primary keyword in: title, first 100 words, one H2, conclusion
-- Add natural related keywords
+- Add 3-5 related secondary keywords naturally throughout
+- Target keyword density: ~1-2% (natural placement)
 - Mark internal link opportunities with:
   - `[CALCULATOR: name]` or `[ARTICLE: name]`
+
+### Suggested Keywords for this Topic
+{SUGGESTED_KEYWORDS}
 
 ### Evidence Marking
 - If you use any **number** or **date**, mark it with `[SOURCE: …]`

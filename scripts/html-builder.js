@@ -76,8 +76,37 @@ const KEYWORD_LINKS = {
     'inflation calculator': '/calculators/inflation.html',
     'self-employment tax calculator': '/calculators/self-employment-tax.html',
     'credit card payoff': '/calculators/debt-payoff.html',
-    'credit card calculator': '/calculators/debt-payoff.html'
+    'credit card calculator': '/calculators/debt-payoff.html',
+    'debt snowball': '/blog/debt-snowball-vs-avalanche.html',
+    'debt avalanche': '/blog/debt-snowball-vs-avalanche.html',
+    '401k contribution 2026': '/blog/401k-contribution-calculator-2025.html',
+    'emergency fund': '/blog/emergency-fund-3-vs-6-months.html',
+    'student loan forgiveness': '/blog/student-loan-forgiveness-backlog-guide.html',
+    'first time homebuyer': '/blog/first-time-homebuyer-mortgage-guide.html',
+    'self employment tax': '/blog/freelancer-self-employment-tax-guide.html',
+    'mortgage rates': '/blog/when-will-mortgage-rates-go-down-to-5-percent.html',
+    'catch up retirement': '/blog/catch-up-retirement-savings-after-50.html',
+    'credit score': '/blog/best-time-improve-credit-score-2026.html',
+    'refinance': '/calculators/refinance.html'
 };
+
+// Article slug to path for related-articles augmentation
+const BLOG_ARTICLE_PATHS = [
+    '/blog/debt-snowball-vs-avalanche.html',
+    '/blog/401k-contribution-calculator-2025.html',
+    '/blog/emergency-fund-3-vs-6-months.html',
+    '/blog/how-much-house-can-i-afford-80k-salary.html',
+    '/blog/how-much-car-can-i-afford-60k-salary.html',
+    '/blog/freelancer-self-employment-tax-guide.html',
+    '/blog/first-time-homebuyer-mortgage-guide.html',
+    '/blog/how-to-pay-off-50000-student-loans.html',
+    '/blog/student-loan-forgiveness-backlog-guide.html',
+    '/blog/catch-up-retirement-savings-after-50.html',
+    '/blog/mortgage-loan-modification-guide.html',
+    '/blog/when-will-mortgage-rates-go-down-to-5-percent.html',
+    '/blog/best-time-improve-credit-score-2026.html',
+    '/blog/missed-payment-credit-score-impact.html'
+];
 
 /**
  * Load HTML template
@@ -665,23 +694,26 @@ function escapeHtml(text) {
  * Add internal links to content based on keywords
  * Rules:
  * - Each keyword is linked only once (first occurrence)
+ * - Target 3-5+ internal links per article (calculators + blog articles)
  * - Don't replace inside existing links or headings
  * - Add title attribute for SEO
  */
 function addInternalLinks(html) {
     const linkedKeywords = new Set();
+    const MIN_LINKS = 3;
+    const MAX_LINKS = 8;
 
     // Sort keywords by length (longer first) to match longer phrases first
     const sortedKeywords = Object.keys(KEYWORD_LINKS).sort((a, b) => b.length - a.length);
 
     for (const keyword of sortedKeywords) {
+        if (linkedKeywords.size >= MAX_LINKS) break;
         if (linkedKeywords.has(keyword.toLowerCase())) continue;
 
         const url = KEYWORD_LINKS[keyword];
         const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         // Match keyword not inside HTML tags or existing links
-        // Negative lookbehind for <a...> and negative lookahead for </a>
         const regex = new RegExp(
             `(?<!<[^>]*)\\b(${escapedKeyword})\\b(?![^<]*<\\/a>)(?![^<]*<\\/h[1-6]>)`,
             'i'
@@ -690,7 +722,11 @@ function addInternalLinks(html) {
         const match = html.match(regex);
         if (match) {
             const originalText = match[1];
-            const link = `<a href="${url}" title="Use our ${originalText} tool" class="internal-link">${originalText}</a>`;
+            const isCalculator = url.includes('/calculators/');
+            const titleAttr = isCalculator
+                ? `Use our ${originalText} tool`
+                : `Read more about ${originalText}`;
+            const link = `<a href="${url}" title="${titleAttr}" class="internal-link">${originalText}</a>`;
             html = html.replace(regex, link);
             linkedKeywords.add(keyword.toLowerCase());
         }
@@ -700,11 +736,42 @@ function addInternalLinks(html) {
 }
 
 /**
+ * Augment related articles to ensure at least minCount items
+ */
+function augmentRelatedArticles(relatedArticles, currentSlug, category, minCount = 3) {
+    const existing = (relatedArticles || []).filter(a => path.basename(a.path) !== currentSlug);
+    if (existing.length >= minCount) return existing;
+
+    const categorySlug = (category || '').toLowerCase().replace(/\s+/g, '-');
+    const augmented = [...existing];
+    const usedPaths = new Set(existing.map(a => a.path));
+
+    for (const articlePath of BLOG_ARTICLE_PATHS) {
+        if (augmented.length >= minCount) break;
+        if (usedPaths.has(articlePath)) continue;
+        const slug = path.basename(articlePath, '.html');
+        const fullPath = path.join(BLOG_DIR, path.basename(articlePath));
+        if (!fs.existsSync(fullPath)) continue;
+
+        const title = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        augmented.push({
+            title,
+            path: articlePath,
+            description: `Learn more about ${title.toLowerCase()}`
+        });
+        usedPaths.add(articlePath);
+    }
+
+    return augmented.slice(0, 5);
+}
+
+/**
  * Generate NewsArticle schema (more appropriate for timely content)
  */
 function generateNewsArticleSchema(articleData) {
     const { metadata, content } = articleData;
     const ogImagePath = `/blog/images/og/${metadata.slug}.svg`;
+    const articleUrl = `https://financecalc.cc/blog/${metadata.slug}.html`;
 
     const schema = {
         "@context": "https://schema.org",
@@ -718,7 +785,7 @@ function generateNewsArticleSchema(articleData) {
         "dateModified": metadata.modifiedDate || metadata.publishDate,
         "author": {
             "@type": "Organization",
-            "name": "FinCalc",
+            "name": metadata.author || "FinCalc",
             "url": "https://financecalc.cc"
         },
         "publisher": {
@@ -732,8 +799,9 @@ function generateNewsArticleSchema(articleData) {
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://financecalc.cc/blog/${metadata.slug}.html`
-        }
+            "@id": articleUrl
+        },
+        "url": articleUrl
     };
 
     // Add speakable specification for voice assistants
@@ -743,6 +811,54 @@ function generateNewsArticleSchema(articleData) {
     };
 
     return schema;
+}
+
+/**
+ * Generate BreadcrumbList schema for article pages
+ */
+function generateBreadcrumbSchema(metadata) {
+    const articleUrl = `https://financecalc.cc/blog/${metadata.slug}.html`;
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://financecalc.cc/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://financecalc.cc/blog/" },
+            { "@type": "ListItem", "position": 3, "name": metadata.category || "Articles", "item": `https://financecalc.cc/blog/?category=${(metadata.category || '').toLowerCase().replace(/\s+/g, '-')}` },
+            { "@type": "ListItem", "position": 4, "name": metadata.title, "item": articleUrl }
+        ]
+    };
+}
+
+/**
+ * Generate HowTo schema for tutorial/guide articles (when sections look like steps)
+ */
+function generateHowToSchema(articleData) {
+    const { metadata, content } = articleData;
+    const sections = content.sections || [];
+    const stepCandidates = sections.filter(s =>
+        s.heading && (
+            /step\s+\d|how\s+to|^first\b|^next\b|^then\b|^finally\b/i.test(s.heading) ||
+            sections.length >= 3
+        )
+    );
+
+    if (stepCandidates.length < 2) return null;
+
+    const steps = stepCandidates.slice(0, 10).map((s, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": (s.heading || '').replace(/<[^>]+>/g, '').trim(),
+        "text": (s.content || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 300)
+    }));
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": metadata.title || content.headline,
+        "description": metadata.metaDescription,
+        "step": steps
+    };
 }
 
 /**
@@ -902,7 +1018,13 @@ function buildEngagementSections(articleData) {
  * Build complete HTML from article data
  */
 async function buildHtml(articleData, template) {
-    const { metadata, content, seo, relatedArticles } = articleData;
+    const { metadata, content, seo, relatedArticles: rawRelatedArticles } = articleData;
+    const relatedArticles = augmentRelatedArticles(
+        rawRelatedArticles,
+        metadata.slug + '.html',
+        metadata.category,
+        3
+    );
 
     const contentResult = buildContentHtml(articleData);
     const engagementHtml = buildEngagementSections(articleData);
@@ -927,6 +1049,8 @@ async function buildHtml(articleData, template) {
 
     // Generate NewsArticle schema
     const newsArticleSchema = generateNewsArticleSchema(articleData);
+    const breadcrumbSchema = generateBreadcrumbSchema(metadata);
+    const howToSchema = generateHowToSchema(articleData);
 
     // Calculate word count
     const wordCount = calculateWordCount(content.sections);
@@ -966,6 +1090,8 @@ async function buildHtml(articleData, template) {
         'DISCLOSURE': disclosureHtml,
         'FAQ_SCHEMA': seo && seo.faqSchema ? generateFaqSchema(seo.faqSchema) : '',
         'NEWS_ARTICLE_SCHEMA': `<script type="application/ld+json">${JSON.stringify(newsArticleSchema)}</script>`,
+        'BREADCRUMB_SCHEMA': `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`,
+        'HOWTO_SCHEMA': howToSchema ? `<script type="application/ld+json">${JSON.stringify(howToSchema)}</script>` : '',
         'ENGAGEMENT_SECTIONS': engagementHtml,
         'RELATED_ARTICLES': generateRelatedArticlesHtml(relatedArticles),
         'SIDEBAR_TOOLS': sidebarResult.html,

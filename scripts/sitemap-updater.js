@@ -177,17 +177,51 @@ function extractCategory(htmlContent) {
 }
 
 /**
+ * Strip all HTML tags and decode common entities from text
+ * Prevents HTML structure from leaking into blog index cards
+ */
+function stripHtmlTags(text) {
+    if (!text || typeof text !== 'string') return '';
+    return text
+        .replace(/<[^>]+>/g, '')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'")
+        .replace(/&#x27;/g, "'")
+        .replace(/&nbsp;/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+/**
+ * Sanitize intro text: remove any HTML-like patterns that could corrupt the index
+ */
+function sanitizeIntro(text) {
+    if (!text) return '';
+    let sanitized = stripHtmlTags(text);
+    // Remove any remaining HTML tag-like patterns (e.g. partial tags)
+    sanitized = sanitized.replace(/<\/?[a-z][^>]*/gi, '').trim();
+    // Limit length for card display (characters)
+    if (sanitized.length > 300) {
+        sanitized = sanitized.substring(0, 297) + '...';
+    }
+    return sanitized;
+}
+
+/**
  * Extract intro/description from HTML file
  */
 function extractIntro(htmlContent) {
-    const introMatch = /<p class="article-intro">(.*?)<\/p>/i.exec(htmlContent);
+    const introMatch = /<p class="article-intro">([\s\S]*?)<\/p>/i.exec(htmlContent);
     if (introMatch) {
-        return introMatch[1].replace(/<[^>]+>/g, '').trim();
+        return sanitizeIntro(introMatch[1]);
     }
 
     const metaMatch = /<meta name="description" content="(.*?)"/i.exec(htmlContent);
     if (metaMatch) {
-        return metaMatch[1].trim();
+        return sanitizeIntro(metaMatch[1]);
     }
 
     return '';
@@ -334,16 +368,24 @@ function generateBlogCardHtml(article) {
 }
 
 /**
- * Escape HTML special characters
+ * Escape HTML special characters for safe injection into HTML
  */
 function escapeHtml(text) {
     if (!text) return '';
-    return text
+    return String(text)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+}
+
+/**
+ * Escape $ for JavaScript String.replace() - prevents $1, $2 from being interpreted as capture groups
+ */
+function escapeReplaceDollars(text) {
+    if (!text) return '';
+    return String(text).replace(/\$/g, '$$');
 }
 
 /**
@@ -374,16 +416,19 @@ function updateBlogIndex(blogFiles) {
     // Sort by modification time (newest first)
     articles.sort((a, b) => b.mtime - a.mtime);
 
-    // Generate cards HTML
-    const cardsHtml = articles.map(article => generateBlogCardHtml(article)).join('\n');
+    // Generate cards HTML (escape $ to prevent replace() from interpreting $1, $2 as capture groups)
+    const cardsHtml = escapeReplaceDollars(
+        articles.map(article => generateBlogCardHtml(article)).join('\n')
+    );
 
     // Find and replace the blog posts section
+    // Use replace with callback to avoid $1/$2 in replacement string being interpreted
     const postsRegex = /(<div class="blog-posts[^"]*">)([\s\S]*?)(<\/div>\s*<\/div>\s*<\/section>)/;
     const match = postsRegex.exec(indexContent);
 
     if (match) {
         const newContent = match[1] + cardsHtml + '\n                ' + match[3];
-        indexContent = indexContent.replace(postsRegex, newContent);
+        indexContent = indexContent.replace(postsRegex, () => newContent);
         fs.writeFileSync(BLOG_INDEX_PATH, indexContent);
         return { success: true, articleCount: articles.length };
     }

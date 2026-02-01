@@ -61,6 +61,27 @@ function loadAffiliateConfig() {
   }
 }
 
+function loadKeywordsConfig() {
+  const configPath = path.join(CONFIG_DIR, 'keywords.json');
+  try {
+    return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  } catch (err) {
+    return { topicKeywords: {}, longTailKeywords: [] };
+  }
+}
+
+function getSuggestedKeywords(topic, keywordsConfig) {
+  const topicKeywords = keywordsConfig.topicKeywords || {};
+  const longTail = keywordsConfig.longTailKeywords || [];
+  const lookupKey = (topic || '').toLowerCase().replace(/\s+/g, '');
+  const topicKws = topicKeywords[lookupKey] || topicKeywords[topic] || [];
+  const related = Object.entries(topicKeywords)
+    .filter(([t]) => t && lookupKey && (t.includes(lookupKey) || lookupKey.includes(t)))
+    .flatMap(([, kws]) => kws || []);
+  const all = [...new Set([...topicKws, ...related, ...longTail.slice(0, 5)])];
+  return all.slice(0, 8).join(', ') || 'Use relevant long-tail phrases for the topic';
+}
+
 function getCalculatorForTopic(topic, affiliateConfig) {
   const mapping = affiliateConfig.topicMapping || {};
   const topicData = mapping[topic] || mapping.general || {};
@@ -154,8 +175,9 @@ function buildStep2Prompt(draftContent, template) {
   return template.replace('{ARTICLE_DRAFT}', draftContent);
 }
 
-function buildStep3Prompt(reviewedContent, article, template, calculator, relatedCalculators) {
+function buildStep3Prompt(reviewedContent, article, template, calculator, relatedCalculators, keywordsConfig = {}) {
   const dateStr = new Date().toISOString().split('T')[0];
+  const suggestedKeywords = getSuggestedKeywords(article.topic || 'general', keywordsConfig);
   return template
     .replace('{REVIEWED_ARTICLE}', reviewedContent)
     .replace('{TOPIC}', article.topic)
@@ -166,7 +188,8 @@ function buildStep3Prompt(reviewedContent, article, template, calculator, relate
     .replace('{SOURCE_TITLE}', article.title)
     .replace('{SOURCE_PUBLISHER}', article.source)
     .replace('{SOURCE_URL}', article.link)
-    .replace('{SOURCE_DATE}', article.pubDate || dateStr);
+    .replace('{SOURCE_DATE}', article.pubDate || dateStr)
+    .replace(/\{SUGGESTED_KEYWORDS\}/g, suggestedKeywords);
 }
 
 function parseOutput(output) {
@@ -213,6 +236,7 @@ function sleep(ms) {
 async function generateArticles(date, limit = 3) {
   const pipeline = loadPipelineConfig();
   const affiliateConfig = loadAffiliateConfig();
+  const keywordsConfig = loadKeywordsConfig();
 
   const templates = {
     step1: loadPromptTemplate('step1-draft.md'),
@@ -293,7 +317,7 @@ async function generateArticles(date, limit = 3) {
 
     // Step 3: Final JSON
     console.log('Step 3: Final JSON');
-    const step3Prompt = buildStep3Prompt(reviewOutput, newsItem, templates.step3, calculator, relatedCalculators);
+    const step3Prompt = buildStep3Prompt(reviewOutput, newsItem, templates.step3, calculator, relatedCalculators, keywordsConfig);
     const finalOutput = callAICLI(step3Prompt, pipeline.polish || pipeline.fallback || DEFAULT_STAGE_CONFIG);
     if (!finalOutput) {
       results.push({ success: false, title: newsItem.title, error: 'Polish failed' });

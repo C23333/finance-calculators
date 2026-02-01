@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SEO Enhancement Script for FinanceCalc.cc
  * Handles dynamic schema injection, performance optimization, and analytics
  * Enhanced with multilingual SEO support
@@ -437,6 +437,23 @@
         });
     }
 
+    // Track internal link clicks (calculator/article CTAs)
+    function trackInternalLinks() {
+        if (typeof gtag !== 'function') return;
+
+        document.querySelectorAll('a.internal-link, a[href*="/calculators/"], a[href*="/blog/"].related-card').forEach(link => {
+            link.addEventListener('click', function() {
+                const href = this.getAttribute('href') || '';
+                const isCalculator = href.includes('/calculators/');
+                gtag('event', 'internal_link_click', {
+                    'event_category': isCalculator ? 'calculator_cta' : 'article_cta',
+                    'event_label': href,
+                    'value': 1
+                });
+            });
+        });
+    }
+
     // Add table of contents to long articles
     function generateTableOfContents() {
         const article = document.querySelector('.article-content');
@@ -504,6 +521,7 @@
         trackScrollDepth();
         trackCalculatorUsage();
         trackOutboundLinks();
+        trackInternalLinks();
         generateTableOfContents();
         setupSmoothScroll();
 
