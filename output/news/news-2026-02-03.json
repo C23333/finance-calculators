@@ -1,0 +1,594 @@
+{
+  "fetchedAt": "2026-02-03T01:24:09.977Z",
+  "fetchStats": {
+    "success": 6,
+    "failed": 4,
+    "skipped": 0
+  },
+  "totalFetched": 176,
+  "totalUnique": 175,
+  "historyFiltered": 6,
+  "totalSelected": 20,
+  "byTopic": {
+    "mortgage": [
+      {
+        "title": "Housing affordability isn't just hurting buyers: More homeowners are falling behind on their mortgages",
+        "description": "While the overall share of delinquencies among all mortgages remains small, the growth is occurring faster than late payments for other types of consumer loans.",
+        "link": "https://www.cnbc.com/2026/02/02/mortgage-delinquencies-housing-affordability.html",
+        "pubDate": "2026-02-02T17:27:40.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 33,
+        "topic": "mortgage"
+      },
+      {
+        "title": "Best cash-out refinance mortgage lenders of February 2026",
+        "description": "",
+        "link": "https://finance.yahoo.com/personal-finance/mortgages/article/best-cash-out-refinance-lenders-134200722.html",
+        "pubDate": "2024-11-01T13:42:00.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 31,
+        "topic": "mortgage"
+      }
+    ],
+    "retirement": [
+      {
+        "title": "Scotts Miracle-Gro Touts Debt Cut, Cash Flow Gains as Shareholders OK All Proposals at AGM",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/scotts-miracle-gro-touts-debt-134345114.html",
+        "pubDate": "2026-02-01T13:43:45.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "I Retired a Millionaire: The Best $30,000 I Ever Spent Preparing for Retirement",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/retired-millionaire-best-30-000-134805261.html",
+        "pubDate": "2026-02-01T13:48:05.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "Planning to Own a Home in Retirement? Make Sure You Do This 1 Thing.",
+        "description": "It's a crucial move to make.",
+        "link": "https://www.fool.com/retirement/2026/02/02/planning-to-own-a-home-in-retirement-make-sure-you/?source=iedfolrf0000001",
+        "pubDate": "2026-02-03T00:08:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "23d7c1c2-45be-4987-85fc-b2e5e4fc46bb",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      }
+    ],
+    "investing": [
+      {
+        "title": "Why Nobody's Talking About the Bitwise Crypto Industry Innovators ETF (But They Should Be)",
+        "description": "Investing in the crypto economy, rather than individual cryptocurrencies, could make sense in 2026.",
+        "link": "https://www.fool.com/investing/2026/02/02/why-nobodys-talking-about-bitwise-crypto-industry/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T23:07:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "BITQ",
+          "BTC",
+          "e4cd5739-9fe6-4cad-819e-47b529d5e72e",
+          "investing",
+          "Cryptocurrency"
+        ],
+        "score": 31,
+        "topic": "investing"
+      },
+      {
+        "title": "Oracle's credit default swaps are plummeting as financing plan boosts investor confidence",
+        "description": "Oracle's 5-year credit default swaps are tumbling after the company announced a $50 billion debt and equity financing plan.",
+        "link": "https://www.cnbc.com/2026/02/02/oracles-credit-default-swaps-are-plummeting-after-financing-plans.html",
+        "pubDate": "2026-02-02T22:14:54.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 28,
+        "topic": "investing"
+      },
+      {
+        "title": "Palantir’s stock surges as AI demand drives another record quarter",
+        "description": "CEO Alex Karp says that “competitors investing in undifferentiated large language models are ruining the economics of their business.”",
+        "link": "https://www.marketwatch.com/story/palantirs-stock-surges-as-ai-demand-drives-another-record-quarter-deb6b082?mod=mw_rss_topstories",
+        "pubDate": "2026-02-03T01:15:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "‘We live on Social Security and pensions’: I’m in my 70s and my house needs repairs. Do I take out a $50K loan — or sell stocks?",
+        "description": "“Our house is paid off.”",
+        "link": "https://www.marketwatch.com/story/we-live-on-social-security-and-pensions-im-in-my-70s-and-my-house-needs-repairs-do-i-take-out-a-50k-loan-or-sell-stocks-44c2ddbe?mod=mw_rss_topstories",
+        "pubDate": "2026-02-03T01:00:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "How the stock market’s big turnaround on Monday put the S&P 500 back in record territory",
+        "description": "Small-caps and other signs of the ‘rotation’ beyond mega-cap tech were out in force to start February",
+        "link": "https://www.marketwatch.com/story/how-the-stock-markets-big-turnaround-on-monday-put-the-s-p-500-back-in-record-territory-612a568a?mod=mw_rss_topstories",
+        "pubDate": "2026-02-02T21:56:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Feb. 2: Palantir Technologies Rises on William Blair Upgrade and Subsequent Earnings Beat",
+        "description": "The market digests an upgrade from William Blair on Palantir's stock as the company reports earnings after hours, today, Feb. 2, 2026.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-palantir-technologies-rises-on-william-blair-upgrade-and-subsequent-earnings-beat/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T23:08:12.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "PLTR",
+          "5d6fb380-1535-4b33-b4c4-8a91a5c53829",
+          "coveragestock-market-today",
+          "Technology and Telecom"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Feb. 2: Stocks Recover and Micron Technology Soars Again",
+        "description": "Today, Feb. 2, 2026, volatility continues in commodities while manufacturing data boosts markets.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-stocks-recover-and-micron-technology-soars-again/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T22:52:08.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "^GSPC",
+          "^IXIC",
+          "^DJI",
+          "9454b853-81ea-4d9c-9c40-af9532143369",
+          "coveragestock-market-today",
+          "Markets"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Feb. 2: Apple Stock Jumps After Record Q1 Revenue Boosts Investor Confidence",
+        "description": "On Feb. 2, 2026, record holiday iPhone sales, surging services, and fresh AI moves put Apple's growth story under the microscope.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-apple-stock-jumps-after-record-q1-revenue-boosts-investor-confidence/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T22:30:55.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "AAPL",
+          "MSFT",
+          "GOOGL",
+          "7476ceb9-9e76-4340-9caa-0337041438da",
+          "coveragestock-market-today",
+          "Technology and Telecom"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Feb. 2: Nio Falls After January Deliveries Raise Concerns About Chinese EV Demand",
+        "description": "Today, Feb. 2, 2026, investors weigh Nio’s surging January deliveries against fresh doubts about demand, margins, and model concentration.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-nio-falls-after-january-deliveries-raise-concerns-about-chinese-ev-demand/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T22:22:38.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "NIO",
+          "TSLA",
+          "RIVN",
+          "98f9c468-7acd-4c55-8fd0-c7e9e56df4b5",
+          "coveragestock-market-today",
+          "Industrials"
+        ],
+        "score": 26,
+        "topic": "investing"
+      },
+      {
+        "title": "Stock Market Today, Feb. 2: Robinhood Markets Falls on Bitcoin Weakness and Lower Crypto Trading Volumes",
+        "description": "Crypto jitters are testing this trading app’s reliance on digital-asset activity and retail risk appetite, today, Feb. 2, 2026.",
+        "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-robinhood-markets-falls-on-bitcoin-weakness-and-lower-crypto-trading-volumes/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T21:59:24.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "HOOD",
+          "SCHW",
+          "IBKR",
+          "97511fea-9b30-4833-9e0f-657ffe71d381",
+          "coveragestock-market-today",
+          "Financials"
+        ],
+        "score": 26,
+        "topic": "investing"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+        "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+        "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+        "pubDate": "2026-01-29T13:39:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "taxes"
+      },
+      {
+        "title": "It’s tax-filing time — bigger refunds, new deductions, and more",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/its-tax-filing-time--bigger-refunds-new-deductions-and-more-174124037.html",
+        "pubDate": "2026-01-26T17:41:24.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 16,
+        "topic": "taxes"
+      }
+    ],
+    "debt": [
+      {
+        "title": "Debt-free couple in dispute over a new truck. Ramsey Show hosts tell New York City caller her husband needs to adult up",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/debt-free-couple-dispute-over-143000691.html",
+        "pubDate": "2026-02-01T14:30:00.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "debt"
+      }
+    ],
+    "savings": [
+      {
+        "title": "What Trump's choice of Kevin Warsh for Fed chair may mean for consumers",
+        "description": "Trump's choice for Fed chair could have far-reaching consequences for almost all consumer borrowing costs and savings rates.",
+        "link": "https://www.cnbc.com/2026/01/30/trump-fed-chair-pick-kevin-warsh.html",
+        "pubDate": "2026-02-01T19:21:15.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 18,
+        "topic": "savings"
+      }
+    ],
+    "general": [
+      {
+        "title": "NVIDIA Corporation (NVDA) Expanding Influence in the AI Economy",
+        "description": "",
+        "link": "https://finance.yahoo.com/news/nvidia-corporation-nvda-expanding-influence-133006967.html",
+        "pubDate": "2026-02-01T13:30:06.000Z",
+        "source": "Yahoo Finance",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 16,
+        "topic": "general"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Housing affordability isn't just hurting buyers: More homeowners are falling behind on their mortgages",
+      "description": "While the overall share of delinquencies among all mortgages remains small, the growth is occurring faster than late payments for other types of consumer loans.",
+      "link": "https://www.cnbc.com/2026/02/02/mortgage-delinquencies-housing-affordability.html",
+      "pubDate": "2026-02-02T17:27:40.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 33,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Scotts Miracle-Gro Touts Debt Cut, Cash Flow Gains as Shareholders OK All Proposals at AGM",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/scotts-miracle-gro-touts-debt-134345114.html",
+      "pubDate": "2026-02-01T13:43:45.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "Best cash-out refinance mortgage lenders of February 2026",
+      "description": "",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/best-cash-out-refinance-lenders-134200722.html",
+      "pubDate": "2024-11-01T13:42:00.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 31,
+      "topic": "mortgage"
+    },
+    {
+      "title": "Why Nobody's Talking About the Bitwise Crypto Industry Innovators ETF (But They Should Be)",
+      "description": "Investing in the crypto economy, rather than individual cryptocurrencies, could make sense in 2026.",
+      "link": "https://www.fool.com/investing/2026/02/02/why-nobodys-talking-about-bitwise-crypto-industry/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T23:07:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "BITQ",
+        "BTC",
+        "e4cd5739-9fe6-4cad-819e-47b529d5e72e",
+        "investing",
+        "Cryptocurrency"
+      ],
+      "score": 31,
+      "topic": "investing"
+    },
+    {
+      "title": "Oracle's credit default swaps are plummeting as financing plan boosts investor confidence",
+      "description": "Oracle's 5-year credit default swaps are tumbling after the company announced a $50 billion debt and equity financing plan.",
+      "link": "https://www.cnbc.com/2026/02/02/oracles-credit-default-swaps-are-plummeting-after-financing-plans.html",
+      "pubDate": "2026-02-02T22:14:54.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 28,
+      "topic": "investing"
+    },
+    {
+      "title": "Palantir’s stock surges as AI demand drives another record quarter",
+      "description": "CEO Alex Karp says that “competitors investing in undifferentiated large language models are ruining the economics of their business.”",
+      "link": "https://www.marketwatch.com/story/palantirs-stock-surges-as-ai-demand-drives-another-record-quarter-deb6b082?mod=mw_rss_topstories",
+      "pubDate": "2026-02-03T01:15:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "‘We live on Social Security and pensions’: I’m in my 70s and my house needs repairs. Do I take out a $50K loan — or sell stocks?",
+      "description": "“Our house is paid off.”",
+      "link": "https://www.marketwatch.com/story/we-live-on-social-security-and-pensions-im-in-my-70s-and-my-house-needs-repairs-do-i-take-out-a-50k-loan-or-sell-stocks-44c2ddbe?mod=mw_rss_topstories",
+      "pubDate": "2026-02-03T01:00:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "How the stock market’s big turnaround on Monday put the S&P 500 back in record territory",
+      "description": "Small-caps and other signs of the ‘rotation’ beyond mega-cap tech were out in force to start February",
+      "link": "https://www.marketwatch.com/story/how-the-stock-markets-big-turnaround-on-monday-put-the-s-p-500-back-in-record-territory-612a568a?mod=mw_rss_topstories",
+      "pubDate": "2026-02-02T21:56:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Feb. 2: Palantir Technologies Rises on William Blair Upgrade and Subsequent Earnings Beat",
+      "description": "The market digests an upgrade from William Blair on Palantir's stock as the company reports earnings after hours, today, Feb. 2, 2026.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-palantir-technologies-rises-on-william-blair-upgrade-and-subsequent-earnings-beat/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T23:08:12.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "PLTR",
+        "5d6fb380-1535-4b33-b4c4-8a91a5c53829",
+        "coveragestock-market-today",
+        "Technology and Telecom"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Feb. 2: Stocks Recover and Micron Technology Soars Again",
+      "description": "Today, Feb. 2, 2026, volatility continues in commodities while manufacturing data boosts markets.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-stocks-recover-and-micron-technology-soars-again/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T22:52:08.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "9454b853-81ea-4d9c-9c40-af9532143369",
+        "coveragestock-market-today",
+        "Markets"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Feb. 2: Apple Stock Jumps After Record Q1 Revenue Boosts Investor Confidence",
+      "description": "On Feb. 2, 2026, record holiday iPhone sales, surging services, and fresh AI moves put Apple's growth story under the microscope.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-apple-stock-jumps-after-record-q1-revenue-boosts-investor-confidence/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T22:30:55.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "7476ceb9-9e76-4340-9caa-0337041438da",
+        "coveragestock-market-today",
+        "Technology and Telecom"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Feb. 2: Nio Falls After January Deliveries Raise Concerns About Chinese EV Demand",
+      "description": "Today, Feb. 2, 2026, investors weigh Nio’s surging January deliveries against fresh doubts about demand, margins, and model concentration.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-nio-falls-after-january-deliveries-raise-concerns-about-chinese-ev-demand/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T22:22:38.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "NIO",
+        "TSLA",
+        "RIVN",
+        "98f9c468-7acd-4c55-8fd0-c7e9e56df4b5",
+        "coveragestock-market-today",
+        "Industrials"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "Stock Market Today, Feb. 2: Robinhood Markets Falls on Bitcoin Weakness and Lower Crypto Trading Volumes",
+      "description": "Crypto jitters are testing this trading app’s reliance on digital-asset activity and retail risk appetite, today, Feb. 2, 2026.",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/02/02/stock-market-today-feb-2-robinhood-markets-falls-on-bitcoin-weakness-and-lower-crypto-trading-volumes/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T21:59:24.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "HOOD",
+        "SCHW",
+        "IBKR",
+        "97511fea-9b30-4833-9e0f-657ffe71d381",
+        "coveragestock-market-today",
+        "Financials"
+      ],
+      "score": 26,
+      "topic": "investing"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+      "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+      "pubDate": "2026-01-29T13:39:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "taxes"
+    },
+    {
+      "title": "Debt-free couple in dispute over a new truck. Ramsey Show hosts tell New York City caller her husband needs to adult up",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/debt-free-couple-dispute-over-143000691.html",
+      "pubDate": "2026-02-01T14:30:00.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "debt"
+    },
+    {
+      "title": "I Retired a Millionaire: The Best $30,000 I Ever Spent Preparing for Retirement",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/retired-millionaire-best-30-000-134805261.html",
+      "pubDate": "2026-02-01T13:48:05.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "Planning to Own a Home in Retirement? Make Sure You Do This 1 Thing.",
+      "description": "It's a crucial move to make.",
+      "link": "https://www.fool.com/retirement/2026/02/02/planning-to-own-a-home-in-retirement-make-sure-you/?source=iedfolrf0000001",
+      "pubDate": "2026-02-03T00:08:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "23d7c1c2-45be-4987-85fc-b2e5e4fc46bb",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "What Trump's choice of Kevin Warsh for Fed chair may mean for consumers",
+      "description": "Trump's choice for Fed chair could have far-reaching consequences for almost all consumer borrowing costs and savings rates.",
+      "link": "https://www.cnbc.com/2026/01/30/trump-fed-chair-pick-kevin-warsh.html",
+      "pubDate": "2026-02-01T19:21:15.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 18,
+      "topic": "savings"
+    },
+    {
+      "title": "NVIDIA Corporation (NVDA) Expanding Influence in the AI Economy",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/nvidia-corporation-nvda-expanding-influence-133006967.html",
+      "pubDate": "2026-02-01T13:30:06.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 16,
+      "topic": "general"
+    },
+    {
+      "title": "It’s tax-filing time — bigger refunds, new deductions, and more",
+      "description": "",
+      "link": "https://finance.yahoo.com/news/its-tax-filing-time--bigger-refunds-new-deductions-and-more-174124037.html",
+      "pubDate": "2026-01-26T17:41:24.000Z",
+      "source": "Yahoo Finance",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 16,
+      "topic": "taxes"
+    }
+  ],
+  "skippedByHistory": [
+    {
+      "reason": "already_generated",
+      "existingSlug": "trump-taps-kevin-warsh-to-lead-the-federal-reserve",
+      "title": "Trump taps Kevin Warsh to lead the Federal Reserve",
+      "link": "https://www.npr.org/2026/01/30/nx-s1-5645091/trump-kevin-warsh-federal-reserve-chair"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "gen-z-investors-lessons-learned-since-2021-meme-stock-mania",
+      "title": "Gen Z investors' lessons learned since 2021 meme stock mania",
+      "link": "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas",
+      "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+      "link": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "fed-holds-interest-rates-steady-what-that-means-for-mortgage",
+      "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+      "link": "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "fed-is-likely-to-hold-interest-rates-steady-resisting-trump",
+      "title": "Fed is likely to hold interest rates steady, resisting Trump pressure. Here’s what that means for borrowers",
+      "link": "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "link": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html"
+    }
+  ]
+}

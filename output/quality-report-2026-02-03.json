@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-02-03T01:40:45.177Z",
+  "dateFilter": "2026-02-03",
+  "total": 5,
+  "failed": 0,
+  "warnings": 5,
+  "results": [
+    {
+      "file": "output\\articles\\final-best-cash-out-refinance-mortgage-lenders-of-february-2026.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-housing-affordability-isnt-just-hurting-buyers-more-homeowne.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-oracles-credit-default-swaps-are-plummeting-as-financing-pla.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-why-nobodys-talking-about-the-bitwise-crypto-industry-innova.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    }
+  ]
+}

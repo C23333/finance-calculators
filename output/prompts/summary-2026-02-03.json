@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-02-03T01:24:18.746Z",
+  "newsFile": "news-2026-02-03.json",
+  "articleCount": 5,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-03",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-02-03",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-02-03.md",
+  "articles": [
+    {
+      "title": "Housing affordability isn't just hurting buyers: More homeowners are falling behind on their mortgages",
+      "topic": "mortgage",
+      "slug": "housing-affordability-isnt-just-hurting-buyers-more-homeowne",
+      "calculator": "Mortgage Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-03\\step1-draft-housing-affordability-isnt-just-hurting-buyers-more-homeowne.md"
+    },
+    {
+      "title": "Scotts Miracle-Gro Touts Debt Cut, Cash Flow Gains as Shareholders OK All Proposals at AGM",
+      "topic": "retirement",
+      "slug": "scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho",
+      "calculator": "Retirement Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-03\\step1-draft-scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho.md"
+    },
+    {
+      "title": "Why Nobody's Talking About the Bitwise Crypto Industry Innovators ETF (But They Should Be)",
+      "topic": "investing",
+      "slug": "why-nobodys-talking-about-the-bitwise-crypto-industry-innova",
+      "calculator": "Compound Interest Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-03\\step1-draft-why-nobodys-talking-about-the-bitwise-crypto-industry-innova.md"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "topic": "taxes",
+      "slug": "irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax",
+      "calculator": "Take-Home Pay Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-03\\step1-draft-irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax.md"
+    },
+    {
+      "title": "Debt-free couple in dispute over a new truck. Ramsey Show hosts tell New York City caller her husband needs to adult up",
+      "topic": "debt",
+      "slug": "debt-free-couple-in-dispute-over-a-new-truck-ramsey-show-hos",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-03\\step1-draft-debt-free-couple-in-dispute-over-a-new-truck-ramsey-show-hos.md"
+    }
+  ]
+}

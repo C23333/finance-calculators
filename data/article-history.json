@@ -1,10 +1,10 @@
 {
   "version": 1,
   "createdAt": "2026-01-23T00:00:00.000Z",
-  "lastUpdated": "2026-02-01T03:36:22.468Z",
+  "lastUpdated": "2026-02-03T01:40:44.985Z",
   "statistics": {
-    "totalArticles": 22,
-    "totalVersions": 22,
+    "totalArticles": 27,
+    "totalVersions": 27,
     "archivedVersions": 0
   },
   "bySlug": {
@@ -359,6 +359,86 @@
           "currentPath": "output/articles/final-gamestop-mania-fed-off-investor-angst-experts-say-that-uneas.json"
         }
       ]
+    },
+    "housing-affordability-isnt-just-hurting-buyers-more-homeowne": {
+      "slug": "housing-affordability-isnt-just-hurting-buyers-more-homeowne",
+      "title": "Housing affordability isn't just hurting buyers: More homeowners are falling behind on their mortgages",
+      "sourceUrl": "https://www.cnbc.com/2026/02/02/mortgage-delinquencies-housing-affordability.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-03T01:27:54.418Z",
+      "lastUpdated": "2026-02-03T01:27:54.418Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-03T01:27:54.418Z",
+          "archived": false,
+          "currentPath": "output/articles/final-housing-affordability-isnt-just-hurting-buyers-more-homeowne.json"
+        }
+      ]
+    },
+    "scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho": {
+      "slug": "scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho",
+      "title": "Scotts Miracle-Gro Touts Debt Cut, Cash Flow Gains as Shareholders OK All Proposals at AGM",
+      "sourceUrl": "https://finance.yahoo.com/news/scotts-miracle-gro-touts-debt-134345114.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-03T01:31:10.172Z",
+      "lastUpdated": "2026-02-03T01:31:10.172Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-03T01:31:10.172Z",
+          "archived": false,
+          "currentPath": "output/articles/final-scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho.json"
+        }
+      ]
+    },
+    "best-cash-out-refinance-mortgage-lenders-of-february-2026": {
+      "slug": "best-cash-out-refinance-mortgage-lenders-of-february-2026",
+      "title": "Best cash-out refinance mortgage lenders of February 2026",
+      "sourceUrl": "https://finance.yahoo.com/personal-finance/mortgages/article/best-cash-out-refinance-lenders-134200722.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-03T01:34:25.727Z",
+      "lastUpdated": "2026-02-03T01:34:25.727Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-03T01:34:25.727Z",
+          "archived": false,
+          "currentPath": "output/articles/final-best-cash-out-refinance-mortgage-lenders-of-february-2026.json"
+        }
+      ]
+    },
+    "why-nobodys-talking-about-the-bitwise-crypto-industry-innova": {
+      "slug": "why-nobodys-talking-about-the-bitwise-crypto-industry-innova",
+      "title": "Why Nobody's Talking About the Bitwise Crypto Industry Innovators ETF (But They Should Be)",
+      "sourceUrl": "https://www.fool.com/investing/2026/02/02/why-nobodys-talking-about-bitwise-crypto-industry/?source=iedfolrf0000001",
+      "currentVersion": 1,
+      "createdAt": "2026-02-03T01:37:27.128Z",
+      "lastUpdated": "2026-02-03T01:37:27.128Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-03T01:37:27.128Z",
+          "archived": false,
+          "currentPath": "output/articles/final-why-nobodys-talking-about-the-bitwise-crypto-industry-innova.json"
+        }
+      ]
+    },
+    "oracles-credit-default-swaps-are-plummeting-as-financing-pla": {
+      "slug": "oracles-credit-default-swaps-are-plummeting-as-financing-pla",
+      "title": "Oracle's credit default swaps are plummeting as financing plan boosts investor confidence",
+      "sourceUrl": "https://www.cnbc.com/2026/02/02/oracles-credit-default-swaps-are-plummeting-after-financing-plans.html",
+      "currentVersion": 1,
+      "createdAt": "2026-02-03T01:40:44.983Z",
+      "lastUpdated": "2026-02-03T01:40:44.983Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-03T01:40:44.983Z",
+          "archived": false,
+          "currentPath": "output/articles/final-oracles-credit-default-swaps-are-plummeting-as-financing-pla.json"
+        }
+      ]
     }
   },
   "bySourceUrl": {
@@ -375,6 +455,11 @@
     "https://www.npr.org/2026/01/30/nx-s1-5645091/trump-kevin-warsh-federal-reserve-chair": "trump-taps-kevin-warsh-to-lead-the-federal-reserve",
     "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html": "gen-z-investors-lessons-learned-since-2021-meme-stock-mania",
     "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
-    "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html": "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas"
+    "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html": "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas",
+    "https://www.cnbc.com/2026/02/02/mortgage-delinquencies-housing-affordability.html": "housing-affordability-isnt-just-hurting-buyers-more-homeowne",
+    "https://finance.yahoo.com/news/scotts-miracle-gro-touts-debt-134345114.html": "scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho",
+    "https://finance.yahoo.com/personal-finance/mortgages/article/best-cash-out-refinance-lenders-134200722.html": "best-cash-out-refinance-mortgage-lenders-of-february-2026",
+    "https://www.fool.com/investing/2026/02/02/why-nobodys-talking-about-bitwise-crypto-industry/?source=iedfolrf0000001": "why-nobodys-talking-about-the-bitwise-crypto-industry-innova",
+    "https://www.cnbc.com/2026/02/02/oracles-credit-default-swaps-are-plummeting-after-financing-plans.html": "oracles-credit-default-swaps-are-plummeting-as-financing-pla"
   }
 }
