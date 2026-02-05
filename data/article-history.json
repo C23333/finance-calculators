@@ -1,10 +1,10 @@
 {
   "version": 1,
   "createdAt": "2026-01-23T00:00:00.000Z",
-  "lastUpdated": "2026-02-03T01:40:44.985Z",
+  "lastUpdated": "2026-02-05T01:46:55.981Z",
   "statistics": {
-    "totalArticles": 27,
-    "totalVersions": 27,
+    "totalArticles": 30,
+    "totalVersions": 30,
     "archivedVersions": 0
   },
   "bySlug": {
@@ -439,6 +439,54 @@
           "currentPath": "output/articles/final-oracles-credit-default-swaps-are-plummeting-as-financing-pla.json"
         }
       ]
+    },
+    "nervous-to-invest-your-retirement-savings-in-stocks-heres-wh": {
+      "slug": "nervous-to-invest-your-retirement-savings-in-stocks-heres-wh",
+      "title": "Nervous to Invest Your Retirement Savings in Stocks? Here's What Might Happen if You Don't.",
+      "sourceUrl": "https://www.fool.com/retirement/2026/02/04/nervous-to-invest-your-retirement-savings-in-stock/?source=iedfolrf0000001",
+      "currentVersion": 1,
+      "createdAt": "2026-02-05T01:31:23.647Z",
+      "lastUpdated": "2026-02-05T01:31:23.647Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-05T01:31:23.647Z",
+          "archived": false,
+          "currentPath": "output/articles/final-nervous-to-invest-your-retirement-savings-in-stocks-heres-wh.json"
+        }
+      ]
+    },
+    "chase-cut-my-credit-card-limit-due-to-lower-usage-will-this": {
+      "slug": "chase-cut-my-credit-card-limit-due-to-lower-usage-will-this",
+      "title": "Chase cut my credit-card limit due to lower usage. Will this affect my credit score and lead other banks to do the same?",
+      "sourceUrl": "https://www.marketwatch.com/story/i-didnt-find-out-until-after-it-was-done-chase-cut-my-credit-card-limit-due-to-low-usage-could-this-affect-my-credit-717075bd?mod=mw_rss_topstories",
+      "currentVersion": 1,
+      "createdAt": "2026-02-05T01:34:21.207Z",
+      "lastUpdated": "2026-02-05T01:34:21.207Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-05T01:34:21.207Z",
+          "archived": false,
+          "currentPath": "output/articles/final-chase-cut-my-credit-card-limit-due-to-lower-usage-will-this.json"
+        }
+      ]
+    },
+    "this-could-be-the-easiest-way-to-get-tax-free-income-in-reti": {
+      "slug": "this-could-be-the-easiest-way-to-get-tax-free-income-in-reti",
+      "title": "This Could Be the Easiest Way to Get Tax-Free Income in Retirement",
+      "sourceUrl": "https://www.fool.com/retirement/2026/02/04/this-could-be-the-easiest-way-to-get-tax-free-inco/?source=iedfolrf0000001",
+      "currentVersion": 1,
+      "createdAt": "2026-02-05T01:46:55.980Z",
+      "lastUpdated": "2026-02-05T01:46:55.980Z",
+      "versions": [
+        {
+          "version": 1,
+          "generatedAt": "2026-02-05T01:46:55.980Z",
+          "archived": false,
+          "currentPath": "output/articles/final-this-could-be-the-easiest-way-to-get-tax-free-income-in-reti.json"
+        }
+      ]
     }
   },
   "bySourceUrl": {
@@ -460,6 +508,9 @@
     "https://finance.yahoo.com/news/scotts-miracle-gro-touts-debt-134345114.html": "scotts-miracle-gro-touts-debt-cut-cash-flow-gains-as-shareho",
     "https://finance.yahoo.com/personal-finance/mortgages/article/best-cash-out-refinance-lenders-134200722.html": "best-cash-out-refinance-mortgage-lenders-of-february-2026",
     "https://www.fool.com/investing/2026/02/02/why-nobodys-talking-about-bitwise-crypto-industry/?source=iedfolrf0000001": "why-nobodys-talking-about-the-bitwise-crypto-industry-innova",
-    "https://www.cnbc.com/2026/02/02/oracles-credit-default-swaps-are-plummeting-after-financing-plans.html": "oracles-credit-default-swaps-are-plummeting-as-financing-pla"
+    "https://www.cnbc.com/2026/02/02/oracles-credit-default-swaps-are-plummeting-after-financing-plans.html": "oracles-credit-default-swaps-are-plummeting-as-financing-pla",
+    "https://www.fool.com/retirement/2026/02/04/nervous-to-invest-your-retirement-savings-in-stock/?source=iedfolrf0000001": "nervous-to-invest-your-retirement-savings-in-stocks-heres-wh",
+    "https://www.marketwatch.com/story/i-didnt-find-out-until-after-it-was-done-chase-cut-my-credit-card-limit-due-to-low-usage-could-this-affect-my-credit-717075bd?mod=mw_rss_topstories": "chase-cut-my-credit-card-limit-due-to-lower-usage-will-this",
+    "https://www.fool.com/retirement/2026/02/04/this-could-be-the-easiest-way-to-get-tax-free-inco/?source=iedfolrf0000001": "this-could-be-the-easiest-way-to-get-tax-free-income-in-reti"
   }
 }

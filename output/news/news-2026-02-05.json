@@ -1,0 +1,608 @@
+{
+  "fetchedAt": "2026-02-05T01:18:16.377Z",
+  "fetchStats": {
+    "success": 6,
+    "failed": 4,
+    "skipped": 0
+  },
+  "totalFetched": 177,
+  "totalUnique": 176,
+  "historyFiltered": 6,
+  "totalSelected": 20,
+  "byTopic": {
+    "retirement": [
+      {
+        "title": "Older workers with student loan debt have less saved for retirement, Fidelity finds",
+        "description": "Older workers with student debt have much smaller retirement account balances than their peers without the loans, a Fidelity report shows.",
+        "link": "https://www.cnbc.com/2026/02/04/student-loan-debt-retirement-savings.html",
+        "pubDate": "2026-02-04T20:47:16.000Z",
+        "source": "CNBC Top News",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 48,
+        "topic": "retirement"
+      },
+      {
+        "title": "This Could Be the Easiest Way to Get Tax-Free Income in Retirement",
+        "description": "It's not a complicated strategy, but you may need to plan ahead.",
+        "link": "https://www.fool.com/retirement/2026/02/04/this-could-be-the-easiest-way-to-get-tax-free-inco/?source=iedfolrf0000001",
+        "pubDate": "2026-02-04T11:48:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "e6002f49-fa14-4776-b02f-ad8a021d3112",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "Nearing Retirement? 4 Ways to Catch Up on Savings if You're Behind.",
+        "description": "Even if the clock is ticking down, you might still have some good options.",
+        "link": "https://www.fool.com/retirement/2026/02/03/nearing-retirement-4-ways-to-catch-up-on-savings-i/?source=iedfolrf0000001",
+        "pubDate": "2026-02-03T22:18:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "722b52a9-0589-4225-87c1-8c041a442fc0",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "Need to Cut Back on Retirement Savings This Year? At Least Aim to Do This.",
+        "description": "There's one savings threshold you should still try to hit.",
+        "link": "https://www.fool.com/retirement/2026/02/03/need-to-cut-back-on-retirement-savings-this-year-a/?source=iedfolrf0000001",
+        "pubDate": "2026-02-03T18:41:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "c286d60a-ad39-44ca-ab2d-adc25e298522",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "This Is the Best Move You Can Make in 2026 If You're Behind on Retirement Savings",
+        "description": "This is one of the fastest ways to grow your wealth, hands down.",
+        "link": "https://www.fool.com/retirement/2026/02/02/this-is-the-best-move-you-can-make-in-2026-if-your/?source=iedfolrf0000001",
+        "pubDate": "2026-02-02T16:00:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "c25230a5-9888-46ba-8248-fd1c74957213",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "This Is the Average 401(k) Balance by Age. How Do Your Retirement Savings Stack Up?",
+        "description": "Are your savings on track?",
+        "link": "https://www.fool.com/retirement/2026/02/01/average-401k-balance-by-age-savings-stack-up/?source=iedfolrf0000001",
+        "pubDate": "2026-02-01T22:30:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "778f6d0f-6570-44f4-9068-4c7b447b2522",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 31,
+        "topic": "retirement"
+      },
+      {
+        "title": "Retirement savings 'lost and found' helps retirees track down old 401(k)s, pensions — how it works",
+        "description": "In the first year of the Labor Department's Retirement Savings Lost and Found database, 29.5% of users found an old workplace plan that might owe them money.",
+        "link": "https://www.cnbc.com/2026/02/04/retirement-savings-lost-and-found.html",
+        "pubDate": "2026-02-04T17:14:25.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 28,
+        "topic": "retirement"
+      },
+      {
+        "title": "‘I’m spooked’: Gold is back above $5,000, but is it a high-risk bet for your retirement?",
+        "description": "“Before you ask, there is nothing extreme about 5% of my ‘alternative’ assets.”",
+        "link": "https://www.marketwatch.com/story/im-spooked-do-gold-and-silver-belong-in-my-retirement-portfolio-after-their-dramatic-fall-in-value-a5bc4b3e?mod=mw_rss_topstories",
+        "pubDate": "2026-02-05T00:45:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "Relocating in Retirement? Don't Overlook This Key Factor.",
+        "description": "Do your research before packing your bags.",
+        "link": "https://www.fool.com/retirement/2026/02/04/relocating-in-retirement-dont-overlook-this-key-fa/?source=iedfolrf0000001",
+        "pubDate": "2026-02-05T00:18:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "b7597f9d-2e47-4641-95f8-5bf8d6c989e0",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "The Surprising Reason You Might Hate Retirement -- and What to Do About It",
+        "description": "Hint: It's not about money.",
+        "link": "https://www.fool.com/retirement/2026/02/04/the-surprising-reason-you-might-hate-retirement-an/?source=iedfolrf0000001",
+        "pubDate": "2026-02-04T22:11:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "8f390b70-65d3-4ddf-9718-5d3f7093ad10",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "Is Your State 1 of the 8 That Tax Social Security?",
+        "description": "Check if you're off the hook with state and federal taxes.",
+        "link": "https://www.fool.com/retirement/2026/02/04/is-your-state-1-of-the-8-that-tax-social-security/?source=iedfolrf0000001",
+        "pubDate": "2026-02-04T17:45:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "186c6175-153b-42a4-be23-b24a9d7ac55c",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "How Much Is Your Required Minimum Distribution With $462,410 in Your Retirement Account?",
+        "description": "The number depends on a handful of factors, the most important of which is your age.",
+        "link": "https://www.fool.com/retirement/2026/02/04/how-much-is-your-required-minimum-distribution-wit/?source=iedfolrf0000001",
+        "pubDate": "2026-02-04T10:26:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "cca22d70-6010-4b5b-a05d-49aa54d533ba",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "Can the Government Withhold Part of Your Social Security Check?",
+        "description": "Your Social Security benefits may be safe from creditors, but not from the federal government.",
+        "link": "https://www.fool.com/retirement/2026/02/03/can-the-government-withhold-part-of-your-social-se/?source=iedfolrf0000001",
+        "pubDate": "2026-02-03T14:00:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "b1f8ff38-fc06-4466-85cd-32ac66cf1bff",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      },
+      {
+        "title": "Planning to Own a Home in Retirement? Make Sure You Do This 1 Thing.",
+        "description": "It's a crucial move to make.",
+        "link": "https://www.fool.com/retirement/2026/02/02/planning-to-own-a-home-in-retirement-make-sure-you/?source=iedfolrf0000001",
+        "pubDate": "2026-02-03T00:08:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "23d7c1c2-45be-4987-85fc-b2e5e4fc46bb",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "retirement"
+      }
+    ],
+    "investing": [
+      {
+        "title": "Nervous to Invest Your Retirement Savings in Stocks? Here's What Might Happen if You Don't.",
+        "description": "You might think you're taking a risk, but the risk of avoiding stocks is even greater.",
+        "link": "https://www.fool.com/retirement/2026/02/04/nervous-to-invest-your-retirement-savings-in-stock/?source=iedfolrf0000001",
+        "pubDate": "2026-02-04T16:36:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "79615bac-6efa-45d0-b7d4-c40508ce1d3c",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 36,
+        "topic": "investing"
+      },
+      {
+        "title": "\"Missed RMDs Are a Billion-Dollar Mistake,\" Warns Vanguard's Senior Investment Strategist. What Retirees Need to Know.",
+        "description": "Some ways of keeping your net investing costs down are difficult to implement. This isn't one of them.",
+        "link": "https://www.fool.com/retirement/2026/02/03/missed-rmds-are-a-billion-dollar-mistake-warns-van/?source=iedfolrf0000001",
+        "pubDate": "2026-02-03T06:30:00.000Z",
+        "source": "The Motley Fool",
+        "sourceReliability": "high",
+        "categories": [
+          "96eb1dc2-761f-4db6-b3c0-c3294e4aa7c9",
+          "retirement",
+          "Investment Planning"
+        ],
+        "score": 21,
+        "topic": "investing"
+      }
+    ],
+    "debt": [
+      {
+        "title": "Chase cut my credit-card limit due to lower usage. Will this affect my credit score and lead other banks to do the same?",
+        "description": "“I’m wondering whether this could cause a ripple effect in which other banks might do the same with my lesser-used credit cards.”",
+        "link": "https://www.marketwatch.com/story/i-didnt-find-out-until-after-it-was-done-chase-cut-my-credit-card-limit-due-to-low-usage-could-this-affect-my-credit-717075bd?mod=mw_rss_topstories",
+        "pubDate": "2026-02-05T00:15:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 31,
+        "topic": "debt"
+      }
+    ],
+    "economy": [
+      {
+        "title": "The Fed has bought over $90B in Treasury bills since December. Why this has a huge impact on your finances.",
+        "description": "The Treasury Deparment said Wednesday that the Federal Reserve has bought more than $90 billion of short-dated government bills over the past eight weeks.",
+        "link": "https://www.marketwatch.com/story/the-fed-has-bought-over-90b-in-treasury-bills-since-december-why-this-has-a-huge-impact-on-your-finances-311e5b91?mod=mw_rss_topstories",
+        "pubDate": "2026-02-04T22:37:00.000Z",
+        "source": "MarketWatch Top Stories",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 31,
+        "topic": "economy"
+      },
+      {
+        "title": "PepsiCo will cut prices on Lay's, Cheetos by as much as 15%",
+        "description": "The food giant is among many big brands worried as shoppers pull back on snack budgets after years of stubborn inflation.",
+        "link": "https://www.npr.org/2026/02/03/nx-s1-5697941/pepsi-prices-cheetos-doritos-super-bowl-snacks",
+        "pubDate": "2026-02-03T15:06:25.000Z",
+        "source": "NPR Economy",
+        "sourceReliability": "high",
+        "categories": [],
+        "score": 21,
+        "topic": "economy"
+      }
+    ],
+    "taxes": [
+      {
+        "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+        "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+        "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+        "pubDate": "2026-01-29T13:39:02.000Z",
+        "source": "CNBC Personal Finance",
+        "sourceReliability": "medium",
+        "categories": [],
+        "score": 23,
+        "topic": "taxes"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Older workers with student loan debt have less saved for retirement, Fidelity finds",
+      "description": "Older workers with student debt have much smaller retirement account balances than their peers without the loans, a Fidelity report shows.",
+      "link": "https://www.cnbc.com/2026/02/04/student-loan-debt-retirement-savings.html",
+      "pubDate": "2026-02-04T20:47:16.000Z",
+      "source": "CNBC Top News",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 48,
+      "topic": "retirement"
+    },
+    {
+      "title": "Nervous to Invest Your Retirement Savings in Stocks? Here's What Might Happen if You Don't.",
+      "description": "You might think you're taking a risk, but the risk of avoiding stocks is even greater.",
+      "link": "https://www.fool.com/retirement/2026/02/04/nervous-to-invest-your-retirement-savings-in-stock/?source=iedfolrf0000001",
+      "pubDate": "2026-02-04T16:36:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "79615bac-6efa-45d0-b7d4-c40508ce1d3c",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 36,
+      "topic": "investing"
+    },
+    {
+      "title": "Chase cut my credit-card limit due to lower usage. Will this affect my credit score and lead other banks to do the same?",
+      "description": "“I’m wondering whether this could cause a ripple effect in which other banks might do the same with my lesser-used credit cards.”",
+      "link": "https://www.marketwatch.com/story/i-didnt-find-out-until-after-it-was-done-chase-cut-my-credit-card-limit-due-to-low-usage-could-this-affect-my-credit-717075bd?mod=mw_rss_topstories",
+      "pubDate": "2026-02-05T00:15:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 31,
+      "topic": "debt"
+    },
+    {
+      "title": "The Fed has bought over $90B in Treasury bills since December. Why this has a huge impact on your finances.",
+      "description": "The Treasury Deparment said Wednesday that the Federal Reserve has bought more than $90 billion of short-dated government bills over the past eight weeks.",
+      "link": "https://www.marketwatch.com/story/the-fed-has-bought-over-90b-in-treasury-bills-since-december-why-this-has-a-huge-impact-on-your-finances-311e5b91?mod=mw_rss_topstories",
+      "pubDate": "2026-02-04T22:37:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 31,
+      "topic": "economy"
+    },
+    {
+      "title": "This Could Be the Easiest Way to Get Tax-Free Income in Retirement",
+      "description": "It's not a complicated strategy, but you may need to plan ahead.",
+      "link": "https://www.fool.com/retirement/2026/02/04/this-could-be-the-easiest-way-to-get-tax-free-inco/?source=iedfolrf0000001",
+      "pubDate": "2026-02-04T11:48:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "e6002f49-fa14-4776-b02f-ad8a021d3112",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "Nearing Retirement? 4 Ways to Catch Up on Savings if You're Behind.",
+      "description": "Even if the clock is ticking down, you might still have some good options.",
+      "link": "https://www.fool.com/retirement/2026/02/03/nearing-retirement-4-ways-to-catch-up-on-savings-i/?source=iedfolrf0000001",
+      "pubDate": "2026-02-03T22:18:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "722b52a9-0589-4225-87c1-8c041a442fc0",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "Need to Cut Back on Retirement Savings This Year? At Least Aim to Do This.",
+      "description": "There's one savings threshold you should still try to hit.",
+      "link": "https://www.fool.com/retirement/2026/02/03/need-to-cut-back-on-retirement-savings-this-year-a/?source=iedfolrf0000001",
+      "pubDate": "2026-02-03T18:41:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "c286d60a-ad39-44ca-ab2d-adc25e298522",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "This Is the Best Move You Can Make in 2026 If You're Behind on Retirement Savings",
+      "description": "This is one of the fastest ways to grow your wealth, hands down.",
+      "link": "https://www.fool.com/retirement/2026/02/02/this-is-the-best-move-you-can-make-in-2026-if-your/?source=iedfolrf0000001",
+      "pubDate": "2026-02-02T16:00:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "c25230a5-9888-46ba-8248-fd1c74957213",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "This Is the Average 401(k) Balance by Age. How Do Your Retirement Savings Stack Up?",
+      "description": "Are your savings on track?",
+      "link": "https://www.fool.com/retirement/2026/02/01/average-401k-balance-by-age-savings-stack-up/?source=iedfolrf0000001",
+      "pubDate": "2026-02-01T22:30:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "778f6d0f-6570-44f4-9068-4c7b447b2522",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 31,
+      "topic": "retirement"
+    },
+    {
+      "title": "Retirement savings 'lost and found' helps retirees track down old 401(k)s, pensions — how it works",
+      "description": "In the first year of the Labor Department's Retirement Savings Lost and Found database, 29.5% of users found an old workplace plan that might owe them money.",
+      "link": "https://www.cnbc.com/2026/02/04/retirement-savings-lost-and-found.html",
+      "pubDate": "2026-02-04T17:14:25.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 28,
+      "topic": "retirement"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "description": "An audit from a government watchdog alerted the IRS of the mistake and the agency took steps to credit the tax accounts affected by the oversight.",
+      "link": "https://www.cnbc.com/2026/01/29/irs-refund-pandemic-era-penalty-tax-relief.html",
+      "pubDate": "2026-01-29T13:39:02.000Z",
+      "source": "CNBC Personal Finance",
+      "sourceReliability": "medium",
+      "categories": [],
+      "score": 23,
+      "topic": "taxes"
+    },
+    {
+      "title": "‘I’m spooked’: Gold is back above $5,000, but is it a high-risk bet for your retirement?",
+      "description": "“Before you ask, there is nothing extreme about 5% of my ‘alternative’ assets.”",
+      "link": "https://www.marketwatch.com/story/im-spooked-do-gold-and-silver-belong-in-my-retirement-portfolio-after-their-dramatic-fall-in-value-a5bc4b3e?mod=mw_rss_topstories",
+      "pubDate": "2026-02-05T00:45:00.000Z",
+      "source": "MarketWatch Top Stories",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "PepsiCo will cut prices on Lay's, Cheetos by as much as 15%",
+      "description": "The food giant is among many big brands worried as shoppers pull back on snack budgets after years of stubborn inflation.",
+      "link": "https://www.npr.org/2026/02/03/nx-s1-5697941/pepsi-prices-cheetos-doritos-super-bowl-snacks",
+      "pubDate": "2026-02-03T15:06:25.000Z",
+      "source": "NPR Economy",
+      "sourceReliability": "high",
+      "categories": [],
+      "score": 21,
+      "topic": "economy"
+    },
+    {
+      "title": "Relocating in Retirement? Don't Overlook This Key Factor.",
+      "description": "Do your research before packing your bags.",
+      "link": "https://www.fool.com/retirement/2026/02/04/relocating-in-retirement-dont-overlook-this-key-fa/?source=iedfolrf0000001",
+      "pubDate": "2026-02-05T00:18:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "b7597f9d-2e47-4641-95f8-5bf8d6c989e0",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "The Surprising Reason You Might Hate Retirement -- and What to Do About It",
+      "description": "Hint: It's not about money.",
+      "link": "https://www.fool.com/retirement/2026/02/04/the-surprising-reason-you-might-hate-retirement-an/?source=iedfolrf0000001",
+      "pubDate": "2026-02-04T22:11:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "8f390b70-65d3-4ddf-9718-5d3f7093ad10",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "Is Your State 1 of the 8 That Tax Social Security?",
+      "description": "Check if you're off the hook with state and federal taxes.",
+      "link": "https://www.fool.com/retirement/2026/02/04/is-your-state-1-of-the-8-that-tax-social-security/?source=iedfolrf0000001",
+      "pubDate": "2026-02-04T17:45:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "186c6175-153b-42a4-be23-b24a9d7ac55c",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "How Much Is Your Required Minimum Distribution With $462,410 in Your Retirement Account?",
+      "description": "The number depends on a handful of factors, the most important of which is your age.",
+      "link": "https://www.fool.com/retirement/2026/02/04/how-much-is-your-required-minimum-distribution-wit/?source=iedfolrf0000001",
+      "pubDate": "2026-02-04T10:26:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "cca22d70-6010-4b5b-a05d-49aa54d533ba",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "Can the Government Withhold Part of Your Social Security Check?",
+      "description": "Your Social Security benefits may be safe from creditors, but not from the federal government.",
+      "link": "https://www.fool.com/retirement/2026/02/03/can-the-government-withhold-part-of-your-social-se/?source=iedfolrf0000001",
+      "pubDate": "2026-02-03T14:00:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "b1f8ff38-fc06-4466-85cd-32ac66cf1bff",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    },
+    {
+      "title": "\"Missed RMDs Are a Billion-Dollar Mistake,\" Warns Vanguard's Senior Investment Strategist. What Retirees Need to Know.",
+      "description": "Some ways of keeping your net investing costs down are difficult to implement. This isn't one of them.",
+      "link": "https://www.fool.com/retirement/2026/02/03/missed-rmds-are-a-billion-dollar-mistake-warns-van/?source=iedfolrf0000001",
+      "pubDate": "2026-02-03T06:30:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "96eb1dc2-761f-4db6-b3c0-c3294e4aa7c9",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "investing"
+    },
+    {
+      "title": "Planning to Own a Home in Retirement? Make Sure You Do This 1 Thing.",
+      "description": "It's a crucial move to make.",
+      "link": "https://www.fool.com/retirement/2026/02/02/planning-to-own-a-home-in-retirement-make-sure-you/?source=iedfolrf0000001",
+      "pubDate": "2026-02-03T00:08:00.000Z",
+      "source": "The Motley Fool",
+      "sourceReliability": "high",
+      "categories": [
+        "23d7c1c2-45be-4987-85fc-b2e5e4fc46bb",
+        "retirement",
+        "Investment Planning"
+      ],
+      "score": 21,
+      "topic": "retirement"
+    }
+  ],
+  "skippedByHistory": [
+    {
+      "reason": "already_generated",
+      "existingSlug": "housing-affordability-isnt-just-hurting-buyers-more-homeowne",
+      "title": "Housing affordability isn't just hurting buyers: More homeowners are falling behind on their mortgages",
+      "link": "https://www.cnbc.com/2026/02/02/mortgage-delinquencies-housing-affordability.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "gen-z-investors-lessons-learned-since-2021-meme-stock-mania",
+      "title": "Gen Z investors' lessons learned since 2021 meme stock mania",
+      "link": "https://www.cnbc.com/video/2026/01/30/gen-z-investors-lessons-learned-since-2021-meme-stock-mania.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "gamestop-mania-fed-off-investor-angst-experts-say-that-uneas",
+      "title": "GameStop mania fed off investor angst. Experts say that unease still fuels ‘gamblifying’ of investing",
+      "link": "https://www.cnbc.com/2026/01/29/gamestop-meme-stocks-retail-investors-wall-street-young-investors.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "fed-holds-interest-rates-steady-what-that-means-for-mortgage",
+      "title": "Fed holds interest rates steady: What that means for mortgages, credit cards and loans",
+      "link": "https://www.cnbc.com/2026/01/28/fed-decision-mortgage-rates-credit-cards-loans.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "fed-is-likely-to-hold-interest-rates-steady-resisting-trump",
+      "title": "Fed is likely to hold interest rates steady, resisting Trump pressure. Here’s what that means for borrowers",
+      "link": "https://www.cnbc.com/2026/01/26/fed-rates-may-hold-steady.html"
+    },
+    {
+      "reason": "already_generated",
+      "existingSlug": "dont-wait-for-trumps-10-cap-fed-cuts-heres-how-to-get-a-bett",
+      "title": "Don’t wait for Trump's 10% cap, Fed cuts — here's how to get a better credit card interest rate now",
+      "link": "https://www.cnbc.com/2026/01/26/trump-credit-card-rate-cap-credit-score.html"
+    }
+  ]
+}

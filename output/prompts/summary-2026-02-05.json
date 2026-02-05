@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-02-05T01:18:24.769Z",
+  "newsFile": "news-2026-02-05.json",
+  "articleCount": 5,
+  "promptsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-05",
+  "draftsDirectory": "D:\\Prj\\outside\\finance-calculators\\output\\drafts\\2026-02-05",
+  "batchFile": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\batch-2026-02-05.md",
+  "articles": [
+    {
+      "title": "Older workers with student loan debt have less saved for retirement, Fidelity finds",
+      "topic": "retirement",
+      "slug": "older-workers-with-student-loan-debt-have-less-saved-for-ret",
+      "calculator": "Retirement Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-05\\step1-draft-older-workers-with-student-loan-debt-have-less-saved-for-ret.md"
+    },
+    {
+      "title": "Nervous to Invest Your Retirement Savings in Stocks? Here's What Might Happen if You Don't.",
+      "topic": "investing",
+      "slug": "nervous-to-invest-your-retirement-savings-in-stocks-heres-wh",
+      "calculator": "Compound Interest Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-05\\step1-draft-nervous-to-invest-your-retirement-savings-in-stocks-heres-wh.md"
+    },
+    {
+      "title": "Chase cut my credit-card limit due to lower usage. Will this affect my credit score and lead other banks to do the same?",
+      "topic": "debt",
+      "slug": "chase-cut-my-credit-card-limit-due-to-lower-usage-will-this",
+      "calculator": "Debt Payoff Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-05\\step1-draft-chase-cut-my-credit-card-limit-due-to-lower-usage-will-this.md"
+    },
+    {
+      "title": "The Fed has bought over $90B in Treasury bills since December. Why this has a huge impact on your finances.",
+      "topic": "economy",
+      "slug": "the-fed-has-bought-over-90b-in-treasury-bills-since-december",
+      "calculator": "Inflation Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-05\\step1-draft-the-fed-has-bought-over-90b-in-treasury-bills-since-december.md"
+    },
+    {
+      "title": "IRS owes some taxpayers refunds for pandemic-era penalty tax relief, watchdog audit finds",
+      "topic": "taxes",
+      "slug": "irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax",
+      "calculator": "Take-Home Pay Calculator",
+      "step1Prompt": "D:\\Prj\\outside\\finance-calculators\\output\\prompts\\2026-02-05\\step1-draft-irs-owes-some-taxpayers-refunds-for-pandemic-era-penalty-tax.md"
+    }
+  ]
+}

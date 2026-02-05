@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-02-05T01:46:56.225Z",
+  "dateFilter": "2026-02-05",
+  "total": 3,
+  "failed": 0,
+  "warnings": 3,
+  "results": [
+    {
+      "file": "output\\articles\\final-chase-cut-my-credit-card-limit-due-to-lower-usage-will-this.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-nervous-to-invest-your-retirement-savings-in-stocks-heres-wh.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    },
+    {
+      "file": "output\\articles\\final-this-could-be-the-easiest-way-to-get-tax-free-income-in-reti.json",
+      "errors": [],
+      "warnings": [
+        "sources fewer than 2"
+      ]
+    }
+  ]
+}
